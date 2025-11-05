@@ -46,7 +46,8 @@ To create a **unified mobility platform** integrating all transport modes into a
 
 ## Decomposition
 
-'''mermaid
+```mermaid
+graph LR
     Web["Web"]
 
     %% --- ROUTING ---
@@ -102,7 +103,7 @@ To create a **unified mobility platform** integrating all transport modes into a
     DB --> DB2["Fare"]
     DB --> DB3["User Data"]
 
-
+---
 
 ## 👥 Team Roles Overview                                                                      
 
