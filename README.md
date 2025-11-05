@@ -44,6 +44,29 @@ To create a **unified mobility platform** integrating all transport modes into a
 
 ---
 
+## 👥 Team Roles Overview                                                                      
+
+| Role | Member | Key Responsibility |
+|------|---------|--------------------|
+| 🧭 Routing Lead | Đạt, Hiệu | Algorithm design, API integration |
+| 🚌 Recommendation System | Hiếu | Suggestion logic, feedback tuning |
+| ⚙️ Safety & Monitoring | Phát, Khoa | Real-time congestion & alert system |
+| 🎨 UI/UX & Integration | Hiệu, Khôi | Frontend & cross-module integration |
+
+---
+
+## 🕒 Timeline
+### 📅 Development Phases (11 Weeks Total)
+
+| Phase | Duration | Key Activities |
+|:------|:----------|:---------------|
+| **A. Design & Concept** | Week 1–3 | Define architecture, roadmap, and methodology. |
+| **B. Development** | Week 4–8 | Implement routing, APIs, and UI integration. |
+| **C. Testing** | Week 9–10 | Unit & integration testing, UX validation. |
+| **D. Deployment & Launch** | Week 10–11 | Public deployment, demo & presentation. |
+
+---
+
 ## Decomposition
 
 ```mermaid
@@ -102,28 +125,3 @@ graph LR
     DB --> DB1["Transit"]
     DB --> DB2["Fare"]
     DB --> DB3["User Data"]
-
----
-
-## 👥 Team Roles Overview                                                                      
-
-| Role | Member | Key Responsibility |
-|------|---------|--------------------|
-| 🧭 Routing Lead | Đạt, Hiệu | Algorithm design, API integration |
-| 🚌 Recommendation System | Hiếu | Suggestion logic, feedback tuning |
-| ⚙️ Safety & Monitoring | Phát, Khoa | Real-time congestion & alert system |
-| 🎨 UI/UX & Integration | Hiệu, Khôi | Frontend & cross-module integration |
-
----
-
-## 🕒 Timeline
-### 📅 Development Phases (11 Weeks Total)
-
-| Phase | Duration | Key Activities |
-|:------|:----------|:---------------|
-| **A. Design & Concept** | Week 1–3 | Define architecture, roadmap, and methodology. |
-| **B. Development** | Week 4–8 | Implement routing, APIs, and UI integration. |
-| **C. Testing** | Week 9–10 | Unit & integration testing, UX validation. |
-| **D. Deployment & Launch** | Week 10–11 | Public deployment, demo & presentation. |
-
----
