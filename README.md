@@ -1,8 +1,20 @@
-# 🏙️ All-In-One Urban Mobility Platform
+# 🏙️ All-In-One Urban Mobility Platform - Group02
 
 ### 🚀 Integrated Smart Transit Planning for Urban Commuters
 
 ---
+
+## 📋 Group Information
+
+| Name          | MSSV |
+|--------------------|----------------|
+| Lương Hưng Phát    | 24127298       |
+| Hoàng Trung Hiếu   | 24127041       |
+| Nguyễn Thành Đạt   | 24127021       |
+| Nguyễn Anh Khôi    | 24127430       |
+| Nguyễn Tấn Hiệu    | 24127373       |
+| Nguyễn Minh Khoa   | 24127188       |
+
 
 ## 🧩 Problem Definition
 
@@ -48,10 +60,12 @@ To create a **unified mobility platform** integrating all transport modes into a
 
 | Role | Member | Key Responsibility |
 |------|---------|--------------------|
-| 🧭 Routing Lead | Đạt, Hiệu | Algorithm design, API integration |
-| 🚌 Recommendation System | Hiếu | Suggestion logic, feedback tuning |
-| ⚙️ Safety & Monitoring | Phát, Khoa | Real-time congestion & alert system |
-| 🎨 UI/UX & Integration | Hiệu, Khôi | Frontend & cross-module integration |
+| 🧭 Routing Lead | Nguyễn Thành Đạt - 24127021 | Algorithm design, API integration |
+| 🚌 Recommendation System | Hoàng Trung Hiếu - 24127041 | Suggestion logic, feedback tuning |
+| ⚙️ Safety & Monitoring | Lương Hưng Phát - 24127298| Real-time congestion & alert system |
+| Data Collection | Nguyễn Minh Khoa - 24127188 | Scrape real-time data |
+| Database | Nguyễn Anh Khôi | Design & Manage Database |
+| 🎨 UI/UX & Integration | Nguyễn Tấn Hiệu - 24127373 | Frontend & cross-module integration |
 
 ---
 
