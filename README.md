@@ -64,7 +64,7 @@ To create a **unified mobility platform** integrating all transport modes into a
 | 🚌 Recommendation System | Hoàng Trung Hiếu - 24127041 | Suggestion logic, feedback tuning |
 | ⚙️ Safety & Monitoring | Lương Hưng Phát - 24127298| Real-time congestion & alert system |
 | Data Collection | Nguyễn Minh Khoa - 24127188 | Scrape real-time data |
-| Database | Nguyễn Anh Khôi | Design & Manage Database |
+| Database | Nguyễn Anh Khôi - 24127430 | Design & Manage Database |
 | 🎨 UI/UX & Integration | Nguyễn Tấn Hiệu - 24127373 | Frontend & cross-module integration |
 
 ---
