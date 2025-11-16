@@ -1,0 +1,199 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f7fa;
+  color: #212121;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Light mode container */
+#root[data-dark-mode="false"] {
+  background-color: #f5f7fa;
+  color: #212121;
+}
+
+/* Dark mode container */
+#root[data-dark-mode="true"] {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Dark mode scrollbar */
+body.dark-mode ::-webkit-scrollbar-track {
+  background: #333;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* Light Mode - Default */
+[data-dark-mode="false"],
+[data-dark-mode="false"] .MuiPaper-root,
+[data-dark-mode="false"] .MuiPaper-elevation1,
+[data-dark-mode="false"] .MuiCard-root {
+  background-color: #ffffff !important;
+  color: #212121 !important;
+}
+
+[data-dark-mode="false"] .MuiOutlinedInput-root {
+  background-color: #f9f9f9 !important;
+  color: #212121 !important;
+}
+
+[data-dark-mode="false"] .MuiOutlinedInput-input {
+  color: #212121 !important;
+}
+
+[data-dark-mode="false"] .MuiOutlinedInput-input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  opacity: 1;
+}
+
+[data-dark-mode="false"] .MuiTypography-root {
+  color: #212121;
+}
+
+[data-dark-mode="false"] .MuiDivider-root {
+  background-color: #e0e0e0;
+}
+
+/* Dark mode Paper components */
+[data-dark-mode="true"] .MuiPaper-root,
+[data-dark-mode="true"] .MuiPaper-elevation1,
+[data-dark-mode="true"] .MuiCard-root {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+}
+
+/* Input fields in dark mode */
+[data-dark-mode="true"] .MuiOutlinedInput-root {
+  background-color: #2a2a2a !important;
+  color: #ffffff !important;
+}
+
+[data-dark-mode="true"] .MuiOutlinedInput-input {
+  color: #ffffff !important;
+}
+
+[data-dark-mode="true"] .MuiOutlinedInput-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+}
+
+/* Typography in dark mode */
+[data-dark-mode="true"] .MuiTypography-root {
+  color: #ffffff;
+}
+
+/* Divider in dark mode */
+[data-dark-mode="true"] .MuiDivider-root {
+  background-color: #333333;
+}
+#root[data-dark-mode="false"] [data-sidebar="container"] {
+  background-color: #ffffff !important;
+  color: #212121 !important;
+}
+
+#root[data-dark-mode="true"] [data-sidebar="container"] {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+}
+
+#root[data-dark-mode="false"] [data-sidebar="header"] {
+  border-bottom: 1px solid #e0e0e0 !important;;
+}
+
+#root[data-dark-mode="true"] [data-sidebar="header"] {
+  border-bottom: 1px solid #333 !important;;
+}
+
+#root[data-dark-mode="false"] [data-sidebar="toggle"] {
+  background-color: #f2f5f7;
+  color: #0277BD;
+}
+
+#root[data-dark-mode="true"] [data-sidebar="toggle"] {
+  background-color: #2a2a2a;
+  color: #90caf9;
+}
+/* LIGHT MODE */
+#root[data-dark-mode="false"] [data-route="item"] {
+  background-color: #ffffff !important;
+  color: #212121 !important;
+  border: 1px solid #e0e0e0;
+}
+
+#root[data-dark-mode="false"] [data-route="title"] {
+  color: #212121 !important;
+  font-weight: 600;
+}
+
+#root[data-dark-mode="false"] [data-route="cost"] {
+  color: #0277bd !important;
+  font-weight: bold;
+}
+
+/* DARK MODE */
+#root[data-dark-mode="true"] [data-route="item"] {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+  border: 1px solid #333;
+}
+
+#root[data-dark-mode="true"] [data-route="title"] {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+#root[data-dark-mode="true"] [data-route="cost"] {
+  color: #4fc3f7 !important; /* Cyan highlight giống Google Maps dark */
+  font-weight: bold;
+}
