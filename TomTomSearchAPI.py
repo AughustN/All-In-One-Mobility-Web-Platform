@@ -212,7 +212,7 @@ def tomtom_route(start_lat, start_lon, end_lat, end_lon, api_key, travel_mode, r
 
 # ------------------- MAIN -------------------
 if __name__ == "__main__":
-    api_key = "dcS4AgK0puDJlKhUT8zOfIUA5VK0pKsi"
+    api_key = "YOUR_KEY"
 
     loc1, loc2 = choose_location(api_key)
 
