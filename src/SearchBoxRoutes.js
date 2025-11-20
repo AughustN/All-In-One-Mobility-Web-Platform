@@ -10,16 +10,12 @@ import {
     ListItemIcon,
     ListItemText,
 } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
+import DirectionsWalkIcon from "@material-ui/icons/DirectionsWalk";
 import DirectionsBikeIcon from "@material-ui/icons/DirectionsBike";
 import DriveEtaIcon from "@material-ui/icons/DriveEta";
-import DirectionsWalkIcon from "@material-ui/icons/DirectionsWalk";
-import AccessTimeIcon from "@material-ui/icons/AccessTime";
-import DistanceIcon from "@material-ui/icons/PublicOutlined";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
-import { makeStyles } from "@material-ui/core/styles";
-import axios from "axios";
-
-const API = "https://api.hcmus.fit";
+import { searchLocation } from "./api";
 
 const useStyles = makeStyles((theme) => ({
     transportIconContainer: {
@@ -81,7 +77,7 @@ const transportOptions = [
 export default function SearchBoxRoutes(props) {
     const { setSelectPosition, onSearch, initialFrom = "", travelMode, setTravelMode } = props;
     const classes = useStyles();
-    
+
     const [fromLocation, setFromLocation] = useState(initialFrom);
     const [toLocation, setToLocation] = useState("");
     const [toSearchResults, setToSearchResults] = useState([]);
@@ -103,28 +99,25 @@ export default function SearchBoxRoutes(props) {
         }
 
         if (!toLocation.trim()) {
-            setToSearchResults([]);
             setShowToDropdown(false);
-            setSearchError('');
+            setToSearchResults([]);
             return;
         }
 
         const timer = setTimeout(async () => {
             try {
-                const res = await axios.post(`${API}/search`, { 
-                    address: toLocation 
-                });
-                setToSearchResults(res.data);
+                const data = await searchLocation(toLocation);
+                setToSearchResults(data);
                 setShowToDropdown(true);
-                
-                if (res.data.length === 0) {
-                    setSearchError('Không tìm thấy địa điểm trong TP.HCM');
+
+                if (data.length === 0) {
+                    setSearchError('Không tìm thấy địa điểm');
                 } else {
                     setSearchError('');
                 }
             } catch (err) {
                 console.error("Search API Error:", err);
-                setSearchError('Lỗi khi tìm kiếm địa điểm');
+                setSearchError('Lỗi khi tìm kiếm');
             }
         }, 500);
 

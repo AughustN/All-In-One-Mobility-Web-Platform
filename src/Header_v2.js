@@ -13,7 +13,7 @@ function Header({ darkMode, onToggleDarkMode }) {
       style={{ background: "linear-gradient(135deg, #0e1227 0%, #dad4e0ff 100%)" }}
     >
       <Toolbar style={{ display: "flex", justifyContent: "center", position: "relative" }}>
-        
+
         {/* Navigation center */}
         <Box style={{ display: "flex", gap: "20px", position: "absolute", left: "50%", transform: "translateX(-50%)" }}>
           <button

@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@material-ui/core/styles";
-import Header_v2 from "./Header_v2";
+import Header from './Header';
+import HistoryPage from './pages/HistoryPage';
 import RoutesPage from "./pages/RoutesPage";
 import BusMapPage from "./pages/BusMapPage";
-import CameraMap from "./CameraMap";
+import CameraMap from "./pages/CameraMap";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import { Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -146,13 +149,16 @@ function App() {
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Box className={classes.root}>
-          <Header_v2 darkMode={darkMode} onToggleDarkMode={handleToggleDarkMode} />
+          <Header darkMode={darkMode} onToggleDarkMode={() => setDarkMode(!darkMode)} />
           <Box className={classes.content} data-dark-mode={darkMode}>
             <Routes>
               <Route path="/" element={<RoutesPage darkMode={darkMode} />} />
               <Route path="/routes" element={<RoutesPage darkMode={darkMode} />} />
               <Route path="/busmap" element={<BusMapPage darkMode={darkMode} />} />
               <Route path="/cameras" element={<CameraMap />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/history" element={<HistoryPage />} />
             </Routes>
           </Box>
         </Box>
