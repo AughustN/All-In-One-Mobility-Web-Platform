@@ -1,0 +1,44 @@
+CREATE DATABASE IF NOT EXISTS osm_app;
+USE osm_app;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS user_locations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    lat DOUBLE NOT NULL,
+    lng DOUBLE NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS user_routes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    start_name VARCHAR(255) NOT NULL,
+    start_lat DOUBLE NOT NULL,
+    start_lng DOUBLE NOT NULL,
+    end_name VARCHAR(255) NOT NULL,
+    end_lat DOUBLE NOT NULL,
+    end_lng DOUBLE NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS sos_alerts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    lat DOUBLE NOT NULL,
+    lng DOUBLE NOT NULL,
+    description TEXT,
+    image_url VARCHAR(255),
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status VARCHAR(20) DEFAULT 'active', -- 'active' hoặc 'resolved'
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
+);
