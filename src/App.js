@@ -6,6 +6,7 @@ import HistoryPage from './pages/HistoryPage';
 import RoutesPage from "./pages/RoutesPage";
 import BusMapPage from "./pages/BusMapPage";
 import CameraMapNew from "./pages/CameraMapNew";
+import SOSMapPage from './pages/SOSMapPage';
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { Box } from "@material-ui/core";
@@ -134,6 +135,33 @@ function App() {
     setDarkMode(!darkMode);
   };
 
+  // Validate token on app load
+  React.useEffect(() => {
+    const validateToken = async () => {
+      const token = localStorage.getItem('token');
+      if (token) {
+        try {
+          // Try to fetch user data to validate token
+          const response = await fetch('https://api.hcmus.fit/api/user/locations', {
+            headers: { 'Authorization': `Bearer ${token}` }
+          });
+          
+          if (response.status === 401) {
+            // Token is invalid or expired
+            console.warn('Token expired on app load, clearing...');
+            localStorage.removeItem('token');
+            localStorage.removeItem('username');
+            window.dispatchEvent(new Event('auth-change'));
+          }
+        } catch (err) {
+          console.error('Token validation error:', err);
+        }
+      }
+    };
+    
+    validateToken();
+  }, []);
+
   // Update root element attribute for dark mode
   React.useEffect(() => {
     const rootElement = document.getElementById("root");
@@ -160,6 +188,7 @@ function App() {
               <Route path="/routes" element={<RoutesPage darkMode={darkMode} />} />
               <Route path="/busmap" element={<BusMapPage darkMode={darkMode} />} />
               <Route path="/cameras" element={<CameraMapNew />} />
+              <Route path="/sos" element={<SOSMapPage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/history" element={<HistoryPage />} />

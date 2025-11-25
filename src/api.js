@@ -1,9 +1,22 @@
 // Simple API helper to centralize backend calls and make it easy to replace endpoints.
-const BASE_URL = "https://api.hcmus.fit";
+import { handleTokenExpiration } from './utils/tokenManager';
+
+export const BASE_URL = "https://api.hcmus.fit";
+// export const BASE_URL = "http://localhost:5000";
 
 export function getAuthHeader() {
   const token = localStorage.getItem('token');
   return token ? { 'Authorization': `Bearer ${token}` } : {};
+}
+
+// Helper function to handle API responses and auto-logout on 401
+async function handleResponse(response) {
+  if (response.status === 401) {
+    // Token expired or invalid
+    handleTokenExpiration();
+    throw new Error('Session expired. Please login again.');
+  }
+  return response;
 }
 // ============================
 //  Camera API
@@ -62,6 +75,7 @@ export async function getSavedLocations() {
   const resp = await fetch(`${BASE_URL}/api/user/locations`, {
     headers: { ...getAuthHeader() }
   });
+  await handleResponse(resp);
   if (!resp.ok) return [];
   return resp.json();
 }
@@ -75,6 +89,7 @@ export async function saveLocation(name, lat, lng) {
     },
     body: JSON.stringify({ name, lat, lng }),
   });
+  await handleResponse(resp);
   return resp.ok;
 }
 
@@ -82,6 +97,7 @@ export async function getSavedRoutes() {
   const resp = await fetch(`${BASE_URL}/api/user/routes`, {
     headers: { ...getAuthHeader() }
   });
+  await handleResponse(resp);
   if (!resp.ok) return [];
   return resp.json();
 }
@@ -98,6 +114,7 @@ export async function saveRoute(startName, startLat, startLng, endName, endLat, 
       end_name: endName, end_lat: endLat, end_lng: endLng
     }),
   });
+  await handleResponse(resp);
   return resp.ok;
 }
 
@@ -122,4 +139,84 @@ export async function calculateRoute(start, end, travelMode = "car") {
   });
   if (!resp.ok) throw new Error("Route calculation failed");
   return resp.json();
+}
+
+
+
+
+
+
+// ============================
+// 🚨 SOS API
+// ============================
+
+// Gửi báo cáo SOS (có hình ảnh)
+export async function reportSOS(lat, lng, description, imageFile) {
+  const formData = new FormData();
+  formData.append('lat', lat);
+  formData.append('lng', lng);
+  formData.append('description', description);
+  
+  if (imageFile) {
+    formData.append('image', imageFile);
+  }
+
+  const token = localStorage.getItem('token'); // Lấy token thủ công vì FormData xử lý header khác JSON
+  
+  const resp = await fetch(`${BASE_URL}/api/sos`, {
+    method: "POST",
+    headers: {
+      'Authorization': `Bearer ${token}` 
+      // Không set Content-Type là application/json vì đây là FormData
+    },
+    body: formData,
+  });
+
+  await handleResponse(resp);
+  
+  if (!resp.ok) {
+    const err = await resp.json();
+    throw new Error(err.message || "Failed to report SOS");
+  }
+  return resp.json();
+}
+
+// Lấy danh sách SOS để vẽ lên bản đồ
+export async function getSOSAlerts() {
+  const resp = await fetch(`${BASE_URL}/api/sos`, {
+    method: "GET"
+  });
+  
+  if (!resp.ok) return [];
+  return resp.json();
+}
+
+export async function resolveSOS(sosId) {
+  const resp = await fetch(`${BASE_URL}/api/sos/resolve`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      ...getAuthHeader()
+    },
+    body: JSON.stringify({ sos_id: sosId }),
+  });
+  
+  await handleResponse(resp);
+  
+  if (!resp.ok) {
+    const err = await resp.json();
+    throw new Error(err.message || "Lỗi khi cập nhật trạng thái");
+  }
+  return resp.json();
+}
+export async function calculateBusRoute(origin, destination, maxWalk = 300) {
+  const response = await fetch(
+    `${BASE_URL}/api/bus/route?start_lat=${origin.lat}&start_lng=${origin.lon}&end_lat=${destination.lat}&end_lng=${destination.lon}&max_walk=${maxWalk}`
+  );
+
+  if (!response.ok) {
+    throw new Error("Bus route calculation failed");
+  }
+
+  return response.json();
 }

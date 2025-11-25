@@ -159,19 +159,18 @@ export default function Header({ darkMode, onToggleDarkMode }) {
 
   // Determine active tab
   let tabValue = 0;
-  if (location.pathname === "/busmap") tabValue = 1;
-
-  if (location.pathname === "/cameras") tabValue = 2;
-
-  if (location.pathname === "/history") tabValue = 3;
-
+  if (location.pathname === "/routes") tabValue = 0;
+  else if (location.pathname === "/busmap") tabValue = 1;
+  else if (location.pathname === "/cameras") tabValue = 2;
+  else if (location.pathname === "/sos") tabValue = 3; // Tab mới số 3
+  else if (location.pathname === "/history") tabValue = 4;
 
   const handleTabChange = (event, newValue) => {
     if (newValue === 0) navigate("/routes");
     else if (newValue === 1) navigate("/busmap");
-    else if (newValue == 2) navigate("/cameras")
-    else if (newValue === 3) navigate("/history");
-
+    else if (newValue === 2) navigate("/cameras");
+    else if (newValue === 3) navigate("/sos"); // Link tới trang SOS
+    else if (newValue === 4) navigate("/history");
   };
 
   return (
@@ -191,202 +190,212 @@ export default function Header({ darkMode, onToggleDarkMode }) {
           {/* Left Section: Logo & Title */}
           <Box className={classes.logoSection} onClick={() => navigate('/')}>
             <Typography variant="h6" className={classes.title}>
-             MAP APP HCMUS
+              MAP APP HCMUS
             </Typography>
           </Box>
 
-        {/* Center Section: Navigation Tabs */}
-        <Box flexGrow={1} display="flex" justifyContent="center">
-          <Tabs
-            value={tabValue}
-            onChange={handleTabChange}
-            className={classes.tabs}
-            centered
-          >
-            <Tab label="Find Routes" className={classes.tab} />
-            <Tab label="Bus Map" className={classes.tab} />
-            <Tab label="Cameras Map" className={classes.tab} />
-            {username && <Tab label="History" className={classes.tab} />}
-          </Tabs>
+          {/* Center Section: Navigation Tabs */}
+          <Box flexGrow={1} display="flex" justifyContent="center">
+            <Tabs
+              value={tabValue}
+              onChange={handleTabChange}
+              className={classes.tabs}
+              centered
+            >
+              <Tab label="Find Routes" className={classes.tab} />
+              <Tab label="Bus Map" className={classes.tab} />
+              <Tab label="Cameras Map" className={classes.tab} />
+              <Tab label="SOS Map" className={classes.tab} />
+              {username && <Tab label="History" className={classes.tab} />}
+            </Tabs>
+          </Box>
+
+          {/* Right Section: Auth & Dark Mode */}
+          <Box className={classes.rightSection}>
+            <IconButton
+              color="inherit"
+              onClick={onToggleDarkMode}
+              style={{ marginRight: 8 }}
+            >
+              {darkMode ? <Brightness7 /> : <Brightness4 />}
+            </IconButton>
+
+            {username ? (
+              <>
+                <Box className={classes.userChip} onClick={handleMenuOpen}>
+                  <Avatar style={{ width: 32, height: 32, marginRight: 8, backgroundColor: '#FF8E53' }}>
+                    {username[0].toUpperCase()}
+                  </Avatar>
+                  <Typography variant="subtitle2" style={{ fontWeight: 600 }}>
+                    {username}
+                  </Typography>
+                </Box>
+                <Menu
+                  anchorEl={anchorEl}
+                  keepMounted
+                  open={Boolean(anchorEl)}
+                  onClose={handleMenuClose}
+                  getContentAnchorEl={null}
+                  anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                  transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+                >
+                  <MenuItem onClick={() => { handleMenuClose(); navigate('/history'); }}>
+                    <History style={{ marginRight: 8, fontSize: 20 }} /> Lịch sử
+                  </MenuItem>
+                  <MenuItem onClick={handleLogout}>Logout</MenuItem>
+                </Menu>
+              </>
+            ) : (
+              <>
+                <Button
+                  color="inherit"
+                  className={classes.authButton}
+                  onClick={() => navigate('/login')}
+                  style={{ marginRight: 8 }}
+                >
+                  Login
+                </Button>
+                <Button
+                  variant="contained"
+                  className={classes.authButton}
+                  // style={{ backgroundColor: '#FF8E53', color: 'white' }}
+                  onClick={() => navigate('/register')}
+                >
+                  Sign Up
+                </Button>
+              </>
+            )}
+          </Box>
+        </Toolbar>
+      </AppBar>
+
+      {/* Mobile Drawer Menu */}
+      <Drawer
+        anchor="left"
+        open={mobileMenuOpen}
+        onClose={() => setMobileMenuOpen(false)}
+        classes={{ paper: classes.drawerPaper }}
+      >
+        <Box style={{ padding: '16px 24px', borderBottom: '1px solid #e0e0e0' }}>
+          <Typography variant="h6" style={{ fontWeight: 700, color: '#0277BD' }}>
+            Menu
+          </Typography>
         </Box>
 
-        {/* Right Section: Auth & Dark Mode */}
-        <Box className={classes.rightSection}>
-          <IconButton
-            color="inherit"
-            onClick={onToggleDarkMode}
-            style={{ marginRight: 8 }}
+        <List>
+          <ListItem
+            button
+            className={`${classes.drawerItem} ${tabValue === 0 ? classes.activeDrawerItem : ''}`}
+            onClick={() => {
+              navigate('/routes');
+              setMobileMenuOpen(false);
+            }}
           >
-            {darkMode ? <Brightness7 /> : <Brightness4 />}
-          </IconButton>
+            <ListItemText primary=" Find Routes" />
+          </ListItem>
 
+          <ListItem
+            button
+            className={`${classes.drawerItem} ${tabValue === 1 ? classes.activeDrawerItem : ''}`}
+            onClick={() => {
+              navigate('/busmap');
+              setMobileMenuOpen(false);
+            }}
+          >
+            <ListItemText primary=" Bus Map" />
+          </ListItem>
+
+          <ListItem
+            button
+            className={`${classes.drawerItem} ${tabValue === 2 ? classes.activeDrawerItem : ''}`}
+            onClick={() => {
+              navigate('/cameras');
+              setMobileMenuOpen(false);
+            }}
+          >
+            <ListItemText primary=" Cameras Map" />
+          </ListItem>
+          <ListItem
+            button
+            className={`${classes.drawerItem} ${tabValue === 2 ? classes.activeDrawerItem : ''}`}
+            onClick={() => {
+              navigate('/sos');
+              setMobileMenuOpen(false);
+            }}
+          >
+            <ListItemText primary=" SOS Map" />
+          </ListItem>
+          {username && (
+            <ListItem
+              button
+              className={`${classes.drawerItem} ${tabValue === 3 ? classes.activeDrawerItem : ''}`}
+              onClick={() => {
+                navigate('/history');
+                setMobileMenuOpen(false);
+              }}
+            >
+              <ListItemText primary=" History" />
+            </ListItem>
+          )}
+        </List>
+
+        <Divider />
+
+        <Box style={{ padding: '16px 24px' }}>
           {username ? (
-            <>
-              <Box className={classes.userChip} onClick={handleMenuOpen}>
+            <Box>
+              <Typography variant="subtitle2" style={{ color: '#666', marginBottom: 8 }}>
+                Logged in as
+              </Typography>
+              <Box style={{ display: 'flex', alignItems: 'center', marginBottom: 12 }}>
                 <Avatar style={{ width: 32, height: 32, marginRight: 8, backgroundColor: '#FF8E53' }}>
                   {username[0].toUpperCase()}
                 </Avatar>
-                <Typography variant="subtitle2" style={{ fontWeight: 600 }}>
+                <Typography variant="body1" style={{ fontWeight: 600 }}>
                   {username}
                 </Typography>
               </Box>
-              <Menu
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
-                onClose={handleMenuClose}
-                getContentAnchorEl={null}
-                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-              >
-                <MenuItem onClick={() => { handleMenuClose(); navigate('/history'); }}>
-                  <History style={{ marginRight: 8, fontSize: 20 }} /> Lịch sử
-                </MenuItem>
-                <MenuItem onClick={handleLogout}>Logout</MenuItem>
-              </Menu>
-            </>
-          ) : (
-            <>
               <Button
-                color="inherit"
-                className={classes.authButton}
-                onClick={() => navigate('/login')}
-                style={{ marginRight: 8 }}
+                fullWidth
+                variant="outlined"
+                color="secondary"
+                onClick={() => {
+                  handleLogout();
+                  setMobileMenuOpen(false);
+                }}
+              >
+                Logout
+              </Button>
+            </Box>
+          ) : (
+            <Box>
+              <Button
+                fullWidth
+                variant="outlined"
+                color="primary"
+                style={{ marginBottom: 8 }}
+                onClick={() => {
+                  navigate('/login');
+                  setMobileMenuOpen(false);
+                }}
               >
                 Login
               </Button>
               <Button
+                fullWidth
                 variant="contained"
-                className={classes.authButton}
-                // style={{ backgroundColor: '#FF8E53', color: 'white' }}
-                onClick={() => navigate('/register')}
+                style={{ backgroundColor: '#FF8E53', color: 'white' }}
+                onClick={() => {
+                  navigate('/register');
+                  setMobileMenuOpen(false);
+                }}
               >
                 Sign Up
               </Button>
-            </>
+            </Box>
           )}
         </Box>
-      </Toolbar>
-    </AppBar>
-
-    {/* Mobile Drawer Menu */}
-    <Drawer
-      anchor="left"
-      open={mobileMenuOpen}
-      onClose={() => setMobileMenuOpen(false)}
-      classes={{ paper: classes.drawerPaper }}
-    >
-      <Box style={{ padding: '16px 24px', borderBottom: '1px solid #e0e0e0' }}>
-        <Typography variant="h6" style={{ fontWeight: 700, color: '#0277BD' }}>
-           Menu
-        </Typography>
-      </Box>
-      
-      <List>
-        <ListItem
-          button
-          className={`${classes.drawerItem} ${tabValue === 0 ? classes.activeDrawerItem : ''}`}
-          onClick={() => {
-            navigate('/routes');
-            setMobileMenuOpen(false);
-          }}
-        >
-          <ListItemText primary=" Find Routes" />
-        </ListItem>
-        
-        <ListItem
-          button
-          className={`${classes.drawerItem} ${tabValue === 1 ? classes.activeDrawerItem : ''}`}
-          onClick={() => {
-            navigate('/busmap');
-            setMobileMenuOpen(false);
-          }}
-        >
-          <ListItemText primary=" Bus Map" />
-        </ListItem>
-        
-        <ListItem
-          button
-          className={`${classes.drawerItem} ${tabValue === 2 ? classes.activeDrawerItem : ''}`}
-          onClick={() => {
-            navigate('/cameras');
-            setMobileMenuOpen(false);
-          }}
-        >
-          <ListItemText primary=" Cameras Map" />
-        </ListItem>
-        
-        {username && (
-          <ListItem
-            button
-            className={`${classes.drawerItem} ${tabValue === 3 ? classes.activeDrawerItem : ''}`}
-            onClick={() => {
-              navigate('/history');
-              setMobileMenuOpen(false);
-            }}
-          >
-            <ListItemText primary=" History" />
-          </ListItem>
-        )}
-      </List>
-      
-      <Divider />
-      
-      <Box style={{ padding: '16px 24px' }}>
-        {username ? (
-          <Box>
-            <Typography variant="subtitle2" style={{ color: '#666', marginBottom: 8 }}>
-              Logged in as
-            </Typography>
-            <Box style={{ display: 'flex', alignItems: 'center', marginBottom: 12 }}>
-              <Avatar style={{ width: 32, height: 32, marginRight: 8, backgroundColor: '#FF8E53' }}>
-                {username[0].toUpperCase()}
-              </Avatar>
-              <Typography variant="body1" style={{ fontWeight: 600 }}>
-                {username}
-              </Typography>
-            </Box>
-            <Button
-              fullWidth
-              variant="outlined"
-              color="secondary"
-              onClick={() => {
-                handleLogout();
-                setMobileMenuOpen(false);
-              }}
-            >
-              Logout
-            </Button>
-          </Box>
-        ) : (
-          <Box>
-            <Button
-              fullWidth
-              variant="outlined"
-              color="primary"
-              style={{ marginBottom: 8 }}
-              onClick={() => {
-                navigate('/login');
-                setMobileMenuOpen(false);
-              }}
-            >
-              Login
-            </Button>
-            <Button
-              fullWidth
-              variant="contained"
-              style={{ backgroundColor: '#FF8E53', color: 'white' }}
-              onClick={() => {
-                navigate('/register');
-                setMobileMenuOpen(false);
-              }}
-            >
-              Sign Up
-            </Button>
-          </Box>
-        )}
-      </Box>
-    </Drawer>
+      </Drawer>
     </>
   );
 }
