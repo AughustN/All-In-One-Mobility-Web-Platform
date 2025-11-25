@@ -1,0 +1,139 @@
+\chapter{Frontend Implementation Detail}
+\label{chap:features}
+
+The frontend is the core of the current codebase. It is a component-based application managed by React v17.0.2.
+
+\section{Visual Component Strategy (Material UI \& Leaflet)}
+
+The User Interface relies on \texttt{@material-ui/core} (v4) for layout and \texttt{react-leaflet} for geospatial rendering.
+
+\subsection{Map Rendering Engine (Maps.js)}
+
+The map is not a static image but an interactive Canvas/SVG layer managed by Leaflet.
+
+\textbf{Tile Layer Architecture:}
+\begin{itemize}
+    \item \textbf{Tile Source}: Fetches graphical map tiles from OpenStreetMap
+    \begin{itemize}
+        \item Default: \texttt{https://\{s\}.tile.openstreetmap.org/\{z\}/\{x\}/\{y\}.png}
+    \end{itemize}
+\end{itemize}
+
+\textbf{Vector Layers:}
+\begin{itemize}
+    \item To draw the routes, the app expects an array of \texttt{[lat, long]} pairs from the backend
+    \item These are passed to the \texttt{<Polyline />} component, which draws the colored path overlays
+    \begin{itemize}
+        \item Blue: Car routes
+        \item Green: Bike routes
+        \item Orange: Walking routes
+    \end{itemize}
+\end{itemize}
+
+\textbf{Camera Markers:}
+\begin{itemize}
+    \item Custom camera icons rendered using Leaflet markers
+    \item Click handler triggers popup with real-time camera image
+    \item Auto-zoom functionality when camera is selected
+\end{itemize}
+
+\section{Routing \& Navigation (App.js)}
+
+The application uses React Router v6 to create a seamless SPA experience. The browser does not reload when switching views; instead, the Virtual DOM is updated.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|l|l|p{6cm}|}
+\hline
+\textbf{Route Path} & \textbf{Component} & \textbf{Description} \\
+\hline
+\texttt{/} or \texttt{/routes} & RoutesPage & Primary dashboard for route planning \\
+\hline
+\texttt{/busmap} & BusMapPage & Specialized view for bus network \\
+\hline
+\texttt{/cameras} & CameraMap & Traffic camera viewing and search \\
+\hline
+\texttt{/history} & HistoryPage & User's saved locations and routes \\
+\hline
+\end{tabular}
+\caption{Application routing structure}
+\label{tab:routes}
+\end{table}
+
+\section{State Management}
+
+State is currently handled locally within components using React Hooks (\texttt{useState}, \texttt{useEffect}).
+
+\textbf{Input State:}
+\begin{itemize}
+    \item SearchBox captures user keystrokes
+    \item Debounced search (500ms) to optimize API calls
+\end{itemize}
+
+\textbf{Data State:}
+\begin{itemize}
+    \item \texttt{SearchBoxRoutes} holds the JSON object returned by the server
+    \item \texttt{filteredCameras} maintains filtered camera list
+    \item \texttt{selectedLocation} tracks current route start point
+    \item \texttt{selectPosition} tracks current route end point
+\end{itemize}
+
+\textbf{Persistence State:}
+\begin{itemize}
+    \item \texttt{recentHistory} stores user's saved locations and routes
+    \item Loaded from backend on component mount
+\end{itemize}
+
+\section{Component Hierarchy}
+
+The application follows a hierarchical component structure:
+
+{\footnotesize
+\begin{forest}
+  for tree={
+    font=\normalfont,
+    grow'=0,
+    child anchor=west,
+    parent anchor=south,
+    anchor=west,
+    calign=first,
+    edge path={
+      \noexpand\path [draw, \forestoption{edge}]
+      (!u.south west) +(5pt,0) |- node[fill,inner sep=0.8pt] {} (.child anchor)\forestoption{edge label};
+    },
+    before typesetting nodes={
+      if n=1
+        {insert before={[,phantom]}}
+        {}
+    },
+    fit=band,
+    s sep=1.5pt,
+    l sep=6pt,
+  }
+  [App.js
+    [Header\_v2.js (Nav)]
+    [Routes
+      [RoutesPage.js
+        [Maps.js
+          [MapLayerControl.js
+            [OSMVector.js]
+          ]
+          [Marker (Start)]
+          [Marker (End)]
+          [Polyline]
+        ]
+        [SearchBoxRoutes.js]
+        [History Panel]
+      ]
+      [CameraMap.js
+        [Maps.js]
+        [Search Bar]
+        [Camera Markers]
+        [CameraPopup.js]
+      ]
+      [BusMapPage.js]
+      [HistoryPage.js]
+    ]
+  ]
+\end{forest}
+}

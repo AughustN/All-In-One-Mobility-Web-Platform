@@ -1,0 +1,110 @@
+\chapter{Client-Server Interaction Flow}
+
+This section details the ``Handshake'' lifecycle when a user searches for a route.
+
+\section{Phase 1: Coordinate Resolution (Client-Side)}
+
+The coordinate resolution phase begins when a user enters a location query and concludes when the system presents selectable location results.
+
+\begin{tcolorbox}[colback=gray!10,colframe=black!50,arc=2mm,title=Coordinate Resolution Flow]
+\begin{verbatim}
+User Input: "Ben Thanh Market"
+    ↓
+RoutesPage.js calls api.searchLocation("Ben Thanh Market")
+    ↓
+api.js constructs POST request to /search
+    ↓
+Backend returns: [
+  {
+    "address": {"freeformAddress": "Ben Thanh Market, District 1"},
+    "position": {"lat": 10.7721, "lon": 106.6983}
+  }
+]
+    ↓
+React State updated: selectedLocation = {
+  name: "Ben Thanh Market",
+  lat: 10.7721,
+  lon: 106.6983
+}
+    ↓
+Dropdown displays search results
+\end{verbatim}
+\end{tcolorbox}
+
+\section{Phase 2: Route Calculation (The Critical Handshake)}
+
+The route calculation phase represents the core interaction between client and server, where the system processes geographic coordinates and returns navigable route information.
+
+\begin{tcolorbox}[colback=gray!10,colframe=black!50,arc=2mm,title=Route Calculation Flow]
+\begin{verbatim}
+User clicks "Find Route"
+    ↓
+RoutesPage.js calls api.calculateRoute(start, end, travelMode)
+    ↓
+api.js constructs POST request to /route
+    ↓
+Request: {
+  "start": {"lat": 10.7721, "lon": 106.6983},
+  "end": {"lat": 10.7621, "lon": 106.6869},
+  "travelMode": "car"
+}
+    ↓
+Backend processes:
+1. Validates coordinates are within HCM City
+2. Queries routing engine (TomTom API)
+3. Calculates distance and time
+4. Returns polyline coordinates
+    ↓
+Response: {
+  "coords": [...],
+  "distance_km": 12.5,
+  "duration_min": 25.3
+}
+    ↓
+React State updated: coords = [...]
+    ↓
+Maps.js receives coords
+    ↓
+React-Leaflet renders <Polyline /> with coordinates
+    ↓
+Blue line appears on map
+\end{verbatim}
+\end{tcolorbox}
+
+\section{Phase 3: Rendering (Desired State)}
+
+The rendering phase transforms backend data into visual components that provide users with comprehensive route information and interactive map elements.
+
+\begin{tcolorbox}[colback=gray!10,colframe=black!50,arc=2mm,title=Rendering Flow]
+\begin{verbatim}
+Backend returns JSON object
+    ↓
+RoutesPage receives data
+    ↓
+Passes to Maps.js component
+    ↓
+Maps.js renders:
+1. Start marker (green)
+2. End marker (red)
+3. Route polyline (blue)
+    ↓
+Simultaneously, SearchBoxRoutes displays:
+- Distance: 12.5 km
+- Duration: 25 minutes
+- Transport mode: Car
+    ↓
+User sees complete route visualization
+\end{verbatim}
+\end{tcolorbox}
+
+\subsection{Key Interaction Points}
+
+The client-server interaction involves several critical handshake points:
+
+\begin{itemize}
+    \item \textbf{Location Search:} User input is transformed into structured geographic data through the \texttt{/search} endpoint.
+    \item \textbf{Route Request:} Coordinate pairs and travel mode preferences are transmitted to the backend for processing.
+    \item \textbf{Data Validation:} The backend ensures coordinates fall within the HCM City geographic bounds before querying external routing services.
+    \item \textbf{Polyline Rendering:} The frontend receives coordinate arrays and delegates rendering to the React-Leaflet mapping library.
+    \item \textbf{State Synchronization:} React state management ensures UI components reflect the current route calculation results.
+\end{itemize}

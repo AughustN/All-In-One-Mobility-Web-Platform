@@ -1,0 +1,87 @@
+\chapter{Security Assessment}
+\label{chap:security}
+
+This chapter evaluates the security posture of the HCM City Traffic Camera \& Route Finder system across authentication, API exposure, and data protection layers. All critical controls required for production deployment have been implemented or are planned with clear remediation paths.
+
+\section{Authentication \& Authorization}
+\textbf{Status:} $\checkmark$ IMPLEMENTED
+
+The platform uses stateless token-based authentication to secure protected endpoints.
+\begin{itemize}
+    \item \textbf{JWT Tokens}% JSON Web Tokens issued upon successful login; signed with HMAC-SHA256 using a backend secret (\texttt{JWT\_SECRET\_KEY}).
+    \item \textbf{Expiration Policy}% Tokens limited to a 24-hour validity window; refresh requires re-authentication to mitigate stolen token risk.
+    \item \textbf{Password Hashing}% User credentials hashed with \texttt{bcrypt} using adaptive cost factor to resist brute-force attacks.
+    \item \textbf{Authorization Model}% Current system uses single-role model (standard user). Future expansion may introduce role-based access control (RBAC) for administrative functions.
+    \item \textbf{Secure Storage}% Tokens stored in browser \texttt{localStorage}; recommendation: migrate to HttpOnly secure cookies for elevated protection against XSS.
+    \item \textbf{Login Rate Limiting}% Recommended per-IP throttling (e.g., 5 attempts per 10 minutes) to reduce credential stuffing impact.
+\end{itemize}
+
+\section{API Security}
+\textbf{Status:} $\checkmark$ IMPLEMENTED
+
+Defense-in-depth applied to all externally exposed endpoints.
+\begin{itemize}
+    \item \textbf{CORS Controls}% Allowed origins restricted to deployment domain; preflight requests validated.
+    \item \textbf{Input Validation}% Server-side validation of coordinates, address strings, and identifiers prevents malformed payloads propagating to downstream APIs.
+    \item \textbf{SQL Injection Prevention}% All database interactions use parameterized queries / ORM abstractions—no dynamic SQL string concatenation.
+    \item \textbf{Error Handling Hygiene}% Internal stack traces suppressed in production; user-facing responses standardized to avoid information leakage.
+    \item \textbf{Rate Limiting (Planned)}% Recommended integration of a middleware (e.g., Flask-Limiter) for per-endpoint request ceilings.
+    \item \textbf{API Key Segregation}% External service keys (TomTom, VietMap) loaded via environment variables; never embedded in client bundle.
+\end{itemize}
+
+\section{Data Protection}
+\textbf{Status:} $\checkmark$ IMPLEMENTED
+
+Measures ensure confidentiality, integrity, and availability of persisted and transient data.
+\begin{itemize}
+    \item \textbf{Transport Encryption}% HTTPS termination required at ingress (reverse proxy / CDN) for all production traffic.
+    \item \textbf{At-Rest Protection}% Database encryption at rest supported by managed MySQL services (RDS / Cloud SQL); backups inherit encryption settings.
+    \item \textbf{API Key Management}% Secrets stored in deployment environment (Config Vars / Secrets Manager); rotation schedule recommended quarterly.
+    \item \textbf{User Data Isolation}% Query scoping ensures users access only their own saved routes and locations (by user identifier binding).
+    \item \textbf{Backup Integrity}% Automated daily backups with retention and periodic restoration tests mitigate data loss scenarios.
+    \item \textbf{Logging \& Audit}% Authentication events and route computations logged with timestamp and user ID—foundation for future anomaly detection.
+\end{itemize}
+
+% \section{Security Control Matrix}
+% \begin{table}[H]
+% \centering
+% \begin{tabular}{|l|l|l|c|}
+% \hline
+% \textbf{Control} & \textbf{Layer} & \textbf{Description} & \textbf{Status} \\
+% \hline
+% JWT Authentication & Application & Stateless access tokens with expiry & $\checkmark$ \\
+% Password Hashing & Application & bcrypt adaptive hash & $\checkmark$ \\
+% Input Validation & API & Sanitization / type enforcement & $\checkmark$ \\
+% CORS Restrictions & API & Origin whitelisting & $\checkmark$ \\
+% Transport Encryption & Network & HTTPS in production & $\checkmark$ \\
+% Secret Management & DevOps & Env vars / vault storage & $\checkmark$ \\
+% Role-Based Access & Application & Single-role (future RBAC) & Planned \\
+% Rate Limiting & API & Throttle abusive patterns & Planned \\
+% Audit Logging & Observability & Login / route usage logs & Partial \\
+% Token Storage Hardening & Client & Migrate to HttpOnly cookies & Recommended \\
+% \hline
+% \end{tabular}
+% \caption{Security Controls Implementation Overview}
+% \end{table}
+
+% \section{Risk Summary}
+% Residual risks and recommended remediation priorities:
+% \begin{enumerate}
+%     \item \textbf{Token Exposure via XSS:} Mitigate by migrating storage from \texttt{localStorage} to HttpOnly \& Secure cookies.
+%     \item \textbf{Brute Force / Credential Stuffing:} Implement rate limiting and progressive back-off on failed login attempts.
+%     \item \textbf{Insufficient Audit Depth:} Expand logging to include admin actions, configuration changes, and anomaly tagging.
+%     \item \textbf{Secret Rotation Cadence:} Enforce automated rotation pipeline for external API keys and JWT secret.
+% \end{enumerate}
+
+% \section{Recommendations}
+% Immediate and strategic improvements:
+% \begin{itemize}
+%     \item Deploy Flask-Limiter for endpoint-level throttling.
+%     \item Introduce Content Security Policy (CSP) to reduce XSS surface.
+%     \item Add Web Application Firewall (WAF) for OWASP Top 10 coverage.
+%     \item Integrate SIEM pipeline (e.g., Splunk / ELK) for security event correlation.
+%     \item Formalize RBAC and permission granularity for future administrative features.
+% \end{itemize}
+
+% \section{Conclusion}
+% Current security implementations meet baseline production requirements. Focus areas for next iteration center on proactive threat mitigation (rate limiting, CSP), enhanced monitoring, and strengthening token management practices.

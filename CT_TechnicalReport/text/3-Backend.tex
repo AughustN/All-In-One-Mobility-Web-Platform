@@ -1,0 +1,219 @@
+\chapter{Backend API Specification \& Logic}
+\label{chap:backend}
+
+The frontend is coded to expect a specific "contract" (JSON Structure) from the backend. The backend implementation must adhere to these requirements to prevent frontend crashes.
+
+\section{Service Endpoints}
+
+The \texttt{src/api.js} file communicates with the following endpoints:
+
+\subsection{Route Calculation}
+
+\textbf{Function:} \texttt{calculateRoute(start, end, travelMode)}\\
+\textbf{HTTP Method:} POST\\
+\textbf{Route:} \texttt{/route}
+
+\textbf{Request Payload:}
+\begin{tcolorbox}[colback=gray!10,colframe=black!50,arc=2mm]
+\begin{verbatim}
+{
+  "start": {
+    "lat": 10.8231,
+    "lon": 106.6297
+  },
+  "end": {
+    "lat": 10.7621,
+    "lon": 106.6869
+  },
+  "travelMode": "car"
+}
+\end{verbatim}
+\end{tcolorbox}
+
+\textbf{Expected Response:}
+\begin{tcolorbox}[colback=gray!10,colframe=black!50,arc=2mm]
+\begin{verbatim}
+{
+  "coords": [
+    {"lat": 10.8231, "lon": 106.6297},
+    {"lat": 10.8200, "lon": 106.6350},
+    {"lat": 10.7621, "lon": 106.6869}
+  ],
+  "distance_km": 12.5,
+  "duration_min": 25.3
+}
+\end{verbatim}
+\end{tcolorbox}
+
+\textbf{Critical Fields:}
+\begin{itemize}
+    \item \texttt{coords}: Array of coordinate pairs for polyline rendering
+    \item \texttt{distance\_km}: Total distance in kilometers
+    \item \texttt{duration\_min}: Estimated travel time in minutes
+\end{itemize}
+
+\subsection{Location Search}
+
+\textbf{Function:} \texttt{searchLocation(address)}\\
+\textbf{HTTP Method:} POST\\
+\textbf{Route:} \texttt{/search}
+
+\textbf{Request Payload:}
+\begin{tcolorbox}[colback=gray!10,colframe=black!50,arc=2mm]
+\begin{verbatim}
+{
+  "address": "Ben Thanh Market"
+}
+\end{verbatim}
+\end{tcolorbox}
+
+\textbf{Expected Response:}
+\begin{tcolorbox}[colback=gray!10,colframe=black!50,arc=2mm]
+\begin{verbatim}
+[
+  {
+    "address": {
+      "freeformAddress": "Ben Thanh Market, District 1, HCMC"
+    },
+    "position": {
+      "lat": 10.7721,
+      "lon": 106.6983
+    },
+    "poi": {
+      "name": "Ben Thanh Market"
+    }
+  }
+]
+\end{verbatim}
+\end{tcolorbox}
+
+\subsection{Camera Images}
+
+\textbf{Function:} \texttt{fetchCameraImages(cameraId)}\\
+\textbf{HTTP Method:} GET\\
+\textbf{Route:} \texttt{/api/camera/\{cameraId\}/images}
+
+\textbf{Expected Response:}
+\begin{tcolorbox}[colback=gray!10,colframe=black!50,arc=2mm]
+\begin{verbatim}
+{
+  "camera_id": "5deb576d1dc17d7c5515acf8",
+  "count": 1,
+  "images": [
+    {
+      "url": "/api/camera/5deb576d1dc17d7c5515acf8/proxy?t=...",
+      "timestamp": 1763645800465
+    }
+  ]
+}
+\end{verbatim}
+\end{tcolorbox}
+
+\subsection{User Authentication}
+
+\textbf{Function:} \texttt{login(username, password)}\\
+\textbf{HTTP Method:} POST\\
+\textbf{Route:} \texttt{/api/auth/login}
+
+\textbf{Request Payload:}
+\begin{tcolorbox}[colback=gray!10,colframe=black!50,arc=2mm]
+\begin{verbatim}
+{
+  "username": "user@example.com",
+  "password": "password123"
+}
+\end{verbatim}
+\end{tcolorbox}
+
+\textbf{Expected Response:}
+\begin{tcolorbox}[colback=gray!10,colframe=black!50,arc=2mm]
+\begin{verbatim}
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "username": "user@example.com"
+}
+\end{verbatim}
+\end{tcolorbox}
+
+\subsection{Save Location}
+
+\textbf{Function:} \texttt{saveLocation(name, lat, lng)}\\
+\textbf{HTTP Method:} POST\\
+\textbf{Route:} \texttt{/api/user/locations}
+
+\textbf{Request Payload:}
+\begin{tcolorbox}[colback=gray!10,colframe=black!50,arc=2mm]
+\begin{verbatim}
+{
+  "name": "Ben Thanh Market",
+  "lat": 10.7721,
+  "lng": 106.6983
+}
+\end{verbatim}
+\end{tcolorbox}
+
+\subsection{Get Saved Locations}
+
+\textbf{Function:} \texttt{getSavedLocations()}\\
+\textbf{HTTP Method:} GET\\
+\textbf{Route:} \texttt{/api/user/locations}
+
+\textbf{Expected Response:}
+\begin{tcolorbox}[colback=gray!10,colframe=black!50,arc=2mm]
+\begin{verbatim}
+[
+  {
+    "id": 1,
+    "name": "Ben Thanh Market",
+    "lat": 10.7721,
+    "lng": 106.6983,
+    "timestamp": "2025-11-21 10:30:00"
+  }
+]
+\end{verbatim}
+\end{tcolorbox}
+
+\section{Algorithmic Requirements}
+
+The backend is not just a database retrieval tool; it is a computational engine.
+
+\subsection{Multi-Modal Routing Algorithm}
+
+The routing engine must support three transport modes:
+\begin{enumerate}
+    \item \textbf{Car}: Uses road network with traffic consideration
+    \item \textbf{Bike}: Uses bike lanes and roads
+    \item \textbf{Walking}: Uses pedestrian paths and roads
+\end{enumerate}
+
+\textbf{Graph Construction:}
+\begin{itemize}
+    \item Nodes: Intersections, landmarks, transit stops
+    \item Edges: Roads, bike lanes, pedestrian paths
+    \item Edge Weights: Distance + Time + Safety factors
+\end{itemize}
+
+\textbf{Scoring Function:}
+
+The backend returns a score for each route. The formula is:
+
+\[
+S = (w_1 \cdot T_{norm}) + (w_2 \cdot D_{norm}) + (w_3 \cdot S_{norm})
+\]
+
+Where:
+\begin{itemize}
+    \item $T$ = Travel Time (normalized)
+    \item $D$ = Distance (normalized)
+    \item $S$ = Safety Score (normalized)
+    \item $w_1, w_2, w_3$ = Weights (configurable)
+\end{itemize}
+
+\subsection{Safety Analysis}
+
+The system integrates traffic camera data to assess route safety:
+\begin{itemize}
+    \item \textbf{Camera Coverage}: Routes passing through camera-monitored areas score higher
+    \item \textbf{Congestion Detection}: Real-time traffic data from cameras
+    \item \textbf{Incident Reporting}: User-reported incidents on routes
+\end{itemize}
