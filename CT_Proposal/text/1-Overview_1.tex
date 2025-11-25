@@ -1,0 +1,234 @@
+\chapter{Overview}
+\label{chap:overview}
+
+\section{Problem Definition}
+Travelers, from leisure visitors to business professionals, face significant and costly friction in
+planning and executing urban itineraries, which stems from a core problem of lacking nuances and fragmented data.
+Critical decision-making data on bus transit schedules, live traffic, and
+operating hours exists in disconnected silos. 
+
+This forces users to manually compare multiple apps, leading to:
+\begin{itemize}
+    \item Inefficient planning under complex constraints (time, budget, transfers).
+    \item Suboptimal in-the-moment transport choices, failing to balance cost, ETA.
+    \item Reactive, unactionable responses to congestion and crowding.
+\end{itemize}
+\section{Proposed Solution}
+\textbf{A web platform} separating pre-trip routing from in-trip recommendations, with a safety/alerting layer.
+\begin{itemize}
+    \item Routing (pre-trip): generates one itinerary (Shortest) under user constraints.
+    \item Recommender (in-trip): live ETA/cost bus options with confidence scores in a kanban-style UI.
+    \item Safety $\&$ alerts: context-aware warnings on congested segments.
+\end{itemize}
+\textbf{In-scope transport modes:} bus, taxi /motorbike, walking. Trains/flights are out-of-scope for MVP.
+
+\subsection{PoC Objectives}
+Success is defined by achieving statistically significant signals against predefined goals: 
+\begin{itemize}
+    \item \textbf{Feasibility:} $\geq80\%$ of all generated test itineraries must successfully satisfy all hard constraints (time windows, budgets, mobility limits).
+    \item \textbf{Adoption:} $\geq60\%$ user acceptance of the system’s top-3 generated daily plans.
+    \item \textbf{In-Trip Value:} Achieve an on-time arrival rate of $\geq80\%$ and a missed-connection rate of $\leq5\%$.
+    \item \textbf{Safety Value:} Deliver alert precision of $\geq80\%$ and limit user exposure to congested segments to $\leq15$ minutes per day.
+    \item \textbf{Qualitative:} Secure an average CSAT score of $\geq4.2/5$ on both planning and in-trip guidance
+\end{itemize}
+
+
+\subsection{Constraints}
+\textbf{Geography (MVP):} 1 city only (Ho Chi Minh City).
+
+\textbf{API availability (core recs endpoint):} $\geq$ 99.0\%.
+
+\textbf{Latency:} p95 recommendation $\leq 1.5 s$ (aligned with metric); p50 $\leq 400 ms$.
+\subsection{Success Metrics}
+\paragraph{\textbf{Planning (Before Trip)}}
+\begin{itemize}
+	\item \textbf{Feasibility:} Pass if $\ge 90\%$ of generated itineraries satisfy all hard constraints (time windows, budgets, mobility limits).\\
+	\[\text{Feasibility\%} = \frac{\text{hard constraints satisfied}}{\text{hard constraints applicable}} \times 100\]
+	\item \textbf{User Acceptance of Plans:} Pass if $\ge 60\%$ of users select one of the top-3 generated plans.
+\end{itemize}
+
+\paragraph{\textbf{In-Trip Recommendations (Public Transport)}}
+\begin{itemize}
+	\item \textbf{On-Time Arrival Rate:} Pass if $\ge 80\%$. For trip leg $j$ with scheduled $\mathrm{ETA}_j$ and actual arrival $A_j$:
+	\[\text{OnTime}_j = \begin{cases}
+		1, & |A_j - \mathrm{ETA}_j| \le 10\ \text{min} \\
+		0, & \text{otherwise}
+	\end{cases}\qquad
+		\text{OnTime Rate\%} = \frac{\sum_j \text{OnTime}_j}{\text{number of requests}} \times 100\]
+	\item \textbf{Missed-Connection Rate:} Pass if $\le 5\%$.
+	\item \textbf{Cost Prediction Error:} Pass if $\le 12\%$ (average relative error between predicted and actual).\\
+	\[\text{Error}_i = \frac{\big|\mathrm{ActualCost}_i - \max(\mathrm{PredCost}_i)\big|}{\max(\mathrm{PredCost}_i)} \times 100\]
+\end{itemize}
+
+\paragraph{\textbf{Safety \& Congestion}}
+\begin{itemize}
+	\item \textbf{Alert Precision:} Pass if $\ge 80\%$ (alerts lead to measurable time/congestion benefit).
+	\item \textbf{Exposure to Busy Segments:} Pass if $\le 15$ min/day per user.
+	\item \textbf{User Safety Feedback (Qualitative):} Pass if average CSAT $\ge 4.2/5$.
+\end{itemize}
+
+\paragraph{\textbf{Experience \& Quality}}
+\begin{itemize}
+	\item \textbf{App Stability (Crash-Free):} Pass if $\ge 99.5\%$ of sessions are crash-free.
+	\item \textbf{Recommendation Latency (p95):} Pass if $\le 1.5$ s.
+\end{itemize}
+\section{Stakeholders}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.8cm}|>{\raggedright\arraybackslash}p{6.2cm}|>{\raggedright\arraybackslash}X|}
+\hline
+	\textbf{Stakeholder} & \textbf{Role / Interest} & \textbf{Impact / Influence} \\
+\hline
+Urban Commuters \& Travelers & End users who will use the platform to plan, book, and manage trips. & High --- their adoption, feedback, and satisfaction determine project success. \\
+\hline
+Project Team / Developers & Responsible for building, testing, and maintaining the platform. & High --- directly control execution quality and timeline. \\
+\hline
+UX/UI Designers & Ensure intuitive and efficient user experience across pre-trip and in-trip modules. & Medium to High --- influence user satisfaction and adoption. \\
+\hline
+Data Engineers / Integration Specialists & Handle APIs for transit, ride-hail, and e-bike data integration. & High --- ensure reliable data flow and accuracy. \\
+\hline
+Product Manager / Project Lead & Oversees PoC and production phases; ensures milestones and metrics are met. & High --- strategic decision-maker for progress and quality control. \\
+\hline
+\end{tabularx}
+
+
+\section{Decomposition}
+
+% Local styles for the overview tree
+\forestset{
+	overviewnode/.style={text width=4.2cm, font=\small},
+	mini/.style={text width=3.6cm, font=\footnotesize}
+}
+
+% Part 1 of 2: user-facing services (logical first)
+\begin{figure}[H]
+	\centering
+	\resizebox{\linewidth}{!}{%
+	\begin{forest}
+		for tree={grow'=east, draw, rounded corners,
+			node options={align=left, inner xsep=5pt, inner ysep=4pt},
+			text width=4.4cm, s sep=7mm, l sep=9mm,
+			anchor=north, edge={-stealth, line width=0.6pt}, fill=white}
+		[Web Platform,
+			[Routing, overviewnode,
+				[Algorithm, overviewnode,
+					[{Multi-modal pathfinding (walk→bus→metro→walk transitions)}, mini]
+					[{Cost function (time + fare + comfort + congestion weighting)}, mini]
+				]
+				[OSM Integration, overviewnode,
+					[{Overpass API access}, mini]
+					[{Caching layer (tiles/routes)}, mini]
+					[{Fallback for rate limits / offline}, mini]
+				]
+				[Performance Testing, overviewnode,
+					[{Unit tests (heuristics, path reconstruction)}, mini]
+					[{Integration tests (mock map data)}, mini]
+				]
+			]
+			[Suggestion Engine, overviewnode,
+				[Data Prep, overviewnode,
+					[{Scraping / ingestion}, mini]
+					[{Cleaning / normalization}, mini]
+				]
+				[Preference Modeling, overviewnode,
+					[{User constraints (stations, modes)}, mini]
+					[{Weights / personalization}, mini]
+				]
+				[Ranking Logic, overviewnode,
+					[{Scoring (weighted normalized metrics)}, mini]
+					[{Sorting / top-K selection}, mini]
+				]
+			]
+			[Interface / UI Layer, overviewnode,
+				[{Front-end framework}, mini]
+				[{Kanban-style UI (Top-3 modes)}, mini]
+				[{Localization + accessibility}, mini]
+				[{API integration}, mini]
+			]
+		]
+	\end{forest}}
+	\caption{System decomposition overview — user-facing services (part 1 of 2)}
+	\label{fig:overview-decomposition}
+\end{figure}
+
+% Part 2 of 2: data and platform foundations; continues numbering
+\begin{figure}[H]
+	\centering
+	\ContinuedFloat
+	\resizebox{\linewidth}{!}{%
+	\begin{forest}
+		for tree={grow'=east, draw, rounded corners,
+			node options={align=left, inner xsep=5pt, inner ysep=4pt},
+			text width=4.4cm, s sep=7mm, l sep=9mm,
+			anchor=north, edge={-stealth, line width=0.6pt}, fill=white}
+		[Web Platform ,
+			[Safety / Monitoring, overviewnode,
+				[Detection Pipeline, overviewnode,
+					[{Video ingestion}, mini]
+					[{Model architecture (e.g., GNN + CV)}, mini]
+					[{Training / evaluation}, mini]
+				]
+				[Alerts, overviewnode,
+					[{Rule engine}, mini]
+					[{Latency / threshold configs}, mini]
+				]
+			]
+			[Data Collection, overviewnode,
+				[{Public feeds / APIs}, mini]
+				[{Scraping (HTML/CSV)}, mini]
+				[{Normalization + validation}, mini]
+			]
+			[Database, overviewnode,
+				[Entities, overviewnode,
+					[{Transit}, mini]
+					[{Fare}, mini]
+					[{User}, mini]
+				]
+				[{Indexing / performance}, mini]
+				[{Backup / retention}, mini]
+			]
+			[Backend \& Infrastructure, overviewnode,
+				[{API Gateway}, mini]
+				[{Service orchestration}, mini]
+				[{Security / auth}, mini]
+				[{Observability (logs/metrics)}, mini]
+			]
+		]
+	\end{forest}}
+	\caption{System decomposition overview — data and platform foundations (part 2 of 2)}
+\end{figure}
+
+\section{Team Roles Overview}
+Summarize responsibilities for each core role:
+\begin{itemize}
+	\item Lead: coordination, scope control, cross-area decisions, quality gates.
+	\item Routing: algorithms, OSM/data integration, performance validation.
+	\item Recommendation: data prep, preference modeling, ranking logic and evaluation.
+	\item Safety/Monitoring: detection pipeline, alert rules, privacy and latency safeguards.
+	\item Data/Database: ingestion pipelines, schemas, retention/backup, performance tuning.
+	\item UI/UX \& Integration: front-end flows, accessibility/localization, API wiring, user feedback collection.
+\end{itemize}
+
+\vspace{0.5em}
+\noindent\textbf{Detailed Assignment Table}
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.15}
+	\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}p{4.4cm}|>{\raggedright\arraybackslash}X|}
+		\hline
+			\textbf{Role} & \textbf{Member} & \textbf{Key Responsibility} \\
+		\hline
+		Routing & \VN{Nguyễn Thành Đạt (ID: 24127021)} & Algorithm design, TomTom API integration, performance tuning \\
+        \hline
+		Recommendation System & \VN{Hoàng Trung Hiếu (ID: 24127041)} & Suggestion logic, ranking metrics, feedback-driven tuning \\
+		\hline
+        Lead \& Congestion & \VN{Lương Hưng Phát (ID: 24127298)} & Real-time congestion detection, alert rule calibration \\
+		\hline
+        Data Collection & \VN{Nguyễn Minh Khoa (ID: 24127188)} & Scrape real-time feeds, normalization, validation checks \\
+		\hline
+		Database & \VN{Nguyễn Anh Khôi (ID: 24127430)} & Schema design, indexing, backup \& retention strategy \\
+		\hline
+		UI/UX \& Integration & \VN{Nguyễn Tấn Hiệu (ID: 24127373)} & Frontend implementation, cross-module API integration \\
+		\hline
+	\end{tabularx}
+		\caption{Team roles and ownership}\label{tab:team-roles}
+\end{table}

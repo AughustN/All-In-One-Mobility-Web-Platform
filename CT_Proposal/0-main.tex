@@ -1,0 +1,274 @@
+% Contact Nuno Laranjeiro cnl@dei.uc.pt for any feedback, suggestions, or corrections regarding this template.
+
+% ************************************ CONFIGURATION *****************************************
+% Fill in _all_ items in this configuration section with your Thesis details.                                                                      
+
+% If you are writing a Phd Thesis, change *msc* to *phd* in the following line
+\def\thesistype{msc}                                                     
+
+% docLanguage is the main language of the document. Possible options are: en,pt
+\def\docLanguage{en} 
+
+\def\titleEN{Summoner's Rift - Transportation Web Application}
+%\def\subtitleEN{<Subtitle (if any)>}
+
+\def\titlePT{TÍTULO DA PROPOSTA DE PROJETO}
+%\def\subtitlePT{<Subtitulo (se existir)>}
+
+% MSc Theses - cover page
+\def\descMScEN{Project proposal to the CISUC Internal Call for Projects 2025-26.}
+
+\def\descMScPT{Proposta de projeto para a chamada interna para projetos do CISUC 2025-26.}
+
+% PhD Theses - cover page
+\def\descPhDEN{Project proposal to the CISUC Internal Call for Projects 2025-26.}
+
+\def\descPhDPT{Proposta de projeto para a chamada interna para projetos do CISUC 2025-26.}
+
+
+% MSc Theses - title Page
+\def\titlePageDescMScEN{Project proposal to the CISUC Internal Call for Projects 2025-26.}
+\def\titlePageDescMScPT{Proposta de projeto para a chamada interna para projetos do CISUC 2025-26.}
+
+
+% PhD Theses - title Page
+\def\titlePageDescPhdEN{Project proposal to the CISUC Internal Call for Projects 2025-26.}
+\def\titlePageDescMScPT{Proposta de projeto para a chamada interna para projetos do CISUC 2025-26.}
+
+
+\def\author{GROUP 2}
+\def\dateEN{November 2025}
+\def\datePT{Novembro 2025}
+% ********************************** END CONFIGURATION ***************************************
+
+
+
+\documentclass[twoside, 11pt, a4paper,openany]{book}
+%\documentclass[twoside, 12pt, a4paper]{book}
+\raggedbottom
+
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=3.5cm,right=2.5cm,headsep=12pt]{geometry}
+\usepackage[final]{pdfpages}
+
+\usepackage[absolute,overlay]{textpos}
+
+
+\usepackage{ifthen}
+
+% Font encodings: T1 for Western European, T5 for Vietnamese names
+\usepackage[T1,T5]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\ifthenelse{\equal{\docLanguage}{en}}
+{
+\usepackage[english]{babel}
+}
+{
+\usepackage[portuguese]{babel}
+}
+
+\usepackage{graphicx}
+\usepackage{glossaries}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{mathpazo}
+\usepackage{xcolor, soulutf8, afterpage}  
+\usepackage{emptypage}
+\usepackage{setspace}
+% Helper macro to typeset Vietnamese names while keeping main language English
+\newcommand{\VN}[1]{{\fontencoding{T5}\selectfont #1}}
+
+
+% Strict float placement (for figures we want exactly here)
+\usepackage{float}
+
+\usepackage{forest}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+
+\usetikzlibrary{trees}
+
+\usepackage[disable]{todonotes}
+
+\ifthenelse{\equal{\thesistype}{msc}}
+{
+
+	%Cor do fundo da capa, lombada e contracapa: C 17%, M 27%, Y 45%, K 4% (~ Pantone 7753C)
+	\definecolor{cover-background}{cmyk}{0.17 0.27 0.45 0.04}
+	%Cor das marcas e Tipografia: C 44%, M 50%, Y 68%, K 45% (~ Pantone 448C)
+	\definecolor{cover-foreground}{cmyk}{0.44 0.50 0.68 0.45}
+}
+{
+	%Cor do fundo da capa, lombada e contracapa: C 17%, M 26%, Y 67%, K 4% (~ Pantone 480C)
+	\definecolor{cover-background}{cmyk}{0.17 0.26 0.67 0.04}
+	%Cor das marcas e Tipografia: C 44%, M 50%, Y 68%, K 45% (~ Pantone 448C)
+	\definecolor{cover-foreground}{cmyk}{0.44 0.50 0.68 0.45}
+}
+
+
+
+\usepackage[page,titletoc,title]{appendix} 
+
+\usepackage{subcaption}
+
+\usepackage[sort&compress,square]{natbib}
+\renewcommand{\cite}[1]{\citep{#1}}
+
+\usepackage[nottoc,notlot,notlof]{tocbibind}
+
+\usepackage{notoccite}
+\usepackage{titlesec}
+
+%Remove all paragraph indentation
+\setlength\parindent{0pt}
+
+
+% --------------- headers and footers control ----------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% Increase header height to avoid fancyhdr warning
+\setlength{\headheight}{14pt}
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
+\fancyhead[LE]{\ifnum \value{chapter}>0\sl{\nouppercase{\chaptertitlename~\thechapter}}\fi}
+\fancyhead[RE]{}
+\fancyhead[LO]{}
+\fancyhead[RO]{\sl{\nouppercase{\leftmark}}}
+
+%\fancyhead[RE,LO]{\rightmark}
+\renewcommand{\headrulewidth}{0.4pt}
+%---------------------------------------------------------------------
+
+\makenoidxglossaries
+\usepackage[hidelinks,bookmarks=true]{hyperref}
+
+
+\hypersetup{
+    pdftitle={\titleEN},
+    pdfauthor={\author}
+}
+
+\input{frontmatter/7-acronyms}
+
+\usepackage{url}
+\usepackage[raggedrightboxes]{ragged2e}
+\begin{document}
+\setlength{\parskip}{0.7em}
+
+%---------------------------------- FRONTMATTER ---------------------------------- 
+\frontmatter
+%comentei e depois voltei a descomentar
+\input{frontmatter/1-coverpage}
+\cleardoublepage
+
+%\ifthenelse{\equal{\docLanguage}{en}}
+%{ 
+%	\input{frontmatter/2-titlepage}
+%	\cleardoublepage	
+%	\def\docLanguage{pt}
+%	\input{frontmatter/2-titlepage}
+%	\cleardoublepage
+%	\def\docLanguage{en}
+%}
+%{
+%	\input{frontmatter/2-titlepage}
+%	\cleardoublepage	
+%	%\def\docLanguage{en}
+%	%\input{frontmatter/2-titlepage}
+%	%\cleardoublepage
+%	%\def\docLanguage{pt}
+%}
+
+
+%\ifthenelse{\equal{\thesistype}{phd}}
+%{ 
+%	\input{frontmatter/3-funding}
+%	\cleardoublepage
+%}{}
+
+
+%\input{frontmatter/4-acknowledgements}
+%\cleardoublepage
+
+\ifthenelse{\equal{\docLanguage}{en}}
+{
+	\input{frontmatter/5-abstract-EN.tex}
+	\cleardoublepage
+}
+{%else
+	\input{frontmatter/5-abstract-EN.tex}
+	\cleardoublepage
+}
+
+%\ifthenelse{\equal{\thesistype}{phd}}
+%{
+%	\input{frontmatter/6-publications.tex}
+%	\cleardoublepage
+%}{}
+%-----------------------------------------------------------------------------------
+
+% Set paragraph spacing to use in ToC and other lists
+\setlength{\parskip}{0em}
+
+% Make sure acronyms don't appear in the ToC
+\glsunsetall
+\tableofcontents
+\glsresetall
+
+%\cleardoublepage
+
+
+% List of acronyms
+\glsnogroupskiptrue
+
+\ifthenelse{\equal{\docLanguage}{en}}
+{
+	\def\acronymsTitle{Acronyms}
+}
+{
+	\def\acronymsTitle{Acrónimos}
+}
+\printnoidxglossary[type=\acronymtype,style=list,title={\acronymsTitle}, nonumberlist]
+
+\cleardoublepage
+
+%comentei (catarina
+%\listoffigures
+%\cleardoublepage
+
+%\listoftables
+%\cleardoublepage
+
+%------------------------------
+\mainmatter
+\setlength{\parskip}{0.7em}
+% New chapter structure
+\input{text/1-Overview_1}
+\input{text/2-Features_1}
+% Legacy chapters (commented out)
+%\input{text/1-Excellence}
+%\input{text/2-Impact}
+%\input{text/3-Implementation}
+%...
+
+%\bibliographystyle{plainnat} 
+%\bibliographystyle{apalike}
+
+\ifthenelse{\equal{\docLanguage}{en}}
+{
+	\renewcommand{\bibname}{References}
+}
+{
+	\renewcommand{\bibname}{Referências}
+}
+
+
+\bibliographystyle{apalike}
+%\bibliography{references}
+
+
+%------------------------------
+
+
+\end{document}
+%Document end

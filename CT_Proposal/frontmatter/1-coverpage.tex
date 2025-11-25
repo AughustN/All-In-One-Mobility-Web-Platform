@@ -1,0 +1,99 @@
+\newgeometry{left=2.5cm,right=2.5cm, bottom=4cm, top=5cm}
+
+\thispagestyle{empty}
+%\pagecolor{cover-background}\afterpage{\nopagecolor}
+
+\color{cover-foreground}
+
+%\mbox{}
+%vspace{0.5cm}
+
+\begin{center}
+
+\begin{figure}[h!]
+	\begin{center}
+	%\includegraphics[height=5cm]{frontmatter/logo-uc-gold.pdf}	
+    \includegraphics[width=0.5\textwidth]{frontmatter/HCMUS.png}	
+	\end{center}
+\end{figure}
+
+
+
+
+\vspace{2cm}
+
+
+\Large
+\author
+
+\vspace{1cm}
+
+\LARGE
+
+\ifthenelse{\equal{\docLanguage}{en}}
+{\textsc{\textbf{\titleEN}}}
+{\textsc{\textbf{\titlePT}}}
+
+
+
+\Large
+\vspace{-0.1cm}
+
+\ifthenelse{\equal{\docLanguage}{en}}
+%comentei Catarina
+%{\textsc{\subtitleEN}}
+%{\textsc{\subtitlePT}}
+
+
+
+
+%\vspace{3cm}
+
+
+\begin{textblock*}{16cm}(2.5cm,19.5cm) % {block width} (coords) 
+\color{cover-foreground}
+
+
+
+\normalsize
+\begin{spacing}{1.1}
+
+
+%\textbf{
+
+\ifthenelse{\equal{\docLanguage}{en}}
+{
+	\ifthenelse{\equal{\thesistype}{phd}}
+	{\textbf{\descPhDEN}}
+	{\textbf{Computational Thinking Project Proposal}}
+}
+{
+	\ifthenelse{\equal{\thesistype}{phd}}
+	{\textbf{\descPhDPT}}
+	{\textbf{\descMScPT}}
+}
+
+
+%}
+
+\end{spacing}
+
+\end{textblock*}
+
+
+
+
+%\vspace{1.5cm}
+
+\large
+
+\vspace*{\fill}
+\color{cover-foreground}
+\ifthenelse{\equal{\docLanguage}{en}}
+{\dateEN}
+{\datePT}
+
+\end{center}
+
+\restoregeometry
+\color{black}

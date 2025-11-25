@@ -1,0 +1,1070 @@
+\chapter{Features}
+\label{chap:features}
+
+% Forest styles for architecture snippets used in this chapter
+\forestset{
+  default preamble={
+    for tree={
+    draw,
+    rounded corners,
+    node options={align=left, inner xsep=5pt, inner ysep=4pt},
+    s sep=5mm,
+      l sep=7mm,
+      anchor=north,
+      edge={-stealth, line width=0.6pt},
+      fill=white
+    }
+  },
+  smallnode/.style={
+    text width=3.0cm,
+    font=\small
+  },
+  compact/.style={
+    text width=2.6cm,
+    font=\footnotesize
+  }
+}
+\section{Routing}
+\subsection{Introduction}
+The Routing Module constitutes the foundational architecture of the "Transportation Platform." Its primary objective is to resolve a critical inefficiency within Ho Chi Minh City's transit ecosystem: the current lack of a unified location search and multi-modal route calculation capability. 
+This module is designed to process and deliver optimized, dynamic routes across all relevant transit modalities, including private vehicles, bus, and pedestrian options.
+
+To ensure adherence to the accelerated 11-week development schedule, and, critically, to leverage the robust real-time traffic data necessary for meaningful route optimization, the module will be developed via the integration of TomTom's Search and Routing APIs. 
+
+Architecturally, this module will operate as a decoupled backend service (internal API), exposing three primary functional endpoints for consumption by other platform components and team members.
+\begin{itemize}
+  \item \textbf{Geocoding/Search:} Convert text addresses into coordinates and vice versa.
+  \item \textbf{Routing:} Calculate the optimal route (time, distance, list of coordinates) between two points.
+  \item \textbf{Map Generation:} Automatically use data from the Routing step to create and export an interactive .html map file (using Folium), with the route, start point, and end point already drawn.
+\end{itemize}
+
+\subsection{Input \& Output}
+Inputs: origin, destination, time, preferences. 
+
+Outputs: candidate routes, costs, and explanations.
+
+\subsection{Work Breakdown}      
+Tasks are divided into 3 main functional groups, corresponding to the user's activity flow:
+\subsubsection{Selecting Start and End Points (Search \& Geocoding)}
+This is the step to get coordinates (Lat/Lon) from user input.
+\begin{itemize}
+    \item \textbf{Build Endpoint POST /api/search:}
+    \begin{itemize}
+        \item Receive address (text string) from the client.
+        \item Integrate search\_api logic into the endpoint.
+    \end{itemize}
+    \item \textbf{Call TomTom Search API:}
+    \begin{itemize}
+        \item Handle general search logic (/search/{address}.json).
+        \item Handle nearby search logic (/nearbySearch/.json) if the client provides the current location's lat, lon.
+    \end{itemize}
+    \item \textbf{Process results:}
+    \begin{itemize}
+        \item Filter results not belonging to "Ho Chi Minh".
+        \item Standardize returned JSON: Only send necessary information to the UI (name, address, lat, lon).
+    \end{itemize}
+    \item \textbf{Security:} Hide the TomTom API key (do not expose to the frontend).
+\end{itemize}
+
+\subsubsection{Route Calculation (Routing)}
+This is the step to calculate the path after having 2 sets of coordinates.
+\begin{itemize}
+  \item \textbf{Build Endpoint POST /api/route:}
+    \begin{itemize}
+        \item Receive \texttt{start\_lat}, \texttt{start\_lon}, \texttt{end\_lat}, \texttt{end\_lon} from the client.
+        \item Receive options: \texttt{travelMode} (car, motorcycle...) and \texttt{routeType} (fastest, shortest...).
+    \end{itemize}
+  \item \textbf{Integrate \texttt{tomtom\_route} logic:}
+    \begin{itemize}
+        \item Call TomTom \texttt{calculateRoute} API.
+        \item Pass the correct parameters (vehicle, route type, \texttt{traffic=true}).
+    \end{itemize}
+  \item \textbf{Error Handling:}
+    \begin{itemize}
+        \item Manage cases where TomTom doesn't find a route and returns 4xx, 5xx errors.
+        \item Return a 404 error code to the UI if no route is found (\texttt{''routes'' not in data}).
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Map Generation and Export}
+This is the final step and the main output of the Routing Module.
+
+After collecting and processing all data from the TomTom API, the module will be responsible for aggregating and drawing this data into a standalone interactive .html map file.
+
+This task uses logic from the visualize\_path\_on\_map function in the demo code.
+
+\begin{itemize}
+  \item \textbf{Aggregate input data:}
+  \begin{itemize}
+    \item Receive \texttt{coords} (list of route coordinates).
+    \item Receive \texttt{start} (start point coordinates).
+    \item Receive \texttt{end} (end point coordinates).
+  \end{itemize}
+  \item \textbf{Render the map (Using Folium):}
+  \begin{itemize}
+    \item Initialize a \texttt{folium.Map} object and automatically fit the frame (\texttt{m.fit\_bounds}) to the route.
+    \item Draw Markers: Add 2 Markers (''Start'' and ''End'' icons) at the \texttt{start} and \texttt{end} points.
+    \item Draw the path (PolyLine): Draw the route on the map (including the border and the main line as in the demo code).
+  \end{itemize}
+  \item \textbf{Export file (Main task):}
+  \begin{itemize}
+    \item Call the \texttt{m.save()} function to save the entire map object (markers, path) as a single HTML file (e.g., \texttt{route\_map.html}) on the server's disk.
+  \end{itemize}
+  \item \textbf{Completion:}
+  \begin{itemize}
+    \item When the \texttt{route\_map.html} file has been successfully created and saved, the Routing Module's task is considered complete.
+    \item The API (Endpoint \texttt{/api/route}) will return a simple confirmation message, e.g., {''\texttt{status}'': ''\texttt{success}'', ''\texttt{message}'': ''\texttt{Map created}: \texttt{route\_map.html}''}.
+  \end{itemize}
+\end{itemize}
+
+
+
+\subsection{Requirements}
+\subsubsection{Hardware}
+\begin{itemize}
+    \item Development Machine: 1 Personal Laptop (Windows, macOS, or Linux) with an internet connection for programming and API testing.
+    \item Deployment Server: Cloud hosting service (such as Render) that supports Python backend applications.
+\end{itemize}
+This platform will host the FastAPI/Flask internal API and provide a public endpoint for integration with other modules.
+\subsubsection{Software}
+\begin{itemize}
+    \item \textbf{Language \& Framework:}
+    \begin{itemize}
+        \item Language: Python 3.x.
+        \item API Framework: FastAPI (recommended for high performance and automatic API documentation) or Flask (simple, easy to set up).
+    \end{itemize}
+    \item \textbf{Main Python Libraries (Dependencies):}
+    \begin{itemize}
+        \item requests: Essential library for sending HTTP requests (API calls) to the TomTom server.
+        \item folium: Key library to render GPS data (coordinates, paths) and create interactive .html map files.
+        \item urllib: Use the urllib.parse submodule to encode URLs before calling the API.
+        \item fastapi: Framework library for building the API.
+        \item uvicorn: ASGI server, necessary to run the FastAPI application.
+        \item python-dotenv: Used to manage the TomTom API key securely in an .env file.
+    \end{itemize}
+    \item \textbf{Services \& APIs Used (External Services):}
+    \begin{itemize}
+        \item TomTom Developer Account: Mandatory for registering and receiving an API Key.
+        \item TomTom Search API: API used for the search function, converting addresses (strings) to coordinates (Lat/Lon).
+        \item TomTom Nearby Search API: Used to search for locations within a 5km radius.
+        \item TomTom Routing API: Core API, used to calculate routes, returns a summary (time, distance) and points (list of coordinates) to draw on the map.
+    \end{itemize}
+    \item \textbf{Development Tools \& Environment:}
+    \begin{itemize}
+        \item IDE/Editor: VS Code (Visual Studio Code).
+        \item Version Control: Git and GitHub (to store code and collaborate).
+        \item API Testing: Postman (an extremely important tool for testing the /api/search and /api/route endpoints I build before integration).
+        \item Environment: Python Virtual Environment (venv) to manage project libraries in isolation.
+    \end{itemize}
+\end{itemize}
+
+
+\subsection{Risk Management / Testing Method}
+
+\begin{table}[H]
+  \centering
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{1.8cm}|>{\raggedright\arraybackslash}X|}
+    \hline
+                   					\textbf{Risk} & \textbf{Description} & \textbf{Level} & \textbf{Mitigation Plan} \\
+    \hline
+    Cost / API Limits & TomTom provides 2{,}500 free calls/day. If usage exceeds this limit, the service will be suspended. & High & 1. Closely monitor the number of daily API calls.\newline 2. Research alternative plans such as using OpenStreetMap data. \\
+    \hline
+    Third-party Dependency & Service errors, maintenance, or slow response times from TomTom will paralyze the project's main functionality. & Medium & 1. Implement a reasonable timeout/retry mechanism.\newline 2. Clear error handling to notify the user. \\
+    \hline
+    Accuracy & Data in HCMC may not be 100\% accurate (small alleys, one-way streets, new roads). & Medium & 1. Accept as a provider limitation.\newline 2. Apply a filter to only keep results within HCMC, increasing relative accuracy. \\
+    \hline
+    Feature Limitations & Limited by the routeTypes TomTom provides. Cannot customize deeply (e.g., ``fewer red lights'', ``fewer lane changes''). & Low & 1. Adjust the project scope and accept the standard route types (fastest, shortest, balanced, eco). \\
+    \hline
+  \end{tabularx}
+  \caption{Routing risks and mitigations}\label{tab:routing-risks}
+\end{table}
+
+\subsection{Timeline}
+\renewcommand{\arraystretch}{1.15}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.12\textwidth}|>{\raggedright\arraybackslash}p{0.18\textwidth}|>{\raggedright\arraybackslash}p{0.34\textwidth}|>{\raggedright\arraybackslash}p{0.30\textwidth}|}
+\caption{Routing timeline and milestones}\label{tab:routing-timeline}\\
+\hline
+    \textbf{Week} & \textbf{Phase} & \textbf{Main Task (Routing Module)} & \textbf{Objective / Checkpoint} \\
+\hline
+\endfirsthead
+\hline
+    \textbf{Week} & \textbf{Phase} & \textbf{Main Task (Routing Module)} & \textbf{Objective / Checkpoint} \\
+\hline
+\endhead
+\hline
+\multicolumn{4}{r}{Continued on next page} \\
+\hline
+\endfoot
+\hline
+\endlastfoot
+Week 1 & A. Design & Requirements Analysis \& Scope: \newline\quad -- Finalize module scope. \newline\quad -- Team meeting to define integration points. & Check: Team agrees on the implementation scope as required. \\
+\hline
+Week 2 & A. Design & Technical Research: \newline\quad -- Compare API services (TomTom, Google\ldots). \newline\quad -- Begin researching the Folium library. & Check: Decision made to use TomTom API. \\
+\hline
+Week 3 & A. Design & API Service Design: \newline\quad -- Finalize 3 functions (Search, Route, Map). \newline\quad -- Share API design (Input/Output) with the team. & Check: Python test script for 3 functions: search, route, map. \\
+\hline
+Week 4 & B. Dev (POC) & Build Proof of Concept (POC): \newline\quad -- Start writing Python script. \newline\quad -- Integrate TomTom Search \& Route. & Check: Script runs and fetches JSON data from TomTom. \\
+\hline
+Week 5 & B. Dev (POC) & Complete POC: \newline\quad -- Integrate Folium (WBS 5.3). \newline\quad -- Filter ``Ho Chi Minh'' results. & Check: Code file (.py) works, successfully exports route\_map.html. \\
+\hline
+Week 6 & B. Dev & ``API-fication'' (Part 1): \newline\quad -- Install FastAPI, Uvicorn, python-dotenv. \newline\quad -- Move search\_api logic (WBS 5.1) into /api/search. & Check: Endpoint /api/search (on local) works, returns standard JSON. \\
+\hline
+Week 7 & B. Dev & ``API-fication'' (Part 2): \newline\quad -- Move tomtom\_route (WBS 5.2) and visualize\_path\_on\_map (WBS 5.3) logic into /api/route. & Check: Endpoint /api/route (on local) works, returns HTML file. \\
+\hline
+Week 8 & C. Integration & Deploy \& Integration: \newline\quad -- Deploy the FastAPI/Flask API to a cloud service that supports Python backend, such as Render. \newline\quad -- Start supporting the UI/UX Module to embed the interactive map using \texttt{<iframe>} with the public API URL from Render. & Check: Team has a public API URL. UI can display the map (even with bugs). \\
+\hline
+Week 9 & C. Integration & Error Handling \& Integration: \newline\quad -- Handle errors (Error Handling 4xx, 5xx). \newline\quad -- Support Safety Module \& Bus Route Finding System in fetching data. & Check: All other modules can call the API successfully. \\
+\hline
+Week 10 & D. Deploy & Testing \& Optimization: \newline\quad -- Fix final integration bugs. \newline\quad -- Consider caching (if needed). Finalize documentation. & Check: Functionality is stable in the test environment. \\
+\hline
+Week 11 & D. Deploy & Finalization \& Demo: \newline\quad -- Ensure API is stable on Production. \newline\quad -- Prepare slides \& demo. & Check: Ready for the final presentation. \\
+\hline
+\end{longtable}
+
+\section{Recommendation System}
+\subsection{Introduction}
+Public transportation in Ho Chi Minh City is widely available, yet difficult for first-time visitors to navigate efficiently.
+
+While mobile applications such as Google Maps and BusMap provide bus route guidance, they often lack transparency and flexibility in algorithmic design.
+
+This project aims to build an independent system that helps visitors choose the optimal bus route from a starting stop to a destination stop, considering travel time, transfers, and waiting penalties.
+
+However, a key challenge is the lack of open-source and up-to-date bus route data.
+
+To address this, data was collected manually from official city transport sources and combined into structured CSV files, forming the foundational dataset of this project.
+\subsection{Input \& Output}
+\subsubsection{Input}
+\begin{itemize}
+    \item User Input:
+    \begin{itemize}
+        \item Start coordinate (latitude, longitude)
+        \item Destination coordinate (latitude, longitude)
+        \item MaxWalkingDistance (meter) {default = 300 m}: the maximum distance the user is willing to walk.
+        \item MaxFares (VND) {default = infinity}: the maximum bus fares the user is willing to pay.
+        \item Routing\_mode: cost-efficient / time-efficient
+    \end{itemize}
+    \item Dataset Files:
+    \begin{itemize}
+        \item \texttt{stops.csv} - list of bus stops with coordinates.
+        \item \texttt{routes.csv} - metadata for each bus route (ID, name, fare, active time, spacing penalty).
+        \item \texttt{trips.csv} - ordered sequence of stops for each route and distance between them.
+        \item \texttt{car\_data.json} - used for visualizing bus paths on the map.
+        \item \texttt{walk\_data.json} - used for visualizing walking paths on the map.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Output}
+\begin{itemize}
+    \item The optimal route (sequence of bus stops and route IDs) from start to destination.
+    \item The estimated travel distance, estimated best scenario time, estimated worst scenario time (including waiting and transfer penalties).
+    \item The total fares of the trip.
+    \item  Visualized route on a map (differentiated each bus transfer).
+\end{itemize}
+
+
+\subsection{Work Breakdown}
+
+\subsubsection{Data Layer}
+
+
+\paragraph{Graph Construction}
+\begin{itemize}
+  \item Each bus stop is treated as a \textbf{node}.
+  \item Adjacent stops on the same route are connected by \textbf{directed edges}.
+  \item Edge weights represent \textbf{travel distance} (computed with the Haversine formula).
+  \item A \textbf{transfer penalty} is added when switching between routes.
+  %\item A \textbf{starting spacing penalty} is applied at the beginning to simulate real-world waiting time for the first bus.
+\end{itemize}
+
+\subsubsection{Pathfinding Layer}
+Implements a modified $A^*$ search algorithm that considers:
+\begin{itemize}
+  \item Distance between stops.
+  \item Transfer penalties between routes.
+  \item Starting penalty for initial waiting time. \\
+    \text{cost} = \text{currentcost} + \text{edgeDist}/$v$ + \text{transferPen} + c $\times$ \text{fare} + \text{startingPenalty}.
+
+    \begin{itemize}
+        \item currentcost -- accumulated cost to reach the current node.
+        \item edgeDist -- distance (in meters) of the current bus segment.
+        \item transferPen (s) -- transfer penalty, equal to the average bus spacing / waiting time; set transfer\_pen = 0 if there’s no transfer between routes.
+        \item $v$ (m/s) -- average bus speed, assumed to be 7 m/s.
+        \item $c$ -- constant coefficient that amplifies the importance of bus fare; set $c = 5$ if in cost-efficient mode, $c = 0$ if in time-efficient mode.
+        \item fare (vnd) -- bus fare cost; fare = 0 if there’s no route transfer.
+    \end{itemize}
+    Estimated worst scenario time = TotalCost - TotalFares \\
+    Estimated best scenario time = TotalCost - TotalFares - TotalTransferPenalties \\
+    TotalDistance = estimated best scenario time $\times v$ + TotalWalkingDistance
+\end{itemize}
+The algorithm can compare multiple potential starting stops and select the route with the lowest total cost.
+
+\subsubsection{Realistic Modeling Features}
+\begin{itemize}
+  \item \textbf{Real-time input:} Automatically remove bus routes not on active time.
+  \item \textbf{Transfer Penalty:} Adds time when changing from one route to another, reflecting bus waiting time.
+  \item \textbf{Starting Penalty:} Models the time a visitor might wait for the first bus to arrive.
+  \item \textbf{Heuristic Function:} Uses geographical distance (via the Haversine formula) to guide the $A^*$ search efficiently.
+\end{itemize}
+
+
+\subsection{Requirements}
+\subsubsection{Hardware}
+\begin{itemize}
+    \item Development Machine: 1 Personal Laptop (Windows, macOS, or Linux) with an internet connection for programming and API testing.
+    \item Deployment Server: Cloud hosting service (such as Render) that supports Python backend applications.
+\end{itemize}
+This platform will host the FastAPI/Flask internal API and provide a public endpoint for integration with other modules.
+
+\subsubsection{Software}
+\begin{itemize}
+  \item \textbf{Language:} Python (3.10+ recommended) as the primary implementation language.
+  \item \textbf{Data Handling:} \texttt{pandas} and Python's \texttt{csv} module for reading, validating, and transforming bus stop and route data from CSV files (e.g., \texttt{stops.csv}, \texttt{routes.csv}, \texttt{trips.csv}).
+  \item \textbf{Graph Algorithms:} Custom implementations of A* and Dijkstra with a pluggable cost function that supports penalties for waiting time, number of transfers, and walking distance; must return the path (sequence of stop IDs and route IDs) and aggregate cost/time metrics.
+  \item \textbf{Math \& Geo Utilities:} Standard \texttt{math} package and a Haversine formula utility for great-circle distance between coordinates; define a small \emph{epsilon} tolerance for coordinate comparisons.
+  \item \textbf{Visualization:} \texttt{folium} to render routes and stops on an interactive web map and export to a standalone HTML file for demos/presentations.
+  \item \textbf{Documentation:} A Markdown report (\texttt{report.md}) describing dataset schemas, algorithm design/parameters, CLI usage examples, and known limitations.
+\end{itemize}
+
+
+\subsection{Timeline}
+\begin{table}[H]
+  \centering
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}X|}
+    \hline
+    	\textbf{Week} & \textbf{Task} & \textbf{Description} \\
+    \hline
+    	\textbf{Week 1 -- Week 2} & \textbf{Research and Problem Definition} & Study existing transport apps, define goals and system constraints. Identify the absence of open-source bus data. \\
+    \hline
+    	\textbf{Week 3 -- Week 4} & \textbf{Data Collection and Cleaning} & Manually collect bus stop, route, and trip data from official or public sources. Convert them into standardized CSV format (\texttt{stops.csv}, \texttt{routes.csv}, \texttt{trips.csv}). \\
+    \hline
+    	\textbf{Week 5 -- Week 6} & \textbf{Graph Construction} & Implement logic to parse CSV files, create nodes and weighted edges, and structure the graph for routing (directed edges between adjacent stops, Haversine-based weights, transfer/start penalties). \\
+    \hline
+      \textbf{Week 7 -- Week 8} & \textbf{Algorithm Development} & Implement Dijkstra and $A^*$ algorithms with transfer and spacing penalties. Validate correctness with sample cases and unit tests. \\
+    \hline
+    	\textbf{Week 9 -- Week 10} & \textbf{Testing and Optimization} & Test with multiple start/destination combinations. Fine-tune penalties and heuristic to ensure realistic results and acceptable performance. \\
+    \hline
+    	\textbf{Future Work} & \textbf{Integration and Visualization} & Build a simple UI or map visualization to display the optimal bus route and estimated travel time to users (folium/OSM integration, optional lightweight web frontend). \\
+    \hline
+  \end{tabularx}
+  \caption{Recommendation system timeline and milestones}\label{tab:reco-timeline}
+\end{table}
+
+\section{Safety \& Monitoring}
+\subsection{Introduction}
+HCMC endless traffic congestions especially in rush hour cannot be solved easily as the city is growing rapidly in both population and vehicles. 
+
+To help commuters avoid traffic jams, we propose a traffic-aware routing feature that leverages real-time traffic camera feeds to analyze current traffic conditions and suggest alternative route. 
+
+By integrating computer vision techniques with graph-based routing algorithms, this feature aims to enhance urban mobility and reduce travel times for users navigating through Ho Chi Minh City.
+\paragraph{Impact}
+\begin{itemize}
+  \item Inefficient planning and delays.
+  \item Poor commuter satisfaction.
+\end{itemize}   
+
+\subsection{Input \& Output}
+\subsubsection{Input}
+\begin{itemize}
+  \item Start location.
+  \item End location.
+\end{itemize}
+
+\paragraph{Output}
+\begin{itemize}
+  \item Coloured route according to the current traffic flow.
+  \item Suggest one alternative less crowded route (if not possible, display a notice).
+  \item A cute note for users.
+\end{itemize}
+
+\subsection{Work Breakdown}
+\paragraph{Data \& Telemetry Pipeline}
+
+\mbox{}\newline
+	\textbf{Ingestion}
+\begin{itemize}
+  \item Pull JPG snapshots every 30 minutes from official HCMC traffic camera endpoints (\href{https://giaothong.hochiminhcity.gov.vn/Map.aspx}{city traffic portal}).
+  \item De-duplicate by perceptual/image hash to avoid storing identical frames.
+  \item Bind metadata: \texttt{camera\_id}, \texttt{segment\_id}, GPS, bearing, lane schema, timestamp.
+  \item Persist raw frames + minimal JSON into object storage (Bronze layer).
+\end{itemize}
+  \textbf{Curation Layers}
+\begin{itemize}
+  \item Bronze: raw frames + minimal JSON (timestamp, camera\_id).
+  \item Silver: per-frame detections, tracks, lane associations, calibration records, COCO annotations (labeled subset).
+  \item Gold: per-segment time series every 1 hour: density (veh/km/lane), occupancy, queue tail, space-mean speed, incident flags.
+\end{itemize}
+	\textbf{Labeling Strategy}
+\begin{itemize}
+  \item Seed with 20--30k annotated frames (COCO boxes; classes: four-wheel vehicles, motorbike).
+  \item Active learning to select ``hard'' frames (night rain, glare, heavy occlusion); add 1--2k frames per corridor during pilot.
+\end{itemize}
+	\textbf{Per-camera Calibration \& Geo-projection}
+\begin{itemize}
+  \item Use road corners to compute homographies.
+  \item Back-project pixel distances to meters for speed/queue length estimation (standard monocular stationary-camera procedure).
+\end{itemize}
+
+\paragraph{Perception Stack}
+\mbox{}\newline
+\textbf{Pre-processing}
+\begin{itemize}
+  \item Defog/dehaze and gamma correction as first-stage normalization (stabilize detectors across dusk/night and haze).
+  \item Legacy self-adaptive background subtraction with dynamic thresholds as secondary fallback for heavy occlusion/static cams.
+\end{itemize}
+	\textbf{Detection}
+\begin{itemize}
+  \item YOLO family (anchor-free head, e.g., \texttt{YOLOv11-S}); train with augmentation (mosaic, copy-paste), focal loss, finer grids for motorbikes.
+\end{itemize}
+	\textbf{Tracking \& Lane Association}
+\begin{itemize}
+  \item ByteTrack or OC-SORT at 2--5 FPS for ID-consistent tracks.
+  \item Per-track lane assignment via calibrated lane polygons.
+  \item Compute space-mean speed from track displacement in world coordinates.
+\end{itemize}
+	\textbf{Segment-level Signals (aggregation window $\Delta t = 2\text{--}4\ \text{min}$)}
+\begin{itemize}
+  \item Density (veh/km/lane), occupancy, speed percentiles, stop-and-go wave indicators; aggregate into Gold time series.
+\end{itemize}
+
+\paragraph{Short-horizon Traffic Prediction (5--30 min)} 
+
+
+\textbf{Problem Framing}
+\begin{itemize}
+  \item Predict per-segment congestion class (R/Y/G) and/or travel time / mean speed at 5, 10, 20, 30 min ahead.
+  \item Inputs: recent Gold signals + neighbor segment features.
+\end{itemize}
+	\textbf{Models}
+\begin{itemize}
+  \item Champion spatio-temporal GNN: DCRNN / STGCN / GraphWaveNet over road graph (nodes = segments, edges = adjacency/turns).
+\end{itemize}
+	\textbf{Feature Set \& Horizons}
+\begin{itemize}
+  \item Sliding windows: last 30--90 min at 2--4 min resolution; lags, moving averages, trend features.
+  \item Exogenous: hour/day/week, holiday indicator, weather (rain intensity, temperature), seasonality.
+\end{itemize}
+	\textbf{Losses \& Metrics}
+\begin{itemize}
+  \item Regression (speed/ETA): RMSE, MAE, $R^2$.
+  \item Classification (R/Y/G): macro-F1, precision, recall; horizon-specific evaluation ($\le 30$ min is primary use-case).
+\end{itemize}
+
+\paragraph{Time-dependent Routing}
+\mbox{}\newline
+
+	\textbf{Graph \& Costs}
+\begin{itemize}
+  \item Build time-dependent directed graph from OSM + city topology.
+  \item Edge cost = predicted travel time $\times$ congestion penalty multiplier (e.g., Red 1.35, Yellow 1.15) + uncertainty surcharge when predictor confidence is low.
+\end{itemize}
+	\textbf{Search}
+\begin{itemize}
+  \item A* with landmark heuristics; do not exceed shortest-path ETA by >10\% unless red-jam risk predicted in next 15 min; avoid flooded links under weather alerts.
+\end{itemize}
+	\textbf{UX}
+\begin{itemize}
+  \item Show route colored by predicted flow.
+  \item Provide one named alternative with rationale: ``Queue forming at Nguyễn Hữu Cảnh in 10 min; taking Điện Biên Phủ saves 7--10 min.''
+  \item Cute note (copy layer): ``Sky is moody, roads are not---swing right to avoid the jam ahead.''
+\end{itemize}
+
+\paragraph{Privacy \& Safety}
+
+
+\begin{itemize}
+  \item No PII retention; mask plates/faces if visible.
+  \item Edge redaction before storage; compliance with local data policies.
+\end{itemize}
+
+
+\paragraph{Ambiguities \& Limitations}
+\begin{itemize}
+  \item Motorbike occlusions in dense rain: under-count risk; mitigate via temporal smoothing + uncertainty flags (Medium limitation).
+  \item Calibration drift (camera bumps; road works): re-fit homographies monthly or on drift alerts; residual errors affect speed more than counts (Low--Medium).
+  \item Weather data latency/coverage: delayed granular rain data degrades prediction during storms; cache nearby station feeds and backfill (Low--Medium).
+\end{itemize}
+
+\subsection{Requirements}
+\subsubsection{Hardware}
+\begin{itemize}
+  \item \textbf{Edge node (per camera or small group)}: CPU with 8--16 GB RAM; (optional GPU). Local SSD for short-term buffering (\textasciitilde24--48 h) and logs.
+  \item \textbf{Central node (training/aggregation)}: Multi-core CPU, CUDA-capable GPU for fine-tuning detectors/GNNs; network-attached storage for Silver/Gold tables and artifacts.
+  \item \textbf{Network}\,: Stable uplink from cameras or RTSP gateway; resilience via buffering and auto-retry on loss.
+\end{itemize}
+
+\subsubsection{Software}
+\begin{itemize}
+  \item \textbf{Perception}: YOLO family detector (\texttt{YOLOv8/YOLOv11-S}), ByteTrack/OC-SORT tracker, homography-based calibration utilities.
+  \item \textbf{Data pipeline}: Services to write Bronze/Silver/Gold layers; time-window aggregation (2--4 min); REST/WebSocket publisher.
+  \item \textbf{Prediction}: Spatio-temporal GNN framework (DCRNN/STGCN/GraphWaveNet) and a tree-based fallback (RF/GBT).
+  \item \textbf{Dashboard}: Web UI for live map, history, and metrics; role-based access; configuration for junction onboarding.
+\end{itemize}
+
+\subsubsection{Functional Requirements (FR)}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{1.1cm}|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}X|}
+\hline
+	\textbf{ID} & \textbf{Requirement} & \textbf{Description} \\
+\hline
+FR1 & Detector Setup & YOLOv11 model with vehicle classes; junction fine-tuning. \\
+\hline
+FR2 & Tracking \& Counting & Multi-object tracker + virtual lines per lane/movement; de-dup via track IDs. \\
+\hline
+FR3 & Class-wise Flow & Aggregate counts per 10--15 s (configurable) by class \& movement. \\
+\hline
+FR4 & Camera Calibration & Homography mapping pixels $\rightarrow$ lanes/movements. \\
+\hline
+FR5 & Graph Builder & Construct directed graph (junctions/edges) with rolling features. \\
+\hline
+FR6 & GNN Predictor & Short-term congestion per edge using recent flows \& exogenous signals. \\
+\hline
+FR7 & Alerting & Map scores to R/Y/G with thresholds + hysteresis; publish via REST/WebSocket. \\
+\hline
+FR8 & Dashboard & Live map with colored segments; history \& metrics view. \\
+\hline
+FR9 & Evaluation & mAP (detector), MAE/MAPE (counts), P/R/F1 (alerts); periodic reports. \\
+\hline
+\end{tabularx}
+
+\subsubsection{Non-Functional Requirements (NFR)}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{1.1cm}|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}X|}
+\hline
+	\textbf{ID} & \textbf{Requirement} & \textbf{Description} \\
+\hline
+NFR1 & Latency & Edge detection+count $\le 300$--$600$ ms/frame; end-to-end alert $\le 3$--$5$ s. \\
+\hline
+NFR2 & Accuracy & Counting MAE $\le 10\%$ on audited windows; Alert F1 $\ge 0.85$ (initial). \\
+\hline
+NFR3 & Robustness & Operate across day/night \& rain; track degradation. \\
+\hline
+NFR4 & Privacy & No faces/plates stored; only aggregates persist. \\
+\hline
+NFR5 & Reliability & 99\% pipeline uptime; auto-restart \& buffering on network loss. \\
+\hline
+NFR6 & Maintainability & Modular services; config-driven junction onboarding. \\
+\hline
+\end{tabularx}
+
+\subsection{Risk Management / Testing Method}
+\begin{itemize}
+	\item \textbf{Perception (offline)} mAP@50 / @50--95 by class; IDF1/HOTA for tracking; speed MAE/MAPE vs radar/loop ground truth.
+	\item \textbf{Prediction (offline)} Cross-validated MAE/RMSE (speed/ETA); macro-F1/precision/recall (R/Y/G); analyze by horizon (5/10/20/30 min) and weather bins.
+	\item \textbf{Shadow Mode (online)} Compare predicted vs realized congestion/ETA for 4--6 weeks; calibrate alert thresholds to reach $\ge 80\%$ precision before public alerts.
+\end{itemize}
+
+\subsection{Timeline}
+\begin{table}[H]
+  \centering
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabularx}{\textwidth}{|>{\raggedright}p{1.6cm}|>{\raggedright}p{3.7cm}|>{\raggedright\arraybackslash}X|}
+    \hline
+    \textbf{Week} & \textbf{Task} & \textbf{Description / Exit criteria} \\
+    \hline
+    \textbf{1} & \textbf{Project Setup \& Governance} &
+    Repo, CI, coding style; success metrics (mAP/IDF1, MAE/F1), data policy; camera list \& schema freeze. Deliverable: 1–2 pp scope \& risk register. \\
+    \hline
+    \textbf{2} & \textbf{Ingestion Prototype (Bronze)} &
+    Pull JPG snapshots from HCMC endpoints every 30 min; perceptual hash de-dup; bind metadata (camera\_id, GPS, bearing). Deliverable: 24 h Bronze sample. \\
+    \hline
+    \textbf{3} & \textbf{Label Seed \& Calibration Kit} &
+    Curate 20–30k COCO boxes (car/motorbike); active-learning sampler; homography tool (road corners). Deliverable: 5 calibrated cams + seed set. \\
+    \hline
+    \textbf{4} & \textbf{Detector Baseline} &
+    Train/tune YOLOv8/YOLOv11-S with augmentation; night/rain sanity checks. Exit: mAP@50 baseline achieved; error notebook for hard scenes. \\
+    \hline
+    \textbf{5} & \textbf{Tracking \& Counting} &
+    ByteTrack/OC-SORT at 2–5 FPS; virtual lines per lane/movement; de-dup via track IDs. Exit: MAE\,$\le$\,10–15\% on audited windows. \\
+    \hline
+    \textbf{6} & \textbf{Silver/Gold Pipeline \& Metrics} &
+    Aggregate $\Delta t=2$–4 min to density/occupancy/speed; persist Silver/Gold; dashboard skeleton. Exit: 1 week of Gold time series. \\
+    \hline
+    \textbf{7} & \textbf{Road Graph \& Features} &
+    Build directed graph (OSM + topology); engineer features/lags; create train/val splits; tree baseline (RF/GBT) for ETA/speed. Exit: offline MAE/RMSE baseline. \\
+    \hline
+    \textbf{8} & \textbf{Spatio-temporal GNN} &
+    Train DCRNN/STGCN/GraphWaveNet for 5/10/20/30-min horizons; calibrate uncertainty; map to R/Y/G with hysteresis. Exit: macro-F1 target for $\le$30 min. \\
+    \hline
+    \textbf{9} & \textbf{Time-dependent Routing (A*)} &
+    Edge cost = predicted travel time $\times$ congestion penalty + uncertainty surcharge; one named alternative route + rationale; flood avoidance hook. Exit: prototype UI coloring. \\
+    \hline
+    \textbf{10} & \textbf{Shadow Mode \& Tuning} &
+    Live compare predicted vs realized congestion/ETA; threshold calibration to reach $\ge$80\% precision before alerts; privacy audit (plate/face masking). \\
+    \hline
+    \textbf{11} & \textbf{Hardening \& Demo} &
+    Latency profiling (edge $\le$300–600 ms/frame; E2E alert $\le$3–5 s); reliability tests (auto-retry/buffering); docs, ops runbook, demo with “cute note”. \\
+    \hline
+  \end{tabularx}
+  \caption{Safety \& Monitoring module: 11-week timeline and milestones}
+  \label{tab:safety-monitoring-timeline}
+\end{table}
+
+
+
+\section{Camera Ingestion Pipeline}
+\label{sec:camera-ingestion}
+\subsection{Introduction}
+			\textbf{Project purpose}\\
+Collect, normalize, and serve legally compliant real-time traffic camera frames to support downstream modules (object detection, flow estimation, congestion scoring, safety alerts). The pipeline must deliver low-latency, robust, and auditable frame ingestion while protecting privacy and meeting retention policies.
+
+\vspace{0.5em}
+			\textbf{Scope}
+\begin{itemize}
+  \item Continuous ingestion from many heterogeneous camera sources (varying resolution, FPS, protocols).
+  \item Per-camera preprocessing (ROI, normalization), calibration for geometric reasoning, short-term storage for debugging, and health/metrics dashboards.
+  \item API access for downstream consumers and operators, plus compliance documentation and privacy protections.
+\end{itemize}
+
+		    \textbf{Key goals}
+\begin{itemize}
+  \item Reliable frame delivery (target freshness SLA).
+  \item Privacy and legal compliance for each feed.
+  \item Observability and easy onboarding of new cameras.
+\end{itemize}
+
+\subsection{Input \& Output}
+\subsubsection{Inputs}
+\begin{itemize}
+  \item Camera feed endpoints (RTSP/HTTP/HLS/etc.) and credentials.
+  \item Camera metadata: \texttt{camera\_id}, URL, GPS, orientation, vendor, resolution, nominal FPS, tilt/azimuth.
+  \item Permission/terms-of-use / proof of right to ingest.
+  \item Per-camera ROI masks and calibration images (for homography).
+  \item Central configuration (sampling rate, retention policy, alert thresholds).
+\end{itemize}
+
+\subsubsection{Outputs}
+\begin{itemize}
+  \item Sampled frames (JPEG/PNG) and short clips retained for 24--72 hours in object storage.
+  \item Per-frame metadata records (timestamp, camera\_id, seq\_no, ingest\_latency, checksum) in Postgres.
+  \item Calibration artifacts (homography matrices, ROI masks) stored alongside camera metadata.
+  \item Time-series metrics (frame freshness, fetch rate, errors, latency) in TimescaleDB/InfluxDB and Grafana dashboards.
+  \item HTTP/REST API endpoints returning latest frames, frame metadata, and camera health.
+  \item Audit \& compliance report (camera permissions, retention logs, redaction events).
+\end{itemize}
+
+\subsection{Work Breakdown}
+\subsubsection{Camera Onboarding \& Registry}
+\begin{itemize}
+  \item Build camera registry schema (Postgres): metadata, legal status, sampling policy.
+  \item CLI / UI to add/update cameras and upload ROI/calibration images.
+\end{itemize}
+
+\subsubsection{Scraper \& Fetcher}
+\begin{itemize}
+  \item Implement resilient fetcher supporting RTSP/HLS/HTTP with backoff, retries, rate limiting.
+  \item Health checks, circuit breakers, and opt-in buffering for high-latency feeds.
+\end{itemize}
+
+\subsubsection{Frame Extraction \& Sampling}
+\begin{itemize}
+  \item FFmpeg integration to sample frames at configurable rates (default 1 fps) and normalize containers.
+  \item Edge cases handling (variable FPS, partial frames).
+\end{itemize}
+
+\subsubsection{Preprocessing \& Calibration}
+\begin{itemize}
+  \item Image normalization (resize, color/contrast adjustment) using OpenCV.
+  \item Apply ROI masks, blur redaction zones if required.
+  \item Compute / store homography for selected cameras for downstream speed/trajectory estimation.
+\end{itemize}
+
+\subsubsection{Storage \& Retention}
+\begin{itemize}
+  \item Short-term frame storage: S3/MinIO with lifecycle rules (24--72 h).
+  \item Persistent metadata in Postgres and time-series metrics in TimescaleDB/InfluxDB.
+\end{itemize}
+
+\subsubsection{API \& Access}
+\begin{itemize}
+  \item FastAPI endpoints: register/list cameras, latest frame, health, metrics.
+  \item AuthN/AuthZ for operators and downstream services.
+\end{itemize}
+
+\subsubsection{Monitoring, Alerts \& Observability}
+\begin{itemize}
+  \item Export metrics (Prometheus) and dashboards (Grafana) for frame freshness, success rate, latency.
+  \item Alert rules (stale frames, high error rate, permission expiry).
+\end{itemize}
+
+\subsubsection{Compliance \& Privacy}
+\begin{itemize}
+  \item Legal review workflow per camera; store permission evidence.
+  \item Automatic face/license-plate blurring or ROI redaction when required.
+  \item Retention enforcement and audit logs.
+\end{itemize}
+
+\subsection{Requirements}
+\subsubsection{Functional Requirements}
+\begin{enumerate}
+  \item Register and manage camera metadata and legal status.
+  \item Continuously fetch and sample frames from registered cameras.
+  \item Provide per-camera ROI masking and optional redaction.
+  \item Expose API to retrieve latest frames and camera health.
+  \item Store frames for configurable short retention window and metadata indefinitely.
+\end{enumerate}
+
+\subsubsection{Non-Functional Requirements}
+\begin{itemize}
+  \item \textbf{Latency}: end-to-end frame availability within target (e.g., $<2\,\text{s}$ after sample time for on-network cameras).
+  \item \textbf{Scalability}: support $N$ concurrent camera feeds (design target e.g., 1k) with horizontal scaling.
+  \item \textbf{Reliability}: per-camera success rate target (e.g., $>99\%$ over rolling 24 h).
+  \item \textbf{Security}: encrypted in-transit and at-rest; credentials stored safely.
+  \item \textbf{Observability}: metrics for freshness, errors, and throughput; logs for forensic audits.
+\end{itemize}
+
+\subsubsection{Legal \& Compliance}
+\begin{itemize}
+  \item Track and store permission documents for each camera feed.
+  \item Implement automatic redaction if terms require (faces, plates) and log redaction events.
+  \item Enforce retention policy and provide exportable compliance evidence.
+\end{itemize}
+
+\subsubsection{Deployment \& Ops}
+\begin{itemize}
+  \item Containerized services (Docker) with CI/CD (GitHub Actions).
+  \item Infrastructure as code (Terraform) for environments and S3/MinIO provisioning.
+  \item Runbooks for onboarding and incident response.
+\end{itemize}
+
+\subsection{Risk Management / Testing Method}
+\subsubsection{Major Risks \& Mitigations}
+\begin{itemize}
+  \item \textbf{Feed instability / network latency}: implement retry/backoff, local buffering, and fallback sampling frequency.
+  \item \textbf{Heterogeneous stream formats / codecs}: standardize via FFmpeg transcoding layer and build format compatibility tests.
+  \item \textbf{Privacy / legal exposure}: require documented permissions before enabling a camera; automatic redaction; legal review gate.
+  \item \textbf{Scaling limits under high concurrency}: autoscaling policies, connection pooling, and rate limiting per-camera.
+  \item \textbf{Poor image quality (weather, night)}: flag low-quality frames and route to quality-aware downstream models or human review.
+\end{itemize}
+
+\subsubsection{Testing Strategy}
+\begin{enumerate}
+  \item \textbf{Unit tests}: parser, registry CRUD, config validation.
+  \item \textbf{Integration tests}: end-to-end sampling from a synthetic stream, storage round-trip, metadata writes.
+  \item \textbf{Contract tests}: API schema/response shape for downstream consumers.
+  \item \textbf{Load \& Stress tests}: simulate target concurrent feeds and max throughput (sampled frame rate $\times$ $N$ cameras).
+  \item \textbf{Fault injection / Chaos testing}: simulate network drops, FFmpeg failure, permissions revocation to verify graceful recovery.
+  \item \textbf{Security \& privacy tests}: verify redaction effectiveness (face/plate blur), permissions enforcement, token expiry.
+  \item \textbf{Acceptance tests / E2E}: run a validation scenario covering registration $\rightarrow$ sampling $\rightarrow$ API retrieval $\rightarrow$ metric logging.
+\end{enumerate}
+
+\subsubsection{Acceptance Criteria}
+\begin{itemize}
+  \item Freshness SLA met for 95\%+ of feeds in baseline environment.
+  \item Error rate below agreed threshold (e.g., $<1\%$ critical failures).
+  \item Permissions recorded for every active camera; redaction applied where required.
+  \item Monitoring dashboards and alerts firing for defined conditions.
+\end{itemize}
+
+\subsection{Timeline}
+\renewcommand{\arraystretch}{1.15}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.14\textwidth}|>{\raggedright\arraybackslash}p{0.22\textwidth}|>{\raggedright\arraybackslash}p{0.56\textwidth}|}
+\caption{Camera Ingestion Pipeline timeline and deliverables}\label{tab:camera-ingestion-timeline}\\
+\hline
+									\textbf{Week} & \textbf{Focus} & \textbf{Output / Deliverables} \\
+\hline
+\endfirsthead
+\hline
+									\textbf{Week} & \textbf{Focus} & \textbf{Output / Deliverables (cont.)} \\
+\hline
+\endhead
+\hline
+\multicolumn{3}{r}{\small Continued on next page} \\
+\hline
+\endfoot
+\hline
+\endlastfoot
+Week 0 & Setup \& Legal & Camera inventory, permissions review, sampling policy \& test plan \\
+\hline
+Week 1--2 & Pipeline Core & Scraper, FFmpeg extractor, camera registry, basic health monitoring \\
+\hline
+Week 3--4 & Preprocessing & Frame normalization, ROI masking, redaction prototype \\
+\hline
+Week 5 & Calibration & Homography / perspective calibration for selected cameras \\
+\hline
+Week 6 & Metrics \& Logging & Frame freshness and uptime metrics stored in time-series DB \\
+\hline
+Week 7 & API Integration & Endpoints for latest frame, camera metadata, and health \\
+\hline
+Week 8 & Privacy Controls & Blurring/masking + retention enforcement implementation \\
+\hline
+Week 9 & Dashboards & Grafana monitoring dashboard and alert thresholds \\
+\hline
+Week 10 & E2E Testing & Full validation of pipeline stability, latency, and failure modes \\
+\hline
+Week 11 & Documentation & Runbooks, onboarding guide, compliance evidence packaging \\
+\hline
+\end{longtable}
+
+\section{Database}
+\label{sec:database}
+\subsection{Introduction}
+Persist, index, and serve all mobility data for routing, congestion prediction, and UX layers. Normalize heterogeneous sources (Overpass/OSM, GTFS-like CSVs, camera-derived signals) into time-aligned, queryable stores. Provide stable contracts (SQL/Parquet views + APIs) to upstream ML (GNN/TBMs) and downstream services (A* router, map UI).\\
+
+
+\paragraph{Scope (what it does not own)}
+\begin{itemize}
+  \item No model training/inference logic (served by ML service).
+  \item No image processing (YOLO/ByteTrack) --- Database only stores outputs \& metadata.
+\end{itemize}
+
+
+\subsection{Input \& Output}
+\subsubsection{Inbound data (batch/stream)}
+\begin{itemize}
+  \item \textbf{Overpass/OSM snapshots (JSON)}: roads, nodes, ways; Python fetchers already in place.
+  \item \textbf{City cameras} $\rightarrow$ per-frame detections/tracks $\rightarrow$ per-segment aggregates (density, queue length, speed proxies).
+  \item \textbf{GTFS-like CSVs}: \texttt{routes.csv}, \texttt{stops.csv}, \texttt{trips.csv} (for stop proximity, segment naming, UX overlays).
+  \item \textbf{Weather/seasonality features} (hour, weekday, rain flags) for ML enrichment.
+\end{itemize}
+
+
+\subsubsection{Canonical schemas (storage contracts)}
+\paragraph{Bronze (immutable, as-landed)}
+\begin{itemize}
+  \item \texttt{raw\_overpass} (JSON blob + bbox, \texttt{fetched\_at}).
+  \item \texttt{raw\_frames} (\texttt{uri}, \texttt{camera\_id}, \texttt{ts}, \texttt{img\_hash}).
+  \item \texttt{raw\_detections} (\texttt{frame\_id}, \texttt{class}, \texttt{bbox}, \texttt{score}).
+\end{itemize}
+
+\paragraph{Silver (cleaned \& derived)}
+\begin{itemize}
+  \item \texttt{lane\_calibration} (\texttt{camera\_id}, \texttt{lane\_id}, \texttt{homography}, \texttt{updated\_at}).
+  \item \texttt{tracks} (\texttt{track\_id}, \texttt{camera\_id}, \texttt{lane\_id}, \texttt{ts}, \texttt{world\_x}/\texttt{world\_y}, \texttt{speed\_est}, \texttt{is\_stalled}).
+  \item \texttt{segments} (\texttt{segment\_id}, \texttt{geom}, \texttt{speed\_limit}, \texttt{lanes}, \texttt{osm\_way\_ids}).
+\end{itemize}
+
+\paragraph{Gold (time series for ML \& routing)}
+\begin{itemize}
+  \item \texttt{segment\_signals\_2m} (\texttt{ts}, \texttt{segment\_id}, \texttt{density\_veh\_per\_km\_lane}, \texttt{occupancy}, \texttt{speed\_p50}, \texttt{speed\_p85}, \texttt{queue\_tail\_m}, \texttt{incident\_flag}, \texttt{weather\_bins}).
+  \item \texttt{congestion\_labels\_2m} (\texttt{ts}, \texttt{segment\_id}, \texttt{class} $\in \{\text{G},\text{Y},\text{R}\}$, \texttt{label\_method}, \texttt{confidence}).
+  \item \texttt{travel\_time\_edge\_ETA\_2m} (\texttt{ts}, \texttt{edge\_id}, \texttt{eta\_s}, \texttt{eta\_conf}, \texttt{horizon\_min} $\in \{5,10,20,30\}$).
+\end{itemize}
+
+\subsubsection{Outbound interfaces}
+	\textbf{SQL/Views for ML}: sliding-window tensors (RNN/GNN ready), normalized features (MinMax, one-hot).\\
+	\textbf{HTTP/gRPC (internal)}:
+\begin{itemize}
+  \item \texttt{GET /db/segments/\{id\}/signals?from=\&to=}
+  \item \texttt{GET /db/edges/eta?at=...\&horizon=...}
+  \item \texttt{POST /db/congestion\_labels:write} (for online labels / human QA)
+\end{itemize}
+
+\subsection{Work Breakdown}
+\subsubsection{Data Modeling \& Storage}
+Define PostGIS schemas for segments, edges, stops, routes; Parquet for high-volume time series (signals, ETA). Partition by date (daily) + \texttt{segment\_id} bucketing; ZSTD compression.
+
+\subsubsection{Ingestion Pipelines}
+Overpass puller $\rightarrow$ \texttt{raw\_overpass}; Camera snapshot harvester $\rightarrow$ hash-dedupe $\rightarrow$ \texttt{raw\_frames}; detection/tracking appends to \texttt{raw\_detections}/\texttt{tracks}; CSV loaders for \texttt{routes.csv}, \texttt{stops.csv}, \texttt{trips.csv}.
+\subsubsection{Transformation}
+Build segments from OSM ways (respect oneway, service exclusions). Aggregate tracks $\rightarrow$ \texttt{segment\_signals\_2m} with calibrated lane polygons. Join exogenous features (weather, seasonality).
+
+\subsubsection{Serving}
+Materialized views for ML (sliding windows: last 30--90 min) and router (time-dependent edge costs). Low-latency KV (Redis/KeyDB) cache for “current” 0--30 min horizons.
+
+\subsubsection{Governance \& Ops}
+Data retention policy (Bronze 90 d; Silver/Gold 365 d rolling). CDC/versioning for calibration \& segment topology. Backfills + schema migration playbooks.
+
+\subsection{Requirements}
+\subsubsection{Functional}
+\begin{itemize}
+  \item Store $\ge 180$ days of \texttt{segment\_signals\_2m} for model retraining and seasonality.
+  \item Provide $\le 300$ ms P95 reads for latest 30-minute window per corridor to serve A* routing.
+  \item Offer labeled congestion classes (R/Y/G) + confidence for alerts (DT/RF fallback proven strong).
+\end{itemize}
+
+\subsubsection{Non-functional}
+\begin{itemize}
+  \item Reliability: 99.5\% monthly availability for reads; durable storage (daily backups).
+  \item Latency: ingest $\rightarrow$ Gold availability $\le 90$ s after frame capture.
+  \item Security/Privacy: no PII; plate/face hashes never stored.
+\end{itemize}
+
+\subsection{Risk Management / Testing Method}
+\subsubsection{Key risks \& mitigations}
+\begin{itemize}
+  \item Camera downtime/data gaps $\rightarrow$ impute from neighbors + seasonality; flag low-confidence.
+  \item Night/rain occlusion $\rightarrow$ temporal smoothing; fallback detectors.
+  \item Calibration drift $\rightarrow$ version homographies, CDC rollback.
+  \item OSM mismatch $\rightarrow$ maintain override layer + periodic diffs.
+\end{itemize}
+
+\subsubsection{Testing strategy}
+\begin{itemize}
+  \item Schema \& contract tests: migration dry-runs, backward-compatibility.
+  \item Ingest fidelity tests: checksum \& row-count parity.
+  \item Feature quality tests: drift monitors, missingness dashboards.
+  \item Latency SLO tests: synthetic load (1k segments).
+  \item Label QA: macro-F1 tracking (DT/RF baseline $\ge 0.90$).
+\end{itemize}
+
+\subsection{Timeline}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{1.2cm}|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{2.2cm}|}
+\hline
+	\textbf{Week} & \textbf{Focus} & \textbf{Deliverables} & \textbf{Certainty} \\
+\hline
+1--2 & Foundations & ERD, PostGIS/Parquet setup, Bronze/Silver/Gold scaffolding, CSV loaders & High \\
+\hline
+3--4 & Camera $\rightarrow$ Signals path & \texttt{raw\_frames}/\texttt{raw\_detections} landed, aggregation $\rightarrow$ \texttt{segment\_signals\_2m}, calibration versioning & Medium-High \\
+\hline
+5 & Gold \& Serving & Gold views, ML exports, \texttt{travel\_time\_edge\_ETA\_2m}, Redis cache & Medium \\
+\hline
+6 & QA \& Hardening & Quality monitors, backfills, retention/backup, load \& label QA loop & Medium \\
+\hline
+\end{tabularx}
+
+\section{UI/UX Platform}
+\label{sec:uiux}
+\subsection{Introduction}
+Urban travelers today face a fragmented mobility experience --- switching between multiple apps for bus schedules, ride-hailing, and walking navigation. This results in:
+\begin{itemize}
+  \item Inefficient trip planning (balancing time, cost, and distance).
+  \item Lack of real-time actionable insights (traffic, ETA drift).
+  \item User frustration and cognitive fatigue.
+\end{itemize}
+
+\paragraph{UI/UX Goal} Design a unified, intuitive, and responsive interface that allows users to:
+\begin{itemize}
+  \item Plan, book, and monitor their trips end-to-end in one platform.
+  \item Receive real-time recommendations with clear trade-offs.
+  \item Navigate safely with contextual alerts and visual clarity.
+\end{itemize}
+
+\subsection{Input \& Output}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.4cm}|>{\raggedright\arraybackslash}X|}
+\hline
+	extbf{Category} & \textbf{Description} \\
+\hline
+Input & Start \& destination points, preferred transport modes, live GPS data, transit APIs, local build API for object detection, and user preferences. \\
+\hline
+Output & Optimized travel itineraries (Fastest/Normal), ETA \& cost estimates, congestion alerts, and real-time route updates. \\
+\hline
+\end{tabularx}
+
+\subsubsection{System Flow}
+\begin{enumerate}
+  \item User enters trip details.
+  \item System fetches live transport \& traffic data \& camera data.
+  \item UI displays top route options.
+  \item In-trip recommender updates dynamically via GPS and APIs.
+  \item Alerts and rerouting offered in case of congestion.
+\end{enumerate}
+
+\subsection{Work Breakdown}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.3cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{3.6cm}|}
+\hline
+	extbf{Module} & \textbf{Description} & \textbf{Deliverables} \\
+\hline
+A. User Research \& Persona & Identify user pain points via surveys and interviews. & Persona profiles, user journey maps \\
+\hline
+B. Information Architecture & Design navigation across Pre-trip, In-trip, and Alerting modules. & Sitemap, navigation flow \\
+\hline
+C. Wireframe (Low-Fidelity) & Build layout skeletons for key screens (Trip Planner, Tracking). & Low-fi wireframes \\
+\hline
+D. Prototype (High-Fidelity) & Apply colors, typography, icons, and animations. & Interactive Figma prototype \\
+\hline
+E. UI Implementation & Convert designs to React/Next.js frontend with live API data. & Responsive working UI \\
+\hline
+F. UX Testing \& Iteration & Conduct usability tests and refine UI based on feedback. & UX test report, iteration summary \\
+\hline
+\end{tabularx}
+
+\subsection{Requirements}
+\subsubsection{Functional Requirements}
+\begin{itemize}
+  \item Allow users to input and edit trip details (start/end points, mode).
+  \item Display optimized routes with ETA, cost, and traffic levels.
+  \item Provide real-time updates and one-tap reroute options.
+  \item Deliver congestion \& safety alerts.
+  \item Ensure accessibility compliance (font size $\ge 14$px, contrast ratio $\ge 4.5:1$).
+\end{itemize}
+
+\subsubsection{Non-Functional Requirements}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.9cm}|>{\raggedright\arraybackslash}X|}
+\hline
+	\textbf{Aspect} & \textbf{Specification} \\
+\hline
+Usability & $\ge 85\%$ success rate in usability tests \\
+\hline
+Performance & Response latency $\le 5$ s (p95) \\
+\hline
+Reliability & $\ge 99.5\%$ crash-free sessions \\
+\hline
+Accessibility & WCAG 2.1 compliance \\
+\hline
+Consistency & Unified icons, color scheme, and feedback states \\
+\hline
+\end{tabularx}
+
+\subsubsection{Tools \& Frameworks}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.0cm}|>{\raggedright\arraybackslash}X|}
+\hline
+	\textbf{Purpose} & \textbf{Tools / Frameworks} \\
+\hline
+UI Design & Figma, Adobe XD, Illustrator \\
+\hline
+Prototyping & Figma Prototype, Framer, InVision \\
+\hline
+Frontend & React.js, Next.js, Tailwind CSS, shadcn/ui \\
+\hline
+UX Testing & Maze, Hotjar, Google Analytics \\
+\hline
+Collaboration & Notion, Trello, Slack, GitHub \\
+\hline
+\end{tabularx}
+
+\subsection{Risk Management / Testing Method}
+\subsubsection{Risk Analysis}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.5cm}|>{\raggedright\arraybackslash}p{2.6cm}|>{\raggedright\arraybackslash}X|}
+\hline
+	\textbf{Risk} & \textbf{Impact} & \textbf{Mitigation Strategy} \\
+\hline
+API data inconsistency (ETA drift) & Medium & Cache fallback data; re-request on failure. \\
+\hline
+Overwhelming UI complexity & High & Simplify actions: $\le 3$ taps for core functions. \\
+\hline
+Accessibility issues & High & Use accessible color palette and test with screen readers. \\
+\hline
+Integration delays & Medium & Align weekly via shared Figma + GitHub sync. \\
+\hline
+Low participation in usability testing & Low & Utilize online testing via Maze/Hotjar. \\
+\hline
+\end{tabularx}
+
+\subsubsection{Testing Methods}
+\begin{itemize}
+  \item \textbf{Usability Testing}: Evaluate ease of use and completion rate of key actions.
+  \item \textbf{A/B Testing}: Compare alternative UI layouts for efficiency.
+  \item \textbf{Heuristic Evaluation}: Check compliance with UX principles.
+  \item \textbf{Performance Testing}: Measure app response time and smoothness.
+  \item \textbf{User Satisfaction Survey}: Target CSAT $\ge 4.2/5$.
+\end{itemize}
+
+\subsection{Timeline}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.3cm}|>{\raggedright\arraybackslash}p{2.9cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{3.4cm}|}
+\hline
+	\textbf{Week} & \textbf{Phase} & \textbf{Key Activities} & \textbf{Deliverables} \\
+\hline
+Week 1--2 & Research \& Persona & Conduct surveys/interviews and map user journeys. & Persona \& journey map \\
+\hline
+Week 3 & Information Architecture & Design sitemap and define module structure. & Sitemap \& flow diagram \\
+\hline
+Week 4--5 & Wireframing & Create low-fidelity wireframes for all key screens. & Approved wireframes \\
+\hline
+Week 6--7 & High-Fidelity Design & Apply brand system, icons, and UI interactions. & Interactive prototype \\
+\hline
+Week 8 & UI Implementation & Develop and integrate React/Next.js frontend. & Working UI with API link \\
+\hline
+Week 9--10 & UX Testing \& Iteration & Conduct usability tests, analyze feedback. & UX Report + Refined Design \\
+\hline
+Week 11 & Final Presentation & Prepare final demo and design deck. & Live demo \& presentation materials \\
+\hline
+\end{tabularx}

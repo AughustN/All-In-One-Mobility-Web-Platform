@@ -1,0 +1,121 @@
+\chapter{Decomposition of the Problem}
+\label{sec:impact}
+% Styles for nodes
+\forestset{
+  default preamble={
+    for tree={
+      draw,
+      rounded corners,
+      node options={align=left, inner xsep=5pt, inner ysep=4pt},
+      text width=3.7cm, % narrower to reduce overfull hboxes
+      s sep=5mm,   % sibling separation (slightly reduced)
+      l sep=7mm,   % level separation (slightly reduced)
+      anchor=north,
+      edge={-stealth, line width=0.6pt},
+      fill=white
+    }
+  },
+  smallnode/.style={
+    text width=3.0cm,
+    font=\small
+  },
+  compact/.style={
+    text width=2.6cm,
+    font=\footnotesize
+  }
+}
+
+% Split the large tree into multiple figures so it can continue onto the next pages if needed
+\begin{figure}[t]
+  \centering
+  \resizebox{\linewidth}{!}{%
+  \begin{forest}
+    for tree={grow'=east}
+    [Web,
+      % --- ROUTING ---
+      [Routing,
+        [Routing Algorithm, smallnode,
+          [{Multi-modal pathfinding:\\Extend A* to handle walk → bus → metro → walk transitions}, compact]
+          [{Cost function:\\Combine time, distance, fare, comfort, and congestion}, compact]
+        ]
+        [OSM Integration, smallnode,
+          [{Overpass API for road networks, transit stops, pedestrian paths}, compact]
+          [{Caching layer:\\Store frequently accessed map tiles and routes}, compact]
+          [{Fallback handling:\\Deal with API rate limits and offline scenarios}, compact]
+        ]
+        [Performance Testing, smallnode,
+          [{Unit tests:\\Individual algorithm components (heuristic accuracy, path reconstruction)}, compact]
+          [{Integration tests:\\End-to-end routing with mock OSM data}, compact]
+        ]
+      ]
+    ]
+  \end{forest}}
+  \caption{Impact: System architecture (Routing)}\label{fig:impact-architecture-routing}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \resizebox{\linewidth}{!}{%
+  \begin{forest}
+    for tree={grow'=east}
+    [Web,
+      % --- SUGGESTION ENGINE ---
+      [Suggestion Engine, smallnode,
+        [Data Collecting / Cleaning, smallnode,
+          [Scrape Web, compact]
+          [Organize to datasets, compact]
+        ]
+        [Optimization Algorithm, smallnode,
+          [User preferences:\\Weight personalization (number of bus station), compact]
+        ]
+        [Ranking Logic for Optimal Choices, smallnode,
+          [Sorting Algorithm, compact]
+          [{Scoring system:\\Weighted sum of normalized metrics}, compact]
+        ]
+      ]
+    ]
+  \end{forest}}
+  \caption{Impact: System architecture (Suggestion Engine)}\label{fig:impact-architecture-suggestion}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \resizebox{\linewidth}{!}{%
+  \begin{forest}
+    for tree={grow'=east}
+    [Web,
+      % --- CONGESTION PREDICTION ---
+      [Object Detection To Simulate Traffic Flow, smallnode,
+        [Training, compact]
+        [Alert System, compact]
+        [Scrape Data, compact]
+        [{Architecture:\\Graph Neural Network}, compact]
+      ]
+      % --- UI LAYER ---
+      [Interface / UI Layer, smallnode,
+        [Framework, compact]
+        [Kanban-Style UI (Top-3 Modes), compact]
+        [Localization + Accessibility Support, compact]
+        [Backend API Integration, compact]
+      ]
+      % --- BACKEND ---
+      [Backend \& Infrastructure, smallnode,
+        [API Gateway, smallnode,
+          [Endpoint, compact]
+        ]
+        [Database, smallnode,
+          [Transit, compact]
+          [Fare, compact]
+          [User Data, compact]
+        ]
+      ]
+    ]
+  \end{forest}}
+  \caption{Impact: System architecture (Backend \& UI)}\label{fig:impact-architecture-backend-ui}
+\end{figure}
+%\cleardoublepage
+
+\glsresetall%
+
+
+

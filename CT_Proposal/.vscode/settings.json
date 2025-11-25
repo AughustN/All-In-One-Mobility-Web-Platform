@@ -1,0 +1,44 @@
+{
+  // Auto-build on save using latexmk
+  "latex-workshop.latex.autoBuild.run": "onSave",
+
+  // Use latexmk with nonstopmode and file-line errors for clearer logs
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-outdir=build",
+        "-pdf",
+        "%DOC%"
+      ]
+    }
+  ],
+
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk (pdf)",
+      "tools": ["latexmk"]
+    }
+  ],
+
+  // Always treat 0-main.tex as the root file for this workspace
+  "latex-workshop.latex.rootFile.doNotPrompt": true,
+  "latex-workshop.latex.rootFile.useSubFile": false,
+  "latex-workshop.latex.rootFile.fallback": [
+    "0-main.tex"
+  ],
+
+  // Keep PDF preview inside VS Code
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+
+  // Place outputs under ./build and keep explorer tidy
+  "latex-workshop.latex.outDir": "./build",
+
+  // Improve file watching on some macOS setups (optional)
+  // "latex-workshop.latex.watch.usePolling": true
+}
