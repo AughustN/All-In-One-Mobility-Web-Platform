@@ -1,11 +1,9 @@
-import json
 import pandas as pd
 import networkx as nx
 import heapq
-import folium
 import math
 from collections import defaultdict
-from draw_bus_path import find_shortest_path , build_graph_from_json
+from draw_bus_path import find_shortest_path
 
 
 # --------------------------------------------------------------
@@ -155,9 +153,19 @@ def a_star(G, route_info, stops, start_stops, dest_stop_set, heuristic,
                 path.reverse()
                 routes_used.reverse()
 
+                # special stops
                 final_special = special_stops[current] + [lastStop]
-                for i in range(len(final_special)):
-                    final_special[i] = stops.loc[final_special[i], "stopName"]
+
+                # list name of used route
+                uniqueName_Route_used = []
+                uniqueBus_Number_used = []
+                for route_id in set(routes_used):
+                    if route_id is None: 
+                        continue
+                    
+                    row = route_info[route_id]
+                    uniqueName_Route_used.append(row["trip_name"])
+                    uniqueBus_Number_used.append(row["bus_number"])
 
                 total_fare = cum_fare[current]
                 total_wait_sec = cum_wait[current]
@@ -169,10 +177,10 @@ def a_star(G, route_info, stops, start_stops, dest_stop_set, heuristic,
                         "best_min": best_sec / 60,
                         "worst_min": worst_sec / 60,
                         "total_fare": total_fare,
-                        "route_seq" : routes_used,
+                        "unique_Routes" : uniqueName_Route_used,
+                        "unique_BusNumbers": uniqueBus_Number_used,
                         "special_stops": final_special
                     }
-
 
         if stop not in G:
             continue
@@ -206,16 +214,11 @@ def a_star(G, route_info, stops, start_stops, dest_stop_set, heuristic,
 
     return {}
 
-def draw_map(route_info, start_coord, dest_coord, stops_df,
-             path, route_seq, total_fare, worst_min, best_min, Car_nodes, Car_graph, Walk_nodes, Walk_graph):
+def calculate_walkingCoords(special_stops, start_coord, dest_coord, stops_df,
+             path, Walk_nodes, Walk_graph):
     
     print("Drawing map...")
-    m = folium.Map(location=start_coord, zoom_start=14, tiles="OpenStreetMap")
-    folium.Marker(start_coord, popup="Start", icon=folium.Icon(color="green")).add_to(m)
-    folium.Marker(dest_coord,  popup="End",   icon=folium.Icon(color="red")).add_to(m)
-
     if not path:
-        m.save("bus_route_pro.html")
         return
 
     # === 1. Walk to first stop ===
@@ -225,93 +228,16 @@ def draw_map(route_info, start_coord, dest_coord, stops_df,
         first_stop_coord[0], first_stop_coord[1],
         Walk_nodes, Walk_graph
     )
-    if walk_to_bus:
-        folium.PolyLine(walk_to_bus, color="gray", weight=5, opacity=0.8, tooltip="Walk").add_to(m)
-        prev_end_coord = walk_to_bus[-1]
-    else:
-        folium.PolyLine([start_coord, first_stop_coord], color="gray", weight=5, opacity=0.8).add_to(m)
-        prev_end_coord = first_stop_coord
-
-    # === 2. Bus segments (CHAINED) ===
-    colors = ["#1f77b4","#ff7f0e","#2ca02c","#d62728","#9467bd","#8c564b","#e377c2","#7f7f7f"]
-    color_map = {}
-    col_idx = 0
-
-    for i in range(len(path)-1):
-        u, v = path[i], path[i+1]
-        v_coord = (stops_df.loc[v, "lat"], stops_df.loc[v, "lng"])
-        edge_route = route_seq[i] 
-
-        if edge_route not in color_map:
-            color_map[edge_route] = colors[col_idx % len(colors)]
-            col_idx += 1
-        color = color_map[edge_route]
-
-        road_path = find_shortest_path(
-            prev_end_coord[0], prev_end_coord[1],
-            v_coord[0], v_coord[1],
-            Car_nodes, Car_graph
-        )
-
-        if road_path:
-            folium.PolyLine(road_path, color=color, weight=7, opacity=0.9,
-                            tooltip=f"Bus {route_info[edge_route]['bus_number']}").add_to(m)
-            prev_end_coord = road_path[-1]
-        else:
-            folium.PolyLine([prev_end_coord, v_coord], color=color, weight=7, opacity=0.6,
-                            tooltip=f"Bus {route_info[edge_route]['bus_number']} (approx)").add_to(m)
-            prev_end_coord = v_coord
 
     # === 3. Final walk ===
+    last_stop_coord = (stops_df.loc[path[-1], "lat"], stops_df.loc[path[-1], "lng"])
     walk_to_dest = find_shortest_path(
-        prev_end_coord[0], prev_end_coord[1],
+        last_stop_coord[0], last_stop_coord[1],
         dest_coord[0], dest_coord[1],
         Walk_nodes, Walk_graph
     )
-    if walk_to_dest:
-        folium.PolyLine(walk_to_dest, color="gray", weight=5, opacity=0.8, tooltip="Walk").add_to(m)
-    else:
-        folium.PolyLine([prev_end_coord, dest_coord], color="gray", weight=5, opacity=0.8).add_to(m)
+   
 
-    # === Legend ===
-    legend_items = []
-    for route_id in set(route_seq):
-        if route_id is None: 
-            continue
-        color = color_map.get(route_id, "#000000")
-        bus_num = route_info[route_id]["bus_number"]
-        trip = route_info[route_id]["trip_name"]
-        legend_items.append(
-            f'<i style="background:{color};width:20px;height:4px;display:inline-block;"></i> '
-            f'<b>Bus {bus_num}</b>: {trip}'
-        )
-    
-    legend_html = f"""
-    <style>
-    /* Force the folium map container to be relative */
-    #map {{
-        position: relative;
-    }}
+        
+    return walk_to_bus, walk_to_dest 
 
-    #maplegend {{
-        position: absolute;
-        top: 20px;
-        left: 50px;
-        z-index: 999999;
-        background: white;
-        padding: 15px;
-        border: 2px solid gray;
-        font-size: 14px;
-        width: 260px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }}
-    </style>
-
-    <div id='maplegend'>
-        <b>Bus number:</b><br>
-        {"<br>".join(legend_items)}
-    </div>
-    """
-    m.get_root().html.add_child(folium.Element(legend_html))
-    m.save("bus_route_pro.html")
-    print("Map saved → bus_route_pro.html (MultiDiGraph + Real Roads!)")

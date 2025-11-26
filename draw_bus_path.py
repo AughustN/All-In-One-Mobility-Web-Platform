@@ -103,6 +103,6 @@ def find_shortest_path(start_lat, start_lon, end_lat, end_lon, nodes, graph):
 
         return []
 
-    coords = [(nodes[nid][0], nodes[nid][1]) for nid in path]
+    coords = [{nodes[nid][0], nodes[nid][1]} for nid in path]
 
     return coords
