@@ -4,6 +4,7 @@ import heapq
 import math
 from collections import defaultdict
 from draw_bus_path import find_shortest_path
+from API import calculate_route
 
 
 # --------------------------------------------------------------
@@ -19,8 +20,9 @@ def load_data():
 # --------------------------------------------------------------
 # 2. Build graph
 # --------------------------------------------------------------
-def build_graph(trips):
+def build_graph(trips, stops_df, max_walking_between_stops = 250):
     G = nx.MultiDiGraph()
+    # Add all bus route edges
     for route_id in trips["routeId"].unique():
         sub = trips[trips["routeId"] == route_id].sort_values("stopSequence")
         stops_list = sub["stopId"].tolist()
@@ -32,6 +34,30 @@ def build_graph(trips):
         for sid in stops_list:
             if sid not in G:
                 G.add_node(sid)
+
+    # Ensure all stops exist as nodes with coordinates
+    for _, row in stops_df.iterrows():
+        sid = row.name
+        G.add_node(sid)
+
+    # Add walking edges between nearby stops (within max_walking_between_stops)
+    stop_ids = list(stops_df.index)
+
+    for i in range(len(stop_ids)):
+        u = stop_ids[i]
+        u_coord = (stops_df.loc[u, "lat"], stops_df.loc[u, "lng"])
+
+        for j in range(i + 1, len(stop_ids)):
+            v = stop_ids[j]
+            v_coord = (stops_df.loc[v, "lat"], stops_df.loc[v, "lng"])
+
+            dist = haversine(u_coord, v_coord)
+
+            if dist <= max_walking_between_stops:
+                G.add_edge(u, v, distance=dist, route="0", mode="walk")
+                G.add_edge(v, u, distance=dist, route="0", mode="walk")
+
+    print(f"Added walking edges for {max_walking_between_stops}m radius")
     return G
 
 
@@ -159,8 +185,21 @@ def a_star(G, route_info, stops, start_stops, dest_stop_set, heuristic,
                 # list name of used route
                 uniqueName_Route_used = []
                 uniqueBus_Number_used = []
-                for route_id in set(routes_used):
-                    if route_id is None: 
+                
+                last = None
+
+                for route_id in routes_used:
+                    if route_id == last:
+                        continue   # skip duplicate consecutive values
+
+                    last = route_id
+
+                    if route_id is None:
+                        continue
+
+                    if route_id == "0":
+                        uniqueName_Route_used.append("walk")
+                        uniqueBus_Number_used.append("walk")
                         continue
                     
                     row = route_info[route_id]
@@ -191,12 +230,22 @@ def a_star(G, route_info, stops, start_stops, dest_stop_set, heuristic,
 
             wait = 0.0
             fare_add = 0
-            if cur_route is None or cur_route != new_route:
-                fare_add = route_info[new_route]["fare"]
-                wait = route_info[new_route]["headway_sec"]
-
+            if new_route == "0":   # walking edge
+                fare_add = 0
+                wait = 0
+                if cur_route == "0": continue # prevent consecutive walking 
+            else:
+                # transfer or new bus route
+                if cur_route is None or cur_route != new_route:
+                    fare_add = route_info[new_route]["fare"]
+                    wait = route_info[new_route]["headway_sec"]
+                else:
+                    fare_add = 0
+                    wait = 0
             # STRONG PENALTY ON WAITING → FEWER TRANSFERS
-            tentative_g = g_score[current] + dist/speed + wait * p + c * fare_add
+            if(cur_route is not None and new_route != "0"):
+                tentative_g = g_score[current] + dist/speed + wait * p + c * fare_add
+            else: tentative_g = g_score[current] + dist/walk_speed
 
             new_state = (nei, new_route)
             if tentative_g < g_score[new_state]:
@@ -206,7 +255,7 @@ def a_star(G, route_info, stops, start_stops, dest_stop_set, heuristic,
                 cum_wait[new_state] = cum_wait[current] + wait
                 f = tentative_g + heuristic(nei)
 
-                if cur_route is None or cur_route != new_route: special_stops[new_state] = special_stops[current] + [stop]
+                if new_route == "0" or (cur_route is None or cur_route != new_route): special_stops[new_state] = special_stops[current] + [stop]
                 else : special_stops[new_state] = list(special_stops[current])
 
                 heapq.heappush(open_set, (f, counter, new_state))
@@ -214,7 +263,7 @@ def a_star(G, route_info, stops, start_stops, dest_stop_set, heuristic,
 
     return {}
 
-def calculate_walkingCoords(special_stops, start_coord, dest_coord, stops_df,
+def calculate_First_Last_walkingCoords(start_coord, dest_coord, stops_df,
              path, Walk_nodes, Walk_graph):
     
     print("Drawing map...")
@@ -229,6 +278,7 @@ def calculate_walkingCoords(special_stops, start_coord, dest_coord, stops_df,
         Walk_nodes, Walk_graph
     )
 
+
     # === 3. Final walk ===
     last_stop_coord = (stops_df.loc[path[-1], "lat"], stops_df.loc[path[-1], "lng"])
     walk_to_dest = find_shortest_path(
@@ -241,3 +291,49 @@ def calculate_walkingCoords(special_stops, start_coord, dest_coord, stops_df,
         
     return walk_to_bus, walk_to_dest 
 
+def calculate_transfer_walkingCoords(special_stops, stop_df, unique_BusNumbers, Walk_nodes, Walk_graph, walk_to_bus, walk_to_des):
+    special_stops_name = []
+    special_stops_coords = []
+    walk_coords = []
+
+    for i in range(len(special_stops)):
+        stop_id = special_stops[i]
+
+        # Add the name normally
+        special_stops_name.append(stop_df.loc[stop_id, "stopName"])
+
+        # Skip first and last → no car segment
+        if i == 0:
+            continue
+
+        start_coord = {
+                "lat": stop_df.loc[special_stops[i - 1], "lat"],
+                "lon": stop_df.loc[special_stops[i - 1], "lng"]
+                }
+
+        end_coord = {
+                "lat": stop_df.loc[special_stops[i], "lat"],
+                "lon": stop_df.loc[special_stops[i], "lng"]
+                }
+        
+        if(unique_BusNumbers[i - 1] == "walk"):
+
+            coords = find_shortest_path(start_coord["lat"],
+                                         start_coord["lon"], 
+                                         end_coord["lat"], 
+                                         end_coord["lon"], 
+                                         Walk_nodes,
+                                         Walk_graph)
+            walk_coords.append(coords)
+
+            continue
+
+        # Compute car path between previous stop → current stop
+        coords = calculate_route(start_coord, end_coord)["coords"]
+
+        special_stops_coords.append(coords)
+    
+    walk_coords.append(walk_to_des)
+    walk_coords.insert(0, walk_to_bus)
+
+    return special_stops_name, special_stops_coords, walk_coords

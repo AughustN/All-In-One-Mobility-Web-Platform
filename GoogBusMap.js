@@ -6,14 +6,26 @@ const GOONG_MAPTILES_KEY = 'w6UXzsXLNcwmP5pRQdbHALGm2jK3nxj8OhNrJlQY';
 
 goongjs.accessToken = GOONG_MAPTILES_KEY;
 
+// COLOR PALETTE FOR BUS ROUTES
+export const colorPalette = [
+  "#e41a1c",
+  "#377eb8",
+  "#4daf4a",
+  "#984ea3",
+  "#ff7f00",
+  "#ffff33",
+  "#a65628",
+  "#f781bf",
+  "#999999",
+];
+
+
+
 export default function GoongBusMap({
   origin,
   destination,
-  walkToBus_coords,
-  walkToDes_coords,
+  walk_coords,
   bus_coords,              
-  unique_nameRoutes = [],
-  unique_busNumbers = [],
   style = "goong_map_web",
 }) {
   const mapContainer = useRef(null);
@@ -22,20 +34,8 @@ export default function GoongBusMap({
   const [mapLoaded, setMapLoaded] = useState(false);
   const startMarker = useRef(null);
   const endMarker = useRef(null)
-
-
-  // COLOR PALETTE FOR BUS ROUTES
-  const colorPalette = [
-    "#e41a1c",
-    "#377eb8",
-    "#4daf4a",
-    "#984ea3",
-    "#ff7f00",
-    "#ffff33",
-    "#a65628",
-    "#f781bf",
-    "#999999",
-  ];
+  const [foundRoute, setFoundRoute] = useState(false);
+  
 
   // ---------- 1. Initialize Map ----------
   useEffect(() => {
@@ -158,65 +158,43 @@ export default function GoongBusMap({
     removeAllRouteLayers();
 
     // Walking → dashed gray
-    addRouteLayer(walkToBus_coords, "#666", "walkToBus", true);
-    addRouteLayer(walkToDes_coords, "#666", "walkToDes", true);
+    for (let i = 0; i < walk_coords.length; i++) {
+      addRouteLayer(walk_coords[i], "#666", `walk_coords_${i}`, true);
+    }
 
     // Bus Routes → each with different color
+    if(bus_coords) console.log("bus_coords =", bus_coords);
     bus_coords.forEach((route, idx) => {
       const color = colorPalette[idx % colorPalette.length];
+
       addRouteLayer(route, color, `bus_route_${idx}`, false);
     });
-  }, [walkToBus_coords, walkToDes_coords, bus_coords, mapLoaded]);
 
-  // ---------- 3. Add info box UI ----------
-useEffect(() => {
-  if (!mapLoaded) return;
+    setFoundRoute(true);
 
-  const infoDiv = document.createElement("div");
-  infoDiv.className = "goong-route-info";
-  infoDiv.style.cssText = `
-    background: white;
-    padding: 12px;
-    border-radius: 12px;
-    width: 260px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-    font-size: 13px;
-    line-height: 1.4;
-  `;
+  }, [walk_coords, bus_coords, mapLoaded]);
 
-  let html = `<h4 style="margin-top:0;margin-bottom:8px;">Route Information</h4>`;
+  // Fit bounds when origin/destination change
+  useEffect(() => {
+    if (!mapLoaded || !map.current || foundRoute)  return;
 
-  // For each bus route: show color + busNumber + nameRoute
-  html += unique_busNumbers
-    .map((busNum, i) => {
-      const color = colorPalette[i % colorPalette.length];
-      return `
-        <div style="display:flex;align-items:center;margin-bottom:6px;">
-          <div style="
-            width: 16px;
-            height: 16px;
-            background:${color};
-            border-radius:3px;
-            margin-right:8px;
-          "></div>
-          <b>${busNum}</b>: ${unique_nameRoutes[i]}
-        </div>
-      `;
-    })
-    .join("");
+    if (origin && destination) {
+      const bounds = new goongjs.LngLatBounds();
+      bounds.extend([origin.lon, origin.lat]);
+      bounds.extend([destination.lon, destination.lat]);
+      map.current.fitBounds(bounds, { padding: 50 });
+    } else if (origin) {
+      map.current.flyTo({ center: [origin.lon, origin.lat], zoom: 14 });
+    } else if (destination) {
+      map.current.flyTo({ center: [destination.lon, destination.lat], zoom: 14 });
+    }
+  }, [mapLoaded, origin, destination]);
 
-  infoDiv.innerHTML = html;
-
-    // Custom control object
-    const infoControl = {
-      onAdd: () => infoDiv,
-      onRemove: () => {},
-    };
-
-    map.current.addControl(infoControl, "top-left");
-
-    return () => map.current.removeControl(infoControl);
-  }, [unique_nameRoutes, unique_busNumbers, mapLoaded]);
+  useEffect(() => {
+  // whenever origin/destination changes, reset the foundRoute flag
+  if(foundRoute) removeAllRouteLayers()
+  setFoundRoute(false);
+}, [origin, destination]);
 
   return (
     <div
