@@ -1,4 +1,5 @@
 import cv2
+import os
 from ultralytics import YOLO
 from pathlib import Path
 import json
@@ -8,14 +9,9 @@ import time
 from tqdm import tqdm
 import pandas as pd
 import numpy as np
-
 class OptimizedBatchDetector:
-    """
-    Batch detector with preprocessing optimization
-    Based on benchmark results showing +18% improvement
-    """
     
-    def __init__(self, model_name='yolov8l.pt', db_path='detections.db', 
+    def __init__(self, model_name='yolov11l.pt', db_path='detections.db', 
                  use_preprocessing=True, use_tta=False):
         print(f"Initializing Optimized Batch Detector...")
         self.model = YOLO(model_name)
@@ -291,6 +287,19 @@ class OptimizedBatchDetector:
         print(f"Database: {self.db_path}")
 
 
+
+# Cleanup function
+def cleanup_frames(base_dir="./camera_frames"):
+    for cam in os.listdir(base_dir):
+        path = os.path.join(base_dir, cam)
+        if os.path.isdir(path):
+            for f in os.listdir(path):
+                try:
+                    os.remove(os.path.join(path, f))
+                except:
+                    pass
+    print("🧹 Deleted frames after detection.")
+
 # MAIN
 if __name__ == "__main__":
     DATA_DIR = "./camera_frames"
@@ -298,11 +307,13 @@ if __name__ == "__main__":
     
     # Initialize with PREPROCESSING ONLY (recommended)
     detector = OptimizedBatchDetector(
-        model_name='yolov8l.pt',
+        model_name='yolo11l.pt',
         db_path=DB_PATH,
-        use_preprocessing=True,   # ← Based on benchmark
-        use_tta=False              # ← Skip for speed
+        use_preprocessing=True,   
+        use_tta=False              
     )
     
     # Process
     detector.batch_process(DATA_DIR, resume=True)
+    time.sleep(30)
+    cleanup_frames("./camera_frames")
