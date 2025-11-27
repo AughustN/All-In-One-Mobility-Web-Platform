@@ -11,7 +11,7 @@ import pandas as pd
 import numpy as np
 class OptimizedBatchDetector:
     
-    def __init__(self, model_name='yolov11l.pt', db_path='detections.db', 
+    def __init__(self, model_name='yolo11l.pt', db_path='detections.db', 
                  use_preprocessing=True, use_tta=False):
         print(f"Initializing Optimized Batch Detector...")
         self.model = YOLO(model_name)
