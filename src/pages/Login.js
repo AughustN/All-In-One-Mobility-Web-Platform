@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Email, Lock, ArrowForward, Room } from '@material-ui/icons';
 import { CircularProgress } from '@material-ui/core';
 import { login } from '../api';
+import OAuthButtons from '../components/OAuthButtons';
 import '../css/Auth.css';
 import vietnamMap from '../resource/vietnam.svg';
 
@@ -48,9 +49,51 @@ const Input = ({ label, icon, ...props }) => {
 
 export default function Login() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [formData, setFormData] = useState({ username: '', password: '' });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+
+  // Handle GitHub OAuth callback
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const code = urlParams.get('code');
+    
+    if (code) {
+      // GitHub OAuth callback
+      handleGithubCallback(code);
+    }
+  }, [location]);
+
+  const handleGithubCallback = async (code) => {
+    setIsLoading(true);
+    setError('');
+    
+    try {
+      const BASE_URL = "https://api.hcmus.fit";
+      const res = await fetch(`${BASE_URL}/api/auth/github`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ code })
+      });
+      
+      const data = await res.json();
+      
+      if (res.ok && data.token) {
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('username', data.username);
+        window.dispatchEvent(new Event('auth-change'));
+        navigate('/');
+      } else {
+        setError(data.message || 'GitHub login failed');
+      }
+    } catch (err) {
+      setError(err.message || 'GitHub login failed');
+      console.error('GitHub OAuth callback error:', err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -69,6 +112,50 @@ export default function Login() {
       navigate('/');
     } catch (err) {
       setError(err.message || 'Đăng nhập thất bại');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    console.log('🔵 Google login button clicked');
+    setIsLoading(true);
+    setError('');
+    
+    try {
+      console.log('🔵 Importing Google OAuth handler...');
+      const { handleGoogleLogin: googleAuth } = await import('../utils/oauth');
+      console.log('🔵 Calling Google OAuth...');
+      const data = await googleAuth();
+      console.log('🔵 Google OAuth success:', data);
+      
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('username', data.username);
+      window.dispatchEvent(new Event('auth-change'));
+      navigate('/');
+    } catch (err) {
+      console.error('❌ Google OAuth error:', err);
+      setError(err.message || 'Google login failed');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleGithubLogin = async () => {
+    setIsLoading(true);
+    setError('');
+    
+    try {
+      const { handleGithubLogin: githubAuth } = await import('../utils/oauth');
+      const data = await githubAuth();
+      
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('username', data.username);
+      window.dispatchEvent(new Event('auth-change'));
+      navigate('/');
+    } catch (err) {
+      setError(err.message || 'GitHub login failed');
+      console.error('GitHub OAuth error:', err);
     } finally {
       setIsLoading(false);
     }
@@ -174,6 +261,14 @@ export default function Login() {
               )}
             </button>
           </form>
+
+          {/* OAuth Buttons */}
+          <div style={{ marginTop: '1.5rem' }}>
+            <OAuthButtons 
+              onGoogleLogin={handleGoogleLogin}
+              onGithubLogin={handleGithubLogin}
+            />
+          </div>
 
           {/* Footer */}
           <div style={{ marginTop: '2rem', textAlign: 'center' }}>

@@ -131,11 +131,11 @@ export async function searchLocation(address, lat = null, lon = null) {
   return resp.json();
 }
 
-export async function calculateRoute(start, end, travelMode = "car") {
+export async function calculateRoute(start, end, travelMode = "car", routeType = "fastest") {
   const resp = await fetch(`${BASE_URL}/route`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ start, end, travelMode }),
+    body: JSON.stringify({ start, end, travelMode, routeType }),
   });
   if (!resp.ok) throw new Error("Route calculation failed");
   return resp.json();
@@ -156,24 +156,24 @@ export async function reportSOS(lat, lng, description, imageFile) {
   formData.append('lat', lat);
   formData.append('lng', lng);
   formData.append('description', description);
-  
+
   if (imageFile) {
     formData.append('image', imageFile);
   }
 
   const token = localStorage.getItem('token'); // Lấy token thủ công vì FormData xử lý header khác JSON
-  
+
   const resp = await fetch(`${BASE_URL}/api/sos`, {
     method: "POST",
     headers: {
-      'Authorization': `Bearer ${token}` 
+      'Authorization': `Bearer ${token}`
       // Không set Content-Type là application/json vì đây là FormData
     },
     body: formData,
   });
 
   await handleResponse(resp);
-  
+
   if (!resp.ok) {
     const err = await resp.json();
     throw new Error(err.message || "Failed to report SOS");
@@ -186,7 +186,7 @@ export async function getSOSAlerts() {
   const resp = await fetch(`${BASE_URL}/api/sos`, {
     method: "GET"
   });
-  
+
   if (!resp.ok) return [];
   return resp.json();
 }
@@ -200,14 +200,43 @@ export async function resolveSOS(sosId) {
     },
     body: JSON.stringify({ sos_id: sosId }),
   });
-  
+
   await handleResponse(resp);
-  
+
   if (!resp.ok) {
     const err = await resp.json();
     throw new Error(err.message || "Lỗi khi cập nhật trạng thái");
   }
   return resp.json();
+}
+
+export async function getComments(sosId) {
+  const resp = await fetch(`${BASE_URL}/api/sos/comments/${sosId}`);
+  if (!resp.ok) return [];
+  return resp.json();
+}
+
+// Gửi comment
+export async function sendComment(sosId, content) {
+  const resp = await fetch(`${BASE_URL}/api/sos/comment`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...getAuthHeader() },
+    body: JSON.stringify({ sos_id: sosId, content }),
+  });
+  if (!resp.ok) throw new Error("Gửi bình luận thất bại");
+  return resp.json();
+}
+
+// Báo cáo bài viết
+export async function reportSOSPost(sosId, reason) {
+  const resp = await fetch(`${BASE_URL}/api/sos/report`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...getAuthHeader() },
+    body: JSON.stringify({ sos_id: sosId, reason: reason }),
+  });
+  const data = await resp.json();
+  if (!resp.ok) throw new Error(data.message || "Lỗi báo cáo");
+  return data;
 }
 export async function calculateBusRoute(origin, destination, maxWalk = 300) {
   const response = await fetch(

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Person, Lock, ArrowForward, Room } from '@material-ui/icons';
 import { CircularProgress } from '@material-ui/core';
 import { register } from '../api';
+import OAuthButtons from '../components/OAuthButtons';
 import '../css/Auth.css';
 import vietnamMap from '../resource/vietnam.svg';
 

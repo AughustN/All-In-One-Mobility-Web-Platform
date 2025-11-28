@@ -1,150 +1,205 @@
 import React, { useEffect, useRef, useState } from 'react';
 import goongjs from '@goongmaps/goong-js';
 import '@goongmaps/goong-js/dist/goong-js.css';
-import GoongMapStyleControl from './GoongMapStyleControl';
 
-const GOONG_API_KEY = 'w6UXzsXLNcwmP5pRQdbHALGm2jK3nxj8OhNrJlQY';
-const GOONG_MAPTILES_KEY = 'WOh4DfxBHRZhUMufKtHKj4qXFb2RZu2vlatKPJpH';
+const GOONG_MAPTILES_KEY = 'w6UXzsXLNcwmP5pRQdbHALGm2jK3nxj8OhNrJlQY';
 
-function GoongBusMap({ selectPosition, style = 'goong_map_web', userLocation }) {
-  const mapContainerRef = useRef(null);
-  const mapRef = useRef(null);
-  const markerRef = useRef(null);
-  const userMarkerRef = useRef(null);
+goongjs.accessToken = GOONG_MAPTILES_KEY;
+
+// COLOR PALETTE FOR BUS ROUTES
+export const colorPalette = [
+  "#e41a1c",
+  "#377eb8",
+  "#4daf4a",
+  "#984ea3",
+  "#ff7f00",
+  "#ffff33",
+  "#a65628",
+  "#f781bf",
+  "#999999",
+];
+
+
+
+export default function GoongBusMap({
+  origin,
+  destination,
+  walk_coords,
+  bus_coords,              
+  style = "goong_map_web",
+}) {
+  const mapContainer = useRef(null);
+  const map = useRef(null);
+  const routeLayers = useRef([]); // store all route layer names
+  const [mapLoaded, setMapLoaded] = useState(false);
+  const startMarker = useRef(null);
+  const endMarker = useRef(null)
+  const [foundRoute, setFoundRoute] = useState(false);
   
-  // Convert style ID to URL
-  const getStyleUrl = (styleId) => {
-    return `https://tiles.goong.io/assets/${styleId}.json`;
-  };
 
+  // ---------- 1. Initialize Map ----------
   useEffect(() => {
-    if (!mapContainerRef.current) return;
+    if (map.current) return;
 
-    goongjs.accessToken = GOONG_API_KEY;
+    map.current = new goongjs.Map({
+         container: mapContainer.current,
+         style: `https://tiles.goong.io/assets/${style}.json`,
+         center: [106.6297, 10.8231], // HCM City
+         zoom: 12
+       });
+    
+    map.current.addControl(new goongjs.NavigationControl(), 'top-right');
+    map.current.addControl(new goongjs.ScaleControl({
+      maxWidth: 100,
+      unit: 'metric'
+    }), 'bottom-left');
 
-    const map = new goongjs.Map({
-      container: mapContainerRef.current,
-      style: getStyleUrl(style),
-      center: [106.660172, 10.762622],
-      zoom: 13,
-      pitch: 0,
-      bearing: 0
-    });
-
-    map.addControl(new goongjs.NavigationControl(), 'top-right');
-    map.addControl(new goongjs.FullscreenControl(), 'top-right');
-
-    mapRef.current = map;
+    map.current.on("load", () => setMapLoaded(true));
 
     return () => {
-      if (markerRef.current) {
-        markerRef.current.remove();
+      if (map.current) {
+        map.current.remove();
+        map.current = null;
       }
-      map.remove();
     };
-  }, []);
+  }, [style]);
 
-  // Update map style when changed
+  // origin Marker
   useEffect(() => {
-    if (!mapRef.current) return;
-    
-    // Remove markers before style change
-    if (markerRef.current) {
-      markerRef.current.remove();
-      markerRef.current = null;
-    }
-    if (userMarkerRef.current) {
-      userMarkerRef.current.remove();
-      userMarkerRef.current = null;
-    }
-    
-    mapRef.current.setStyle(getStyleUrl(style));
-    
-    // Re-add markers after style loads
-    mapRef.current.once('styledata', () => {
-      if (selectPosition) {
-        const { lat, lon } = selectPosition;
-        const marker = new goongjs.Marker({ color: '#0277BD' })
-          .setLngLat([lon, lat])
-          .addTo(mapRef.current);
-        markerRef.current = marker;
-      }
-      if (userLocation) {
-        const userMarker = new goongjs.Marker({ color: '#4285F4' })
-          .setLngLat([userLocation.lon, userLocation.lat])
-          .addTo(mapRef.current);
-        userMarkerRef.current = userMarker;
-      }
-    });
-  }, [style, selectPosition, userLocation]);
+     if (!mapLoaded || !map.current || !origin) return;
+ 
+     // Remove old marker
+     if (startMarker.current) {
+       startMarker.current.remove();
+     }
+ 
+     // Add new marker
+     startMarker.current = new goongjs.Marker({ color: '#4CAF50' })
+       .setLngLat([origin.lon, origin.lat])
+       .setPopup(
+         new goongjs.Popup().setHTML(
+           `<strong>Điểm bắt đầu</strong><br/>${origin.name || 'Vị trí xuất phát'}`
+         )
+       )
+       .addTo(map.current);
+ 
+   }, [mapLoaded, origin]);
 
-  // Update marker position (separate from style changes)
+  // Des marker 
   useEffect(() => {
-    if (!mapRef.current || !selectPosition) return;
-
-    const { lat, lon } = selectPosition;
-
-    // Wait for map to be ready
-    const updateMarker = () => {
+      if (!mapLoaded || !map.current || !destination) return;
+  
       // Remove old marker
-      if (markerRef.current) {
-        markerRef.current.remove();
+      if (endMarker.current) {
+        endMarker.current.remove();
       }
-
+  
       // Add new marker
-      const marker = new goongjs.Marker({ color: '#0277BD' })
-        .setLngLat([lon, lat])
-        .addTo(mapRef.current);
-
-      markerRef.current = marker;
-
-      // Fly to position
-      mapRef.current.flyTo({
-        center: [lon, lat],
-        zoom: 15,
-        duration: 1500
-      });
-    };
-
-    if (mapRef.current.isStyleLoaded()) {
-      updateMarker();
-    } else {
-      mapRef.current.once('styledata', updateMarker);
-    }
-  }, [selectPosition]);
-
-  // Handle user location
-  useEffect(() => {
-    if (!mapRef.current || !userLocation) return;
-
-    // Remove old user marker
-    if (userMarkerRef.current) {
-      userMarkerRef.current.remove();
-    }
-
-    // Add marker with default style (blue color for user location)
-    const marker = new goongjs.Marker({ color: '#4285F4' })
-      .setLngLat([userLocation.lon, userLocation.lat])
-      .setPopup(
-        new goongjs.Popup({ offset: 25 }).setHTML(
-          '<div style="padding: 8px;"><strong>Vị trí của bạn</strong></div>'
+      endMarker.current = new goongjs.Marker({ color: '#F44336' })
+        .setLngLat([destination.lon, destination.lat])
+        .setPopup(
+          new goongjs.Popup().setHTML(
+            `<strong>Điểm đến</strong><br/>${destination.name || 'Đích đến'}`
+          )
         )
-      )
-      .addTo(mapRef.current);
+        .addTo(map.current);
+  
+    }, [mapLoaded, destination]); 
 
-    userMarkerRef.current = marker;
+  // ---------- Helper: Remove all previous routes ----------
+  const removeAllRouteLayers = () => {
+    if (!map.current) return;
 
-    // Fly to user location
-    mapRef.current.flyTo({
-      center: [userLocation.lon, userLocation.lat],
-      zoom: 15,
-      duration: 1500
+    routeLayers.current.forEach((layerId) => {
+      if (map.current.getLayer(layerId)) map.current.removeLayer(layerId);
+      if (map.current.getSource(layerId)) map.current.removeSource(layerId);
     });
-  }, [userLocation]);
+
+    routeLayers.current = [];
+  };
+
+  // ---------- Helper: Add a route layer ----------
+  const addRouteLayer = (coords, color, layerId, dashed = false) => {
+    if (!coords || coords.length < 2) return;
+    if (!map.current || !mapLoaded) return;
+
+    map.current.addSource(layerId, {
+      type: "geojson",
+      data: {
+        type: "Feature",
+        geometry: {
+          type: "LineString",
+          coordinates: coords.map((c) => [c.lon, c.lat]),
+        },
+      },
+    });
+
+    map.current.addLayer({
+      id: layerId,
+      type: "line",
+      source: layerId,
+      paint: {
+        "line-color": color,
+        "line-width": 5,
+        "line-opacity": 0.9,
+        ...(dashed
+          ? { "line-dasharray": [1, 2] }
+          : {}),
+      },
+    });
+
+    routeLayers.current.push(layerId);
+  };
+
+  // ---------- 2. Draw routes ----------
+  useEffect(() => {
+    if (!mapLoaded) return;
+
+    removeAllRouteLayers();
+
+    // Walking → dashed gray
+    for (let i = 0; i < walk_coords.length; i++) {
+      addRouteLayer(walk_coords[i], "#666", `walk_coords_${i}`, true);
+    }
+
+    // Bus Routes → each with different color
+    if(bus_coords) console.log("bus_coords =", bus_coords);
+    bus_coords.forEach((route, idx) => {
+      const color = colorPalette[idx % colorPalette.length];
+
+      addRouteLayer(route, color, `bus_route_${idx}`, false);
+    });
+
+    setFoundRoute(true);
+
+  }, [walk_coords, bus_coords, mapLoaded]);
+
+  // Fit bounds when origin/destination change
+  useEffect(() => {
+    if (!mapLoaded || !map.current || foundRoute)  return;
+
+    if (origin && destination) {
+      const bounds = new goongjs.LngLatBounds();
+      bounds.extend([origin.lon, origin.lat]);
+      bounds.extend([destination.lon, destination.lat]);
+      map.current.fitBounds(bounds, { padding: 50 });
+    } else if (origin) {
+      map.current.flyTo({ center: [origin.lon, origin.lat], zoom: 14 });
+    } else if (destination) {
+      map.current.flyTo({ center: [destination.lon, destination.lat], zoom: 14 });
+    }
+  }, [mapLoaded, origin, destination]);
+
+  useEffect(() => {
+  // whenever origin/destination changes, reset the foundRoute flag
+  if(foundRoute) removeAllRouteLayers()
+  setFoundRoute(false);
+}, [origin, destination]);
 
   return (
-    <div ref={mapContainerRef} style={{ width: '100%', height: '100%' }} />
+    <div
+      ref={mapContainer}
+      style={{ width: "100%", height: "100%" }}
+    />
   );
 }
-
-export default GoongBusMap;

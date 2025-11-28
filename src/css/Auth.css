@@ -409,3 +409,48 @@ button[type="submit"] > * {
   position: relative;
   z-index: 1;
 }
+
+/* OAuth Button Styles */
+.oauth-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.oauth-button:hover {
+  background-color: #27272a !important;
+  border-color: #52525b !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.oauth-button-github:hover {
+  background-color: #24292e !important;
+  border-color: #24292e !important;
+}
+
+.oauth-button:active {
+  transform: translateY(0);
+}
+
+.oauth-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s;
+}
+
+.oauth-button:hover::before {
+  width: 200px;
+  height: 200px;
+}
+
+.oauth-button > * {
+  position: relative;
+  z-index: 1;
+}

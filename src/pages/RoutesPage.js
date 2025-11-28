@@ -186,6 +186,7 @@ function RoutesPage() {
     const [debounceText, setDebounceText] = useState('');
     const [selectPosition, setSelectPosition] = useState(null);
     const [travelMode, setTravelMode] = useState('car');
+    const [routeType, setRouteType] = useState('fastest');
     const [errorMessage, setErrorMessage] = useState('');
     const [isSearchLocationSelected, setIsSearchLocationSelected] = useState(false);
     const [recentHistory, setRecentHistory] = useState({ locations: [], routes: [] });
@@ -237,7 +238,8 @@ function RoutesPage() {
                     const data = await calculateRoute(
                         { lat: route.start.lat, lon: route.start.lon },
                         { lat: route.end.lat, lon: route.end.lon },
-                        travelMode
+                        travelMode,
+                        routeType
                     );
                     setCoords(data.coords);
                     setDistance(data.distance_km);
@@ -248,7 +250,7 @@ function RoutesPage() {
                 }
             }, 500);
         }
-    }, [location.state, travelMode]);
+    }, [location.state, travelMode, routeType]);
 
     useEffect(() => {
         // Load history if logged in
@@ -298,8 +300,8 @@ function RoutesPage() {
         });
         setSearchInput(loc.address.freeformAddress);
         setShowSearchDropdown(false);
-        setFilteredLocations([]); // Xóa kết quả
-        setIsSearchLocationSelected(true); // Đánh dấu đã chọn
+        setFilteredLocations([]); 
+        setIsSearchLocationSelected(true);
         setOpenModal(true);
 
         // Save location if logged in
@@ -322,7 +324,8 @@ function RoutesPage() {
             const data = await calculateRoute(
                 { lat: selectedLocation.lat, lon: selectedLocation.lon },
                 { lat: selectPosition.lat, lon: selectPosition.lon },
-                mode
+                mode,
+                routeType
             );
 
             setCoords(data.coords);
@@ -467,6 +470,8 @@ function RoutesPage() {
                             initialFrom={selectedLocation?.name || ""}
                             travelMode={travelMode}
                             setTravelMode={setTravelMode}
+                            routeType={routeType}
+                            setRouteType={setRouteType}
                             onFromLocationChange={(locationData) => {
                                 setSelectedLocation(locationData);
                                 setSearchInput(locationData.name);
@@ -533,7 +538,8 @@ function RoutesPage() {
                                                             const data = await calculateRoute(
                                                                 { lat: route.start_lat, lon: route.start_lng },
                                                                 { lat: route.end_lat, lon: route.end_lng },
-                                                                travelMode
+                                                                travelMode,
+                                                                routeType
                                                             );
                                                             setCoords(data.coords);
                                                             setDistance(data.distance_km);

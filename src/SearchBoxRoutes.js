@@ -75,7 +75,7 @@ const transportOptions = [
 ];
 
 export default function SearchBoxRoutes(props) {
-    const { setSelectPosition, onSearch, initialFrom = "", travelMode, setTravelMode, onFromLocationChange } = props;
+    const { setSelectPosition, onSearch, initialFrom = "", travelMode, routeType, setTravelMode, onFromLocationChange } = props;
     const classes = useStyles();
 
     const [fromLocation, setFromLocation] = useState(initialFrom);
@@ -85,6 +85,7 @@ export default function SearchBoxRoutes(props) {
     const [showFromDropdown, setShowFromDropdown] = useState(false);
     const [showToDropdown, setShowToDropdown] = useState(false);
     const [selectedTransport, setSelectedTransport] = useState(travelMode || "car");
+    const [selectedRouteType, setSelectedRouteType] = useState(routeType || 'fastest');
     const [searchError, setSearchError] = useState('');
     const [isToLocationSelected, setIsToLocationSelected] = useState(false);
     const [isFromLocationSelected, setIsFromLocationSelected] = useState(false);
@@ -248,7 +249,7 @@ export default function SearchBoxRoutes(props) {
 
     const handleSearch = () => {
         if (onSearch) {
-            onSearch(selectedTransport, 'fastest');
+            onSearch(selectedTransport, selectedRouteType);
         }
     };
 
@@ -376,6 +377,31 @@ export default function SearchBoxRoutes(props) {
                         </List>
                     </Paper>
                 )}
+            </Box>
+            
+            {/* THÊM Giao diện Route Type */}
+            <Box style={{ marginTop: '16px' }}>
+                <Typography variant="subtitle2" style={{ marginBottom: "8px", fontWeight: "bold" }}>
+                    Tuyến đường ưu tiên
+                </Typography>
+                <Box style={{ display: 'flex', gap: '16px' }}>
+                    <Button
+                        variant={selectedRouteType === 'fastest' ? 'contained' : 'outlined'}
+                        color="primary"
+                        onClick={() => setSelectedRouteType('fastest')}
+                        style={{ flexGrow: 1 }}
+                    >
+                        Nhanh nhất
+                    </Button>
+                    <Button
+                        variant={selectedRouteType === 'shortest' ? 'contained' : 'outlined'}
+                        color="primary"
+                        onClick={() => setSelectedRouteType('shortest')}
+                        style={{ flexGrow: 1 }}
+                    >
+                        Ngắn nhất
+                    </Button>
+                </Box>
             </Box>
 
             {/* Transport Types */}

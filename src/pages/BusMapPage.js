@@ -9,6 +9,8 @@ import MyLocationIcon from '@material-ui/icons/MyLocation';
 import DirectionsBusIcon from '@material-ui/icons/DirectionsBus';
 import CloseIcon from '@material-ui/icons/Close';
 import MenuIcon from '@material-ui/icons/Menu';
+import GoongBusMap from '../GoongBusMap';
+import {colorPalette} from '../GoongBusMap';
 import { searchLocation, calculateBusRoute } from '../api';
 
 const useStyles = makeStyles((theme) => ({
@@ -151,26 +153,35 @@ export default function BusMapPage() {
   // Search states
   const [originSearchInput, setOriginSearchInput] = useState('');
   const [destinationSearchInput, setDestinationSearchInput] = useState('');
+
   const [selectedOrigin, setSelectedOrigin] = useState(null);
   const [selectedDestination, setSelectedDestination] = useState(null);
+
   const [debounceOrigin, setDebounceOrigin] = useState('');
   const [debounceDestination, setDebounceDestination] = useState('');
+
   const [filteredOrigins, setFilteredOrigins] = useState([]);
   const [filteredDestinations, setFilteredDestinations] = useState([]);
+
   const [showOriginDropdown, setShowOriginDropdown] = useState(false);
   const [showDestinationDropdown, setShowDestinationDropdown] = useState(false);
+
   const [isSearchingOrigin, setIsSearchingOrigin] = useState(false);
   const [isSearchingDestination, setIsSearchingDestination] = useState(false);
+  const [isSearchingRoute, setIsSearchingRoute] = useState(false);
   
   // Route states
-  const [maxWalkingDistance, setMaxWalkingDistance] = useState(300);
-  const [isSearchingRoute, setIsSearchingRoute] = useState(false);
-  const [mapHtml, setMapHtml] = useState(null);
-  const [bestCaseDuration, setBestCaseDuration] = useState(null);
-  const [worstCaseDuration, setWorstCaseDuration] = useState(null);
+  const [bus_coords, setBus_coords] = useState([]);
+  const [walk_coords, setWalk_coords] = useState([]);
   const [totalFare, setTotalFare] = useState(null);
+  const [WorstCaseDuration, setWorstCaseDuration] = useState(null);
+  const [BestCaseDuration, setBestCaseDuration] = useState(null);
   const [transfers, setTransfers] = useState(null);
-  const [specialStops, setSpecialStops] = useState([]);
+  const [specialStopsName, setSpectialStopsName] = useState([]);
+  const [unique_nameRoutes, setUnique_nameRoutes] = useState([]);
+  const [unique_busNumbers, setUnique_busNumbers] = useState([]);
+  const [maxWalkingDistance, setMaxWalkingDistance] = useState(400);
+
   const [errorMessage, setErrorMessage] = useState('');
 
   // Handle origin input change
@@ -279,14 +290,20 @@ export default function BusMapPage() {
     }
 
     try {
+
+      setIsSearchingRoute(true);
+
       setErrorMessage('');
-      setMapHtml(null);
+      setTotalFare(null);
       setBestCaseDuration(null);
       setWorstCaseDuration(null);
-      setTotalFare(null);
-      setTransfers(null);
-      setSpecialStops([]);
-      setIsSearchingRoute(true);
+      setTransfers(null);  
+      setSpectialStopsName([])
+      setUnique_nameRoutes([]);
+      setUnique_busNumbers([]);
+      setWalk_coords([]);;
+      setBus_coords([]);
+      
 
       const data = await calculateBusRoute(
         { lat: selectedOrigin.lat, lon: selectedOrigin.lon },
@@ -294,12 +311,19 @@ export default function BusMapPage() {
         Number(maxWalkingDistance)
       );
 
+      setTotalFare(data.fare_vnd);
       setBestCaseDuration(data.best_case_min);
       setWorstCaseDuration(data.worst_case_min);
-      setTotalFare(data.fare_vnd);
-      setTransfers(data.transfers);
-      setSpecialStops(data.specialStops || []);
-      setMapHtml(data.map_html);
+      setTransfers(data.transfers);  
+      setSpectialStopsName(data.specialStopsName || []);
+      setUnique_nameRoutes(data.unique_nameRoutes || []);
+      setUnique_busNumbers(data.unique_BusNumbers || []);
+      setWalk_coords(data.walk_coords);
+      setBus_coords(data.BusRoute_coords || []);
+
+      console.log("busNumber: ", unique_busNumbers)
+      console.log("nameRoute: ", unique_nameRoutes)
+
       setIsSearchingRoute(false);
     } catch (err) {
       console.error("Route API Error:", err);
@@ -323,17 +347,12 @@ export default function BusMapPage() {
 
       {/* Map Container */}
       <Box className={classes.mapContainer}>
-        {mapHtml ? (
-          <iframe
-            srcDoc={mapHtml}
-            style={{
-              width: '100%',
-              height: '100%',
-              border: 'none',
-            }}
-            title="Tuyến xe buýt gợi ý"
-            sandbox="allow-scripts allow-same-origin allow-popups allow-modals"
-            loading="lazy"
+        {specialStopsName ? (
+          <GoongBusMap
+            origin={selectedOrigin}
+            destination={selectedDestination}
+            walk_coords={walk_coords}
+            bus_coords={bus_coords}
           />
         ) : (
           <Box
@@ -522,24 +541,81 @@ export default function BusMapPage() {
             </Button>
 
             {/* Results */}
-            {(bestCaseDuration && worstCaseDuration) && (
+            {(BestCaseDuration && WorstCaseDuration) && (
               <Paper style={{ padding: 16, backgroundColor: '#e3f2fd', marginTop: 16 }}>
                 <Typography variant="h6" style={{ marginBottom: 12, fontWeight: 'bold', color: '#0277BD' }}>
                   Kết quả tốt nhất
                 </Typography>
-                <Typography><strong>Thời gian:</strong> {bestCaseDuration} - {worstCaseDuration} phút</Typography>
+                <Typography><strong>Thời gian:</strong> {BestCaseDuration} - {WorstCaseDuration} phút</Typography>
                 <Typography><strong>Tổng tiền:</strong> {totalFare?.toLocaleString()}₫</Typography>
-                <Typography><strong>Chuyển tuyến:</strong> {transfers} lần</Typography>
+                <Typography><strong>Số tuyến:</strong> {transfers}</Typography>
 
-                {specialStops && specialStops.length > 0 && (
+                {specialStopsName && specialStopsName.length > 0 && (
                   <>
-                    <Typography style={{ marginTop: 12, fontWeight: 'bold' }}>Các điểm đặc biệt:</Typography>
-                    {specialStops.map((name, idx) => (
+                    <Typography style={{ marginTop: 12, fontWeight: 'bold' }}>Các trạm dừng đặc biệt lưu ý:</Typography>
+                    {specialStopsName.map((name, idx) => (
                       <Typography key={idx} style={{ marginLeft: 12 }}>
                         • {name}
                       </Typography>
                     ))}
                   </>
+                )}
+                {/* Beautiful Bus Route Legend – matches the map exactly */}
+                {unique_busNumbers.length > 0 && unique_busNumbers.length > 0 && (
+                  <Box sx={{ mt: 2, pt: 2, borderTop: '1px solid #bbdefb' }}>
+                    <Typography style={{ fontWeight: 'bold', marginBottom: 10, color: '#01579b' }}>
+                      Tuyến xe buýt:
+                    </Typography>
+
+                    {unique_busNumbers.map((busNum, i) => {
+                      if (unique_busNumbers[i] != "walk")
+                      {
+                        const color = colorPalette[i % colorPalette.length];
+                        const routeName = unique_nameRoutes[i] || '';
+
+                        return (
+                          <Box key={i} sx={{ display: 'flex', alignItems: 'flex-start', mb: 1.5 }}>
+                            {/* Colored square */}
+                            <Box
+                              sx={{
+                                width: 18,
+                                height: 18,
+                                backgroundColor: color,
+                                borderRadius: '6px',
+                                mr: 1.5,
+                                mt: 0.4,
+                                flexShrink: 0,
+                                border: '2px solid white',
+                                boxShadow: '0 1px 3px rgba(0,0,0,0.3)',
+                              }}
+                            />
+
+                            {/* Bus number + route name */}
+                            <Box>
+                              <Typography
+                                style={{
+                                  fontWeight: 700,
+                                  fontSize: '15px',
+                                  color: color,
+                                }}
+                              >
+                                Bus {busNum}
+                              </Typography>
+                              <Typography
+                                style={{
+                                  fontSize: '13.5px',
+                                  color: '#333',
+                                  lineHeight: 1.4,
+                                }}
+                              >
+                                {routeName.replace(/ - /g, ' → ').replace(/ -> /g, ' → ')}
+                              </Typography>
+                            </Box>
+                          </Box>
+                        );
+                      } 
+                    })}
+                  </Box>
                 )}
               </Paper>
             )}
