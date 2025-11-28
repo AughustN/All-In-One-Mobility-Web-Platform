@@ -1,5 +1,4 @@
-# multi_camera_loop.py
-# Run: python multi_camera_loop.py --cameras-file ./cameras.json --interval 120 --max-workers 16 --output-dir ./camera_frames
+# Run: python multi_camera_loop.py --cameras-file ./cameras.json --interval 1800 --max-workers 6 --output-dir ./camera_frames
 import argparse
 import concurrent.futures
 import json
@@ -141,15 +140,56 @@ class HCMCCameraCrawler:
         if not data:
             self.stats['failed_fetches'] += 1
             return False
+
         self.stats['successful_fetches'] += 1
         saved = self.save_image(data)
+
+        if saved is not None:
+            # NEW: keep only last N images for this camera
+            self.cleanup_old_images(max_keep=3)  # adjust N as needed
+
         return saved is not None
+
 
     def print_stats(self):
         rt = utc_now() - self.stats['start_time']
         print(f"  {self.camera_id} | attempts={self.stats['total_attempts']:4} ok={self.stats['successful_fetches']:3} "
             f"fail={self.stats['failed_fetches']:3} saved={self.stats['images_saved']:3} dups={self.stats['duplicates_skipped']:3} "
             f"uptime={rt}")
+        
+    
+    def cleanup_old_images(self, max_keep=2):
+        """
+        Keep only the newest max_keep images + metadata in this camera folder.
+        Older files are deleted.
+        """
+        # List all jpgs sorted by mtime (oldest first)
+        image_files = sorted(
+            self.output_dir.glob("*.jpg"),
+            key=lambda p: p.stat().st_mtime
+        )
+
+        # Nothing to do if few files
+        if len(image_files) <= max_keep:
+            return
+
+        # Delete all but the newest max_keep
+        to_delete = image_files[:-max_keep]
+        for img_path in to_delete:
+            try:
+                # delete image
+                img_path.unlink(missing_ok=True)
+            except Exception as e:
+                print(f"⚠️ Failed to delete image {img_path}: {e}")
+
+            # delete companion JSON if exists
+            meta_path = img_path.with_suffix('.json')
+            if meta_path.exists():
+                try:
+                    meta_path.unlink()
+                except Exception as e:
+                    print(f"⚠️ Failed to delete metadata {meta_path}: {e}")
+
 
 # ---------- Manager for multi-camera loop ----------
 class MultiCameraLoop:
@@ -200,7 +240,7 @@ class MultiCameraLoop:
 
                     # submit crawl tasks
                     futures = []
-                    for c in self.crawlers:
+                    for c in self.crawlers:             
                         futures.append(ex.submit(c.crawl_once))
 
                     # wait for all (with a large timeout to avoid hanging forever)

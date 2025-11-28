@@ -230,17 +230,26 @@ class OptimizedBatchDetector:
         finally:
             conn.close()
     
-    def batch_process(self, data_dir, resume=True):
-        """Process all images"""
+    def batch_process(self, data_dir, resume=True, allowed_cameras=None):
         data_dir = Path(data_dir)
         image_files = list(data_dir.rglob("*.jpg"))
-        
+
+        # filter by camera id (folder name) if provided
+        if allowed_cameras:
+            allowed_set = {str(cid) for cid in allowed_cameras}
+            image_files = [
+                img for img in image_files
+                if img.parent.name in allowed_set
+            ]
+
         print(f"\n{'='*70}")
         print(f"Starting Batch Processing")
         print(f"{'='*70}")
-        print(f"Total images: {len(image_files)}")
+        print(f"Total images (after filter): {len(image_files)}")
         print(f"Optimization: preprocess={self.use_preprocessing}, tta={self.use_tta}")
-        
+        if allowed_cameras:
+            print(f"Restricted to {len(allowed_set)} camera(s): {sorted(list(allowed_set))[:10]} ...")
+
         # Check already processed
         processed = set()
         if resume:
@@ -250,22 +259,21 @@ class OptimizedBatchDetector:
             processed = set(row[0] for row in cursor.fetchall())
             conn.close()
             print(f"Already processed: {len(processed)}")
-        
+
         remaining = [img for img in image_files if str(img) not in processed]
         print(f"To process: {len(remaining)}")
-        
+
         if len(remaining) == 0:
             print("✓ All done!")
             return
-        
-        # Estimate
-        estimated_hours = (len(remaining) * 0.73) / 3600  # Based on benchmark
+
+        # Estimate as before...
+        estimated_hours = (len(remaining) * 0.73) / 3600
         print(f"Estimated time: {estimated_hours:.1f} hours\n")
-        
-        # Process
+
         start_time = time.time()
         success = 0
-        
+
         for img_path in tqdm(remaining, desc="Processing"):
             try:
                 result = self.detect_image(img_path)
@@ -275,9 +283,9 @@ class OptimizedBatchDetector:
             except Exception as e:
                 if success % 500 == 0:
                     print(f"\nWarning: {e}")
-        
+
         elapsed = time.time() - start_time
-        
+
         print(f"\n{'='*70}")
         print(f"Batch Complete!")
         print(f"{'='*70}")
@@ -287,18 +295,29 @@ class OptimizedBatchDetector:
         print(f"Database: {self.db_path}")
 
 
+def run_detection_for_cameras(
+    camera_ids,
+    data_dir="./camera_frames",
+    db_path="detections_optimized.db",
+    model_name="yolo11l.pt"
+):
+    """
+    Run optimized detection only for given camera IDs (folder names).
+    Intended to be called from the Flask API.
+    """
+    if not camera_ids:
+        print("No camera IDs provided, nothing to detect.")
+        return
 
-# Cleanup function
-def cleanup_frames(base_dir="./camera_frames"):
-    for cam in os.listdir(base_dir):
-        path = os.path.join(base_dir, cam)
-        if os.path.isdir(path):
-            for f in os.listdir(path):
-                try:
-                    os.remove(os.path.join(path, f))
-                except:
-                    pass
-    print("🧹 Deleted frames after detection.")
+    detector = OptimizedBatchDetector(
+        model_name=model_name,
+        db_path=db_path,
+        use_preprocessing=True,
+        use_tta=False
+    )
+    detector.batch_process(data_dir, resume=True, allowed_cameras=camera_ids)
+
+
 
 # MAIN
 if __name__ == "__main__":
@@ -315,5 +334,3 @@ if __name__ == "__main__":
     
     # Process
     detector.batch_process(DATA_DIR, resume=True)
-    time.sleep(30)
-    cleanup_frames("./camera_frames")
