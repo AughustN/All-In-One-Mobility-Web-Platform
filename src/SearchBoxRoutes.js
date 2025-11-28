@@ -9,6 +9,7 @@ import {
     ListItem,
     ListItemIcon,
     ListItemText,
+    Snackbar
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
@@ -16,6 +17,7 @@ import DirectionsWalkIcon from "@material-ui/icons/DirectionsWalk";
 import DirectionsBikeIcon from "@material-ui/icons/DirectionsBike";
 import DriveEtaIcon from "@material-ui/icons/DriveEta";
 import { searchLocation } from "./api";
+import { Alert } from "@material-ui/lab";
 
 const useStyles = makeStyles((theme) => ({
     transportIconContainer: {
@@ -90,6 +92,12 @@ export default function SearchBoxRoutes(props) {
     const [isToLocationSelected, setIsToLocationSelected] = useState(false);
     const [isFromLocationSelected, setIsFromLocationSelected] = useState(false);
     const [gettingLocation, setGettingLocation] = useState(false);
+    const [notify, setNotify] = useState({ open: false, message: '', severity: 'info' });
+    const handleCloseNotify = (event, reason) => {
+        if (reason === 'clickaway') return;
+        setNotify({ ...notify, open: false });
+    };
+
 
     // Update from location when initialFrom changes
     useEffect(() => {
@@ -99,7 +107,7 @@ export default function SearchBoxRoutes(props) {
     // Search FROM location with debounce
     useEffect(() => {
         if (isFromLocationSelected) return;
-
+        if (fromLocation === 'Vị trí hiện tại') return;
         if (!fromLocation.trim()) {
             setShowFromDropdown(false);
             setFromSearchResults([]);
@@ -185,7 +193,7 @@ export default function SearchBoxRoutes(props) {
     // Get current location
     const handleGetCurrentLocation = () => {
         if (!navigator.geolocation) {
-            alert('Trình duyệt không hỗ trợ định vị');
+            setNotify({ open: true, message: 'Trình duyệt không hỗ trợ định vị', severity: 'error' });
             return;
         }
 
@@ -203,35 +211,42 @@ export default function SearchBoxRoutes(props) {
                     
                     const address = data.results?.[0]?.formatted_address || 'Vị trí hiện tại';
                     
-                    setFromLocation(address);
+                    const locationData = {
+                        lat: latitude,
+                        lon: longitude,
+                        name: address || 'Vị trí hiện tại',
+                        isGPS: true // <--- CỜ QUAN TRỌNG ĐỂ KÍCH HOẠT NAVIGATION
+                    };
+
+                    setFromLocation(locationData.name);
                     setIsFromLocationSelected(true);
                     
-                    // Notify parent
                     if (onFromLocationChange) {
-                        onFromLocationChange({
-                            lat: latitude,
-                            lon: longitude,
-                            name: address
-                        });
+                        onFromLocationChange(locationData);
                     }
-                } catch (err) {
-                    console.error('Reverse geocode error:', err);
+                } catch (error) {
+                    console.error('Reverse geocode error:', error);
                     setFromLocation('Vị trí hiện tại');
-                    
+                    setIsFromLocationSelected(true);
+                    const locationData = {
+                        lat: latitude,
+                        lon: longitude,
+                        name: 'Vị trí hiện tại',
+                        isGPS: true
+                    };
                     if (onFromLocationChange) {
-                        onFromLocationChange({
-                            lat: latitude,
-                            lon: longitude,
-                            name: 'Vị trí hiện tại'
-                        });
+                        onFromLocationChange(locationData);
                     }
+                } finally {
+                    setGettingLocation(false);
+                    setShowFromDropdown(false);
                 }
-                
-                setGettingLocation(false);
             },
             (error) => {
                 console.error('Geolocation error:', error);
-                alert(`Không thể lấy vị trí. Vui lòng cho phép truy cập vị trí. ${error}`);
+                let msg = "Không thể lấy vị trí. Hãy bật GPS!";
+
+                setNotify({ open: true, message: msg, severity: 'error' });
                 setGettingLocation(false);
             },
             {
@@ -308,8 +323,10 @@ export default function SearchBoxRoutes(props) {
                                         <LocationOnIcon style={{ color: '#0277BD' }} />
                                     </ListItemIcon>
                                     <ListItemText
-                                        primary={location.address.freeformAddress}
-                                        secondary={location.poi?.name}
+                                        primary={location.poi ? location.poi.name : location.address.freeformAddress}
+                                        secondary={location.poi ? location.address.freeformAddress : location.address.countrySubdivision || ''}
+                                        primaryTypographyProps={{ style: { fontWeight: 'bold', color: '#333' } }} 
+                                        secondaryTypographyProps={{ style: { color: '#666' } }}
                                     />
                                 </ListItem>
                             ))}
@@ -369,8 +386,10 @@ export default function SearchBoxRoutes(props) {
                                         <LocationOnIcon style={{ color: '#0277BD' }} />
                                     </ListItemIcon>
                                     <ListItemText
-                                        primary={location.address.freeformAddress}
-                                        secondary={location.poi?.name}
+                                        primary={location.poi ? location.poi.name : location.address.freeformAddress}
+                                        secondary={location.poi ? location.address.freeformAddress : location.address.countrySubdivision || ''}
+                                        primaryTypographyProps={{ style: { fontWeight: 'bold', color: '#333' } }} 
+                                        secondaryTypographyProps={{ style: { color: '#666' } }}
                                     />
                                 </ListItem>
                             ))}
@@ -438,6 +457,18 @@ export default function SearchBoxRoutes(props) {
             >
                 Tìm đường
             </Button>
+
+            <Snackbar 
+                open={notify.open} 
+                autoHideDuration={4000} 
+                onClose={handleCloseNotify}
+                anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                style={{ zIndex: 2000 }}
+            >
+                <Alert onClose={handleCloseNotify} severity={notify.severity} variant="filled">
+                    {notify.message}
+                </Alert>
+            </Snackbar>
         </Box>
     );
 }

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import goongjs from '@goongmaps/goong-js';
 import '@goongmaps/goong-js/dist/goong-js.css';
+import { useMapContext } from './contexts/MapContext';
 
 const GOONG_MAPTILES_KEY = 'w6UXzsXLNcwmP5pRQdbHALGm2jK3nxj8OhNrJlQY';
 
@@ -13,6 +14,8 @@ function GoongCameraMap({ cameras, onCameraClick, selectedCamera, style = 'goong
   const markers = useRef({});
   const currentPopup = useRef(null);
   const userMarker = useRef(null);
+  const mapContext = useMapContext();
+  const registerMap = mapContext?.registerMap || (() => {});
   
   // Convert style ID to URL
   const getStyleUrl = (styleId) => {
@@ -38,6 +41,7 @@ function GoongCameraMap({ cameras, onCameraClick, selectedCamera, style = 'goong
 
     map.current.on('load', () => {
       setMapLoaded(true);
+      registerMap(map.current);
       console.log('✅ Goong Camera Map loaded');
     });
 

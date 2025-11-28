@@ -12,6 +12,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import GoongBusMap from '../GoongBusMap';
 import {colorPalette} from '../GoongBusMap';
 import { searchLocation, calculateBusRoute } from '../api';
+import { useLocation } from 'react-router-dom';
+import MyLocationControl from '../MyLocationControl';
+import GoongMapStyleControl from '../GoongMapStyleControl'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -183,6 +186,9 @@ export default function BusMapPage() {
   const [maxWalkingDistance, setMaxWalkingDistance] = useState(400);
 
   const [errorMessage, setErrorMessage] = useState('');
+  const [mapStyle, setMapStyle] = useState('goong_map_web');
+  const [userLocation, setUserLocation] = useState(null);
+  
 
   // Handle origin input change
   const handleOriginChange = (e) => {
@@ -209,6 +215,22 @@ export default function BusMapPage() {
       setFilteredDestinations([]);
     }
   };
+
+
+  useEffect(() => {
+    if (userLocation) {
+      const nameCoord = `${userLocation.lat}, ${userLocation.lon}`;
+      setSelectedOrigin({
+        name: nameCoord,
+        lat: userLocation.lat,
+        lon: userLocation.lon
+      });
+      setOriginSearchInput(nameCoord);
+      setIsSearchingOrigin(true);
+      setOpenModal(true);
+    }
+    
+  }, [userLocation]);
 
   // Debounce search for origin
   useEffect(() => {
@@ -260,6 +282,16 @@ export default function BusMapPage() {
     setShowOriginDropdown(false);
     setFilteredOrigins([]);
     setIsSearchingOrigin(true);
+
+    setTotalFare(null);
+    setBestCaseDuration(null);
+    setWorstCaseDuration(null);
+    setTransfers(null);  
+    setSpectialStopsName([])
+    setUnique_nameRoutes([]);
+    setUnique_busNumbers([]);
+    setWalk_coords([]);;
+    setBus_coords([]);
   };
 
   // Handle destination selection
@@ -274,6 +306,16 @@ export default function BusMapPage() {
     setShowDestinationDropdown(false);
     setFilteredDestinations([]);
     setIsSearchingDestination(true);
+
+    setTotalFare(null);
+    setBestCaseDuration(null);
+    setWorstCaseDuration(null);
+    setTransfers(null);  
+    setSpectialStopsName([])
+    setUnique_nameRoutes([]);
+    setUnique_busNumbers([]);
+    setWalk_coords([]);;
+    setBus_coords([]);
   };
 
   // Handle walking distance change
@@ -321,8 +363,8 @@ export default function BusMapPage() {
       setWalk_coords(data.walk_coords);
       setBus_coords(data.BusRoute_coords || []);
 
-      console.log("busNumber: ", unique_busNumbers)
-      console.log("nameRoute: ", unique_nameRoutes)
+      console.log("best case: ", BestCaseDuration)
+      console.log("worst case: ", WorstCaseDuration)
 
       setIsSearchingRoute(false);
     } catch (err) {
@@ -347,30 +389,23 @@ export default function BusMapPage() {
 
       {/* Map Container */}
       <Box className={classes.mapContainer}>
-        {specialStopsName ? (
           <GoongBusMap
             origin={selectedOrigin}
             destination={selectedDestination}
             walk_coords={walk_coords}
             bus_coords={bus_coords}
+            userLocation={userLocation}
           />
-        ) : (
-          <Box
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
-            justifyContent="center"
-            p={4}
-          >
-            <DirectionsBusIcon style={{ fontSize: 80, color: '#0277BD', marginBottom: 16 }} />
-            <Typography variant="h5" align="center" color="textSecondary">
-              Nhập điểm đi và điểm đến
-            </Typography>
-            <Typography variant="body2" align="center" color="textSecondary" style={{ marginTop: 8 }}>
-              Chúng tôi sẽ gợi ý tuyến xe buýt tốt nhất
-            </Typography>
-          </Box>
-        )}
+          <MyLocationControl
+            onLocationFound={(location) => {
+            console.log('MyLocationControl -> onLocationFound', location);
+            setUserLocation(location);
+            }}
+          />
+          <GoongMapStyleControl
+            currentStyle={mapStyle}
+            onStyleChange={setMapStyle}
+          />
       </Box>
 
       {/* Sidebar */}
@@ -566,55 +601,63 @@ export default function BusMapPage() {
                     <Typography style={{ fontWeight: 'bold', marginBottom: 10, color: '#01579b' }}>
                       Tuyến xe buýt:
                     </Typography>
+                    {(() => {
+                      let k = 0; // ← counter for NON-walk routes only
 
-                    {unique_busNumbers.map((busNum, i) => {
-                      if (unique_busNumbers[i] != "walk")
-                      {
-                        const color = colorPalette[i % colorPalette.length];
-                        const routeName = unique_nameRoutes[i] || '';
+                      return unique_busNumbers.map((busNum, i) => {
+                        if (busNum !== "walk") {
+                          const color = colorPalette[k % colorPalette.length];
+                          k++; // increment only for real bus routes
 
-                        return (
-                          <Box key={i} sx={{ display: 'flex', alignItems: 'flex-start', mb: 1.5 }}>
-                            {/* Colored square */}
-                            <Box
-                              sx={{
-                                width: 18,
-                                height: 18,
-                                backgroundColor: color,
-                                borderRadius: '6px',
-                                mr: 1.5,
-                                mt: 0.4,
-                                flexShrink: 0,
-                                border: '2px solid white',
-                                boxShadow: '0 1px 3px rgba(0,0,0,0.3)',
-                              }}
-                            />
+                          const routeName = unique_nameRoutes[i] || '';
 
-                            {/* Bus number + route name */}
-                            <Box>
-                              <Typography
-                                style={{
-                                  fontWeight: 700,
-                                  fontSize: '15px',
-                                  color: color,
+                          return (
+                            <Box key={i} sx={{ display: 'flex', alignItems: 'flex-start', mb: 1.5 }}>
+                              {/* Colored square */}
+                              <Box
+                                sx={{
+                                  width: 18,
+                                  height: 18,
+                                  backgroundColor: color,
+                                  borderRadius: '6px',
+                                  mr: 1.5,
+                                  mt: 0.4,
+                                  flexShrink: 0,
+                                  border: '2px solid white',
+                                  boxShadow: '0 1px 3px rgba(0,0,0,0.3)',
                                 }}
-                              >
-                                Bus {busNum}
-                              </Typography>
-                              <Typography
-                                style={{
-                                  fontSize: '13.5px',
-                                  color: '#333',
-                                  lineHeight: 1.4,
-                                }}
-                              >
-                                {routeName.replace(/ - /g, ' → ').replace(/ -> /g, ' → ')}
-                              </Typography>
+                              />
+
+                              {/* Bus number + route name */}
+                              <Box>
+                                <Typography
+                                  style={{
+                                    fontWeight: 700,
+                                    fontSize: '15px',
+                                    color: color,
+                                  }}
+                                >
+                                  Bus {busNum}
+                                </Typography>
+
+                                <Typography
+                                  style={{
+                                    fontSize: '13.5px',
+                                    color: '#333',
+                                    lineHeight: 1.4,
+                                  }}
+                                >
+                                  {routeName.replace(/ - /g, ' → ').replace(/ -> /g, ' → ')}
+                                </Typography>
+                              </Box>
                             </Box>
-                          </Box>
-                        );
-                      } 
-                    })}
+                          );
+                        }
+
+                        // If it's "walk", return nothing
+                        return null;
+                      });
+                    })()}
                   </Box>
                 )}
               </Paper>

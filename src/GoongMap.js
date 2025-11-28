@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import goongjs from '@goongmaps/goong-js';
 import '@goongmaps/goong-js/dist/goong-js.css';
+import { useMapContext } from './contexts/MapContext';
 
 const GOONG_MAPTILES_KEY = 'w6UXzsXLNcwmP5pRQdbHALGm2jK3nxj8OhNrJlQY';
 
@@ -10,16 +11,17 @@ function GoongMap({ origin, destination, coords, style = 'goong_map_web', userLo
   const mapContainer = useRef(null);
   const map = useRef(null);
   const [mapLoaded, setMapLoaded] = useState(false);
+  const mapContext = useMapContext();
+  const registerMap = mapContext?.registerMap || (() => {});
   
   // Markers refs
   const startMarker = useRef(null);
   const endMarker = useRef(null);
   const userMarker = useRef(null);
-  const routeLayer = useRef(null);
 
-  // Initialize map
+  // 1. KHỞI TẠO MAP
   useEffect(() => {
-    if (map.current) return; // Initialize map only once
+    if (map.current) return;
 
     map.current = new goongjs.Map({
       container: mapContainer.current,
@@ -28,17 +30,12 @@ function GoongMap({ origin, destination, coords, style = 'goong_map_web', userLo
       zoom: 12
     });
 
-    // Add navigation controls
     map.current.addControl(new goongjs.NavigationControl(), 'top-right');
-
-    // Add scale control
-    map.current.addControl(new goongjs.ScaleControl({
-      maxWidth: 100,
-      unit: 'metric'
-    }), 'bottom-left');
+    map.current.addControl(new goongjs.ScaleControl({ maxWidth: 100, unit: 'metric' }), 'bottom-left');
 
     map.current.on('load', () => {
       setMapLoaded(true);
+      registerMap(map.current);
       console.log('✅ Goong Map loaded');
     });
 
@@ -50,155 +47,117 @@ function GoongMap({ origin, destination, coords, style = 'goong_map_web', userLo
     };
   }, [style]);
 
-  // Update origin marker
-  useEffect(() => {
-    if (!mapLoaded || !map.current || !origin) return;
-
-    // Remove old marker
-    if (startMarker.current) {
-      startMarker.current.remove();
-    }
-
-    // Add new marker
-    startMarker.current = new goongjs.Marker({ color: '#4CAF50' })
-      .setLngLat([origin.lon, origin.lat])
-      .setPopup(
-        new goongjs.Popup().setHTML(
-          `<strong>Điểm bắt đầu</strong><br/>${origin.name || 'Vị trí xuất phát'}`
-        )
-      )
-      .addTo(map.current);
-
-  }, [mapLoaded, origin]);
-
-  // Update destination marker
-  useEffect(() => {
-    if (!mapLoaded || !map.current || !destination) return;
-
-    // Remove old marker
-    if (endMarker.current) {
-      endMarker.current.remove();
-    }
-
-    // Add new marker
-    endMarker.current = new goongjs.Marker({ color: '#F44336' })
-      .setLngLat([destination.lon, destination.lat])
-      .setPopup(
-        new goongjs.Popup().setHTML(
-          `<strong>Điểm đến</strong><br/>${destination.name || 'Đích đến'}`
-        )
-      )
-      .addTo(map.current);
-
-  }, [mapLoaded, destination]);
-
-  // Update route
+  // 2. VẼ TUYẾN ĐƯỜNG (POLYLINE)
   useEffect(() => {
     if (!mapLoaded || !map.current || !coords || coords.length === 0) return;
 
-    // Remove old route
-    if (map.current.getLayer('route')) {
-      map.current.removeLayer('route');
-    }
-    if (map.current.getSource('route')) {
-      map.current.removeSource('route');
-    }
+    const sourceId = 'route-source';
+    const layerId = 'route-layer';
 
-    // Convert coords to GeoJSON
+    // Remove old route if exists
+    if (map.current.getLayer(layerId)) map.current.removeLayer(layerId);
+    if (map.current.getSource(sourceId)) map.current.removeSource(sourceId);
+
     const geojson = {
       type: 'Feature',
-      properties: {},
       geometry: {
         type: 'LineString',
         coordinates: coords.map(c => [c.lon, c.lat])
       }
     };
 
-    // Add route source and layer
-    map.current.addSource('route', {
-      type: 'geojson',
-      data: geojson
-    });
+    map.current.addSource(sourceId, { type: 'geojson', data: geojson });
 
     map.current.addLayer({
-      id: 'route',
+      id: layerId,
       type: 'line',
-      source: 'route',
-      layout: {
-        'line-join': 'round',
-        'line-cap': 'round'
-      },
+      source: sourceId,
+      layout: { 'line-join': 'round', 'line-cap': 'round' },
       paint: {
         'line-color': '#0277BD',
-        'line-width': 5,
-        'line-opacity': 0.7
+        'line-width': 6,
+        'line-opacity': 0.8
       }
     });
 
-    // Fit bounds to show entire route
-    const bounds = new goongjs.LngLatBounds();
-    coords.forEach(c => bounds.extend([c.lon, c.lat]));
-    map.current.fitBounds(bounds, { padding: 50 });
+    // Nếu KHÔNG PHẢI chế độ GPS (userLocation null) thì zoom toàn bộ tuyến đường
+    if (!userLocation) {
+        const bounds = new goongjs.LngLatBounds();
+        coords.forEach(c => bounds.extend([c.lon, c.lat]));
+        map.current.fitBounds(bounds, { padding: 50 });
+    }
 
-  }, [mapLoaded, coords]);
+  }, [mapLoaded, coords, userLocation]);
 
-  // Fit bounds when origin/destination change
+  // 3. XỬ LÝ MARKER (ĐIỂM ĐẦU, ĐIỂM CUỐI, VÀ NGƯỜI DÙNG)
   useEffect(() => {
     if (!mapLoaded || !map.current) return;
 
-    if (coords && coords.length > 0) {
-      // Route exists, fitBounds handled in route effect
-      return;
+    // --- A. MARKER ĐIỂM ĐẾN (Luôn hiển thị nếu có) ---
+    if (destination) {
+        if (!endMarker.current) {
+            endMarker.current = new goongjs.Marker({ color: '#F44336' }) // Màu Đỏ
+                .setLngLat([destination.lon, destination.lat])
+                .setPopup(new goongjs.Popup().setHTML(`<strong>Đến:</strong> ${destination.name}`))
+                .addTo(map.current);
+        } else {
+            endMarker.current.setLngLat([destination.lon, destination.lat]);
+        }
+    } else {
+        if (endMarker.current) endMarker.current.remove();
+        endMarker.current = null;
     }
 
-    if (origin && destination) {
-      const bounds = new goongjs.LngLatBounds();
-      bounds.extend([origin.lon, origin.lat]);
-      bounds.extend([destination.lon, destination.lat]);
-      map.current.fitBounds(bounds, { padding: 50 });
-    } else if (origin) {
-      map.current.flyTo({ center: [origin.lon, origin.lat], zoom: 14 });
-    } else if (destination) {
-      map.current.flyTo({ center: [destination.lon, destination.lat], zoom: 14 });
-    }
-  }, [mapLoaded, origin, destination, coords]);
-
-  // Handle user location
-  useEffect(() => {
-    if (!mapLoaded || !map.current || !userLocation) return;
-
-    // Remove old user marker
-    if (userMarker.current) {
-      userMarker.current.remove();
+    // --- B. MARKER ĐIỂM ĐI (Chỉ hiển thị khi KHÔNG CÓ GPS User) ---
+    // Logic: Nếu đang dẫn đường bằng GPS, vị trí Start chính là icon User di chuyển, nên ta ẩn Marker Start tĩnh đi cho đỡ rối.
+    if (origin && !userLocation) {
+        if (!startMarker.current) {
+            startMarker.current = new goongjs.Marker({ color: '#4CAF50' }) // Màu Xanh
+                .setLngLat([origin.lon, origin.lat])
+                .setPopup(new goongjs.Popup().setHTML(`<strong>Đi:</strong> ${origin.name}`))
+                .addTo(map.current);
+        } else {
+            startMarker.current.setLngLat([origin.lon, origin.lat]);
+            startMarker.current.addTo(map.current); // Đảm bảo thêm lại nếu bị remove
+        }
+    } else {
+        // Nếu có userLocation hoặc không có origin -> Xóa marker Start
+        if (startMarker.current) startMarker.current.remove();
+        startMarker.current = null;
     }
 
-    // Add marker with default style (blue color for user location)
-    const marker = new goongjs.Marker({ color: '#4285F4' })
-      .setLngLat([userLocation.lon, userLocation.lat])
-      .setPopup(
-        new goongjs.Popup({ offset: 25 }).setHTML(
-          '<div style="padding: 8px;"><strong>Vị trí của bạn</strong></div>'
-        )
-      )
-      .addTo(map.current);
+    // --- C. MARKER NGƯỜI DÙNG (Chỉ hiển thị khi CÓ GPS) ---
+    if (userLocation) {
+        if (!userMarker.current) {
+            const el = document.createElement('div');
+            el.innerHTML = '<div style="width:20px; height:20px; background:#2196F3; border:3px solid #fff; border-radius:50%; box-shadow:0 2px 5px rgba(0,0,0,0.4);"></div>';
 
-    userMarker.current = marker;
 
-    // Fly to user location
-    map.current.flyTo({
-      center: [userLocation.lon, userLocation.lat],
-      zoom: 15,
-      duration: 1500
-    });
+            userMarker.current = new goongjs.Marker(el)
+                .setLngLat([userLocation.lon, userLocation.lat])
+                .setPopup(new goongjs.Popup({ offset: 25 }).setHTML('<div>Bạn đang ở đây</div>'))
+                .addTo(map.current);
+        } else {
+            userMarker.current.setLngLat([userLocation.lon, userLocation.lat]);
+        }
 
-  }, [mapLoaded, userLocation]);
+        // CAMERA FOLLOW USER (Chế độ 2D, không xoay/nghiêng)
+        map.current.easeTo({
+            center: [userLocation.lon, userLocation.lat],
+            zoom: 16,
+            bearing: 0, 
+            pitch: 0,
+            duration: 1000
+        });
 
-  return (
-    <div 
-      ref={mapContainer} 
-      style={{ width: '100%', height: '100%' }}
-    />
-  );
+    } else {
+        if (userMarker.current) userMarker.current.remove();
+        userMarker.current = null;
+    }
+
+  }, [mapLoaded, origin, destination, userLocation]);
+
+  return <div ref={mapContainer} style={{ width: '100%', height: '100%' }} />;
 }
 
 export default GoongMap;

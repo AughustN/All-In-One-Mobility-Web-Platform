@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import goongjs from '@goongmaps/goong-js';
 import '@goongmaps/goong-js/dist/goong-js.css';
-
+import { useMapContext } from './contexts/MapContext';
 const GOONG_MAPTILES_KEY = 'w6UXzsXLNcwmP5pRQdbHALGm2jK3nxj8OhNrJlQY';
 
 goongjs.accessToken = GOONG_MAPTILES_KEY;
@@ -27,6 +27,7 @@ export default function GoongBusMap({
   walk_coords,
   bus_coords,              
   style = "goong_map_web",
+  userLocation
 }) {
   const mapContainer = useRef(null);
   const map = useRef(null);
@@ -34,8 +35,8 @@ export default function GoongBusMap({
   const [mapLoaded, setMapLoaded] = useState(false);
   const startMarker = useRef(null);
   const endMarker = useRef(null)
-  const [foundRoute, setFoundRoute] = useState(false);
-  
+  const mapContext = useMapContext();
+  const registerMap = mapContext?.registerMap || (() => {});
 
   // ---------- 1. Initialize Map ----------
   useEffect(() => {
@@ -54,7 +55,10 @@ export default function GoongBusMap({
       unit: 'metric'
     }), 'bottom-left');
 
-    map.current.on("load", () => setMapLoaded(true));
+ map.current.on("load", () => {
+      setMapLoaded(true);
+      registerMap(map.current);
+    });
 
     return () => {
       if (map.current) {
@@ -63,6 +67,36 @@ export default function GoongBusMap({
       }
     };
   }, [style]);
+
+  // Handle user location
+  useEffect(() => {
+    if (!mapLoaded || !map.current || !userLocation) return;
+
+    // Remove old user marker
+    if (startMarker.current) {
+      startMarker.current.remove();
+    }
+
+    // Add marker with default style (blue color for user location)
+    const marker = new goongjs.Marker({ color: '#4285F4' })
+      .setLngLat([userLocation.lon, userLocation.lat])
+      .setPopup(
+        new goongjs.Popup({ offset: 25 }).setHTML(
+          '<div style="padding: 8px;"><strong>Vị trí của bạn</strong></div>'
+        )
+      )
+      .addTo(map.current);
+
+    startMarker.current = marker;
+
+    // Fly to user location
+    map.current.flyTo({
+      center: [userLocation.lon, userLocation.lat],
+      zoom: 15,
+      duration: 1500
+    });
+
+  }, [mapLoaded, userLocation]);
 
   // origin Marker
   useEffect(() => {
@@ -170,13 +204,11 @@ export default function GoongBusMap({
       addRouteLayer(route, color, `bus_route_${idx}`, false);
     });
 
-    setFoundRoute(true);
-
   }, [walk_coords, bus_coords, mapLoaded]);
 
   // Fit bounds when origin/destination change
   useEffect(() => {
-    if (!mapLoaded || !map.current || foundRoute)  return;
+    if (!mapLoaded || !map.current)  return;
 
     if (origin && destination) {
       const bounds = new goongjs.LngLatBounds();
@@ -190,11 +222,6 @@ export default function GoongBusMap({
     }
   }, [mapLoaded, origin, destination]);
 
-  useEffect(() => {
-  // whenever origin/destination changes, reset the foundRoute flag
-  if(foundRoute) removeAllRouteLayers()
-  setFoundRoute(false);
-}, [origin, destination]);
 
   return (
     <div

@@ -9,8 +9,10 @@ import CameraMapNew from "./pages/CameraMapNew";
 import SOSMapPage from './pages/SOSMapPage';
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import EarthTestPage from "./pages/EarthTestPage";
 import { Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { MapProvider } from './contexts/MapContext';
 
 // Define light and dark themes
 const lightTheme = createTheme({
@@ -180,21 +182,24 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Box className={classes.root}>
-          <Header darkMode={darkMode} onToggleDarkMode={() => setDarkMode(!darkMode)} />
-          <Box className={classes.content} data-dark-mode={darkMode}>
-            <Routes>
-              <Route path="/" element={<RoutesPage darkMode={darkMode} />} />
-              <Route path="/routes" element={<RoutesPage darkMode={darkMode} />} />
-              <Route path="/busmap" element={<BusMapPage darkMode={darkMode} />} />
-              <Route path="/cameras" element={<CameraMapNew />} />
-              <Route path="/sos" element={<SOSMapPage />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/history" element={<HistoryPage />} />
-            </Routes>
+        <MapProvider zoomThreshold={2}>
+          <Box className={classes.root}>
+            <Header darkMode={darkMode} onToggleDarkMode={() => setDarkMode(!darkMode)} />
+            <Box className={classes.content} data-dark-mode={darkMode}>
+              <Routes>
+                <Route path="/" element={<RoutesPage darkMode={darkMode} />} />
+                <Route path="/routes" element={<RoutesPage darkMode={darkMode} />} />
+                <Route path="/busmap" element={<BusMapPage darkMode={darkMode} />} />
+                <Route path="/cameras" element={<CameraMapNew />} />
+                <Route path="/sos" element={<SOSMapPage />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/history" element={<HistoryPage />} />
+                <Route path="/earth-test" element={<EarthTestPage />} />
+              </Routes>
+            </Box>
           </Box>
-        </Box>
+        </MapProvider>
       </BrowserRouter>
     </ThemeProvider>
   );
