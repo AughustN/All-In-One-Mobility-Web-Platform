@@ -2,7 +2,7 @@ from google import genai
 import os, json
 
 # 1. Configure client
-client = genai.Client(api_key="AIzaSyDXJ8ccfQ1TG3SReMDbJH20fVXyVMNOAI8")
+client = genai.Client(api_key="APIKEY_HERE")
 # OR: client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 # 2. Load summary JSON
