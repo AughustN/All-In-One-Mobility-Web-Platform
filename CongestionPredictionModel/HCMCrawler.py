@@ -145,7 +145,6 @@ class HCMCCameraCrawler:
         saved = self.save_image(data)
 
         if saved is not None:
-            # NEW: keep only last N images for this camera
             self.cleanup_old_images(max_keep=3)  # adjust N as needed
 
         return saved is not None

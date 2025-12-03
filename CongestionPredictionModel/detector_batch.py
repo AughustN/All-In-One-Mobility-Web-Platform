@@ -15,7 +15,11 @@ class OptimizedBatchDetector:
                  use_preprocessing=True, use_tta=False):
         print(f"Initializing Optimized Batch Detector...")
         self.model = YOLO(model_name)
-        self.model.to("cuda")
+        try:
+            self.model.to("cuda")
+        except Exception as e:
+            print(f"⚠️ CUDA not available, falling back to CPU: {e}")
+
         self.db_path = db_path
         self.use_preprocessing = use_preprocessing
         self.use_tta = use_tta
