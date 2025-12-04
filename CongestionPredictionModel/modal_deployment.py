@@ -12,7 +12,8 @@ image = (
         "numpy",
         "Pillow",
         "torch",
-        "torchvision"
+        "torchvision",
+        "fastapi[standard]"
     ])
 )
 
@@ -25,6 +26,12 @@ model_volume = modal.Volume.from_name("yolo-models", create_if_missing=True)
     timeout=600,
     volumes={"/models": model_volume}  # Mount persistent storage
 )
+
+@modal.web_endpoint(method="POST")  # Make it a web API
+def detect_images_batch_api(images_b64: list[str], camera_ids: list[str]):
+    """Web-accessible version"""
+    return detect_images_batch(images_b64, camera_ids)
+
 def detect_images_batch(images_b64: list[str], camera_ids: list[str]):
     """
     Run YOLO detection on a batch of images.

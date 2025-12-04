@@ -20,18 +20,17 @@ from classified_congestion import (
     PercentileThresholdCalculator,
     CongestionClassifier,
 )
-import modal
 import base64
-from pathlib import Path
 import sqlite3
 
-# Import Modal app with different name to avoid conflict
-import sys
-sys.path.insert(0, str(Path(__file__).parent.parent))
-from CongestionPredictionModel.modal_deployment import app as modal_app, detect_images_batch  # Renamed!
+# ============================
+# 🔑 MODAL CONFIGURATION
+# ============================
+# Replace with your actual Modal web endpoint URL
+MODAL_API_URL = "https://nguyenanhkhoi1706--hcm-yolo-detector-detect-images-batch-api.modal.run"  # ← PASTE YOUR URL HERE
+USE_MODAL_DETECTION = True  # Set to False to use local detection
 
-
-EARTH_RADIUS_M = 6371000.0  # mean Earth radius in meters
+EARTH_RADIUS_M = 6371000.0
 
 SOS_UPLOAD_DIR = './sos_images'
 if not os.path.exists(SOS_UPLOAD_DIR):
@@ -43,8 +42,6 @@ CAMERA_LOCATIONS_FILE = "camera_locations.json"
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-
-
 app = Flask(__name__)
 CORS(app)
 
@@ -53,7 +50,7 @@ CORS(app)
 # ============================
 TOMTOM_API_KEY = "dcS4AgK0puDJlKhUT8zOfIUA5VK0pKsi"
 CAMERA_FRAMES_DIR = './camera_frames'
-SECRET_KEY = "your_secret_key_here"  # Change this in production!
+SECRET_KEY = "your_secret_key_here"
 DB_CONFIG = {
     'host': 'localhost',
     'user': 'root',
@@ -745,7 +742,8 @@ def get_stats():
 @app.route("/api/detect/route-cameras", methods=["POST"])
 def detect_route_cameras():
     """
-    Run batch detection for cameras on route using Modal GPUs.
+    Run batch detection for cameras on route.
+    Uses Modal GPU if enabled, otherwise local detection.
     """
     data = request.json or {}
     camera_ids = data.get("camera_ids") or []
@@ -772,53 +770,83 @@ def detect_route_cameras():
         if not images_b64:
             return jsonify({"error": "No images found for cameras"}), 404
         
-        # ===== MODAL INTEGRATION: REPLACE LOCAL DETECTION =====
-        print(f"🚀 Sending {len(images_b64)} images to Modal GPU...")
+        # Run detection
+        if USE_MODAL_DETECTION:
+            # ===== MODAL GPU DETECTION =====
+            print(f"🚀 Sending {len(images_b64)} images to Modal GPU...")
+            
+            response = requests.post(MODAL_API_URL, json={
+                "images_b64": images_b64,
+                "camera_ids": valid_camera_ids
+            }, timeout=300)  # 5 minute timeout
+            
+            if response.status_code != 200:
+                raise Exception(f"Modal API error: {response.text}")
+            
+            results = response.json()
+            print(f"✅ Modal detection complete!")
+            
+            # Save results to database
+            db_path = "detections_optimized.db"
+            conn = sqlite3.connect(db_path)
+            cursor = conn.cursor()
+            
+            total_detections = 0
+            for result in results:
+                if "error" not in result:
+                    cam_id = result["camera_id"]
+                    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                    
+                    for det in result["detections"]:
+                        cursor.execute("""
+                            INSERT INTO detections 
+                            (camera_id, timestamp, class_id, confidence, bbox_x1, bbox_y1, bbox_x2, bbox_y2)
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                        """, (
+                            cam_id, timestamp, det["class_id"], det["confidence"],
+                            det["bbox"][0], det["bbox"][1], det["bbox"][2], det["bbox"][3]
+                        ))
+                        total_detections += 1
+            
+            conn.commit()
+            conn.close()
+        else:
+            # ===== LOCAL DETECTION =====
+            print(f"💻 Using local detection for {len(valid_camera_ids)} cameras...")
+            run_detection_for_cameras(valid_camera_ids)
+            total_detections = 0
         
-        with modal_app.run():
-            results = detect_images_batch.remote(images_b64, valid_camera_ids)
-        
-        print(f"✅ Modal detection complete!")
-        # =======================================================
-        
-        # Save results to database (same as before)
-        db_path = "detections_optimized.db"
-        conn = sqlite3.connect(db_path)
-        cursor = conn.cursor()
-        
-        total_detections = 0
-        for result in results:
-            if "error" not in result:
-                cam_id = result["camera_id"]
-                timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                
-                for det in result["detections"]:
-                    cursor.execute("""
-                        INSERT INTO detections 
-                        (camera_id, timestamp, class_id, confidence, bbox_x1, bbox_y1, bbox_x2, bbox_y2)
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-                    """, (
-                        cam_id, timestamp, det["class_id"], det["confidence"],
-                        det["bbox"][0], det["bbox"][1], det["bbox"][2], det["bbox"][3]
-                    ))
-                    total_detections += 1
-        
-        conn.commit()
-        conn.close()
-        
-        # Update congestion data (same as before)
+        # Update congestion data
         run_congestion_update_background()
         
         return jsonify({
             "status": "ok",
             "processed_cameras": len(valid_camera_ids),
-            "total_detections": total_detections
+            "total_detections": total_detections,
+            "method": "modal-gpu" if USE_MODAL_DETECTION else "local"
         })
         
     except Exception as e:
-        print(f"❌ Error during Modal detection: {e}")
+        import traceback
+        print(f"❌ Error during detection: {e}")
+        print(traceback.format_exc())
+        
+        # Fallback to local detection if Modal fails
+        if USE_MODAL_DETECTION:
+            print("⚠️ Falling back to local detection...")
+            try:
+                run_detection_for_cameras(camera_ids)
+                run_congestion_update_background()
+                return jsonify({
+                    "status": "ok",
+                    "processed_cameras": len(camera_ids),
+                    "method": "local-fallback",
+                    "note": "Modal failed, used local detection"
+                })
+            except Exception as fallback_error:
+                return jsonify({"error": str(fallback_error)}), 500
+        
         return jsonify({"error": str(e)}), 500
-    
 
 @app.route("/api/congestion/geojson", methods=["GET"])
 def get_congestion_geojson():
