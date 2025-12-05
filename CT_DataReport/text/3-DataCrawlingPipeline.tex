@@ -1,0 +1,399 @@
+\chapter{Data Collection Methods and Sources}
+
+
+\section{Data Sources}
+\textbf{Bus Map Data}: The data is collected by scraping directly from the \url{https://map.busmap.vn/hcm} web.
+
+
+\textbf{Traffic Camera Data}: The data is collected by scraping directly from the \url{https://giaothong.hochiminhcity.gov.vn} web.
+
+\section{Data Collection Methods}
+\subsection{Bus Map Data}
+Step-by-step implementation process:
+\begin{itemize}
+\item \textbf{Raw Capture (Interception):} A script uses playwright to launch a browser context and listen for network responses containing "api" or "route". These responses are captured into a file named api\_responses.json.
+\item \textbf{Decryption:} The API responses are encrypted. The system uses the AES-CBC algorithm (via Crypto.Cipher.AES) to decrypt the hexadecimal payloads. The decryption key is extracted dynamically from the initial data packet.
+\item \textbf{Static Resource Download:} The system extracts URLs for static resources (routes, route info, stations) from the decrypted data and downloads them to a raw directory. The extractor automatically handles various compression formats, including Gzip and Zlib.
+\item \textbf{Tools used:} Python, Playwright (automation), PyCryptodome (decryption), Requests (HTTP calls).
+\item \textbf{Storage format:} The raw data is stored as JSON or binary .xyz files, while the final output is stored as CSV.
+\end{itemize}
+
+\begin{figure}[h!]
+\centering
+
+\begin{tikzpicture}[
+  node distance = 18mm,
+  every node/.style={font=\small},
+  proc/.style = {
+      rectangle,
+      text width=0.5\linewidth,  
+      minimum height=11mm,
+      text centered,
+      draw=black,
+      very thick,
+      rounded corners=3pt,
+      font=\small,
+  },
+  arr/.style = {-{Stealth[length=3mm]}, thick},
+  note/.style = {
+      rectangle,
+      rounded corners,
+      draw=black!60,
+      fill=black!5,
+      inner sep=6pt,
+      font=\footnotesize,
+      align=left,
+      text width=0.35\linewidth,
+  }
+]
+
+% ==== NODES (VERTICAL FLOW WITH A4 WIDTH) ====
+\node[proc, fill=blue!20] (capture) {%
+  \textbf{Raw Capture (Interception)}\newline
+  Playwright captures network responses ("api", "route")\newline
+  Stored as \texttt{api\_responses.json}%
+};
+
+\node[proc, fill=yellow!25, below=18mm of capture] (decrypt) {%
+  \textbf{Decryption}\newline
+  AES-CBC using PyCryptodome\newline
+  Dynamic key extraction from initial data packet%
+};
+
+\node[proc, fill=green!20, below=18mm of decrypt] (extract) {%
+  \textbf{Static Resource Download}\newline
+  Extract route/station URLs\newline
+  Auto-handle gzip/zlib decompression%
+};
+
+\node[proc, fill=red!20, below=18mm of extract] (store) {%
+  \textbf{Storage \& Final Output}\newline
+  Raw: JSON / binary .xyz\newline
+  Final: CSV%
+};
+
+% ==== ARROWS ====
+\draw[arr] (capture) -- (decrypt);
+\draw[arr] (decrypt) -- (extract);
+\draw[arr] (extract) -- (store);
+
+% ==== NOTES ====
+\node[note, right=15mm of decrypt] (tools) {%
+  \textbf{Tools Used:}\newline
+  Python\newline Playwright (automation)\newline PyCryptodome (AES-CBC)\newline Requests (HTTP)%
+};
+
+\node[note, right=15mm of store] (formats) {%
+  \textbf{Storage Formats:}\newline
+  Raw: JSON, \texttt{.xyz}\newline
+  Final: CSV%
+};
+
+\end{tikzpicture}
+
+\caption{Diagram for Bus Map Data Collection}
+\end{figure}
+
+
+\subsection{Traffic Camera Data}
+Step-by-step implementation process:
+\begin{itemize}
+\item \textbf{Command-Line Argument Parsing and Initialization:}
+\begin{itemize}
+\item  Use argparse to parse arguments: --cameras-file (JSON with camera list), --interval (cycle seconds, default 120), --max-workers (threads, default 6), --output-dir (storage root, default ./camera\_frames). 
+\item Load camera entries from JSON file. 
+\item Optionally load camera\_locations.json for GPS and location metadata enrichment.
+\end{itemize}
+
+\item \textbf{Multi-Camera Manager Setup:}
+\begin{itemize}
+    \item Instantiate MultiCameraLoop with camera list, interval, workers, output directory, and locations.
+    \item Create an HCMCCameraCrawler instance per camera, each with a persistent requests.Session, custom headers (mimicking browser), timeout (60s), and deduplication/stats tracking.
+\end{itemize}
+
+\item \textbf{Signal Handling for Graceful Shutdown:}
+Register handlers for SIGINT/SIGTERM to set a stop event, allowing completion of the current cycle.
+
+\item \textbf{Continuous Looping Process:}
+\begin{itemize}
+\item Enter an infinite loop until stop event is set.
+\item For each cycle:
+\begin{itemize}
+\item Print cycle start timestamp (UTC+7).
+\item Use ThreadPoolExecutor (max\_workers threads) to concurrently execute crawl\_once for each camera.
+\item In crawl\_once:
+\begin{itemize}
+\item Increment attempt counter.
+\item Fetch image: Construct URL with camera ID and millisecond timestamp; send GET request; validate response (status 200, image content-type, size >1000 bytes).
+\item If successful: Compute SHA256 hash; check for duplication (matches previous hash); increment stats.
+\item If unique: Generate timestamped filename; save JPG image and JSON metadata (camera details, timestamps, hash, size, GPS if available).
+\item Cleanup: Sort images by modification time; delete all but the newest 3 (configurable) per camera folder, including companion JSON.
+\end{itemize}
+\item Wait for all tasks; aggregate and print cycle stats (attempts, successes, failures, saves, duplicates).
+\item Sleep for remaining interval time (in 1-second increments to check stop event).
+\end{itemize}   
+\end{itemize}
+
+\item \textbf{Shutdown and Final Reporting:}
+On stop: Complete cycle, print final per-camera stats (including uptime), and exit.
+\end{itemize}
+
+\begin{figure}[!h]
+\centering
+
+\begin{tikzpicture}[
+  node distance = 18mm,
+  every node/.style={font=\small},
+  proc/.style = {
+      rectangle,
+      text width=0.6\linewidth,
+      minimum height=12mm,
+      text centered,
+      draw=black,
+      very thick,
+      rounded corners=3pt,
+      font=\small,
+      align=left,
+      inner sep=4pt,
+  },
+  arr/.style = {-{Stealth[length=3mm]}, thick},
+  note/.style = {
+      rectangle,
+      rounded corners,
+      draw=black!60,
+      fill=black!5,
+      inner sep=6pt,
+      font=\footnotesize,
+      align=left,
+      text width=0.35\linewidth,
+  }
+]
+
+% ==== NODES (VERTICAL FLOW) ====
+\node[proc, fill=blue!20] (argparse) {%
+  \textbf{Command-Line Argument Parsing \& Initialization}\newline
+  - argparse: --cameras-file, --interval, --max-workers, --output-dir\newline
+  - Load camera entries from JSON\newline
+  - Optional: load camera\_locations.json%
+};
+
+\node[proc, fill=yellow!25, below=18mm of argparse] (manager) {%
+  \textbf{Multi-Camera Manager Setup}\newline
+  - MultiCameraLoop: cameras, interval, workers, output dir, locations\newline
+  - HCMCCameraCrawler per camera: persistent session, headers, timeout, dedup/stats%
+};
+
+\node[proc, fill=green!20, below=18mm of manager] (signal) {%
+  \textbf{Signal Handling for Graceful Shutdown}\newline
+  - Register SIGINT/SIGTERM handlers to set stop event%
+};
+
+\node[proc, fill=orange!20, below=18mm of signal] (loop) {%
+\textbf{Continuous Looping Process}\newline
+  - Infinite loop until stop event\newline
+  - For each cycle:\newline
+    \quad - Print start timestamp (UTC+7)\newline
+    \quad - ThreadPoolExecutor for concurrent crawl\_once per camera\newline
+    \quad - In crawl\_once: fetch image, validate, deduplicate, save JPG + JSON, cleanup old files\newline
+    \quad - Wait tasks, print cycle stats, sleep for remaining interval%
+};
+
+\node[proc, fill=red!20, below=18mm of loop] (shutdown) {%
+  \textbf{Shutdown \& Final Reporting}\newline
+  - Complete cycle, print per-camera stats (uptime), exit%
+};
+
+% ==== ARROWS ====
+\draw[arr] (argparse) -- (manager);
+\draw[arr] (manager) -- (signal);
+\draw[arr] (signal) -- (loop);
+\draw[arr] (loop) -- (shutdown);
+
+% ==== NOTES ====
+\node[note, right=15mm of argparse] (note1) {%
+\textbf{Args Examples:}\newline
+--cameras-file cameras.json\newline
+--interval 120\newline
+--max-workers 6\newline
+--output-dir ./camera\_frames%
+};
+
+\node[note, right=15mm of loop] (note2) {%
+\textbf{Image Handling:}\newline
+- Validate: status 200, image type, size >1000B\newline
+- Dedup via SHA256 hash\newline
+- Save JPG + metadata JSON\newline
+- Keep latest 3 images per camera%
+};
+
+\end{tikzpicture}
+
+\caption{Diagram for Multi-Camera Crawling}
+\end{figure}
+
+
+
+% \section{Architecture}
+
+% \subsection{System Components}
+
+% \textbf{Scheduler:}
+% \begin{itemize}
+%     \item \textbf{Implementation}: Python-based task scheduling.
+%     \item \textbf{Scheduling Strategy}: Configurable intervals (15 minutes) for camera frame collection.
+%     \item \textbf{Task Queue}: Manages concurrent camera crawling jobs to prevent overload.
+%     \item \textbf{Monitoring}: Tracks crawler execution status, logs failures, triggers alerts on consecutive failures.
+% \end{itemize}
+
+% \textbf{Crawling Engine:}
+% \begin{itemize}
+%     \item \textbf{Primary Tools}: Python Requests library for HTTP API calls, Playwright/Selenium for dynamic content.
+%     %\item \textbf{Frontend Client}: React 17 application (4,981 lines) with axios v1.13.2 for API communication.
+%     \item \textbf{Base URL}: \texttt{https://api.hcmus.fit} for all backend services.
+%     \item \textbf{HTTP Client Configuration}: Axios interceptors for automatic token refresh on 401 responses, request/response logging, error handling.
+% \end{itemize}
+
+
+% \textbf{Error Handling and Retry Strategy:}
+% \begin{itemize}
+%     \item \textbf{Network Failures}: Exponential backoff retry (3 attempts with 2s, 4s, 8s delays).
+%     \item \textbf{Authentication Errors}: \texttt{tokenManager.js} handles token expiration gracefully:
+%     \begin{itemize}
+%         \item \texttt{handleTokenExpiration()} clears \texttt{localStorage}, dispatches \texttt{auth-change} event.
+%         \item Shows animated notification (gradient background, slideDown animation, 3s display).
+%         \item Redirects to \texttt{/login} after 1s delay.
+%         \item \texttt{isLoggingOut} mutex prevents concurrent logout calls.
+%     \end{itemize}
+%     \item \textbf{Camera Unavailability}: Skip failed camera, log error, continue with remaining cameras. Retry on next scheduled run.
+%     \item \textbf{API Rate Limiting}: Respect \texttt{Retry-After} headers, implement request throttling (max N requests/second).
+% \end{itemize}
+
+% \section{Traffic Camera Crawling}
+
+% \subsection{Collection Workflow}
+
+% \textbf{Frame Capture Process:}
+% \begin{enumerate}
+%     \item Scheduler triggers camera collection job every 15 minutes.
+%     \item For each of 702 cameras in \texttt{camera\_locations.json}:
+%     \begin{itemize}
+%         \item Fetch latest frame from camera API endpoint.
+%         \item Validate image (non-zero size, valid JPEG header).
+%         \item Save to \texttt{public/camera\_frames/\{camera\_id\}/}.
+%     \end{itemize}
+%     \item Generate metadata JSON with timestamp, hash (SHA-256), file size.
+%     \item Update \texttt{camera\_frames} database table with new record.
+%     \item Clean up old frames (optional: delete frames older than N days to manage storage).
+% \end{enumerate}
+
+
+% \textbf{Metadata Standardization:}
+% \begin{itemize}
+%     \item \textbf{Timestamps}: ISO 8601 format (\texttt{2025-11-16T14:34:43.593455Z}) in \texttt{timestamp\_iso} field, Unix epoch milliseconds in \texttt{timestamp} field.
+%     \item \textbf{Camera ID}: Unique identifier from \texttt{camera\_locations.json}, used as primary key in \texttt{cameras} table and foreign key in \texttt{camera\_frames}.
+%     \item \textbf{Hash}: SHA-256 digest for integrity verification and duplicate detection.
+%     \item \textbf{Filename Convention}: \texttt{\{camera\_id\}\_\{date\}\_\{time\}\_\{hash\_prefix\}.jpg} for easy sorting and retrieval.
+% \end{itemize}
+
+% \textbf{Storage Optimization:}
+% \begin{itemize}
+%     \item Current storage: 35 MB for 702 frames (one per camera, latest only in local build).
+%     \item Production storage: Estimated \textasciitilde70000 frames/day \texttimes{} 50 KB = \textasciitilde3.5 GB/day.
+%     \item Time-series partitioning: Partition \texttt{camera\_frames} table by day or week.
+%     \item Cold storage archival: Move frames older than 3 days to object storage with lifecycle policies.
+% \end{itemize}
+
+% \section{Web Crawling}
+
+% \subsection{HTML Scraping}
+
+% \textbf{Tools:}
+% \begin{itemize}
+%     \item \textbf{BeautifulSoup}: Python library for parsing HTML/XML documents.
+%     \item \textbf{Playwright}: Headless browser automation for JavaScript-heavy sites.
+%     \item \textbf{Selector Strategies}: CSS selectors, XPath for precise element targeting.
+% \end{itemize}
+
+% \textbf{Use Cases:}
+% \begin{itemize}
+%     \item Scraping bus schedules from \url{https://map.busmap.vn/hcm}
+%     \item Collecting public transit stops, route descriptions, fare information.
+% \end{itemize}
+
+% \subsection{API Fetching (REST/JSON)}
+
+% \textbf{Geocoding API:}
+% \begin{itemize}
+%     \item \textbf{Endpoint}: \texttt{POST /search} with JSON \texttt{\{address, lat, lon\}}.
+%     \item \textbf{Provider}: Goong Maps API.
+%     \item \textbf{Usage}: Forward geocoding (address to coordinates), reverse geocoding (coordinates to address).
+%     \item \textbf{Response Caching}: Cache frequent queries (e.g., major landmarks) in Redis with 24-hour TTL.
+% \end{itemize}
+
+% \textbf{Routing API:}
+% \begin{itemize}
+%     \item \textbf{Endpoint}: \texttt{POST /route} with JSON \texttt{\{start, end, travelMode\}}.
+%     \item \textbf{Travel Modes}: car, walk, bike.
+%     \item \textbf{Response}: Route geometry, distance (meters), duration (seconds), step-by-step instructions.
+%     \item \textbf{Integration}: \texttt{SearchBoxRoutes.js} component submits user queries, displays results on map.
+% \end{itemize}
+
+% \textbf{Bus Routing API:}
+% \begin{itemize}
+%     \item \textbf{Endpoint}: \texttt{GET /api/bus/route} with query parameters \texttt{start\_lat}, \texttt{start\_lng}, \texttt{end\_lat}, \texttt{end\_lng}, \texttt{max\_walk} (default 300m).
+%     \item \textbf{Response}: Multi-leg itinerary with walking segments, bus transfers, route names, ETAs.
+%     \item \textbf{Implementation}: \texttt{BusMapPage.js} with Material-UI search interface, route polyline visualization.
+% \end{itemize}
+
+% \subsection{Dynamic Content Scraping}
+
+% \textbf{Headless Browser Techniques:}
+% \begin{itemize}
+%     \item \textbf{Playwright/Selenium}: For sites requiring JavaScript execution to render content.
+%     \item \textbf{Wait Strategies}: Wait for specific elements (\texttt{page.waitForSelector}), network idle (\texttt{page.waitForLoadState('networkidle')}).
+%     \item \textbf{Interaction Simulation}: Click buttons, fill forms, scroll to load infinite-scroll content.
+% \end{itemize}
+
+% \textbf{Example Scenario:}
+% Scraping real-time bus locations from interactive transit map:
+% \begin{enumerate}
+%     \item Launch headless browser with Playwright.
+%     \item Navigate to transit authority website.
+%     \item Wait for map to load, extract bus marker coordinates from JavaScript variables or DOM.
+%     \item Parse bus IDs, routes, current positions, timestamps.
+%     \item Store in database for display in \texttt{BusMapPage}.
+% \end{enumerate}
+
+% \subsection{Anti-Ban Strategies and Request Throttling}
+
+% \textbf{IP Rotation:}
+% % \begin{itemize}
+% %     \item Use proxy pools or VPN services to distribute requests across multiple IPs.
+% %     \item Rotate user agents to mimic different browsers (Chrome, Firefox, Safari).
+% % \end{itemize}
+
+% \textbf{Request Throttling:}
+% \begin{itemize}
+%     \item Limit concurrent requests to max N per second (e.g., 5 req/s).
+%     \item Introduce random delays between requests (1-3 seconds) to appear human-like.
+%     \item Respect \texttt{robots.txt} directives and website terms of service.
+% \end{itemize}
+
+% \textbf{Session Management:}
+% \begin{itemize}
+%     \item Maintain cookies across requests to preserve session state.
+%     \item Handle CSRF tokens if website requires them for form submissions.
+% \end{itemize}
+
+% \textbf{Error Detection:}
+% \begin{itemize}
+%     \item Monitor HTTP status codes: 429 (rate limit), 403 (forbidden), 503 (service unavailable).
+%     \item Detect CAPTCHA challenges, pause crawler, send alert for manual intervention.
+%     \item Log blocked IP addresses, rotate to new proxy on detection.
+% \end{itemize}
+
+
+
+% % \section{Summary}
+
+% % The data crawling and collection pipeline employs a multi-layered architecture with robust error handling, validation, and cleaning mechanisms. Scheduler-driven camera frame collection, API-based data fetching, and web scraping techniques ensure comprehensive data acquisition. Anti-ban strategies and request throttling maintain crawler sustainability, while validation and deduplication steps guarantee data quality for downstream analytics and user-facing services.

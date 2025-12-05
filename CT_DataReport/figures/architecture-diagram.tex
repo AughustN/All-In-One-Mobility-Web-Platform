@@ -1,0 +1,61 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    node distance=0.5cm,
+    box/.style={rectangle, draw=black, thick, minimum width=12cm, minimum height=1cm, align=left, font=\small},
+    bigbox/.style={rectangle, draw=black, very thick, minimum width=12cm, minimum height=4.5cm, align=left},
+    arrow/.style={->, >=stealth, thick},
+    label/.style={font=\small\itshape}
+]
+
+% Presentation Layer
+\node[bigbox] (presentation) at (0,0) {
+    \textbf{PRESENTATION LAYER (Client)} \\[0.3cm]
+    \textbf{React.js SPA (Thick Client)} \\
+    \quad ├── RoutesPage.js (Route Planning) \\
+    \quad ├── CameraMap.js (Camera Viewing) \\
+    \quad ├── HistoryPage.js (User History) \\
+    \quad └── MapLayerControl.js (Map Layers) \\[0.3cm]
+    \textbf{Visualization Engines:} \\
+    \quad ├── Leaflet (Map Rendering) \\
+    \quad ├── MapLibre GL (Vector Tiles) \\
+    \quad └── Material-UI (UI Components)
+};
+
+% Arrow and label
+\draw[arrow] (presentation.south) -- ++(0,-0.8) node[midway, right, label] {RESTful API Calls};
+
+% Service Gateway Layer
+\node[bigbox, below=2cm of presentation] (gateway) {
+    \textbf{SERVICE GATEWAY (Interface)} \\[0.3cm]
+    \textbf{src/api.js - Abstraction Layer} \\
+    \quad ├── fetchCameraImages() \\
+    \quad ├── searchLocation() \\
+    \quad ├── calculateRoute() \\
+    \quad ├── getSavedLocations() \\
+    \quad └── getSavedRoutes()
+};
+
+% Arrow and label
+\draw[arrow] (gateway.south) -- ++(0,-0.8) node[midway, right, label] {HTTP Requests};
+
+% Application Layer
+\node[bigbox, below=2cm of gateway, minimum height=5.5cm] (application) {
+    \textbf{APPLICATION LAYER (Server - Backend)} \\[0.3cm]
+    \textbf{Flask (Python) - API Server} \\
+    \quad ├── Route Calculation (TomTom API) \\
+    \quad ├── Location Search (TomTom API) \\
+    \quad ├── Camera Image Proxy \\
+    \quad ├── User Authentication (JWT) \\
+    \quad └── History Management \\[0.3cm]
+    \textbf{External Services:} \\
+    \quad ├── TomTom API (Routing \& Geocoding) \\
+    \quad ├── OSM API (Map Tiles) \\
+    \quad ├── HCMC Traffic Server (Camera Images) \\
+    \quad └── MySQL Database (Persistence)
+};
+
+\end{tikzpicture}
+\caption{System Architecture: Three-tier architecture showing the Presentation Layer (React.js client), Service Gateway (API abstraction), and Application Layer (Flask backend with external services).}
+\label{fig:architecture}
+\end{figure}

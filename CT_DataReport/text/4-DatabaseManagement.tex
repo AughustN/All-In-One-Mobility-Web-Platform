@@ -1,0 +1,435 @@
+\chapter{Database Management}
+
+\section{Database Architecture}
+
+\subsection{Relational Database (MySQL)}
+
+\textbf{Primary Use Cases:} Complex joins across tables (e.g., user routes with camera data for congestion awareness).
+% \begin{itemize}
+%     %\item Structured data with well-defined schemas: cameras, users, routes, incidents.
+%     \item 
+% \end{itemize}
+
+\textbf{Technology Selection:} \textbf{MySQL}: Alternative for simpler setups, wide community support, efficient for read-heavy workloads.
+%\begin{itemize}
+    %\item \textbf{PostgreSQL}: Preferred for PostGIS extension (spatial queries), JSONB support (flexible metadata), mature ecosystem.
+    %\item 
+%\end{itemize}
+
+% \subsection{NoSQL Storage (MongoDB/Elasticsearch)}
+
+% \textbf{Unstructured Data Handling:}
+% \begin{itemize}
+%     \item \textbf{MongoDB}: Document store for variable-schema data (scraped web content, raw API responses).
+%     \item \textbf{Elasticsearch}: Full-text search for incident descriptions, camera names, location searches.
+%     \item \textbf{Use Case}: Logging crawler activities, storing raw scraped HTML for later processing.
+% \end{itemize}
+
+\subsection{Object Storage (Google Drive Storage)}
+
+\textbf{Camera Frames and Video Data:}
+\begin{itemize}
+    \item \textbf{Current Storage}: 35 MB for 702 latest frames in \texttt{public/camera\_frames/}.
+    \item \textbf{Production Scale}: Estimated \textasciitilde3.5 GB/day (70000 frames \texttimes{} 50 KB).
+    \item \textbf{Lifecycle Policies}: 
+    \begin{itemize}
+        \item Hot storage: Latest 7 days on local/drive storage for fast access.
+        \item Warm storage: 3 days on standard drive storage.
+    \end{itemize}
+\end{itemize}
+
+\textbf{SOS Incident Images:}
+\begin{itemize}
+    \item User-uploaded images via \texttt{POST /api/sos} FormData.
+    \item Store in \texttt{sos\_images/} bucket with unique filenames (UUID or timestamp-based).
+    \item Record \texttt{image\_path} in \texttt{sos\_reports} table for retrieval.
+\end{itemize}
+
+\section{Schema Design}
+
+The database uses MySQL with a normalized schema consisting of four core tables: \texttt{users}, \texttt{user\_locations}, \texttt{user\_routes}, and \texttt{sos\_alerts}. All tables use \texttt{INT AUTO\_INCREMENT} primary keys and \texttt{TIMESTAMP} fields with default values for automatic tracking of record creation times.
+
+\subsection{Users Table}
+
+\begin{verbatim}
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+\end{verbatim}
+
+\textbf{Design Rationale:}
+\begin{itemize}
+    \item \texttt{id}: Auto-incrementing integer primary key for efficient joins and foreign key references.
+    \item \texttt{username}: Unique constraint ensures no duplicate usernames; indexed automatically for login queries.
+    \item \texttt{password}: VARCHAR(255) accommodates hashed passwords (e.g., bcrypt generates 60-character hashes, providing room for future algorithms).
+    \item \texttt{created\_at}: Tracks account registration time for analytics and compliance.
+\end{itemize}
+
+\subsection{User Locations Table}
+
+\begin{verbatim}
+CREATE TABLE IF NOT EXISTS user_locations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    lat DOUBLE NOT NULL,
+    lng DOUBLE NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+\end{verbatim}
+
+\textbf{Purpose:} Stores user-saved locations (home, work, frequent destinations) for quick access in routing interface.
+
+\textbf{Key Design Decisions:}
+\begin{itemize}
+    \item \texttt{lat/lng}: DOUBLE precision (15-16 decimal digits) provides sub-meter accuracy for geographic coordinates.
+    \item \texttt{ON DELETE CASCADE}: Automatically removes all saved locations when user account is deleted, maintaining referential integrity.
+    \item \texttt{name}: User-defined label for the location (e.g., ``Home'', ``Office'', ``Gym'').
+\end{itemize}
+
+\textbf{Recommended Index:}
+\begin{verbatim}
+CREATE INDEX idx_user_locations_user_id ON user_locations(user_id);
+\end{verbatim}
+Optimizes queries retrieving all saved locations for a specific user.
+
+\subsection{User Routes Table}
+
+\begin{verbatim}
+CREATE TABLE IF NOT EXISTS user_routes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    start_name VARCHAR(255) NOT NULL,
+    start_lat DOUBLE NOT NULL,
+    start_lng DOUBLE NOT NULL,
+    end_name VARCHAR(255) NOT NULL,
+    end_lat DOUBLE NOT NULL,
+    end_lng DOUBLE NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+\end{verbatim}
+
+\textbf{Purpose:} Stores user's route history and favorite routes for repeat navigation.
+
+\textbf{Schema Details:}
+\begin{itemize}
+    \item \texttt{start\_name/end\_name}: Human-readable labels for origin and destination (e.g., ``Bến Thành Market'', ``Airport'').
+    \item \texttt{start\_lat/start\_lng/end\_lat/end\_lng}: Precise coordinates for route calculation without requiring reverse geocoding.
+    \item \texttt{timestamp}: Records when route was saved, enabling chronological sorting in history view.
+\end{itemize}
+
+\textbf{Recommended Index:}
+\begin{verbatim}
+CREATE INDEX idx_user_routes_user_time 
+ON user_routes(user_id, timestamp DESC);
+\end{verbatim}
+Optimizes queries like ``show last 10 routes for user X'' with descending timestamp order.
+
+\subsection{SOS Alerts Table}
+
+\begin{verbatim}
+CREATE TABLE IF NOT EXISTS sos_alerts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    lat DOUBLE NOT NULL,
+    lng DOUBLE NOT NULL,
+    description TEXT,
+    image_url VARCHAR(255),
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status VARCHAR(20) DEFAULT 'active',
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
+);
+\end{verbatim}
+
+\textbf{Purpose:} Emergency incident reporting with optional image attachment and status tracking.
+
+\textbf{Status Workflow:}
+\begin{itemize}
+    \item \texttt{active}: Incident is ongoing or unresolved (default state).
+    \item \texttt{resolved}: Incident has been addressed or is no longer relevant.
+\end{itemize}
+
+\textbf{Key Design Decisions:}
+\begin{itemize}
+    \item \texttt{user\_id}: Nullable to allow anonymous reporting; \texttt{ON DELETE SET NULL} preserves incident records even if reporting user deletes account.
+    \item \texttt{description}: TEXT type for detailed incident descriptions (up to 65,535 characters in MySQL).
+    \item \texttt{image\_url}: Stores path to uploaded image in object storage (e.g., ``sos\_images/2025/11/26/abc123.jpg'').
+    \item \texttt{lat/lng}: Incident location for proximity-based queries (e.g., ``show all active incidents within 500m'').
+\end{itemize}
+
+\textbf{Recommended Indexes:}
+\begin{verbatim}
+CREATE INDEX idx_sos_status_time ON sos_alerts(status, timestamp DESC);
+CREATE INDEX idx_sos_location ON sos_alerts(lat, lng);
+\end{verbatim}
+
+\begin{itemize}
+    \item \texttt{idx\_sos\_status\_time}: Optimizes queries filtering by status and sorting by time (e.g., ``recent active incidents'').
+    \item \texttt{idx\_sos\_location}: Enables spatial queries for proximity search (though MySQL spatial indexes with POINT type would be more efficient for large datasets).
+\end{itemize}
+
+% \section{Indexing \& Optimization}
+
+% \subsection{Spatial Indexing (PostGIS)}
+
+% \textbf{PostGIS Extension:}
+% \begin{verbatim}
+% CREATE EXTENSION postgis;
+% ALTER TABLE cameras ADD COLUMN geom GEOMETRY(Point, 4326);
+% UPDATE cameras SET geom = ST_SetSRID(ST_MakePoint(lon, lat), 4326);
+% CREATE INDEX idx_cameras_geom ON cameras USING GIST(geom);
+% \end{verbatim}
+
+% \textbf{Proximity Queries:}
+% \begin{verbatim}
+% -- Find cameras within 5km of user location
+% SELECT camera_id, camera_name, 
+%        ST_Distance(geom, ST_SetSRID(ST_MakePoint(106.660172, 10.762622), 4326)) 
+%        AS distance
+% FROM cameras
+% WHERE ST_DWithin(geom, ST_SetSRID(ST_MakePoint(106.660172, 10.762622), 4326), 0.05)
+% ORDER BY distance;
+% \end{verbatim}
+
+% \textbf{SOS Nearby Query:}
+% \begin{itemize}
+%     \item \texttt{GET /api/sos/nearby} with \texttt{lat}, \texttt{lon}, \texttt{radius} (meters).
+%     \item Uses spatial index on \texttt{sos\_reports} table for efficient retrieval.
+% \end{itemize}
+
+% \subsection{Timestamp Indexing}
+
+% \textbf{Composite Indexes:}
+% \begin{itemize}
+%     \item \texttt{(camera\_id, timestamp\_iso DESC)}: Optimizes ``latest frames for camera X'' queries.
+%     \item \texttt{(status, reported\_at DESC)}: Optimizes SOS incident list filtered by status, sorted by time.
+% \end{itemize}
+
+% \textbf{Covering Indexes:}
+% \begin{verbatim}
+% CREATE INDEX idx_camera_frames_covering 
+% ON camera_frames (camera_id, timestamp_iso DESC) 
+% INCLUDE (filename, url, congestion_score);
+% \end{verbatim}
+% Allows index-only scans without accessing table data.
+
+% \subsection{Table Partitioning}
+
+% \textbf{Camera Frames Partitioning:}
+% \begin{itemize}
+%     \item By day or month depending on data volume.
+%     \item Example: \texttt{CREATE TABLE camera\_frames\_20251126 PARTITION OF camera\_frames FOR VALUES FROM ('2025-11-26') TO ('2025-11-27')}.
+%     \item Benefits: Faster queries (partition pruning), easier archival (detach old partitions).
+% \end{itemize}
+
+% \textbf{Congestion Logs Partitioning:}
+% \begin{itemize}
+%     \item Monthly partitions: \texttt{congestion\_logs\_202511}.
+%     \item Automatic partition maintenance: create next month's partition 7 days in advance.
+% \end{itemize}
+
+
+
+\section{Analytics Database}
+
+\subsection{Primary Data Storage Schema}
+
+\textbf{User Authentication Data (Table: \texttt{users}):}
+\begin{itemize}
+    \item \textbf{Fields}:
+    \begin{itemize}
+        \item \texttt{id}: INT AUTO\_INCREMENT PRIMARY KEY — unique user identifier.
+        \item \texttt{username}: VARCHAR(50) UNIQUE NOT NULL — login credential.
+        \item \texttt{password}: VARCHAR(255) NOT NULL — bcrypt-hashed password (60-character hash).
+        \item \texttt{created\_at}: TIMESTAMP DEFAULT CURRENT\_TIMESTAMP — registration time.
+    \end{itemize}
+    \item \textbf{Data Volume}: Expected growth of 100-500 new users per month during pilot phase.
+    \item \textbf{Security Constraints}: Password field never exposed in API responses; bcrypt cost factor = 10 (hashing time ~100ms).
+\end{itemize}
+
+\textbf{User Location History (Table: \texttt{user\_locations}):}
+\begin{itemize}
+    \item \textbf{Fields}:
+    \begin{itemize}
+        \item \texttt{id}: INT AUTO\_INCREMENT PRIMARY KEY.
+        \item \texttt{user\_id}: INT FOREIGN KEY \textrightarrow{} \texttt{users.id} ON DELETE CASCADE.
+        \item \texttt{name}: VARCHAR(255) NOT NULL — user-defined label (e.g., ``Home'', ``Office'').
+        \item \texttt{lat}: DOUBLE NOT NULL — latitude coordinate (6 decimal places precision = ~0.1m accuracy).
+        \item \texttt{lng}: DOUBLE NOT NULL — longitude coordinate.
+        \item \texttt{timestamp}: TIMESTAMP DEFAULT CURRENT\_TIMESTAMP — save time.
+    \end{itemize}
+    \item \textbf{Query Pattern}: \texttt{SELECT * FROM user\_locations WHERE user\_id=? ORDER BY timestamp DESC LIMIT 10} — retrieves recent locations for quick access.
+    \item \textbf{Data Retention}: Last 10 entries per user kept; older entries archived monthly.
+\end{itemize}
+
+\textbf{User Route History (Table: \texttt{user\_routes}):}
+\begin{itemize}
+    \item \textbf{Fields}:
+    \begin{itemize}
+        \item \texttt{id}: INT AUTO\_INCREMENT PRIMARY KEY.
+        \item \texttt{user\_id}: INT FOREIGN KEY \textrightarrow{} \texttt{users.id} ON DELETE CASCADE.
+        \item \texttt{start\_name}: VARCHAR(255) NOT NULL — origin location label.
+        \item \texttt{start\_lat}, \texttt{start\_lng}: DOUBLE NOT NULL — origin coordinates.
+        \item \texttt{end\_name}: VARCHAR(255) NOT NULL — destination label.
+        \item \texttt{end\_lat}, \texttt{end\_lng}: DOUBLE NOT NULL — destination coordinates.
+        \item \texttt{timestamp}: TIMESTAMP DEFAULT CURRENT\_TIMESTAMP — query time.
+    \end{itemize}
+    \item \textbf{Analytics Use Case}: Aggregate route queries to identify popular origin-destination pairs; informs future bus route planning.
+    \item \textbf{Data Volume}: Average 5-10 route queries per active user per day.
+\end{itemize}
+
+\textbf{SOS Alert Data (Table: \texttt{sos\_alerts}):}
+\begin{itemize}
+    \item \textbf{Fields}:
+    \begin{itemize}
+        \item \texttt{id}: INT AUTO\_INCREMENT PRIMARY KEY.
+        \item \texttt{user\_id}: INT FOREIGN KEY \textrightarrow{} \texttt{users.id} ON DELETE SET NULL — reporter (nullable for anonymous reports).
+        \item \texttt{lat}, \texttt{lng}: DOUBLE NOT NULL — incident location.
+        \item \texttt{description}: TEXT — user-provided details (max 65,535 characters).
+        \item \texttt{image\_url}: VARCHAR(255) — path to uploaded photo in object storage (e.g., \texttt{sos\_images/2025/11/27/abc123.jpg}).
+        \item \texttt{timestamp}: TIMESTAMP DEFAULT CURRENT\_TIMESTAMP — report time.
+        \item \texttt{status}: VARCHAR(20) DEFAULT 'active' — lifecycle state: \texttt{active} (visible on map) or \texttt{resolved} (archived).
+    \end{itemize}
+    \item \textbf{Spatial Indexing}: Composite index on \texttt{(lat, lng, status)} for fast proximity queries (\texttt{WHERE status='active' AND lat BETWEEN ... AND lng BETWEEN ...}).
+    \item \textbf{Data Cleanup}: \texttt{resolved} alerts older than 30 days archived to cold storage; images moved to S3 Glacier.
+\end{itemize}
+
+\subsection{Analytics Metrics and Aggregated Data}
+
+\textbf{Camera Frame Metadata (Table: \texttt{camera\_frames}):}
+\begin{itemize}
+    \item \textbf{Fields}:
+    \begin{itemize}
+        \item \texttt{id}: INT AUTO\_INCREMENT PRIMARY KEY.
+        \item \texttt{camera\_id}: VARCHAR(50) NOT NULL — unique camera identifier from HCMC traffic system.
+        \item \texttt{filename}: VARCHAR(255) NOT NULL — stored image filename.
+        \item \texttt{timestamp\_iso}: VARCHAR(50) NOT NULL — ISO 8601 capture time (e.g., \texttt{2025-11-27T14:30:00Z}).
+        \item \texttt{file\_size}: INT — image file size in bytes.
+        \item \texttt{hash\_prefix}: VARCHAR(20) — first 8 characters of SHA-256 hash for deduplication.
+    \end{itemize}
+    \item \textbf{Query Optimization}: Index on \texttt{(camera\_id, timestamp\_iso DESC)} enables fast retrieval of latest frames per camera.
+    \item \textbf{Data Volume}: ~1,500 cameras × 288 frames/day (5-minute intervals) = 432,000 records/day.
+\end{itemize}
+
+\textbf{Congestion Score Logs (Table: \texttt{congestion\_logs}):}
+\begin{itemize}
+    \item \textbf{Fields}:
+    \begin{itemize}
+        \item \texttt{id}: INT AUTO\_INCREMENT PRIMARY KEY.
+        \item \texttt{camera\_id}: VARCHAR(50) NOT NULL.
+        \item \texttt{timestamp}: TIMESTAMP NOT NULL — analysis time.
+        \item \texttt{congestion\_score}: FLOAT(3,2) — normalized score 0.00-1.00 (e.g., 0.68 = moderate-heavy congestion).
+        \item \texttt{vehicle\_count}: INT — detected vehicles in frame (optional supplementary metric).
+    \end{itemize}
+    \item \textbf{Derived Categories}: Traffic intensity classification applied at query time:
+    \begin{itemize}
+        \item 0.00-0.30: Free flow (green marker).
+        \item 0.31-0.60: Moderate (yellow marker).
+        \item 0.61-0.80: Heavy (orange marker).
+        \item 0.81-1.00: Severe (red marker).
+    \end{itemize}
+    \item \textbf{Aggregation Queries}:
+    \begin{itemize}
+        \item Hourly average: \texttt{SELECT AVG(congestion\_score) FROM congestion\_logs WHERE camera\_id=? AND timestamp >= NOW() - INTERVAL 1 HOUR}.
+        \item Peak congestion time: \texttt{SELECT HOUR(timestamp), AVG(congestion\_score) GROUP BY HOUR(timestamp) ORDER BY AVG DESC LIMIT 1}.
+    \end{itemize}
+    \item \textbf{Data Retention}: Raw logs kept 7 days; hourly aggregates stored 90 days; daily averages archived indefinitely.
+\end{itemize}
+
+\textbf{Bus ETA Performance Data (Table: \texttt{bus\_eta} — Optional):}
+\begin{itemize}
+    \item \textbf{Fields}:
+    \begin{itemize}
+        \item \texttt{id}: INT AUTO\_INCREMENT PRIMARY KEY.
+        \item \texttt{route\_id}: VARCHAR(20) NOT NULL — bus route identifier.
+        \item \texttt{stop\_id}: VARCHAR(20) NOT NULL — bus stop ID.
+        \item \texttt{estimated\_arrival}: TIMESTAMP NOT NULL — predicted arrival time.
+        \item \texttt{actual\_arrival}: TIMESTAMP — observed arrival (NULL if not yet arrived).
+        \item \texttt{prediction\_error}: INT — difference in seconds (calculated post-arrival).
+    \end{itemize}
+    \item \textbf{Analytics Metrics}:
+    \begin{itemize}
+        \item Mean Absolute Error (MAE): \texttt{AVG(ABS(prediction\_error))} per route.
+        \item Accuracy rate: Percentage of predictions within ±3 minutes of actual arrival.
+    \end{itemize}
+    \item \textbf{Use Case}: Model retraining input — identify routes with high prediction errors for algorithm tuning.
+\end{itemize}
+
+\subsection{Cache Layer for Performance Optimization}
+
+\textbf{Redis Key-Value Data Structures:}
+\begin{itemize}
+    \item \textbf{Camera Frame Cache}:
+    \begin{itemize}
+        \item Key pattern: \texttt{cache:camera:\{camera\_id\}:latest}
+        \item Value: JSON string \texttt{\{``url'': ``/camera\_frames/56de42f6.../...'', ``timestamp'': ``2025-11-27T14:30:00Z'', ``congestion\_score'': 0.68\}}
+        \item TTL: 300 seconds (5 minutes) — matches frame update frequency.
+        \item Query avoidance: Eliminates ~95\% of database reads for latest frame requests.
+    \end{itemize}
+    
+    \item \textbf{Geocoding Result Cache}:
+    \begin{itemize}
+        \item Key pattern: \texttt{cache:geocode:\{address\_hash\}} (SHA-256 hash of normalized address).
+        \item Value: JSON \texttt{\{``lat'': 10.7724, ``lon'': 106.6980, ``formatted\_address'': ``...''\}}
+        \item TTL: 86400 seconds (24 hours) — addresses rarely change.
+        \item Cost savings: Reduces TomTom API calls by ~70\% (geocoding quota = 2,500 requests/day).
+    \end{itemize}
+    
+    \item \textbf{Route Computation Cache}:
+    \begin{itemize}
+        \item Key pattern: \texttt{cache:route:\{start\_lat\}:\{start\_lon\}:\{end\_lat\}:\{end\_lon\}:\{mode\}}
+        \item Value: Serialized route data (coordinates array, distance, duration).
+        \item TTL: 3600 seconds (1 hour) — balances freshness with cache efficiency.
+        \item Grid snapping: Coordinates rounded to 4 decimal places (~11m precision) to increase cache hit rate.
+    \end{itemize}
+    
+    \item \textbf{SOS Alert Proximity Cache}:
+    \begin{itemize}
+        \item Key pattern: \texttt{cache:sos:active:\{grid\_cell\_id\}} (geohash grid cells, ~500m × 500m).
+        \item Value: JSON array of active alerts in cell \texttt{[\{id, lat, lng, severity, timestamp\}, ...]}
+        \item TTL: 60 seconds — near-real-time updates for user safety.
+    \end{itemize}
+\end{itemize}
+
+\textbf{Cache Invalidation Strategies:}
+\begin{itemize}
+    \item \textbf{Time-Based Expiration}: Automatic TTL eviction — no manual intervention required for most keys.
+    \item \textbf{Event-Driven Invalidation}:
+    \begin{itemize}
+        \item New camera frame ingestion \textrightarrow{} \texttt{DEL cache:camera:\{id\}:latest} + \texttt{SET} new data.
+        \item SOS alert status change (\texttt{active} \textrightarrow{} \texttt{resolved}) \textrightarrow{} \texttt{DEL} all affected geohash cell keys.
+    \end{itemize}
+    \item \textbf{Write-Through Pattern}: For critical data (SOS alerts), write to MySQL first, then update Redis cache — ensures durability before cache update.
+\end{itemize}
+
+\textbf{Cache Performance Metrics:}
+\begin{itemize}
+    \item \textbf{Hit Rate Target}: $\geq$85\% for camera frames, $\geq$90\% for geocoding.
+    \item \textbf{Latency Improvement}: Average query time reduced from 15-50ms (MySQL) to <1ms (Redis).
+    \item \textbf{Memory Footprint}: Estimated 2-4 GB Redis memory for 10,000 cached routes + 1,500 camera states + 50,000 geocoding results.
+\end{itemize}
+
+\subsection{Data Export and Reporting Formats}
+
+\textbf{Daily Aggregate Reports (CSV):}
+\begin{itemize}
+    \item \textbf{Congestion Summary}: \texttt{camera\_id, date, avg\_congestion\_score, peak\_hour, peak\_score, free\_flow\_hours}
+    \item \textbf{Route Query Stats}: \texttt{date, total\_queries, unique\_users, top\_origin, top\_destination, avg\_distance\_km}
+    \item \textbf{SOS Incident Log}: \texttt{date, total\_reports, resolved\_count, avg\_resolution\_time\_min, severity\_breakdown}
+\end{itemize}
+
+\textbf{JSON API Response Schemas:}
+\begin{itemize}
+    \item \textbf{User Route History}: \texttt{GET /api/user/routes} returns \texttt{[\{id, start\_name, start\_lat, start\_lng, end\_name, end\_lat, end\_lng, timestamp\}, ...]} (last 10 entries).
+    \item \textbf{Active SOS Alerts}: \texttt{GET /api/sos} returns \texttt{[\{id, user\_id, username, lat, lng, description, image\_url, timestamp, status\}, ...]} (filtered by \texttt{status='active'}).
+    \item \textbf{Camera Statistics}: \texttt{GET /api/stats} returns \texttt{\{total\_cameras: 1500, cameras\_with\_images: 1420, total\_images: 432000\}}.
+\end{itemize}
+
+% \section{Summary}
+
+% The database management layer combines relational databases for structured data (MySQL for user authentication, location history, route queries, SOS alerts, camera metadata, and congestion logs), NoSQL for flexibility, and object storage for large binary assets. Analytics database schemas track operational metrics including camera frame metadata, congestion scores with time-series aggregation, and bus ETA performance data. Redis caching provides sub-millisecond latency for frequently accessed data with TTL-based expiration and event-driven invalidation. Careful schema design with spatial indexing, composite indexes, and data retention policies ensures performance and data quality. Monitoring and alerting mechanisms provide operational visibility, enabling proactive issue resolution and continuous system optimization.

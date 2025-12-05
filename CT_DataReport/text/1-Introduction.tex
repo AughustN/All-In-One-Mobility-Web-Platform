@@ -1,0 +1,82 @@
+\chapter{Introduction}
+
+\section{Problem Definition and Proposed Solution}
+
+Travelers, from leisure visitors to business professionals, face significant and costly friction
+in planning and executing urban itineraries, which stems from a core problem of lacking
+nuances and fragmented data. Critical decision-making data on bus transit schedules, live traffic, and operating hours exists in disconnected silos. The system integrates multiple data sources to support intelligent transportation services, emergency response, and traffic management. 
+This forces users to manually compare multiple apps, leading to:
+\begin{itemize}
+    \item Inefficient planning under complex constraints (time, budget, transfers).
+    \item Suboptimal in-the-moment transport choices, failing to balance cost, ETA.
+    \item Reactive, unactionable responses to congestion and crowding.
+\end{itemize}
+
+Therefore, we propose a unified web platform that consolidates diverse data streams into a coherent system, enabling smarter routing, real-time updates, and proactive alerts.
+Key functionalities include:
+\begin{itemize}
+    \item \textbf{Real-Time Traffic Monitoring}: Continuous surveillance via 702 traffic cameras deployed across the city, providing live imagery for congestion detection and incident response.
+    \item \textbf{Multi-Modal Routing Services}: Path-finding for cars, bicycles, walking, and public transit, leveraging both static road networks and dynamic traffic conditions.
+    \item \textbf{Emergency Response}: SOS incident reporting and proximity-based alert system to improve public safety response times.
+    %\item \textbf{Data-Driven Planning}: Historical analytics to inform infrastructure development and traffic management policies.
+\end{itemize}
+
+\section{Overview of System Modules}
+
+The platform comprises four integrated modules, each serving distinct yet complementary functions:
+
+\subsection{Routing Module}
+Provides multi-modal route planning with support for:
+\begin{itemize}
+    \item \textbf{Travel Modes}: Car, walking, and bicycle routing via \texttt{POST /route} endpoint.
+    \item \textbf{Dynamic Updates}: Integrates real-time congestion data from camera analytics to adjust estimated travel times.
+    %\item \textbf{Geocoding Services}: Bidirectional address-coordinate conversion via \texttt{POST /search} endpoint for user-friendly location input.
+    \item \textbf{User Preferences}: Saved locations and routes stored in \texttt{user\_locations} and \texttt{user\_routes} tables in database, accessible through authenticated API endpoints.
+\end{itemize}
+
+\subsection{Bus Map Module}
+Dedicated public transit planning interface featuring:
+\begin{itemize}
+    \item \textbf{Bus Route Calculation}: \texttt{GET /api/bus/route} endpoint with configurable \texttt{max\_walk} parameter (default 300 meters) for first/last mile walking distance.
+    \item \textbf{Multi-Leg Itineraries}: Displays complete trip plans including walking segments, bus transfers, and estimated arrival times.
+    \item \textbf{Interactive Visualization}: Goong Maps-based interface with route polylines, stop markers, and user location tracking.
+\end{itemize}
+
+\subsection{SOS Map Module}
+Emergency incident reporting and visualization system:
+\begin{itemize}
+    \item \textbf{Incident Reporting}: Mobile-friendly form with image upload capability via \texttt{POST /api/sos} endpoint using FormData.
+    \item \textbf{Proximity Alerts}: \texttt{GET /api/sos/nearby} returns incidents within specified radius (default 500m) for location-aware notifications.
+    \item \textbf{Status Management}: Incidents tracked with \texttt{pending/resolved} status, resolvable via \texttt{POST /api/sos/resolve} endpoint.
+\end{itemize}
+
+\subsection{Traffic Congestion Detection Module}
+Computer vision-based traffic analysis:
+\begin{itemize}
+    \item \textbf{Camera Network}: 702 traffic cameras with 15 minutes capture intervals, storing frames in \texttt{public/camera\_frames/\{camera\_id\}/} directory structure.
+    \item \textbf{Metadata Tracking}: Each frame paired with JSON metadata (\texttt{camera\_id}, \texttt{timestamp\_iso}, \texttt{hash} SHA-256, \texttt{file\_size}, \texttt{filename}).
+    \item \textbf{Detection Pipeline}: Frame preprocessing, vehicle detection, lane density measurement, and congestion score calculation.
+    \item \textbf{Real-Time Updates}: Latest frames accessible, enabling live traffic monitoring.
+\end{itemize}
+
+\section{Motivation for Unified Data Processing Pipeline}
+
+A unified data processing pipeline addresses several critical challenges in urban transportation data management:
+
+\begin{itemize}
+    \item \textbf{Data Fragmentation}: Multiple independent sources (cameras, transit APIs, emergency reports, geocoding services) require harmonization into coherent data models with consistent schemas and coordinate systems.
+    \item \textbf{Scalability Requirements}: 702 cameras generating \textasciitilde70000 frames/day, plus user-generated SOS reports, route requests, and location saves demand efficient storage partitioning and indexing strategies.
+    \item \textbf{Latency Constraints}: Real-time routing and incident alerts require sub-second query response times, necessitating optimized database indexes (composite indexes on \texttt{camera\_id, timestamp\_iso} for camera\_frames, spatial indexes for proximity queries).
+    \item \textbf{Cross-Module Dependencies}: SOS module leverages geocoding services; bus routing integrates with general routing algorithms. Shared database layer and event-driven architecture enable seamless data flow.
+    \item \textbf{Operational Resilience}: Centralized error handling via \texttt{tokenManager.js} for authentication failures, axios interceptors for API errors, and automated token expiration management ensure system stability despite network variability.
+\end{itemize}
+
+The pipeline architecture employs:
+\begin{itemize}
+    \item \textbf{Frontend Layer}: React 17 application with Material-UI v4.12.3, Goong Maps JS SDK v1.0.9, and responsive mobile-first design.
+    \item \textbf{Backend API}: RESTful services at \texttt{https://api.hcmus.fit} with JWT authentication, FormData handling for image uploads, and JSON response formats.
+    \item \textbf{Data Storage}: Hybrid approach with relational database for structured data, object storage for camera frames (34 MB current), and in-memory caching for frequently accessed data.
+    \item \textbf{State Management}: Client-side React hooks (\texttt{useState}, \texttt{useEffect}, \texttt{useRef}) for UI state, \texttt{localStorage} for authentication tokens, custom event broadcasting (\texttt{auth-change}) for cross-component synchronization.
+\end{itemize}
+
+This integrated approach enables efficient resource utilization, simplified maintenance, and extensibility for future module additions or data source integrations.

@@ -1,0 +1,57 @@
+
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc, shadows}
+\chapter{Data Cleaning and Preprocessing Workflow}
+
+
+\section{Bus Map Data Cleaning and Preprocessing}
+\begin{itemize}
+\item \textbf{Remove Noise and Duplicates} \\
+Station Deduplication: The stops\_export.py script removes duplicate stations. It prioritizes a unique stopId; if that is absent, it deduplicates based on a unique combination of coordinates (rounded to 6 decimal places) and station names.
+\item \textbf{Remove or Handle Missing Values}
+\begin{itemize}
+\item Distance Calculation: In the trips\_export.py script, if the API does not provide a distanceHint between stops, the system calculates the distance manually using the Haversine formula based on the latitude and longitude of the sequential stops.
+\item Time Normalization: Route operation times (e.g., "05:30 - 20:30") are split into distinct activeStartTime and activeStopTime columns. If data is missing, these default to empty strings.
+\end{itemize}
+\item \textbf{Standardization / Transformation}
+\begin{itemize}
+\item Data Type Conversion:
+\begin{itemize}
+\item Coordinates (Lat/Lng) are explicitly converted to floats.
+\item Ticket fees (NormalTicket) are parsed from text strings into numeric values.
+\end{itemize}
+\item Trip Time Formatting: The TimeOfTrip field is normalized. The script resolves inconsistencies between outbound and inbound timings by creating a standard range format (e.g., "50-55") or a single integer string.
+\end{itemize}
+\end{itemize}
+
+
+
+
+\section{Traffic Camera Data Cleaning and Preprocessing} 
+\begin{itemize}
+\item \textbf{Remove Duplicates} 
+\begin{itemize}
+    \item Use SHA-256 hash to identify identical frames.
+    \item Skip saving duplicate frames, update metadata with latest timestamp instead.
+    \item Useful when camera returns same static image due to connection issues.
+\end{itemize}
+
+\item \textbf{Standardization / Transformation}
+\begin{itemize}
+\item Text Data:
+\begin{itemize}
+\item Ensure all text fields (camera names, addresses, descriptions) use UTF-8 encoding.
+\item Handle Vietnamese diacritics correctly (e.g., “Mai Chí Thọ - Trần Não 1”).
+\item Normalize whitespace: strip leading/trailing spaces, collapse multiple spaces to single.
+\end{itemize}
+\item JSON Structure:
+\begin{itemize}
+\item Validate JSON schema for camera metadata: require camera\_id, timestamp\_iso, hash fields.
+\item Reject malformed JSON with parse errors, log for investigation.
+\item Apply default values for optional fields (e.g., display\_name defaults to camera\_name if missing).
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+
+
+
