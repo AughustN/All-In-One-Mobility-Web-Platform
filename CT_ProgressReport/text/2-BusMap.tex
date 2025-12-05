@@ -1,0 +1,198 @@
+\chapter{Bus Map System}
+\label{chap:busmap}
+
+\section{Introduction}
+
+This chapter describes the development of the BusMap module, which provides an independent system for public transportation routing in Ho Chi Minh City. Public transportation plays an essential role in urban mobility, with hundreds of bus routes covering both central and suburban districts, making buses one of the most affordable travel options for citizens and tourists.
+
+\subsection{Problem Definition}
+
+While public transportation in Ho Chi Minh City is widely available, it remains difficult for first-time visitors to navigate efficiently. Existing mobile applications (e.g., BusMap, Google Maps) provide bus route guidance, but their proprietary algorithms lack transparency and are not easily extensible for research-driven experimentation.
+
+This project aims to build an \textbf{independent system} that helps visitors choose the \textbf{optimal bus route}, considering \textbf{travel time, transfers, cost, and waiting penalties}. A key challenge is the \textbf{lack of open-source and up-to-date bus route data}. To address this, data was collected manually from official city transport sources and combined into structured CSV files, forming the foundational dataset of this project.
+
+\subsection{Stakeholders}
+
+\begin{itemize}
+    \item \textbf{Visitors / Tourists:} Need clear, reliable, and optimized bus routes between two locations
+    \item \textbf{Local Developers / Researchers:} Require a reusable dataset and routing engine for transport-related studies
+    \item \textbf{City Planners (potential):} Could use the model to analyze route efficiency or passenger flow
+\end{itemize}
+
+\subsection{Objectives}
+
+\begin{itemize}
+    \item Build a data-driven routing system that suggests \textbf{optimal bus paths} between two coordinates in HCMC
+    \item Model \textbf{realistic travel conditions}, including transfer costs and waiting times
+    \item Provide a \textbf{scalable graph-based framework} that can later integrate live traffic or timetable updates
+\end{itemize}
+
+\subsection{System Inputs}
+
+\textbf{User Input:}
+\begin{itemize}
+    \item Origin coordinate (latitude, longitude)
+    \item Destination coordinate (latitude, longitude)
+    \item MaxWalkingDistance (meter) — \textbf{default = 400 m}: the maximum distance the user is willing to walk
+\end{itemize}
+
+\textbf{Dataset Files:}
+\begin{itemize}
+    \item \texttt{stops.csv} — list of bus stops with coordinates
+    \item \texttt{routes.csv} — metadata for each bus route (ID, name, fare, active time, spacing penalty)
+    \item \texttt{trips.csv} — ordered sequence of stops for each route and distance between them
+\end{itemize}
+
+\subsection{System Outputs}
+
+\begin{itemize}
+    \item The \textbf{optimal route} (sequence of bus stops and route IDs) from start to destination
+    \item The \textbf{estimated travel distance or time}, including waiting and transfer penalties
+    \item The \textbf{total fares} of the trip
+    \item A \textbf{visualized route} on an interactive web map (Goong Maps JS SDK)
+\end{itemize}
+
+\subsection{System Constraints}
+
+\begin{itemize}
+    \item \textbf{No official open-source bus dataset} is available — data must be collected manually
+    \item \textbf{Static scheduling} — the system initially assumes average bus frequency, not live tracking
+    \item \textbf{Simplified cost model} — considers distance and waiting penalties but not fare differences or road congestion
+    \item \textbf{Limited accuracy in spacing data} — since BusMap-provided "bus stop spacing" may be approximate or in ranges (e.g., "50–55")
+\end{itemize}
+
+\section{Implemented Tasks}
+
+The BusMap module has progressed through multiple development phases:
+
+\subsection{Data Layer Development}
+
+\textbf{Input File Structure:}
+\begin{itemize}
+    \item \texttt{stops.csv}: Contains \texttt{stop\_id}, \texttt{name}, and geographical coordinates (latitude, longitude)
+    \item \texttt{routes.csv}: Contains \texttt{route\_id}, \texttt{name}, and metadata such as average bus spacing or waiting time
+    \item \texttt{trips.csv}: Lists all bus stops for each route in sequential order, defining the structure of each bus trip
+\end{itemize}
+
+\textbf{Graph Construction:}
+\begin{itemize}
+    \item Each bus stop is treated as a \textbf{node}
+    \item Adjacent stops on the same route are connected by \textbf{directed edges}
+    \item Edge weights represent \textbf{travel distance} calculated using the Haversine formula and stored in \texttt{routes.csv}
+    \item All graphs are constructed initially and stored in cache throughout server runtime for optimal performance
+\end{itemize}
+
+\subsection{Pathfinding Algorithm Implementation}
+
+Implemented a modified \textbf{A*} search algorithm that considers:
+\begin{itemize}
+    \item Distance between stops
+    \item Transfer penalties between routes
+    \item Starting penalty for initial waiting time
+    \item Bus fare costs
+\end{itemize}
+
+\textbf{Cost Function:}
+
+$$\text{cost} = \text{currentcost} + \frac{\text{edgeDist}}{v} + \text{transferPen} \cdot p + c \cdot \text{fare}$$
+
+Where:
+\begin{itemize}
+    \item \textbf{currentcost} — accumulated cost to reach the current node
+    \item \textbf{edgeDist} — distance (in meters) of the current bus segment
+    \item \textbf{transferPen} — transfer penalty, equal to the average bus spacing / waiting time; set to 0 if there's no transfer between routes
+    \item \textbf{v (m/s)} — average bus speed, assumed to be \textbf{7 m/s}
+    \item \textbf{p} — constant coefficient that amplifies the importance of bus transfer penalties
+    \item \textbf{c} — constant coefficient that amplifies the importance of bus fare
+    \item \textbf{fare} — bus fare cost; fare = 0 if there's no route transfer
+\end{itemize}
+
+\textbf{Duration Estimation:}
+
+$$\text{WorstCaseDuration} = \text{TotalCost} - c \cdot \text{TotalFares} - (p-1) \cdot \text{TotalWait} + \frac{\text{walkDistance}}{\text{walkSpeed}}$$
+
+$$\text{BestCaseDuration} = \text{WorstCaseDuration} - \text{TotalWait}$$
+
+The algorithm compares multiple potential starting stops within \textbf{MaxWalkingDistance} range and selects the route with the lowest total cost.
+
+\subsection{Realistic Modeling Features}
+
+\begin{itemize}
+    \item \textbf{Transfer Penalty:} Adds time when changing from one route to another, reflecting bus waiting time
+    \item \textbf{Starting Penalty:} Models the time a visitor might wait for the first bus to arrive
+    \item \textbf{Heuristic Function:} Uses geographical distance (via Haversine formula) to guide the A* search efficiently
+\end{itemize}
+
+\subsection{Backend API Development}
+
+\begin{itemize}
+    \item Built \textbf{Flask-based API} (\texttt{API.py}) to handle bus routing requests
+    \item Implemented in-memory \textbf{graph\_cache} system for efficient graph storage and retrieval
+    \item Integrated \textbf{MySQL database} (XAMPP) for persistent storage of user-related data (future expansion)
+    \item Connected with \textbf{Goong Geocoding API} for address → coordinate resolution (replacing earlier TomTom dependency)
+    \item Developed \textbf{ranking logic} to prioritize optimal bus paths based on composite cost (distance, transfers, fares)
+\end{itemize}
+
+\subsection{Map Generation and Export}
+
+\begin{itemize}
+    \item Backend collects routing data and sends JSON response to frontend
+    \item Frontend (\texttt{GoogMap.js} / \texttt{GoogBusMap.js}) to render, draw this data into a standalone interactive \texttt{.html} format.
+    \item JSON format includes coordinates and routing information: \texttt{\{coords, routingInfo\}}
+    \item \texttt{GoogMap.js} / \texttt{GoogBusMap.js} creates HTML format output
+    \item Interactive maps are displayed on \texttt{BusMapPage.js} / \texttt{RoutesPage.js}
+\end{itemize}
+
+\subsection{Tools and Technologies}
+
+\begin{center}
+\begin{tabular}{|l|l|p{7cm}|}
+\hline
+\textbf{Category} & \textbf{Tool / Library} & \textbf{Purpose} \\ \hline
+Language & Python & Main implementation language \\ \hline
+Data Handling & pandas, csv & Reading and managing bus stop and route data \\ \hline
+Graph Algorithms & Custom A* \& Dijkstra & Finding optimal routes with custom penalties \\ \hline
+Math \& Geo Utilities & math, Haversine formula & Computing real-world distances between coordinates \\ \hline
+Visualization & Goong Maps JS SDK & Plotting routes and stops on interactive map \\ \hline
+API Service & Goong Geocoding/Directions & Converting addresses to coordinates / future live directions \\ \hline
+Backend Framework & Flask & API service implementation \\ \hline
+Database & XAMPP (MySQL) & Persistent data storage \\ \hline
+Documentation & Markdown & Project reports and technical documentation \\ \hline
+\end{tabular}
+\end{center}
+
+% \subsection{Development Timeline}
+
+% \begin{center}
+% \begin{tabular}{|l|l|p{7cm}|}
+% \hline
+% \textbf{Week} & \textbf{Task} & \textbf{Description} \\ \hline
+% Week 1-2 & Research \& Problem Definition & Study existing transport apps, define goals and system constraints \\ \hline
+% Week 3-4 & Data Collection \& Cleaning & Manually collect bus stop, route, and trip data; convert to CSV format \\ \hline
+% Week 5-6 & Graph Construction & Parse CSV files, create nodes and weighted edges \\ \hline
+% Week 7-8 & Algorithm Development & Implement Dijkstra and A* with penalties; validate with test cases \\ \hline
+% Week 9-10 & Testing \& Optimization & Test multiple routes; fine-tune penalties and heuristic \\ \hline
+% Completed & Integration \& Visualization & Build UI and map visualization for displaying optimal routes \\ \hline
+% \end{tabular}
+% \end{center}
+
+\section{Next Steps}
+
+Future development priorities for the BusMap module include:
+
+\begin{itemize}
+    \item \textbf{Real-time Bus Tracking:} Integrate live GPS data to display current bus positions and real-time arrival predictions
+        
+    \item \textbf{Enhanced Cost Model:} Incorporate road congestion data, time-of-day variations, and detailed fare structures for more accurate routing
+            
+        
+    \item \textbf{API Documentation:} Create comprehensive API documentation for third-party developers to integrate the routing service
+    
+    \item \textbf{Performance Optimization:} Implement advanced caching strategies and optimize A* heuristics for faster route computation
+\end{itemize}
+
+\section{Summary}
+
+The BusMap module has established an independent, data-driven public transportation routing system for Ho Chi Minh City. It addresses the challenge of limited open-source bus data through manual collection and structuring into normalized CSV layers (stops, routes, trips). A graph-based routing engine (modified A*) incorporates transfer penalties, initial waiting time, walking distance constraints, and fare weighting to produce realistic itineraries. The current implementation includes a Flask backend, in-memory graph cache, MySQL integration foundation, Goong Maps geocoding support, and interactive frontend visualization. This transparent design enables experimentation, refinement of cost models, and future integration of live timetable or congestion data. The system already delivers optimal bus route recommendations with interpretable cost components for both visitors and research use cases.
+
+

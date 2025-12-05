@@ -1,0 +1,38 @@
+\chapter{Introduction}
+
+\section{Problem Definition}
+Travelers, from leisure visitors to business professionals, face significant and costly friction in
+planning and executing urban itineraries, which stems from a core problem of fragmented data.
+Critical decision-making data on public transit schedules (GTFS), ride-hail fares, live traffic, and
+operating hours exists in disconnected silos. \\
+This forces users to manually compare multiple apps, leading to:
+\begin{itemize}
+    \item Inefficient planning under complex constraints (time, budget, transfers).
+    \item Suboptimal in-the-moment transport choices, failing to balance cost, ETA.
+    \item Reactive, unactionable responses to congestion and crowding.
+\end{itemize}
+
+\section{Team Roles Overview}
+\newpage
+\begin{table}[!h]
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}p{4.4cm}|>{\raggedright\arraybackslash}X|}
+		\hline
+			\textbf{Role} & \textbf{Member} & \textbf{Key Responsibility} \\
+		\hline
+		Routing \& SOS Map & \VN{Nguyễn Thành Đạt (ID: 24127021)} & TomTom API integration, Search API Development, Route History Management \\
+        \hline
+		Bus Map System & \VN{Hoàng Trung Hiếu (ID: 24127041)} & Graph assembly and modeling, navigational pathfinding computation, identification and retrieval of bus itineraries \\ 
+		\hline
+        Safety \& Monitoring & \VN{Lương Hưng Phát (ID: 24127298)} & Real-time congestion detection, alert rule calibration \\
+		\hline
+        Data Collection & \VN{Nguyễn Minh Khoa (ID: 24127188)} & Scrape real-time feeds, normalization, validation checks \\
+		\hline
+		Database & \VN{Nguyễn Anh Khôi (ID: 24127430)} & Schema design, indexing, backup \& retention strategy \\
+		\hline
+		UI/UX \& Integration & \VN{Nguyễn Tấn Hiệu (ID: 24127373)} & Frontend implementation, cross-module API integration \\
+		\hline
+	\end{tabularx}
+		\caption{Team roles and ownership}\label{tab:team-roles}
+\end{table}

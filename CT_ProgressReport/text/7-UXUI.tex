@@ -1,0 +1,72 @@
+\chapter{UX/UI Integration}
+\label{chap:uxui-integration}
+
+\section{Introduction}
+
+This chapter describes the development of the UX/UI integration module, which brings together all platform components into a cohesive, user-friendly interface. The module focuses on creating intuitive user experiences for diverse stakeholders including commuters, transportation planners, and system administrators, ensuring that complex data and functionality are accessible through well-designed interfaces.
+
+Effective UX/UI integration transforms raw data and backend services into actionable insights and seamless user interactions, making the transportation platform valuable and usable.
+
+\section{Implemented Tasks}
+
+The UX/UI implementation integrates all frontend features documented for MAP APP HCMUS into a cohesive, responsive experience. Key deliverables include authentication flows, map and routing interfaces, bus routing UI, styling system, and application structure.
+
+\subsection{Authentication \& OAuth UI}
+\begin{itemize}
+    \item \textbf{Login/Register Pages (\texttt{src/pages/Login.js}, \texttt{src/pages/Register.js}):} Modern forms with validation, loading/error states, and mobile-first layout. Sidebar is hidden on small screens; the form expands full-screen on mobile.
+    \item \textbf{OAuth Buttons (\texttt{src/components/OAuthButtons.js}):} Google and GitHub login with branded icons, hover animations, and an ``Hoặc'' divider for clear choice. Facebook OAuth is disabled (requires Business Verification).
+    \item \textbf{OAuth Flow Handling (\texttt{src/utils/oauth.js}):} Google SDK initialization and GitHub redirect/callback handling integrated into the UI lifecycle; auto-detects OAuth callback codes and finalizes sign-in.
+    \item \textbf{Session UX (\texttt{src/utils/tokenManager.js}, \texttt{src/api.js}):} Auto-logout on token expiration surfaced with friendly messaging via centralized API error handling.
+    \item \textbf{Compliance Page (\texttt{public/privacy-policy.html}):} Dedicated privacy policy to support OAuth application requirements.
+\end{itemize}
+
+\subsection{Map \& Routing Interfaces}
+\begin{itemize}
+    \item \textbf{Routes Page (\texttt{src/pages/RoutesPage.js}):} Route planning UI with travel mode selector (car, motorcycle, bicycle, pedestrian) and route type toggle (fastest/shortest). Displays distance and duration with real-time recalculation.
+    \item \textbf{Search Box (\texttt{src/SearchBoxRoutes.js}):} Origin/destination inputs with Goong autocomplete, clear icons, and integrated mode/type controls.
+    \item \textbf{SOS Map (\texttt{src/GoongSOSMap.js}):} Interactive map with SOS location marking, camera overlays, and user-location tracking.
+    \item \textbf{Bus Map Page (\texttt{src/pages/BusMapPage.js}):} Bus routing UI that renders routes and nearby stops, integrated with the bus routing API and graph cache.
+\end{itemize}
+
+\subsection{Styling \& Design System}
+\begin{itemize}
+    \item \textbf{Tailwind CSS:} Utility-first styling with project-specific configuration (\texttt{tailwind.config.js}, \texttt{postcss.config.js}).
+    \item \textbf{Auth Styles (\texttt{src/css/Auth.css}):} Animated backgrounds (grid, orbs), responsive panels, and polished OAuth buttons (blue gradient for Google, dark hover for GitHub).
+    \item \textbf{Global Styles (\texttt{src/css/index.css}):} Baseline resets, variables, and utility classes for consistent look-and-feel.
+    \item \textbf{Responsiveness:} Mobile-first layout patterns across pages; controls and typography scale appropriately from phones to desktops.
+    \item \textbf{Accessibility (baseline):} High-contrast controls and keyboard-focusable inputs; structure prepared for future WCAG improvements.
+\end{itemize}
+
+\subsection{App Structure \& Navigation}
+\begin{itemize}
+    \item \textbf{Routing (\texttt{src/App.js}):} Clear application routes: Home, Login, Register, Routes, Bus, and SOS. Supports protected routes via centralized auth state.
+    \item \textbf{Centralized API Handling (\texttt{src/api.js}):} Uniform error handling for user-friendly feedback (e.g., auto-logout on HTTP 401) and consistent request lifecycles.
+    \item \textbf{Performance Considerations:} Optimized API usage and caching strategies at the UI layer to keep interactions responsive.
+\end{itemize}
+
+\section{Next Steps}
+
+Aligned with the frontend roadmap, upcoming UX/UI work will focus on depth, performance, and accessibility:
+
+\begin{itemize}
+    \item \textbf{Authentication Enhancements:} Email verification, password reset flows, 2FA, and ``Remember me'' for improved session UX.
+    \item \textbf{Map Features:} Real-time traffic overlays, favorite locations, location sharing, offline map support, and custom map styles.
+    \item \textbf{Bus Routing UX:} Multiple route options, transfer optimization, fare calculation, and arrival predictions when data is available.
+    \item \textbf{PWA \& Notifications:} Progressive Web App capabilities with push notifications for SOS alerts and service updates.
+    \item \textbf{Internationalization:} Multi-language UI (e.g., Vietnamese/English) and locale-aware formatting.
+    \item \textbf{Accessibility:} Systematic WCAG improvements (focus order, ARIA roles, color-contrast audits, keyboard navigation coverage).
+    \item \textbf{Performance:} Service workers, code splitting, image optimization, CDN integration, and refined caching strategies.
+    \item \textbf{Analytics:} Privacy-respecting analytics for route popularity and UI performance monitoring.
+\end{itemize}
+
+\section{Summary}
+
+The current UX/UI delivers a modern, mobile-first experience with:
+\begin{itemize}
+    \item Seamless Google/GitHub sign-in, robust token handling, and clear error states
+    \item Intuitive route planning with mode/type selectors and real-time results on Goong Maps
+    \item SOS and camera overlays, plus dedicated bus routing visuals with nearby stop discovery
+    \item Tailwind-driven design system, animated yet performant Auth pages, and consistent app navigation
+\end{itemize}
+
+User-facing performance and responsiveness have improved significantly thanks to centralized API handling and UI-side optimizations. Next steps emphasize PWA capabilities, accessibility, internationalization, real-time traffic visualization, and richer bus routing options to further elevate the end-user experience.

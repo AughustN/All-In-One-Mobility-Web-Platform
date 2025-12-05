@@ -1,0 +1,143 @@
+\chapter{Routing}
+\label{chap:routing}
+
+\section{Introduction}
+\subsection{Problem Definition}
+
+\textbf{Goal:} Build a function to search for and display the shortest/fastest route between two points within the scope of Ho Chi Minh City.
+\textbf{Specific Requirements:}
+\begin{itemize}
+    \item \textbf{Input:} Users provide addresses or select coordinates on the map for the origin and destination.
+    \item \textbf{Processing:}
+    \begin{itemize}
+        \item Convert addresses to coordinates (Geocoding)
+        \item Calculate the route based on mode of transport (car, bicycle, pedestrian) and criteria (fastest, shortest)
+        \item Return a list of coordinates (polyline) for the route, total distance (km), and estimated duration (minutes)
+    \end{itemize}
+    \item \textbf{Output:} Provide clean JSON data for the Frontend to render the route on Goong Maps (JS SDK) and display details.
+    \item \textbf{Constraints:} The Backend system (Flask) acts as a Proxy Service calling the Goong Directions API to fetch data, then processing and returning it to the Frontend (React).
+\end{itemize}
+
+\subsection{Solution Approach}
+
+The Backend system applies a Proxy Service model combined with Geofencing Middleware:
+
+\begin{itemize}
+    \item \textbf{Business Logic Processing:}
+    \begin{itemize}
+        \item Create a central endpoint \texttt{/route} to handle all routing requests
+        \item \textbf{Geofencing:} Before making calls to third-party APIs, the system validates whether the start/end coordinates fall within the Bounding Box of Ho Chi Minh City (Min/Max Lat/Lon)
+        \item \textbf{Data Parsing:} The Backend receives raw, complex JSON from TomTom and extracts only necessary data (arrays of lat/lon coordinates, total distance, total time) to minimize the payload sent to the client
+    \end{itemize}
+    
+    \item \textbf{Service Integration:} Use the Python \texttt{requests} library to perform Server-to-Server communication with the Goong Maps Directions / Geocoding APIs.
+    
+    \item \textbf{Security \& Personalization:} Use JWT Middleware (via the \texttt{token\_required} decorator) to protect route history storage APIs (\texttt{/api/user/routes}), ensuring users can only access their own data.
+\end{itemize}
+
+\subsection{Framework \& Tech Stack}
+
+\begin{itemize}
+    \item \textbf{Core Framework:}
+    \begin{itemize}
+        \item \textbf{Python (Flask):} Main framework for building the API server
+        \item \textbf{Flask-CORS:} Handles Cross-Origin Resource Sharing, allowing the React Frontend to consume APIs
+    \end{itemize}
+    
+    \item \textbf{Database Integration:}
+    \begin{itemize}
+        \item \textbf{MySQL Connector:} Library for connecting to the database to execute SQL queries for storing \texttt{user\_routes}
+    \end{itemize}
+    
+    \item \textbf{Security:}
+    \begin{itemize}
+        \item \textbf{PyJWT:} Generates and validates login tokens
+        \item \textbf{Bcrypt:} Hashes user passwords for security
+    \end{itemize}
+    
+    \item \textbf{External Service:}
+    \begin{itemize}
+        \item \textbf{Goong Maps Directions API:} Third-party service for route calculation (fastest/shortest with traffic)
+    \end{itemize}
+\end{itemize}
+
+\section{Implemented Tasks}
+
+The routing module development has progressed through five distinct phases:
+
+\subsection{Foundation \& Configuration}
+
+\begin{itemize}
+    \item Initialized the Flask Server and configured MySQL connection (\texttt{get\_db\_connection})
+    \item Set up environment variables and critical constants: \texttt{GOONG\_API\_KEY} and \texttt{HCM\_BBOX} (coordinate limits for HCMC)
+    \item Configured \texttt{CORS(app)} to accept requests from all sources in the development environment
+\end{itemize}
+
+\subsection{Core Routing API Development}
+
+Built Endpoint \texttt{POST /route} with the following features:
+
+\begin{itemize}
+    \item \textbf{Input Validation:} Check for the existence of \texttt{start} and \texttt{end} in the request body
+    \item \textbf{Geofencing Check:} Implemented the \texttt{is\_in\_hcm(lat, lon)} function to validate coordinates. If coordinates are outside the HCMC boundary, return a 400 error immediately to prevent wasteful API calls to Goong
+    \item \textbf{API Proxying:} Configured the request sent to Goong Directions with parameters (e.g., traffic-aware, fastest route type)
+    \item \textbf{Response Formatting:} Transformed the complex TomTom structure into a simple JSON format: \texttt{\{coords: [\{lat, lon\}...], distance\_km, duration\_min\}}
+\end{itemize}
+
+\subsection{Search API Development}
+
+
+Built Endpoint \texttt{POST /search} to support routing:
+
+\begin{itemize}
+    \item Handles logic for location searching to obtain input coordinates for routing
+    \item Integrated parameters \texttt{countrySet=VN} and \texttt{radius} to limit search results to the area surrounding the HCMC center, improving accuracy for local users
+\end{itemize}
+
+\subsection{Route History Management}
+
+Implemented user history management features:
+
+\begin{itemize}
+    \item Built Decorator \texttt{@token\_required}: Middleware to block requests missing the \texttt{Authorization: Bearer ...} header or containing invalid tokens
+    \item Built Endpoint \texttt{POST /api/user/routes}:
+    \begin{itemize}
+        \item Receives route information (\texttt{start\_name}, \texttt{end\_name}, \texttt{coordinates})
+        \item Executes the SQL \texttt{INSERT INTO user\_routes} command associated with the \texttt{user\_id} decoded from the token
+    \end{itemize}
+    \item Built Endpoint \texttt{GET /api/user/routes}:
+    \begin{itemize}
+        \item Executes SQL query \texttt{SELECT * FROM user\_routes} filtering by the current \texttt{user\_id}, sorted by the latest time (\texttt{ORDER BY timestamp DESC})
+    \end{itemize}
+\end{itemize}
+
+\subsection{Error Handling}
+
+\begin{itemize}
+    \item Caught connection exceptions (\texttt{requests.exceptions}) when calling Goong APIs to prevent server crashes
+    \item Implemented standard HTTP Status Codes:
+    \begin{itemize}
+        \item \textbf{400} (Bad Request - invalid coordinates)
+        \item \textbf{401} (Unauthorized - missing token)
+        \item \textbf{500} (Internal Server Error - third-party API failure)
+    \end{itemize}
+\end{itemize}
+
+\section{Next Steps}
+
+The following tasks are planned for future development:
+
+\begin{itemize}
+    \item \textbf{Alternative Routes:} Implement k-shortest paths algorithm to provide users with multiple route options ranked by different criteria (fastest, shortest, least congested, most scenic)
+    
+    \item \textbf{Enhanced Multi-modal Support:} Expand transportation mode options beyond car, bicycle, and pedestrian to include motorcycle and public transit integration
+                
+    \item \textbf{Performance Optimization:} Implement caching strategies for frequently requested routes and optimize API response times through connection pooling and async processing
+    
+    \item \textbf{Advanced Geofencing:} Extend geofencing capabilities to support district-level filtering and custom boundary definitions for specialized routing scenarios
+    
+\end{itemize}
+
+\section{Summary}
+
+The routing module has established a robust proxy architecture integrating a Flask backend with the Goong Maps Directions and Geocoding APIs. It delivers route calculation with geofencing validation, multi‑modal transport support, and secure user history management. The five development phases (foundation, core routing, search, history, error handling) are complete; the system now supports traffic‑aware routing and returns minimal, frontend‑optimized JSON payloads. Future work targets k‑shortest alternative paths, expanded modal coverage, and performance improvements (caching, async I/O) for city-scale usage.
