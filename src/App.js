@@ -7,6 +7,7 @@ import RoutesPage from "./pages/RoutesPage";
 import BusMapPage from "./pages/BusMapPage";
 import CameraMapNew from "./pages/CameraMapNew";
 import SOSMapPage from './pages/SOSMapPage';
+import PlanTripPage from "./pages/PlanTripPage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import EarthTestPage from "./pages/EarthTestPage";
@@ -192,6 +193,7 @@ function App() {
                 <Route path="/busmap" element={<BusMapPage darkMode={darkMode} />} />
                 <Route path="/cameras" element={<CameraMapNew />} />
                 <Route path="/sos" element={<SOSMapPage />} />
+                <Route path="/planTrip" element={<PlanTripPage darkMode={darkMode} />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/history" element={<HistoryPage />} />

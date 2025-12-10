@@ -1,8 +1,8 @@
 // Simple API helper to centralize backend calls and make it easy to replace endpoints.
 import { handleTokenExpiration } from './utils/tokenManager';
 
-export const BASE_URL = "https://api.hcmus.fit";
-// export const BASE_URL = "http://localhost:5000";
+// export const BASE_URL = "https://api.hcmus.fit";
+export const BASE_URL = "http://localhost:5000";
 
 export function getAuthHeader() {
   const token = localStorage.getItem('token');
@@ -113,6 +113,40 @@ export async function saveRoute(startName, startLat, startLng, endName, endLat, 
       start_name: startName, start_lat: startLat, start_lng: startLng,
       end_name: endName, end_lat: endLat, end_lng: endLng
     }),
+  });
+  await handleResponse(resp);
+  return resp.ok;
+}
+
+export async function saveTrip(tripData) {
+  const resp = await fetch(`${BASE_URL}/api/user/trips`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      ...getAuthHeader()
+    },
+    body: JSON.stringify(tripData),
+  });
+  await handleResponse(resp);
+  return resp.ok;
+}
+
+export async function getSavesTrips() {
+  const resp = await fetch(`${BASE_URL}/api/user/trips`, {
+    method: "GET",
+    headers: { ...getAuthHeader() }
+  });
+  await handleResponse(resp);
+  if (!resp.ok) return [];
+  return resp.json();
+}
+
+export async function deleteTrip(trip_id) {
+  const resp = await fetch(`${BASE_URL}/api/user/trips/${trip_id}`, {
+    method: "DELETE",
+    headers: {
+      ...getAuthHeader()
+    },
   });
   await handleResponse(resp);
   return resp.ok;
@@ -248,4 +282,26 @@ export async function calculateBusRoute(origin, destination, maxWalk = 300) {
   }
 
   return response.json();
+}
+
+export async function getAITripPlan(user_query) {
+  try {
+    const response = await fetch(`${BASE_URL}/api/groq`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ query: user_query })
+    });
+
+    if (!response.ok) {
+      throw new Error(`Server error: ${response.status}`);
+    }
+
+    return await response.json();
+
+  } catch (err) {
+    console.error("❌ Error fetching trip plan:", err);
+    return null;
+  }
 }

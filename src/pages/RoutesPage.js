@@ -10,7 +10,6 @@ import SearchIcon from '@material-ui/icons/Search';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import MenuIcon from '@material-ui/icons/Menu';
 import { useLocation } from 'react-router-dom';
-
 import GoongMap from '../GoongMap';
 import GoongMapStyleControl from '../GoongMapStyleControl';
 import MyLocationControl from '../MyLocationControl';

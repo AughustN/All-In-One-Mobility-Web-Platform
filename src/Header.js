@@ -163,14 +163,16 @@ export default function Header({ darkMode, onToggleDarkMode }) {
   else if (location.pathname === "/busmap") tabValue = 1;
   else if (location.pathname === "/cameras") tabValue = 2;
   else if (location.pathname === "/sos") tabValue = 3; // Tab mới số 3
-  else if (location.pathname === "/history") tabValue = 4;
+  else if (location.pathname === "/planTrip") tabValue = 4;
+  else if (location.pathname === "/history") tabValue = 5;
 
   const handleTabChange = (event, newValue) => {
     if (newValue === 0) navigate("/routes");
     else if (newValue === 1) navigate("/busmap");
     else if (newValue === 2) navigate("/cameras");
     else if (newValue === 3) navigate("/sos"); // Link tới trang SOS
-    else if (newValue === 4) navigate("/history");
+    else if (newValue === 4) navigate("/planTrip");
+    else if (newValue === 5) navigate("/history");
   };
 
   return (
@@ -206,6 +208,7 @@ export default function Header({ darkMode, onToggleDarkMode }) {
               <Tab label="Bus Map" className={classes.tab} />
               <Tab label="Cameras Map" className={classes.tab} />
               <Tab label="SOS Map" className={classes.tab} />
+              <Tab label="Plan Trip" className={classes.tab} />
               {username && <Tab label="History" className={classes.tab} />}
             </Tabs>
           </Box>
@@ -315,9 +318,10 @@ export default function Header({ darkMode, onToggleDarkMode }) {
           >
             <ListItemText primary=" Cameras Map" />
           </ListItem>
+
           <ListItem
             button
-            className={`${classes.drawerItem} ${tabValue === 2 ? classes.activeDrawerItem : ''}`}
+            className={`${classes.drawerItem} ${tabValue === 3 ? classes.activeDrawerItem : ''}`}
             onClick={() => {
               navigate('/sos');
               setMobileMenuOpen(false);
@@ -325,10 +329,22 @@ export default function Header({ darkMode, onToggleDarkMode }) {
           >
             <ListItemText primary=" SOS Map" />
           </ListItem>
+
+          <ListItem
+            button
+            className={`${classes.drawerItem} ${tabValue === 4 ? classes.activeDrawerItem : ''}`}
+            onClick={() => {
+              navigate('/planTrip');
+              setMobileMenuOpen(false);
+            }}
+          >
+            <ListItemText primary=" Plan Trip" />
+          </ListItem>
+
           {username && (
             <ListItem
               button
-              className={`${classes.drawerItem} ${tabValue === 3 ? classes.activeDrawerItem : ''}`}
+              className={`${classes.drawerItem} ${tabValue === 5 ? classes.activeDrawerItem : ''}`}
               onClick={() => {
                 navigate('/history');
                 setMobileMenuOpen(false);

@@ -7,7 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import DirectionsIcon from '@material-ui/icons/Directions';
 import HistoryIcon from '@material-ui/icons/History';
-import { getSavedLocations, getSavedRoutes } from '../api';
+import { getSavedLocations, getSavedRoutes, getSavesTrips, deleteTrip } from '../api';
 import { useNavigate } from 'react-router-dom';
 import dayjs from "dayjs";
 import utc from 'dayjs/plugin/utc'
@@ -62,17 +62,20 @@ export default function HistoryPage() {
     const navigate = useNavigate();
     const [locations, setLocations] = useState([]);
     const [routes, setRoutes] = useState([]);
+    const [trips, setTrips] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const [locs, rts] = await Promise.all([
+                const [locs, rts, tps] = await Promise.all([
                     getSavedLocations(),
-                    getSavedRoutes()
+                    getSavedRoutes(),
+                    getSavesTrips()
                 ]);
                 setLocations(locs);
                 setRoutes(rts);
+                setTrips(tps);
             } catch (error) {
                 console.error("Failed to fetch history:", error);
             } finally {
@@ -198,6 +201,81 @@ export default function HistoryPage() {
                     </List>
                 )}
             </Paper>
+
+            {/* Trips Section */}
+            <Paper className={classes.paper}>
+                <Typography variant="h6" className={classes.sectionTitle}>
+                    <LocationOnIcon className={classes.icon} />
+                    Chuyến đi gần đây
+                </Typography>
+
+                <Divider style={{ marginBottom: 16 }} />
+
+                {trips.length === 0 ? (
+                    <Typography className={classes.emptyState}>Chưa có chuyến đi nào.</Typography>
+                ) : (
+                    <List>
+                        {trips.map((trip) => {
+                            const t = trip.trip_json;
+
+                            return (
+                                <ListItem
+                                    key={trip.id}
+                                    button
+                                    className={classes.listItem}
+                                    onClick={() =>
+                                        navigate('/planTrip', {
+                                            state: { trip }
+                                        })
+                                    }
+                                >
+                                    <ListItemIcon>
+                                        <LocationOnIcon color="primary" />
+                                    </ListItemIcon>
+
+                                    <ListItemText
+                                        primary={t.title}
+                                        secondary={
+                                            <>
+                                                <span>{t.city}</span>
+                                                <br />
+                                                <span>
+                                                    {dayjs
+                                                        .tz(trip.created_at, "Asia/Ho_Chi_Minh")
+                                                        .format("DD/MM/YYYY HH:mm:ss")}
+                                                </span>
+                                            </>
+                                        }
+                                        primaryTypographyProps={{
+                                            style: { fontWeight: 500 }
+                                        }}
+                                    />
+
+                                    {/* Delete button */}
+                                    <Button
+                                        variant="outlined"
+                                        color="secondary"
+                                        size="small"
+                                        onClick={(e) => {
+                                            e.stopPropagation(); // prevent click from opening the trip
+
+                                            if (window.confirm("Bạn có chắc muốn xóa chuyến đi này?")) {
+                                                deleteTrip(trip.id).then(() => {
+                                                    // Remove from UI after delete
+                                                    setTrips(prev => prev.filter(t => t.id !== trip.id));
+                                                });
+                                            }
+                                        }}
+                                    >
+                                        Xóa
+                                    </Button>
+                                </ListItem>
+                            );
+                        })}
+                    </List>
+                )}
+            </Paper>
+
         </Container>
     );
 }
