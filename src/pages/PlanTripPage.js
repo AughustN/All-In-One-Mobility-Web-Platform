@@ -150,6 +150,7 @@ export default function PlanTripPage() {
   const [loading, setLoading] = useState(false);
   const [plan, setPlan] = useState(null);
   const locationState = useLocation();
+  const [activeSegments, setActiveSegments] = useState([]);
 
 
   // Same logic as BusMapPage: open by default on desktop
@@ -167,6 +168,21 @@ export default function PlanTripPage() {
       console.error(err);
     }
     setLoading(false);
+  };
+
+  // Initialize activeSegments when plan is set
+  useEffect(() => {
+    if (plan?.itinerary) {
+        setActiveSegments(Array(plan.itinerary.length - 1).fill(false)); // default: all OFF
+    }
+}, [plan]);
+
+  const toggleSegment = (index) => {
+    setActiveSegments(prev => {
+      const arr = [...prev];
+      arr[index] = !arr[index];
+      return arr;
+    });
   };
 
 // Handle navigation from HistoryPage
@@ -196,7 +212,10 @@ export default function PlanTripPage() {
       )}
 
       {plan && (
-          <GoongPlanTripMap plan={plan} />
+          <GoongPlanTripMap
+            plan={plan}
+            activeSegments={activeSegments}
+          />
       )}
 
 
@@ -377,6 +396,31 @@ export default function PlanTripPage() {
                             }}
                           />
                         )}
+
+                        {idx < plan.itinerary.length - 1 && (
+                          <div style={{ display: "flex", alignItems: "center", gap: 10, marginLeft: 16 }}>
+              
+                            <span style={{ fontSize: 20, marginRight: 8 }}>⬇</span>
+
+                            {/* Toggle button */}
+                            <IconButton
+                              onClick={() => toggleSegment(idx)}
+                              style={{
+                                backgroundColor: activeSegments[idx] ? "#4caf50" : "#f44336",
+                                color: "white",
+                                padding: "6px 16px",
+                                borderRadius: "20px",
+                                fontWeight: "bold",
+                                fontSize: "0.8rem",
+                                boxShadow: "0 2px 5px rgba(0,0,0,0.2)"
+                              }}
+                            >
+                              {activeSegments[idx] ? "ON" : "OFF"}
+                            </IconButton>
+
+                          </div>
+                        )}
+
                       </React.Fragment>
                     );
                   })}

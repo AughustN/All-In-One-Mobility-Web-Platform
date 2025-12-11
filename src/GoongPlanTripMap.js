@@ -8,6 +8,7 @@ goongjs.accessToken = GOONG_MAPTILES_KEY;
 
 export default function GoongPlanTripMap({
   plan,
+  activeSegments = [],
   style = "goong_map_web",
 }) {
   const mapContainer = useRef(null);
@@ -18,6 +19,7 @@ export default function GoongPlanTripMap({
   const markersRef = useRef([]);
 
   const itinerary = plan?.itinerary || [];
+  const segments = plan?.route_lines || [];
 
   // -------- 1. Initialize Map --------
   useEffect(() => {
@@ -92,6 +94,61 @@ export default function GoongPlanTripMap({
       });
     }
   }, [mapLoaded, itinerary]);
+
+  // Draw path coords
+  useEffect(() => {
+    if (!mapLoaded || !map.current || segments.length === 0) return;
+
+    // Remove old lines
+    segments.forEach((_, idx) => {
+      const sourceId = `route-source-${idx}`;
+      const layerId = `route-layer-${idx}`;
+      if (map.current.getLayer(layerId)) map.current.removeLayer(layerId);
+      if (map.current.getSource(sourceId)) map.current.removeSource(sourceId);
+    });
+
+    // Add new lines
+    segments.forEach((seg, idx) => {
+      if (!activeSegments[idx]) {
+        return; // skip inactive segments
+      }
+      const sourceId = `route-source-${idx}`;
+      const layerId = `route-layer-${idx}`;
+
+      if (!seg.coords || seg.coords.length === 0) return;
+
+      const geojson = {
+        type: "Feature",
+        geometry: {
+          type: "LineString",
+          coordinates: seg.coords.map(c => [c.lng || c.lon, c.lat])  // support lng or lon
+        }
+      };
+
+      // Add source
+      map.current.addSource(sourceId, {
+        type: "geojson",
+        data: geojson
+      });
+
+      // Add layer
+      map.current.addLayer({
+        id: layerId,
+        type: "line",
+        source: sourceId,
+        layout: {
+          "line-join": "round",
+          "line-cap": "round"
+        },
+        paint: {
+          "line-color": "#0277BD",
+          "line-width": 5,
+          "line-opacity": 0.8
+        }
+      });
+    });
+
+  }, [mapLoaded, segments, activeSegments]);
 
   return (
     <div
