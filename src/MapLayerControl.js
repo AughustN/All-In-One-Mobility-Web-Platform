@@ -5,7 +5,7 @@ import './css/MapLayerControl.css';
 
 const { BaseLayer } = LayersControl;
 const GOONG_API_KEY = 'WOXLNJwS4RZLxLmxLGKTa4gu0p8UrBKcRBOg1Xqy';
-const GOONG_MAPTILES_KEY = 'w6UXzsXLNcwmP5pRQdbHALGm2jK3nxj8OhNrJlQY';
+const GOONG_MAPTILES_KEY = 'nwJPo6l2E909Xn7fEIoJrSilkGxVJQSjrKxfD2UQ';
 
 /**
  * Goong Map Vector Layer Component
@@ -56,7 +56,7 @@ function MapLayerControl() {
 
             {/* Goong Vector - Default */}
             <BaseLayer name="🗺️ Goong Vector">
-                <GoongVector 
+                <GoongVector
                     styleUrl={`https://tiles.goong.io/assets/goong_map_web.json?api_key=${GOONG_MAPTILES_KEY}`}
                     name="Goong Vector"
                 />
@@ -64,7 +64,7 @@ function MapLayerControl() {
 
             {/* Goong Light V2 */}
             <BaseLayer name="☀️ Goong Light">
-                <GoongVector 
+                <GoongVector
                     styleUrl={`https://tiles.goong.io/assets/goong_light_v2.json?api_key=${GOONG_MAPTILES_KEY}`}
                     name="Goong Light"
                 />
@@ -72,7 +72,7 @@ function MapLayerControl() {
 
             {/* Goong Dark */}
             <BaseLayer name="🌙 Goong Dark">
-                <GoongVector 
+                <GoongVector
                     styleUrl={`https://tiles.goong.io/assets/goong_map_dark.json?api_key=${GOONG_MAPTILES_KEY}`}
                     name="Goong Dark"
                 />
@@ -80,7 +80,7 @@ function MapLayerControl() {
 
             {/* Goong Navigation Day */}
             <BaseLayer name="🚗 Navigation Day">
-                <GoongVector 
+                <GoongVector
                     styleUrl={`https://tiles.goong.io/assets/navigation_day.json?api_key=${GOONG_MAPTILES_KEY}`}
                     name="Navigation Day"
                 />
@@ -88,7 +88,7 @@ function MapLayerControl() {
 
             {/* Goong Navigation Night */}
             <BaseLayer name="🌃 Navigation Night">
-                <GoongVector 
+                <GoongVector
                     styleUrl={`https://tiles.goong.io/assets/navigation_night.json?api_key=${GOONG_MAPTILES_KEY}`}
                     name="Navigation Night"
                 />

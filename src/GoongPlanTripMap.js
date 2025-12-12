@@ -3,7 +3,7 @@ import goongjs from "@goongmaps/goong-js";
 import "@goongmaps/goong-js/dist/goong-js.css";
 import { BASE_URL, calculateRoute } from './api';
 
-const GOONG_MAPTILES_KEY = "w6UXzsXLNcwmP5pRQdbHALGm2jK3nxj8OhNrJlQY";
+const GOONG_MAPTILES_KEY = "nwJPo6l2E909Xn7fEIoJrSilkGxVJQSjrKxfD2UQ";
 goongjs.accessToken = GOONG_MAPTILES_KEY;
 
 export default function GoongPlanTripMap({
@@ -58,17 +58,17 @@ export default function GoongPlanTripMap({
     const bounds = new goongjs.LngLatBounds();
 
     itinerary.forEach((item) => {
-      if(!item.lat || !item.lng) return;
-      
+      if (!item.lat || !item.lng) return;
+
       const marker = new goongjs.Marker({ color: "#ff5252" })
         .setLngLat([item.lng, item.lat])
         .setPopup(
           new goongjs.Popup({ offset: 25 }).setHTML(`
             <div style="width:200px">
               ${item.image_url
-                ? `<img src="${BASE_URL}/${item.image_url}" style="width:100%; height:100px; object-fit:cover; border-radius:6px;" />`
-                : ``
-                }
+              ? `<img src="${BASE_URL}/${item.image_url}" style="width:100%; height:100px; object-fit:cover; border-radius:6px;" />`
+              : ``
+            }
 
               <h3 style="margin:8px 0 4px 0; font-size:16px;">${item.place}</h3>
               <p style="margin:0;"><b>Activity:</b> ${item.activity}</p>

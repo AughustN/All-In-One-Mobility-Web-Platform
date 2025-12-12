@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import goongjs from '@goongmaps/goong-js';
 import '@goongmaps/goong-js/dist/goong-js.css';
-import { useMapContext } from './contexts/MapContext';
 
-const GOONG_MAPTILES_KEY = 'w6UXzsXLNcwmP5pRQdbHALGm2jK3nxj8OhNrJlQY';
+const GOONG_MAPTILES_KEY = 'nwJPo6l2E909Xn7fEIoJrSilkGxVJQSjrKxfD2UQ';
 
 goongjs.accessToken = GOONG_MAPTILES_KEY;
 
@@ -14,9 +13,7 @@ function GoongCameraMap({ cameras, onCameraClick, selectedCamera, style = 'goong
   const markers = useRef({});
   const currentPopup = useRef(null);
   const userMarker = useRef(null);
-  const mapContext = useMapContext();
-  const registerMap = mapContext?.registerMap || (() => {});
-  
+
   // Convert style ID to URL
   const getStyleUrl = (styleId) => {
     return `https://tiles.goong.io/assets/${styleId}.json`;
@@ -41,7 +38,6 @@ function GoongCameraMap({ cameras, onCameraClick, selectedCamera, style = 'goong
 
     map.current.on('load', () => {
       setMapLoaded(true);
-      registerMap(map.current);
       console.log('✅ Goong Camera Map loaded');
     });
 
@@ -56,13 +52,13 @@ function GoongCameraMap({ cameras, onCameraClick, selectedCamera, style = 'goong
   // Update map style
   useEffect(() => {
     if (!map.current || !mapLoaded) return;
-    
+
     // Close popup
     if (currentPopup.current) {
       currentPopup.current.remove();
       currentPopup.current = null;
     }
-    
+
     // Remove markers
     Object.values(markers.current).forEach(marker => {
       try {
@@ -72,7 +68,7 @@ function GoongCameraMap({ cameras, onCameraClick, selectedCamera, style = 'goong
       }
     });
     markers.current = {};
-    
+
     map.current.setStyle(getStyleUrl(style));
   }, [style, mapLoaded]);
 
@@ -112,7 +108,7 @@ function GoongCameraMap({ cameras, onCameraClick, selectedCamera, style = 'goong
         }
 
         // Create new popup
-        const popup = new goongjs.Popup({ 
+        const popup = new goongjs.Popup({
           offset: 25,
           closeButton: true,
           closeOnClick: true
@@ -159,7 +155,7 @@ function GoongCameraMap({ cameras, onCameraClick, selectedCamera, style = 'goong
       }
 
       // Create new popup
-      const popup = new goongjs.Popup({ 
+      const popup = new goongjs.Popup({
         offset: 25,
         closeButton: true,
         closeOnClick: true
@@ -208,8 +204,8 @@ function GoongCameraMap({ cameras, onCameraClick, selectedCamera, style = 'goong
   }, [mapLoaded, userLocation]);
 
   return (
-    <div 
-      ref={mapContainer} 
+    <div
+      ref={mapContainer}
       style={{ width: '100%', height: '100%' }}
     />
   );

@@ -394,6 +394,7 @@ export default function BusMapPage() {
             destination={selectedDestination}
             walk_coords={walk_coords}
             bus_coords={bus_coords}
+              style={mapStyle}
             userLocation={userLocation}
           />
           <MyLocationControl

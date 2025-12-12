@@ -1,0 +1,94 @@
+/* Dark Mode Overrides for PlanTripPage */
+
+[data-dark-mode="true"] .MuiPaper-root {
+    background-color: #1e1e1e !important;
+    color: #ffffff !important;
+}
+
+[data-dark-mode="true"] .MuiTextField-root {
+    background-color: #2a2a2a !important;
+}
+
+[data-dark-mode="true"] .MuiInputBase-root {
+    background-color: #2a2a2a !important;
+    color: #ffffff !important;
+}
+
+[data-dark-mode="true"] .MuiInputBase-input {
+    color: #ffffff !important;
+}
+
+[data-dark-mode="true"] .MuiInputBase-input::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+    opacity: 1 !important;
+}
+
+[data-dark-mode="true"] .MuiOutlinedInput-notchedOutline {
+    border-color: #444 !important;
+}
+
+[data-dark-mode="true"] .MuiTypography-root {
+    color: #ffffff !important;
+}
+
+[data-dark-mode="true"] .MuiListItem-root:hover {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-dark-mode="true"] .MuiIconButton-root {
+    color: #ffffff !important;
+}
+
+[data-dark-mode="true"] .MuiDivider-root {
+    background-color: #444 !important;
+}
+
+/* PlanTripPage specific dark mode */
+[data-dark-mode="true"] #root {
+    background-color: #121212 !important;
+}
+
+/* Sidebar dark mode for PlanTripPage */
+[data-dark-mode="true"] [data-sidebar="container"] {
+    background: #1e1e1e !important;
+    box-shadow: 2px 0 16px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-dark-mode="true"] [data-sidebar="header"] {
+    border-bottom-color: #333 !important;
+}
+
+/* Cost box dark mode */
+[data-dark-mode="true"] .cost-box {
+    background-color: rgba(33, 150, 243, 0.15) !important;
+    border-color: #2196F3 !important;
+}
+
+/* Time badge dark mode - keep blue background but adjust */
+[data-dark-mode="true"] .time-badge {
+    background-color: #0277BD !important;
+    color: #ffffff !important;
+}
+
+/* Scrollbar dark mode */
+[data-dark-mode="true"] ::-webkit-scrollbar-track {
+    background: #2a2a2a !important;
+}
+
+[data-dark-mode="true"] ::-webkit-scrollbar-thumb {
+    background: #555 !important;
+}
+
+[data-dark-mode="true"] ::-webkit-scrollbar-thumb:hover {
+    background: #777 !important;
+}
+
+/* Button dark mode adjustments */
+[data-dark-mode="true"] .MuiButton-root {
+    color: #ffffff !important;
+}
+
+/* Toggle button container */
+[data-dark-mode="true"] .toggle-container {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}

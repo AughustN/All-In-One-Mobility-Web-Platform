@@ -5,7 +5,7 @@ import Header from './Header';
 import HistoryPage from './pages/HistoryPage';
 import RoutesPage from "./pages/RoutesPage";
 import BusMapPage from "./pages/BusMapPage";
-import CameraMapNew from "./pages/CameraMapNew";
+// import CameraMapNew from "./pages/CameraMapNew";
 import SOSMapPage from './pages/SOSMapPage';
 import PlanTripPage from "./pages/PlanTripPage";
 import Login from "./pages/Login";
@@ -148,7 +148,7 @@ function App() {
           const response = await fetch('https://api.hcmus.fit/api/user/locations', {
             headers: { 'Authorization': `Bearer ${token}` }
           });
-          
+
           if (response.status === 401) {
             // Token is invalid or expired
             console.warn('Token expired on app load, clearing...');
@@ -161,7 +161,7 @@ function App() {
         }
       }
     };
-    
+
     validateToken();
   }, []);
 
@@ -191,13 +191,13 @@ function App() {
                 <Route path="/" element={<RoutesPage darkMode={darkMode} />} />
                 <Route path="/routes" element={<RoutesPage darkMode={darkMode} />} />
                 <Route path="/busmap" element={<BusMapPage darkMode={darkMode} />} />
-                <Route path="/cameras" element={<CameraMapNew />} />
+                {/* <Route path="/cameras" element={<CameraMapNew />} /> */}
                 <Route path="/sos" element={<SOSMapPage />} />
-                <Route path="/planTrip" element={<PlanTripPage darkMode={darkMode} />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/history" element={<HistoryPage />} />
                 <Route path="/earth-test" element={<EarthTestPage />} />
+                <Route path="/planTrip" element={<PlanTripPage darkMode={darkMode} />} />
               </Routes>
             </Box>
           </Box>

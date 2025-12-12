@@ -1,8 +1,8 @@
 // Simple API helper to centralize backend calls and make it easy to replace endpoints.
 import { handleTokenExpiration } from './utils/tokenManager';
 
-// export const BASE_URL = "https://api.hcmus.fit";
-export const BASE_URL = "http://localhost:5000";
+export const BASE_URL = "https://api.hcmus.fit";
+//export const BASE_URL = "http://localhost:5000";
 
 export function getAuthHeader() {
   const token = localStorage.getItem('token');
@@ -117,7 +117,6 @@ export async function saveRoute(startName, startLat, startLng, endName, endLat, 
   await handleResponse(resp);
   return resp.ok;
 }
-
 export async function saveTrip(tripData) {
   const resp = await fetch(`${BASE_URL}/api/user/trips`, {
     method: "POST",
@@ -130,7 +129,6 @@ export async function saveTrip(tripData) {
   await handleResponse(resp);
   return resp.ok;
 }
-
 export async function getSavesTrips() {
   const resp = await fetch(`${BASE_URL}/api/user/trips`, {
     method: "GET",
@@ -151,7 +149,6 @@ export async function deleteTrip(trip_id) {
   await handleResponse(resp);
   return resp.ok;
 }
-
 // ============================
 // 🗺 TOMTOM API
 // ============================
@@ -176,7 +173,48 @@ export async function calculateRoute(start, end, travelMode = "car", routeType =
 }
 
 
+// ============================
+// ROUTE CAMERA DETECTION API
+// ============================
 
+export async function detectRouteCameras(cameraIds) {
+  const resp = await fetch(`${BASE_URL}/api/detect/route-cameras`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      ...getAuthHeader(),
+    },
+    body: JSON.stringify({ camera_ids: cameraIds }),
+  });
+
+  // This handles 401 / token expiration
+  await handleResponse(resp);
+
+  let data = {};
+  try {
+    data = await resp.json();
+  } catch (e) {
+  }
+
+  if (!resp.ok) {
+    throw new Error(data.error || "Route camera detection failed");
+  }
+
+  return data;
+}
+
+// ============================
+// CONGESTION GEOJSON API
+// ============================
+
+export async function getCongestionGeoJSON() {
+  const resp = await fetch(`${BASE_URL}/api/congestion/geojson`);
+  if (!resp.ok) {
+    console.error("Failed to load congestion geojson");
+    return null;
+  }
+  return resp.json();
+}
 
 
 
@@ -283,7 +321,6 @@ export async function calculateBusRoute(origin, destination, maxWalk = 300) {
 
   return response.json();
 }
-
 export async function getAITripPlan(user_query) {
   try {
     const response = await fetch(`${BASE_URL}/api/groq`, {

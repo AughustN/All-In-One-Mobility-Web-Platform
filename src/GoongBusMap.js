@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import goongjs from '@goongmaps/goong-js';
 import '@goongmaps/goong-js/dist/goong-js.css';
 import { useMapContext } from './contexts/MapContext';
-const GOONG_MAPTILES_KEY = 'w6UXzsXLNcwmP5pRQdbHALGm2jK3nxj8OhNrJlQY';
+const GOONG_MAPTILES_KEY = 'nwJPo6l2E909Xn7fEIoJrSilkGxVJQSjrKxfD2UQ';
 
 goongjs.accessToken = GOONG_MAPTILES_KEY;
 
@@ -25,7 +25,7 @@ export default function GoongBusMap({
   origin,
   destination,
   walk_coords,
-  bus_coords,              
+  bus_coords,
   style = "goong_map_web",
   userLocation
 }) {
@@ -36,26 +36,26 @@ export default function GoongBusMap({
   const startMarker = useRef(null);
   const endMarker = useRef(null)
   const mapContext = useMapContext();
-  const registerMap = mapContext?.registerMap || (() => {});
+  const registerMap = mapContext?.registerMap || (() => { });
 
   // ---------- 1. Initialize Map ----------
   useEffect(() => {
     if (map.current) return;
 
     map.current = new goongjs.Map({
-         container: mapContainer.current,
-         style: `https://tiles.goong.io/assets/${style}.json`,
-         center: [106.6297, 10.8231], // HCM City
-         zoom: 12
-       });
-    
+      container: mapContainer.current,
+      style: `https://tiles.goong.io/assets/${style}.json`,
+      center: [106.6297, 10.8231], // HCM City
+      zoom: 12
+    });
+
     map.current.addControl(new goongjs.NavigationControl(), 'top-right');
     map.current.addControl(new goongjs.ScaleControl({
       maxWidth: 100,
       unit: 'metric'
     }), 'bottom-left');
 
- map.current.on("load", () => {
+    map.current.on("load", () => {
       setMapLoaded(true);
       registerMap(map.current);
     });
@@ -100,45 +100,45 @@ export default function GoongBusMap({
 
   // origin Marker
   useEffect(() => {
-     if (!mapLoaded || !map.current || !origin) return;
- 
-     // Remove old marker
-     if (startMarker.current) {
-       startMarker.current.remove();
-     }
- 
-     // Add new marker
-     startMarker.current = new goongjs.Marker({ color: '#4CAF50' })
-       .setLngLat([origin.lon, origin.lat])
-       .setPopup(
-         new goongjs.Popup().setHTML(
-           `<strong>Điểm bắt đầu</strong><br/>${origin.name || 'Vị trí xuất phát'}`
-         )
-       )
-       .addTo(map.current);
- 
-   }, [mapLoaded, origin]);
+    if (!mapLoaded || !map.current || !origin) return;
+
+    // Remove old marker
+    if (startMarker.current) {
+      startMarker.current.remove();
+    }
+
+    // Add new marker
+    startMarker.current = new goongjs.Marker({ color: '#4CAF50' })
+      .setLngLat([origin.lon, origin.lat])
+      .setPopup(
+        new goongjs.Popup().setHTML(
+          `<strong>Điểm bắt đầu</strong><br/>${origin.name || 'Vị trí xuất phát'}`
+        )
+      )
+      .addTo(map.current);
+
+  }, [mapLoaded, origin]);
 
   // Des marker 
   useEffect(() => {
-      if (!mapLoaded || !map.current || !destination) return;
-  
-      // Remove old marker
-      if (endMarker.current) {
-        endMarker.current.remove();
-      }
-  
-      // Add new marker
-      endMarker.current = new goongjs.Marker({ color: '#F44336' })
-        .setLngLat([destination.lon, destination.lat])
-        .setPopup(
-          new goongjs.Popup().setHTML(
-            `<strong>Điểm đến</strong><br/>${destination.name || 'Đích đến'}`
-          )
+    if (!mapLoaded || !map.current || !destination) return;
+
+    // Remove old marker
+    if (endMarker.current) {
+      endMarker.current.remove();
+    }
+
+    // Add new marker
+    endMarker.current = new goongjs.Marker({ color: '#F44336' })
+      .setLngLat([destination.lon, destination.lat])
+      .setPopup(
+        new goongjs.Popup().setHTML(
+          `<strong>Điểm đến</strong><br/>${destination.name || 'Đích đến'}`
         )
-        .addTo(map.current);
-  
-    }, [mapLoaded, destination]); 
+      )
+      .addTo(map.current);
+
+  }, [mapLoaded, destination]);
 
   // ---------- Helper: Remove all previous routes ----------
   const removeAllRouteLayers = () => {
@@ -197,7 +197,7 @@ export default function GoongBusMap({
     }
 
     // Bus Routes → each with different color
-    if(bus_coords) console.log("bus_coords =", bus_coords);
+    if (bus_coords) console.log("bus_coords =", bus_coords);
     bus_coords.forEach((route, idx) => {
       const color = colorPalette[idx % colorPalette.length];
 
@@ -208,7 +208,7 @@ export default function GoongBusMap({
 
   // Fit bounds when origin/destination change
   useEffect(() => {
-    if (!mapLoaded || !map.current)  return;
+    if (!mapLoaded || !map.current) return;
 
     if (origin && destination) {
       const bounds = new goongjs.LngLatBounds();
