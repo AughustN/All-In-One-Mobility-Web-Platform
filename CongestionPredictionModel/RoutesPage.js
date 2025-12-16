@@ -2,7 +2,6 @@ import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import {
     Box, Paper, IconButton, TextField, List,
     ListItem, ListItemIcon, ListItemText, Typography, Fab,
-    Switch, FormControlLabel,
 } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -12,14 +11,12 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import MenuIcon from '@material-ui/icons/Menu';
 import { useLocation } from 'react-router-dom';
 import cameraLocations from '../camera_locations.json';
-import { fetchCameraImages } from "../api";
 import GoongMap from '../GoongMap';
-import GoongCameraMap from '../GoongCameraMap';
 import GoongMapStyleControl from '../GoongMapStyleControl';
 import MyLocationControl from '../MyLocationControl';
 import SearchBoxRoutes from '../SearchBoxRoutes';
 import '../css/CameraMap.css';
-import { saveLocation, saveRoute, getSavedLocations, getSavedRoutes, searchLocation, calculateRoute, detectRouteCameras, getCongestionGeoJSON } from "../api";
+import { saveLocation, saveRoute, getSavedLocations, getSavedRoutes, searchLocation, calculateRoute, detectRouteCameras, getCongestionGeoJSON, fetchCameraImages } from "../api";
 import dayjs from "dayjs";
 import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'
@@ -110,7 +107,7 @@ const useStyles = makeStyles(theme => ({
         position: "fixed",
         top: 50,
         left: 0,
-        height: "calc(100vh - 56px)",
+        height: "calc(100vh - 50px)",
         width: 400,
         background: "#fff",
         zIndex: 999,
@@ -342,14 +339,17 @@ function RoutesPage() {
     const [debounceText, setDebounceText] = useState('');
     const [selectPosition, setSelectPosition] = useState(null);
     const [travelMode, setTravelMode] = useState('car');
+
     const [errorMessage, setErrorMessage] = useState('');
+    const [isSearchingRoute, setIsSearchingRoute] = useState(false);
     const [isSearchLocationSelected, setIsSearchLocationSelected] = useState(false);
+
+
     const [recentHistory, setRecentHistory] = useState({ locations: [], routes: [] });
     const [mapStyle, setMapStyle] = useState('goong_map_web');
     const [userLocation, setUserLocation] = useState(null);
 
     // Camera states
-    const [showCameras, setShowCameras] = useState(false);
     const [selectedCamera, setSelectedCamera] = useState(null);
     const [searchMode, setSearchMode] = useState('location'); // 'location' or 'camera'
     const [cameraSearchTerm, setCameraSearchTerm] = useState('');
@@ -370,6 +370,79 @@ function RoutesPage() {
             }));
     }, []);
 
+    // Reset route outputs
+    const resetRouteResults = useCallback(() => {
+        setCoords([]);
+        setDistance(null);
+        setDuration(null);
+        setRouteCameras([]);
+        setSelectedCamera(null);
+        setCongestionGeoJSON(null);
+        setColoredRouteGeoJSON(null);
+    }, []);
+
+    // Wrap setSelectPosition to also reset route results
+    const setSelectPositionWithReset = useCallback((next) => {
+        setSelectPosition(next);
+        resetRouteResults();
+    }, [resetRouteResults]);
+
+
+    const runRoutePipeline = useCallback(
+        async (start, end, mode, errorMsg = 'Không thể tìm đường đi') => {
+            if (!start || !end) return null;
+            try {
+                setIsSearchingRoute(true);
+                setErrorMessage('');
+
+                const data = await calculateRoute(
+                    { lat: start.lat, lon: start.lon },
+                    { lat: end.lat, lon: end.lon },
+                    mode
+                );
+
+                setCoords(data.coords);
+                setDistance(data.distance_km);
+                setDuration(data.duration_min);
+
+                const camerasOnRoute = data.cameras_on_route || [];
+                setRouteCameras(camerasOnRoute);
+
+                if (camerasOnRoute.length > 0) {
+                    try {
+                        const ids = camerasOnRoute.map(c => c.id);
+                        await detectRouteCameras(ids);
+
+                        const cg = await getCongestionGeoJSON();
+                        setCongestionGeoJSON(cg || null);
+
+                        if (cg) {
+                            const colored = buildColoredRouteGeoJSON(data.coords, cg);
+                            setColoredRouteGeoJSON(colored);
+                        } else {
+                            setColoredRouteGeoJSON(null);
+                        }
+                    } catch (e) {
+                        console.error("Route camera detection error:", e);
+                    }
+                } else {
+                    // no cameras → no congestion overlay
+                    setColoredRouteGeoJSON(null);
+                }
+
+                setIsSearchingRoute(false);
+                return data;
+            } catch (err) {
+                console.error("Route API Error:", err);
+                setIsSearchingRoute(false);
+                setErrorMessage(errorMsg);
+                return null;
+            }
+        },
+        []
+    );
+
+
 
     /** 🔍 Search input change with debounce */
     const handleSearchChange = (e) => {
@@ -378,7 +451,7 @@ function RoutesPage() {
         if (searchMode === 'location') {
             setSearchInput(value);
             setDebounceText(value);
-            setIsSearchLocationSelected(false); // Reset khi người dùng typing
+            setIsSearchLocationSelected(false);
 
             if (!value.trim()) {
                 setShowSearchDropdown(false);
@@ -419,22 +492,15 @@ function RoutesPage() {
 
             // Auto calculate route
             setTimeout(async () => {
-                try {
-                    const data = await calculateRoute(
-                        { lat: route.start.lat, lon: route.start.lon },
-                        { lat: route.end.lat, lon: route.end.lon },
-                        travelMode
-                    );
-                    setCoords(data.coords);
-                    setDistance(data.distance_km);
-                    setDuration(data.duration_min);
-                } catch (err) {
-                    console.error("Route error:", err);
-                    setErrorMessage('Không thể tải tuyến đường');
-                }
+                await runRoutePipeline(
+                    { name: route.start.name, lat: route.start.lat, lon: route.start.lon },
+                    { name: route.end.name, lat: route.end.lat, lon: route.end.lon },
+                    travelMode,
+                    'Không thể tải tuyến đường'
+                );
             }, 500);
         }
-    }, [location.state, travelMode]);
+    }, [location.state, travelMode, runRoutePipeline]);
 
     useEffect(() => {
         // Load history if logged in
@@ -456,6 +522,17 @@ function RoutesPage() {
         }
         loadCongestion();
     }, []);
+
+    useEffect(() => {
+        if (!userLocation) return;
+
+        const nameCoord = `${userLocation.lat}, ${userLocation.lon}`;
+        setSelectedLocation({ name: nameCoord, lat: userLocation.lat, lon: userLocation.lon });
+        setSearchInput(nameCoord);
+        setIsSearchLocationSelected(true);
+        setOpenModal(true);
+        resetRouteResults();
+    }, [userLocation, resetRouteResults]);
 
     useEffect(() => {
         // Không tìm kiếm nếu đã chọn địa điểm
@@ -489,6 +566,7 @@ function RoutesPage() {
     /** Khi chọn 1 địa điểm */
     const handleLocationSelect = (loc) => {
         const pos = loc.position;
+        resetRouteResults();
         setSelectedLocation({
             name: loc.address.freeformAddress,
             lat: pos.lat,
@@ -608,34 +686,21 @@ function RoutesPage() {
 
             {/* Full Screen Map */}
             <Box className={classes.mapContainer}>
-                {showCameras ? (
-                    <GoongCameraMap
-                        cameras={cameras}
-                        onCameraClick={handleCameraSelect}
-                        selectedCamera={selectedCamera}
-                        style={mapStyle}
-                        userLocation={userLocation}
-                    />
-                ) : (
-                    <GoongMap
-                        origin={selectedLocation}
-                        destination={selectPosition}
-                        coords={coords}
-                        style={mapStyle}
-                        userLocation={userLocation}
-                        congestionGeoJSON={congestionGeoJSON}
-                        coloredRouteGeoJSON={coloredRouteGeoJSON}
-                    />
-                )}
-                <MyLocationControl
-                    onLocationFound={(location) => {
-                        setUserLocation(location);
-                    }}
+                <GoongMap
+                    origin={selectedLocation}
+                    destination={selectPosition}
+                    coords={coords}
+                    style={mapStyle}
+                    userLocation={userLocation}
+                    congestionGeoJSON={congestionGeoJSON}
+                    coloredRouteGeoJSON={coloredRouteGeoJSON}
+                    routeCameras={routeCameras}
+                    onRouteCameraClick={handleCameraSelect}
+                    selectedCamera={selectedCamera}
                 />
-                <GoongMapStyleControl
-                    currentStyle={mapStyle}
-                    onStyleChange={setMapStyle}
-                />
+
+                <MyLocationControl onLocationFound={(location) => setUserLocation(location)} />
+                <GoongMapStyleControl currentStyle={mapStyle} onStyleChange={setMapStyle} />
             </Box>
 
             {/* Sidebar Routes */}
@@ -743,73 +808,18 @@ function RoutesPage() {
                             </Paper>
                         )}
 
-                        <Paper style={{
-                            marginBottom: 16,
-                            padding: 12,
-                            backgroundColor: '#e3f2fd',
-                            border: '1px solid #2196F3'
-                        }}>
-                            <FormControlLabel
-                                control={
-                                    <Switch
-                                        checked={showCameras}
-                                        onChange={(e) => {
-                                            setShowCameras(e.target.checked);
-                                            if (!e.target.checked) {
-                                                setSelectedCamera(null);
-                                                setSearchMode('location');
-                                            }
-                                        }}
-                                        color="primary"
-                                    />
-                                }
-                                label={
-                                    <Box display="flex" alignItems="center">
-                                        <span style={{ marginRight: 8 }}>📹</span>
-                                        <Typography variant="body2" style={{ fontWeight: 600 }}>
-                                            Hiển thị camera giao thông
-                                        </Typography>
-                                    </Box>
-                                }
-                            />
-
-                            {showCameras && (
-                                <Box mt={1}>
-                                    <FormControlLabel
-                                        control={
-                                            <Switch
-                                                checked={searchMode === 'camera'}
-                                                onChange={(e) => {
-                                                    setSearchMode(e.target.checked ? 'camera' : 'location');
-                                                    setSearchInput('');
-                                                    setCameraSearchTerm('');
-                                                    setShowSearchDropdown(false);
-                                                }}
-                                                color="secondary"
-                                                size="small"
-                                            />
-                                        }
-                                        label={
-                                            <Typography variant="caption">
-                                                Tìm kiếm camera
-                                            </Typography>
-                                        }
-                                    />
-                                </Box>
-                            )}
-                        </Paper>
-
-
                         <SearchBoxRoutes
                             selectPosition={selectPosition}
-                            setSelectPosition={setSelectPosition}
+                            setSelectPosition={setSelectPositionWithReset}
                             onSearch={handleSearch}
                             initialFrom={selectedLocation?.name || ""}
                             travelMode={travelMode}
                             setTravelMode={setTravelMode}
                             onFromLocationChange={(locationData) => {
+                                resetRouteResults();
                                 setSelectedLocation(locationData);
                                 setSearchInput(locationData.name);
+                                setIsSearchLocationSelected(true);
                             }}
                         />
 
@@ -901,7 +911,7 @@ function RoutesPage() {
                 )}
             </Box>
             {/* Camera Popup Panel */}
-            {selectedCamera && showCameras && (
+            {selectedCamera && (
                 <div className="camera-info-panel">
                     <button
                         className="close-button"

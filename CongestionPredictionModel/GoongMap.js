@@ -2,11 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import goongjs from '@goongmaps/goong-js';
 import '@goongmaps/goong-js/dist/goong-js.css';
 
-const GOONG_MAPTILES_KEY = 'w6UXzsXLNcwmP5pRQdbHALGm2jK3nxj8OhNrJlQY';
+const GOONG_MAPTILES_KEY = 'nwJPo6l2E909Xn7fEIoJrSilkGxVJQSjrKxfD2UQ';
 
 goongjs.accessToken = GOONG_MAPTILES_KEY;
 
-function GoongMap({ origin, destination, coords, style = 'goong_map_web', userLocation, coloredRouteGeoJSON, }) {
+function GoongMap({ origin, destination, coords, style = 'goong_map_web', userLocation, coloredRouteGeoJSON, routeCameras = [], onRouteCameraClick, selectedCamera, }) {
   const mapContainer = useRef(null);
   const map = useRef(null);
   const [mapLoaded, setMapLoaded] = useState(false);
@@ -16,6 +16,8 @@ function GoongMap({ origin, destination, coords, style = 'goong_map_web', userLo
   const endMarker = useRef(null);
   const userMarker = useRef(null);
   const routeLayer = useRef(null);
+  const routeCameraMarkers = useRef({});
+  const routeCameraPopup = useRef(null);
 
   // Initialize map
   useEffect(() => {
@@ -94,20 +96,16 @@ function GoongMap({ origin, destination, coords, style = 'goong_map_web', userLo
 
   // Update route + congestion overlay
   useEffect(() => {
-    if (!mapLoaded || !map.current || !coords || coords.length === 0) return;
+    if (!mapLoaded || !map.current) return;
 
-    // remove old
+    // ✅ always remove old layers/sources first
     ['route-base', 'route-colored'].forEach(id => {
       if (map.current.getLayer(id)) map.current.removeLayer(id);
     });
-    if (map.current.getSource('route')) {
-      map.current.removeSource('route');
-    }
-    if (map.current.getSource('route-colored')) {
-      map.current.removeSource('route-colored');
-    }
+    if (map.current.getSource('route')) map.current.removeSource('route');
+    if (map.current.getSource('route-colored')) map.current.removeSource('route-colored');
 
-    // no coords → nothing
+    // ✅ if no coords, stop AFTER cleanup
     if (!coords || coords.length === 0) return;
 
     const bounds = new goongjs.LngLatBounds();
@@ -115,59 +113,57 @@ function GoongMap({ origin, destination, coords, style = 'goong_map_web', userLo
     map.current.fitBounds(bounds, { padding: 50 });
 
     if (coloredRouteGeoJSON && coloredRouteGeoJSON.features?.length) {
-      // draw multi-colored route
-      map.current.addSource('route-colored', {
-        type: 'geojson',
-        data: coloredRouteGeoJSON,
-      });
+      map.current.addSource('route-colored', { type: 'geojson', data: coloredRouteGeoJSON });
 
       map.current.addLayer({
         id: 'route-colored',
         type: 'line',
         source: 'route-colored',
-        layout: {
-          'line-join': 'round',
-          'line-cap': 'round',
-        },
+        layout: { 'line-join': 'round', 'line-cap': 'round' },
         paint: {
           'line-width': 6,
           'line-opacity': 0.9,
-          'line-color': ['get', 'color'], // use per-feature color
+          'line-color': ['get', 'color'],
         },
       });
     } else {
-      // fallback: single blue line
-      const geojson = {
-        type: 'Feature',
-        properties: {},
-        geometry: {
-          type: 'LineString',
-          coordinates: coords.map(c => [c.lon, c.lat]),
-        },
-      };
-
       map.current.addSource('route', {
         type: 'geojson',
-        data: geojson,
+        data: {
+          type: 'Feature',
+          properties: {},
+          geometry: { type: 'LineString', coordinates: coords.map(c => [c.lon, c.lat]) },
+        },
       });
 
       map.current.addLayer({
         id: 'route-base',
         type: 'line',
         source: 'route',
-        layout: {
-          'line-join': 'round',
-          'line-cap': 'round',
-        },
-        paint: {
-          'line-color': '#0277BD',
-          'line-width': 5,
-          'line-opacity': 0.7,
-        },
+        layout: { 'line-join': 'round', 'line-cap': 'round' },
+        paint: { 'line-color': '#0277BD', 'line-width': 5, 'line-opacity': 0.7 },
       });
     }
   }, [mapLoaded, coords, coloredRouteGeoJSON]);
 
+  // Adjust camera to fit markers if no route is drawn
+  useEffect(() => {
+    if (!mapLoaded || !map.current) return;
+
+    // If a route is drawn, let the route effect control camera
+    if (coords && coords.length > 0) return;
+
+    if (origin && destination) {
+      const bounds = new goongjs.LngLatBounds();
+      bounds.extend([origin.lon, origin.lat]);
+      bounds.extend([destination.lon, destination.lat]);
+      map.current.fitBounds(bounds, { padding: 50, duration: 1200 });
+    } else if (origin) {
+      map.current.flyTo({ center: [origin.lon, origin.lat], zoom: 14, duration: 1200 });
+    } else if (destination) {
+      map.current.flyTo({ center: [destination.lon, destination.lat], zoom: 14, duration: 1200 });
+    }
+  }, [mapLoaded, origin, destination, coords]);
 
   // Handle user location
   useEffect(() => {
@@ -198,6 +194,82 @@ function GoongMap({ origin, destination, coords, style = 'goong_map_web', userLo
     });
 
   }, [mapLoaded, userLocation]);
+
+  // Handle route cameras
+  useEffect(() => {
+    if (!mapLoaded || !map.current) return;
+
+    // remove old popup
+    if (routeCameraPopup.current) {
+      routeCameraPopup.current.remove();
+      routeCameraPopup.current = null;
+    }
+
+    // remove old markers
+    Object.values(routeCameraMarkers.current).forEach(marker => {
+      try { marker.remove(); } catch (e) { }
+    });
+    routeCameraMarkers.current = {};
+
+    // stop if none
+    if (!routeCameras || routeCameras.length === 0) return;
+
+    // add markers for cameras on route
+    routeCameras.forEach((camera) => {
+      if (!camera || camera.lat == null || camera.lon == null) return;
+
+      const el = document.createElement('div');
+      el.className = 'camera-marker';
+      el.innerHTML = '📹';
+      el.style.fontSize = '24px';
+      el.style.cursor = 'pointer';
+
+      const marker = new goongjs.Marker({ element: el })
+        .setLngLat([camera.lon, camera.lat])
+        .addTo(map.current);
+
+      el.addEventListener('click', () => {
+        // close existing popup
+        if (routeCameraPopup.current) routeCameraPopup.current.remove();
+
+        // open popup on map
+        const popup = new goongjs.Popup({
+          offset: 25,
+          closeButton: true,
+          closeOnClick: true,
+        })
+          .setLngLat([camera.lon, camera.lat])
+          .setHTML(
+            `<div style="padding: 8px;">
+            <strong style="font-size: 14px;">${camera.camera_name || 'Camera'}</strong><br/>
+            <small style="color:#666;">${camera.display_name || ''}</small>
+          </div>`
+          )
+          .addTo(map.current);
+
+        routeCameraPopup.current = popup;
+
+        // notify parent (RoutesPage) to show side panel images/info
+        if (onRouteCameraClick) onRouteCameraClick(camera);
+      });
+
+      // choose a stable key
+      const key = camera.id != null ? String(camera.id) : `${camera.lon},${camera.lat}`;
+      routeCameraMarkers.current[key] = marker;
+    });
+  }, [mapLoaded, routeCameras, onRouteCameraClick]);
+
+  // Fly to selected camera
+  useEffect(() => {
+    if (!mapLoaded || !map.current || !selectedCamera) return;
+    if (selectedCamera.lat == null || selectedCamera.lon == null) return;
+
+    map.current.flyTo({
+      center: [selectedCamera.lon, selectedCamera.lat],
+      zoom: 16,
+      duration: 900,
+    });
+  }, [mapLoaded, selectedCamera]);
 
   return (
     <div

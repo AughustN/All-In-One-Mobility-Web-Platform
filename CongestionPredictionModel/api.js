@@ -117,7 +117,38 @@ export async function saveRoute(startName, startLat, startLng, endName, endLat, 
   await handleResponse(resp);
   return resp.ok;
 }
+export async function saveTrip(tripData) {
+  const resp = await fetch(`${BASE_URL}/api/user/trips`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      ...getAuthHeader()
+    },
+    body: JSON.stringify(tripData),
+  });
+  await handleResponse(resp);
+  return resp.ok;
+}
+export async function getSavesTrips() {
+  const resp = await fetch(`${BASE_URL}/api/user/trips`, {
+    method: "GET",
+    headers: { ...getAuthHeader() }
+  });
+  await handleResponse(resp);
+  if (!resp.ok) return [];
+  return resp.json();
+}
 
+export async function deleteTrip(trip_id) {
+  const resp = await fetch(`${BASE_URL}/api/user/trips/${trip_id}`, {
+    method: "DELETE",
+    headers: {
+      ...getAuthHeader()
+    },
+  });
+  await handleResponse(resp);
+  return resp.ok;
+}
 // ============================
 // 🗺 TOMTOM API
 // ============================
@@ -131,15 +162,16 @@ export async function searchLocation(address, lat = null, lon = null) {
   return resp.json();
 }
 
-export async function calculateRoute(start, end, travelMode = "car") {
+export async function calculateRoute(start, end, travelMode = "car", routeType = "fastest") {
   const resp = await fetch(`${BASE_URL}/route`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ start, end, travelMode }),
+    body: JSON.stringify({ start, end, travelMode, routeType }),
   });
   if (!resp.ok) throw new Error("Route calculation failed");
   return resp.json();
 }
+
 
 // ============================
 // ROUTE CAMERA DETECTION API
@@ -183,6 +215,7 @@ export async function getCongestionGeoJSON() {
   }
   return resp.json();
 }
+
 
 
 // ============================
@@ -248,6 +281,35 @@ export async function resolveSOS(sosId) {
   }
   return resp.json();
 }
+
+export async function getComments(sosId) {
+  const resp = await fetch(`${BASE_URL}/api/sos/comments/${sosId}`);
+  if (!resp.ok) return [];
+  return resp.json();
+}
+
+// Gửi comment
+export async function sendComment(sosId, content) {
+  const resp = await fetch(`${BASE_URL}/api/sos/comment`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...getAuthHeader() },
+    body: JSON.stringify({ sos_id: sosId, content }),
+  });
+  if (!resp.ok) throw new Error("Gửi bình luận thất bại");
+  return resp.json();
+}
+
+// Báo cáo bài viết
+export async function reportSOSPost(sosId, reason) {
+  const resp = await fetch(`${BASE_URL}/api/sos/report`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...getAuthHeader() },
+    body: JSON.stringify({ sos_id: sosId, reason: reason }),
+  });
+  const data = await resp.json();
+  if (!resp.ok) throw new Error(data.message || "Lỗi báo cáo");
+  return data;
+}
 export async function calculateBusRoute(origin, destination, maxWalk = 300) {
   const response = await fetch(
     `${BASE_URL}/api/bus/route?start_lat=${origin.lat}&start_lng=${origin.lon}&end_lat=${destination.lat}&end_lng=${destination.lon}&max_walk=${maxWalk}`
@@ -258,4 +320,25 @@ export async function calculateBusRoute(origin, destination, maxWalk = 300) {
   }
 
   return response.json();
+}
+export async function getAITripPlan(user_query) {
+  try {
+    const response = await fetch(`${BASE_URL}/api/groq`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ query: user_query })
+    });
+
+    if (!response.ok) {
+      throw new Error(`Server error: ${response.status}`);
+    }
+
+    return await response.json();
+
+  } catch (err) {
+    console.error("❌ Error fetching trip plan:", err);
+    return null;
+  }
 }
