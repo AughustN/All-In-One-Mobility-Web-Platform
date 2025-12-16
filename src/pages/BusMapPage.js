@@ -183,7 +183,7 @@ export default function BusMapPage() {
   const [specialStopsName, setSpectialStopsName] = useState([]);
   const [unique_nameRoutes, setUnique_nameRoutes] = useState([]);
   const [unique_busNumbers, setUnique_busNumbers] = useState([]);
-  const [maxWalkingDistance, setMaxWalkingDistance] = useState(400);
+  const [maxWalkingDistance, setMaxWalkingDistance] = useState("400");
 
   const [errorMessage, setErrorMessage] = useState('');
   const [mapStyle, setMapStyle] = useState('goong_map_web');
@@ -320,8 +320,7 @@ export default function BusMapPage() {
 
   // Handle walking distance change
   const handleWalkingDistanceChange = (e) => {
-    const value = Number(e.target.value);
-    setMaxWalkingDistance(value);
+    setMaxWalkingDistance(e.target.value);
   };
 
   // Search bus route
@@ -346,11 +345,12 @@ export default function BusMapPage() {
       setWalk_coords([]);;
       setBus_coords([]);
       
+      const walkingDistance = maxWalkingDistance === "" ? null : Number(maxWalkingDistance);
 
       const data = await calculateBusRoute(
         { lat: selectedOrigin.lat, lon: selectedOrigin.lon },
         { lat: selectedDestination.lat, lon: selectedDestination.lon },
-        Number(maxWalkingDistance)
+        walkingDistance
       );
 
       setTotalFare(data.fare_vnd);

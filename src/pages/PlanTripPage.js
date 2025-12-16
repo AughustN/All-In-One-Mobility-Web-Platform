@@ -25,6 +25,7 @@ import { getAITripPlan, saveTrip } from '../api';
 import GoongPlanTripMap from '../GoongPlanTripMap';
 import { useLocation } from 'react-router-dom';
 import '../css/PlanTripPageDarkMode.css';
+import { useNavigate } from 'react-router-dom';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -199,6 +200,7 @@ export default function PlanTripPage() {
   const [plan, setPlan] = useState(null);
   const locationState = useLocation();
   const [activeSegments, setActiveSegments] = useState([]);
+  const navigate = useNavigate();
 
 
   // Same logic as BusMapPage: open by default on desktop
@@ -490,6 +492,12 @@ export default function PlanTripPage() {
                   onClick={() => {
                     if (!plan) {
                       alert("No trip plan to save!");
+                      return;
+                    }
+                    const token = localStorage.getItem('token');
+                    if (!token) {
+                      setTimeout(() => navigate('/login'), 1500);
+                      alert("Ban cần đăng nhập để lưu kế hoạch chuyến đi!");
                       return;
                     }
                     saveTrip(plan);

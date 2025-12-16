@@ -58,8 +58,11 @@ export default function GoongPlanTripMap({
     const bounds = new goongjs.LngLatBounds();
 
     itinerary.forEach((item) => {
-      if (!item.lat || !item.lng) return;
-
+      if(!item.lat || !item.lng)
+        {
+          console.log("none coordinate");
+          return;
+        } 
       const marker = new goongjs.Marker({ color: "#ff5252" })
         .setLngLat([item.lng, item.lat])
         .setPopup(
