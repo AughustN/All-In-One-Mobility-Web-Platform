@@ -85,7 +85,7 @@ function GoongSOSMap({ sosAlerts, style = 'goong_map_web', userLocation }) {
   // --- 2. THÊM STATE CHO NAVIGATION ---
   const [isNavigating, setIsNavigating] = useState(false); // Cờ bật chế độ dẫn đường
   const [navCoords, setNavCoords] = useState([]); // Lưu toạ độ tuyến đường để Snap
-
+  const [activeRouteId, setActiveRouteId] = useState(null); // Lưu ID của SOS đang dẫn đường
   const currentUsername = localStorage.getItem('username');
   const getStyleUrl = (styleId) => `https://tiles.goong.io/assets/${styleId}.json`;
 
@@ -207,16 +207,18 @@ function GoongSOSMap({ sosAlerts, style = 'goong_map_web', userLocation }) {
     }
   };
 
-
   // --- 3. THUẬT TOÁN NAVIGATION (BÁM ĐƯỜNG) ---
-  // Effect này sẽ chạy khi biến isNavigating = true
   useEffect(() => {
     if (!isNavigating || navCoords.length === 0 || !map.current) return;
 
     console.log("🚀 Chế độ dẫn đường cứu trợ ĐÃ BẬT");
 
-    // Tạo LineString từ tuyến đường để tính toán
+    // Tạo LineString gốc từ toàn bộ tuyến đường
     const routeLine = turf.lineString(navCoords.map(c => [c.lon, c.lat]));
+    
+    // Tạo điểm đích (Điểm cuối cùng của danh sách toạ độ)
+    const lastCoord = navCoords[navCoords.length - 1];
+    const endPoint = turf.point([lastCoord.lon, lastCoord.lat]);
 
     const watchId = navigator.geolocation.watchPosition(
       (position) => {
@@ -230,53 +232,77 @@ function GoongSOSMap({ sosAlerts, style = 'goong_map_web', userLocation }) {
 
         let finalLat = rawLat;
         let finalLng = rawLng;
+        let userPointForSlice = rawPoint; // Mặc định dùng vị trí thật để cắt
 
-        // Nếu lệch < 40m thì hút vào đường, ngược lại dùng GPS thật
+        // Nếu lệch < 40m thì hút vào đường
         if (dist < 40) {
           const [snapLng, snapLat] = snapped.geometry.coordinates;
           finalLat = snapLat;
           finalLng = snapLng;
+          userPointForSlice = snapped; // Dùng điểm đã snap để cắt cho đẹp
         }
 
-        // B. Cập nhật Marker Người Dùng
+        // --- BẮT ĐẦU ĐOẠN CODE THÊM MỚI ---
+        // B. Cắt đường: Chỉ lấy từ vị trí hiện tại -> Đích
+        try {
+            // turf.lineSlice(điểm_đầu, điểm_cuối, đường_gốc)
+            const slicedRoute = turf.lineSlice(userPointForSlice, endPoint, routeLine);
+            
+            // Cập nhật lại dữ liệu cho source 'sos-route' trên map
+            if (map.current.getSource('sos-route')) {
+                map.current.getSource('sos-route').setData(slicedRoute);
+            }
+        } catch (e) {
+            console.log("Lỗi cắt đường (có thể do đã đến đích):", e);
+        }
+        // --- KẾT THÚC ĐOẠN CODE THÊM MỚI ---
+
+        // C. Cập nhật Marker Người Dùng
         if (userMarker.current) {
           userMarker.current.setLngLat([finalLng, finalLat]);
         } else {
-          const el = document.createElement('div');
-          el.innerHTML = '<div style="width:20px; height:20px; background:#2196F3; border:3px solid #fff; border-radius:50%; box-shadow:0 2px 5px rgba(0,0,0,0.4);"></div>';
-          userMarker.current = new goongjs.Marker({ element: el })
+           // ... code tạo marker cũ giữ nguyên ...
+           const el = document.createElement('div');
+           el.innerHTML = '<div style="width:20px; height:20px; background:#2196F3; border:3px solid #fff; border-radius:50%; box-shadow:0 2px 5px rgba(0,0,0,0.4);"></div>';
+           userMarker.current = new goongjs.Marker({ element: el })
             .setLngLat([finalLng, finalLat])
             .addTo(map.current);
         }
 
-        // C. Di chuyển Camera (Chế độ Navigation)
-        map.current.easeTo({
+        // D. Di chuyển Camera (Nếu bạn muốn map tự chạy theo thì giữ dòng này, muốn tự kéo thì comment lại)
+        /* map.current.easeTo({
           center: [finalLng, finalLat],
           zoom: 17,
           bearing: 0,
           pitch: 0,
           duration: 1000
         });
+        */
       },
       (err) => console.error("Nav Error:", err),
       { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
     );
 
-    // Cleanup: Tắt theo dõi khi tắt chế độ dẫn đường
     return () => {
       console.log("🛑 Kết thúc dẫn đường");
       navigator.geolocation.clearWatch(watchId);
     };
   }, [isNavigating, navCoords]);
 
-
   // --- 4. CẬP NHẬT HÀM VẼ ĐƯỜNG ĐỂ KÍCH HOẠT NAVIGATION ---
-  const handleOpenRouteDialog = useCallback((lat, lng) => {
-    setRouteConfig({ open: true, destLat: lat, destLng: lng, vehicle: 'car', routeType: 'fastest' });
+  const handleOpenRouteDialog = useCallback((lat, lng, sosId) => {
+    setRouteConfig({
+      open: true,
+      destLat: lat,
+      destLng: lng,
+      sosId,          // ⭐ RẤT QUAN TRỌNG
+      vehicle: 'car',
+      routeType: 'fastest'
+    });
   }, []);
 
   const handleDrawRoute = useCallback(() => {
-    const { destLat, destLng, vehicle, routeType } = routeConfig;
+    const { destLat, destLng, vehicle, routeType, sosId } = routeConfig;
 
     setRouteConfig(prev => ({ ...prev, open: false }));
     setNotify({ open: true, message: "Đang tính toán lộ trình cứu trợ...", type: 'info' });
@@ -327,6 +353,7 @@ function GoongSOSMap({ sosAlerts, style = 'goong_map_web', userLocation }) {
           // --- KÍCH HOẠT CHẾ ĐỘ NAVIGATION ---
           setNavCoords(data.coords); // Lưu toạ độ để Snap
           setIsNavigating(true);     // Bật cờ theo dõi
+          setActiveRouteId(sosId); // Đánh dấu là đang giúp SOS này
 
           setNotify({ open: true, message: "Bắt đầu dẫn đường!", type: 'success' });
 
@@ -339,26 +366,64 @@ function GoongSOSMap({ sosAlerts, style = 'goong_map_web', userLocation }) {
     );
   }, [routeConfig, showDialog]);
 
+  const handleCancelHelp = useCallback(() => {
+    // Hiển thị Dialog xác nhận trước khi xoá
+    showDialog('confirm', 'Huỷ cứu trợ?', 'Bạn có chắc muốn huỷ lộ trình đến điểm này không?', () => {
+        
+        // 1. Xóa đường trên map
+        if (map.current.getLayer('sos-route')) map.current.removeLayer('sos-route');
+        if (map.current.getSource('sos-route')) map.current.removeSource('sos-route');
 
-  // RENDER MARKERS & MAP (Phần này giữ nguyên logic hiển thị, chỉ lưu ý phần userMarker)
+        // 2. Reset các trạng thái
+        setIsNavigating(false);
+        setNavCoords([]);
+        setActiveRouteId(null); // Quên ID đang giúp đi -> Nút sẽ trở lại màu xanh
+        
+        // 3. Xoá marker user (nếu muốn)
+        if (userMarker.current) { userMarker.current.remove(); userMarker.current = null; }
+        
+        setNotify({ open: true, message: "Đã huỷ lộ trình!", type: 'info' });
+    });
+  }, [showDialog]);
+
+// RENDER MARKERS & MAP
   useEffect(() => {
     if (!mapLoaded || !map.current || !sosAlerts) return;
+
+    // 1. Xóa các marker rác (không còn trong list)
     const activeIds = sosAlerts.map(a => a.id);
-    Object.keys(markersRef.current).forEach(id => { if (!activeIds.includes(parseInt(id))) { markersRef.current[id].remove(); delete markersRef.current[id]; } });
+    Object.keys(markersRef.current).forEach(id => { 
+        if (!activeIds.includes(parseInt(id))) { 
+            markersRef.current[id].remove(); 
+            delete markersRef.current[id]; 
+        } 
+    });
 
     sosAlerts.forEach(alert => {
-      // ... (Giữ nguyên logic tạo marker SOS và Popup như file cũ) ...
-      if (markersRef.current[alert.id]) return;
-      const el = document.createElement('div'); el.className = 'sos-pin-container'; el.innerHTML = `<div class="sos-pin-ripple"></div><div class="sos-pin-visible">🚨</div>`;
+      // --- SỬA LỖI TẠI ĐÂY ---
+      let wasOpen = false;
+      
+      // Kiểm tra xem marker cũ có đang mở popup không?
+      if (markersRef.current[alert.id]) {
+         const popup = markersRef.current[alert.id].getPopup();
+         if (popup && popup.isOpen()) {
+             wasOpen = true;
+         }
+         // Xóa marker cũ đi để vẽ lại cái mới (có nút bấm mới)
+         markersRef.current[alert.id].remove();
+      }
+      // -----------------------
 
-      // ... (Tạo nội dung Popup - Giữ nguyên) ...
+      // Tạo Pin mới
+      const el = document.createElement('div'); 
+      el.className = 'sos-pin-container'; 
+      el.innerHTML = `<div class="sos-pin-ripple"></div><div class="sos-pin-visible">🚨</div>`;
+
+      // Tạo nội dung Popup
       const popupDiv = document.createElement('div');
-      // Copy lại toàn bộ logic tạo HTML popup từ file cũ vào đây (rất dài nên tôi rút gọn trong comment)
-      // Chú ý: Các nút bấm trong popup gọi handleOpenRouteDialog, handleReportPost, v.v. vẫn hoạt động đúng.
-
-      // CODE POPUP CŨ CỦA BẠN (Đã copy lại để đảm bảo không mất)
       const timeDisplay = formatSafeTime(alert.timestamp);
       const isOwnPost = currentUsername === alert.username;
+
       let htmlContent = `
         <div class="popup-wrapper">
           <div class="popup-header">
@@ -369,33 +434,67 @@ function GoongSOSMap({ sosAlerts, style = 'goong_map_web', userLocation }) {
       `;
       if (alert.description) htmlContent += `<div class="popup-desc">${alert.description}</div>`;
       if (alert.image_url) htmlContent += `<div class="popup-image-box"><img src="${BASE_URL}${alert.image_url}" class="popup-image" /></div>`;
+      
       htmlContent += `
             <div class="meta-info"><div class="meta-item">📍 ${Number(alert.lat).toFixed(4)}, ${Number(alert.lng).toFixed(4)}</div><div class="meta-item">👤 <b>${alert.username || 'Ẩn danh'}</b></div></div>
             <div class="action-buttons">
       `;
-      if (currentUsername && alert.username === currentUsername) htmlContent += `<button class="btn-action btn-gray" id="btn-resolve-${alert.id}">✅ Đã xong</button>`;
-      else htmlContent += `<button class="btn-action btn-blue" id="btn-route-${alert.id}">🚙 Đến giúp</button>`;
+
+      // --- LOGIC ĐỔI NÚT BẤM ---
+      if (currentUsername && alert.username === currentUsername) {
+          htmlContent += `<button class="btn-action btn-gray" id="btn-resolve-${alert.id}">✅ Đã xong</button>`;
+      } else {
+          // So sánh với activeRouteId
+          if (activeRouteId === alert.id) {
+              // Hiện nút HUỶ (Màu đỏ)
+              htmlContent += `<button class="btn-action" style="background:#d32f2f;" id="btn-cancel-${alert.id}">❌ Huỷ đến giúp</button>`;
+          } else {
+              // Hiện nút ĐẾN GIÚP (Màu xanh)
+              htmlContent += `<button class="btn-action btn-blue" id="btn-route-${alert.id}">🚙 Đến giúp</button>`;
+          }
+      }
+      // --------------------------
+
       htmlContent += `</div></div>
             <div class="comment-wrapper">
                 <div class="comment-list" id="comments-list-${alert.id}"><div style="text-align:center; color:#999; font-size:10px; padding:5px;">Chưa có bình luận.</div></div>
                 <div class="input-box"><input type="text" class="input-field" id="input-comment-${alert.id}" placeholder="Bình luận..." autocomplete="off"/><button class="btn-send" id="btn-comment-${alert.id}">Gửi</button></div></div></div>
       `;
       popupDiv.innerHTML = htmlContent;
-      // ... (Gán sự kiện click cho popup - Giữ nguyên) ...
-      const btnReport = popupDiv.querySelector(`#btn-report-${alert.id}`); if (btnReport) { btnReport.onclick = () => handleOpenReportDialog(alert.id); }
-      const btnRoute = popupDiv.querySelector(`#btn-route-${alert.id}`); if (btnRoute) btnRoute.onclick = () => handleOpenRouteDialog(alert.lat, alert.lng);
+
+      // Gán sự kiện click
+      const btnReport = popupDiv.querySelector(`#btn-report-${alert.id}`); if (btnReport) btnReport.onclick = () => handleOpenReportDialog(alert.id);
+      
+      const btnRoute = popupDiv.querySelector(`#btn-route-${alert.id}`); 
+      if (btnRoute) btnRoute.onclick = () => handleOpenRouteDialog(alert.lat, alert.lng, alert.id);
+
+      // Gán sự kiện cho nút Huỷ
+      const btnCancel = popupDiv.querySelector(`#btn-cancel-${alert.id}`);
+      if (btnCancel) btnCancel.onclick = () => handleCancelHelp();
+
       const btnResolve = popupDiv.querySelector(`#btn-resolve-${alert.id}`); if (btnResolve) btnResolve.onclick = () => handleResolveClick(alert.id);
+      
       const btnSendComment = popupDiv.querySelector(`#btn-comment-${alert.id}`); const inputComment = popupDiv.querySelector(`#input-comment-${alert.id}`);
       const doSendComment = () => { const txt = inputComment.value.trim(); if (txt) handleSubmitComment(alert.id, txt, popupDiv); };
       if (btnSendComment) { btnSendComment.onclick = doSendComment; inputComment.addEventListener("keypress", (e) => { if (e.key === "Enter") doSendComment(); }); }
 
+      // Tạo Popup
       const popup = new goongjs.Popup({ offset: 25, maxWidth: '300px', closeButton: true }).setDOMContent(popupDiv);
       popup.on('open', () => loadComments(alert.id, popupDiv));
+      
+      // Tạo Marker mới
       const marker = new goongjs.Marker({ element: el }).setLngLat([alert.lng, alert.lat]).setPopup(popup).addTo(map.current);
       markersRef.current[alert.id] = marker;
 
+      // Nếu lúc nãy popup đang mở thì giờ mở lại nó
+      if (wasOpen) {
+          marker.togglePopup();
+      }
+
     });
-  }, [mapLoaded, sosAlerts, currentUsername, handleReportPost, handleDrawRoute, handleResolveClick, handleSubmitComment, loadComments, handleOpenReportDialog]); // Thêm dependencies
+    
+  // QUAN TRỌNG: Phải có activeRouteId ở đây
+  }, [mapLoaded, sosAlerts, currentUsername, activeRouteId, handleReportPost, handleDrawRoute, handleResolveClick, handleSubmitComment, loadComments, handleOpenReportDialog, handleCancelHelp]);
 
   // --- XỬ LÝ USER LOCATION (Khi chưa bật Navigation) ---
   // Nếu đang Navigating thì Effect Navigation ở trên sẽ lo việc vẽ User Marker
