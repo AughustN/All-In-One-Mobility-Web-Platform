@@ -75,8 +75,6 @@ function CameraPopup({ cameraId, cameraName }) {
 
 function CameraMapNew() {
   const [selectedCamera, setSelectedCamera] = useState(null);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [showDropdown, setShowDropdown] = useState(false);
   const [mapStyle, setMapStyle] = useState('goong_map_web');
   const [userLocation, setUserLocation] = useState(null);
 
@@ -90,82 +88,15 @@ function CameraMapNew() {
       }));
   }, []);
 
-  const [filteredCameras, setFilteredCameras] = useState(cameras);
-
-  useEffect(() => {
-    if (searchTerm.trim() === '') {
-      setFilteredCameras(cameras);
-      setShowDropdown(false);
-    } else {
-      const filtered = cameras.filter(camera => {
-        const cameraName = camera.camera_name || '';
-        const displayName = camera.display_name || '';
-        const searchLower = searchTerm.toLowerCase();
-
-        return cameraName.toLowerCase().includes(searchLower) ||
-          displayName.toLowerCase().includes(searchLower);
-      });
-      setFilteredCameras(filtered);
-      setShowDropdown(true);
-    }
-  }, [searchTerm, cameras]);
-
   const handleCameraClick = (camera) => {
     setSelectedCamera(camera);
   };
 
   return (
     <div className="camera-map-container">
-      <div className="search-container">
-        <div className="search-wrapper">
-          <span className="search-icon">🔍</span>
-          <input
-            type="text"
-            placeholder="Tìm camera, địa điểm..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            onFocus={() => searchTerm && setShowDropdown(true)}
-            onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
-            className="search-input"
-          />
-          
-          {showDropdown && filteredCameras.length > 0 && (
-            <div className="search-dropdown">
-              {filteredCameras.slice(0, 8).map((camera) => (
-                <div
-                  key={camera.id}
-                  className="search-result-item"
-                  onMouseDown={(e) => {
-                    e.preventDefault();
-                    handleCameraClick(camera);
-                    setSearchTerm('');
-                    setShowDropdown(false);
-                  }}
-                >
-                  <div className="result-icon">📹</div>
-                  <div className="result-info">
-                    <div className="result-name">{camera.camera_name}</div>
-                    <div className="result-location">{camera.display_name}</div>
-                  </div>
-                </div>
-              ))}
-              {filteredCameras.length > 8 && (
-                <div className="search-result-more">
-                  +{filteredCameras.length - 8} camera khác
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-        
-        <div className="camera-count">
-          {filteredCameras.length} / {cameras.length}
-        </div>
-      </div>
-
       <div className="map-wrapper" style={{ position: 'relative' }}>
         <GoongCameraMap
-          cameras={filteredCameras}
+          cameras={cameras}  // No filtering here, just show all cameras
           onCameraClick={handleCameraClick}
           selectedCamera={selectedCamera}
           style={mapStyle}
@@ -193,7 +124,7 @@ function CameraMapNew() {
           <h3>{selectedCamera.camera_name}</h3>
           <p><strong>Địa điểm:</strong> {selectedCamera.display_name}</p>
           <p><strong>Tọa độ:</strong> {selectedCamera.lat.toFixed(6)}, {selectedCamera.lon.toFixed(6)}</p>
-          
+
           <CameraPopup
             cameraId={selectedCamera.id}
             cameraName={selectedCamera.camera_name}
@@ -203,5 +134,6 @@ function CameraMapNew() {
     </div>
   );
 }
+
 
 export default CameraMapNew;
