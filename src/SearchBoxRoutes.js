@@ -93,12 +93,19 @@ export default function SearchBoxRoutes(props) {
 
     // Update from location when initialFrom changes
     useEffect(() => {
-        setFromLocation(initialFrom);
+        if (initialFrom) {
+            setFromLocation(initialFrom);
+            setIsFromLocationSelected(true); // Prevent dropdown from opening
+        }
     }, [initialFrom]);
 
     // Search FROM location with debounce
     useEffect(() => {
-        if (isFromLocationSelected) return;
+        // Don't search if location is already selected
+        if (isFromLocationSelected) {
+            setShowFromDropdown(false);
+            return;
+        }
 
         if (!fromLocation.trim()) {
             setShowFromDropdown(false);
@@ -121,7 +128,11 @@ export default function SearchBoxRoutes(props) {
 
     // Search TO location with debounce
     useEffect(() => {
-        if (isToLocationSelected) return;
+        // Don't search if location is already selected
+        if (isToLocationSelected) {
+            setShowToDropdown(false);
+            return;
+        }
 
         if (!toLocation.trim()) {
             setShowToDropdown(false);
@@ -156,12 +167,12 @@ export default function SearchBoxRoutes(props) {
             lon: pos.lon,
             name: loc.address.freeformAddress
         };
-        
+
         setFromLocation(loc.address.freeformAddress);
         setShowFromDropdown(false);
         setFromSearchResults([]);
         setIsFromLocationSelected(true);
-        
+
         // Notify parent component
         if (onFromLocationChange) {
             onFromLocationChange(locationData);
@@ -193,19 +204,19 @@ export default function SearchBoxRoutes(props) {
         navigator.geolocation.getCurrentPosition(
             async (position) => {
                 const { latitude, longitude } = position.coords;
-                
+
                 // Reverse geocode to get address
                 try {
                     const response = await fetch(
                         `https://rsapi.goong.io/Geocode?latlng=${latitude},${longitude}&api_key=WOh4DfxBHRZhUMufKtHKj4qXFb2RZu2vlatKPJpH`
                     );
                     const data = await response.json();
-                    
+
                     const address = data.results?.[0]?.formatted_address || 'Vị trí hiện tại';
-                    
+
                     setFromLocation(address);
                     setIsFromLocationSelected(true);
-                    
+
                     // Notify parent with isGPS flag
                     if (onFromLocationChange) {
                         onFromLocationChange({
@@ -218,7 +229,7 @@ export default function SearchBoxRoutes(props) {
                 } catch (err) {
                     console.error('Reverse geocode error:', err);
                     setFromLocation('Vị trí hiện tại');
-                    
+
                     if (onFromLocationChange) {
                         onFromLocationChange({
                             lat: latitude,
@@ -228,7 +239,7 @@ export default function SearchBoxRoutes(props) {
                         });
                     }
                 }
-                
+
                 setGettingLocation(false);
             },
             (error) => {
@@ -398,7 +409,7 @@ export default function SearchBoxRoutes(props) {
                         onClick={() => handleRouteTypeChange('fastest')}
                         style={{ flexGrow: 1 }}
                     >
-                     Nhanh nhất
+                        Nhanh nhất
                     </Button>
                     <Button
                         variant={selectedRouteType === 'shortest' ? 'contained' : 'outlined'}
@@ -406,7 +417,7 @@ export default function SearchBoxRoutes(props) {
                         onClick={() => handleRouteTypeChange('shortest')}
                         style={{ flexGrow: 1 }}
                     >
-                     Ngắn nhất
+                        Ngắn nhất
                     </Button>
                 </Box>
             </Box>

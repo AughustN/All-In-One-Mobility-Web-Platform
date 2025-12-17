@@ -19,7 +19,7 @@ import * as turf from '@turf/turf';
 // --- 2. IMPORT MAP CONTEXT ---
 import { useMapContext } from './contexts/MapContext';
 
-const GOONG_MAPTILES_KEY = 'nwJPo6l2E909Xn7fEIoJrSilkGxVJQSjrKxfD2UQ';
+const GOONG_MAPTILES_KEY = process.env.REACT_APP_GOONG_MAPTILES_KEY;
 goongjs.accessToken = GOONG_MAPTILES_KEY;
 
 const sosStyles = `
@@ -215,7 +215,7 @@ function GoongSOSMap({ sosAlerts, style = 'goong_map_web', userLocation }) {
 
     // Tạo LineString gốc từ toàn bộ tuyến đường
     const routeLine = turf.lineString(navCoords.map(c => [c.lon, c.lat]));
-    
+
     // Tạo điểm đích (Điểm cuối cùng của danh sách toạ độ)
     const lastCoord = navCoords[navCoords.length - 1];
     const endPoint = turf.point([lastCoord.lon, lastCoord.lat]);
@@ -245,15 +245,15 @@ function GoongSOSMap({ sosAlerts, style = 'goong_map_web', userLocation }) {
         // --- BẮT ĐẦU ĐOẠN CODE THÊM MỚI ---
         // B. Cắt đường: Chỉ lấy từ vị trí hiện tại -> Đích
         try {
-            // turf.lineSlice(điểm_đầu, điểm_cuối, đường_gốc)
-            const slicedRoute = turf.lineSlice(userPointForSlice, endPoint, routeLine);
-            
-            // Cập nhật lại dữ liệu cho source 'sos-route' trên map
-            if (map.current.getSource('sos-route')) {
-                map.current.getSource('sos-route').setData(slicedRoute);
-            }
+          // turf.lineSlice(điểm_đầu, điểm_cuối, đường_gốc)
+          const slicedRoute = turf.lineSlice(userPointForSlice, endPoint, routeLine);
+
+          // Cập nhật lại dữ liệu cho source 'sos-route' trên map
+          if (map.current.getSource('sos-route')) {
+            map.current.getSource('sos-route').setData(slicedRoute);
+          }
         } catch (e) {
-            console.log("Lỗi cắt đường (có thể do đã đến đích):", e);
+          console.log("Lỗi cắt đường (có thể do đã đến đích):", e);
         }
         // --- KẾT THÚC ĐOẠN CODE THÊM MỚI ---
 
@@ -261,10 +261,10 @@ function GoongSOSMap({ sosAlerts, style = 'goong_map_web', userLocation }) {
         if (userMarker.current) {
           userMarker.current.setLngLat([finalLng, finalLat]);
         } else {
-           // ... code tạo marker cũ giữ nguyên ...
-           const el = document.createElement('div');
-           el.innerHTML = '<div style="width:20px; height:20px; background:#2196F3; border:3px solid #fff; border-radius:50%; box-shadow:0 2px 5px rgba(0,0,0,0.4);"></div>';
-           userMarker.current = new goongjs.Marker({ element: el })
+          // ... code tạo marker cũ giữ nguyên ...
+          const el = document.createElement('div');
+          el.innerHTML = '<div style="width:20px; height:20px; background:#2196F3; border:3px solid #fff; border-radius:50%; box-shadow:0 2px 5px rgba(0,0,0,0.4);"></div>';
+          userMarker.current = new goongjs.Marker({ element: el })
             .setLngLat([finalLng, finalLat])
             .addTo(map.current);
         }
@@ -369,54 +369,54 @@ function GoongSOSMap({ sosAlerts, style = 'goong_map_web', userLocation }) {
   const handleCancelHelp = useCallback(() => {
     // Hiển thị Dialog xác nhận trước khi xoá
     showDialog('confirm', 'Huỷ cứu trợ?', 'Bạn có chắc muốn huỷ lộ trình đến điểm này không?', () => {
-        
-        // 1. Xóa đường trên map
-        if (map.current.getLayer('sos-route')) map.current.removeLayer('sos-route');
-        if (map.current.getSource('sos-route')) map.current.removeSource('sos-route');
 
-        // 2. Reset các trạng thái
-        setIsNavigating(false);
-        setNavCoords([]);
-        setActiveRouteId(null); // Quên ID đang giúp đi -> Nút sẽ trở lại màu xanh
-        
-        // 3. Xoá marker user (nếu muốn)
-        if (userMarker.current) { userMarker.current.remove(); userMarker.current = null; }
-        
-        setNotify({ open: true, message: "Đã huỷ lộ trình!", type: 'info' });
+      // 1. Xóa đường trên map
+      if (map.current.getLayer('sos-route')) map.current.removeLayer('sos-route');
+      if (map.current.getSource('sos-route')) map.current.removeSource('sos-route');
+
+      // 2. Reset các trạng thái
+      setIsNavigating(false);
+      setNavCoords([]);
+      setActiveRouteId(null); // Quên ID đang giúp đi -> Nút sẽ trở lại màu xanh
+
+      // 3. Xoá marker user (nếu muốn)
+      if (userMarker.current) { userMarker.current.remove(); userMarker.current = null; }
+
+      setNotify({ open: true, message: "Đã huỷ lộ trình!", type: 'info' });
     });
   }, [showDialog]);
 
-// RENDER MARKERS & MAP
+  // RENDER MARKERS & MAP
   useEffect(() => {
     if (!mapLoaded || !map.current || !sosAlerts) return;
 
     // 1. Xóa các marker rác (không còn trong list)
     const activeIds = sosAlerts.map(a => a.id);
-    Object.keys(markersRef.current).forEach(id => { 
-        if (!activeIds.includes(parseInt(id))) { 
-            markersRef.current[id].remove(); 
-            delete markersRef.current[id]; 
-        } 
+    Object.keys(markersRef.current).forEach(id => {
+      if (!activeIds.includes(parseInt(id))) {
+        markersRef.current[id].remove();
+        delete markersRef.current[id];
+      }
     });
 
     sosAlerts.forEach(alert => {
       // --- SỬA LỖI TẠI ĐÂY ---
       let wasOpen = false;
-      
+
       // Kiểm tra xem marker cũ có đang mở popup không?
       if (markersRef.current[alert.id]) {
-         const popup = markersRef.current[alert.id].getPopup();
-         if (popup && popup.isOpen()) {
-             wasOpen = true;
-         }
-         // Xóa marker cũ đi để vẽ lại cái mới (có nút bấm mới)
-         markersRef.current[alert.id].remove();
+        const popup = markersRef.current[alert.id].getPopup();
+        if (popup && popup.isOpen()) {
+          wasOpen = true;
+        }
+        // Xóa marker cũ đi để vẽ lại cái mới (có nút bấm mới)
+        markersRef.current[alert.id].remove();
       }
       // -----------------------
 
       // Tạo Pin mới
-      const el = document.createElement('div'); 
-      el.className = 'sos-pin-container'; 
+      const el = document.createElement('div');
+      el.className = 'sos-pin-container';
       el.innerHTML = `<div class="sos-pin-ripple"></div><div class="sos-pin-visible">🚨</div>`;
 
       // Tạo nội dung Popup
@@ -434,7 +434,7 @@ function GoongSOSMap({ sosAlerts, style = 'goong_map_web', userLocation }) {
       `;
       if (alert.description) htmlContent += `<div class="popup-desc">${alert.description}</div>`;
       if (alert.image_url) htmlContent += `<div class="popup-image-box"><img src="${BASE_URL}${alert.image_url}" class="popup-image" /></div>`;
-      
+
       htmlContent += `
             <div class="meta-info"><div class="meta-item">📍 ${Number(alert.lat).toFixed(4)}, ${Number(alert.lng).toFixed(4)}</div><div class="meta-item">👤 <b>${alert.username || 'Ẩn danh'}</b></div></div>
             <div class="action-buttons">
@@ -442,16 +442,16 @@ function GoongSOSMap({ sosAlerts, style = 'goong_map_web', userLocation }) {
 
       // --- LOGIC ĐỔI NÚT BẤM ---
       if (currentUsername && alert.username === currentUsername) {
-          htmlContent += `<button class="btn-action btn-gray" id="btn-resolve-${alert.id}">✅ Đã xong</button>`;
+        htmlContent += `<button class="btn-action btn-gray" id="btn-resolve-${alert.id}">✅ Đã xong</button>`;
       } else {
-          // So sánh với activeRouteId
-          if (activeRouteId === alert.id) {
-              // Hiện nút HUỶ (Màu đỏ)
-              htmlContent += `<button class="btn-action" style="background:#d32f2f;" id="btn-cancel-${alert.id}">❌ Huỷ đến giúp</button>`;
-          } else {
-              // Hiện nút ĐẾN GIÚP (Màu xanh)
-              htmlContent += `<button class="btn-action btn-blue" id="btn-route-${alert.id}">🚙 Đến giúp</button>`;
-          }
+        // So sánh với activeRouteId
+        if (activeRouteId === alert.id) {
+          // Hiện nút HUỶ (Màu đỏ)
+          htmlContent += `<button class="btn-action" style="background:#d32f2f;" id="btn-cancel-${alert.id}">❌ Huỷ đến giúp</button>`;
+        } else {
+          // Hiện nút ĐẾN GIÚP (Màu xanh)
+          htmlContent += `<button class="btn-action btn-blue" id="btn-route-${alert.id}">🚙 Đến giúp</button>`;
+        }
       }
       // --------------------------
 
@@ -464,8 +464,8 @@ function GoongSOSMap({ sosAlerts, style = 'goong_map_web', userLocation }) {
 
       // Gán sự kiện click
       const btnReport = popupDiv.querySelector(`#btn-report-${alert.id}`); if (btnReport) btnReport.onclick = () => handleOpenReportDialog(alert.id);
-      
-      const btnRoute = popupDiv.querySelector(`#btn-route-${alert.id}`); 
+
+      const btnRoute = popupDiv.querySelector(`#btn-route-${alert.id}`);
       if (btnRoute) btnRoute.onclick = () => handleOpenRouteDialog(alert.lat, alert.lng, alert.id);
 
       // Gán sự kiện cho nút Huỷ
@@ -473,7 +473,7 @@ function GoongSOSMap({ sosAlerts, style = 'goong_map_web', userLocation }) {
       if (btnCancel) btnCancel.onclick = () => handleCancelHelp();
 
       const btnResolve = popupDiv.querySelector(`#btn-resolve-${alert.id}`); if (btnResolve) btnResolve.onclick = () => handleResolveClick(alert.id);
-      
+
       const btnSendComment = popupDiv.querySelector(`#btn-comment-${alert.id}`); const inputComment = popupDiv.querySelector(`#input-comment-${alert.id}`);
       const doSendComment = () => { const txt = inputComment.value.trim(); if (txt) handleSubmitComment(alert.id, txt, popupDiv); };
       if (btnSendComment) { btnSendComment.onclick = doSendComment; inputComment.addEventListener("keypress", (e) => { if (e.key === "Enter") doSendComment(); }); }
@@ -481,19 +481,19 @@ function GoongSOSMap({ sosAlerts, style = 'goong_map_web', userLocation }) {
       // Tạo Popup
       const popup = new goongjs.Popup({ offset: 25, maxWidth: '300px', closeButton: true }).setDOMContent(popupDiv);
       popup.on('open', () => loadComments(alert.id, popupDiv));
-      
+
       // Tạo Marker mới
       const marker = new goongjs.Marker({ element: el }).setLngLat([alert.lng, alert.lat]).setPopup(popup).addTo(map.current);
       markersRef.current[alert.id] = marker;
 
       // Nếu lúc nãy popup đang mở thì giờ mở lại nó
       if (wasOpen) {
-          marker.togglePopup();
+        marker.togglePopup();
       }
 
     });
-    
-  // QUAN TRỌNG: Phải có activeRouteId ở đây
+
+    // QUAN TRỌNG: Phải có activeRouteId ở đây
   }, [mapLoaded, sosAlerts, currentUsername, activeRouteId, handleReportPost, handleDrawRoute, handleResolveClick, handleSubmitComment, loadComments, handleOpenReportDialog, handleCancelHelp]);
 
   // --- XỬ LÝ USER LOCATION (Khi chưa bật Navigation) ---

@@ -4,8 +4,7 @@ import L from 'leaflet';
 import './css/MapLayerControl.css';
 
 const { BaseLayer } = LayersControl;
-const GOONG_API_KEY = 'WOXLNJwS4RZLxLmxLGKTa4gu0p8UrBKcRBOg1Xqy';
-const GOONG_MAPTILES_KEY = 'nwJPo6l2E909Xn7fEIoJrSilkGxVJQSjrKxfD2UQ';
+const GOONG_MAPTILES_KEY = process.env.REACT_APP_GOONG_MAPTILES_KEY;
 
 /**
  * Goong Map Vector Layer Component

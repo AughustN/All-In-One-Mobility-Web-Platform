@@ -3,7 +3,7 @@ import goongjs from "@goongmaps/goong-js";
 import "@goongmaps/goong-js/dist/goong-js.css";
 import { BASE_URL, calculateRoute } from './api';
 
-const GOONG_MAPTILES_KEY = "nwJPo6l2E909Xn7fEIoJrSilkGxVJQSjrKxfD2UQ";
+const GOONG_MAPTILES_KEY = process.env.REACT_APP_GOONG_MAPTILES_KEY;
 goongjs.accessToken = GOONG_MAPTILES_KEY;
 
 export default function GoongPlanTripMap({
@@ -58,11 +58,10 @@ export default function GoongPlanTripMap({
     const bounds = new goongjs.LngLatBounds();
 
     itinerary.forEach((item) => {
-      if(!item.lat || !item.lng)
-        {
-          console.log("none coordinate");
-          return;
-        } 
+      if (!item.lat || !item.lng) {
+        console.log("none coordinate");
+        return;
+      }
       const marker = new goongjs.Marker({ color: "#ff5252" })
         .setLngLat([item.lng, item.lat])
         .setPopup(

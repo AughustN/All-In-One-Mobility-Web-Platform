@@ -1,8 +1,8 @@
 // Simple API helper to centralize backend calls and make it easy to replace endpoints.
 import { handleTokenExpiration } from './utils/tokenManager';
 
-// export const BASE_URL = "https://api.hcmus.fit";
-export const BASE_URL = "http://localhost:5000";
+ export const BASE_URL = "https://api.hcmus.fit";
+// const BASE_URL = "http://localhost:5000";
 
 export function getAuthHeader() {
   const token = localStorage.getItem('token');
