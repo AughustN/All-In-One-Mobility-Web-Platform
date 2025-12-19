@@ -1,0 +1,129 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Problem Analysis}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Contextual Background}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Project Goal}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Use Case Scenarios}{4}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Computational Thinking}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Decomposition}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Pattern Recognition}{6}{section.2.2}%
+\contentsline {paragraph}{Pattern 1: Geographic Proximity Pattern}{7}{paragraph*.11}%
+\contentsline {paragraph}{Pattern 2: Data Caching Pattern}{7}{paragraph*.12}%
+\contentsline {paragraph}{Pattern 3: User Priority Pattern}{8}{paragraph*.14}%
+\contentsline {paragraph}{Pattern 4: Threshold-Based Classification Pattern}{9}{paragraph*.15}%
+\contentsline {paragraph}{Pattern 5: External API Integration Pattern}{10}{paragraph*.16}%
+\contentsline {subsection}{\numberline {2.2.1}Pattern Recognition Summary}{11}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3}Abstraction}{12}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Abstraction in System Design}{12}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Data Abstraction: Entity Simplification}{12}{subsection.2.3.2}%
+\contentsline {paragraph}{The Abstraction Process}{12}{paragraph*.18}%
+\contentsline {paragraph}{Bus Stop Abstraction}{12}{paragraph*.19}%
+\contentsline {paragraph}{Traffic Camera Abstraction}{13}{paragraph*.20}%
+\contentsline {paragraph}{Vehicle Detection Abstraction}{14}{paragraph*.21}%
+\contentsline {paragraph}{Complete Abstraction Summary Table}{15}{paragraph*.22}%
+\contentsline {subsection}{\numberline {2.3.3}Structural Abstraction: Graph Representation}{15}{subsection.2.3.3}%
+\contentsline {paragraph}{Why Graph Abstraction?}{15}{paragraph*.24}%
+\contentsline {paragraph}{Graph Construction Process}{16}{paragraph*.25}%
+\contentsline {paragraph}{Walking Edge Abstraction}{16}{paragraph*.26}%
+\contentsline {paragraph}{Graph Abstraction Visualization}{17}{paragraph*.27}%
+\contentsline {subsection}{\numberline {2.3.4}Procedural Abstraction: API Interfaces}{17}{subsection.2.3.4}%
+\contentsline {paragraph}{Example: Route Finding Abstraction}{17}{paragraph*.29}%
+\contentsline {paragraph}{Abstraction Layers in the System}{18}{paragraph*.30}%
+\contentsline {subsection}{\numberline {2.3.5}Benefits of Abstraction in This Project}{18}{subsection.2.3.5}%
+\contentsline {paragraph}{1. Reduced Complexity}{18}{paragraph*.32}%
+\contentsline {paragraph}{2. Improved Maintainability}{18}{paragraph*.33}%
+\contentsline {paragraph}{3. Enabled Testing}{19}{paragraph*.34}%
+\contentsline {paragraph}{4. Facilitated Team Collaboration}{19}{paragraph*.35}%
+\contentsline {subsection}{\numberline {2.3.6}Abstraction Trade-offs}{19}{subsection.2.3.6}%
+\contentsline {section}{\numberline {2.4}Algorithm Design}{20}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Overview of Algorithmic Approaches}{20}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}System Architecture Flowchart}{20}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Algorithm 1: A* Bus Routing}{21}{subsection.2.4.3}%
+\contentsline {paragraph}{Problem Statement}{21}{paragraph*.39}%
+\contentsline {paragraph}{Why A*?}{21}{paragraph*.40}%
+\contentsline {paragraph}{Key Design Decision}{21}{paragraph*.41}%
+\contentsline {paragraph}{Cost Function}{21}{paragraph*.42}%
+\contentsline {paragraph}{Pseudocode}{22}{paragraph*.43}%
+\contentsline {paragraph}{Complexity}{22}{paragraph*.44}%
+\contentsline {subsection}{\numberline {2.4.4}Algorithm 2: YOLO Vehicle Detection}{22}{subsection.2.4.4}%
+\contentsline {paragraph}{Problem Statement}{22}{paragraph*.45}%
+\contentsline {paragraph}{Why YOLO v11?}{22}{paragraph*.46}%
+\contentsline {paragraph}{Detection Pipeline}{23}{paragraph*.47}%
+\contentsline {paragraph}{Pseudocode}{23}{paragraph*.49}%
+\contentsline {paragraph}{Key Implementation Details}{23}{paragraph*.50}%
+\contentsline {subsection}{\numberline {2.4.5}Algorithm 3: Percentile-Based Congestion Classification}{23}{subsection.2.4.5}%
+\contentsline {paragraph}{Problem Statement}{23}{paragraph*.51}%
+\contentsline {paragraph}{Why Percentile Thresholds?}{23}{paragraph*.52}%
+\contentsline {paragraph}{Classification Logic}{24}{paragraph*.53}%
+\contentsline {paragraph}{Pseudocode}{24}{paragraph*.55}%
+\contentsline {paragraph}{Threshold Calculation}{24}{paragraph*.56}%
+\contentsline {subsection}{\numberline {2.4.6}Algorithm 4: AI Trip Planning with Fuzzy Matching}{25}{subsection.2.4.6}%
+\contentsline {paragraph}{Problem Statement}{25}{paragraph*.57}%
+\contentsline {paragraph}{Three-Stage Pipeline}{25}{paragraph*.58}%
+\contentsline {paragraph}{Fallback Mechanisms}{25}{paragraph*.60}%
+\contentsline {paragraph}{Pseudocode}{26}{paragraph*.62}%
+\contentsline {paragraph}{Key Components}{26}{paragraph*.63}%
+\contentsline {subsection}{\numberline {2.4.7}Algorithm 5: Haversine Distance Calculation}{27}{subsection.2.4.7}%
+\contentsline {paragraph}{Problem Statement}{27}{paragraph*.64}%
+\contentsline {paragraph}{Why Not Euclidean Distance?}{27}{paragraph*.65}%
+\contentsline {paragraph}{The Haversine Formula}{27}{paragraph*.66}%
+\contentsline {paragraph}{Pseudocode}{27}{paragraph*.67}%
+\contentsline {paragraph}{Usage Across the Project}{27}{paragraph*.68}%
+\contentsline {subsection}{\numberline {2.4.8}Algorithm Design Summary}{28}{subsection.2.4.8}%
+\contentsline {chapter}{\numberline {3}Technical Implementation}{29}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Data Collection and Management}{29}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Data Sources}{29}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Database Architecture}{29}{subsection.3.1.2}%
+\contentsline {paragraph}{MySQL Database: User Management}{29}{paragraph*.71}%
+\contentsline {paragraph}{SQLite Database: Detection Results}{30}{paragraph*.72}%
+\contentsline {paragraph}{JSON Data Files}{30}{paragraph*.73}%
+\contentsline {paragraph}{CSV Data Files (Bus Network)}{30}{paragraph*.74}%
+\contentsline {subsection}{\numberline {3.1.3}Caching Strategy}{31}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}AI Model Integration}{31}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}YOLOv11 Vehicle Detection}{31}{subsection.3.2.1}%
+\contentsline {paragraph}{Model Configuration}{31}{paragraph*.75}%
+\contentsline {paragraph}{Image Preprocessing}{31}{paragraph*.76}%
+\contentsline {paragraph}{Deployment Options}{31}{paragraph*.77}%
+\contentsline {subsection}{\numberline {3.2.2}Groq LLM Integration}{31}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}RapidFuzz Text Matching}{32}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Backend Architecture}{32}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Flask Application Structure}{32}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Core API Modules}{32}{subsection.3.3.2}%
+\contentsline {paragraph}{Authentication Module}{32}{paragraph*.78}%
+\contentsline {paragraph}{Routing Module}{32}{paragraph*.79}%
+\contentsline {paragraph}{Detection Module}{33}{paragraph*.80}%
+\contentsline {paragraph}{Congestion Module}{33}{paragraph*.81}%
+\contentsline {paragraph}{Trip Planning Module}{33}{paragraph*.82}%
+\contentsline {paragraph}{SOS Module}{33}{paragraph*.83}%
+\contentsline {subsection}{\numberline {3.3.3}Key API Endpoints}{33}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Cloud Deployment}{34}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Modal Serverless GPU}{34}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Fallback Strategy}{34}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}Frontend}{34}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Framework and Libraries}{34}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Application Screenshots}{35}{subsection.3.5.2}%
+\contentsline {chapter}{\numberline {4}Testing and Improvement}{38}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Testing}{38}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Authentication Testing}{38}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Bus Routing Testing}{38}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Vehicle Detection Testing}{39}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}AI Trip Planner Testing}{39}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.5}SOS Feature Testing}{39}{subsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.1.6}Live Integration Tests}{39}{subsection.4.1.6}%
+\contentsline {subsection}{\numberline {4.1.7}Test Execution Summary}{40}{subsection.4.1.7}%
+\contentsline {section}{\numberline {4.2}Results}{40}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}AI Trip Planner Evaluation}{40}{subsection.4.2.1}%
+\contentsline {paragraph}{Example Queries and Results:}{40}{paragraph*.99}%
+\contentsline {subsection}{\numberline {4.2.2}Vehicle Detection}{41}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Bus Routing}{41}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}Limitations: What is Missing?}{42}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Future Improvements: What Would We Add Next?}{42}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Priority 1: Real-time Transit Data}{42}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Priority 2: Enhanced AI Capabilities}{42}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Priority 3: Improved Detection}{42}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Priority 4: User Experience}{43}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Priority 5: Infrastructure}{43}{subsection.4.4.5}%
+\contentsline {chapter}{\numberline {5}Conclusion}{44}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Project Value}{44}{section.5.1}%
+\contentsline {section}{\numberline {5.2}What We Have Learned Through This Project?}{44}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Computational Thinking Insights}{44}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Technical Lessons}{45}{subsection.5.2.2}%

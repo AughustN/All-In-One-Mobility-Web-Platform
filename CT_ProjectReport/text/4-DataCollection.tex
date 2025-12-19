@@ -1,0 +1,242 @@
+\chapter{Data Collection}
+\label{chap:data-collection}
+
+The Data Collection module is responsible for acquiring continuous, high-quality, and legally compliant real-time images from traffic surveillance cameras. These images serve as the foundation for downstream transportation services such as routing, bus map visualization, SOS incident detection, congestion scoring, and machine-learning-based flow estimation.
+
+Real-world constraints make data ingestion challenging. Camera sources vary in resolution, frame rate, connectivity stability, and legal permissions. Additionally, environmental factors (lighting, weather, occlusion) may degrade image clarity. The objective of this module is to guarantee a robust, low-latency pipeline that captures clean frames reliably and consistently.
+
+\section{Problem Definition}
+Ho Chi Minh City operates a vast network of traffic surveillance cameras managed by the Department of Transport. These cameras provide live feeds that can be leveraged to analyze traffic conditions, detect incidents, and enhance routing services. However, several challenges must be addressed:
+\begin{itemize}
+    \item \textbf{Diverse Camera Sources:} Cameras differ in resolution, frame
+    \item \textbf{Unstable Connections:} Some cameras have intermittent connectivity or high latency.
+    \item \textbf{Legal Compliance:} Usage of camera feeds must adhere to local
+    \item \textbf{Data Quality:} Environmental factors can degrade image clarity.
+    \item \textbf{Scalability:} The system must handle a large number
+    \item \textbf{Real-time Requirements:} Low-latency ingestion is critical for timely analysis.
+    \item \textbf{Storage Management:} Efficiently storing and retrieving large volumes of image data.
+    \item \textbf{Monitoring \& Observability:} Tracking system health and performance.
+    \item \textbf{Integration:} Providing accessible APIs for downstream modules.
+    \item \textbf{Privacy Considerations:} Ensuring compliance with privacy regulations.
+    \item \textbf{Error Handling:} Robust mechanisms to handle failures and retries.
+\end{itemize}
+
+\section{Decomposition}
+\forestset{
+    overviewnode/.style={text width=4cm, font=\small},
+    mini/.style={text width=3cm, font=\footnotesize}
+}
+
+\begin{figure}[H]
+    \centering
+    \resizebox{\linewidth}{!}{%
+    \begin{forest}
+        for tree={
+            grow'=east,
+            rounded corners,
+            draw=black!70, % Default border color
+            line width=0.8pt,
+            node options={align=left, inner xsep=5pt, inner ysep=4pt},
+            text width=4.4cm,
+            s sep=7mm,
+            l sep=9mm,
+            anchor=north,
+            edge={-stealth, line width=0.8pt, draw=black!50},
+            fill=white % Default fill
+        }
+            % 2. DATA COLLECTION (Orange theme)
+            [
+                {Data Collection}, overviewnode, for tree={fill=orange!10, draw=orange!60},
+                [
+                    {Data Collection Pipeline}, overviewnode,
+                    [{Camera Registry}, mini]
+                    [{Real-Time Frame Scraping}, mini]
+                    [{Frame Extraction \& Preprocessing}, mini]
+                    [{Local and Cloud Storage Management}, mini]
+                    [{Privacy and Compliance}, mini]
+                    [{Monitoring \& Observability}, mini]
+                    [{API Endpoints}, mini]
+                ]
+            ]
+    \end{forest}
+    }
+    \caption{Data Collection Module Decomposition}
+    \label{fig:data-collection-overview}
+\end{figure}
+
+\section{Framework \& Tech Stack}
+The Data Collection module is built using the following technologies:
+\begin{itemize}
+    \item \textbf{Backend:} Python with FastAPI framework for handling API requests
+    \item \textbf{Data Storage:} MySQL database for storing camera metadata and image references
+    \item \textbf{Image Processing:} OpenCV and FFmpeg for frame extraction and preprocessing
+    \item \textbf{Monitoring:} Prometheus for metrics collection and Graf
+    \item \textbf{Containerization:} Docker for packaging and deployment
+    \item \textbf{Cloud Storage:} AWS S3 or MinIO for scalable
+    \item \textbf{Concurrency:} Multi-threading and asynchronous programming for efficient data fetching
+    \item \textbf{Version Control:} Git for source code management
+\end{itemize}
+
+\section{Implementation}
+\subsection{Data Collection Pipeline}
+
+\begin{itemize}
+    \item Implemented \textbf{multi-threaded crawler} to fetch traffic camera images from \url{https://giaothong.hochiminhcity.gov.vn}
+    \item Designed efficient database schema for \textbf{storing images in MySQL}
+    \item Optimized storage strategy to balance image quality with database performance
+    \item Implemented continuous data collection with configurable fetch intervals
+    \item Built error handling and retry mechanisms for reliable data acquisition
+    \item Established data retention policies to manage storage requirements
+\end{itemize}
+
+% \subsection{Data Source Integration}
+
+% \begin{itemize}
+%     \item Built a \textbf{Camera Registry} that stores metadata such as camera ID, URL, location, orientation, refresh rate, status, and legal permission notes
+%     \item Integrated both \textbf{snapshot-based endpoints} (e.g., \texttt{ImageHandler.ashx}) and optional \textbf{stream-based RTSP/HTTP endpoints}
+%     \item Established comprehensive camera metadata management system
+% \end{itemize}
+
+\subsection{Real-Time Frame Scraping}
+
+Developed a scraper/fetcher capable of:
+
+\begin{itemize}
+    \item \textbf{Continuous pulling of snapshots} from multiple camera sources
+    \item \textbf{Retry logic and timeouts} for handling unstable connections
+    \item \textbf{Adaptive rate limiting} to respect bandwidth and server constraints
+    \item \textbf{Stream sampling via FFmpeg} for cameras with real video feeds
+    \item Implemented \textbf{per-camera deduplication} using SHA-256 hashing to avoid storing identical frames
+\end{itemize}
+
+\subsection{Frame Extraction \& Preprocessing}
+
+Pipeline includes:
+
+\begin{itemize}
+    \item \textbf{Uniform resizing} (1280×720) for standardized processing
+    \item \textbf{Contrast correction} via YUV histogram equalization
+    \item \textbf{Optional ROI masking} for narrowing the visible region
+    \item \textbf{JPEG encoding} with quality controls
+\end{itemize}
+
+These steps standardize frames for congestion detection and object detection modules.
+
+\subsection{Local and Cloud Storage Management}
+
+\begin{itemize}
+    \item Created a \textbf{structured storage folder} per camera ID
+    \item Implemented \textbf{rolling retention} (24–72 hours) with automatic deletion of old frames
+    \item Optimized storage organization for efficient retrieval
+\end{itemize}
+
+\subsection{Privacy and Compliance}
+
+\begin{itemize}
+    \item Configurable rules per camera:
+    \begin{itemize}
+        \item Allowed/blocked usage
+        \item Optional masking of specific areas
+    \end{itemize}
+    \item Integration-ready for face/plate blurring
+    \item Ensured adherence to relevant camera usage terms
+\end{itemize}
+
+\subsection{Monitoring \& Observability}
+
+\begin{itemize}
+    \item Exposed \textbf{Prometheus metrics} including:
+    \begin{itemize}
+        \item Frame freshness
+        \item Fetch success/failure counts
+        \item Camera uptime
+        \item Image storage rate
+    \end{itemize}
+    \item Built foundations for \textbf{Grafana dashboards} for:
+    \begin{itemize}
+        \item Camera health
+        \item Latency and stability
+        \item Error bursts
+    \end{itemize}
+\end{itemize}
+
+\subsection{API Endpoints}
+
+A lightweight \textbf{FastAPI service} provides:
+
+\begin{itemize}
+    \item \texttt{/cameras} — list of active camera sources
+    \item \texttt{/camera/\{id\}/latest} — latest processed frame
+    \item \texttt{/camera/\{id\}/health} — metadata + scraper statistics
+\end{itemize}
+
+This enables integration with downstream UI systems and ML pipelines.
+
+\section{Next Steps}
+
+\subsection{Advanced Privacy Controls}
+
+\begin{itemize}
+    \item Add automated face and license plate blurring using YOLO/RetinaFace + OpenCV
+    \item Support camera-based privacy zones with configurable masking
+    \item Implement comprehensive GDPR and local privacy law compliance features
+\end{itemize}
+
+\subsection{Cloud Integration}
+
+\begin{itemize}
+    \item Generate presigned URLs for use across Routing, Bus Map, and SOS modules
+    \item Implement backup and disaster recovery mechanisms
+    \item Optimize cloud storage costs through intelligent archival policies
+\end{itemize}
+
+\subsection{Calibration \& Spatial Understanding}
+
+\begin{itemize}
+    \item Complete per-camera homography mapping to estimate real-world positions
+    \item Prepare calibration files used by:
+    \begin{itemize}
+        \item Flow estimation
+        \item Speed measurement
+        \item Congestion heatmap generation
+    \end{itemize}
+\end{itemize}
+
+\subsection{Stability \& Scaling Improvements}
+
+\begin{itemize}
+    \item Introduce asynchronous fetch loops (\texttt{aiohttp}) for lower latency
+    \item Horizontal scaling using Docker \& Kubernetes
+    \item Automatic camera recovery for unstable endpoints
+    \item Load balancing across multiple scraper instances
+\end{itemize}
+
+\subsection{Dashboard \& Alerting}
+
+\begin{itemize}
+    \item Finalize Grafana dashboards for:
+    \begin{itemize}
+        \item Camera offline alerts
+        \item High failure rates
+        \item Latency spikes
+    \end{itemize}
+    \item Integrate with Slack/Email alerting
+    \item Implement real-time notification system for critical issues
+\end{itemize}
+
+\subsection{Integration with Other Modules}
+
+Connect to:
+
+\begin{itemize}
+    \item \textbf{Traffic Congestion Detection} — regular frame feed
+    \item \textbf{Routing} — live congestion weight updates
+\end{itemize}
+
+\section{Summary}
+
+The Data Collection module establishes a robust, real-time ingestion layer for traffic camera data—one of the most critical components of the transportation analytics system. The module currently supports stable scraping, preprocessing, standardized storage, monitoring, and basic compliance controls. This enables downstream systems to rely on a consistent and high-quality image stream.
+
+Key accomplishments include comprehensive camera registry management, real-time frame scraping with deduplication, standardized preprocessing pipeline, rolling retention storage, privacy compliance framework, Prometheus-based monitoring, and FastAPI endpoints for system integration. The module handles diverse camera sources with varying resolutions, frame rates, and connectivity stability while maintaining data quality through preprocessing and validation.
+
+Upcoming work focuses on enhancing privacy protection through automated blurring, scaling performance with asynchronous operations and containerization, implementing spatial calibration for accurate measurements, integrating with cloud storage (S3/MinIO), and building comprehensive monitoring dashboards. Once completed, the module will become a fully production-ready data backbone, supporting advanced AI-driven traffic analytics across the entire platform and enabling seamless integration with routing, congestion detection, bus mapping, and incident management systems.

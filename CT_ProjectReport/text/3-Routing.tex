@@ -1,0 +1,117 @@
+\chapter{Routing}
+\label{chap:routing}
+Routing is the system’s foundational module, responsible for searching for and displaying the shortest/fastest travel route between two points within Ho Chi Minh City. This chapter details the design, implementation, and how to solve the routing problem.
+
+% \textbf{Goal:} Build a function to search for and display the shortest/fastest route between two points within the scope of Ho Chi Minh City. \\
+% \textbf{Specific Requirements:}
+% \begin{itemize}
+%     \item \textbf{Input:} Users provide addresses or select coordinates on the map for the origin and destination.
+%     \item \textbf{Processing:}
+%     \begin{itemize}
+%         \item Convert addresses to coordinates (Geocoding)
+%         \item Calculate the route based on mode of transport (car, bicycle, pedestrian) and criteria (fastest, shortest)
+%         \item Return a list of coordinates (polyline) for the route, total distance (km), and estimated duration (minutes)
+%     \end{itemize}
+%     \item \textbf{Output:} Provide clean JSON data for the Frontend to render the route on Goong Maps (JS SDK) and display details.
+%     \item \textbf{Constraints:} The Backend system (Flask) acts as a Proxy Service calling the Goong Directions API to fetch data, then processing and returning it to the Frontend (React).
+% \end{itemize}
+
+\section{Problem Definition}
+The routing problem involves finding the optimal path between two geographic locations within Ho Chi Minh City, considering various modes of transportation (car, bicycle, pedestrian) and criteria (fastest, shortest). 
+The system must efficiently handle user requests, perform geocoding to convert addresses into coordinates, and interact with third-party mapping services to retrieve route information. Additionally, the solution must ensure that all routing requests are confined within the geographical boundaries of Ho Chi Minh City through geofencing techniques.
+
+\section{Decomposition}
+
+
+\forestset{
+	overviewnode/.style={text width=4cm, font=\small},
+	mini/.style={text width=3cm, font=\footnotesize}
+}
+
+\begin{figure}[H]
+    \centering
+    \resizebox{\linewidth}{!}{%
+    \begin{forest}
+        for tree={
+            grow'=south,
+            rounded corners,
+            draw=black!70, % Default border color
+            line width=0.8pt,
+            node options={align=left, inner xsep=5pt, inner ysep=4pt},
+            text width=4.4cm,
+            s sep=7mm,
+            l sep=9mm,
+            anchor=north,
+            edge={-stealth, line width=0.8pt, draw=black!50},
+            fill=white % Default fill
+        }
+            % 1. ROUTING (Blue theme)
+            [
+                {Routing}, overviewnode, for tree={fill=blue!10, draw=blue!60},
+                [{TomTom API Integration}, overviewnode,
+                    [{Overpass \\ API Access}, mini]
+                    [{Geocoding}, mini]
+                    [{Pathfinding}, mini]
+                ]
+                [{Visualize Routes}, overviewnode,
+                    [{Map Rendering}, mini]
+                    [{Itinerary Display}, mini]
+                ]
+            ]
+    \end{forest}}
+    \caption{Routing module decomposition overview}
+    \label{fig:routing-decomposition}
+\end{figure}
+
+The routing module is decomposed into two main submodules as illustrated in Figure \ref{fig:routing-decomposition}:
+
+\subsection{TomTom API Integration:} This submodule handles all interactions with the Goong Maps Directions and Geocoding APIs. It is responsible for sending requests to these services, processing the responses, and extracting relevant routing information such as coordinates, distance, and duration.
+    
+\subsection{Visualize Routes:} This submodule focuses on preparing the routing data for visualization on the Frontend. It formats the route information into a clean JSON structure that can be easily consumed by the Goong Maps JavaScript SDK for rendering the route on the map.
+
+The Backend system applies a Proxy Service model combined with Geofencing Middleware:
+
+\begin{itemize}
+    \item \textbf{Business Logic Processing:}
+    \begin{itemize}
+        \item Create a central endpoint \texttt{/route} to handle all routing requests
+        \item \textbf{Geofencing:} Before making calls to third-party APIs, the system validates whether the start/end coordinates fall within the Bounding Box of Ho Chi Minh City (Min/Max Lat/Lon)
+        \item \textbf{Data Parsing:} The Backend receives raw, complex JSON from TomTom and extracts only necessary data (arrays of lat/lon coordinates, total distance, total time) to minimize the payload sent to the client
+    \end{itemize}
+    
+    \item \textbf{Service Integration:} Use the Python \texttt{requests} library to perform Server-to-Server communication with the Goong Maps Directions / Geocoding APIs.
+    
+    \item \textbf{Security \& Personalization:} Use JWT Middleware (via the \texttt{token\_required} decorator) to protect route history storage APIs (\texttt{/api/user/routes}), ensuring users can only access their own data.
+\end{itemize}
+
+\section{Framework \& Tech Stack}
+
+\begin{itemize}
+    \item \textbf{Core Framework:}
+    \begin{itemize}
+        \item \textbf{Python (Flask):} Main framework for building the API server
+        \item \textbf{Flask-CORS:} Handles Cross-Origin Resource Sharing, allowing the React Frontend to consume APIs
+    \end{itemize}
+    
+    \item \textbf{Database Integration:}
+    \begin{itemize}
+        \item \textbf{MySQL Connector:} Library for connecting to the database to execute SQL queries for storing \texttt{user\_routes}
+    \end{itemize}
+    
+    \item \textbf{Security:}
+    \begin{itemize}
+        \item \textbf{PyJWT:} Generates and validates login tokens
+        \item \textbf{Bcrypt:} Hashes user passwords for security
+    \end{itemize}
+    
+    \item \textbf{External Service:}
+    \begin{itemize}
+        \item \textbf{Goong Maps Directions API:} Third-party service for route calculation (fastest/shortest with traffic)
+    \end{itemize}
+\end{itemize}
+
+
+
+\section{Summary}
+
+The routing module has established a robust proxy architecture integrating a Flask backend with the Goong Maps Directions and Geocoding APIs. It delivers route calculation with geofencing validation, multi‑modal transport support, and secure user history management. The five development phases (foundation, core routing, search, history, error handling) are complete; the system now supports traffic‑aware routing and returns minimal, frontend‑optimized JSON payloads. Future work targets k‑shortest alternative paths, expanded modal coverage, and performance improvements (caching, async I/O) for city-scale usage.

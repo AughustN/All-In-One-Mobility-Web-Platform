@@ -1,0 +1,94 @@
+\chapter{Bus Map System}
+\label{chap:busmap}
+The Bus Map System module focuses on developing a public transportation routing solution specifically for bus travel within Ho Chi Minh City. The primary objective is to create an independent routing engine that can suggest optimal bus routes between two user-defined locations, taking into account various factors such as travel time, number of transfers, fare costs, and waiting penalties.
+
+
+\section{Problem Definition}
+While public transportation in Ho Chi Minh City is widely available, it remains difficult for first-time visitors to navigate efficiently. Existing mobile applications (e.g., BusMap, Google Maps) provide bus route guidance, but their proprietary algorithms lack transparency and are not easily extensible for research-driven experimentation.
+
+This project aims to build an \textbf{independent system} that helps visitors choose the \textbf{optimal bus route}, considering \textbf{travel time, transfers, cost, and waiting penalties}. A key challenge is the \textbf{lack of open-source and up-to-date bus route data}. To address this, data was collected manually from official city transport sources and combined into structured CSV files, forming the foundational dataset of this project.
+
+\section{Decomposition}
+
+\forestset{
+    overviewnode/.style={text width=4cm, font=\small},
+    mini/.style={text width=3cm, font=\footnotesize}
+}
+
+\begin{figure}[H]
+    \centering
+    \resizebox{\linewidth}{!}{%
+    \begin{forest}
+        for tree={
+            grow'=south,
+            rounded corners,
+            draw=black!70, % Default border color
+            line width=0.8pt,
+            node options={align=left, inner xsep=5pt, inner ysep=4pt},
+            text width=4.4cm,
+            s sep=7mm,
+            l sep=9mm,
+            anchor=north,
+            edge={-stealth, line width=0.8pt, draw=black!50},
+            fill=white % Default fill
+        }
+            % 2. BUS SYSTEM (Blue theme)
+            [
+                {Bus Map System}, overviewnode, for tree={fill=cyan!10, draw=cyan!60},
+                [
+                    {Data Collection}, overviewnode,
+                    [{Bus Routes}, mini]
+                    [{Bus Stops}, mini]
+                    [{Fare Data}, mini]
+                ]
+                [
+                    {Pathfinding Algorithm}, overviewnode
+                ]
+                [
+                    {Visualizing Trip}, overviewnode
+                ]
+            ]
+    \end{forest}
+    }
+    \caption{Bus Map System Module Decomposition}
+    \label{fig:busmap-overview}
+\end{figure}
+
+\subsection{Data Collection:} This submodule is responsible for gathering and structuring bus-related data, including bus routes, stops, and fare information. The collected data is organized into normalized CSV files to facilitate efficient access and processing by the routing engine.
+
+\subsection{Pathfinding Algorithm:} This submodule implements a graph-based routing engine that calculates optimal bus itineraries based on multiple criteria such as travel time, number of transfers, fare costs, and waiting penalties. The algorithm is designed to be transparent and extensible for future enhancements.
+
+\subsection{Visualizing Trip:} This submodule focuses on presenting the calculated bus routes to users in an intuitive manner. It formats the routing information into a structured JSON format suitable for rendering on the frontend using mapping libraries.
+
+\section{Framework \& Tech Stack}
+The Bus Map System module is built using the following technologies:
+\begin{itemize}
+    \item \textbf{Backend:} Python with Flask framework for handling API requests and
+    \item \textbf{Data Storage:} MySQL database for storing structured bus data.
+    \item \textbf{Routing Engine:} Custom graph-based algorithm implemented in Python.
+    \item \textbf{Frontend Visualization:} Goong Maps JavaScript SDK for rendering
+    \item \textbf{Data Formats:} CSV for raw data storage, JSON for API responses.
+    \item \textbf{Version Control:} Git for source code management.
+    \item \textbf{Development Environment:} Visual Studio Code for code editing and debugging.
+    \item \textbf{Testing:} Postman for API testing and validation.
+    \item \textbf{Deployment:} Local server for development and testing purposes.
+    \item \textbf{Libraries:} NetworkX for graph operations, Pandas for data manipulation.
+    \item \textbf{APIs:} Goong Maps Geocoding API for address resolution.
+\end{itemize}
+
+\section{Implementation Details}
+The Bus Map System module is implemented as a Flask-based backend service that exposes RESTful APIs for bus route planning. The core components include:
+\begin{itemize}
+    \item \textbf{Data Ingestion:} Scripts to read and normalize bus route
+    \item \textbf{Graph Construction:} Building a directed graph representation of the bus network using NetworkX.
+    \item \textbf{Routing Algorithm:} Implementation of a modified A* algorithm that
+    \item  \textbf{API Endpoints:} Endpoints for route planning, including parameters for start/end locations, preferences (e.g., minimize transfers, cost).
+    \item \textbf{Frontend Integration:} JSON responses formatted for easy consumption by the frontend mapping library.
+    \item \textbf{Testing \& Validation:} Unit tests for individual components and integration tests for end-to-end functionality.
+\end{itemize}
+
+\section{Summary}
+
+The BusMap module has established an independent, data-driven public transportation routing system for Ho Chi Minh City. It addresses the challenge of limited open-source bus data through manual collection and structuring into normalized CSV layers (stops, routes, trips). A graph-based routing engine (modified A*) incorporates transfer penalties, initial waiting time, walking distance constraints, and fare weighting to produce realistic itineraries. The current implementation includes a Flask backend, in-memory graph cache, MySQL integration foundation, Goong Maps geocoding support, and interactive frontend visualization. This transparent design enables experimentation, refinement of cost models, and future integration of live timetable or congestion data. The system already delivers optimal bus route recommendations with interpretable cost components for both visitors and research use cases.
+
+

@@ -1,0 +1,78 @@
+\newgeometry{left=3cm,right=3cm, bottom=3cm, top=3cm}
+
+\thispagestyle{empty}
+
+% --- Khung đồ họa cao cấp ---
+\begin{tikzpicture}[remember picture, overlay]
+    % Khung chính
+    \draw [line width = 2pt, color=cover-foreground!60]
+        ($(current page.north west) + (2cm,-2cm)$)
+        rectangle
+        ($(current page.south east) + (-2cm,2cm)$);
+    
+    % Họa tiết góc chữ L kép
+    \foreach \x/\y/\rotate in {2/-2/0, -2/-2/90, -2/2/180, 2/2/270} {
+        \begin{scope}[shift={($(current page.north west) + (\x cm,\y cm)$)}, rotate=\rotate]
+            \draw [line width = 2.5pt, color=cover-foreground] (0,0) -- (1.5,0);
+            \draw [line width = 2.5pt, color=cover-foreground] (0,0) -- (0,-1.5);
+            \draw [line width = 0.5pt, color=cover-foreground] (0.3,-0.3) -- (1.2,-0.3);
+            \draw [line width = 0.5pt, color=cover-foreground] (0.3,-0.3) -- (0.3,-1.2);
+        \end{scope}
+    }
+\end{tikzpicture}
+
+\color{cover-foreground}
+
+\begin{center}
+    % 1. Logo và Tên Tổ chức
+    \vspace*{-1cm}
+    {\small \lsstyle \uppercase{Vietnam National University, Ho Chi Minh City \\ University of Science}} \\[0.5cm]
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4\textwidth]{frontmatter/HCMUS.pdf}
+    \end{figure}
+
+    \vspace{1cm}
+
+    % 2. Nhóm tác giả [cite: 4]
+    {\Large \textls[150]{\textsc{\author}}} 
+    
+    \vspace{0.8cm}
+    \begin{tikzpicture} \draw[very thin] (0,0) -- (6,0); \end{tikzpicture}
+    \vspace{0.8cm}
+
+    % 3. Tiêu Đề Chính [cite: 4]
+    \begin{spacing}{1.4}
+        {\huge \textbf{\textls[50]{\uppercase{\titleEN}}}}
+    \end{spacing}
+
+    \vspace{0.8cm}
+    \begin{tikzpicture} \draw[very thin] (0,0) -- (6,0); \end{tikzpicture}
+    \vspace{1cm}
+
+    % 4. Thông tin Giảng viên hướng dẫn (Mới thêm)
+    % {\large \textls[100]{\textsc{Supervised by}}} \\[0.3cm]
+    % {\Large \textbf{\supervisor}}
+
+    \vfill 
+
+    % 5. Thông tin báo cáo 
+    \begin{tcolorbox}[colframe=cover-foreground!0, colback=white, width=10cm, arc=0mm, boxrule=0pt]
+        \centering
+        \small \lsstyle \textbf{PROJECT REPORT} \\
+        \vspace{1mm}
+        \footnotesize \lsstyle Class: \class \\
+        \footnotesize \lsstyle Group: \groupid \\
+        \vspace{2mm}
+        \footnotesize 
+    \end{tcolorbox}
+
+    \vspace{1cm}
+
+    % 6. Ngày Tháng [cite: 4]
+    {\large \textls[200]{\textbf{\dateEN}}}
+
+\end{center}
+
+\restoregeometry
+\color{black}

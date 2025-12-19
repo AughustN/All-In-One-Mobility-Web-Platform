@@ -1,0 +1,20 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces System Decomposition Overview\relax }}{5}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Decomposition of Data Acquisition and AI/ML Modules.\relax }}{6}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Decomposition of Routing Engine and Safety/SOS Modules.\relax }}{6}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Decomposition of Backend API and Frontend UI Modules.\relax }}{6}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Graph Abstraction of Bus Network with Walking Transfers\relax }}{17}{figure.caption.28}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces System Architecture Flowchart\relax }}{20}{figure.caption.38}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Vehicle Detection Pipeline\relax }}{23}{figure.caption.48}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Percentile-Based Classification\relax }}{24}{figure.caption.54}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces AI Trip Planning Pipeline\relax }}{25}{figure.caption.59}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Route Planning Interface\relax }}{35}{figure.caption.86}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Bus Routing Interface\relax }}{35}{figure.caption.87}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces AI Trip Planner\relax }}{36}{figure.caption.88}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces SOS Emergency System\relax }}{36}{figure.caption.89}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Authentication Interface\relax }}{37}{figure.caption.90}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }

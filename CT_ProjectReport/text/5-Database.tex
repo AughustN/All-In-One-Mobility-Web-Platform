@@ -1,0 +1,102 @@
+\chapter{Database}
+\label{chap:database}
+
+This chapter presents the development of the database module, which provides the persistent storage infrastructure for the transportation data platform. The database system manages diverse data types including user/authentication records, SOS incidents, camera metadata and images, and bus routing datasets (stops, routes, trips), ensuring efficient storage, retrieval, and query performance.
+
+A well-designed database architecture is fundamental to supporting analytics, real-time applications, and historical trend analysis across the platform.
+
+\section{Problem Definition}
+The transportation data platform requires a robust database system to handle various data types with differing access patterns and performance needs. Key challenges include:
+\begin{itemize}
+    \item Storing user authentication and profile data securely
+    \item Managing SOS incident reports with geolocation and multimedia attachments
+    \item Cataloging traffic camera metadata and storing high-volume image frames
+    \item Ingesting and querying bus route datasets for efficient pathfinding
+    \item Ensuring data integrity, consistency, and backup/recovery mechanisms
+\end{itemize}
+
+\section{Decomposition}
+\forestset{
+    overviewnode/.style={text width=4cm, font=\small},
+    mini/.style={text width=3cm, font=\footnotesize}
+}
+
+\begin{figure}[H]
+    \centering
+    \resizebox{\linewidth}{!}{%
+    \begin{forest}
+        for tree={
+            grow'=south,
+            rounded corners,
+            draw=black!70, % Default border color
+            line width=0.8pt,
+            node options={align=left, inner xsep=5pt, inner ysep=4pt},
+            text width=4.4cm,
+            s sep=7mm,
+            l sep=9mm,
+            anchor=north,
+            edge={-stealth, line width=0.8pt, draw=black!50},
+            fill=white % Default fill
+        }
+            % 5. DATABASE (Gray theme - infrastructure)
+            [
+                {Database Management}, overviewnode, for tree={fill=gray!10, draw=gray!60},
+                [
+                    {Schema Design}, overviewnode,
+                ],
+                [
+                    {Indexing}, overviewnode,
+                ]
+            ]
+    \end{forest}
+    }
+    \caption{Database Module Decomposition}
+    \label{fig:database-overview}
+\end{figure}   
+
+The database module has accomplished the following:
+
+\begin{itemize}
+    \item \textbf{Database Platform:} Standardized on \textbf{MySQL} (XAMPP) for the application database used by the Flask backend.
+    
+    \item \textbf{Core Schemas:}
+    \begin{itemize}
+        \item \textbf{users}: id, username, email (unique), password (nullable for OAuth), oauth\_provider, oauth\_provider\_id, created\_at
+        \item \textbf{user\_locations}: id, user\_id (FK), name, lat, lon, created\_at
+        \item \textbf{user\_routes}: id, user\_id (FK), start\_name, end\_name, coords (JSON), distance\_km, duration\_min, created\_at
+        \item \textbf{sos\_locations}: id, user\_id (FK), lat, lon, image\_url, status, created\_at
+        \item \textbf{camera\_locations}: id, name, lat, lon, url, refresh\_rate, status, created\_at
+        \item \textbf{camera\_frames} (optional): id, camera\_id (FK), ts, storage\_path, sha256
+        \item \textbf{bus\_stops} (from stops.csv): stop\_id, name, lat, lon
+        \item \textbf{bus\_routes} (from routes.csv): route\_id, name, fare, spacing\_penalty
+        \item \textbf{bus\_trips} (from trips.csv): route\_id, seq, stop\_id, dist\_m
+    \end{itemize}
+    
+    \item \textbf{OAuth Migration:} Applied changes to support social login (add email unique, oauth\_provider, oauth\_provider\_id; allow NULL password). Migration script: \texttt{temp\_server/oauth\_migration.sql}.
+    
+    \item \textbf{Indexing Strategy:} Created indexes on \texttt{users.email}, \texttt{user\_locations.user\_id}, \texttt{user\_routes.user\_id}, and geo-related columns (lat/lon where applicable) to optimize frequent queries.
+    
+    \item \textbf{Backup and Retention:} Established retention policies for camera frames (24–72h rolling) and scheduled MySQL dumps for application tables.
+    
+    \item \textbf{ETL Loading:} Implemented loading of CSV-based bus datasets into MySQL and caching in memory (\texttt{graph\_cache}) for routing performance.
+\end{itemize}
+
+\section{Next Steps}
+
+Future development priorities for the database module include:
+
+\begin{itemize}
+    \item \textbf{Performance Tuning:} Analyze query plans, add composite indexes for common filters (e.g., user\_id + created\_at), and consider table partitioning for large append-only tables (frames, routes history).
+    
+    \item \textbf{Caching Layer:} Use Redis for hot-path reads (e.g., user\_routes recent, bus graph metadata) to reduce DB load and improve latency.
+    
+    \item \textbf{Data Archival:} Implement S3/MinIO archival for camera frames beyond retention windows; keep metadata pointers for recall.
+    
+    \item \textbf{High Availability:} Set up MySQL replication and routine backups; add health checks and failover procedures.
+    
+    \item \textbf{Security Enhancements:} Enforce least-privilege DB users, at-rest encryption where possible, and secure connection strings via environment variables.
+\end{itemize}
+
+\section{Summary}
+
+The database module has established a robust foundation using MySQL for core application data (auth, user content, SOS, camera registry/frames, and bus datasets). The system efficiently stores and retrieves diverse transportation data with proper indexing, retention/backup procedures, and data integrity constraints. Future work will focus on performance optimization, high availability, caching strategies, and archival integration. The database infrastructure is well-positioned to scale with the platform's growing data needs and analytical requirements.

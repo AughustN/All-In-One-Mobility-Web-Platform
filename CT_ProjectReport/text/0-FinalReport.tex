@@ -1,0 +1,391 @@
+\chapter{Team Members \& Task Allocation}
+\label{chap:team}
+
+\textbf{Group ID:} \groupid \\
+\textbf{Class:} \class \\
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|l|l|p{7cm}|}
+\hline
+\textbf{Student ID} & \textbf{Full Name} & \textbf{Role} & \textbf{Specific Tasks Assigned} \\ \hline
+24127021 & \VN{Nguyễn Thành Đạt} & Routing Lead & OSM/Overpass integration; graph building; A* routing; performance testing; API integration \\ \hline
+24127041 & \VN{Hoàng Trung Hiếu} & Bus Routing & Bus dataset modeling (stops/routes/trips); modified A* with transfer/waiting penalties; map visualization \\ \hline
+24127298 & \VN{Lương Hưng Phát} & Safety \& Monitoring & Vehicle detection/tracking; flow graph features; congestion prediction (GNN); alert policy (R/Y/G) \\ \hline
+24127188 & \VN{Nguyễn Minh Khoa} & Data Collection & Data crawling/scraping pipelines; dataset organization and cleaning for downstream modules \\ \hline
+24127430 & \VN{Nguyễn Anh Khôi} & Database \& ETL & BusMap reverse engineering; decrypt/normalize data; export CSVs; database schema design \\ \hline
+24127373 & \VN{Nguyễn Tấn Hiệu} & UI/UX \& Integration & Information architecture; UI prototype; React/Next.js UI integration with backend APIs \\ \hline
+\end{tabular}
+\caption{Team members and task allocation.}
+\end{table}
+
+\chapter{Problem Analysis}
+\label{chap:problem-analysis}
+
+\section{Context}
+Urban commuters face fragmented mobility services (separate apps for routing, transit info, safety alerts). They need a unified experience that supports:
+\begin{itemize}
+  \item finding routes quickly,
+  \item adapting to congestion,
+  \item accessing public transport options,
+  \item and reporting/seeing safety incidents (SOS).
+\end{itemize}
+
+\section{Goal}
+Build a unified web platform that integrates:
+\begin{enumerate}
+  \item \textbf{Routing} (geocoding + route computation + visualization),
+  \item \textbf{Trip recommendation} (generate day itineraries from curated datasets using LLM),
+  \item \textbf{Traffic congestion monitoring} (camera-based vehicle counting $\rightarrow$ congestion classification $\rightarrow$ map overlay),
+  \item \textbf{Safety SOS reporting} (map-based SOS alerts with images),
+  \item \textbf{User features} (authentication, saved locations/routes).
+\end{enumerate}
+
+\section{Use Case Scenarios}
+\begin{enumerate}
+  \item \textbf{Route planning (driver/walker):} User enters start/end in HCMC $\rightarrow$ system geocodes, computes route, renders path on map.
+  \item \textbf{Congestion-aware trip:} User views congestion overlay on route map; chooses route with fewer red segments.
+  \item \textbf{Camera inspection:} User searches a camera by name/location $\rightarrow$ selects camera $\rightarrow$ views recent images.
+  \item \textbf{SOS reporting:} User reports an incident with location + optional image $\rightarrow$ other users see SOS markers; reporter can resolve.
+  \item \textbf{Tourism 1-day plan (recommender):} User asks for a 1-day itinerary with preferences (budget, cuisine) $\rightarrow$ LLM generates structured plan $\rightarrow$ system matches places in dataset $\rightarrow$ display itinerary on Goong map with images.
+\end{enumerate}
+
+\chapter{Computational Thinking Application}
+\label{chap:ct}
+
+\section{Decomposition \& Pattern Recognition}
+
+\subsection{Decomposition}
+We decomposed the system into independent modules with clear interfaces:
+\begin{enumerate}
+  \item \textbf{Routing Module (24127021)}
+  \begin{itemize}
+    \item OSM data download (Overpass) by vehicle mode
+    \item Graph construction
+    \item A* shortest path
+    \item TomTom search/routing proxy + visualization
+  \end{itemize}
+
+  \item \textbf{Recommender Module (24127041)}
+  \begin{itemize}
+    \item Data scraping (restaurants/landmarks), dataset building
+    \item LLM itinerary generation (JSON-only output contract)
+    \item Fuzzy matching + alias canonicalization
+    \item Geocoding fallback when matching fails
+    \item Map visualization of itinerary
+  \end{itemize}
+
+  \item \textbf{Congestion Module (24127298)}
+  \begin{itemize}
+    \item Camera crawling + frame storage
+    \item YOLO vehicle detection and counting
+    \item Segment clustering + time-window aggregation
+    \item Percentile-based congestion classification + GeoJSON coloring
+    \item UI for cameras and congestion overlays
+  \end{itemize}
+
+  \item \textbf{Safety/SOS Module (24127298 + API backends)}
+  \begin{itemize}
+    \item Report SOS (with image)
+    \item List active SOS alerts
+    \item Resolve SOS
+    \item Map visualization
+  \end{itemize}
+
+  \item \textbf{User Data \& Authentication (API backends + frontend)}
+  \begin{itemize}
+    \item JWT login/register
+    \item Save/load recent locations and routes
+    \item Token expiration handling on client
+  \end{itemize}
+\end{enumerate}
+
+\subsection{Pattern Recognition}
+Examples of patterns recognized and exploited:
+\begin{itemize}
+  \item \textbf{Routing data pattern:} OSM data always provides \texttt{nodes} and \texttt{ways}. Ways contain ordered node lists; edges can be derived from consecutive pairs.
+  \item \textbf{Geospatial pattern:} Many problems reduce to computing distance between coordinates:
+  \begin{itemize}
+    \item routing edge weights (haversine),
+    \item camera-to-route proximity (point-to-segment distance),
+    \item clustering cameras by distance threshold.
+  \end{itemize}
+  \item \textbf{LLM output pattern:} LLM outputs are often noisy; requiring \textbf{strict JSON-only output} + a robust \texttt{extract\_json()} function mitigates failures.
+  \item \textbf{Place naming pattern:} Place names appear in multiple variants (aliases, accent differences). Normalization and alias maps improve matching reliability.
+\end{itemize}
+
+\section{Abstraction}
+
+\subsection{What we kept (key attributes)}
+	extbf{Routing}
+\begin{itemize}
+  \item Node ID $\rightarrow$ \texttt{(lat, lon)}
+  \item Edge weights (distance meters) + oneway direction
+\end{itemize}
+
+	extbf{Trip recommender dataset}
+\begin{itemize}
+  \item Place: \texttt{name}, \texttt{norm} (normalized), \texttt{lat}, \texttt{lng}, \texttt{image\_local\_path}
+  \item Itinerary item: \texttt{time}, \texttt{activity}, \texttt{place}, \texttt{aliases}, \texttt{address}, \texttt{cost}
+\end{itemize}
+
+	extbf{Traffic congestion}
+\begin{itemize}
+  \item Detection: \texttt{camera\_id}, timestamp, counts by class (car/motorcycle/bus/truck), total vehicles
+  \item Segment: \texttt{segment\_id}, \texttt{camera\_ids}, centroid \texttt{(lat, lon)}
+  \item Aggregation: 15-minute time window stats (\texttt{avg\_vehicles}, \texttt{std}, \texttt{min}, \texttt{max}, \texttt{sample\_count})
+  \item Congestion: class label or severity color per segment (GeoJSON property \texttt{color})
+\end{itemize}
+
+	extbf{SOS}
+\begin{itemize}
+  \item \texttt{lat}, \texttt{lng}, \texttt{description}, \texttt{image\_url}, \texttt{status}, reporter/user reference
+\end{itemize}
+
+\subsection{What we ignored (examples)}
+\begin{itemize}
+  \item For trip data: phone numbers, establishment dates, extended descriptions not needed for planning.
+  \item For congestion: bounding boxes of each detected vehicle (we keep aggregated counts, not raw detections in the UI).
+  \item For routing: detailed road metadata not needed for shortest path (we focus on distance-based weights).
+\end{itemize}
+
+\subsection{Why sufficient}
+\begin{itemize}
+  \item The AI/recommendation logic only needs \textbf{place identity + coordinates + lightweight metadata} to generate and visualize an itinerary.
+  \item Congestion classification only needs \textbf{time-window vehicle counts} per segment; storing raw video is unnecessary and privacy-sensitive.
+\end{itemize}
+
+\section{Algorithm Design}
+
+\subsection{System flowchart (text diagram)}
+\begin{verbatim}
+USER
+ |- Routing Request (start/end)
+ |   |- Search (TomTom / Nominatim) -> coords
+ |   |- Route:
+ |   |    |- Option 1: TomTom Routing API (fast)
+ |   |    `- Option 2: OSM Graph + A* (local)
+ |   `- Render map route (Goong/Folium)
+ |
+ |- Congestion View
+ |   |- Fetch congestion GeoJSON
+ |   `- Overlay on map / color route segments
+ |
+ |- Camera View
+ |   |- Load camera_locations.json
+ |   |- Search/select camera
+ |   `- Fetch camera image proxy URLs
+ |
+ |- SOS
+ |   |- POST /api/sos (lat,lng,desc,image)
+ |   |- GET /api/sos (active)
+ |   `- POST /api/sos/resolve
+ |
+ `- Trip Recommender
+  |- Build datasets (scrape -> merge -> normalize)
+  |- LLM generates JSON itinerary
+  |- Fuzzy match places -> attach lat/lng/image
+  `- Show itinerary on Goong map
+\end{verbatim}
+
+\subsection{Pseudocode --- core recommender logic (LLM + matching)}
+\begin{verbatim}
+function generate_trip_plan(user_query):
+  prompt = build_json_only_prompt(user_query)
+  llm_output = call_llm(prompt)
+  json_text = extract_first_valid_json(llm_output)
+  plan = parse_json(json_text)
+
+  for each item in plan.itinerary:
+    matched = fuzzy_match(place=item.place, aliases=item.aliases)
+    if matched exists:
+      item.lat = matched.lat
+      item.lng = matched.lng
+      item.image_url = matched.image_local_path
+      item.matched = true
+    else:
+      geo = geocode(item.address + ", Ho Chi Minh City")
+      if geo exists:
+        item.lat = geo.lat
+        item.lng = geo.lng
+      item.image_url = null
+      item.matched = false
+
+  return plan
+\end{verbatim}
+
+\subsection{Pseudocode --- congestion pipeline (detection -> aggregation -> classify)}
+\begin{verbatim}
+loop periodically:
+  crawl_new_camera_frames()
+  detections = run_yolo_on_frames()
+  store_detections_to_sqlite()
+
+  segments = cluster_cameras_by_distance(camera_locations, max_distance=500m)
+  agg = aggregate_detections_by_segment_and_time_window(window=15min)
+
+  thresholds = percentile_thresholds(agg, min_samples=20)
+  congestion = classify_each_segment(agg.latest, thresholds)
+
+  export_congestion_geojson(congestion)
+\end{verbatim}
+
+\chapter{Implementation}
+\label{chap:implementation}
+
+\section{Data Collection}
+
+\subsection{Routing data (OSM)}
+\begin{itemize}
+  \item \textbf{Source:} OpenStreetMap via Overpass API
+  \item \textbf{Script:} \texttt{24127021/DownloadMapDataHCMC.py}
+  \item \textbf{Collected features:} nodes (id, lat, lon), ways (sequence of nodes), highway tags, access constraints.
+  \item \textbf{Mode-specific datasets:} \texttt{car\_data.json}, \texttt{motorbike\_data.json}, \texttt{bicycle\_data.json}, \texttt{walk\_data.json}.
+\end{itemize}
+
+\subsection{Congestion camera data}
+\begin{itemize}
+  \item \textbf{Source:} Ho Chi Minh City traffic camera server (proxied via backend)
+  \item \textbf{Crawler:} \texttt{24127298/CongestionPredictionModel/HCMCrawler.py}
+  \item \textbf{Output:} images + metadata stored in \texttt{camera\_frames/}, plus camera metadata in \texttt{camera\_locations.json}.
+\end{itemize}
+
+\subsection{Trip recommender datasets}
+\begin{itemize}
+  \item \textbf{Restaurants:} scraped from PasGo (\texttt{PasGo\_Scrape.py}) + cover images downloaded.
+  \item \textbf{Landmarks:} Wikimedia Commons API (\texttt{wikimedia\_crawl\_landMarks.py}) + images.
+  \item \textbf{Merged dataset:} \texttt{combined\_locations.json} with normalized names + coordinates + image paths.
+\end{itemize}
+
+Dataset size varies by scrape; scripts report counts during build.
+
+\section{AI Models}
+
+\subsection{Recommender (Knowledge-based + LLM planner)}
+\begin{itemize}
+  \item \textbf{Type:} Knowledge-based itinerary generator
+  \begin{itemize}
+    \item LLM proposes itinerary steps
+    \item System constrains to known places via matching and dataset references
+  \end{itemize}
+  \item \textbf{LLM backend:} Groq API (example: \texttt{llama-3.3-70b-versatile}) in \texttt{PlanTrip\_API.py}
+  \item \textbf{Parsing safeguards:} \texttt{extract\_json()} brace counting to recover JSON from messy outputs
+  \item \textbf{Matching:} RapidFuzz + token index + alias canonicalization (\texttt{match\_cache.py})
+  \item \textbf{Fallback geocoding:} Geoapify $\rightarrow$ Nominatim (\texttt{CovertAddressToCoord.py})
+\end{itemize}
+
+\subsection{Computer Vision for congestion}
+\begin{itemize}
+  \item \textbf{Model:} Ultralytics YOLO (configured for car/motorcycle/bus/truck)
+  \item \textbf{Script:} \texttt{detector\_batch.py}
+  \item \textbf{Optimizations:} CLAHE + denoise preprocessing, class-specific confidence thresholds, SQLite persistence.
+\end{itemize}
+
+\subsection{Congestion classification}
+\begin{itemize}
+  \item \textbf{Approach:} Percentile-based thresholds per segment (\texttt{classified\_congestion.py})
+  \item \textbf{Output:} congestion classes and colored GeoJSON for map overlay.
+\end{itemize}
+
+\section{Web Application Development}
+
+\subsection{Frameworks \& libraries}
+\begin{itemize}
+  \item \textbf{Backend:} Flask (\texttt{API.py}), CORS, JWT auth, MySQL connector, file upload handling.
+  \item \textbf{Frontend:} React + Goong Maps (\texttt{GoongMap.js}, \texttt{GoongCameraMap.js}, \texttt{CameraMapNew.js}).
+  \item \textbf{Mapping:} Goong for interactive UI, Folium for script-based outputs.
+  \item \textbf{Client API:} centralized in \texttt{api.js} (auth, routing, congestion, SOS, cameras).
+\end{itemize}
+
+\subsection{Screenshots}
+Add screenshots of:
+\begin{itemize}
+  \item Camera map with selected camera + images
+  \item Route map with congestion overlay
+  \item SOS marker on map + report form/modal
+  \item Trip recommender itinerary map with popups
+\end{itemize}
+
+\noindent\textit{(Not included here because no images were provided. You can insert them in the final PDF/Word report.)}
+
+\chapter{Testing \& Improvement}
+\label{chap:testing}
+
+\section{Testing (example cases)}
+\begin{enumerate}
+  \item \textbf{Routing}
+  \begin{itemize}
+    \item Input: start/end in HCMC $\rightarrow$ Output: coords list, distance\_km, duration\_min (TomTom)
+    \item Input: choose transport mode + addresses $\rightarrow$ Output: \texttt{shortest\_path\_map.html} (A*)
+  \end{itemize}
+
+  \item \textbf{Recommender}
+  \begin{itemize}
+    \item Input: ``1-day trip in HCMC, Japanese/Korean food, budget < 1M, start D1''
+    \item Output: JSON itinerary; matched flags; map markers in \texttt{GoongPlanTripMap.js}.
+  \end{itemize}
+
+  \item \textbf{Congestion}
+  \begin{itemize}
+    \item Input: camera frames $\rightarrow$ Output: SQLite detections, aggregated CSV, classified congestion GeoJSON
+    \item UI: overlay route coloring and camera browsing confirms end-to-end integration.
+  \end{itemize}
+\end{enumerate}
+
+\section{Evaluation}
+\begin{itemize}
+  \item Trip plans are structured and visualizable; quality improves when dataset coverage is strong and matching succeeds.
+  \item Congestion overlay provides interpretable red/yellow/green segments and supports user decision-making.
+  \item SOS feature provides actionable safety reporting and resolution flow.
+\end{itemize}
+
+\section{Limitations}
+\begin{itemize}
+  \item Some API keys are hardcoded (TomTom/Groq/Geoapify) $\rightarrow$ must be moved to environment variables.
+  \item Real-time scheduling/orchestration for crawl $\rightarrow$ detect $\rightarrow$ aggregate $\rightarrow$ classify is not fully automated in code shown.
+  \item Congestion label method is percentile-based; not yet a learned GNN predictor as proposed in planning docs.
+  \item Dataset coverage for recommender is limited to scraped sources; missing categories may reduce plan quality.
+\end{itemize}
+
+\section{Future Improvements}
+\begin{itemize}
+  \item Add a job scheduler (Celery/cron) for congestion pipeline to guarantee freshness.
+  \item Replace percentile congestion with trained spatiotemporal model (e.g., ST-GNN) once ground truth is available.
+  \item Improve recommender constraints: explicitly restrict LLM to dataset IDs, not only fuzzy matching.
+  \item Add monitoring/observability (metrics for API latency, detection speed, data freshness).
+  \item Enhance UI accessibility (keyboard navigation, ARIA labels, colorblind-friendly legend).
+\end{itemize}
+
+\chapter{Conclusion}
+\label{chap:conclusion}
+
+This project demonstrates an integrated mobility platform that combines routing, travel planning recommendations, congestion monitoring, and SOS safety reporting into one user-facing system. Using Computational Thinking, we decomposed complex urban mobility needs into modular components, applied abstraction to focus on essential data attributes, and designed algorithms (A*, fuzzy matching, percentile classification) that enable reliable, scalable functionality. The team learned to balance AI-driven features (LLM planning, computer vision) with strong engineering practices (data pipelines, safe parsing, map visualization, API integration).
+
+\chapter{References}
+\label{chap:references}
+\section*{APIs}
+\begin{itemize}
+  \item OpenStreetMap / Overpass API
+  \item TomTom Search \& Routing API
+  \item Wikimedia Commons API
+  \item Groq LLM API (Llama 3.3)
+  \item Geoapify Geocoding API + OSM Nominatim fallback
+\end{itemize}
+
+\section*{Libraries}
+\begin{itemize}
+  \item Flask, flask-cors, mysql-connector-python, bcrypt, PyJWT
+  \item React, Goong Maps SDK
+  \item Ultralytics YOLO, OpenCV, pandas, numpy, sqlite3
+  \item RapidFuzz, unidecode
+  \item Folium
+\end{itemize}
+
+\section*{Tutorials/Docs}
+\begin{itemize}
+  \item Overpass QL documentation
+  \item TomTom developer documentation
+  \item Ultralytics YOLO docs
+  \item Goong Maps documentation
+\end{itemize}

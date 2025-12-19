@@ -1,0 +1,170 @@
+\chapter{Problem Analysis}
+
+\section{Contextual Background}
+% Travelers, from leisure visitors to business professionals, face significant and costly friction in
+% planning and executing urban itineraries, which stems from a core problem of fragmented data.
+% Critical decision-making data on public transit schedules (GTFS), ride-hail fares, live traffic, and
+% operating hours exists in disconnected silos. \\
+% This forces users to manually compare multiple apps, leading to:
+% \begin{itemize}
+%     \item Inefficient planning under complex constraints (time, budget, transfers).
+%     \item Suboptimal in-the-moment transport choices, failing to balance cost, ETA.
+%     \item Reactive, unactionable responses to congestion and crowding.
+% \end{itemize}
+
+Exploring a large city should feel intuitive and rewarding, especially for visitors with limited time. However, many travelers struggle not because the city lacks attractions or transportation options, but because moving between places is unnecessarily complicated. Visitors are often unsure which route is truly the best, how long a journey will realistically take, or whether a chosen option will still make sense once traffic, transfers, and waiting time are taken into account.
+
+This lack of clarity creates a series of challenges that directly undermine the tourism experience:
+
+\begin{itemize}
+  \item \textbf{Too many choices, not enough clarity:} Tourists are presented with multiple transport options, yet lack confidence in knowing which one will actually get them to their destination faster, cheaper, and with less hassle.
+  
+  \item \textbf{Time lost to planning instead of exploring:} Valuable travel time is spent comparing routes, checking schedules, and adjusting plans on the go rather than enjoying the city itself.
+  
+  \item \textbf{Stress in unfamiliar environments:} Navigating public transport systems, transfers, and traffic conditions can feel intimidating, particularly for first-time visitors.
+  
+  \item \textbf{Late reactions to delays and congestion:} Travelers often become aware of problems only after they are already affected, with limited visibility into better alternatives.
+  
+  \item \textbf{Fewer experiences, lower satisfaction:} To avoid uncertainty, visitors tend to play it safe—skipping destinations, shortening itineraries, or choosing costly transport options—ultimately reducing the overall quality of their trip.
+\end{itemize}
+
+Instead of confidently exploring the city, travelers become reactive and risk-averse. For short stays in particular, this friction directly limits how much of the city can be experienced and significantly diminishes overall travel satisfaction.
+
+
+\section{Project Goal}
+The primary objective of this project is to develop a comprehensive, AI-featured Tourism System. This platform aims to bridge the gap between complex urban data and user-friendly travel assistance by providing:
+\begin{enumerate}
+    \item \textbf{Intelligent Trip Planning:} A Generative AI solution that creates personalized itineraries by fuzzy-matching user preferences against a verified database of locations.
+    \item \textbf{Optimized Public Transit Routing:} A custom A* pathfinding algorithm that accounts for real-time traffic conditions to suggest the most efficient bus routes.
+    \item \textbf{Live Congestion Monitoring:} A computer vision pipeline utilizing YOLO11L to detect vehicle density from over 500 traffic cameras in real-time.
+    \item \textbf{Seamless Integration:} A unified web interface that aggregates all these features into a single, intuitive dashboard.
+\end{enumerate}
+
+
+\section{Use Case Scenarios}
+\begin{description}
+    \item[Scenario 1: The Automated Concierge] A traveler lands at Tan Son Nhat Airport with a simple request: "I have 2 days in the city, and I want to visit historical museums and try authentic Banh Xeo." The system utilizes its LLM backend to interpret this natural language query, retrieves relevant locations from the database, and generates a logically ordered, geographically optimized itinerary.
+    
+    \item[Scenario 2: Transit Navigation] A user wishes to travel from District 1 to District 3 during rush hour. Instead of providing a static route, the system calculates a dynamic path. It considers walking distances, penalizes routes with multiple transfers (which are psychologically draining), and checks the current congestion levels on the proposed path to ensure the estimated arrival time is accurate.
+    
+    \item[Scenario 3: Proactive Congestion Avoidance] Before leaving their hotel, a user consults the application's map overlay. The system displays road segments color-coded (Blue/Yellow/Red) based on real-time vehicle counts derived from camera feeds, allowing the user to identify and avoid developing bottlenecks before they become stuck in traffic.
+\end{description}
+
+
+% \section{Decomposition}
+
+% % Local styles for the overview tree
+% \forestset{
+% 	overviewnode/.style={text width=4.2cm, font=\small},
+% 	mini/.style={text width=3cm, font=\footnotesize}
+% }
+
+% \begin{figure}[H]
+%     \centering
+%     \resizebox{\linewidth}{!}{%
+%     \begin{forest}
+%         for tree={
+%             grow'=east,
+%             rounded corners,
+%             draw=black!70, % Default border color
+%             line width=0.8pt,
+%             node options={align=left, inner xsep=5pt, inner ysep=4pt},
+%             text width=4.4cm,
+%             s sep=7mm,
+%             l sep=9mm,
+%             anchor=north,
+%             edge={-stealth, line width=0.8pt, draw=black!50},
+%             fill=white % Default fill
+%         }
+%         % ROOT NODE
+%         [{Web Platform}, fill=black!80, text=white, draw=black, font=\bfseries\large
+%             % 1. ROUTING (Blue theme)
+%             [
+%                 {Routing}, overviewnode, for tree={fill=blue!10, draw=blue!60},
+%                 [{TomTom API Integration}, overviewnode,
+%                     [{Directions API}, mini]
+%                     [{Geocoding}, mini]
+%                     [{Pathfinding}, mini]
+%                 ]
+%                 [{Visualize Routes}, overviewnode,
+%                     [{Map Rendering}, mini]
+%                     [{Itinerary Display}, mini]
+%                 ]
+%             ],
+%             % 2. BUS SYSTEM (Cyan theme - related to routing)
+%             [
+%                 {Bus Map System}, overviewnode, for tree={fill=cyan!10, draw=cyan!60},
+%                 [
+%                     {Data Collection}, overviewnode,
+%                     [{Bus Routes}, mini]
+%                     [{Bus Stops}, mini]
+%                     [{Fare Data}, mini]
+%                 ]
+%                 [
+%                     {Pathfinding Algorithm}, overviewnode
+%                 ]
+%                 [
+%                     {Visualizing Trip}, overviewnode
+%                 ]
+%             ],
+%             % 3. TRAFFIC AI (Red theme - alert/heat)
+%             [
+%                 {Traffic Congestion Detection}, overviewnode, for tree={fill=red!10, draw=red!60},
+%                 [
+%                     {Model Inference}, overviewnode,
+%                     [{Image Preprocessing}, mini]
+%                     [{Congestion Model}, mini]
+%                 ]
+%                 [
+%                     {Visualizing Congestion Overlay}, overviewnode
+%                 ]
+%             ],
+%             % 4. TRAFFIC DATA (Red theme lighter)
+%             [
+%                 {Data Collection for Traffic}, overviewnode, for tree={fill=red!5, draw=red!40},
+%                 [{Scraping Data}, overviewnode]
+%             ],
+%             % 5. DATABASE (Gray theme - infrastructure)
+%             [
+%                 {Database Management}, overviewnode, for tree={fill=gray!10, draw=gray!60},
+%                 [{Schema Design}, overviewnode]
+%                 [{Indexing}, overviewnode]
+%             ],
+%             % 6. SOS MAP (Orange theme - safety/warning)
+%             [
+%                 {SOS Map}, overviewnode, for tree={fill=orange!10, draw=orange!60},
+%                 [{Data Collection}, overviewnode,
+%                     [{Public Feeds}, mini]
+%                     [{GPS location}, mini]
+%                 ]
+%                 [{Frontend Integration}, overviewnode]
+%             ],
+%             % 7. RECOMMENDER (Violet theme - AI Intelligence)
+%             [
+%                 {Recommender System}, overviewnode, for tree={fill=violet!10, draw=violet!60},
+%                 [{Data Collection}, overviewnode,
+%                     [{Hotel}, mini]
+%                     [{Restaurant}, mini]
+%                     [{Attraction}, mini]
+%                 ]
+%                 [{LLM Prompting \& Parsing}, overviewnode,
+%                     [{Prompt Engineering}, mini]
+%                     [{Response Parsing}, mini]
+%                 ]
+%             ],
+%             % 8. UI/UX (Teal theme - Frontend)
+%             [{UI/UX \& Integration}, overviewnode, for tree={fill=teal!10, draw=teal!60},
+%                 [{Authentication \& OAuth UI}, overviewnode]
+%                 [{Map \& Routing Interfaces}, overviewnode]
+%                 [{Styling \& Design}, overviewnode]
+%             ]
+%         ]
+%     \end{forest}
+% 	}
+%     \caption{System decomposition overview diagram}
+%     \label{fig:overview-decomposition}
+% \end{figure}
+
+
+
+

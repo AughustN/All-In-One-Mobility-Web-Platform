@@ -1,0 +1,95 @@
+\newgeometry{left=3.5cm,right=2.5cm, bottom=3.5cm, top=3.5cm}
+
+\thispagestyle{empty}
+
+
+
+
+%\mbox{}
+%vspace{0.5cm}
+
+\begin{center}
+
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[height=3cm]{frontmatter/CISUC_complementary_version2.pdf}	
+	\end{center}
+\end{figure}
+
+
+
+\vspace{1cm}
+
+
+\Large
+\author
+
+\vspace{1cm}
+
+\LARGE
+
+\ifthenelse{\equal{\docLanguage}{en}}
+{\textsc{\textbf{\titleEN}}}
+{\textsc{\textbf{\titlePT}}}
+
+
+
+\Large
+\vspace{-0.1cm}
+
+\ifthenelse{\equal{\docLanguage}{en}}
+%comentei (Catarina)
+%{\textsc{\subtitleEN}}
+%{\textsc{\subtitlePT}}
+
+
+
+
+
+
+
+\begin{textblock*}{15cm}(3.5cm,21cm) % {block width} (coords) 
+
+
+
+
+\normalsize
+\begin{spacing}{1.1}
+
+
+%\textbf{
+
+\ifthenelse{\equal{\docLanguage}{en}}{%
+	\ifthenelse{\equal{\thesistype}{phd}}{\textbf{\titlePageDescPhdEN}}{\textbf{\titlePageDescMScEN}}%
+}{%
+	\ifthenelse{\equal{\thesistype}{phd}}{\textbf{\titlePageDescPhdPT}}{\textbf{\titlePageDescMScPT}}%
+}%
+
+
+%}
+
+\end{spacing}
+
+\end{textblock*}
+
+
+
+
+%\vspace{1.5cm}
+
+\large
+
+\vspace*{\fill}
+
+\ifthenelse{\equal{\docLanguage}{en}}
+{\dateEN}
+{\datePT}
+
+
+
+
+\end{center}
+
+
+\restoregeometry
+

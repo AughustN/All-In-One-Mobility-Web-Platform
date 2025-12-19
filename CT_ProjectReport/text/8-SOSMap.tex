@@ -1,0 +1,56 @@
+\chapter{SOS MAP}
+\label{chap:sos-map}
+\microtypecontext{protrusion=none; encoding=T5}
+This chapter presents the development of the SOS map module, which provides a comprehensive mapping solution for emergency services in Ho Chi Minh City. The SOS map integrates real-time data from various sources to offer accurate and up-to-date information on emergency incidents, safe routes, and nearby resources.
+
+\section{Problem Definition}
+In emergency situations, timely access to accurate information is crucial for effective response and safety. The SOS map aims to address the following challenges:
+\begin{itemize}
+    \item Lack of real-time information on emergency incidents and safe routes.
+    \item Difficulty in locating nearby emergency resources such as hospitals, police stations, and fire departments.
+    \item Need for a user-friendly interface that can be easily accessed during emergencies.
+\end{itemize}
+
+\section{Decomposition}
+\forestset{
+    overviewnode/.style={rectangle, draw, rounded corners, fill=blue!10, align=center, inner sep=5pt, font=\sffamily},
+    mini/.style={text width=3cm, font=\footnotesize}
+}
+
+\begin{figure}[H] 
+    \centering
+    \resizebox{\linewidth}{!}{%
+    \begin{forest}
+        for tree= {
+            grow'=south,
+            rounded corners,
+            draw=black!70, % Default border color
+            line width=0.8pt,
+            node options={align=left, inner xsep=5pt, inner ysep=4pt},
+            text width=4.4cm,
+            s sep=7mm,
+            l sep=9mm,
+            anchor=north,
+            edge={-stealth, line width=0.8pt, draw=black!50},
+            fill=white % Default fill
+        }
+            % SOS MAP MODULE
+            [
+                {SOS Map Module}, overviewnode, for tree={fill=blue!10, draw=blue!60},
+                [
+                    {Incident Reporting}, overviewnode,
+                ],
+                [
+                    {Safe Route Mapping}, overviewnode,
+                ],
+                [
+                    {Resource Locator}, overviewnode,
+                ]
+            ]
+    \end{forest}
+    }
+    \caption{SOS Map Module Decomposition}
+    \label{fig:sosmap-overview}
+\end{figure}
+
+\section{Framework \& Tech Stack}

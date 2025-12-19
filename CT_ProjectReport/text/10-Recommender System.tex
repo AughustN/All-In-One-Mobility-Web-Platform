@@ -1,0 +1,73 @@
+\chapter{}{Recommender System}
+\label{chap:recommender-system}
+The Recommender System module focuses on developing an AI-powered recommendation engine that suggests personalized points of interest (POIs) such as hotels, restaurants, and attractions to users based on their preferences and context. Leveraging large language models (LLMs), the system generates tailored recommendations by analyzing user inputs and parsing responses from the LLM.
+
+\section{Problem Definition}
+Travelers often struggle to find suitable POIs that match their interests, budget, and itinerary constraints
+. The Recommender System aims to address the following challenges:
+\begin{itemize}
+    \item Understanding user preferences and context to provide relevant recommendations.
+    \item Integrating with LLMs to generate natural language suggestions.
+    \item Filtering and ranking recommendations based on multiple criteria such as distance, ratings, and cost
+    \item Providing a seamless user experience through an intuitive interface.
+\end{itemize}
+
+\section{Decomposition}
+\forestset{
+    overviewnode/.style={rectangle, draw, rounded corners, fill=blue!10,
+    align=center, inner sep=5pt, font=\sffamily},
+    mini/.style={text width=3cm, font=\footnotesize}
+}
+\begin{figure}
+    \centering
+    \resizebox{\linewidth}{!}{%
+    \begin{forest}
+        for tree= {
+            grow'=south,
+            rounded corners,
+            draw=black!70, % Default border color
+            line width=0.8pt,
+            node options={align=left, inner xsep=5pt, inner ysep=4pt},
+            text width=4.4cm,
+            s sep=7mm,
+            l sep=9mm,
+            anchor=north,
+            edge={-stealth, line width=0.8pt, draw=black!50},
+            fill=white % Default fill
+        }
+            % RECOMMENDER SYSTEM MODULE
+            [
+                {Recommender System\\ Module}, overviewnode, for tree={fill=blue!10, draw=blue!60},
+                [
+                    {User Preference Analysis}, overviewnode,
+                ],
+                [
+                    {LLM Integration}, overviewnode,
+                ],
+                [
+                    {Recommendation \\Filtering \& Ranking}, overviewnode,
+                ]
+            ]
+    \end{forest}
+    }
+    \caption{Recommender System Module Decomposition}
+    \label{fig:recommender-overview}        
+\end{figure}
+
+\section{Framework \& Tech Stack}
+The Recommender System module is built using the following technologies:
+\begin{itemize}
+    \item \textbf{Backend:} Python with Flask framework for handling API requests and
+    \item \textbf{LLM Integration:} OpenAI GPT-4 API for generating recommendations based on user inputs.
+    \item \textbf{Data Storage:} MySQL database for storing user preferences and
+    \item \textbf{Recommendation Algorithm:} Custom filtering and ranking algorithms implemented in Python.
+    \item \textbf{Frontend Visualization:} React.js for rendering recommendation results to users.
+    \item \textbf{Containerization:} Docker for consistent deployment across environments.
+    \item   \textbf{Version Control:} Git and GitHub for source code management and collaboration.
+    \item \textbf{Testing:} PyTest for unit and integration testing of backend components.
+    \item \textbf{Documentation:} Sphinx for generating technical documentation.
+    \item \textbf{Monitoring:} Prometheus and Grafana for tracking system performance and usage metrics.
+    \item \textbf{Security:} Implementation of OAuth 2.0 for secure user authentication and authorization.
+    \item \textbf{CI/CD:} GitHub Actions for automated testing and deployment pipelines.
+\end{itemize}
+

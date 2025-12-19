@@ -1,0 +1,355 @@
+% Contact Nuno Laranjeiro cnl@dei.uc.pt for any feedback, suggestions, or corrections regarding this template.
+
+% ************************************ CONFIGURATION *****************************************
+% Fill in _all_ items in this configuration section with your Thesis details.                                                                      
+
+% If you are writing a Phd Thesis, change *msc* to *phd* in the following line
+\def\thesistype{msc}                                                     
+
+% docLanguage is the main language of the document. Possible options are: en,pt
+\def\docLanguage{en} 
+
+\def\titleEN{Summoner's Rift \\ Transportation Web Application}
+\def\subtitleEN{Module Development Status and Roadmap}
+
+\def\titlePT{Relatório de Progresso da Plataforma de Dados de Transporte: Ho Chi Minh City}
+%\def\subtitlePT{<Subtitulo (se existir)>}
+
+% MSc Theses - cover page
+\def\descMScEN{Progress Report for the CISUC Transportation Data Platform Project 2025-26.}
+
+\def\descMScPT{Relatório de Progresso para o Projeto de Plataforma de Dados de Transporte CISUC 2025-26.}
+
+% PhD Theses - cover page
+\def\descPhDEN{Project proposal to the CISUC Internal Call for Projects 2025-26.}
+
+\def\descPhDPT{Proposta de projeto para a chamada interna para projetos do CISUC 2025-26.}
+
+
+% MSc Theses - title Page
+\def\titlePageDescMScEN{Progress Report for the CISUC Transportation Data Platform Project 2025-26.}
+\def\titlePageDescMScPT{Relatório de Progresso para o Projeto de Plataforma de Dados de Transporte CISUC 2025-26.}
+
+
+% PhD Theses - title Page
+\def\titlePageDescPhdEN{Project proposal to the CISUC Internal Call for Projects 2025-26.}
+\def\titlePageDescMScPT{Proposta de projeto para a chamada interna para projetos do CISUC 2025-26.}
+
+\def\supervisor{Dr. Bui Tien Len \\ Ms. }
+\def\author{COMPUTATIONAL THINKING \\ SMART TOURISM SYSTEM PROJECT}
+\def\groupid{GROUP 2}
+\def\class{24C11}
+\def\dateEN{December 2025}
+\def\datePT{Dezembro 2025}
+% ********************************** END CONFIGURATION ***************************************
+
+
+
+\documentclass[twoside, 11pt, a4paper,openany]{book}
+%\documentclass[twoside, 12pt, a4paper]{book}
+\raggedbottom
+
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=3.5cm,right=2.5cm,headsep=12pt]{geometry}
+\usepackage[final]{pdfpages}
+
+\usepackage[absolute,overlay]{textpos}
+
+
+\usepackage{ifthen}
+
+% Font encodings: T1 for Western European, T5 for Vietnamese names
+\usepackage[T1,T5]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\ifthenelse{\equal{\docLanguage}{en}}
+{
+\usepackage[english]{babel}
+}
+{
+\usepackage[portuguese]{babel}
+}
+
+\usepackage{graphicx}
+\usepackage{glossaries}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{mathpazo}
+\usepackage{xcolor, soulutf8, afterpage}  
+\usepackage{emptypage}
+\usepackage{setspace}
+
+
+% Helper macro to typeset Vietnamese names while keeping main language English
+\newcommand{\VN}[1]{{\fontencoding{T5}\selectfont #1}}
+
+% References
+\usepackage[backend=biber,style=ieee,natbib=true]{biblatex}
+\addbibresource{references.bib}
+
+% Strict float placement (for figures we want exactly here)
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usetikzlibrary{trees,shapes.geometric,arrows.meta,positioning,calc,fit,arrows,shadows}
+\usepackage[edges]{forest}
+\usepackage{microtype}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{listings}
+\usepackage[disable]{todonotes}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+  {1.5ex \@plus1ex \@minus.2ex}%
+  {0.5ex}%
+  {\normalfont\normalsize\bfseries}}
+\makeatother
+
+\ifthenelse{\equal{\thesistype}{msc}}
+{
+
+	%Cor do fundo da capa, lombada e contracapa: C 17%, M 27%, Y 45%, K 4% (~ Pantone 7753C)
+	\definecolor{cover-background}{cmyk}{0.17 0.27 0.45 0.04}
+	%Cor das marcas e Tipografia: C 44%, M 50%, Y 68%, K 45% (~ Pantone 448C)
+	\definecolor{cover-foreground}{cmyk}{0.44 0.50 0.68 0.45}
+}
+{
+	%Cor do fundo da capa, lombada e contracapa: C 17%, M 26%, Y 67%, K 4% (~ Pantone 480C)
+	\definecolor{cover-background}{cmyk}{0.17 0.26 0.67 0.04}
+	%Cor das marcas e Tipografia: C 44%, M 50%, Y 68%, K 45% (~ Pantone 448C)
+	\definecolor{cover-foreground}{cmyk}{0.44 0.50 0.68 0.45}
+}
+
+
+
+\usepackage[page,titletoc,title]{appendix} 
+
+\usepackage{subcaption}
+\usepackage{subcaption}
+
+% natbib removed to avoid conflicts with biblatex; biblatex's natbib=true provides \citet/\citep compatibility
+
+\usepackage[nottoc,notlot,notlof]{tocbibind}
+
+\usepackage{titlesec}
+%Remove all paragraph indentation
+\setlength\parindent{0pt}
+
+
+% --------------- headers and footers control ----------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% Increase header height to avoid fancyhdr warning
+\setlength{\headheight}{14pt}
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
+\fancyhead[LE]{\ifnum \value{chapter}>0\sl{\nouppercase{\chaptertitlename~\thechapter}}\fi}
+\fancyhead[RE]{}
+\fancyhead[LO]{}
+\fancyhead[RO]{\sl{\nouppercase{\leftmark}}}
+
+%\fancyhead[RE,LO]{\rightmark}
+\renewcommand{\headrulewidth}{0.4pt}
+%---------------------------------------------------------------------
+
+\makenoidxglossaries
+\usepackage[hidelinks,bookmarks=true]{hyperref}
+
+
+\hypersetup{
+    pdftitle={\titleEN},
+    pdfauthor={\author}
+}
+
+\input{frontmatter/7-acronyms}
+
+\usepackage{url}
+\usepackage[raggedrightboxes]{ragged2e}
+\usepackage[most]{tcolorbox}
+\usepackage{amssymb}
+
+
+\begin{document}
+\setlength{\parskip}{0.7em}
+
+%---------------------------------- FRONTMATTER ---------------------------------- 
+\frontmatter
+%comentei e depois voltei a descomentar
+\input{frontmatter/1-coverpage}
+\cleardoublepage
+
+%\ifthenelse{\equal{\docLanguage}{en}}
+%{ 
+%	\input{frontmatter/2-titlepage}
+%	\cleardoublepage	
+%	\def\docLanguage{pt}
+%	\input{frontmatter/2-titlepage}
+%	\cleardoublepage
+%	\def\docLanguage{en}
+%}
+%{
+%	\input{frontmatter/2-titlepage}
+%	\cleardoublepage	
+%	%\def\docLanguage{en}
+%	%\input{frontmatter/2-titlepage}
+%	%\cleardoublepage
+%	%\def\docLanguage{pt}
+%}
+
+
+%\ifthenelse{\equal{\thesistype}{phd}}
+%{ 
+%	\input{frontmatter/3-funding}
+%	\cleardoublepage
+%}{}
+
+
+%\input{frontmatter/4-acknowledgements}
+%\cleardoublepage
+
+\ifthenelse{\equal{\docLanguage}{en}}
+{
+	%\input{frontmatter/5-abstract-EN.tex}
+	%\cleardoublepage
+}
+{%else
+	\input{frontmatter/5-abstract-EN.tex}
+	\cleardoublepage
+}
+
+%\ifthenelse{\equal{\thesistype}{phd}}
+%{
+%	\input{frontmatter/6-publications.tex}
+%	\cleardoublepage
+%}{}
+%-----------------------------------------------------------------------------------
+
+% Set paragraph spacing to use in ToC and other lists
+\setlength{\parskip}{0em}
+
+% Make sure acronyms don't appear in the ToC
+\glsunsetall
+\tableofcontents
+\glsresetall
+
+\cleardoublepage
+
+% --- List of Figures (no page number) ---
+\pagestyle{empty}
+\listoffigures
+\cleardoublepage
+
+% --- List of Tables (no page number) ---
+\listoftables
+\cleardoublepage
+
+% Restore page style
+\pagestyle{fancy}
+
+% List of acronyms
+\glsnogroupskiptrue
+
+\ifthenelse{\equal{\docLanguage}{en}}
+{
+	\def\acronymsTitle{Acronyms}
+}
+{
+	\def\acronymsTitle{Acrónimos}
+}
+\printnoidxglossary[type=\acronymtype,style=list,title={\acronymsTitle}, nonumberlist]
+
+\cleardoublepage
+
+%comentei (catarina
+%\listoffigures
+%\cleardoublepage
+
+%\listoftables
+%\cleardoublepage
+
+%------------------------------
+\mainmatter
+\setlength{\parskip}{0.7em}
+% Final report (structure aligned with final-guide.pdf)
+%\input{text/0-FinalReport}
+
+% Legacy chapter files (kept for reference; not compiled by default)
+\input{text/Team&Task}
+\input{text/1-Introduction}
+\input{text/2-Computational Thinking Application}
+\input{text/3-Technical Implementation}
+\input{text/4-Testing&Improvement}
+\input{text/5-Conclusion}
+
+% \input{text/2-BusMap}
+% \input{text/6-TrafficCongestion}
+% \input{text/4-DataCollection}
+% \input{text/5-Database}
+% \input{text/8-SOSMap}
+% \input{text/10-Recommender System}
+% \input{text/7-UXUI}
+
+
+
+%\bibliographystyle{plainnat} 
+%\bibliographystyle{apalike}
+
+\ifthenelse{\equal{\docLanguage}{en}}
+{
+	\renewcommand{\bibname}{References}
+}
+{
+	\renewcommand{\bibname}{Referências}
+}
+
+
+% \bibliographystyle{apalike}
+
+\nocite{*}
+\printbibliography
+
+
+
+%------------------------------
+
+% \bibliographystyle{apalike}
+
+\nocite{*}
+\printbibliography
+
+
+
+%------------------------------
+
+\appendix
+% If you have appendices, include them here
+% \input{text/AppendixA}
+\end{document}
+%Document end

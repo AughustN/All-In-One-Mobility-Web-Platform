@@ -1,0 +1,20 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "watch: latexmk",
+			"type": "shell",
+			"command": "latexmk",
+			"args": [
+				"-pdf",
+				"-pvc",
+				"-interaction=nonstopmode",
+				"-outdir=build",
+				"0-main.tex"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

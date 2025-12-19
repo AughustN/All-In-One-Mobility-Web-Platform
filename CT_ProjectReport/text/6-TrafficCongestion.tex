@@ -1,0 +1,209 @@
+\chapter{Traffic Congestion}
+\label{chap:traffic-congestion}
+
+This chapter presents the development of the traffic congestion module, which addresses one of Ho Chi Minh City's most pressing urban challenges: endless traffic congestion, especially during rush hours. To help commuters avoid traffic jams, we propose a traffic-aware routing feature that leverages real-time traffic camera feeds to analyze current traffic conditions and suggest alternative routes.
+
+The system processes live traffic data from multiple camera sources to identify congestion hotspots, assess severity levels, and provide actionable insights for route optimization and informed travel decisions.
+\newline\textit{The underlying camera ingestion and preprocessing pipeline is documented in detail in Chapter~\ref{chap:data-collection} (Data Collection).}
+
+
+
+\section{Problem Definition}
+
+Ho Chi Minh City experiences severe and persistent traffic congestion, particularly during peak commuting hours. This congestion:
+\begin{itemize}
+    \item Causes significant delays and unpredictable travel times
+    \item Reduces overall mobility and economic productivity
+    \item Creates frustration for daily commuters and visitors
+    \item Lacks real-time visibility for route planning decisions
+\end{itemize}
+
+\section{Decomposition}
+\forestset{
+    overviewnode/.style={text width=4cm, font=\small},
+    mini/.style={text width=3cm, font=\footnotesize}
+}
+
+\begin{figure}[H]
+    \centering
+    \resizebox{\linewidth}{!}{%
+    \begin{forest}
+        for tree={
+            grow'=south,
+            rounded corners,
+            draw=black!70, % Default border color
+            line width=0.8pt,
+            node options={align=left, inner xsep=5pt, inner ysep=4pt},
+            text width=4.4cm,
+            s sep=7mm,
+            l sep=9mm,
+            anchor=north,
+            edge={-stealth, line width=0.8pt, draw=black!50},
+            fill=white % Default fill
+        }
+            % 6. TRAFFIC CONGESTION (Red theme)
+            [
+                {Traffic Congestion}, overviewnode, for tree={fill=red!10, draw=red!60},
+                [
+                    {Vehicle Detection System}, overviewnode,
+                    [{YOLOv11 Integration}, mini]
+                    [{Vehicle Counting}, mini]
+                ]
+                [
+                    {Data Aggregation Layer}, overviewnode,
+                    [{Congestion Level Classification}, mini]
+                    [{Spatial Aggregation}, mini]
+                ]
+                [
+                    {REST API (Flask)}, overviewnode,
+                    [{Congestion Data Endpoints}, mini]
+                    [{Real-time Updates}, mini]
+                ]
+                [
+                    {Web Frontend}, overviewnode,
+                    [{Traffic Visualization}, mini]
+                    [{Route Suggestion Interface}, mini]
+                ]
+            ]
+    \end{forest}
+    }
+    \caption{Traffic Congestion Module Decomposition}
+    \label{fig:traffic-congestion-overview}
+\end{figure}
+
+To address these challenges, we developed a \textbf{traffic-aware routing feature} that:
+\begin{itemize}
+    \item Leverages real-time traffic camera feeds from across the city
+    \item Analyzes current traffic conditions using computer vision
+    \item Detects vehicle density and traffic flow patterns
+    \item Suggests alternative routes to avoid congested areas
+    \item Provides up-to-date traffic information to commuters
+\end{itemize}
+
+\section{Framework \& Tech Stack}
+
+The traffic congestion system follows a multi-stage pipeline architecture:
+
+\begin{enumerate}
+    \item \textbf{Data Collection Pipeline:} Multi-threaded crawler continuously fetches traffic camera images and stores them in MySQL database
+    
+    \item \textbf{Vehicle Detection System:} YOLOv11-based computer vision model analyzes images to detect and count vehicles
+    
+    \item \textbf{Data Aggregation Layer:} Processes detection results to compute congestion metrics and traffic density levels
+    
+    \item \textbf{REST API (Flask):} Provides access to processed traffic data and congestion information for client applications
+    
+    \item \textbf{Web Frontend:} Displays real-time traffic conditions and integrates with routing features
+\end{enumerate}
+    
+\section{Implemented Tasks}
+
+\subsection{Vehicle Detection System}
+
+\begin{itemize}
+    \item Integrated \textbf{YOLOv11} object detection model
+    \item Pretrained model for detecting various vehicle types (cars, motorcycles, buses, trucks)
+    \item Achieved high detection accuracy suitable for real-time traffic analysis
+    \item Implemented batch processing capabilities for efficient image analysis
+    \item Optimized inference speed to handle high-frequency camera feeds
+    \item Built vehicle counting and tracking logic to assess traffic density
+\end{itemize}
+
+\subsection{Data Aggregation Layer}
+
+\begin{itemize}
+    \item Developed algorithms to aggregate vehicle detection results across multiple camera locations
+    \item Implemented \textbf{congestion level classification} based on vehicle density thresholds
+    \item Created time-series data structures for tracking congestion patterns over time
+    \item Built spatial aggregation to compute area-wide traffic conditions
+    \item Implemented statistical analysis for identifying traffic trends and anomalies
+    \item Designed efficient data structures for fast query and retrieval
+\end{itemize}
+
+\subsection{REST API Development}
+
+\textbf{Completed Components:}
+\begin{itemize}
+    \item Built \textbf{Flask-based REST API} endpoints for accessing traffic data
+    \item Implemented endpoints for current congestion status by location
+    \item Created API for historical traffic pattern queries
+    \item Developed endpoints for camera image retrieval and metadata
+    \item Implemented authentication and rate limiting for API security
+    \item Created comprehensive API response formatting with JSON schemas
+\end{itemize}
+
+\textbf{Ongoing Work:}
+\begin{itemize}
+    \item \textbf{Testing integration with frontend} to ensure seamless data flow
+    \item \textbf{Building real-time server container} for the YOLOv11 model to enable live processing
+    \item Optimizing API response times for high-traffic scenarios
+    \item Implementing WebSocket support for push-based real-time updates
+\end{itemize}
+
+\subsection{Web Frontend}
+
+\textbf{Completed Components:}
+\begin{itemize}
+    \item Developed base UI components for traffic visualization
+    \item Implemented map integration displaying traffic camera locations
+    \item Created traffic condition overlay with color-coded severity indicators
+    \item Built basic route suggestion interface with congestion awareness
+    \item Implemented user preference settings for traffic alerts
+\end{itemize}
+
+\textbf{Ongoing Work:}
+\begin{itemize}
+    \item Continuous editing and refinement of user interface elements
+    \item Enhancing real-time update mechanisms for live traffic data
+    \item Improving responsive design for mobile device compatibility
+    \item Adding interactive features for exploring traffic patterns
+    \item Integrating with routing module for comprehensive route planning
+\end{itemize}
+
+\subsection{Technology Stack}
+
+\begin{itemize}
+    \item \textbf{Programming Language:} Python
+    \item \textbf{Web Framework:} Flask (REST API server)
+    \item \textbf{Computer Vision:} YOLOv11 (vehicle detection)
+    \item \textbf{Database:} MySQL (image and metadata storage)
+    \item \textbf{Concurrency:} Multi-threading (parallel data collection)
+    \item \textbf{Frontend:} React (web interface)
+    \item \textbf{Containerization:} Docker (model deployment)
+\end{itemize}
+
+\section{Next Steps}
+
+Future development priorities include:
+
+\begin{itemize}
+    \item \textbf{Complete REST API Integration:}
+    \begin{itemize}
+        \item Finalize frontend integration testing
+        \item Deploy production-ready real-time server container
+        \item Implement comprehensive error handling and monitoring
+    \end{itemize}
+    
+    \item \textbf{Complete Web Frontend:}
+    \begin{itemize}
+        \item Polish user interface and user experience
+        \item Complete mobile responsiveness optimization
+        \item Finalize integration with routing and map features
+    \end{itemize}
+    
+    \item \textbf{Predictive Analytics:} Implement machine learning models to forecast traffic conditions 15-60 minutes ahead based on historical patterns
+    
+    \item \textbf{Incident Detection:} Develop anomaly detection to identify accidents, breakdowns, or unusual congestion patterns automatically
+    
+    \item \textbf{Performance Optimization:} Optimize model inference speed and API response times for scalability to city-wide deployment
+    
+    \item \textbf{Alert System:} Build notification service to alert users about sudden traffic changes or congestion on saved routes
+    
+    \item \textbf{Historical Analysis Dashboard:} Create analytics tools for studying long-term traffic trends and patterns
+    
+    \item \textbf{Multi-camera Fusion:} Enhance spatial aggregation to provide comprehensive traffic view across connected road segments
+\end{itemize}
+
+\section{Summary}
+
+The traffic congestion module has made substantial progress in addressing Ho Chi Minh City's traffic challenges through a computer vision-driven architecture. It builds on the multi-threaded ingestion foundation described in Chapter~\ref{chap:data-collection}, combining: (1) the completed camera data pipeline (100\%), (2) the YOLOv11 vehicle detection system (100\%), and (3) the aggregation layer (100\%). The REST API is 70\% complete (focus: real-time containerization and frontend integration) and the web frontend stands at 60\% (UI refinement and interactive exploration). This traffic-aware system converts raw camera frames into actionable congestion intelligence for routing decisions and user situational awareness, positioning the platform to improve urban mobility through proactive avoidance of emerging hotspots.
