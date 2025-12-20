@@ -1,0 +1,432 @@
+.camera-map-container {
+  width: 100%;
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+}
+
+@media (max-width: 960px) {
+  .camera-map-container {
+    height: calc(100vh - 56px);
+  }
+}
+
+.map-header {
+  background: linear-gradient(135deg, #ffffff 0%, #000000fb 100%);
+  color: white;
+  padding: 20px;
+  height: 7vh;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map-header h1 {
+  margin: 0 0 15px 0;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.search-container {
+  position: absolute;
+  top: 80px;
+  left: 50px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+  max-width: calc(100% - 200px);
+}
+
+@media (max-width: 960px) {
+  .search-container {
+    top: 70px;
+    left: 10px;
+    max-width: calc(100% - 80px);
+    gap: 8px;
+  }
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 20px;
+  padding-left: 38px !important;
+  border: 2px solid rgba(33, 150, 243, 0.5);
+  border-radius: 25px;
+  font-size: 15px;
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  background: white;
+  border-color: #2196F3;
+  box-shadow: 0 6px 16px rgba(33, 150, 243, 0.3);
+  transform: translateY(-2px);
+}
+
+.search-input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 400;
+}
+
+.search-wrapper {
+  position: relative;
+  width: 280px;
+  pointer-events: auto;
+  flex-shrink: 1;
+  min-width: 200px;
+}
+
+@media (max-width: 960px) {
+  .search-wrapper {
+    flex: 1;
+    min-width: 150px;
+  }
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #2196F3;
+  font-size: 14px;
+  font-weight: 600;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Search Dropdown */
+.search-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1001;
+  border: 2px solid rgba(33, 150, 243, 0.2);
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s ease;
+}
+
+.search-result-item:hover {
+  background: rgba(33, 150, 243, 0.08);
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.result-icon {
+  font-size: 24px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.result-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.result-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.result-location {
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-result-more {
+  padding: 12px 16px;
+  text-align: center;
+  font-size: 13px;
+  color: #2196F3;
+  font-weight: 600;
+  background: rgba(33, 150, 243, 0.05);
+  border-radius: 0 0 12px 12px;
+}
+
+.camera-count {
+  background: rgba(33, 150, 243, 0.95);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  pointer-events: auto;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.map-wrapper {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Camera Popup Styles */
+.camera-popup {
+  min-width: 280px;
+  max-width: 380px;
+}
+
+.camera-popup h3 {
+  margin: 0 0 8px 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.camera-id {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 12px;
+  font-family: monospace;
+}
+
+.image-viewer {
+  margin-top: 12px;
+}
+
+.camera-image {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 8px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.nav-button {
+  background: #2196F3;
+  color: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button:hover {
+  background: #1976D2;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button:active {
+  transform: scale(0.95);
+}
+
+.image-counter {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.loading,
+.error,
+.no-images {
+  padding: 20px;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.error {
+  color: #f44336;
+}
+
+.no-images {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 30px;
+}
+
+/* Camera Info Panel */
+.camera-info-panel {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  max-width: 350px;
+  z-index: 1000;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.camera-info-panel h3 {
+  margin: 0 0 12px 0;
+  color: #333;
+  font-size: 18px;
+  padding-right: 30px;
+}
+
+.camera-info-panel p {
+  margin: 8px 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.camera-info-panel strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #f44336;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  line-height: 1;
+}
+
+.close-button:hover {
+  background: #d32f2f;
+  transform: rotate(90deg);
+}
+
+/* Leaflet Popup Customization */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.leaflet-popup-content {
+  margin: 16px;
+}
+
+.leaflet-popup-tip {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 960px) {
+  .map-header h1 {
+    font-size: 22px;
+  }
+
+  .search-input {
+    min-width: 100%;
+    font-size: 14px;
+    padding: 10px 18px;
+    padding-left: 36px !important;
+  }
+
+  .camera-info-panel {
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+    padding: 16px;
+  }
+
+  .camera-popup {
+    min-width: 240px;
+  }
+
+  .camera-count {
+    padding: 8px 14px;
+    font-size: 13px;
+    margin-top: 0;
+  }
+
+  .search-dropdown {
+    max-height: 300px;
+  }
+}
+
+/* Loading Animation */
+.loading::after {
+  content: '...';
+  animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+
+  0%,
+  20% {
+    content: '.';
+  }
+
+  40% {
+    content: '..';
+  }
+
+  60%,
+  100% {
+    content: '...';
+  }
+}

@@ -1,0 +1,4916 @@
+[
+  {
+    "id": "662b86c41afb9c00172dd31c",
+    "code": "TTH 406",
+    "name": "Trần Quang Khải - Trần Khắc Chân",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623f4df6f998a001b2528eb",
+    "code": "TTH 300",
+    "name": "Quốc Lộ 13 - cầu Ông Dầu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b7ce71afb9c00172dc676",
+    "code": "TTH 374",
+    "name": "Cách Mạng Tháng Tám - Bùi Thị Xuân",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "583f969161cfea0012cf68f7",
+    "code": "TTH 22.7",
+    "name": "Nguyễn Thị Định - Đường D",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "59ca317602eb490011a0a408",
+    "code": "IDICO-QL1 29",
+    "name": "QL1 - Tỉnh lộ 10 B (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623e8da6f998a001b2524a6",
+    "code": "TTH 273",
+    "name": "Phan Đăng Lưu - Thích Quảng Đức",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c481299",
+    "code": "TTH 18.2",
+    "name": "Võ Văn Kiệt - An Dương Vương 2",
+    "district": "Quận Bình Tân",
+    "status": "UP"
+  },
+  {
+    "id": "66b1c426779f74001867415e",
+    "code": "TTH 419",
+    "name": "Điện Biên Phủ - Nguyễn Gia Trí",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595dc29c3dcfc400106f2894",
+    "code": "TTH 21.59",
+    "name": "Quốc lộ 1 - Rạch Láng Le 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623f1046f998a001b2527db",
+    "code": "TTH 292",
+    "name": "Lũy Bán Bích - Thoại Ngọc Hầu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d9de4de766c880017188cbb",
+    "code": "TTH 1.8",
+    "name": "Cao tốc LTDG - Võ Chí Công",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623f44f6f998a001b2528aa",
+    "code": "TTH 299.1",
+    "name": "Võ Nguyên Giáp - Đỗ Xuân Hợp (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a881a1afb9c00172d2559",
+    "code": "TTH 308",
+    "name": "Kinh Dương Vương - Tên Lửa",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6818833d6dfb4b0018f8ee9d",
+    "code": "TTH 423",
+    "name": "Mai Bá Hương - Kênh 4",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b4ecb1afb9c00172d8692",
+    "code": "TTH 335",
+    "name": "Nguyễn Chí Thanh - Thuận Kiều",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad15",
+    "code": "ITS 8.2",
+    "name": "Lý Tự Trọng - Chu Mạnh Trinh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5b8b2323ca057700116405d0",
+    "code": "TTH 29.4",
+    "name": "Trường Sơn - Ga Quốc Nội 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68188a226dfb4b0018f8f70a",
+    "code": "TTH 442",
+    "name": "Trần Đại Nghĩa - Võ Trần Chí",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "681889a96dfb4b0018f8f67e",
+    "code": "TTH 440",
+    "name": "Trần Văn Giàu - cầu Tân Tạo",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae7a50bfd3d90017e8f2b2",
+    "code": "TTH 197",
+    "name": "Ba Tháng Hai – Sư Vạn Hạnh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "587ee0ecb807da0011e33d50",
+    "code": "TTH 44.4",
+    "name": "Phan Đăng Lưu - Lê Văn Duyệt",
+    "district": "Quận Bình Thạnh",
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c48128f",
+    "code": "TTH 11.1",
+    "name": "Võ Văn Kiệt - Huỳnh Mẫn Đạt",
+    "district": "Quận 5",
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c4812a2",
+    "code": "TTH 22.4",
+    "name": "Nút giao Mỹ Thủy 2",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "58b571c817139d0010f35d5d",
+    "code": "TTH 34.11",
+    "name": "Nguyễn Văn Trỗi - Trần Huy Liệu",
+    "district": "Quận Phú Nhuận",
+    "status": "UP"
+  },
+  {
+    "id": "63bd1f21bfd3d90017ec3d04",
+    "code": "TTH 245",
+    "name": "Huỳnh Tấn Phát - Phạm Hữu Lầu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58df4d95dc195800111e04b9",
+    "code": "TTH 26.4",
+    "name": "Phổ Quang - Hoàng Minh Giám",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "586e28a0f9fab7001111b0b3",
+    "code": "TTH 21.3",
+    "name": "Quốc lộ 1 - KCX Linh Trung 1",
+    "district": "Quận Thủ Đức",
+    "status": "UP"
+  },
+  {
+    "id": "595dd8463dcfc400106f28b2",
+    "code": "TTH 21.69",
+    "name": "Quốc lộ 1 - Đường Lê Thị Riêng 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d8cd4ee766c880017188946",
+    "code": "TTH 145",
+    "name": "Lê Văn Sỹ - Huỳnh Văn Bánh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b81721afb9c00172dcc44",
+    "code": "TTH 385",
+    "name": "Đinh Tiên Hoàng - Trần Quang Khải",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "67e217c43215f90017863bc8",
+    "code": "TTH 22.6.1",
+    "name": "Nguyễn Thị Định - Đường C (20-1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "66b1c3c2779f740018674125",
+    "code": "TTH 417",
+    "name": "Vòng xoay Mũi Tàu Phú Lâm",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a8269c45058170011f6eae4",
+    "code": "TTH 124.1",
+    "name": "Nguyễn Văn Quỳ - Cầu Phú Mỹ",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c481297",
+    "code": "TTH 13.2",
+    "name": "Võ Văn Kiệt - Nguyễn Tri Phương 2",
+    "district": "Quận 5",
+    "status": "UP"
+  },
+  {
+    "id": "5822adbbedeb6c0012a2d65f",
+    "code": "TTH 10.1",
+    "name": "Võ Văn Kiệt - Cầu Chữ Y 1",
+    "district": "Quận 5",
+    "status": "UP"
+  },
+  {
+    "id": "6623e43e6f998a001b2522cb",
+    "code": "TTH 259",
+    "name": "Nguyễn Thị Minh Khai - Bà Huyện Thanh Quan",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a823e425058170011f6eaa4",
+    "code": "TTH 102.1",
+    "name": "Đinh Tiên Hoàng - Võ Thị Sáu 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "649da72ca6068200171a6dbb",
+    "code": "TTH 247",
+    "name": "Tôn Đức Thắng - Hàm Nghi",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a6088218576340017d06693",
+    "code": "IDICO-QL1 36",
+    "name": "QL1 - Nút giao An Lạc 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b65fd8bfd3d90017eaa461",
+    "code": "TTH 237",
+    "name": "Lê Văn Duyệt - Vũ Huy Tấn",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad08",
+    "code": "ITS 6.2",
+    "name": "Cộng Hòa - Tân Kỳ Tân Quý",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595dc70d3dcfc400106f289a",
+    "code": "TTH 21.62",
+    "name": "Quốc lộ 1 - Ngã 4 Ga",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "587c79e9b807da0011e33d3d",
+    "code": "TTH 40.3",
+    "name": "Điện Biên Phủ - Nguyễn Văn Thương 2",
+    "district": "Quận Bình Thạnh",
+    "status": "UP"
+  },
+  {
+    "id": "63b65ebebfd3d90017eaa3ae",
+    "code": "TTH 233.1",
+    "name": "Nguyễn Hữu Cảnh - Ngô Tất Tố 2 (Dạ cầu Thủ Thiêm 1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5874769eb807da0011e33cec",
+    "code": "TTH 38.3",
+    "name": "Cộng Hòa - Út Tịch 2",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "63b660f8bfd3d90017eaa4ea",
+    "code": "TTH 242.2",
+    "name": "Cầu Tân Thuận 2 - Q7 (Q7-Q4)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58af994abd82540010390c37",
+    "code": "TTH 36.1",
+    "name": "Nguyễn Hữu Cảnh - Tôn Đức Thắng",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56df8108c062921100c143db",
+    "code": "TTH 23",
+    "name": "Hoàng Minh Giám - Hồng Hà",
+    "district": "Quận Phú Nhuận",
+    "status": "UP"
+  },
+  {
+    "id": "63ae7903bfd3d90017e8f211",
+    "code": "TTH 191",
+    "name": "Hậu Giang -  Hẻm 491",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae7727bfd3d90017e8f14a",
+    "code": "TTH 186.2",
+    "name": "Hoàng Diệu - Đoàn Văn Bơ 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623f36e6f998a001b252878",
+    "code": "TTH 297.2",
+    "name": "Phạm Văn Đồng - Kha Vạn Cân 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d9ddec9766c880017188c9c",
+    "code": "TTH 173",
+    "name": "Nút giao Hàng Xanh 5 (Hàng Xanh - Bạch Đằng)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad02",
+    "code": "ITS 3.4",
+    "name": "Điện Biên Phủ - Pasteur",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "681885ff6dfb4b0018f8f1ee",
+    "code": "TTH 430",
+    "name": "Trần Đại Nghĩa - Kênh A",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae79aabfd3d90017e8f26a",
+    "code": "TTH 195",
+    "name": "Cách Mạng Tháng Tám - Trường Sơn",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d8cd7fb766c880017188954",
+    "code": "TTH 152",
+    "name": "Phạm Văn Đồng - Đường 20 (hướng đi Sân bay)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c481293",
+    "code": "TTH 14.1",
+    "name": "Võ Văn Kiệt - Hải Thượng Lãn Ông 1",
+    "district": "Quận 5",
+    "status": "UP"
+  },
+  {
+    "id": "63b66089bfd3d90017eaa4bd",
+    "code": "TTH 241",
+    "name": "Nơ Trang Long - Chu Văn An",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae798abfd3d90017e8f255",
+    "code": "TTH 194",
+    "name": "Cách Mạng Tháng Tám - Bắc Hải",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a89f51afb9c00172d26ef",
+    "code": "TTH 314.2",
+    "name": "Nguyễn Văn Linh - Trịnh Quang Nghị 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6318287ec9eae60017a19f36",
+    "code": "TTH 176.2",
+    "name": "Nguyễn Thị Minh Khai - Đinh Tiên Hoàng 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6792f3058c5ed4001b27f58e",
+    "code": "TTH 0009",
+    "name": "Trần Văn Giàu - Cầu Đôi",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "587476e3b807da0011e33cee",
+    "code": "TTH 38.4",
+    "name": "Cộng Hòa - Út Tịch 1",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "597bf277faa7ea0011c7c29f",
+    "code": "TTH 99",
+    "name": "Cầu Phú Hữu 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d9de49d766c880017188cb9",
+    "code": "TTH 1.7",
+    "name": "Cao tốc LTDG - Đỗ Xuân Hợp 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d9ddf49766c880017188ca0",
+    "code": "TTH 175",
+    "name": "Nút giao Hàng Xanh 7 (Hàng Xanh - Cầu Văn Thánh)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae763bbfd3d90017e8f0c4",
+    "code": "TTH 182",
+    "name": "Lý Thái Tổ - Nguyễn Đình Chiểu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d8cda6a766c880017188960",
+    "code": "TTH 158",
+    "name": "Phạm Văn Đồng - Kha Vạn Cân (hướng đi Sân bay)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b80e81afb9c00172dcbec",
+    "code": "TTH 383",
+    "name": "Cách Mạng Tháng Tám - Sương Nguyệt Anh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56df84abc062921100c143e5",
+    "code": "TTH 24.2",
+    "name": "Nút giao Nguyễn Thái Sơn 3 (Phạm Văn Đồng)",
+    "district": "Quận Gò Vấp",
+    "status": "UP"
+  },
+  {
+    "id": "662a86a11afb9c00172d2410",
+    "code": "TTH 304",
+    "name": "Tùng Thiện Vương - Cao Xuân Dục",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c48128b",
+    "code": "TTH 9.1",
+    "name": "Võ Văn Kiệt - Nguyễn Văn Cừ 1",
+    "district": "Quận 1",
+    "status": "UP"
+  },
+  {
+    "id": "58e49ff8d9d6200011e0b9d4",
+    "code": "TTH 35.2",
+    "name": "Nam Kỳ Khởi Nghĩa - Trần Quốc Toản",
+    "district": "Quận 3",
+    "status": "UP"
+  },
+  {
+    "id": "681885a26dfb4b0018f8f176",
+    "code": "TTH 429",
+    "name": "Lê Đình Chi - Kênh 4",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a8241105058170011f6eaa6",
+    "code": "TTH 102.2",
+    "name": "Đinh Tiên Hoàng - Võ Thị Sáu 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "65e054fb6b18080018db6632",
+    "code": "TTH 250",
+    "name": "Lê Duẩn - Mạc Đĩnh Chi",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a825ded5058170011f6ead7",
+    "code": "TTH 118.2",
+    "name": "Quốc lộ 50 - Cầu Ông Thìn (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d8cdb0a766c880017188964",
+    "code": "TTH 160",
+    "name": "Trường Chinh - Xuân Hồng",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68188bb96dfb4b0018f8fdbf",
+    "code": "TTH 446",
+    "name": "Vĩnh Lộc - Trần Hải Phụng",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6792efe48c5ed4001b27f336",
+    "code": "TTH 0002",
+    "name": "Xa Lộ Hà Nội - Cổng ĐH An ninh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b5503bbfd3d90017ea7ccc",
+    "code": "TTH 231.3",
+    "name": "Nút giao Mỹ Thủy (7)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a873b1afb9c00172d2483",
+    "code": "TTH 305.1",
+    "name": "Võ Trần Chí - Trần Văn Giàu 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "66b1c3fa779f740018674146",
+    "code": "TTH 418",
+    "name": "Nguyễn Hữu Cảnh - Ung Văn Khiêm",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5ad0621c98d8fc001102e268",
+    "code": "TTH 101.2",
+    "name": "Lý Tự Trọng - Hai Bà Trưng 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "66b1c34d779f74001867409e",
+    "code": "TTH 414",
+    "name": "Ba Tháng Hai - Thành Thái",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595f89323dcfc400106f28ee",
+    "code": "TTH 21.77",
+    "name": "Quốc lộ 1 - BQB Cầu vượt Quang Trung A (hướng An Sương)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c48128c",
+    "code": "TTH 9.2",
+    "name": "Võ Văn Kiệt - Nguyễn Văn Cừ 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b558c1afb9c00172d8ed2",
+    "code": "TTH 354",
+    "name": "625 Quang Trung",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623f4836f998a001b2528bf",
+    "code": "TTH 299.2",
+    "name": "Võ Nguyên Giáp - Đỗ Xuân Hợp (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b85bf1afb9c00172dd149",
+    "code": "TTH 401",
+    "name": "Nam Kỳ Khởi Nghĩa - Hàm Nghi",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b3c274bfd3d90017e9ab93",
+    "code": "TTH 10a",
+    "name": "Hồng Bàng - Phù Đổng Thiên Vương",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6818887f6dfb4b0018f8f54c",
+    "code": "TTH 438",
+    "name": "Trần Văn Giàu - Võ Văn Vân",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b54bcdbfd3d90017ea7a82",
+    "code": "TTH 222",
+    "name": "Tỉnh lộ 43 - KCX Linh Trung 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68eddd0a230ee50017d040b2",
+    "code": "BD 1.2",
+    "name": "Mỹ Phước Tân Vạn - Phạm Ngọc Thạch (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68a587d54e89b100173b6021",
+    "code": "TTH 460.1",
+    "name": "Tỉnh Lộ 8 - Tỉnh Lộ 15 (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5b5995a3fd4edb0019c7d9ab",
+    "code": "TTH 15.2",
+    "name": "Võ Văn Kiệt - Cầu Chà Và 2 (trên cầu)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b81a31afb9c00172dcc65",
+    "code": "TTH 386",
+    "name": "Nam Kỳ Khởi Nghĩa - Võ Văn Tần",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae7b3cbfd3d90017e8f34d",
+    "code": "TTH 200.3",
+    "name": "Ba Tháng Hai - Lý Thường Kiệt 3",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6318283cc9eae60017a19f0c",
+    "code": "TTH 176.1",
+    "name": "Nguyễn Thị Minh Khai - Đinh Tiên Hoàng 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515acf6",
+    "code": "ITS 1.4-1",
+    "name": "Nút giao Ngã sáu Cộng Hòa",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58746488b807da0011e33cd7",
+    "code": "TTH 21.10",
+    "name": "Cầu vượt Sóng Thần 2",
+    "district": "Quận Thủ Đức",
+    "status": "UP"
+  },
+  {
+    "id": "5822b5ededeb6c0012a2d66a",
+    "code": "TTH 5.1",
+    "name": "Mai Chí Thọ - Nguyễn Cơ Thạch 1",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "63b660d8bfd3d90017eaa4d5",
+    "code": "TTH 242.1",
+    "name": "Cầu Tân Thuận 2 - Q7 (Q4-Q7)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae7be0bfd3d90017e8f3a8",
+    "code": "TTH 201.1",
+    "name": "Ba Tháng Hai - Lê Đại Hành 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b54a04bfd3d90017ea783e",
+    "code": "TTH 216",
+    "name": "Lê Văn Việt - Hoàng Hữu Nam",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b54f70bfd3d90017ea7c86",
+    "code": "TTH 49.10",
+    "name": "Cầu Sài Gòn (10)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a8267fe5058170011f6eae1",
+    "code": "TTH 123.1",
+    "name": "Lê Văn Lương - Cầu Rạch Đĩa",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595d984b3dcfc400106f2879",
+    "code": "TTH 21.51",
+    "name": "Quốc lộ 1 - An Phú Đông 13 (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58746122b807da0011e33cc5",
+    "code": "TTH 21.2",
+    "name": "Quốc lộ 1 - ĐH Nông Lâm 2",
+    "district": "Quận Thủ Đức",
+    "status": "UP"
+  },
+  {
+    "id": "662b7f651afb9c00172dc992",
+    "code": "TTH 378",
+    "name": "11B Nguyễn Bỉnh Khiêm",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae768dbfd3d90017e8f0f1",
+    "code": "TTH 183.2",
+    "name": "Khánh Hội - Vĩnh Hội",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6818884f6dfb4b0018f8f50f",
+    "code": "TTH 437",
+    "name": "Trần Đại Nghĩa - Kênh C",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a89ae1afb9c00172d26ad",
+    "code": "TTH 314.1",
+    "name": "Nguyễn Văn Linh - Trịnh Quang Nghị",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b54a70bfd3d90017ea7862",
+    "code": "TTH 218",
+    "name": "Lã Xuân Oai - Đường D2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58e49783d9d6200011e0b9ce",
+    "code": "TTH 28.10",
+    "name": "Trường Chinh - Phan Văn Hớn 2 (HM-Q12)",
+    "district": "Quận 12",
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad0c",
+    "code": "ITS 7.2",
+    "name": "Nút giao Ngã sáu Phù Đổng 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623ef776f998a001b252768",
+    "code": "TTH 287",
+    "name": "Quốc Lộ 22 - Nguyễn Thị Sóc",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58d7bbf2c1e33c00112b3216",
+    "code": "TTH 21.46",
+    "name": "Quốc lộ 1 - Đinh Đức Thiện 2",
+    "district": "Huyện Bình Chánh",
+    "status": "UP"
+  },
+  {
+    "id": "662b51d21afb9c00172d89bf",
+    "code": "TTH 348",
+    "name": "Tên Lửa - Đường số 7",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58746295b807da0011e33ccb",
+    "code": "TTH 21.5",
+    "name": "Quốc lộ 1 - Bình Đường",
+    "district": "Quận Thủ Đức",
+    "status": "UP"
+  },
+  {
+    "id": "585b2baec3f96200127dc508",
+    "code": "TTH 37.4",
+    "name": "Nguyễn Văn Linh - Huỳnh Tấn Phát 2",
+    "district": "Quận 7",
+    "status": "UP"
+  },
+  {
+    "id": "5a606cd08576340017d06628",
+    "code": "TTH 44.10",
+    "name": "BX Miền Đông - Đinh Bộ Lĩnh 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b80051afb9c00172dcaf6",
+    "code": "TTH 380",
+    "name": "Nguyễn Trãi - Nguyễn Cư Trinh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "589d0bceb3bf7600110283d6",
+    "code": "TTH 49.2",
+    "name": "Cầu Sài Gòn 2 (dạ cầu)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "587ee2aeb807da0011e33d52",
+    "code": "TTH 44.1",
+    "name": "Phan Đăng Lưu - Phan Xích Long",
+    "district": "Quận Phú Nhuận",
+    "status": "UP"
+  },
+  {
+    "id": "662b5bc31afb9c00172d92e2",
+    "code": "TTH 370",
+    "name": "Lê Trọng Tấn - Đường Kênh 19/5",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b58401afb9c00172d90f5",
+    "code": "TTH 360",
+    "name": "Hoàng Văn Thụ - Bùi Thị Xuân",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5874644cb807da0011e33cd5",
+    "code": "TTH 21.9",
+    "name": "Cầu vượt Sóng Thần 1",
+    "district": "Quận Thủ Đức",
+    "status": "UP"
+  },
+  {
+    "id": "662b867b1afb9c00172dd250",
+    "code": "TTH 405",
+    "name": "Trần Hưng Đạo - Ký Con",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "597bf0b8faa7ea0011c7c293",
+    "code": "TTH 98",
+    "name": "Cầu Phú Hữu 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a10c79f02eb490011a0b0dd",
+    "code": "TTH 59.1",
+    "name": "Mai Chí Thọ - Tố Hữu (C6)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68188af96dfb4b0018f8f8e4",
+    "code": "TTH 444.1",
+    "name": "Võ Trần Chí - Kênh 10 (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b83ff1afb9c00172dcffb",
+    "code": "TTH 394",
+    "name": "Lê Duẩn - Phạm Ngọc Thạch",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad19",
+    "code": "ITS 8.7",
+    "name": "Nguyễn Thị Minh Khai - Mạc Đĩnh Chi",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5b6329fdfd4edb0019c7dc0b",
+    "code": "TTH 132",
+    "name": "Nguyễn Trãi - Nguyễn Văn Cừ",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "589add0fb3bf7600110283ae",
+    "code": "TTH 46.2",
+    "name": "Tô Ký (Tỉnh lộ 15) - Đông Bắc",
+    "district": "Quận 12",
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad01",
+    "code": "ITS 3.2",
+    "name": "Võ Thị Sáu - Hai Bà Trưng",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58abbf72bd82540010390ba4",
+    "code": "TTH 49.9",
+    "name": "Cầu Sài Gòn 9 (Bình Thạnh - Thủ Đức)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623f1f16f998a001b25281f",
+    "code": "TTH 295",
+    "name": "Phạm Văn Đồng - Đào Trinh Nhất",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58ad6961bd82540010390be5",
+    "code": "TTH 34.9",
+    "name": "Nút giao Phú Nhuận 1 (Phan Đình Phùng)",
+    "district": "Quận Phú Nhuận",
+    "status": "UP"
+  },
+  {
+    "id": "5a8257e25058170011f6eacd",
+    "code": "TTH 111",
+    "name": "Hoàng Hữu Nam - Đường D400",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a606dbc8576340017d0662b",
+    "code": "TTH 40.4",
+    "name": "Điện Biên Phủ - Nguyễn Hữu Cảnh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b52a31afb9c00172d8b01",
+    "code": "TTH 350",
+    "name": "Lê Đức Thọ - Hẻm 688",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58abbee5bd82540010390ba2",
+    "code": "TTH 49.5",
+    "name": "Cầu Sài Gòn 5 (dạ cầu Thủ Đức)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a8ef41afb9c00172d2af2",
+    "code": "TTH 325",
+    "name": "Lê Văn Lương - Đường số 15",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623f5b56f998a001b25292f",
+    "code": "TTH 302.2",
+    "name": "Võ Nguyên Giáp - quay đầu An Phú (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "66b1c398779f7400186740e3",
+    "code": "TTH 416",
+    "name": "Ba Tháng Hai - Tạ Uyên",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58d7b756c1e33c00112b320d",
+    "code": "TTH 21.49",
+    "name": "Nút giao Chợ Đệm 2 (CT Trung Lương - Bùi Thanh Khiết)",
+    "district": "Huyện Bình Chánh",
+    "status": "UP"
+  },
+  {
+    "id": "6623e31e6f998a001b252250",
+    "code": "TTH 255",
+    "name": "Kỳ Đồng - Bà Huyện Thanh Quan",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515acfe",
+    "code": "ITS 2.8",
+    "name": "Lý Chính Thắng - Trương Định",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6792f3cf8c5ed4001b27f61e",
+    "code": "TTH 0010",
+    "name": "Tỉnh Lộ 8 - Cầu Phú Cường",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58df4e22dc195800111e04bb",
+    "code": "TTH 26.5",
+    "name": "Yên Thế - Bạch Đằng",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "58e49e3dd9d6200011e0b9d1",
+    "code": "TTH 35.1",
+    "name": "Nam Kỳ Khởi Nghĩa - Lý Chính Thắng",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d8cdc57766c88001718896e",
+    "code": "TTH 165",
+    "name": "Lý Thường Kiệt - Lạc Long Quân",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "66f1266f538c780017c93579",
+    "code": "TTH 265.2",
+    "name": "Hùng Vương - Nguyễn Chí Thanh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5ad0679598d8fc001102e274",
+    "code": "TTH 105.3",
+    "name": "Lê Văn Việt - Man Thiện",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a824b6c5058170011f6eaab",
+    "code": "TTH 104.1",
+    "name": "Nút giao Bốn Xã 3 (Lê Văn Quới)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58175ac4edeb6c0012a2d5bb",
+    "code": "TTH 3.1",
+    "name": "Mai Chí Thọ - Đồng Văn Cống 1",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "6623f0576f998a001b2527ac",
+    "code": "TTH 290",
+    "name": "Âu Cơ - Thoại Ngọc Hầu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "62da3e840637a10017d7073d",
+    "code": "TTH 268.3",
+    "name": "Quốc Lộ 13 - Đinh Thị Thi 3",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c481288",
+    "code": "TTH 7.1",
+    "name": "Võ Văn Kiệt - Cầu Ông Lãnh 1",
+    "district": "Quận 1",
+    "status": "UP"
+  },
+  {
+    "id": "5d8cd614766c88001718894a",
+    "code": "TTH 147",
+    "name": "Lê Quang Định - Nơ Trang Long",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a824f975058170011f6eab8",
+    "code": "TTH 116.2",
+    "name": "Nguyễn Oanh - Phan Văn Trị (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a824c3e5058170011f6eaae",
+    "code": "TTH 104.2",
+    "name": "Nút giao Bốn Xã 1 (Bình Long)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515acf9",
+    "code": "ITS 2.1-1",
+    "name": "Nút giao Công Trường Dân Chủ",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "587470c2b807da0011e33ce4",
+    "code": "TTH 40.2",
+    "name": "Nguyễn Hữu Cảnh - Ngô Tất Tố (Cầu Thủ Thiêm 1)",
+    "district": "Quận Bình Thạnh",
+    "status": "UP"
+  },
+  {
+    "id": "68188cbf6dfb4b0018f900e9",
+    "code": "TTH 451",
+    "name": "Võ Văn Vân - Liên Ấp 123",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "67e217ea3215f90017863bf1",
+    "code": "TTH 22.6.2",
+    "name": "Nguyễn Thị Định - Đường C (20-2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68ede6d0230ee50017d04d4c",
+    "code": "BD 7.1",
+    "name": "Đại lộ Bình Dương - ngã tư chợ Đình (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b7f251afb9c00172dc8bc",
+    "code": "TTH 377",
+    "name": "Nam Kỳ Khởi Nghĩa - Nguyễn Du",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623ec826f998a001b252686",
+    "code": "TTH 279",
+    "name": "Nguyễn Oanh - Lê Đức Thọ",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad23",
+    "code": "ITS 10.3",
+    "name": "Ba Tháng Hai - Lý Thường Kiệt",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "587efb60b807da0011e33d5d",
+    "code": "TTH 45.2",
+    "name": "Phạm Văn Đồng - Lê Quang Định 1",
+    "district": "Quận Gò Vấp",
+    "status": "UP"
+  },
+  {
+    "id": "6818863c6dfb4b0018f8f235",
+    "code": "TTH 431",
+    "name": "Trần Đại Nghĩa - Mai Bá Hương",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b5adc1afb9c00172d925b",
+    "code": "TTH 366.1",
+    "name": "Trường Chinh - Phan Huy Ích 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5701e22bc4350a1100e26f6c",
+    "code": "TTH 1a",
+    "name": "Nguyễn Công Trứ - Calmette 1",
+    "district": "Quận 1",
+    "status": "UP"
+  },
+  {
+    "id": "5b87c386ca057700116404a6",
+    "code": "TTH 60.4",
+    "name": "Đường hầm (Đầu hầm Tp Thủ Đức)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d8cd542766c880017188948",
+    "code": "TTH 146",
+    "name": "Võ Văn Ngân - Đặng Văn Bi",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623e8406f998a001b252465",
+    "code": "TTH 271",
+    "name": "Phan Đăng Lưu - Hoàng Hoa Thám",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5875cef0b807da0011e33d14",
+    "code": "TTH 28.6",
+    "name": "Trường Chinh - Phạm Văn Bạch 2",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "68188a816dfb4b0018f8f769",
+    "code": "TTH 443.1",
+    "name": "Võ Trần Chí - Thế Lữ 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a823d555058170011f6eaa2",
+    "code": "TTH 101.1",
+    "name": "Lý Tự Trọng - Hai Bà Trưng 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595da2853dcfc400106f2883",
+    "code": "TTH 21.55",
+    "name": "Quốc lộ 1 - Đường 15 (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "587c8183b807da0011e33d3f",
+    "code": "TTH 27.2",
+    "name": "Hoàng Văn Thụ - Trần Quốc Hoàn",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad06",
+    "code": "ITS 4.2",
+    "name": "Đinh Tiên Hoàng - Nguyễn Đình Chiểu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b54711afb9c00172d8d4f",
+    "code": "TTH 351",
+    "name": "90 Nguyễn Thái Sơn",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a8279865058170011f6eaef",
+    "code": "TTH 122.2",
+    "name": "Nguyễn Văn Linh - Phạm Hùng 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b4faa1afb9c00172d875e",
+    "code": "TTH 339",
+    "name": "Tháp Mười - Phạm Đình Hổ",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a87641afb9c00172d24b0",
+    "code": "TTH 305.2",
+    "name": "Võ Trần Chí - Trần Văn Giàu 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c4812a1",
+    "code": "TTH 22.3",
+    "name": "Nút giao Mỹ Thủy 1",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "63ae7669bfd3d90017e8f0d9",
+    "code": "TTH 183.1",
+    "name": "Khánh Hội - Cầu Kênh Tẻ",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b65e6abfd3d90017eaa361",
+    "code": "TTH 232",
+    "name": "Nguyễn Thị Định - Thân Văn Nhiếp",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a8fd41afb9c00172d2bac",
+    "code": "TTH 328",
+    "name": "Nguyễn Lương Bằng - Phạm Hữu Lầu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56f11afc3ac17b11001c504e",
+    "code": "TTH 31",
+    "name": "Trường Sơn - Phan Đình Giót",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "585b2b1ec3f96200127dc505",
+    "code": "TTH 37.3",
+    "name": "Nguyễn Văn Linh - Huỳnh Tấn Phát 1",
+    "district": "Quận 7",
+    "status": "UP"
+  },
+  {
+    "id": "5a825b7d5058170011f6ead4",
+    "code": "TTH 117.3",
+    "name": "Nguyễn Văn Linh - Nguyễn Hữu Thọ (3)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a6069238576340017d0661c",
+    "code": "TTH 44.6",
+    "name": "Bạch Đằng - Lê Quang Định",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b857b1afb9c00172dd106",
+    "code": "TTH 400",
+    "name": "Điện Biên Phủ - Nguyễn Bỉnh Khiêm",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c481298",
+    "code": "TTH 18.1",
+    "name": "Võ Văn Kiệt - An Dương Vương 1",
+    "district": "Quận Bình Tân",
+    "status": "UP"
+  },
+  {
+    "id": "63ae75f9bfd3d90017e8f097",
+    "code": "TTH 181.2",
+    "name": "Cao Thắng – Võ Văn Tần 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae7829bfd3d90017e8f1ac",
+    "code": "TTH 188.2",
+    "name": "Nguyễn Tất Thành - Cầu Tân Thuận 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "65e0556b6b18080018db665e",
+    "code": "TTH 252",
+    "name": "Nguyễn Thái Học - Phạm Ngũ Lão",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b81eb1afb9c00172dcc85",
+    "code": "TTH 387",
+    "name": "Nguyễn Thị Minh Khai - Nguyễn Bỉnh Khiêm 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595dd9ac3dcfc400106f28b4",
+    "code": "TTH 21.70",
+    "name": "Quốc lộ 1 - BQB Trước UBND Q12 (hướng đi An Sương)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b54d27bfd3d90017ea7ae5",
+    "code": "TTH 226",
+    "name": "Xa lộ Hà Nội - Đường D1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a8cc51afb9c00172d2938",
+    "code": "TTH 320",
+    "name": "Huỳnh Tấn Phát - Phú Thuận",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "587654d3b807da0011e33d36",
+    "code": "TTH 22.12",
+    "name": "Võ Chí Công - Đường số 2",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "5990ffdbbec3b90016d2ad2d",
+    "code": "TTH 60.2",
+    "name": "Đường hầm (Đầu hầm Tp Thủ Đức)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a8259035058170011f6eacf",
+    "code": "TTH 117.1",
+    "name": "Nguyễn Văn Linh - Nguyễn Hữu Thọ (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58744f1fb807da0011e33cbd",
+    "code": "TTH 43.1",
+    "name": "Hưng Phú - Chánh Hưng 1",
+    "district": "Quận 8",
+    "status": "UP"
+  },
+  {
+    "id": "63b54cffbfd3d90017ea7ad0",
+    "code": "TTH 225",
+    "name": "Tỉnh lộ 43 - Chân cầu Gò Dưa",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "589b4644b3bf7600110283ce",
+    "code": "TTH 48.1",
+    "name": "Hà Huy Giáp - Cầu Phú Long 1",
+    "district": "Quận 12",
+    "status": "UP"
+  },
+  {
+    "id": "5d8cd8e2766c880017188958",
+    "code": "TTH 154",
+    "name": "Phạm Văn Đồng - Hiệp Bình (hướng đi Sân bay)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b54938bfd3d90017ea77f6",
+    "code": "TTH 212",
+    "name": "Nguyễn Duy Trinh - Lã Xuân Oai",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623ebd76f998a001b25264d",
+    "code": "TTH 277",
+    "name": "Quốc Lộ 1 - Tô Ký",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a6086e88576340017d0668a",
+    "code": "IDICO-QL1 30",
+    "name": "QL1-Cty Pouyuen (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "681888b66dfb4b0018f8f58c",
+    "code": "TTH 439",
+    "name": "VX Trần Văn Giàu - Tỉnh Lộ 10",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "586e2995f9fab7001111b0b5",
+    "code": "TTH 40.1",
+    "name": "Ung Văn Khiêm - Nguyễn Gia Trí (D2)",
+    "district": "Quận Bình Thạnh",
+    "status": "UP"
+  },
+  {
+    "id": "5d8cd98d766c88001718895a",
+    "code": "TTH 155",
+    "name": "Phạm Văn Đồng - Tô Ngọc Vân (hướng đi Bình Dương)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623ee666f998a001b252726",
+    "code": "TTH 284",
+    "name": "Quang Trung - Phan Huy Ích",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b84c11afb9c00172dd0b5",
+    "code": "TTH 397",
+    "name": "Nguyễn Thị Minh Khai - Phạm Ngọc Thạch",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b51201afb9c00172d889a",
+    "code": "TTH 345",
+    "name": "Hương Lộ 2 - Mã Lò",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56df8198c062921100c143dd",
+    "code": "TTH 32.3",
+    "name": "Nút giao Thủ Đức (Võ Văn Ngân)",
+    "district": "Quận Thủ Đức",
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c481282",
+    "code": "TTH 3.2",
+    "name": "Mai Chí Thọ - Đồng Văn Cống 2",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "5a6066608576340017d06617",
+    "code": "TTH 21.85",
+    "name": "Quang Trung - Tân Sơn",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623ea416f998a001b25260a",
+    "code": "TTH 275",
+    "name": "Phan Đình Phùng - Nguyễn Trọng Tuyển",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b872d1afb9c00172dd36a",
+    "code": "TTH 407",
+    "name": "Lê Văn Sỹ - Trần Quang Diệu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623e4b06f998a001b2522f1",
+    "code": "TTH 260",
+    "name": "Nguyễn Thị Minh Khai - Nguyễn Thượng Hiền",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c48127e",
+    "code": "TTH 1.2",
+    "name": "Mai Chí Thọ - Võ Nguyên Giáp (Cát Lái cầu B)",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "595dd3a63dcfc400106f28a7",
+    "code": "TTH 21.64",
+    "name": "Quốc lộ 1 - Đường Tô Ngọc Vân 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56f8d743025e9511002786c5",
+    "code": "TTH 29.2",
+    "name": "Trường Sơn - Ga Quốc Nội 1",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "68ede5d4230ee50017d04c24",
+    "code": "BD 6.1",
+    "name": "Đại lộ Bình Dương - ngã 5 Phước Kiến (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a8266105058170011f6eadf",
+    "code": "TTH 121.2",
+    "name": "Nguyễn Văn Linh - Quốc lộ 50 (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b5afe1afb9c00172d9284",
+    "code": "TTH 366.2",
+    "name": "Trường Chinh - Phan Huy Ích 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a82602c5058170011f6ead9",
+    "code": "TTH 119.1",
+    "name": "Vĩnh Lộc - Nguyễn Thị Tú 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "585b2980c3f96200127dc502",
+    "code": "TTH 37.2",
+    "name": "Huỳnh Tấn Phát - Lưu Trọng Lư 2",
+    "district": "Quận 7",
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c481284",
+    "code": "TTH 5a",
+    "name": "Nguyễn Thị Minh Khai - Nguyễn Thiện Thuật",
+    "district": "Quận 1",
+    "status": "UP"
+  },
+  {
+    "id": "662b56c51afb9c00172d9071",
+    "code": "TTH 355",
+    "name": "Bạch Đằng - Đặng Văn Sâm",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae7a08bfd3d90017e8f285",
+    "code": "TTH 196.1",
+    "name": "Ba Tháng Hai - Lê Hồng Phong 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a8b061afb9c00172d27d7",
+    "code": "TTH 316",
+    "name": "Nguyễn Văn Linh - đường số 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "587ee7d7b807da0011e33d55",
+    "code": "TTH 44.2",
+    "name": "Phan Đăng Lưu - Nơ Trang Long",
+    "district": "Quận Bình Thạnh",
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad17",
+    "code": "ITS 8.5",
+    "name": "Nguyễn Thị Minh Khai - Hai Bà Trưng",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b51a41afb9c00172d8926",
+    "code": "TTH 347",
+    "name": "Lê Văn Quới - Mã Lò",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae7893bfd3d90017e8f1e1",
+    "code": "TTH 189",
+    "name": "Nguyễn Tất Thành - Lê Văn Linh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a823ba75058170011f6ea9e",
+    "code": "TTH 100.1",
+    "name": "Trần Hưng Đạo - Nguyễn Thái Học 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "681887346dfb4b0018f8f36a",
+    "code": "TTH 434",
+    "name": "Trần Văn Giàu - Lê Đình Chi",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b5a401afb9c00172d91fc",
+    "code": "TTH 364",
+    "name": "Trường Chinh - Nguyễn Hồng Đào",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56df8544c062921100c143e6",
+    "code": "TTH 29.1",
+    "name": "Trường Sơn - Ga Quốc Tế",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "595ddb493dcfc400106f28b6",
+    "code": "TTH 21.71",
+    "name": "Quốc lộ 1 - Cầu vượt Tân Thới Hiệp 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68188ab56dfb4b0018f8f7be",
+    "code": "TTH 443.2",
+    "name": "Võ Trần Chí - Thế Lữ 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "66b1c1f2779f740018673f0d",
+    "code": "TTH 412",
+    "name": "An Dương Vương - Nguyễn Văn Cừ",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "589b4379b3bf7600110283c9",
+    "code": "TTH 47.5",
+    "name": "QL 22 - Giáp Hải",
+    "district": "Huyện Củ Chi",
+    "status": "UP"
+  },
+  {
+    "id": "5a60604f8576340017d0660b",
+    "code": "TTH 24.5",
+    "name": "Nguyễn Thái Sơn - Nguyễn Văn Nghi 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d8cd9cb766c88001718895c",
+    "code": "TTH 156",
+    "name": "Phạm Văn Đồng - Tô Ngọc Vân (hướng đi Sân bay)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623e6b86f998a001b2523b8",
+    "code": "TTH 266",
+    "name": "Lý Thái Tổ - Hồ Thị Kỷ",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a8256315058170011f6eac9",
+    "code": "TTH 109.2",
+    "name": "Đinh Bộ Lĩnh - Nguyễn Xí",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5ad064b498d8fc001102e26f",
+    "code": "TTH 125.2",
+    "name": "Lã Xuân Oai - Cầu Tăng Long (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58af8d68bd82540010390c2e",
+    "code": "TTH 35.5",
+    "name": "Nam Kỳ Khởi Nghĩa - Điện Biên Phủ 2",
+    "district": "Quận 3",
+    "status": "UP"
+  },
+  {
+    "id": "65e0552f6b18080018db6647",
+    "code": "TTH 251",
+    "name": "Lê Lai - Phan Chu Trinh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595da7783dcfc400106f2888",
+    "code": "TTH 21.57",
+    "name": "Quốc lộ 1 - Đường Vườn Lài 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "66b1c22f779f740018673f6e",
+    "code": "TTH 413.2",
+    "name": "Vòng xoay Phú Lâm (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a8e121afb9c00172d2a3f",
+    "code": "TTH 323.2",
+    "name": "Huỳnh Tấn Phát - cầu Tân Thuận 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b5be91afb9c00172d939b",
+    "code": "TTH 371",
+    "name": "Lê Trọng Tấn - Tây Thạnh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5b728aafca0577001163ff7e",
+    "code": "TTH 136",
+    "name": "Hồng Bàng - Châu Văn Liêm",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6818901a6dfb4b0018f9058a",
+    "code": "TTH 456",
+    "name": "Tỉnh Lộ 10 - cầu Tân Tạo",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae7966bfd3d90017e8f240",
+    "code": "TTH 193",
+    "name": "Cách Mạng Tháng Tám - Tô Hiến Thành",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b4efc1afb9c00172d86bc",
+    "code": "TTH 336",
+    "name": "Trần Hưng Đạo - Trần Phú",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b87551afb9c00172dd43a",
+    "code": "TTH 408",
+    "name": "Trần Quốc Thảo - Kỳ Đồng",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad21",
+    "code": "ITS 10.2-1",
+    "name": "Nút giao Ngã sáu Nguyễn Tri Phương",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68188bf46dfb4b0018f8ff12",
+    "code": "TTH 447",
+    "name": "Vĩnh Lộc - kênh Trung Ương",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68a589a54e89b100173b6267",
+    "code": "TTH 463.1",
+    "name": "Tỉnh Lộ 8 - Sông Lu (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c481289",
+    "code": "TTH 7.2",
+    "name": "Võ Văn Kiệt - Cầu Ông Lãnh 2",
+    "district": "Quận 1",
+    "status": "UP"
+  },
+  {
+    "id": "58ad69c4bd82540010390be7",
+    "code": "TTH 34.10",
+    "name": "Nút giao Phú Nhuận 2 (Phan Đăng Lưu)",
+    "district": "Quận Phú Nhuận",
+    "status": "UP"
+  },
+  {
+    "id": "6623f5876f998a001b25291a",
+    "code": "TTH 302.1",
+    "name": "Võ Nguyên Giáp - quay đầu An Phú (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623e2e16f998a001b252233",
+    "code": "TTH 254",
+    "name": "Hai Bà Trưng - Trần Quốc Toản",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b54898bfd3d90017ea77ae",
+    "code": "TTH 209",
+    "name": "Nguyễn Duy Trinh - Bưng Ông Thoàn",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b549b8bfd3d90017ea782c",
+    "code": "TTH 215",
+    "name": "Đỗ Xuân Hợp - Tây Hòa",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b5b271afb9c00172d9296",
+    "code": "TTH 367",
+    "name": "Trường Chinh - Tân Hải",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a87df1afb9c00172d2522",
+    "code": "TTH 307",
+    "name": "Trần Văn Giàu - Nguyễn Cửu Phú",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68ede60a230ee50017d04c69",
+    "code": "BD 6.2",
+    "name": "Đại lộ Bình Dương - ngã 5 Phước Kiến (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a823bd55058170011f6eaa0",
+    "code": "TTH 100.2",
+    "name": "Trần Hưng Đạo - Nguyễn Thái Học 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a6085688576340017d06684",
+    "code": "IDICO-QL1 27",
+    "name": "QL1-Tỉnh lộ 10 (3)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595dd7693dcfc400106f28b0",
+    "code": "TTH 21.68",
+    "name": "Quốc lộ 1 - Đường Lê Thị Riêng 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "59ca329d02eb490011a0a410",
+    "code": "IDICO-QL1 35",
+    "name": "QL1 - Nút giao An Lạc 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623e88c6f998a001b25248b",
+    "code": "TTH 272",
+    "name": "Hoàng Minh Giám - Đăng Văn Sâm",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b54996bfd3d90017ea781a",
+    "code": "TTH 214",
+    "name": "Đỗ Xuân Hợp - Dương Đình Hội",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c481283",
+    "code": "TTH 4.1",
+    "name": "Mai Chí Thọ - Trần Não 1",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "5d8cdcf0766c880017188972",
+    "code": "TTH 167",
+    "name": "Nút giao Lê Đại Hành 1 (Bình Thới)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "67e217643215f90017863b73",
+    "code": "TTH 22.9.1",
+    "name": "Nguyễn Thị Định - Cổng A (20)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b57ec1afb9c00172d90e3",
+    "code": "TTH 359",
+    "name": "Cộng Hòa - Hoàng Hoa Thám",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58af9670bd82540010390c34",
+    "code": "TTH 45.3",
+    "name": "Phạm Văn Đồng - Phan Văn Trị 1",
+    "district": "Quận Bình Thạnh",
+    "status": "UP"
+  },
+  {
+    "id": "662b50571afb9c00172d87df",
+    "code": "TTH 341",
+    "name": "Quốc Lộ 50 - Bùi Minh Trực",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56df8274c062921100c143df",
+    "code": "TTH 33.1",
+    "name": "Võ Nguyên Giáp - Tây Hòa 1",
+    "district": "Quận 9",
+    "status": "UP"
+  },
+  {
+    "id": "662b52131afb9c00172d8a23",
+    "code": "TTH 349",
+    "name": "Tỉnh lộ 10 - Mã Lò",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68188b786dfb4b0018f8face",
+    "code": "TTH 445",
+    "name": "Láng Le Bàu Cò - Thích Thiện Hòa",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a6061fd8576340017d06613",
+    "code": "TTH 21.83",
+    "name": "Quang Trung - Trưng Nữ Vương",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623f0246f998a001b252797",
+    "code": "TTH 289",
+    "name": "Âu Cơ - Lũy Bán Bích",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595da7d93dcfc400106f288a",
+    "code": "TTH 21.58",
+    "name": "Quốc lộ 1 - Đường Vườn Lài 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623f3436f998a001b252863",
+    "code": "TTH 297.1",
+    "name": "Phạm Văn Đồng - Kha Vạn Cân 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "66b1c311779f740018674083",
+    "code": "TTH 413.1",
+    "name": "Vòng xoay Phú Lâm (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a896e1afb9c00172d2674",
+    "code": "TTH 313",
+    "name": "Võ Trần Chí - Trần Đại Nghĩa",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68ae7f327d735d00173c74e4",
+    "code": "TTH 464.3",
+    "name": "Cầu Bình Triệu (2) hướng đi xòng xoay",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "59ca30fd02eb490011a0a406",
+    "code": "IDICO-QL1 25",
+    "name": "QL1 - Tỉnh lộ 10 (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a8cfe1afb9c00172d296e",
+    "code": "TTH 321",
+    "name": "Huỳnh Tấn Phát - Trần Trọng Cung",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "589b39d9b3bf7600110283c1",
+    "code": "TTH 47.2",
+    "name": "QL 22 - Nguyễn Ảnh Thủ 2",
+    "district": "Quận 12",
+    "status": "UP"
+  },
+  {
+    "id": "5d8cd326766c88001718893e",
+    "code": "TTH 141",
+    "name": "Nút giao Cây Gõ 3 (dạ cầu)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "587461c1b807da0011e33cc8",
+    "code": "TTH 21.4",
+    "name": "Quốc lộ 1 - Ngã tư Linh Xuân",
+    "district": "Quận Thủ Đức",
+    "status": "UP"
+  },
+  {
+    "id": "63ae76afbfd3d90017e8f106",
+    "code": "TTH 184",
+    "name": "Khánh Hội - Đường số 41",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b661a3bfd3d90017eaa520",
+    "code": "TTH 242.4",
+    "name": "Nguyễn Tất Thành - Cảng SG (Q4-Q7)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "583f926761cfea0012cf68f1",
+    "code": "TTH 22.9",
+    "name": "Nguyễn Thị Định - Cổng A Cảng Cát Lái",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "6878bab06145d3001ba517f7",
+    "code": "TTH 230.1",
+    "name": "Mai Chí Thọ - Trần Quý Kiên (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56df81d8c062921100c143de",
+    "code": "TTH 32.2",
+    "name": "Nút giao Thủ Đức (trên cầu)",
+    "district": "Quận Thủ Đức",
+    "status": "UP"
+  },
+  {
+    "id": "63ae73cebfd3d90017e8f00d",
+    "code": "TTH 180.1",
+    "name": "Nguyễn Thị Minh Khai - Cống Quỳnh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a8a661afb9c00172d2762",
+    "code": "TTH 315",
+    "name": "Nguyễn Văn Linh - Quản Trọng Linh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623e7526f998a001b252407",
+    "code": "TTH 296",
+    "name": "Thành Thái - cư xá Đồng Tiến",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c48129b",
+    "code": "TTH 19.2",
+    "name": "Võ Văn Kiệt - Hồ Học Lãm 2",
+    "district": "Quận Bình Tân",
+    "status": "UP"
+  },
+  {
+    "id": "586e2492f9fab7001111b0ab",
+    "code": "TTH 34.2",
+    "name": "Nguyễn Văn Trỗi - Nguyễn Đình Chính",
+    "district": "Quận Phú Nhuận",
+    "status": "UP"
+  },
+  {
+    "id": "68edd621230ee50017d031c5",
+    "code": "BD 1.1",
+    "name": "Mỹ Phước Tân Vạn - Phạm Ngọc Thạch (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68ede0cf230ee50017d04657",
+    "code": "BD 3.1",
+    "name": "Mỹ Phước Tân Vạn - Điện Biên Phủ (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b571d1afb9c00172d9083",
+    "code": "TTH 356",
+    "name": "Cách Mạng Tháng Tám - Phạm Văn Hai (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "587479b1b807da0011e33cf9",
+    "code": "TTH 28.8",
+    "name": "Trường Chinh - Tây Thạnh 2",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "62da3e620637a10017d70720",
+    "code": "TTH 268.2",
+    "name": "Quốc Lộ 13 - Đinh Thị Thi 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5b0b7aba0e517b00119fd800",
+    "code": "TTH 126.1",
+    "name": "Nguyễn Văn Cừ - Trần Hưng Đạo 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b54909bfd3d90017ea77e4",
+    "code": "TTH 211.2",
+    "name": "Nguyễn Duy Trinh - Võ Chí Công 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595ddbbf3dcfc400106f28b8",
+    "code": "TTH 21.72",
+    "name": "Quốc lộ 1 - Cầu vượt Tân Thới Hiệp 3",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a8ddd1afb9c00172d2a0f",
+    "code": "TTH 323.1",
+    "name": "Nguyễn Văn Linh - cầu Tân Thuận 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d9de43b766c880017188cb6",
+    "code": "TTH 1.6",
+    "name": "Cao tốc LTDG - Đỗ Xuân Hợp 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595f8f0b3dcfc400106f28f4",
+    "code": "TTH 21.80",
+    "name": "Quốc lộ 1 - BQB Cầu vượt Quang Trung B (hướng Ngã 4 Ga)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6818868b6dfb4b0018f8f298",
+    "code": "TTH 432",
+    "name": "Trần Văn Giàu - Mai Bá Hương",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d8cd3b7766c880017188942",
+    "code": "TTH 143",
+    "name": "Lê Hồng Phong - Nguyễn Trãi",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c48129a",
+    "code": "TTH 19.1",
+    "name": "Võ Văn Kiệt - Hồ Học Lãm 1",
+    "district": "Quận Bình Tân",
+    "status": "UP"
+  },
+  {
+    "id": "662b57711afb9c00172d90a7",
+    "code": "TTH 358",
+    "name": "Cộng Hòa - Đường A4",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b54968bfd3d90017ea7808",
+    "code": "TTH 213",
+    "name": "Nguyễn Duy Trinh - Đỗ Xuân Hợp",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c48127f",
+    "code": "TTH 2.1",
+    "name": "Mai Chí Thọ - Lương Định Của 1",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "58df5016dc195800111e04bd",
+    "code": "TTH 26.6",
+    "name": "Yên Thế - Hồng Hà",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "681887836dfb4b0018f8f3d1",
+    "code": "TTH 435",
+    "name": "Trần Đại Nghĩa - Kênh B",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "681884726dfb4b0018f8f035",
+    "code": "TTH 427",
+    "name": "Lê Chính Đang - Lê Đình Chi",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d8cdac3766c880017188962",
+    "code": "TTH 159",
+    "name": "Trường Chinh - Đồng Đen",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "587ef5dfb807da0011e33d59",
+    "code": "TTH 34.8",
+    "name": "Nguyễn Văn Trỗi - Huỳnh Văn Bánh",
+    "district": "Quận Phú Nhuận",
+    "status": "UP"
+  },
+  {
+    "id": "68fae32b6b936b001721878b",
+    "code": "TTH 466.1",
+    "name": "Võ Chí Công - Cầu Ngọn Ngay (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595dc2f03dcfc400106f2896",
+    "code": "TTH 21.60",
+    "name": "Quốc lộ 1 - Rạch Láng Le 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "681883f56dfb4b0018f8ef97",
+    "code": "TTH 426",
+    "name": "Lê Chính Đang 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b85f51afb9c00172dd1c2",
+    "code": "TTH 402",
+    "name": "Nguyễn Thị Nghĩa - Lê Lai",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68a588c04e89b100173b616b",
+    "code": "TTH 461.2",
+    "name": "Tỉnh Lộ 8 - Bến Than (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d8cdbdc766c88001718896a",
+    "code": "TTH 163",
+    "name": "Hoàng Văn Thụ - Cộng Hòa",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b54d5abfd3d90017ea7afe",
+    "code": "TTH 227",
+    "name": "Đường số 1 - Cảng Phước Long",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad13",
+    "code": "ITS 7.52",
+    "name": "Pasteur - Lê Thánh Tôn",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b862a1afb9c00172dd1ff",
+    "code": "TTH 403",
+    "name": "Hàm Nghi - Phó Đức Chính",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515acf2",
+    "code": "ITS 1.1",
+    "name": "Điện Biên Phủ - Cách Mạng Tháng Tám",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a824e465058170011f6eab4",
+    "code": "TTH 115.2",
+    "name": "Quang Trung - Lê Văn Thọ (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b57471afb9c00172d9095",
+    "code": "TTH 357",
+    "name": "Cộng Hòa - Ấp Bắc",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c481291",
+    "code": "TTH 13.1",
+    "name": "Võ Văn Kiệt - Nguyễn Tri Phương 1",
+    "district": "Quận 5",
+    "status": "UP"
+  },
+  {
+    "id": "63b54c93bfd3d90017ea7ab8",
+    "code": "TTH 224",
+    "name": "Lê Văn Chí - Linh Trung",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595f874d3dcfc400106f28ec",
+    "code": "TTH 21.76",
+    "name": "Quốc lộ 1 - Nguyễn Văn Quá 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5b19d34faf4ff60011d6ea52",
+    "code": "TTH 120.2",
+    "name": "Nguyễn Tất Thành - Tôn Đản",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b3c9bfbfd3d90017e9b039",
+    "code": "TTH 208",
+    "name": "Kha Vạn Cân - Đường Số 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515acf4",
+    "code": "ITS 1.3-1",
+    "name": "Nút giao Ngã bảy Lý Thái Tổ",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58af99abbd82540010390c39",
+    "code": "TTH 36.2",
+    "name": "Nguyễn Hữu Cảnh - Nguyễn Bỉnh Khiêm",
+    "district": "Quận 1",
+    "status": "UP"
+  },
+  {
+    "id": "68a5894a4e89b100173b6202",
+    "code": "TTH 462.2",
+    "name": "Tỉnh Lộ 8 - KCN Tân Quy (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623ecc16f998a001b25269e",
+    "code": "TTH 280",
+    "name": "Nguyễn Oanh - Nguyễn Văn Lượng",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623e3ea6f998a001b2522ae",
+    "code": "TTH 258",
+    "name": "Nguyễn Đình Chiểu - Cao Thắng",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b7d0c1afb9c00172dc6a6",
+    "code": "TTH 375",
+    "name": "Cống Quỳnh - Bùi Viện",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b54bb1afb9c00172d8dbb",
+    "code": "TTH 352",
+    "name": "Phạm Văn Chiêu - Đường số 59",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b58bd1afb9c00172d9119",
+    "code": "TTH 362",
+    "name": "Lê Văn Sỹ - Đặng Văn Ngữ",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595f86c43dcfc400106f28ea",
+    "code": "TTH 21.75",
+    "name": "Quốc lộ 1 - Nguyễn Văn Quá 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "59ca321b02eb490011a0a40d",
+    "code": "IDICO-QL1 34",
+    "name": "QL1 - Cầu An Lập",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a82439f5058170011f6eaa9",
+    "code": "TTH 103",
+    "name": "Nguyễn Biểu - Cầu Chữ Y",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623e5d66f998a001b25235a",
+    "code": "TTH 263",
+    "name": "Cách Mạng Tháng Tám - Đỗ Thị Lời",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58d7c20ac1e33c00112b321c",
+    "code": "TTH 45.4",
+    "name": "Phạm Văn Đồng - Phan Văn Trị 2",
+    "district": "Quận Bình Thạnh",
+    "status": "UP"
+  },
+  {
+    "id": "589d0b74b3bf7600110283d4",
+    "code": "TTH 49.4",
+    "name": "Cầu Sài Gòn 4 (Thủ Đức 1)",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "56df807bc062921100c143da",
+    "code": "TTH 28.3",
+    "name": "Trường Chinh - Âu Cơ",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "662b82a61afb9c00172dcdfd",
+    "code": "TTH 389",
+    "name": "Trần Quang Khải - Trần Nhật Duật",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "586e266ef9fab7001111b0b0",
+    "code": "TTH 28.5",
+    "name": "Trường Chinh - Phạm Văn Bạch 1",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "63ae7a74bfd3d90017e8f2c7",
+    "code": "TTH 198",
+    "name": "Tô Hiến Thành – Sư Vạn Hạnh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "59d3414302eb490011a0a610",
+    "code": "TTH 33.6",
+    "name": "Xa Lộ Hà Nội - Đường 120",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623e9e96f998a001b2525ce",
+    "code": "TTH 274",
+    "name": "Phan Đình Phùng - Huynh Văn Bánh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae7a9cbfd3d90017e8f303",
+    "code": "TTH 199",
+    "name": "Điện Biên Phủ – Cao Thắng",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a6085188576340017d06682",
+    "code": "IDICO-QL1 26",
+    "name": "QL1-Tỉnh lộ 10 (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a606a0f8576340017d0661e",
+    "code": "TTH 44.7",
+    "name": "Nơ Trang Long - Nguyễn Xí",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c481286",
+    "code": "TTH 5.2",
+    "name": "Mai Chí Thọ - Nguyễn Cơ Thạch 2",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "6623f14b6f998a001b2527f0",
+    "code": "TTH 293",
+    "name": "Tân Kỳ Tân Quý - Lê Trọng Tấn",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b4f411afb9c00172d86fc",
+    "code": "TTH 337",
+    "name": "Hậu Giang - Minh Phụng",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6792f9c88c5ed4001b27fb3d",
+    "code": "TTH 0008",
+    "name": "Quốc Lộ 1K - Đường GS1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b843d1afb9c00172dd02d",
+    "code": "TTH 395",
+    "name": "Lê Thánh Tôn - Đồng Khởi",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595d9b3b3dcfc400106f287e",
+    "code": "TTH 21.53",
+    "name": "Quốc lộ 1 - An Phú Đông 12 (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b50e51afb9c00172d886a",
+    "code": "TTH 344",
+    "name": "Bà Hom - An Dương Vương",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad1a",
+    "code": "ITS 8.51",
+    "name": "Pasteur - Lê Duẩn",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad0b",
+    "code": "ITS 7.1",
+    "name": "Nam Kỳ Khởi Nghĩa - Lý Tự Trọng",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a6087858576340017d0668e",
+    "code": "IDICO-QL1 32",
+    "name": "QL1-Trạm Biến Áp 500Kv Phú Lâm",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b4e581afb9c00172d862f",
+    "code": "TTH 333",
+    "name": "Lê Hồng Phong - Trần Phú",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "587464e2b807da0011e33cd9",
+    "code": "TTH 21.11",
+    "name": "Cầu vượt nút giao thông Gò Dưa",
+    "district": "Quận Thủ Đức",
+    "status": "UP"
+  },
+  {
+    "id": "58afdbaebd82540010390c48",
+    "code": "TTH 21.42",
+    "name": "Quốc lộ 1 - Cao tốc Trung Lương",
+    "district": "Huyện Bình Chánh",
+    "status": "UP"
+  },
+  {
+    "id": "63b54c51bfd3d90017ea7aa0",
+    "code": "TTH 223",
+    "name": "Đường số 1 - Nguyễn Văn Bá",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58ad6214bd82540010390be2",
+    "code": "TTH 38.8",
+    "name": "Cộng Hòa - Hoàng Hoa Thám",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "58af8a0bbd82540010390c25",
+    "code": "TTH 35.3",
+    "name": "Nam Kỳ Khởi Nghĩa - Võ Thị Sáu",
+    "district": "Quận 3",
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c48128e",
+    "code": "TTH 10.2",
+    "name": "Võ Văn Kiệt - Cầu Chữ Y 2",
+    "district": "Quận 5",
+    "status": "UP"
+  },
+  {
+    "id": "587ef859b807da0011e33d5b",
+    "code": "TTH 45.1",
+    "name": "Phạm Văn Đồng - Lê Quang Định 2",
+    "district": "Quận Bình Thạnh",
+    "status": "UP"
+  },
+  {
+    "id": "58744e97b807da0011e33cb9",
+    "code": "TTH 42.3",
+    "name": "Dương Bá Trạc - Hẻm 219",
+    "district": "Quận 8",
+    "status": "UP"
+  },
+  {
+    "id": "63b54a48bfd3d90017ea7850",
+    "code": "TTH 217",
+    "name": "Lã Xuân Oai - Lò Lu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58c2717ed56e930010a39ac0",
+    "code": "TTH 42.6",
+    "name": "Quốc Lộ 50 - Cầu Nhị Thiên Đường 2",
+    "district": "Quận 8",
+    "status": "UP"
+  },
+  {
+    "id": "58afcd9bbd82540010390c41",
+    "code": "TTH 21.41",
+    "name": "Quốc lộ 1 - Nguyễn Hữu Trí 2",
+    "district": "Huyện Bình Chánh",
+    "status": "UP"
+  },
+  {
+    "id": "63b54a9ebfd3d90017ea7911",
+    "code": "TTH 219",
+    "name": "Nguyễn Xiển - Nguyễn Văn Tăng",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5bbc7163ca0577001164127f",
+    "code": "TTH 137",
+    "name": "Lê Văn Lương - Cầu Long Kiểng (HCM)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623f3d66f998a001b252890",
+    "code": "TTH 298",
+    "name": "Quốc Lộ 1K - đường số 8",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5b6005b6fd4edb0019c7db25",
+    "code": "TTH 103.2",
+    "name": "Trần Hưng Đạo - Nguyễn Biểu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a902a1afb9c00172d2bed",
+    "code": "TTH 329",
+    "name": "Quốc Lộ 1 - Hưng Nhơn",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b85481afb9c00172dd0f1",
+    "code": "TTH 399",
+    "name": "Võ Văn Kiệt - Pasteur",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623ef2b6f998a001b252753",
+    "code": "TTH 286",
+    "name": "Phan Văn Hớn - Trần Văn Mười",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "66b1c4e7779f7400186741e4",
+    "code": "TTH 421",
+    "name": "Hoàng Văn Thụ - Phạm Văn Hai",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c48129c",
+    "code": "TTH 20.1",
+    "name": "Võ Văn Kiệt - Quốc Lộ 1",
+    "district": "Huyện Bình Chánh",
+    "status": "UP"
+  },
+  {
+    "id": "587c8661b807da0011e33d43",
+    "code": "TTH 38.6",
+    "name": "Lê Văn Sỹ - Hoàng Văn Thụ",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "5b632a79fd4edb0019c7dc0f",
+    "code": "TTH 133",
+    "name": "Nguyễn Tri Phương - Trần Hưng Đạo",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a87a41afb9c00172d24e9",
+    "code": "TTH 306",
+    "name": "Trần Văn Giàu - Tỉnh Lộ 10",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595dd4133dcfc400106f28a9",
+    "code": "TTH 21.65",
+    "name": "Quốc lộ 1 - Đường Tô Ngọc Vân 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5ad0644698d8fc001102e26b",
+    "code": "TTH 125.1",
+    "name": "Lã Xuân Oai - Cầu Tăng Long (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b5b8c1afb9c00172d92ca",
+    "code": "TTH 369",
+    "name": "Bình Long - Lê Thúc Hoạch",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68188e8d6dfb4b0018f9038b",
+    "code": "TTH 455",
+    "name": "Thanh Niên - gần trung tâm kiểm định giống cây",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58af9a07bd82540010390c3b",
+    "code": "TTH 36.3",
+    "name": "Tôn Đức Thắng - Lê Duẩn",
+    "district": "Quận 1",
+    "status": "UP"
+  },
+  {
+    "id": "63ae75debfd3d90017e8f082",
+    "code": "TTH 181.1",
+    "name": "Cao Thắng – Võ Văn Tần 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623eb466f998a001b252632",
+    "code": "TTH 276",
+    "name": "Hà Huy Giáp - An Lộc",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a824dc05058170011f6eab2",
+    "code": "TTH 115.1",
+    "name": "Quang Trung - Lê Văn Thọ (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d8cd49f766c880017188944",
+    "code": "TTH 144",
+    "name": "Nguyễn Tri Phương - Nguyễn Trãi",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b836d1afb9c00172dcfa0",
+    "code": "TTH 393",
+    "name": "Lê Duẩn - Nguyễn Bỉnh Khiêm",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a606c078576340017d06624",
+    "code": "TTH 21.16",
+    "name": "Quốc lộ 13 - Hiệp Bình",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515acf3",
+    "code": "ITS 1.2",
+    "name": "Ba Tháng Hai - Lý Thái Tổ",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a8254b05058170011f6eac3",
+    "code": "TTH 108.1",
+    "name": "Xô Viết Nghệ Tĩnh - Nguyễn Xí 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b50c11afb9c00172d8843",
+    "code": "TTH 343",
+    "name": "An Dương Vương - Đường số 7",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae77bfbfd3d90017e8f18f",
+    "code": "TTH 188.1",
+    "name": "Nguyễn Tất Thành - Cầu Tân Thuận 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623f51a6f998a001b252900",
+    "code": "TTH 301",
+    "name": "Quốc Lộ 13 - Nguyễn Thị Nhung",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad0a",
+    "code": "ITS 6.52",
+    "name": "Hoàng Văn Thụ - Xuân Diệu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58744e3eb807da0011e33cb7",
+    "code": "TTH 42.2",
+    "name": "Dương Bá Trạc - Hẻm 288",
+    "district": "Quận 8",
+    "status": "UP"
+  },
+  {
+    "id": "58744dd9b807da0011e33cb5",
+    "code": "TTH 42.1",
+    "name": "Quốc lộ 50 - Tạ Quang Bửu",
+    "district": "Quận 8",
+    "status": "UP"
+  },
+  {
+    "id": "68ede438230ee50017d04a79",
+    "code": "BD 5.1",
+    "name": "Mỹ Phước Tân Vạn - ĐT 743A (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c481290",
+    "code": "TTH 12.1",
+    "name": "Võ Văn Kiệt - An Bình",
+    "district": "Quận 5",
+    "status": "UP"
+  },
+  {
+    "id": "681883b46dfb4b0018f8ef39",
+    "code": "TTH 425",
+    "name": "Lê Chính Đang 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58af8b69bd82540010390c28",
+    "code": "TTH 35.4",
+    "name": "Nam Kỳ Khởi Nghĩa - Điện Biên Phủ 1",
+    "district": "Quận 3",
+    "status": "UP"
+  },
+  {
+    "id": "6623e3a26f998a001b252291",
+    "code": "TTH 257",
+    "name": "Lý Chính Thắng - Trần Quốc Thảo",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "589b3ceeb3bf7600110283c3",
+    "code": "TTH 47.3",
+    "name": "QL 22 - Nguyễn Văn Bứa 1",
+    "district": "Huyện Hóc Môn",
+    "status": "UP"
+  },
+  {
+    "id": "595dcab53dcfc400106f289d",
+    "code": "TTH 21.63",
+    "name": "Quốc lộ 1 - BQB Trước bến xe Ngã 4 Ga (hướng đi Bình Phước)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58ad7291bd82540010390bf9",
+    "code": "TTH 44.3",
+    "name": "Phan Đăng Lưu - Nguyễn Văn Đậu",
+    "district": "Quận Bình Thạnh",
+    "status": "UP"
+  },
+  {
+    "id": "662a89211afb9c00172d2636",
+    "code": "TTH 312",
+    "name": "Quốc Lộ 1 - Dương Đình Cúc",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad05",
+    "code": "ITS 4.1",
+    "name": "Điện Biên Phủ - Đinh Tiên Hoàng",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595dd4f43dcfc400106f28ab",
+    "code": "TTH 21.66",
+    "name": "Quốc lộ 1 - Cầu Bến Cát 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68a589c84e89b100173b629d",
+    "code": "TTH 463.2",
+    "name": "Tỉnh Lộ 8 - Sông Lu (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6792ef4f8c5ed4001b27f2c0",
+    "code": "TTH 0001",
+    "name": "Quốc Lộ 1 - Ba Làng",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b84771afb9c00172dd076",
+    "code": "TTH 396",
+    "name": "Nguyễn Du - Công xã Paris",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623f0b46f998a001b2527c3",
+    "code": "TTH 291",
+    "name": "Hòa Bình - Lũy Bán Bích",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "665861d864f11e00173c73a9",
+    "code": "TTH 309",
+    "name": "Huỳnh Tấn Phát - Cầu Tân Thuận 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68ede112230ee50017d046a6",
+    "code": "BD 3.2",
+    "name": "Mỹ Phước Tân Vạn - Điện Biên Phủ (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a824ee15058170011f6eab6",
+    "code": "TTH 116.1",
+    "name": "Nguyễn Oanh - Phan Văn Trị (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623ed396f998a001b2526b8",
+    "code": "TTH 281",
+    "name": "Nguyễn Thái Sơn - Phạm Ngũ Lão",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5b632b60fd4edb0019c7dc12",
+    "code": "TTH 134",
+    "name": "Hồng Bàng - Ngô Quyền 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "587c8d97b807da0011e33d49",
+    "code": "TTH 34.4",
+    "name": "Hoàng Văn Thụ - Nguyễn Văn Trỗi 2",
+    "district": "Quận Phú Nhuận",
+    "status": "UP"
+  },
+  {
+    "id": "59414c883dcfc400106f260b",
+    "code": "TTH 38.9",
+    "name": "Cộng Hòa - Bình Giã",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56df82d4c062921100c143e0",
+    "code": "TTH 33.2",
+    "name": "Võ Nguyên Giáp - Tây Hòa 2",
+    "district": "Quận 9",
+    "status": "UP"
+  },
+  {
+    "id": "6792f1008c5ed4001b27f41f",
+    "code": "TTH 0004",
+    "name": "Quốc Lộ 22 - Võ Văn Điều",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58affc6017139d0010f35cc8",
+    "code": "TTH 21.14",
+    "name": "Phạm Văn Đồng - Quốc Lộ 13 (1)",
+    "district": "Quận Thủ Đức",
+    "status": "UP"
+  },
+  {
+    "id": "587463bab807da0011e33cd3",
+    "code": "TTH 21.8",
+    "name": "Quốc lộ 1 - Lê Thị Hoa",
+    "district": "Quận Thủ Đức",
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad1c",
+    "code": "ITS 9.2",
+    "name": "Hoàng Diệu - Nguyễn Tất Thành",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c481287",
+    "code": "TTH 6.1",
+    "name": "Võ Văn Kiệt - Ký Con",
+    "district": "Quận 1",
+    "status": "UP"
+  },
+  {
+    "id": "662b5c981afb9c00172d94c0",
+    "code": "TTH 373",
+    "name": "Tân Kỳ Tân Quý - Tân Quý",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a861e1afb9c00172d23ad",
+    "code": "TTH 303",
+    "name": "Nguyễn Hữu Thọ - Phạm Hữu Lầu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b5a9c1afb9c00172d9240",
+    "code": "TTH 365",
+    "name": "Trường Chinh - Nguyễn Thái Bình",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a88a01afb9c00172d25d1",
+    "code": "TTH 311",
+    "name": "Trần Văn Giàu - Đường Thanh Niên",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68a587fc4e89b100173b6054",
+    "code": "TTH 460.2",
+    "name": "Tỉnh Lộ 8 - Tỉnh Lộ 15 (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b4e201afb9c00172d85f9",
+    "code": "TTH 332",
+    "name": "Hồng Bàng - Tạ Uyên",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b66051bfd3d90017eaa4a3",
+    "code": "TTH 240",
+    "name": "Nơ Trang Long - Phan Văn Trị",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "62da3e390637a10017d706ff",
+    "code": "TTH 268.1",
+    "name": "Quốc Lộ 13 - Đinh Thị Thi 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad10",
+    "code": "ITS 7.7",
+    "name": "Cách Mạng Tháng Tám - Nguyễn Thị Minh Khai",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56f11ac33ac17b11001c504c",
+    "code": "TTH 34.1",
+    "name": "Nguyễn Văn Trỗi - Hoàng Văn Thụ 1",
+    "district": "Quận Phú Nhuận",
+    "status": "UP"
+  },
+  {
+    "id": "66b1c4a2779f74001867418c",
+    "code": "TTH 420",
+    "name": "Lê Văn Sỹ - Phạm Văn Hai",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "631813ebc9eae60017a196b0",
+    "code": "TTH 49.8",
+    "name": "Cầu Sài Gòn 8 (Thủ Đức)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68188cfa6dfb4b0018f9013c",
+    "code": "TTH 452",
+    "name": "Thanh Niên - kênh 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "587475abb807da0011e33cea",
+    "code": "TTH 29.3",
+    "name": "Trường Sơn - Cửu Long",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad0e",
+    "code": "ITS 7.6",
+    "name": "Cách Mạng Tháng Tám - Nguyễn Đình Chiểu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68ede227230ee50017d0480b",
+    "code": "BD 4.1",
+    "name": "Mỹ Phước Tân Vạn - Thủ Khoa Huân (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad11",
+    "code": "ITS 7.5",
+    "name": "Nguyễn Đình Chiểu - Trương Định",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68ede25b230ee50017d0484d",
+    "code": "BD 4.2",
+    "name": "Mỹ Phước Tân Vạn - Thủ Khoa Huân (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "587478d8b807da0011e33cf3",
+    "code": "TTH 28.1",
+    "name": "Nút giao Bảy Hiền 1 (Cách Mạng Tháng Tám)",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515acf8",
+    "code": "ITS 1.51",
+    "name": "Ba Tháng Hai - Cao Thắng",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "591c6833a6bfb500119400a3",
+    "code": "TTH 48.8",
+    "name": "Đặng Thúc Vịnh - Trịnh Thị Miếng",
+    "district": "Huyện Nhà Bè",
+    "status": "UP"
+  },
+  {
+    "id": "63ae7938bfd3d90017e8f226",
+    "code": "TTH 192",
+    "name": "Quốc Lộ 1- Công ty Pouyen 3 (Cổng)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b664edbfd3d90017eaaa24",
+    "code": "TTH 243.2",
+    "name": "CT Trung Lương - Võ Trần Chí 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56df83d8c062921100c143e3",
+    "code": "TTH 24.1",
+    "name": "Nút giao Nguyễn Thái Sơn 1 (Hồng Hà)",
+    "district": "Quận Gò Vấp",
+    "status": "UP"
+  },
+  {
+    "id": "6623e5776f998a001b252337",
+    "code": "TTH 262",
+    "name": "Trần Quang Diệu - Trường Sa",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515acfd",
+    "code": "ITS 2.7",
+    "name": "Lý Chính Thắng - Nguyễn Thông",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56df8159c062921100c143dc",
+    "code": "TTH 32.1",
+    "name": "Nút giao Thủ Đức (Lê Văn Việt)",
+    "district": "Quận 9",
+    "status": "UP"
+  },
+  {
+    "id": "587ef2e4b807da0011e33d57",
+    "code": "TTH 34.7",
+    "name": "Nguyễn Văn Trỗi - Nguyễn Trọng Tuyển",
+    "district": "Quận Phú Nhuận",
+    "status": "UP"
+  },
+  {
+    "id": "589b3f7db3bf7600110283c6",
+    "code": "TTH 47.4",
+    "name": "QL 22 - Nguyễn Văn Bứa 2",
+    "district": "Huyện Hóc Môn",
+    "status": "UP"
+  },
+  {
+    "id": "68188c876dfb4b0018f9007b",
+    "code": "TTH 450",
+    "name": "Võ Văn Văn - đường 1A",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623e6706f998a001b25239b",
+    "code": "TTH 265",
+    "name": "Hùng Vương - Trần Nhân Tôn",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b86551afb9c00172dd227",
+    "code": "TTH 404",
+    "name": "Trần Hưng Đạo - Calmette",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a88521afb9c00172d2592",
+    "code": "TTH 310",
+    "name": "Kinh Dương Vương - Hồ Học Lãm",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "649da77ea6068200171a6dd4",
+    "code": "TTH 248",
+    "name": "Tôn Đức Thắng - Công trường Mê Linh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b3c59fbfd3d90017e9ace8",
+    "code": "TTH 207",
+    "name": "Vĩnh Lộc - Quách Điêu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58b5510817139d0010f35d4e",
+    "code": "TTH 21.15",
+    "name": "Phạm Văn Đồng - Quốc Lộ 13 (2)",
+    "district": "Quận Thủ Đức",
+    "status": "UP"
+  },
+  {
+    "id": "5a824c905058170011f6eab0",
+    "code": "TTH 104.3",
+    "name": "Nút giao Bốn Xã 2 (Hòa Bình)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad16",
+    "code": "ITS 8.4",
+    "name": "Nguyễn Thị Minh Khai - Pasteur",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "586e1d4ef9fab7001111b0a2",
+    "code": "TTH 38.2",
+    "name": "Cộng Hòa - Đường C 18",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "63195512c9eae60017a1c279",
+    "code": "TTH 178.1",
+    "name": "Nguyễn Trãi - Cống Quỳnh 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623df636f998a001b251e92",
+    "code": "TTH 253",
+    "name": "Hai Bà Trưng - Trần Cao Vân",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d8cdc9d766c880017188970",
+    "code": "TTH 166",
+    "name": "Lạc Long Quân - Âu Cơ",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6792f1b78c5ed4001b27f4a9",
+    "code": "TTH 0006",
+    "name": "Quốc Lộ 13 - Cầu Vĩnh Bình",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595dc5ac3dcfc400106f2898",
+    "code": "TTH 21.61",
+    "name": "Quốc lộ 1 - BQB Đường dẫn cầu vượt Ngã 4 Ga (hướng đi An Sương)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "69047bfa10c1b90017c62ccc",
+    "code": "BD 2.1",
+    "name": "Mỹ Phước - Tân Vận - Huỳnh Văn Lũy (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a8254f25058170011f6eac5",
+    "code": "TTH 108.2",
+    "name": "Xô Viết Nghệ Tĩnh - Nguyễn Xí 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae7c53bfd3d90017e8f3d8",
+    "code": "TTH 203.1",
+    "name": "Lý Thường Kiệt - Tô Hiến Thành 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad20",
+    "code": "ITS 10.1",
+    "name": "Hồng Bàng - Ngô Quyền 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5874796db807da0011e33cf7",
+    "code": "TTH 28.7",
+    "name": "Trường Chinh - Tây Thạnh 1",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515acfa",
+    "code": "ITS 2.1-2",
+    "name": "Nút giao Công Trường Dân Chủ",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58746536b807da0011e33cdc",
+    "code": "TTH 21.12",
+    "name": "Cầu vượt Bình Phước 1",
+    "district": "Quận Thủ Đức",
+    "status": "UP"
+  },
+  {
+    "id": "662b4f7e1afb9c00172d872e",
+    "code": "TTH 338",
+    "name": "Hậu Giang - Nguyễn Văn Luông",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b59291afb9c00172d912b",
+    "code": "TTH 363",
+    "name": "Lê Văn Sỹ - Nguyễn Trọng Tuyển",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a6060a88576340017d0660d",
+    "code": "TTH 24.6",
+    "name": "Nguyễn Thái Sơn - Phan Văn Trị  1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b65f33bfd3d90017eaa405",
+    "code": "TTH 233.2",
+    "name": "Nguyễn Hữu Cảnh - Ngô Tất Tố 3 (Nhánh chính cầu Thủ Thiêm 1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad1e",
+    "code": "ITS 9.5",
+    "name": "Pasteur - Hàm Nghi",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a6061868576340017d06611",
+    "code": "TTH 21.82",
+    "name": "Quang Trung - Bà Triệu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "589b3705b3bf7600110283bd",
+    "code": "TTH 47.1",
+    "name": "QL 22 - Nguyễn Ảnh Thủ 1",
+    "district": "Quận 12",
+    "status": "UP"
+  },
+  {
+    "id": "63ae7759bfd3d90017e8f162",
+    "code": "TTH 187.1",
+    "name": "Nguyễn Tất Thành - Cầu Khánh Hội",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae7709bfd3d90017e8f135",
+    "code": "TTH 186.1",
+    "name": "Hoàng Diệu - Đoàn Văn Bơ 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b55111afb9c00172d8e2e",
+    "code": "TTH 353",
+    "name": "Quang Trung - Phạm Văn Chiêu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "649da419a6068200171a6c90",
+    "code": "TTH 229",
+    "name": "Nguyễn Chí Thanh - Ngô Quyền",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58afccadbd82540010390c3f",
+    "code": "TTH 21.40",
+    "name": "Quốc lộ 1 - Nguyễn Hữu Trí 1",
+    "district": "Huyện Bình Chánh",
+    "status": "UP"
+  },
+  {
+    "id": "662b82761afb9c00172dcda3",
+    "code": "TTH 388",
+    "name": "Trần Quang Khải - Trần Nguyên Đán",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515acf7",
+    "code": "ITS 1.4-2",
+    "name": "Nút giao Ngã sáu Cộng Hòa",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d9ddd49766c880017188c94",
+    "code": "TTH 169",
+    "name": "Nút giao Hàng Xanh 1 (Viện Máy tính)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d8cd767766c880017188950",
+    "code": "TTH 150",
+    "name": "Phạm Văn Đồng - Nguyễn Xí (hướng đi Sân bay)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6792f16e8c5ed4001b27f482",
+    "code": "TTH 0005",
+    "name": "Cao tốc LT-DG - Trạm thu phí Long Phước",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595f8d813dcfc400106f28f2",
+    "code": "TTH 21.79",
+    "name": "Quốc lộ 1 - Quang Trung 2 (hướng đi An Sương)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68a5871d4e89b100173b5f37",
+    "code": "TTH 459.1",
+    "name": "Tỉnh Lộ 8 - Hà Duy Phiên (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5874656eb807da0011e33cde",
+    "code": "TTH 21.13",
+    "name": "Cầu vượt Bình Phước 2",
+    "district": "Quận Thủ Đức",
+    "status": "UP"
+  },
+  {
+    "id": "6623e3566f998a001b25226d",
+    "code": "TTH 256",
+    "name": "Lê Văn Sỹ - Trường Sa",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5abbb6d698d8fc001102dfc8",
+    "code": "TTH 249.1",
+    "name": "Nguyễn Văn Linh - Nguyễn Lương Bằng (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c481296",
+    "code": "TTH 16.1",
+    "name": "Võ Văn Kiệt - Cao Văn Lầu",
+    "district": "Quận 6",
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad03",
+    "code": "ITS 3.5",
+    "name": "Nam Kỳ Khởi Nghĩa - Nguyễn Đình Chiểu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae777cbfd3d90017e8f177",
+    "code": "TTH 187.2",
+    "name": "Nguyễn Tất Thành - Đoàn Như Hài",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "631828cac9eae60017a19f50",
+    "code": "TTH 177",
+    "name": "Nguyễn Thị Minh Khai - Nguyễn Bỉnh Khiêm 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b3c2fbbfd3d90017e9abbf",
+    "code": "TTH 49.1",
+    "name": "Cầu Sài Gòn 1 (dạ cầu Bình Thạnh)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58d7c2e6c1e33c00112b321e",
+    "code": "TTH 28.9",
+    "name": "Trường Chinh - Phan Văn Hớn 1 (Q12-HM)",
+    "district": "Quận 12",
+    "status": "UP"
+  },
+  {
+    "id": "63b54ad1bfd3d90017ea7974",
+    "code": "TTH 220.1",
+    "name": "Võ Chí Công - Liên Phường 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b5b481afb9c00172d92a8",
+    "code": "TTH 368",
+    "name": "Trường Chinh - Trương Công Định",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "681885376dfb4b0018f8f0f2",
+    "code": "TTH 428",
+    "name": "Lê Đình Chi - Kênh 3",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c48129e",
+    "code": "TTH 22.1",
+    "name": "Đồng Văn Cống - Phan Văn Đáng",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "5d9dddb9766c880017188c96",
+    "code": "TTH 170",
+    "name": "Nút giao Hàng Xanh 2 (ĐH Hồng Bàng)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5ad06a0d98d8fc001102e27b",
+    "code": "TTH 119.2",
+    "name": "Vĩnh Lộc - Nguyễn Thị Tú 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68188c236dfb4b0018f8ff8f",
+    "code": "TTH 448",
+    "name": "Vĩnh Lộc - Lại Hùng Cường",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b65f64bfd3d90017eaa41f",
+    "code": "TTH 234",
+    "name": "Xô Viết Nghệ Tĩnh - Đường D5",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58746371b807da0011e33cd1",
+    "code": "TTH 21.7",
+    "name": "Quốc lộ 1 - Đường 14",
+    "district": "Quận Thủ Đức",
+    "status": "UP"
+  },
+  {
+    "id": "63bd1e95bfd3d90017ec3cd5",
+    "code": "TTH 244",
+    "name": "Nguyễn Lương Bằng - Hoàng Quốc Việt",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae7cd3bfd3d90017e8f408",
+    "code": "TTH 204",
+    "name": "Lạc Long Quân - Ông Ích Khiêm",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d8cd70e766c88001718894e",
+    "code": "TTH 149",
+    "name": "Phạm Văn Đồng - Nguyễn Xí (hướng đi Thủ Đức)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58b555ac17139d0010f35d59",
+    "code": "TTH 42.5",
+    "name": "Tùng Thiện Vương - Cầu Nhị Thiên Đường",
+    "district": "Quận 8",
+    "status": "UP"
+  },
+  {
+    "id": "595ddc123dcfc400106f28ba",
+    "code": "TTH 21.73",
+    "name": "Quốc lộ 1 - Cầu vượt Tân Thới Hiệp 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "587460aab807da0011e33cc2",
+    "code": "TTH 21.1",
+    "name": "Quốc lộ 1 - ĐH Nông Lâm 1",
+    "district": "Quận Thủ Đức",
+    "status": "UP"
+  },
+  {
+    "id": "662a8f701afb9c00172d2b5e",
+    "code": "TTH 327",
+    "name": "Nguyễn Thị Thập - Lê Văn Lương",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b55020bfd3d90017ea7cb7",
+    "code": "TTH 231.2",
+    "name": "Nút giao Mỹ Thủy (6)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68ede746230ee50017d04dcc",
+    "code": "BD 7.2",
+    "name": "Đại lộ Bình Dương - ngã tư chợ Đình (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623eec96f998a001b25273b",
+    "code": "TTH 285",
+    "name": "Quang Trung - Thống Nhất",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b4d781afb9c00172d8571",
+    "code": "TTH 330",
+    "name": "An Dương Vương - Lê Hồng Phong",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a606a958576340017d06621",
+    "code": "TTH 44.8",
+    "name": "Đinh Bộ Lĩnh - Bạch Đằng 3",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a8c381afb9c00172d28b6",
+    "code": "TTH 318",
+    "name": "Dương Bá Trạc - đường 9A",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b6617ebfd3d90017eaa50b",
+    "code": "TTH 242.3",
+    "name": "Nguyễn Tất Thành - Cảng SG (Q7-Q4)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c48129d",
+    "code": "TTH 21.39",
+    "name": "Quốc lộ 1 - Trần Đại Nghĩa",
+    "district": "Huyện Bình Chánh",
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c481292",
+    "code": "TTH 17.1",
+    "name": "Võ Văn Kiệt - Phạm Phú Thứ",
+    "district": "Quận 6",
+    "status": "UP"
+  },
+  {
+    "id": "681888066dfb4b0018f8f4c2",
+    "code": "TTH 436",
+    "name": "Trần Văn Giàu - Võ Hữu Lợi",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515acff",
+    "code": "ITS 3.3",
+    "name": "Hai Bà Trưng - Lý Chính Thắng",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b58791afb9c00172d9107",
+    "code": "TTH 361",
+    "name": "255 Hoàng Văn Thụ",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b811d1afb9c00172dcc1d",
+    "code": "TTH 384",
+    "name": "Trần Hưng Đạo - Nguyễn Cư Trinh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a8eb41afb9c00172d2aba",
+    "code": "TTH 324.2",
+    "name": "Nguyễn Văn Linh - Nguyễn Thị Thập 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b548ecbfd3d90017ea77d2",
+    "code": "TTH 211.1",
+    "name": "Nguyễn Duy Trinh - Võ Chí Công 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515acfb",
+    "code": "ITS 2.6",
+    "name": "Võ Thị Sáu - Bà Huyện Thanh Quan",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c48127d",
+    "code": "TTH 1.1",
+    "name": "Mai Chí Thọ - Võ Nguyên Giáp (Cát Lái cầu A)",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c48128d",
+    "code": "TTH 2a",
+    "name": "Hải Thượng Lãn Ông - Cầu Chà Và",
+    "district": "Quận 5",
+    "status": "UP"
+  },
+  {
+    "id": "6792f03d8c5ed4001b27f378",
+    "code": "TTH 0003",
+    "name": "Quốc Lộ 50 - Cổng chào Long An",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68ede490230ee50017d04ae5",
+    "code": "BD 5.2",
+    "name": "Mỹ Phước Tân Vạn - ĐT 743A (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623e7076f998a001b2523ea",
+    "code": "TTH 267",
+    "name": "Lý Thái Tổ - Sư Vạn Hạnh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d8cda2e766c88001718895e",
+    "code": "TTH 157",
+    "name": "Phạm Văn Đồng - Kha Vạn Cân (hướng đi Quốc lộ 1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "586e25e1f9fab7001111b0ae",
+    "code": "TTH 28.4",
+    "name": "Trường Chinh - Tân Kỳ Tân Quý",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "681889ec6dfb4b0018f8f6cb",
+    "code": "TTH 441",
+    "name": "Nguyễn Cửu Phú - Trần Đại Nghĩa",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d9ddf0f766c880017188c9e",
+    "code": "TTH 174",
+    "name": "Nút giao Hàng Xanh 6 (Cầu Điện Biên Phủ - Hàng Xanh)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "681883866dfb4b0018f8eef6",
+    "code": "TTH 424",
+    "name": "Mai Bá Hương - Lê Chính Đang",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae76ddbfd3d90017e8f11b",
+    "code": "TTH 185",
+    "name": "Khánh Hội -  Hoàng Diệu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad14",
+    "code": "ITS 7.53",
+    "name": "Lý Tự Trọng - Đồng Khởi",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b66035bfd3d90017eaa48e",
+    "code": "TTH 239",
+    "name": "Nơ Trang Long - Nguyễn Huy Lượng (Bệnh viện Ung Bướu)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "585b284ac3f96200127dc500",
+    "code": "TTH 37.1",
+    "name": "Huỳnh Tấn Phát - Lưu Trọng Lư 1",
+    "district": "Quận 7",
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c481295",
+    "code": "TTH 15.1",
+    "name": "Võ Văn Kiệt - Cầu Chà Và 1 (dạ cầu)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad04",
+    "code": "ITS 3.51",
+    "name": "Võ Thị Sáu - Pasteur",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a8278f35058170011f6eaed",
+    "code": "TTH 122.1",
+    "name": "Nguyễn Văn Linh - Phạm Hùng 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b830e1afb9c00172dcf50",
+    "code": "TTH 391",
+    "name": "Cách Mạng Tháng Tám - Võ Văn Tần",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b54aedbfd3d90017ea79c3",
+    "code": "TTH 220.2",
+    "name": "Võ Chí Công - Liên Phường 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "586e20a0f9fab7001111b0a7",
+    "code": "TTH 39.1",
+    "name": "Nguyễn Kiệm - Hồ Văn Huê",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5b0b7bbe0e517b00119fd806",
+    "code": "TTH 126.2",
+    "name": "Nguyễn Văn Cừ - Trần Hưng Đạo 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623edd26f998a001b2526f7",
+    "code": "TTH 282.2",
+    "name": "Vòng xoay Gò Vấp (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a8255a55058170011f6eac7",
+    "code": "TTH 109.1",
+    "name": "BX Miền Đông - Đinh Bộ Lĩnh 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c481280",
+    "code": "TTH 2.2",
+    "name": "Mai Chí Thọ - Lương Định Của 2",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "587ed91db807da0011e33d4e",
+    "code": "TTH 44.5",
+    "name": "Phan Đăng Lưu - Đinh Tiên Hoàng 2",
+    "district": "Quận Bình Thạnh",
+    "status": "UP"
+  },
+  {
+    "id": "63b54dcbbfd3d90017ea7ba8",
+    "code": "TTH 228",
+    "name": "Quốc Lộ 1 - Cổng ĐH Quốc gia TPHCM",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c48128a",
+    "code": "TTH 8.2",
+    "name": "Võ Văn Kiệt - Trần Đình Xu 2",
+    "district": "Quận 1",
+    "status": "UP"
+  },
+  {
+    "id": "6623ed9b6f998a001b2526cd",
+    "code": "TTH 282.1",
+    "name": "Vòng xoay Gò Vấp (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58b5752e17139d0010f35d5f",
+    "code": "TTH 35.7",
+    "name": "Nam Kỳ Khởi Nghĩa -Nguyễn Thị Minh Khai 2",
+    "district": "Quận 1",
+    "status": "UP"
+  },
+  {
+    "id": "58175c81edeb6c0012a2d5c2",
+    "code": "TTH 4.2",
+    "name": "Mai Chí Thọ - Trần Não 2",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "631812e6c9eae60017a19567",
+    "code": "TTH 49.11",
+    "name": "Cầu Sài Gòn 11 (Bình Thạnh)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623e7b76f998a001b25242d",
+    "code": "TTH 269",
+    "name": "Đinh Bộ Lĩnh - Bùi Đình Túy",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5ad068b198d8fc001102e278",
+    "code": "TTH 118.1",
+    "name": "Quốc lộ 50 - Cầu Ông Thìn (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "66f126e8538c780017c9362f",
+    "code": "TTH 334.2",
+    "name": "Nguyễn Chí Thanh - Nguyễn Kim",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae75a3bfd3d90017e8f051",
+    "code": "TTH 180.2",
+    "name": "Cống Quỳnh - Phạm Viết Chánh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5abbb77298d8fc001102dfce",
+    "code": "TTH 249.2",
+    "name": "Nguyễn Văn Linh - Nguyễn Lương Bằng (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63bd1f48bfd3d90017ec3d19",
+    "code": "TTH 246",
+    "name": "Huỳnh Tấn Phát - Nguyễn Thị Thập",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58aff2c6bd82540010390c55",
+    "code": "TTH 21.45",
+    "name": "Quốc lộ 1 - Đinh Đức Thiện 1",
+    "district": "Huyện Bình Chánh",
+    "status": "UP"
+  },
+  {
+    "id": "5d8cd886766c880017188956",
+    "code": "TTH 153",
+    "name": "Phạm Văn Đồng - Hiệp Bình (hướng đi Thủ Đức)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad18",
+    "code": "ITS 8.6",
+    "name": "Hai Bà Trưng - Lê Duẩn",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "66b1c1bf779f740018673ef2",
+    "code": "TTH 411",
+    "name": "An Dương Vương - Trần Phú",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c4812a0",
+    "code": "TTH 22.5",
+    "name": "Nguyễn Thị Định - Đường A",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "6623efc26f998a001b25277f",
+    "code": "TTH 288",
+    "name": "Tô Ký - Nguyễn Ảnh Thủ",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b50841afb9c00172d880d",
+    "code": "TTH 342",
+    "name": "Tùng Thiện Vương - Xóm Củi",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58abc0cbbd82540010390ba6",
+    "code": "TTH 49.3",
+    "name": "Cầu Sài Gòn 3 (Dạ cầu Bình Thạnh)",
+    "district": "Quận Bình Thạnh",
+    "status": "UP"
+  },
+  {
+    "id": "58afea5dbd82540010390c4d",
+    "code": "TTH 21.43",
+    "name": "Quốc lộ 1 - Bùi Thanh Khiết 1",
+    "district": "Huyện Bình Chánh",
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad07",
+    "code": "ITS 5.2",
+    "name": "Nguyễn Văn Trỗi - Trương Quốc Dung",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d8cdc1d766c88001718896c",
+    "code": "TTH 164",
+    "name": "Trường Sơn - Hậu Giang",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a606c758576340017d06626",
+    "code": "TTH 44.9",
+    "name": "BX Miền Đông - Quốc Lộ 13 (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68fae2966b936b00172186a6",
+    "code": "TTH 465.1",
+    "name": "Võ Chí Công - đường số 5 (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a82628e5058170011f6eadb",
+    "code": "TTH 121.1",
+    "name": "Nguyễn Văn Linh - Quốc lộ 50 (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6792f2248c5ed4001b27f4dc",
+    "code": "TTH 0007",
+    "name": "Quốc Lộ 1 - Độc Lập (cổng KCN Sóng Thần)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d8cd653766c88001718894c",
+    "code": "TTH 148",
+    "name": "Kha Vạn Cân - Võ Văn Ngân",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b4de41afb9c00172d85c5",
+    "code": "TTH 331",
+    "name": "Hải Thượng Lãn Ông - Châu Văn Liêm",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58af8eb2bd82540010390c30",
+    "code": "TTH 35.6",
+    "name": "Nam Kỳ Khởi Nghĩa -Nguyễn Thị Minh Khai 1",
+    "district": "Quận 3",
+    "status": "UP"
+  },
+  {
+    "id": "6623ee176f998a001b25270c",
+    "code": "TTH 283",
+    "name": "Phan Văn Trị - Lê Đức Thọ",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58746314b807da0011e33cce",
+    "code": "TTH 21.6",
+    "name": "Quốc lộ 1 - Cầu vượt Linh Xuân",
+    "district": "Quận Thủ Đức",
+    "status": "UP"
+  },
+  {
+    "id": "595f8d233dcfc400106f28f0",
+    "code": "TTH 21.78",
+    "name": "Quốc lộ 1 - Quang Trung 1 (hướng đi Bình Phước)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a8e641afb9c00172d2a7e",
+    "code": "TTH 324.1",
+    "name": "Nguyễn Văn Linh - Nguyễn Thị Thập 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae7c12bfd3d90017e8f3c0",
+    "code": "TTH 201.2",
+    "name": "Ba Tháng Hai - Lê Đại Hành 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68ae7e997d735d00173c7445",
+    "code": "TTH 464.2",
+    "name": "Cầu Bình Triệu (2) hướng đi lên cầu Bình Triệu 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5b0b835b0e517b00119fd80d",
+    "code": "TTH 128",
+    "name": "Tam Bình (Số 81)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b82da1afb9c00172dce94",
+    "code": "TTH 390",
+    "name": "Hai Bà Trưng - Nguyễn Hữu Cầu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d8cd2a3766c88001718893c",
+    "code": "TTH 140",
+    "name": "Nút giao Cây Gõ 1 (trên cầu)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b4e8e1afb9c00172d865c",
+    "code": "TTH 334",
+    "name": "Lý Thường Kiệt - Nguyễn Chí Thanh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "66b1c190779f740018673ed4",
+    "code": "TTH 410",
+    "name": "Nguyễn Trãi - Trần Phú",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b7f9f1afb9c00172dca50",
+    "code": "TTH 379",
+    "name": "Nguyễn Đình Chiểu - Nguyễn Bỉnh Khiêm",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68a589294e89b100173b61d9",
+    "code": "TTH 462.1",
+    "name": "Tỉnh Lộ 8 - KCN Tân Quy (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58747923b807da0011e33cf5",
+    "code": "TTH 28.2",
+    "name": "Nút giao Bảy Hiền 2 (Hoàng Văn Thụ)",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "63ae7af4bfd3d90017e8f32c",
+    "code": "TTH 200.2",
+    "name": "Ba Tháng Hai - Lý Thường Kiệt 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5875d4f8b807da0011e33d1a",
+    "code": "TTH 42.4",
+    "name": "Tạ Quang Bửu - Phạm Hùng 1",
+    "district": "Quận 8",
+    "status": "UP"
+  },
+  {
+    "id": "595d92013dcfc400106f2877",
+    "code": "TTH 21.50",
+    "name": "Quốc Lộ 1A - Cầu Bình Phước",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "583f976361cfea0012cf68f9",
+    "code": "TTH 22.8",
+    "name": "Nguyễn Thị Định - Lê Phụng Hiểu",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "681886f26dfb4b0018f8f31a",
+    "code": "TTH 433",
+    "name": "Trần Văn Giàu - Thanh Niên",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b80721afb9c00172dcb28",
+    "code": "TTH 381",
+    "name": "Nguyễn Văn Thủ - Trần Doãn Khanh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "586e1f18f9fab7001111b0a5",
+    "code": "TTH 38.1",
+    "name": "Cộng Hòa - Trường Chinh",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "63b65f8dbfd3d90017eaa434",
+    "code": "TTH 235",
+    "name": "Xô Viết Nghệ Tĩnh - Phan Văn Hân (Cầu Thị Nghè)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d9de3c2766c880017188cb3",
+    "code": "TTH 1.5",
+    "name": "Cao tốc LTDG - Cầu Bà Dạt 3",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae7cfcbfd3d90017e8f422",
+    "code": "TTH 205",
+    "name": "Cách Mạng Tháng Tám – Phạm Văn Hai",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5b0e1faacddcc80011ceb449",
+    "code": "TTH 175.2",
+    "name": "Nút giao Hàng Xanh 8 (HX-VT)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623e7f06f998a001b25244a",
+    "code": "TTH 270",
+    "name": "Đinh Bộ Lĩnh - Chu Văn An",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623e5066f998a001b252317",
+    "code": "TTH 261",
+    "name": "Nguyễn Thị Minh Khai - Tôn Thất Tùng",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b5c141afb9c00172d93d7",
+    "code": "TTH 372",
+    "name": "Tân Kỳ Tân Quý - Bình Long",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "66b1c158779f740018673eb4",
+    "code": "TTH 409",
+    "name": "Hùng Vương - Lê Hồng Phong",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56df8381c062921100c143e2",
+    "code": "TTH 25.1",
+    "name": "Nguyễn Hữu Thọ - Nguyễn Thị Thập 1",
+    "district": "Quận 7",
+    "status": "UP"
+  },
+  {
+    "id": "6623e61d6f998a001b252377",
+    "code": "TTH 264",
+    "name": "Cách Mạng Tháng Tám - Rạch Bùng Binh",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595da2dd3dcfc400106f2885",
+    "code": "TTH 21.56",
+    "name": "Quốc lộ 1 - Đường 15 (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "6623f1996f998a001b252805",
+    "code": "TTH 294",
+    "name": "Mai Chí Thọ - Xa Lộ Hà Nội (3)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "595f80e83dcfc400106f28e4",
+    "code": "TTH 21.74",
+    "name": "Quốc lộ 1 - BQB Cầu vượt Tân Thới Hiệp B (hướng Bình Phước)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515acf5",
+    "code": "ITS 1.3-2",
+    "name": "Nút giao Ngã bảy Lý Thái Tổ",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "631955e7c9eae60017a1c30a",
+    "code": "TTH 179",
+    "name": "Cách Mạng Tháng Tám – Hòa Hưng",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a6060e08576340017d0660f",
+    "code": "TTH 24.7",
+    "name": "Nguyễn Thái Sơn - Phan Văn Trị 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63ae7a26bfd3d90017e8f29a",
+    "code": "TTH 196.2",
+    "name": "Ba Tháng Hai - Lê Hồng Phong 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b548c3bfd3d90017ea77c0",
+    "code": "TTH 210",
+    "name": "Nguyễn Duy Trinh - Nguyễn Thị Tư",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662a8c931afb9c00172d2901",
+    "code": "TTH 319",
+    "name": "Huỳnh Tấn Phát - Hoàng Quốc Việt",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63195556c9eae60017a1c2ba",
+    "code": "TTH 178.2",
+    "name": "Nguyễn Trãi - Cống Quỳnh 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58df4adedc195800111e04b4",
+    "code": "TTH 26.2",
+    "name": "Phổ Quang - Huỳnh Lan Khanh",
+    "district": "Quận Tân Bình",
+    "status": "UP"
+  },
+  {
+    "id": "583f958161cfea0012cf68f5",
+    "code": "TTH 22.6",
+    "name": "Nguyễn Thị Định - Đường C",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "5a8253615058170011f6eabf",
+    "code": "TTH 107.1",
+    "name": "Đinh Bộ Lĩnh - Bạch Đằng 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad0f",
+    "code": "ITS 7.4",
+    "name": "Nguyễn Thị Minh Khai - Trương Định",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68fae2b66b936b00172186e5",
+    "code": "TTH 465.2",
+    "name": "Võ Chí Công - đường số 5 (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b51761afb9c00172d88ef",
+    "code": "TTH 346",
+    "name": "Hương Lộ 3 - Đường kênh 19/5",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68a5873d4e89b100173b5f60",
+    "code": "TTH 459.2",
+    "name": "Tỉnh Lộ 8 - Hà Duy Phiên (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "66b1c370779f7400186740b3",
+    "code": "TTH 415",
+    "name": "Thành Thái - Tô Hiến Thành",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5d9dde1f766c880017188c98",
+    "code": "TTH 171",
+    "name": "Nút giao Hàng Xanh 3 (Cầu Thị Nghè - Hàng Xanh)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58b5528e17139d0010f35d52",
+    "code": "TTH 33.4",
+    "name": "Xa Lộ Hà Nội - Đường D400",
+    "district": "Quận 9",
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad22",
+    "code": "ITS 10.2-2",
+    "name": "Nút giao Ngã sáu Nguyễn Tri Phương",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "63b664d2bfd3d90017eaaa0f",
+    "code": "TTH 243.1",
+    "name": "CT Trung Lương - Võ Trần Chí 1",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b85031afb9c00172dd0dc",
+    "code": "TTH 398",
+    "name": "Lê Lợi - Phan Bội Châu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58d7b5a7c1e33c00112b320a",
+    "code": "TTH 21.48",
+    "name": "Nút giao Chợ Đệm 1 (CT Trung Lương - Bùi Thanh Khiết)",
+    "district": "Huyện Bình Chánh",
+    "status": "UP"
+  },
+  {
+    "id": "662a8f3a1afb9c00172d2b31",
+    "code": "TTH 326",
+    "name": "Nguyễn Hữu Thọ - Đường số 15",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "58aff01fbd82540010390c50",
+    "code": "TTH 21.44",
+    "name": "Quốc lộ 1 - Bùi Thanh Khiết 2",
+    "district": "Huyện Bình Chánh",
+    "status": "UP"
+  },
+  {
+    "id": "5d8cdb9f766c880017188968",
+    "code": "TTH 162",
+    "name": "Hoàng Văn Thụ - Trần Huy Liệu",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a6085fb8576340017d06686",
+    "code": "IDICO-QL1 28",
+    "name": "QL1-Tỉnh lộ 10B (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a8253bc5058170011f6eac1",
+    "code": "TTH 107.2",
+    "name": "Đinh Bộ Lĩnh - Bạch Đằng 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "59ca31d602eb490011a0a40b",
+    "code": "IDICO-QL1 33",
+    "name": "QL1 - Hồ Học Lãm",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "587c782db807da0011e33d3b",
+    "code": "TTH 33.3",
+    "name": "Võ Nguyên Giáp - Thảo Điền",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "662a8d821afb9c00172d29c8",
+    "code": "TTH 322",
+    "name": "Nguyễn Thị Thập - Tân Mỹ",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68ae7ee47d735d00173c7492",
+    "code": "TTH 464.1",
+    "name": "Cầu Bình Triệu (2) hướng vòng xoay",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "56de42f611f398ec0c48129f",
+    "code": "TTH 22.2",
+    "name": "Đồng Văn Cống - Nguyễn Thị Định",
+    "district": "Quận 2",
+    "status": "UP"
+  },
+  {
+    "id": "68188b296dfb4b0018f8f9a3",
+    "code": "TTH 444.2",
+    "name": "Võ Trần Chí - Kênh 10 (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b80b91afb9c00172dcb5b",
+    "code": "TTH 382",
+    "name": "Nút giao Ngã sáu Phù Đổng 2",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515ad1f",
+    "code": "ITS 9.51",
+    "name": "Hùng Vương - Ngô Gia Tự",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "662b50261afb9c00172d87b2",
+    "code": "TTH 340",
+    "name": "Dương Bá Trạc - Đường số 9",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "68a588984e89b100173b6138",
+    "code": "TTH 461.1",
+    "name": "Tỉnh Lộ 8 - Bến Than (1)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5a8256df5058170011f6eacb",
+    "code": "TTH 110",
+    "name": "BX Miền Đông - Quốc Lộ 13 (2)",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "5deb576d1dc17d7c5515acfc",
+    "code": "ITS 2.5",
+    "name": "Điện Biên Phủ - Trương Định",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "587c8c20b807da0011e33d47",
+    "code": "TTH 34.3",
+    "name": "Hoàng Văn Thụ - Hồ Văn Huê",
+    "district": "Quận Phú Nhuận",
+    "status": "UP"
+  },
+  {
+    "id": "58744fb0b807da0011e33cc0",
+    "code": "TTH 43.2",
+    "name": "Hưng Phú - Chánh Hưng 2",
+    "district": "Quận 8",
+    "status": "UP"
+  },
+  {
+    "id": "5822f23aedeb6c0012a2d6a8",
+    "code": "TTH 3a",
+    "name": "Hồng Bàng - Nguyễn Thị Nhỏ",
+    "district": null,
+    "status": "UP"
+  },
+  {
+    "id": "649da495a6068200171a6cb6",
+    "code": "TTH 230.3",
+    "name": "Mai Chí Thọ - Trần Quý Kiên (3)",
+    "district": null,
+    "status": "UP"
+  }
+]

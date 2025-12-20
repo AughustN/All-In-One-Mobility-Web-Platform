@@ -1,0 +1,73 @@
+/* Dark Mode Overrides for RoutesPage */
+
+[data-dark-mode="true"] .MuiPaper-root {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+}
+
+[data-dark-mode="true"] .MuiTextField-root {
+  background-color: #2a2a2a !important;
+}
+
+[data-dark-mode="true"] .MuiInputBase-root {
+  background-color: #2a2a2a !important;
+  color: #ffffff !important;
+}
+
+[data-dark-mode="true"] .MuiInputBase-input {
+  color: #ffffff !important;
+}
+
+[data-dark-mode="true"] .MuiOutlinedInput-notchedOutline {
+  border-color: #444 !important;
+}
+
+[data-dark-mode="true"] .MuiTypography-root {
+  color: #ffffff !important;
+}
+
+[data-dark-mode="true"] .MuiListItem-root:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-dark-mode="true"] .MuiIconButton-root {
+  color: #ffffff !important;
+}
+
+/* Sidebar dark mode */
+[data-dark-mode="true"] .sidebar {
+  background: #1e1e1e !important;
+}
+
+[data-dark-mode="true"] .sidebar-header {
+  border-bottom-color: #333 !important;
+}
+
+/* Search dropdown dark mode */
+[data-dark-mode="true"] .search-dropdown {
+  background-color: #2a2a2a !important;
+}
+
+/* Error/Info boxes dark mode */
+[data-dark-mode="true"] .error-box {
+  background-color: rgba(211, 47, 47, 0.2) !important;
+  border-color: #d32f2f !important;
+}
+
+[data-dark-mode="true"] .info-box {
+  background-color: rgba(33, 150, 243, 0.2) !important;
+  border-color: #2196F3 !important;
+}
+
+/* Scrollbar dark mode */
+[data-dark-mode="true"] ::-webkit-scrollbar-track {
+  background: #2a2a2a !important;
+}
+
+[data-dark-mode="true"] ::-webkit-scrollbar-thumb {
+  background: #555 !important;
+}
+
+[data-dark-mode="true"] ::-webkit-scrollbar-thumb:hover {
+  background: #777 !important;
+}
