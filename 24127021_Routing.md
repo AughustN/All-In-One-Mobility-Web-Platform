@@ -1,0 +1,194 @@
+# 🔹 Routing Module Report
+
+*Full name:* Nguyễn Thành Đạt  
+*Student ID:* 24127021  
+*Role:* Routing Lead  
+*Key Responsibilities:* Algorithm design, API integration, Performance Testing
+
+---
+
+## 📍 1. Context
+
+The *"All-In-One Urban Mobility Platform"* requires a core module capable of calculating routes for users (pre-trip routing).  
+This module is the foundation for the *Planning* feature of the entire project, providing suggested routes (e.g., fastest, shortest) based on different modes of transport.  
+It fetches raw map data, processes it into a computable graph, and implements efficient routing algorithms.
+
+---
+
+## 💡 2. Problem Definition
+
+*Core problem:*  
+How to calculate and find the shortest path between any two coordinates (longitude, latitude) within the Ho Chi Minh City area, distinguishing between vehicle types (car, motorbike, bicycle, walking) using static map data from *OpenStreetMap (OSM)*.
+
+### Stakeholders
+- *Routing Team:* Build, test, and maintain algorithm accuracy.  
+- *UI/UX & Integration Team:* Requires stable API for route display.  
+- *End-users:* Expect accurate, logical, and compliant routes.
+
+### Objectives
+- Build 4 separate road network graphs for 4 vehicle types.  
+- Implement A* (A-star) algorithm for shortest path.  
+- Ensure routing query response time < 3 seconds.  
+- 100% rule compliance (e.g., one-way streets).
+
+### Input Data
+
+*External APIs*
+- Raw map data from OpenStreetMap (via Overpass API)
+- Geocoding from Nominatim
+
+*User Inputs*
+- Start & end locations (text)
+- Vehicle selection (JSON data file)
+
+*Algorithm Inputs*
+- Start/End coordinates (Latitude, Longitude)
+
+### Expected Output
+- List of coordinate pairs (Lat, Lon)  
+- Total distance (meters/km)  
+- shortest_path_map.html visualizing the route (folium)
+
+### Constraints
+- OSM data is *static*, no real-time traffic.  
+- OSM is *large and complex*; filtering required.  
+- Loading graph in memory is *resource-intensive*.  
+- A* requires an efficient *heuristic function*.
+
+---
+
+## 🔸 3. Guiding Questions
+
+### 3.1 What do we know?
+- OSM provides free, high-quality data.  
+- Overpass API enables precise queries.  
+- Algorithms like *Dijkstra* and *A** are suitable.  
+- geopy for geocoding, folium for visualization.  
+- *Haversine formula* calculates geodesic distance.
+
+### 3.2 What do we want?
+- DownloadMapDataHCMC.py → download and save OSM data.  
+- build_graph_from_json() → build graph structure.  
+- astar() → implement A* efficiently.  
+- find_nearest_node() → map GPS to nearest graph node.  
+- find_shortest_path() → master function integrating all.
+
+### 3.3 What are the rules or constraints?
+- Respect road attributes (oneway=yes).  
+- Two-way roads: edges in both directions.  
+- Edge weights = actual distance, not heuristic.  
+- Use *Python* and *open-source libraries*.
+
+### 3.4 What’s missing?
+- No *real-time traffic data*.  
+- No *speed limits* (ETA not computed).  
+- Large JSON files → need *graph database* for scaling (e.g., Neo4j).
+
+---
+
+## ⚙️ 4. Resource Requirements
+
+### 4.1 Hardware
+
+#### Development Team
+- Laptop/PC, min *8GB RAM* (16GB recommended).
+
+#### Deployment Infrastructure
+- Server/container for API (Flask/FastAPI).  
+- Must *cache* built graph in memory.
+
+### 4.2 Software
+
+#### Development Tools
+- *Language:* Python 3.x  
+- *IDE:* VS Code  
+- *Source Control:* Git/GitHub
+
+#### Libraries
+- requests – API calls  
+- json, math, heapq – data, math, A* priority queue  
+- geopy – geocoding  
+- folium – visualization  
+- overpy – optional Overpass integration
+
+---
+
+## 📊 5. Third-Party Resources and Services
+
+| Service | Requirement | Cost |
+|----------|--------------|------|
+| *OpenStreetMap (OSM)* | Base map data source | Free |
+| *Overpass API* | Query & extract OSM data | Free (rate-limited) |
+| *Nominatim (via geopy)* | Address → Coordinates | Free (1 req/sec limit) |
+
+---
+
+## ⚙️ 6. Requirements Definition
+
+### 6.1 Functional Requirements (FR)
+
+| ID | Requirement | Description |
+|----|--------------|-------------|
+| FR1 | Data Download | Download HCMC data (ID: 3601973756) from Overpass API |
+| FR2 | Data Filtering | Filter road types: Car, Motorbike, Bicycle, Pedestrian |
+| FR3 | Graph Building | Build adjacency list graph |
+| FR4 | One-Way Handling | Handle oneway=yes correctly |
+| FR5 | Distance Calculation | Use haversine formula for edge weight |
+| FR6 | Node Snapping | Find nearest node to GPS coordinate |
+| FR7 | A* Algorithm | Implement A* using haversine heuristic |
+| FR8 | Geocoding | Convert address → coordinates |
+
+### 6.2 Non-Functional Requirements (NFR)
+
+| ID | Requirement | Description |
+|----|--------------|-------------|
+| NFR1 | Performance | Query time < 3s |
+| NFR2 | Accuracy | Respect road rules |
+| NFR3 | Maintainability | Clear modular code |
+| NFR4 | Reliability | Handle exceptions gracefully |
+
+---
+
+## 🔹 7. Work Breakdown Structure
+
+### 7.1 OSM API Integration
+*Objective:* Fetch map data and integrate geocoding.  
+*Files:* DownloadMapDataHCMC.py, FindShortestPathInHCMC.py
+
+*Tasks:*
+- Write 4 Overpass queries for: car, motorbike, bicycle, pedestrian  
+- Use extract_raw_data_from_OSM() to fetch & save JSON  
+- Implement choose_location() for address → coordinates
+
+### 7.2 Routing Algorithm Design
+*Objective:* Build graph and implement routing (A*).  
+*File:* FindShortestPathInHCMC.py
+
+*Tasks:*
+- build_graph_from_json() → process nodes, ways, oneway tag  
+- haversine() → compute distances  
+- find_nearest_node() → snap to graph  
+- astar() → implement main algorithm  
+- dijkstra() → optional fallback  
+- find_shortest_path() → master function
+
+### 7.3 Performance Testing
+*Objective:* Validate NFRs (speed & accuracy).  
+*File:* test_performance.py (new)
+
+*Tasks:*
+- *Graph Load Test:* Measure time/RAM  
+- *Algorithm Latency:* 100 random routes  
+- *Accuracy Test:* Visual route validation via folium
+
+---
+
+## 🚀 8. Execution Plan
+
+| No. | Task | Objective | Expected Output | Date | Status |
+|-----|------|------------|----------------|------|--------|
+| 1 | OSM API Integrate | Integrate Overpass & Nominatim APIs | JSON files, stable choose_location() | 2–3/11/2025 | ✅ Completed |
+| 2 | Routing Algorithm | Implement full A* and graph builder | find_shortest_path() functional | 4/11/2025 | ✅ Completed |
+| 3 | Performance Testing | Verify speed < 3s and accuracy | Test report | 9/11/2025 | 🔜 Next |
+
+---

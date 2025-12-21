@@ -1,0 +1,4916 @@
+{
+  "56de42f611f398ec0c48127d": {
+    "camera_name": "Mai Chí Thọ - Võ Nguyên Giáp (Cát Lái cầu A)",
+    "lat": 10.889333,
+    "lon": 106.685194,
+    "display_name": "Số 793, Đường Hà Huy Giáp, Thạnh Xuân, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71514",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c48127e": {
+    "camera_name": "Mai Chí Thọ - Võ Nguyên Giáp (Cát Lái cầu B)",
+    "lat": 10.889333,
+    "lon": 106.685194,
+    "display_name": "Số 793, Đường Hà Huy Giáp, Thạnh Xuân, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71514",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c48127f": {
+    "camera_name": "Mai Chí Thọ - Lương Định Của 1",
+    "lat": 10.792375,
+    "lon": 106.751414,
+    "display_name": "Đường Lương Định Của & Đường Mai Chí Thọ, An Phú, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71106",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c481280": {
+    "camera_name": "Mai Chí Thọ - Lương Định Của 2",
+    "lat": 10.792375,
+    "lon": 106.751414,
+    "display_name": "Đường Lương Định Của & Đường Mai Chí Thọ, An Phú, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71106",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c481282": {
+    "camera_name": "Mai Chí Thọ - Đồng Văn Cống 2",
+    "lat": 10.781593,
+    "lon": 106.631062,
+    "display_name": "Số 86, Đường Nguyễn Sơn, Phú Thọ Hòa, Hồ Chí Minh, Hồ Chí Minh, 72012",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c481283": {
+    "camera_name": "Mai Chí Thọ - Trần Não 1",
+    "lat": 10.774509,
+    "lon": 106.72813,
+    "display_name": "Đường Trần Não & Đường Mai Chí Thọ, An Lợi Đông, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71111",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c481284": {
+    "camera_name": "Nguyễn Thị Minh Khai - Nguyễn Thiện Thuật",
+    "lat": 10.766119,
+    "lon": 106.682277,
+    "display_name": "Đường Nguyễn Thị Minh Khai & Đường Nguyễn Thiện Thuật, Nguyễn Cư Trinh, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 72418",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c481286": {
+    "camera_name": "Mai Chí Thọ - Nguyễn Cơ Thạch 2",
+    "lat": 10.748672,
+    "lon": 106.702464,
+    "display_name": "Số 25/13, Hẻm 108 Nguyễn Hữu Thọ, Tân Hưng, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72912",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c481287": {
+    "camera_name": "Võ Văn Kiệt - Ký Con",
+    "lat": 10.765332,
+    "lon": 106.700189,
+    "display_name": "Đường Võ Văn Kiệt & Đường Ký Con, Nguyễn Thái Bình, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71010",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c481288": {
+    "camera_name": "Võ Văn Kiệt - Cầu Ông Lãnh 1",
+    "lat": 10.764021,
+    "lon": 106.697544,
+    "display_name": "Số 1, Đường Võ Văn Kiệt, Cầu Ông Lãnh, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71011",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c481289": {
+    "camera_name": "Võ Văn Kiệt - Cầu Ông Lãnh 2",
+    "lat": 10.763855,
+    "lon": 106.698102,
+    "display_name": "Đường Võ Văn Kiệt, Cầu Ông Lãnh, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71011",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c48128a": {
+    "camera_name": "Võ Văn Kiệt - Trần Đình Xu 2",
+    "lat": 10.758745,
+    "lon": 106.69243,
+    "display_name": "Đường Võ Văn Kiệt & Đường Trần Đình Xu, Cầu Kho, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71015",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c48128b": {
+    "camera_name": "Võ Văn Kiệt - Nguyễn Văn Cừ 1",
+    "lat": 10.751647,
+    "lon": 106.685,
+    "display_name": "Đường Võ Văn Kiệt & Cầu Nguyễn Văn Cừ, Phường 1, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72708",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c48128c": {
+    "camera_name": "Võ Văn Kiệt - Nguyễn Văn Cừ 2",
+    "lat": 10.751647,
+    "lon": 106.685,
+    "display_name": "Đường Võ Văn Kiệt & Cầu Nguyễn Văn Cừ, Phường 1, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72708",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c48128d": {
+    "camera_name": "Hải Thượng Lãn Ông - Cầu Chà Và",
+    "lat": 10.751077,
+    "lon": 106.656612,
+    "display_name": "Số 280, Đường Hải Thượng Lãn Ông, Phường 14, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72716",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c48128e": {
+    "camera_name": "Võ Văn Kiệt - Cầu Chữ Y 2",
+    "lat": 10.715765,
+    "lon": 106.601073,
+    "display_name": "Đường Võ Văn Kiệt, Tân Kiên, Hồ Chí Minh, Hồ Chí Minh, 71815",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c48128f": {
+    "camera_name": "Võ Văn Kiệt - Huỳnh Mẫn Đạt",
+    "lat": 10.75213,
+    "lon": 106.677236,
+    "display_name": "Đường Huỳnh Mẫn Đạt & Đường Võ Văn Kiệt, Phường 1, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72720",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c481290": {
+    "camera_name": "Võ Văn Kiệt - An Bình",
+    "lat": 10.72202,
+    "lon": 106.610484,
+    "display_name": "Đường Võ Văn Kiệt, An Lạc, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71906",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c481291": {
+    "camera_name": "Võ Văn Kiệt - Nguyễn Tri Phương 1",
+    "lat": 10.76635,
+    "lon": 106.700867,
+    "display_name": "Số 74, Đường Võ Văn Kiệt, Nguyễn Thái Bình, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71010",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c481292": {
+    "camera_name": "Võ Văn Kiệt - Phạm Phú Thứ",
+    "lat": 10.741306,
+    "lon": 106.645731,
+    "display_name": "Đường Phạm Phú Thứ & Đường Võ Văn Kiệt, Phường 3, Quận 6, Hồ Chí Minh, Hồ Chí Minh, 73108",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c481293": {
+    "camera_name": "Võ Văn Kiệt - Hải Thượng Lãn Ông 1",
+    "lat": 10.750006,
+    "lon": 106.66311,
+    "display_name": "Đường Hải Thượng Lãn Ông & Đường Võ Văn Kiệt, Phường 10, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72718",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c481295": {
+    "camera_name": "Võ Văn Kiệt - Cầu Chà Và 1 (dạ cầu)",
+    "lat": 10.748844,
+    "lon": 106.66039,
+    "display_name": "Đường Võ Văn Kiệt & Đường Vạn Kiếp, Phường 13, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72717",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c481296": {
+    "camera_name": "Võ Văn Kiệt - Cao Văn Lầu",
+    "lat": 10.744677,
+    "lon": 106.651113,
+    "display_name": "Số 2, Đường Võ Văn Kiệt, Phường 1, Quận 6, Hồ Chí Minh, Hồ Chí Minh, 73106",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c481297": {
+    "camera_name": "Võ Văn Kiệt - Nguyễn Tri Phương 2",
+    "lat": 10.749816,
+    "lon": 106.662004,
+    "display_name": "Số 21, Đường Võ Văn Kiệt, Phường 10, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72718",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c481298": {
+    "camera_name": "Võ Văn Kiệt - An Dương Vương 1",
+    "lat": 10.720697,
+    "lon": 106.609484,
+    "display_name": "Số 69, Đường Số 7, An Lạc, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71906",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c481299": {
+    "camera_name": "Võ Văn Kiệt - An Dương Vương 2",
+    "lat": 10.720697,
+    "lon": 106.609484,
+    "display_name": "Số 69, Đường Số 7, An Lạc, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71906",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c48129a": {
+    "camera_name": "Võ Văn Kiệt - Hồ Học Lãm 1",
+    "lat": 10.722165,
+    "lon": 106.611083,
+    "display_name": "Đường Hồ Học Lãm & Đường Võ Văn Kiệt, An Lạc, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71906",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c48129b": {
+    "camera_name": "Võ Văn Kiệt - Hồ Học Lãm 2",
+    "lat": 10.722531,
+    "lon": 106.61253,
+    "display_name": "Đường Võ Văn Kiệt & Hẻm 298/2 Hồ Học Lãm, An Lạc, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71906",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c48129c": {
+    "camera_name": "Võ Văn Kiệt - Quốc Lộ 1",
+    "lat": 10.713739,
+    "lon": 106.59953,
+    "display_name": "Đường Võ Văn Kiệt & Đường Quốc lộ 1A, Tân Kiên, Hồ Chí Minh, Hồ Chí Minh, 71815",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c48129d": {
+    "camera_name": "Quốc lộ 1 - Trần Đại Nghĩa",
+    "lat": 10.668374,
+    "lon": 106.573959,
+    "display_name": "Số A16/4, Đường Quốc lộ 1A, Bình Chánh, Hồ Chí Minh, Hồ Chí Minh, 71814",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c48129e": {
+    "camera_name": "Đồng Văn Cống - Phan Văn Đáng",
+    "lat": 10.800933,
+    "lon": 106.681301,
+    "display_name": "Số 178/4A, Hẻm 178 Phan Đăng Lưu, Phường 3, Phú Nhuận, Hồ Chí Minh, Hồ Chí Minh, 72213",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c48129f": {
+    "camera_name": "Đồng Văn Cống - Nguyễn Thị Định",
+    "lat": 10.769649,
+    "lon": 106.77517,
+    "display_name": "Đường Đồng Văn Cống & Đường Nguyễn Thị Định, Thạnh Mỹ Lợi, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71114",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c4812a0": {
+    "camera_name": "Nguyễn Thị Định - Đường A",
+    "lat": 10.773546,
+    "lon": 106.770568,
+    "display_name": "Số 519, Đường Nguyễn Thị Định, Cát Lái, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71115",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c4812a1": {
+    "camera_name": "Nút giao Mỹ Thủy 1",
+    "lat": 10.868301,
+    "lon": 106.780031,
+    "display_name": "Đường Quốc Lộ 1A, Linh Trung, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71308",
+    "source": "tomtom"
+  },
+  "56de42f611f398ec0c4812a2": {
+    "camera_name": "Nút giao Mỹ Thủy 2",
+    "lat": 10.868301,
+    "lon": 106.780031,
+    "display_name": "Đường Quốc Lộ 1A, Linh Trung, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71308",
+    "source": "tomtom"
+  },
+  "56df807bc062921100c143da": {
+    "camera_name": "Trường Chinh - Âu Cơ",
+    "lat": 10.800474,
+    "lon": 106.638983,
+    "display_name": "Số 481A, Đường Trường Chinh, Phường 14, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72112",
+    "source": "tomtom"
+  },
+  "56df8108c062921100c143db": {
+    "camera_name": "Hoàng Minh Giám - Hồng Hà",
+    "lat": 10.809082,
+    "lon": 106.674187,
+    "display_name": "Đường Hoàng Minh Giám & Đường Hồng Hà, Phường 9, Phú Nhuận, Hồ Chí Minh, Hồ Chí Minh, 72216",
+    "source": "tomtom"
+  },
+  "56df8159c062921100c143dc": {
+    "camera_name": "Nút giao Thủ Đức (Lê Văn Việt)",
+    "lat": 10.798261,
+    "lon": 106.731487,
+    "display_name": "Nút Giao Thông Cầu Sài Gòn, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "56df8198c062921100c143dd": {
+    "camera_name": "Nút giao Thủ Đức (Võ Văn Ngân)",
+    "lat": 10.798261,
+    "lon": 106.731487,
+    "display_name": "Nút Giao Thông Cầu Sài Gòn, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "56df81d8c062921100c143de": {
+    "camera_name": "Nút giao Thủ Đức (trên cầu)",
+    "lat": 10.798261,
+    "lon": 106.731487,
+    "display_name": "Nút Giao Thông Cầu Sài Gòn, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "56df8274c062921100c143df": {
+    "camera_name": "Võ Nguyên Giáp - Tây Hòa 1",
+    "lat": 10.695553,
+    "lon": 106.596604,
+    "display_name": "Đường Quốc lộ 1A, An Phú Tây, Hồ Chí Minh, Hồ Chí Minh, 71808",
+    "source": "tomtom"
+  },
+  "56df82d4c062921100c143e0": {
+    "camera_name": "Võ Nguyên Giáp - Tây Hòa 2",
+    "lat": 10.851581,
+    "lon": 106.832832,
+    "display_name": "Số 875, Đường Nguyễn Xiển, Long Thạnh Mỹ, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71216",
+    "source": "tomtom"
+  },
+  "56df8381c062921100c143e2": {
+    "camera_name": "Nguyễn Hữu Thọ - Nguyễn Thị Thập 1",
+    "lat": 10.740396,
+    "lon": 106.701176,
+    "display_name": "Đường Nguyễn Hữu Thọ & Đường Nguyễn Thị Thập, Tân Hưng, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72912",
+    "source": "tomtom"
+  },
+  "56df83d8c062921100c143e3": {
+    "camera_name": "Nút giao Nguyễn Thái Sơn 1 (Hồng Hà)",
+    "lat": 10.819391,
+    "lon": 106.682594,
+    "display_name": "Số 1, Hẻm Số 1 Nguyễn Thái Sơn, Phường 3, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71409",
+    "source": "tomtom"
+  },
+  "56df84abc062921100c143e5": {
+    "camera_name": "Nút giao Nguyễn Thái Sơn 3 (Phạm Văn Đồng)",
+    "lat": 10.825546,
+    "lon": 106.68669,
+    "display_name": "Số 201/3/3B1, Hẻm 221/3 Nguyễn Thái Sơn, Phường 7, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71407",
+    "source": "tomtom"
+  },
+  "56df8544c062921100c143e6": {
+    "camera_name": "Trường Sơn - Ga Quốc Tế",
+    "lat": 10.809096,
+    "lon": 106.664561,
+    "display_name": "Số 49, Đường Trường Sơn, Phường 4, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72106",
+    "source": "tomtom"
+  },
+  "56f11ac33ac17b11001c504c": {
+    "camera_name": "Nguyễn Văn Trỗi - Hoàng Văn Thụ 1",
+    "lat": 10.800221,
+    "lon": 106.667325,
+    "display_name": "Đường Nguyễn Văn Trỗi & Đường Hoàng Văn Thụ, Phường 1, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72107",
+    "source": "tomtom"
+  },
+  "56f11afc3ac17b11001c504e": {
+    "camera_name": "Trường Sơn - Phan Đình Giót",
+    "lat": 10.804653,
+    "lon": 106.664284,
+    "display_name": "Đường Phan Đình Giót & Đường Trường Sơn, Phường 4, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72108",
+    "source": "tomtom"
+  },
+  "56f8d743025e9511002786c5": {
+    "camera_name": "Trường Sơn - Ga Quốc Nội 1",
+    "lat": 10.809096,
+    "lon": 106.664561,
+    "display_name": "Số 49, Đường Trường Sơn, Phường 4, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72106",
+    "source": "tomtom"
+  },
+  "5701e22bc4350a1100e26f6c": {
+    "camera_name": "Nguyễn Công Trứ - Calmette 1",
+    "lat": 10.767244,
+    "lon": 106.699747,
+    "display_name": "Đường Calmette & Đường Nguyễn Công Trứ, Nguyễn Thái Bình, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71010",
+    "source": "tomtom"
+  },
+  "58175ac4edeb6c0012a2d5bb": {
+    "camera_name": "Mai Chí Thọ - Đồng Văn Cống 1",
+    "lat": 10.781593,
+    "lon": 106.631062,
+    "display_name": "Số 86, Đường Nguyễn Sơn, Phú Thọ Hòa, Hồ Chí Minh, Hồ Chí Minh, 72012",
+    "source": "tomtom"
+  },
+  "58175c81edeb6c0012a2d5c2": {
+    "camera_name": "Mai Chí Thọ - Trần Não 2",
+    "lat": 10.774509,
+    "lon": 106.72813,
+    "display_name": "Đường Trần Não & Đường Mai Chí Thọ, An Lợi Đông, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71111",
+    "source": "tomtom"
+  },
+  "5822adbbedeb6c0012a2d65f": {
+    "camera_name": "Võ Văn Kiệt - Cầu Chữ Y 1",
+    "lat": 10.757626,
+    "lon": 106.690575,
+    "display_name": "Số 522, Đường Bến Chương Dương, Cầu Kho, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 711721",
+    "source": "tomtom"
+  },
+  "5822b5ededeb6c0012a2d66a": {
+    "camera_name": "Mai Chí Thọ - Nguyễn Cơ Thạch 1",
+    "lat": 10.759026,
+    "lon": 106.633964,
+    "display_name": "Số 1, Đường Lũy Bán Bích, Tân Thới Hòa, Hồ Chí Minh, Hồ Chí Minh, 72015",
+    "source": "tomtom"
+  },
+  "5822f23aedeb6c0012a2d6a8": {
+    "camera_name": "Hồng Bàng - Nguyễn Thị Nhỏ",
+    "lat": 10.753497,
+    "lon": 106.65069,
+    "display_name": "Đường Hồng Bàng & Hẻm Nguyễn Thị Nhỏ, Phường 12, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72612",
+    "source": "tomtom"
+  },
+  "583f926761cfea0012cf68f1": {
+    "camera_name": "Nguyễn Thị Định - Cổng A Cảng Cát Lái",
+    "lat": 10.758945,
+    "lon": 106.788125,
+    "display_name": "Số 1341, Đường Nguyễn Thị Định, Cát Lái, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71115",
+    "source": "tomtom"
+  },
+  "583f958161cfea0012cf68f5": {
+    "camera_name": "Nguyễn Thị Định - Đường C",
+    "lat": 10.773973,
+    "lon": 106.770413,
+    "display_name": "Đường Nguyễn Thị Định, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "583f969161cfea0012cf68f7": {
+    "camera_name": "Nguyễn Thị Định - Đường D",
+    "lat": 10.773973,
+    "lon": 106.770413,
+    "display_name": "Đường Nguyễn Thị Định, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "583f976361cfea0012cf68f9": {
+    "camera_name": "Nguyễn Thị Định - Lê Phụng Hiểu",
+    "lat": 10.762006,
+    "lon": 106.784324,
+    "display_name": "Đường Lê Phụng Hiểu & Đường Nguyễn Thị Định, Thạnh Mỹ Lợi, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71114",
+    "source": "tomtom"
+  },
+  "585b284ac3f96200127dc500": {
+    "camera_name": "Huỳnh Tấn Phát - Lưu Trọng Lư 1",
+    "lat": 10.754386,
+    "lon": 106.727694,
+    "display_name": "Đường Lưu Trọng Lư & Đường Huỳnh Tấn Phát, Tân Thuận Tây, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72910",
+    "source": "tomtom"
+  },
+  "585b2980c3f96200127dc502": {
+    "camera_name": "Huỳnh Tấn Phát - Lưu Trọng Lư 2",
+    "lat": 10.754386,
+    "lon": 106.727694,
+    "display_name": "Đường Lưu Trọng Lư & Đường Huỳnh Tấn Phát, Tân Thuận Tây, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72910",
+    "source": "tomtom"
+  },
+  "585b2b1ec3f96200127dc505": {
+    "camera_name": "Nguyễn Văn Linh - Huỳnh Tấn Phát 1",
+    "lat": 10.752115,
+    "lon": 106.727844,
+    "display_name": "Đường Nguyễn Văn Linh, Tân Thuận Tây, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72910",
+    "source": "tomtom"
+  },
+  "585b2baec3f96200127dc508": {
+    "camera_name": "Nguyễn Văn Linh - Huỳnh Tấn Phát 2",
+    "lat": 10.752115,
+    "lon": 106.727844,
+    "display_name": "Đường Nguyễn Văn Linh, Tân Thuận Tây, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72910",
+    "source": "tomtom"
+  },
+  "586e1d4ef9fab7001111b0a2": {
+    "camera_name": "Cộng Hòa - Đường C 18",
+    "lat": 10.801279,
+    "lon": 106.655844,
+    "display_name": "Số 18, Đường Cộng Hòa, Phường 4, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72106",
+    "source": "tomtom"
+  },
+  "586e1f18f9fab7001111b0a5": {
+    "camera_name": "Cộng Hòa - Trường Chinh",
+    "lat": 10.806588,
+    "lon": 106.635489,
+    "display_name": "Số 29/1A, Đường Cộng Hòa, Phường 15, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72109",
+    "source": "tomtom"
+  },
+  "586e20a0f9fab7001111b0a7": {
+    "camera_name": "Nguyễn Kiệm - Hồ Văn Huê",
+    "lat": 10.809433,
+    "lon": 106.67892,
+    "display_name": "Số 744/4A, Hẻm 744 Nguyễn Kiệm, Phường 4, Phú Nhuận, Hồ Chí Minh, Hồ Chí Minh, 72214",
+    "source": "tomtom"
+  },
+  "586e2492f9fab7001111b0ab": {
+    "camera_name": "Nguyễn Văn Trỗi - Nguyễn Đình Chính",
+    "lat": 10.793246,
+    "lon": 106.679272,
+    "display_name": "Số 93-95, Đường Nguyễn Văn Trỗi, Phường 11, Phú Nhuận, Hồ Chí Minh, Hồ Chí Minh, 72207",
+    "source": "tomtom"
+  },
+  "586e25e1f9fab7001111b0ae": {
+    "camera_name": "Trường Chinh - Tân Kỳ Tân Quý",
+    "lat": 10.803837,
+    "lon": 106.635723,
+    "display_name": "Đường Tân Kỳ Tân Quý & Đường Trường Chinh, Tân Sơn Nhì, Hồ Chí Minh, Hồ Chí Minh, 72009",
+    "source": "tomtom"
+  },
+  "586e266ef9fab7001111b0b0": {
+    "camera_name": "Trường Chinh - Phạm Văn Bạch 1",
+    "lat": 10.813803,
+    "lon": 106.632903,
+    "display_name": "Đường Trường Chinh & Đường Phạm Văn Bạch, Phường 15, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72109",
+    "source": "tomtom"
+  },
+  "586e28a0f9fab7001111b0b3": {
+    "camera_name": "Quốc lộ 1 - KCX Linh Trung 1",
+    "lat": 10.84546,
+    "lon": 106.618002,
+    "display_name": "Số 2384/1/4, Quốc Lộ 1, Trung Mỹ Tây, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71507",
+    "source": "tomtom"
+  },
+  "586e2995f9fab7001111b0b5": {
+    "camera_name": "Ung Văn Khiêm - Nguyễn Gia Trí (D2)",
+    "lat": 10.807608,
+    "lon": 106.716398,
+    "display_name": "Đường Nguyễn Gia Trí & Đường Ung Văn Khiêm, Phường 25, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72308",
+    "source": "tomtom"
+  },
+  "58744dd9b807da0011e33cb5": {
+    "camera_name": "Quốc lộ 50 - Tạ Quang Bửu",
+    "lat": 10.734074,
+    "lon": 106.656179,
+    "display_name": "Đường Quốc Lộ 50 & Đường Tạ Quang Bửu, Phường 5, Quận 8, Hồ Chí Minh, Hồ Chí Minh, 73017",
+    "source": "tomtom"
+  },
+  "58744e3eb807da0011e33cb7": {
+    "camera_name": "Dương Bá Trạc - Hẻm 288",
+    "lat": 10.744725,
+    "lon": 106.688969,
+    "display_name": "Số 288, Hẻm 288 Dương Bá Trạc, Phường 2, Quận 8, Hồ Chí Minh, Hồ Chí Minh, 73020",
+    "source": "tomtom"
+  },
+  "58744e97b807da0011e33cb9": {
+    "camera_name": "Dương Bá Trạc - Hẻm 219",
+    "lat": 10.746364,
+    "lon": 106.689931,
+    "display_name": "Số 219/28AT2, Hẻm 219 Dương Bá Trạc, Phường 1, Quận 8, Hồ Chí Minh, Hồ Chí Minh, 73021",
+    "source": "tomtom"
+  },
+  "58744f1fb807da0011e33cbd": {
+    "camera_name": "Hưng Phú - Chánh Hưng 1",
+    "lat": 10.664874,
+    "lon": 106.570126,
+    "display_name": "Đường Quốc lộ 1A, Bình Chánh, Hồ Chí Minh, Hồ Chí Minh, 71814",
+    "source": "tomtom"
+  },
+  "58744fb0b807da0011e33cc0": {
+    "camera_name": "Hưng Phú - Chánh Hưng 2",
+    "lat": 10.784042,
+    "lon": 106.621426,
+    "display_name": "Số 234, Đường Trần Thủ Độ, Phú Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72013",
+    "source": "tomtom"
+  },
+  "587460aab807da0011e33cc2": {
+    "camera_name": "Quốc lộ 1 - ĐH Nông Lâm 1",
+    "lat": 10.769456,
+    "lon": 106.590455,
+    "display_name": "Số 1/14, Hẻm 1 Quốc Lộ 1A, Bình Trị Đông A, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71911",
+    "source": "tomtom"
+  },
+  "58746122b807da0011e33cc5": {
+    "camera_name": "Quốc lộ 1 - ĐH Nông Lâm 2",
+    "lat": 10.872832,
+    "lon": 106.742653,
+    "display_name": "Đường Quốc Lộ 1A, Bình Chiểu, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71313",
+    "source": "tomtom"
+  },
+  "587461c1b807da0011e33cc8": {
+    "camera_name": "Quốc lộ 1 - Ngã tư Linh Xuân",
+    "lat": 10.877724,
+    "lon": 106.59123,
+    "display_name": "Đường Quốc Lộ 22, Xuân Thới Sơn, Hồ Chí Minh, Hồ Chí Minh, 71712",
+    "source": "tomtom"
+  },
+  "58746295b807da0011e33ccb": {
+    "camera_name": "Quốc lộ 1 - Bình Đường",
+    "lat": 10.789541,
+    "lon": 106.595894,
+    "display_name": "Số 1A, Đường Quốc lộ 1A, Bình Hưng Hòa A, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71912",
+    "source": "tomtom"
+  },
+  "58746314b807da0011e33cce": {
+    "camera_name": "Quốc lộ 1 - Cầu vượt Linh Xuân",
+    "lat": 10.861827,
+    "lon": 106.648009,
+    "display_name": "Số 1/3, Đường Quốc Lộ 1A, Tân Thới Hiệp, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71511",
+    "source": "tomtom"
+  },
+  "58746371b807da0011e33cd1": {
+    "camera_name": "Quốc lộ 1 - Đường 14",
+    "lat": 10.974632,
+    "lon": 106.476624,
+    "display_name": "Số 14, Đường Quốc Lộ 22, Tân An Hội, Hồ Chí Minh, Hồ Chí Minh, 71607",
+    "source": "tomtom"
+  },
+  "587463bab807da0011e33cd3": {
+    "camera_name": "Quốc lộ 1 - Lê Thị Hoa",
+    "lat": 10.87561,
+    "lon": 106.748049,
+    "display_name": "Số 251, Đường Lê Thị Hoa, Bình Chiểu, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71313",
+    "source": "tomtom"
+  },
+  "5874644cb807da0011e33cd5": {
+    "camera_name": "Cầu vượt Sóng Thần 1",
+    "lat": 10.872832,
+    "lon": 106.742653,
+    "display_name": "Đường Quốc Lộ 1A, Bình Chiểu, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71313",
+    "source": "tomtom"
+  },
+  "58746488b807da0011e33cd7": {
+    "camera_name": "Cầu vượt Sóng Thần 2",
+    "lat": 10.872832,
+    "lon": 106.742653,
+    "display_name": "Đường Quốc Lộ 1A, Bình Chiểu, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71313",
+    "source": "tomtom"
+  },
+  "587464e2b807da0011e33cd9": {
+    "camera_name": "Cầu vượt nút giao thông Gò Dưa",
+    "lat": 10.868301,
+    "lon": 106.780031,
+    "display_name": "Đường Quốc Lộ 1A, Linh Trung, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71308",
+    "source": "tomtom"
+  },
+  "58746536b807da0011e33cdc": {
+    "camera_name": "Cầu vượt Bình Phước 1",
+    "lat": 10.861827,
+    "lon": 106.648009,
+    "display_name": "Số 1/3, Đường Quốc Lộ 1A, Tân Thới Hiệp, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71511",
+    "source": "tomtom"
+  },
+  "5874656eb807da0011e33cde": {
+    "camera_name": "Cầu vượt Bình Phước 2",
+    "lat": 10.859931,
+    "lon": 106.701513,
+    "display_name": "Đường Quốc Lộ 1A, An Phú Đông, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71516",
+    "source": "tomtom"
+  },
+  "587470c2b807da0011e33ce4": {
+    "camera_name": "Nguyễn Hữu Cảnh - Ngô Tất Tố (Cầu Thủ Thiêm 1)",
+    "lat": 10.789524,
+    "lon": 106.716266,
+    "display_name": "Đường Nguyễn Hữu Cảnh & Đường Ngô Tất Tố, Phường 22, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72324",
+    "source": "tomtom"
+  },
+  "587475abb807da0011e33cea": {
+    "camera_name": "Trường Sơn - Cửu Long",
+    "lat": 10.781404,
+    "lon": 106.662357,
+    "display_name": "Đường Trường Sơn & Đường Cửu Long, Phường 15, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72512",
+    "source": "tomtom"
+  },
+  "5874769eb807da0011e33cec": {
+    "camera_name": "Cộng Hòa - Út Tịch 2",
+    "lat": 10.798808,
+    "lon": 106.65808,
+    "display_name": "Số 747, Hẻm 6 Đường Út Tịch, Phường 4, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72106",
+    "source": "tomtom"
+  },
+  "587476e3b807da0011e33cee": {
+    "camera_name": "Cộng Hòa - Út Tịch 1",
+    "lat": 10.798808,
+    "lon": 106.65808,
+    "display_name": "Số 747, Hẻm 6 Đường Út Tịch, Phường 4, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72106",
+    "source": "tomtom"
+  },
+  "587478d8b807da0011e33cf3": {
+    "camera_name": "Nút giao Bảy Hiền 1 (Cách Mạng Tháng Tám)",
+    "lat": 10.692317,
+    "lon": 106.595463,
+    "display_name": "Đường Quốc lộ 1A, An Phú Tây, Hồ Chí Minh, Hồ Chí Minh, 71808",
+    "source": "tomtom"
+  },
+  "58747923b807da0011e33cf5": {
+    "camera_name": "Nút giao Bảy Hiền 2 (Hoàng Văn Thụ)",
+    "lat": 10.692317,
+    "lon": 106.595463,
+    "display_name": "Đường Quốc lộ 1A, An Phú Tây, Hồ Chí Minh, Hồ Chí Minh, 71808",
+    "source": "tomtom"
+  },
+  "5874796db807da0011e33cf7": {
+    "camera_name": "Trường Chinh - Tây Thạnh 1",
+    "lat": 10.814211,
+    "lon": 106.632234,
+    "display_name": "Số 827A, Đường Trường Chinh, Tây Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72009",
+    "source": "tomtom"
+  },
+  "587479b1b807da0011e33cf9": {
+    "camera_name": "Trường Chinh - Tây Thạnh 2",
+    "lat": 10.810766,
+    "lon": 106.632513,
+    "display_name": "Số 763/2/7, Hẻm 763/2 Trường Chinh, Tây Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72009",
+    "source": "tomtom"
+  },
+  "5875cef0b807da0011e33d14": {
+    "camera_name": "Trường Chinh - Phạm Văn Bạch 2",
+    "lat": 10.813803,
+    "lon": 106.632903,
+    "display_name": "Đường Trường Chinh & Đường Phạm Văn Bạch, Phường 15, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72109",
+    "source": "tomtom"
+  },
+  "5875d4f8b807da0011e33d1a": {
+    "camera_name": "Tạ Quang Bửu - Phạm Hùng 1",
+    "lat": 10.736639,
+    "lon": 106.674048,
+    "display_name": "Số C5/10B/9A, Đường 783 Tạ Quang Bửu, Bình Hưng, Hồ Chí Minh, Hồ Chí Minh, 71813",
+    "source": "tomtom"
+  },
+  "587654d3b807da0011e33d36": {
+    "camera_name": "Võ Chí Công - Đường số 2",
+    "lat": 10.789868,
+    "lon": 106.683612,
+    "display_name": "Số 297, Đường Nam Kỳ Khởi Nghĩa, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72415",
+    "source": "tomtom"
+  },
+  "587c782db807da0011e33d3b": {
+    "camera_name": "Võ Nguyên Giáp - Thảo Điền",
+    "lat": 10.802176,
+    "lon": 106.736468,
+    "display_name": "Đường Nguyễn Đăng Giai, Thảo Điền, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71107",
+    "source": "tomtom"
+  },
+  "587c79e9b807da0011e33d3d": {
+    "camera_name": "Điện Biên Phủ - Nguyễn Văn Thương 2",
+    "lat": 10.800014,
+    "lon": 106.717784,
+    "display_name": "Đường Điện Biên Phủ, Phường 25, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72308",
+    "source": "tomtom"
+  },
+  "587c8183b807da0011e33d3f": {
+    "camera_name": "Hoàng Văn Thụ - Trần Quốc Hoàn",
+    "lat": 10.799191,
+    "lon": 106.677691,
+    "display_name": "Số 89, Đường Trần Huy Liệu, Phường 8, Phú Nhuận, Hồ Chí Minh, Hồ Chí Minh, 72209",
+    "source": "tomtom"
+  },
+  "587c8661b807da0011e33d43": {
+    "camera_name": "Lê Văn Sỹ - Hoàng Văn Thụ",
+    "lat": 10.800051,
+    "lon": 106.66071,
+    "display_name": "Hẻm 221 Đường Lê Văn Sỹ & Đường Hoàng Văn Thụ, Phường 2, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72108",
+    "source": "tomtom"
+  },
+  "587c8c20b807da0011e33d47": {
+    "camera_name": "Hoàng Văn Thụ - Hồ Văn Huê",
+    "lat": 10.794634,
+    "lon": 106.654878,
+    "display_name": "Hẻm 522 Hoàng Văn Thụ, Phường 4, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72106",
+    "source": "tomtom"
+  },
+  "587c8d97b807da0011e33d49": {
+    "camera_name": "Hoàng Văn Thụ - Nguyễn Văn Trỗi 2",
+    "lat": 10.800221,
+    "lon": 106.667325,
+    "display_name": "Đường Nguyễn Văn Trỗi & Đường Hoàng Văn Thụ, Phường 1, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72107",
+    "source": "tomtom"
+  },
+  "587ed91db807da0011e33d4e": {
+    "camera_name": "Phan Đăng Lưu - Đinh Tiên Hoàng 2",
+    "lat": 10.802562,
+    "lon": 106.69649,
+    "display_name": "Đường Đinh Tiên Hoàng & Đường Phan Đăng Lưu, Phường 3, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72317",
+    "source": "tomtom"
+  },
+  "587ee0ecb807da0011e33d50": {
+    "camera_name": "Phan Đăng Lưu - Lê Văn Duyệt",
+    "lat": 10.801842,
+    "lon": 106.696874,
+    "display_name": "Số 126, Đường Phan Đăng Lưu, Phường 1, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72318",
+    "source": "tomtom"
+  },
+  "587ee2aeb807da0011e33d52": {
+    "camera_name": "Phan Đăng Lưu - Phan Xích Long",
+    "lat": 10.801795,
+    "lon": 106.682976,
+    "display_name": "Đường Phan Xích Long & Đường Phan Đăng Lưu, Phường 3, Phú Nhuận, Hồ Chí Minh, Hồ Chí Minh, 72213",
+    "source": "tomtom"
+  },
+  "587ee7d7b807da0011e33d55": {
+    "camera_name": "Phan Đăng Lưu - Nơ Trang Long",
+    "lat": 10.802894,
+    "lon": 106.694877,
+    "display_name": "Đường Nơ Trang Long & Đường Phan Đăng Lưu, Phường 14, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72306",
+    "source": "tomtom"
+  },
+  "587ef2e4b807da0011e33d57": {
+    "camera_name": "Nguyễn Văn Trỗi - Nguyễn Trọng Tuyển",
+    "lat": 10.796513,
+    "lon": 106.674866,
+    "display_name": "Số 80, Hẻm 42 Nguyễn Trọng Tuyển, Phường 8, Phú Nhuận, Hồ Chí Minh, Hồ Chí Minh, 72217",
+    "source": "tomtom"
+  },
+  "587ef5dfb807da0011e33d59": {
+    "camera_name": "Nguyễn Văn Trỗi - Huỳnh Văn Bánh",
+    "lat": 10.792895,
+    "lon": 106.680042,
+    "display_name": "Đường Nguyễn Văn Trỗi & Đường Huỳnh Văn Bánh, Phường 11, Phú Nhuận, Hồ Chí Minh, Hồ Chí Minh, 72207",
+    "source": "tomtom"
+  },
+  "587ef859b807da0011e33d5b": {
+    "camera_name": "Phạm Văn Đồng - Lê Quang Định 2",
+    "lat": 10.819578,
+    "lon": 106.689905,
+    "display_name": "Số 519A, Đường Phạm Văn Đồng, Phường 1, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 728018",
+    "source": "tomtom"
+  },
+  "587efb60b807da0011e33d5d": {
+    "camera_name": "Phạm Văn Đồng - Lê Quang Định 1",
+    "lat": 10.819578,
+    "lon": 106.689905,
+    "display_name": "Số 519A, Đường Phạm Văn Đồng, Phường 1, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 728018",
+    "source": "tomtom"
+  },
+  "589add0fb3bf7600110283ae": {
+    "camera_name": "Tô Ký (Tỉnh lộ 15) - Đông Bắc",
+    "lat": 10.869523,
+    "lon": 106.615181,
+    "display_name": "Đường Tô Ký, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "589b3705b3bf7600110283bd": {
+    "camera_name": "QL 22 - Nguyễn Ảnh Thủ 1",
+    "lat": 10.855246,
+    "lon": 106.607182,
+    "display_name": "Đường Nguyễn Ảnh Thủ & Đường Quốc Lộ 22, Bà Điểm, Hồ Chí Minh, Hồ Chí Minh, 71714",
+    "source": "tomtom"
+  },
+  "589b39d9b3bf7600110283c1": {
+    "camera_name": "QL 22 - Nguyễn Ảnh Thủ 2",
+    "lat": 10.855246,
+    "lon": 106.607182,
+    "display_name": "Đường Nguyễn Ảnh Thủ & Đường Quốc Lộ 22, Bà Điểm, Hồ Chí Minh, Hồ Chí Minh, 71714",
+    "source": "tomtom"
+  },
+  "589b3ceeb3bf7600110283c3": {
+    "camera_name": "QL 22 - Nguyễn Văn Bứa 1",
+    "lat": 10.970409,
+    "lon": 106.483073,
+    "display_name": "Đường Quốc Lộ 22, Củ Chi, Hồ Chí Minh, Hồ Chí Minh, 71606",
+    "source": "tomtom"
+  },
+  "589b3f7db3bf7600110283c6": {
+    "camera_name": "QL 22 - Nguyễn Văn Bứa 2",
+    "lat": 10.799645,
+    "lon": 106.636025,
+    "display_name": "Số 22, Hẻm 22/2 Nguyễn Văn Săng, Tân Sơn Nhì, Hồ Chí Minh, Hồ Chí Minh, 72008",
+    "source": "tomtom"
+  },
+  "589b4379b3bf7600110283c9": {
+    "camera_name": "QL 22 - Giáp Hải",
+    "lat": 10.971381,
+    "lon": 106.481485,
+    "display_name": "Đường Giáp Hải & Đường Quốc Lộ 22, Tân An Hội, Hồ Chí Minh, Hồ Chí Minh, 71607",
+    "source": "tomtom"
+  },
+  "589b4644b3bf7600110283ce": {
+    "camera_name": "Hà Huy Giáp - Cầu Phú Long 1",
+    "lat": 10.853203,
+    "lon": 106.682629,
+    "display_name": "Đường Hà Huy Giáp, An Phú Đông, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71516",
+    "source": "tomtom"
+  },
+  "589d0b74b3bf7600110283d4": {
+    "camera_name": "Cầu Sài Gòn 4 (Thủ Đức 1)",
+    "lat": 10.757784,
+    "lon": 106.720419,
+    "display_name": "Đường Trương Đình Hợi, Phường 18, Quận 4, Hồ Chí Minh, Hồ Chí Minh, 72819",
+    "source": "tomtom"
+  },
+  "589d0bceb3bf7600110283d6": {
+    "camera_name": "Cầu Sài Gòn 2 (dạ cầu)",
+    "lat": 10.780745,
+    "lon": 106.708318,
+    "display_name": "Cầu Thủ Thiêm 2, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "58abbee5bd82540010390ba2": {
+    "camera_name": "Cầu Sài Gòn 5 (dạ cầu Thủ Đức)",
+    "lat": 10.854322,
+    "lon": 106.811783,
+    "display_name": "Số 105/5/5, Hẻm 105/5 Đường Cầu Xây 2, Tân Phú, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71218",
+    "source": "tomtom"
+  },
+  "58abbf72bd82540010390ba4": {
+    "camera_name": "Cầu Sài Gòn 9 (Bình Thạnh - Thủ Đức)",
+    "lat": 10.881051,
+    "lon": 106.665284,
+    "display_name": "Số 280/9/4, Hẻm 280/9 Cầu Bà Phụ, Thạnh Xuân, Quận 12, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "58abc0cbbd82540010390ba6": {
+    "camera_name": "Cầu Sài Gòn 3 (Dạ cầu Bình Thạnh)",
+    "lat": 10.756037,
+    "lon": 106.645476,
+    "display_name": "Đường 3 Tháng 2, Phường 2, Quận 11, Hồ Chí Minh, Hồ Chí Minh, 72611, 72612",
+    "source": "tomtom"
+  },
+  "58ad6214bd82540010390be2": {
+    "camera_name": "Cộng Hòa - Hoàng Hoa Thám",
+    "lat": 10.802452,
+    "lon": 106.64161,
+    "display_name": "Đường Cộng Hòa, Phường 13, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72110",
+    "source": "tomtom"
+  },
+  "58ad6961bd82540010390be5": {
+    "camera_name": "Nút giao Phú Nhuận 1 (Phan Đình Phùng)",
+    "lat": 10.692317,
+    "lon": 106.595463,
+    "display_name": "Đường Quốc lộ 1A, An Phú Tây, Hồ Chí Minh, Hồ Chí Minh, 71808",
+    "source": "tomtom"
+  },
+  "58ad69c4bd82540010390be7": {
+    "camera_name": "Nút giao Phú Nhuận 2 (Phan Đăng Lưu)",
+    "lat": 10.692317,
+    "lon": 106.595463,
+    "display_name": "Đường Quốc lộ 1A, An Phú Tây, Hồ Chí Minh, Hồ Chí Minh, 71808",
+    "source": "tomtom"
+  },
+  "58ad7291bd82540010390bf9": {
+    "camera_name": "Phan Đăng Lưu - Nguyễn Văn Đậu",
+    "lat": 10.805591,
+    "lon": 106.686969,
+    "display_name": "Số 27, Đường Nguyễn Văn Đậu, Phường 6, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72315",
+    "source": "tomtom"
+  },
+  "58af8a0bbd82540010390c25": {
+    "camera_name": "Nam Kỳ Khởi Nghĩa - Võ Thị Sáu",
+    "lat": 10.790872,
+    "lon": 106.683766,
+    "display_name": "Hẻm 384 Nam Kỳ Khởi Nghĩa, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72408, 72415",
+    "source": "tomtom"
+  },
+  "58af8b69bd82540010390c28": {
+    "camera_name": "Nam Kỳ Khởi Nghĩa - Điện Biên Phủ 1",
+    "lat": 10.783647,
+    "lon": 106.691495,
+    "display_name": "Hẻm 218 Nam Kỳ Khởi Nghĩa, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72407",
+    "source": "tomtom"
+  },
+  "58af8d68bd82540010390c2e": {
+    "camera_name": "Nam Kỳ Khởi Nghĩa - Điện Biên Phủ 2",
+    "lat": 10.783647,
+    "lon": 106.691495,
+    "display_name": "Hẻm 218 Nam Kỳ Khởi Nghĩa, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72407",
+    "source": "tomtom"
+  },
+  "58af8eb2bd82540010390c30": {
+    "camera_name": "Nam Kỳ Khởi Nghĩa -Nguyễn Thị Minh Khai 1",
+    "lat": 10.77957,
+    "lon": 106.694998,
+    "display_name": "Đường Nam Kỳ Khởi Nghĩa & Đường Nguyễn Thị Minh Khai, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 71009",
+    "source": "tomtom"
+  },
+  "58af9670bd82540010390c34": {
+    "camera_name": "Phạm Văn Đồng - Phan Văn Trị 1",
+    "lat": 10.748518,
+    "lon": 106.618331,
+    "display_name": "Số 80, Đường Số 1, Bình Trị Đông B, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 763142",
+    "source": "tomtom"
+  },
+  "58af994abd82540010390c37": {
+    "camera_name": "Nguyễn Hữu Cảnh - Tôn Đức Thắng",
+    "lat": 10.782539,
+    "lon": 106.706222,
+    "display_name": "Đường Nguyễn Hữu Cảnh & Đường Tôn Đức Thắng, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "58af99abbd82540010390c39": {
+    "camera_name": "Nguyễn Hữu Cảnh - Nguyễn Bỉnh Khiêm",
+    "lat": 10.784524,
+    "lon": 106.707896,
+    "display_name": "Đường Nguyễn Bỉnh Khiêm & Đường Nguyễn Hữu Cảnh, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "58af9a07bd82540010390c3b": {
+    "camera_name": "Tôn Đức Thắng - Lê Duẩn",
+    "lat": 10.78526,
+    "lon": 106.703065,
+    "display_name": "Đường Lê Duẩn & Đường Tôn Đức Thắng, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "58afccadbd82540010390c3f": {
+    "camera_name": "Quốc lộ 1 - Nguyễn Hữu Trí 1",
+    "lat": 10.696753,
+    "lon": 106.596784,
+    "display_name": "Đường Nguyễn Hữu Trí & Đường Quốc lộ 1A, Tân Túc, Hồ Chí Minh, Hồ Chí Minh, 71806",
+    "source": "tomtom"
+  },
+  "58afcd9bbd82540010390c41": {
+    "camera_name": "Quốc lộ 1 - Nguyễn Hữu Trí 2",
+    "lat": 10.696753,
+    "lon": 106.596784,
+    "display_name": "Đường Nguyễn Hữu Trí & Đường Quốc lộ 1A, Tân Túc, Hồ Chí Minh, Hồ Chí Minh, 71806",
+    "source": "tomtom"
+  },
+  "58afdbaebd82540010390c48": {
+    "camera_name": "Quốc lộ 1 - Cao tốc Trung Lương",
+    "lat": 10.767555,
+    "lon": 106.590869,
+    "display_name": "Đường Cao Tốc Trung Lương & Đường Quốc lộ 1A, Bình Trị Đông A, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71911",
+    "source": "tomtom"
+  },
+  "58afea5dbd82540010390c4d": {
+    "camera_name": "Quốc lộ 1 - Bùi Thanh Khiết 1",
+    "lat": 10.674015,
+    "lon": 106.580542,
+    "display_name": "Đường Bùi Thanh Khiết & Đường Quốc lộ 1A, Tân Túc, Hồ Chí Minh, Hồ Chí Minh, 71806",
+    "source": "tomtom"
+  },
+  "58aff01fbd82540010390c50": {
+    "camera_name": "Quốc lộ 1 - Bùi Thanh Khiết 2",
+    "lat": 10.674667,
+    "lon": 106.58039,
+    "display_name": "Đường Quốc Lộ 1A, Tân Túc, Hồ Chí Minh, Hồ Chí Minh, 71806",
+    "source": "tomtom"
+  },
+  "58aff2c6bd82540010390c55": {
+    "camera_name": "Quốc lộ 1 - Đinh Đức Thiện 1",
+    "lat": 10.664871,
+    "lon": 106.569814,
+    "display_name": "Đường Đinh Đức Thiện & Đường Quốc lộ 1A, Bình Chánh, Hồ Chí Minh, Hồ Chí Minh, 71814",
+    "source": "tomtom"
+  },
+  "58affc6017139d0010f35cc8": {
+    "camera_name": "Phạm Văn Đồng - Quốc Lộ 13 (1)",
+    "lat": 10.82573,
+    "lon": 106.714473,
+    "display_name": "Đường Phạm Văn Đồng & Đường Quốc Lộ 13, Hiệp Bình Chánh, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71315",
+    "source": "tomtom"
+  },
+  "58b5510817139d0010f35d4e": {
+    "camera_name": "Phạm Văn Đồng - Quốc Lộ 13 (2)",
+    "lat": 10.82573,
+    "lon": 106.714473,
+    "display_name": "Đường Phạm Văn Đồng & Đường Quốc Lộ 13, Hiệp Bình Chánh, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71315",
+    "source": "tomtom"
+  },
+  "58b5528e17139d0010f35d52": {
+    "camera_name": "Xa Lộ Hà Nội - Đường D400",
+    "lat": 10.871458,
+    "lon": 106.807816,
+    "display_name": "Đường Xa Lộ Hà Nội & Đường D400, Tân Phú, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71218",
+    "source": "tomtom"
+  },
+  "58b555ac17139d0010f35d59": {
+    "camera_name": "Tùng Thiện Vương - Cầu Nhị Thiên Đường",
+    "lat": 10.741386,
+    "lon": 106.656024,
+    "display_name": "Đường Tùng Thiện Vương, Phường 6, Quận 8, Hồ Chí Minh, Hồ Chí Minh, 73016",
+    "source": "tomtom"
+  },
+  "58b571c817139d0010f35d5d": {
+    "camera_name": "Nguyễn Văn Trỗi - Trần Huy Liệu",
+    "lat": 10.794442,
+    "lon": 106.677617,
+    "display_name": "Đường Trần Huy Liệu & Đường Nguyễn Văn Trỗi, Phường 8, Phú Nhuận, Hồ Chí Minh, Hồ Chí Minh, 72217",
+    "source": "tomtom"
+  },
+  "58b5752e17139d0010f35d5f": {
+    "camera_name": "Nam Kỳ Khởi Nghĩa -Nguyễn Thị Minh Khai 2",
+    "lat": 10.77957,
+    "lon": 106.694998,
+    "display_name": "Đường Nam Kỳ Khởi Nghĩa & Đường Nguyễn Thị Minh Khai, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 71009",
+    "source": "tomtom"
+  },
+  "58c2717ed56e930010a39ac0": {
+    "camera_name": "Quốc Lộ 50 - Cầu Nhị Thiên Đường 2",
+    "lat": 10.736872,
+    "lon": 106.656261,
+    "display_name": "Đường Quốc Lộ 50, Phường 5, Quận 8, Hồ Chí Minh, Hồ Chí Minh, 73016, 73017",
+    "source": "tomtom"
+  },
+  "58d7b5a7c1e33c00112b320a": {
+    "camera_name": "Nút giao Chợ Đệm 1 (CT Trung Lương - Bùi Thanh Khiết)",
+    "lat": 10.692317,
+    "lon": 106.595463,
+    "display_name": "Đường Quốc lộ 1A, An Phú Tây, Hồ Chí Minh, Hồ Chí Minh, 71808",
+    "source": "tomtom"
+  },
+  "58d7b756c1e33c00112b320d": {
+    "camera_name": "Nút giao Chợ Đệm 2 (CT Trung Lương - Bùi Thanh Khiết)",
+    "lat": 10.692317,
+    "lon": 106.595463,
+    "display_name": "Đường Quốc lộ 1A, An Phú Tây, Hồ Chí Minh, Hồ Chí Minh, 71808",
+    "source": "tomtom"
+  },
+  "58d7bbf2c1e33c00112b3216": {
+    "camera_name": "Quốc lộ 1 - Đinh Đức Thiện 2",
+    "lat": 10.664871,
+    "lon": 106.569814,
+    "display_name": "Đường Đinh Đức Thiện & Đường Quốc lộ 1A, Bình Chánh, Hồ Chí Minh, Hồ Chí Minh, 71814",
+    "source": "tomtom"
+  },
+  "58d7c20ac1e33c00112b321c": {
+    "camera_name": "Phạm Văn Đồng - Phan Văn Trị 2",
+    "lat": 10.7522,
+    "lon": 106.608316,
+    "display_name": "Số 224, Đường Số 7, Bình Trị Đông B, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 763143",
+    "source": "tomtom"
+  },
+  "58d7c2e6c1e33c00112b321e": {
+    "camera_name": "Trường Chinh - Phan Văn Hớn 1 (Q12-HM)",
+    "lat": 10.827124,
+    "lon": 106.625106,
+    "display_name": "Số 43, Đường Trường Chinh, Tân Thới Nhất, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71510",
+    "source": "tomtom"
+  },
+  "58df4adedc195800111e04b4": {
+    "camera_name": "Phổ Quang - Huỳnh Lan Khanh",
+    "lat": 10.804656,
+    "lon": 106.668644,
+    "display_name": "Số 64/2, Đường Phổ Quang, Phường 2, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72108",
+    "source": "tomtom"
+  },
+  "58df4d95dc195800111e04b9": {
+    "camera_name": "Phổ Quang - Hoàng Minh Giám",
+    "lat": 10.80858,
+    "lon": 106.67115,
+    "display_name": "Đường Hoàng Minh Giám, Phường 9, Phú Nhuận, Hồ Chí Minh, Hồ Chí Minh, 72216",
+    "source": "tomtom"
+  },
+  "58df4e22dc195800111e04bb": {
+    "camera_name": "Yên Thế - Bạch Đằng",
+    "lat": 10.814118,
+    "lon": 106.668553,
+    "display_name": "Đường Yên Thế & Đường Bạch Đằng, Phường 2, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72108",
+    "source": "tomtom"
+  },
+  "58df5016dc195800111e04bd": {
+    "camera_name": "Yên Thế - Hồng Hà",
+    "lat": 10.812728,
+    "lon": 106.668333,
+    "display_name": "Số 47, Đường Yên Thế, Phường 2, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72108",
+    "source": "tomtom"
+  },
+  "58e49783d9d6200011e0b9ce": {
+    "camera_name": "Trường Chinh - Phan Văn Hớn 2 (HM-Q12)",
+    "lat": 10.827124,
+    "lon": 106.625106,
+    "display_name": "Số 43, Đường Trường Chinh, Tân Thới Nhất, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71510",
+    "source": "tomtom"
+  },
+  "58e49e3dd9d6200011e0b9d1": {
+    "camera_name": "Nam Kỳ Khởi Nghĩa - Lý Chính Thắng",
+    "lat": 10.790872,
+    "lon": 106.683766,
+    "display_name": "Hẻm 384 Nam Kỳ Khởi Nghĩa, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72408, 72415",
+    "source": "tomtom"
+  },
+  "58e49ff8d9d6200011e0b9d4": {
+    "camera_name": "Nam Kỳ Khởi Nghĩa - Trần Quốc Toản",
+    "lat": 10.786305,
+    "lon": 106.687636,
+    "display_name": "Đường Nam Kỳ Khởi Nghĩa & Đường Trần Quốc Toản, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72415",
+    "source": "tomtom"
+  },
+  "591c6833a6bfb500119400a3": {
+    "camera_name": "Đặng Thúc Vịnh - Trịnh Thị Miếng",
+    "lat": 10.890885,
+    "lon": 106.613418,
+    "display_name": "Đường Đặng Thúc Vịnh & Đường Trịnh Thị Miếng, Thới Tam Thôn, Hồ Chí Minh, Hồ Chí Minh, 71707",
+    "source": "tomtom"
+  },
+  "59414c883dcfc400106f260b": {
+    "camera_name": "Cộng Hòa - Bình Giã",
+    "lat": 10.757275,
+    "lon": 106.655336,
+    "display_name": "Số 758, Đường Nguyễn Chí Thanh, Phường 4, Quận 11, Hồ Chí Minh, Hồ Chí Minh, 72617",
+    "source": "tomtom"
+  },
+  "595d92013dcfc400106f2877": {
+    "camera_name": "Quốc Lộ 1A - Cầu Bình Phước",
+    "lat": 10.859931,
+    "lon": 106.701513,
+    "display_name": "Đường Quốc Lộ 1A, An Phú Đông, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71516",
+    "source": "tomtom"
+  },
+  "595d984b3dcfc400106f2879": {
+    "camera_name": "Quốc lộ 1 - An Phú Đông 13 (1)",
+    "lat": 10.860425,
+    "lon": 106.692286,
+    "display_name": "Số 2562/1B, Đường Quốc Lộ 1A, An Phú Đông, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71516",
+    "source": "tomtom"
+  },
+  "595d9b3b3dcfc400106f287e": {
+    "camera_name": "Quốc lộ 1 - An Phú Đông 12 (1)",
+    "lat": 10.860425,
+    "lon": 106.692286,
+    "display_name": "Số 2562/1B, Đường Quốc Lộ 1A, An Phú Đông, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71516",
+    "source": "tomtom"
+  },
+  "595da2853dcfc400106f2883": {
+    "camera_name": "Quốc lộ 1 - Đường 15 (1)",
+    "lat": 10.974245,
+    "lon": 106.475646,
+    "display_name": "Số 15, Đường Quốc Lộ 22, Tân An Hội, Hồ Chí Minh, Hồ Chí Minh, 71607",
+    "source": "tomtom"
+  },
+  "595da2dd3dcfc400106f2885": {
+    "camera_name": "Quốc lộ 1 - Đường 15 (2)",
+    "lat": 10.974245,
+    "lon": 106.475646,
+    "display_name": "Số 15, Đường Quốc Lộ 22, Tân An Hội, Hồ Chí Minh, Hồ Chí Minh, 71607",
+    "source": "tomtom"
+  },
+  "595da7783dcfc400106f2888": {
+    "camera_name": "Quốc lộ 1 - Đường Vườn Lài 1",
+    "lat": 10.860639,
+    "lon": 106.691878,
+    "display_name": "Đường Quốc Lộ 1A & Đường Vườn Lài, An Phú Đông, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71516",
+    "source": "tomtom"
+  },
+  "595da7d93dcfc400106f288a": {
+    "camera_name": "Quốc lộ 1 - Đường Vườn Lài 2",
+    "lat": 10.860639,
+    "lon": 106.691878,
+    "display_name": "Đường Quốc Lộ 1A & Đường Vườn Lài, An Phú Đông, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71516",
+    "source": "tomtom"
+  },
+  "595dc29c3dcfc400106f2894": {
+    "camera_name": "Quốc lộ 1 - Rạch Láng Le 1",
+    "lat": 10.875863,
+    "lon": 106.74776,
+    "display_name": "Số 240, Đường Lê Thị Hoa, Bình Chiểu, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 721032",
+    "source": "tomtom"
+  },
+  "595dc2f03dcfc400106f2896": {
+    "camera_name": "Quốc lộ 1 - Rạch Láng Le 2",
+    "lat": 11.006485,
+    "lon": 106.426142,
+    "display_name": "Số 862, Đường Quốc Lộ 22, Phước Thạnh, Hồ Chí Minh, Hồ Chí Minh, 71624",
+    "source": "tomtom"
+  },
+  "595dc5ac3dcfc400106f2898": {
+    "camera_name": "Quốc lộ 1 - BQB Đường dẫn cầu vượt Ngã 4 Ga (hướng đi An Sương)",
+    "lat": 10.861827,
+    "lon": 106.648009,
+    "display_name": "Số 1/3, Đường Quốc Lộ 1A, Tân Thới Hiệp, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71511",
+    "source": "tomtom"
+  },
+  "595dc70d3dcfc400106f289a": {
+    "camera_name": "Quốc lộ 1 - Ngã 4 Ga",
+    "lat": 10.86142,
+    "lon": 106.680209,
+    "display_name": "Đường Quốc Lộ 1A, Thạnh Lộc, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71515",
+    "source": "tomtom"
+  },
+  "595dcab53dcfc400106f289d": {
+    "camera_name": "Quốc lộ 1 - BQB Trước bến xe Ngã 4 Ga (hướng đi Bình Phước)",
+    "lat": 10.86142,
+    "lon": 106.680209,
+    "display_name": "Đường Quốc Lộ 1A, Thạnh Lộc, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71515",
+    "source": "tomtom"
+  },
+  "595dd3a63dcfc400106f28a7": {
+    "camera_name": "Quốc lộ 1 - Đường Tô Ngọc Vân 1",
+    "lat": 10.861785,
+    "lon": 106.67125,
+    "display_name": "Đường Tô Ngọc Vân & Đường Quốc Lộ 1A, Thạnh Xuân, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71514",
+    "source": "tomtom"
+  },
+  "595dd4133dcfc400106f28a9": {
+    "camera_name": "Quốc lộ 1 - Đường Tô Ngọc Vân 2",
+    "lat": 10.861785,
+    "lon": 106.67125,
+    "display_name": "Đường Tô Ngọc Vân & Đường Quốc Lộ 1A, Thạnh Xuân, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71514",
+    "source": "tomtom"
+  },
+  "595dd4f43dcfc400106f28ab": {
+    "camera_name": "Quốc lộ 1 - Cầu Bến Cát 1",
+    "lat": 10.861827,
+    "lon": 106.648009,
+    "display_name": "Số 1/3, Đường Quốc Lộ 1A, Tân Thới Hiệp, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71511",
+    "source": "tomtom"
+  },
+  "595dd7693dcfc400106f28b0": {
+    "camera_name": "Quốc lộ 1 - Đường Lê Thị Riêng 1",
+    "lat": 10.861819,
+    "lon": 106.654963,
+    "display_name": "Đường Lê Thị Riêng & Đường Quốc Lộ 1A, Thới An, Quận 12, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "595dd8463dcfc400106f28b2": {
+    "camera_name": "Quốc lộ 1 - Đường Lê Thị Riêng 2",
+    "lat": 10.861819,
+    "lon": 106.654963,
+    "display_name": "Đường Lê Thị Riêng & Đường Quốc Lộ 1A, Thới An, Quận 12, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "595dd9ac3dcfc400106f28b4": {
+    "camera_name": "Quốc lộ 1 - BQB Trước UBND Q12 (hướng đi An Sương)",
+    "lat": 10.843292,
+    "lon": 106.616417,
+    "display_name": "Số 1, Quốc Lộ 1, Tân Hưng Thuận, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71509",
+    "source": "tomtom"
+  },
+  "595ddb493dcfc400106f28b6": {
+    "camera_name": "Quốc lộ 1 - Cầu vượt Tân Thới Hiệp 2",
+    "lat": 10.861827,
+    "lon": 106.648009,
+    "display_name": "Số 1/3, Đường Quốc Lộ 1A, Tân Thới Hiệp, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71511",
+    "source": "tomtom"
+  },
+  "595ddbbf3dcfc400106f28b8": {
+    "camera_name": "Quốc lộ 1 - Cầu vượt Tân Thới Hiệp 3",
+    "lat": 10.861827,
+    "lon": 106.648009,
+    "display_name": "Số 1/3, Đường Quốc Lộ 1A, Tân Thới Hiệp, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71511",
+    "source": "tomtom"
+  },
+  "595ddc123dcfc400106f28ba": {
+    "camera_name": "Quốc lộ 1 - Cầu vượt Tân Thới Hiệp 1",
+    "lat": 10.861827,
+    "lon": 106.648009,
+    "display_name": "Số 1/3, Đường Quốc Lộ 1A, Tân Thới Hiệp, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71511",
+    "source": "tomtom"
+  },
+  "595f80e83dcfc400106f28e4": {
+    "camera_name": "Quốc lộ 1 - BQB Cầu vượt Tân Thới Hiệp B (hướng Bình Phước)",
+    "lat": 10.861827,
+    "lon": 106.648009,
+    "display_name": "Số 1/3, Đường Quốc Lộ 1A, Tân Thới Hiệp, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71511",
+    "source": "tomtom"
+  },
+  "595f86c43dcfc400106f28ea": {
+    "camera_name": "Quốc lộ 1 - Nguyễn Văn Quá 1",
+    "lat": 10.856511,
+    "lon": 106.639389,
+    "display_name": "Đường Nguyễn Văn Quá & Quốc Lộ 1, Đông Hưng Thuận, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71511",
+    "source": "tomtom"
+  },
+  "595f874d3dcfc400106f28ec": {
+    "camera_name": "Quốc lộ 1 - Nguyễn Văn Quá 2",
+    "lat": 10.856511,
+    "lon": 106.639389,
+    "display_name": "Đường Nguyễn Văn Quá & Quốc Lộ 1, Đông Hưng Thuận, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71511",
+    "source": "tomtom"
+  },
+  "595f89323dcfc400106f28ee": {
+    "camera_name": "Quốc lộ 1 - BQB Cầu vượt Quang Trung A (hướng An Sương)",
+    "lat": 10.860568,
+    "lon": 106.647299,
+    "display_name": "Số 36/1, Quốc Lộ 1, Tân Thới Hiệp, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71511",
+    "source": "tomtom"
+  },
+  "595f8d233dcfc400106f28f0": {
+    "camera_name": "Quốc lộ 1 - Quang Trung 1 (hướng đi Bình Phước)",
+    "lat": 10.970642,
+    "lon": 106.482179,
+    "display_name": "Đường Quốc Lộ 22, Củ Chi, Hồ Chí Minh, Hồ Chí Minh, 71606",
+    "source": "tomtom"
+  },
+  "595f8d813dcfc400106f28f2": {
+    "camera_name": "Quốc lộ 1 - Quang Trung 2 (hướng đi An Sương)",
+    "lat": 10.850861,
+    "lon": 106.628728,
+    "display_name": "Quốc Lộ 1 & Đường Quang Trung, Đông Hưng Thuận, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71508",
+    "source": "tomtom"
+  },
+  "595f8f0b3dcfc400106f28f4": {
+    "camera_name": "Quốc lộ 1 - BQB Cầu vượt Quang Trung B (hướng Ngã 4 Ga)",
+    "lat": 10.84546,
+    "lon": 106.618002,
+    "display_name": "Số 2384/1/4, Quốc Lộ 1, Trung Mỹ Tây, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71507",
+    "source": "tomtom"
+  },
+  "597bf0b8faa7ea0011c7c293": {
+    "camera_name": "Cầu Phú Hữu 1",
+    "lat": 10.797607,
+    "lon": 106.683409,
+    "display_name": "Hẻm 270 Phan Đình Phùng, Phường 1, Phú Nhuận, Hồ Chí Minh, Hồ Chí Minh, 72211",
+    "source": "tomtom"
+  },
+  "597bf277faa7ea0011c7c29f": {
+    "camera_name": "Cầu Phú Hữu 2",
+    "lat": 10.790779,
+    "lon": 106.790471,
+    "display_name": "Số 804C, Đường Nguyễn Duy Trinh, Phú Hữu, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71212",
+    "source": "tomtom"
+  },
+  "5990ffdbbec3b90016d2ad2d": {
+    "camera_name": "Đường hầm (Đầu hầm Tp Thủ Đức)",
+    "lat": 10.77106,
+    "lon": 106.702411,
+    "display_name": "Đường Hàm Nghi, Quận 1, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "59ca30fd02eb490011a0a406": {
+    "camera_name": "QL1 - Tỉnh lộ 10 (1)",
+    "lat": 10.763805,
+    "lon": 106.566531,
+    "display_name": "Số 1A/10, Tỉnh Lộ 10, Phạm Văn Hai, Hồ Chí Minh, Hồ Chí Minh, 71820",
+    "source": "tomtom"
+  },
+  "59ca317602eb490011a0a408": {
+    "camera_name": "QL1 - Tỉnh lộ 10 B (2)",
+    "lat": 10.757405,
+    "lon": 106.605857,
+    "display_name": "Số 900/1, Tỉnh Lộ 10, Bình Trị Đông B, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71908",
+    "source": "tomtom"
+  },
+  "59ca31d602eb490011a0a40b": {
+    "camera_name": "QL1 - Hồ Học Lãm",
+    "lat": 10.729529,
+    "lon": 106.606592,
+    "display_name": "Số 1, Đường Hồ Học Lãm, An Lạc A, Bình Tân, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "59ca321b02eb490011a0a40d": {
+    "camera_name": "QL1 - Cầu An Lập",
+    "lat": 10.836691,
+    "lon": 106.636086,
+    "display_name": "Số 53/1, Đường Phan Huy Ích, Phường 12, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71420",
+    "source": "tomtom"
+  },
+  "59ca329d02eb490011a0a410": {
+    "camera_name": "QL1 - Nút giao An Lạc 1",
+    "lat": 10.692317,
+    "lon": 106.595463,
+    "display_name": "Đường Quốc lộ 1A, An Phú Tây, Hồ Chí Minh, Hồ Chí Minh, 71808",
+    "source": "tomtom"
+  },
+  "59d3414302eb490011a0a610": {
+    "camera_name": "Xa Lộ Hà Nội - Đường 120",
+    "lat": 10.867248,
+    "lon": 106.803683,
+    "display_name": "Số 36, Đường Số 120, Tân Phú, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71218",
+    "source": "tomtom"
+  },
+  "5a10c79f02eb490011a0b0dd": {
+    "camera_name": "Mai Chí Thọ - Tố Hữu (C6)",
+    "lat": 10.844563,
+    "lon": 106.658195,
+    "display_name": "Số 230/1/8/23, Hẻm 230/1/8 Lê Văn Thọ, Phường 11, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71421",
+    "source": "tomtom"
+  },
+  "5a60604f8576340017d0660b": {
+    "camera_name": "Nguyễn Thái Sơn - Nguyễn Văn Nghi 2",
+    "lat": 10.826184,
+    "lon": 106.682887,
+    "display_name": "Hẻm 165 Nguyễn Văn Nghi, Phường 7, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71407",
+    "source": "tomtom"
+  },
+  "5a6060a88576340017d0660d": {
+    "camera_name": "Nguyễn Thái Sơn - Phan Văn Trị  1",
+    "lat": 10.826897,
+    "lon": 106.690089,
+    "display_name": "Hẻm 486 Nguyễn Thái Sơn, Phường 5, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71411",
+    "source": "tomtom"
+  },
+  "5a6060e08576340017d0660f": {
+    "camera_name": "Nguyễn Thái Sơn - Phan Văn Trị 2",
+    "lat": 10.826897,
+    "lon": 106.690089,
+    "display_name": "Hẻm 486 Nguyễn Thái Sơn, Phường 5, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71411",
+    "source": "tomtom"
+  },
+  "5a6061868576340017d06611": {
+    "camera_name": "Quang Trung - Bà Triệu",
+    "lat": 10.884846,
+    "lon": 106.595082,
+    "display_name": "Đường Quang Trung & Đường Bà Triệu, Hóc Môn, Hồ Chí Minh, Hồ Chí Minh, 71706",
+    "source": "tomtom"
+  },
+  "5a6061fd8576340017d06613": {
+    "camera_name": "Quang Trung - Trưng Nữ Vương",
+    "lat": 10.891255,
+    "lon": 106.596744,
+    "display_name": "Số 12/4A, Đường Trưng Nữ Vương, Hóc Môn, Hồ Chí Minh, Hồ Chí Minh, 71706",
+    "source": "tomtom"
+  },
+  "5a6066608576340017d06617": {
+    "camera_name": "Quang Trung - Tân Sơn",
+    "lat": 10.834383,
+    "lon": 106.644985,
+    "display_name": "Số 657, Đường Tân Sơn, Phường 12, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71420",
+    "source": "tomtom"
+  },
+  "5a6069238576340017d0661c": {
+    "camera_name": "Bạch Đằng - Lê Quang Định",
+    "lat": 10.808155,
+    "lon": 106.693176,
+    "display_name": "Số 199/26, Hẻm 199 Đường Lê Quang Định, Phường 7, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72316",
+    "source": "tomtom"
+  },
+  "5a606a0f8576340017d0661e": {
+    "camera_name": "Nơ Trang Long - Nguyễn Xí",
+    "lat": 10.821267,
+    "lon": 106.701541,
+    "display_name": "Số 31, Hẻm 351 Đường Nơ Trang Long, Phường 13, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72311",
+    "source": "tomtom"
+  },
+  "5a606a958576340017d06621": {
+    "camera_name": "Đinh Bộ Lĩnh - Bạch Đằng 3",
+    "lat": 10.802915,
+    "lon": 106.709373,
+    "display_name": "Đường Đinh Bộ Lĩnh & Đường Bạch Đằng, Phường 15, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72320",
+    "source": "tomtom"
+  },
+  "5a606c078576340017d06624": {
+    "camera_name": "Quốc lộ 13 - Hiệp Bình",
+    "lat": 10.856947,
+    "lon": 106.722362,
+    "display_name": "Số 13, Đường Quốc Lộ 13, Hiệp Bình Phước, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71314",
+    "source": "tomtom"
+  },
+  "5a606c758576340017d06626": {
+    "camera_name": "BX Miền Đông - Quốc Lộ 13 (1)",
+    "lat": 10.811325,
+    "lon": 106.713455,
+    "display_name": "Hẻm 625 Đường Xô Viết Nghệ Tĩnh, Phường 26, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72310",
+    "source": "tomtom"
+  },
+  "5a606cd08576340017d06628": {
+    "camera_name": "BX Miền Đông - Đinh Bộ Lĩnh 2",
+    "lat": 10.817187,
+    "lon": 106.712168,
+    "display_name": "Số 314, Đường Đinh Bộ Lĩnh, Phường 26, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 717328",
+    "source": "tomtom"
+  },
+  "5a606dbc8576340017d0662b": {
+    "camera_name": "Điện Biên Phủ - Nguyễn Hữu Cảnh",
+    "lat": 10.797628,
+    "lon": 106.721006,
+    "display_name": "Đường Điện Biên Phủ & Đường Nguyễn Hữu Cảnh, Phường 22, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72324",
+    "source": "tomtom"
+  },
+  "5a6085188576340017d06682": {
+    "camera_name": "QL1-Tỉnh lộ 10 (2)",
+    "lat": 10.763805,
+    "lon": 106.566531,
+    "display_name": "Số 1A/10, Tỉnh Lộ 10, Phạm Văn Hai, Hồ Chí Minh, Hồ Chí Minh, 71820",
+    "source": "tomtom"
+  },
+  "5a6085688576340017d06684": {
+    "camera_name": "QL1-Tỉnh lộ 10 (3)",
+    "lat": 10.763805,
+    "lon": 106.566531,
+    "display_name": "Số 1A/10, Tỉnh Lộ 10, Phạm Văn Hai, Hồ Chí Minh, Hồ Chí Minh, 71820",
+    "source": "tomtom"
+  },
+  "5a6085fb8576340017d06686": {
+    "camera_name": "QL1-Tỉnh lộ 10B (1)",
+    "lat": 10.763805,
+    "lon": 106.566531,
+    "display_name": "Số 1A/10, Tỉnh Lộ 10, Phạm Văn Hai, Hồ Chí Minh, Hồ Chí Minh, 71820",
+    "source": "tomtom"
+  },
+  "5a6086e88576340017d0668a": {
+    "camera_name": "QL1-Cty Pouyuen (1)",
+    "lat": 10.77653,
+    "lon": 106.700977,
+    "display_name": "Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "5a6087858576340017d0668e": {
+    "camera_name": "QL1-Trạm Biến Áp 500Kv Phú Lâm",
+    "lat": 10.738592,
+    "lon": 106.601696,
+    "display_name": "Hẻm 1215 Quốc Lộ 1A, Bình Trị Đông B, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71908",
+    "source": "tomtom"
+  },
+  "5a6088218576340017d06693": {
+    "camera_name": "QL1 - Nút giao An Lạc 2",
+    "lat": 10.692317,
+    "lon": 106.595463,
+    "display_name": "Đường Quốc lộ 1A, An Phú Tây, Hồ Chí Minh, Hồ Chí Minh, 71808",
+    "source": "tomtom"
+  },
+  "5a823ba75058170011f6ea9e": {
+    "camera_name": "Trần Hưng Đạo - Nguyễn Thái Học 1",
+    "lat": 10.768184,
+    "lon": 106.695836,
+    "display_name": "Số 71, Đường Trần Hưng Đạo, Cầu Ông Lãnh, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71011",
+    "source": "tomtom"
+  },
+  "5a823bd55058170011f6eaa0": {
+    "camera_name": "Trần Hưng Đạo - Nguyễn Thái Học 2",
+    "lat": 10.768184,
+    "lon": 106.695836,
+    "display_name": "Số 71, Đường Trần Hưng Đạo, Cầu Ông Lãnh, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71011",
+    "source": "tomtom"
+  },
+  "5a823d555058170011f6eaa2": {
+    "camera_name": "Lý Tự Trọng - Hai Bà Trưng 1",
+    "lat": 10.779202,
+    "lon": 106.702166,
+    "display_name": "Đường Lý Tự Trọng & Đường Hai Bà Trưng, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "5a823e425058170011f6eaa4": {
+    "camera_name": "Đinh Tiên Hoàng - Võ Thị Sáu 1",
+    "lat": 10.797997,
+    "lon": 106.696122,
+    "display_name": "Số 95, Đường Lê Văn Duyệt, Phường 3, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72317",
+    "source": "tomtom"
+  },
+  "5a8241105058170011f6eaa6": {
+    "camera_name": "Đinh Tiên Hoàng - Võ Thị Sáu 2",
+    "lat": 10.797997,
+    "lon": 106.696122,
+    "display_name": "Số 95, Đường Lê Văn Duyệt, Phường 3, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72317",
+    "source": "tomtom"
+  },
+  "5a82439f5058170011f6eaa9": {
+    "camera_name": "Nguyễn Biểu - Cầu Chữ Y",
+    "lat": 10.753629,
+    "lon": 106.684156,
+    "display_name": "Đường Nguyễn Biểu, Phường 1, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72708",
+    "source": "tomtom"
+  },
+  "5a824b6c5058170011f6eaab": {
+    "camera_name": "Nút giao Bốn Xã 3 (Lê Văn Quới)",
+    "lat": 10.775244,
+    "lon": 106.616922,
+    "display_name": "Số 142, Đường Lê Văn Quới, Bình Hưng Hòa A, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71912",
+    "source": "tomtom"
+  },
+  "5a824c3e5058170011f6eaae": {
+    "camera_name": "Nút giao Bốn Xã 1 (Bình Long)",
+    "lat": 10.692317,
+    "lon": 106.595463,
+    "display_name": "Đường Quốc lộ 1A, An Phú Tây, Hồ Chí Minh, Hồ Chí Minh, 71808",
+    "source": "tomtom"
+  },
+  "5a824c905058170011f6eab0": {
+    "camera_name": "Nút giao Bốn Xã 2 (Hòa Bình)",
+    "lat": 10.692317,
+    "lon": 106.595463,
+    "display_name": "Đường Quốc lộ 1A, An Phú Tây, Hồ Chí Minh, Hồ Chí Minh, 71808",
+    "source": "tomtom"
+  },
+  "5a824dc05058170011f6eab2": {
+    "camera_name": "Quang Trung - Lê Văn Thọ (1)",
+    "lat": 10.849344,
+    "lon": 106.656455,
+    "display_name": "Số 469, Đường Lê Văn Thọ, Phường 9, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 728427",
+    "source": "tomtom"
+  },
+  "5a824e465058170011f6eab4": {
+    "camera_name": "Quang Trung - Lê Văn Thọ (2)",
+    "lat": 10.849344,
+    "lon": 106.656455,
+    "display_name": "Số 469, Đường Lê Văn Thọ, Phường 9, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 728427",
+    "source": "tomtom"
+  },
+  "5a824ee15058170011f6eab6": {
+    "camera_name": "Nguyễn Oanh - Phan Văn Trị (1)",
+    "lat": 10.83674,
+    "lon": 106.666731,
+    "display_name": "Đường Phan Văn Trị & Đường Nguyễn Oanh, Phường 10, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71406",
+    "source": "tomtom"
+  },
+  "5a824f975058170011f6eab8": {
+    "camera_name": "Nguyễn Oanh - Phan Văn Trị (2)",
+    "lat": 10.83674,
+    "lon": 106.666731,
+    "display_name": "Đường Phan Văn Trị & Đường Nguyễn Oanh, Phường 10, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71406",
+    "source": "tomtom"
+  },
+  "5a8253615058170011f6eabf": {
+    "camera_name": "Đinh Bộ Lĩnh - Bạch Đằng 1",
+    "lat": 10.802034,
+    "lon": 106.708803,
+    "display_name": "Hẻm 234 Bạch Đằng & Hẻm 1/6 Đinh Bộ Lĩnh, Phường 15, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72320",
+    "source": "tomtom"
+  },
+  "5a8253bc5058170011f6eac1": {
+    "camera_name": "Đinh Bộ Lĩnh - Bạch Đằng 2",
+    "lat": 10.802915,
+    "lon": 106.709373,
+    "display_name": "Đường Đinh Bộ Lĩnh & Đường Bạch Đằng, Phường 15, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72320",
+    "source": "tomtom"
+  },
+  "5a8254b05058170011f6eac3": {
+    "camera_name": "Xô Viết Nghệ Tĩnh - Nguyễn Xí 1",
+    "lat": 10.810206,
+    "lon": 106.712311,
+    "display_name": "Đường Xô Viết Nghệ Tĩnh & Đường Nguyễn Xí, Phường 26, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72310",
+    "source": "tomtom"
+  },
+  "5a8254f25058170011f6eac5": {
+    "camera_name": "Xô Viết Nghệ Tĩnh - Nguyễn Xí 2",
+    "lat": 10.810206,
+    "lon": 106.712311,
+    "display_name": "Đường Xô Viết Nghệ Tĩnh & Đường Nguyễn Xí, Phường 26, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72310",
+    "source": "tomtom"
+  },
+  "5a8255a55058170011f6eac7": {
+    "camera_name": "BX Miền Đông - Đinh Bộ Lĩnh 1",
+    "lat": 10.817187,
+    "lon": 106.712168,
+    "display_name": "Số 314, Đường Đinh Bộ Lĩnh, Phường 26, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 717328",
+    "source": "tomtom"
+  },
+  "5a8256315058170011f6eac9": {
+    "camera_name": "Đinh Bộ Lĩnh - Nguyễn Xí",
+    "lat": 10.817284,
+    "lon": 106.708941,
+    "display_name": "Hẻm 184 Nguyễn Xí Kdc Bắc Đinh Bộ Lĩnh, Phường 26, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72310",
+    "source": "tomtom"
+  },
+  "5a8256df5058170011f6eacb": {
+    "camera_name": "BX Miền Đông - Quốc Lộ 13 (2)",
+    "lat": 10.811325,
+    "lon": 106.713455,
+    "display_name": "Hẻm 625 Đường Xô Viết Nghệ Tĩnh, Phường 26, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72310",
+    "source": "tomtom"
+  },
+  "5a8257e25058170011f6eacd": {
+    "camera_name": "Hoàng Hữu Nam - Đường D400",
+    "lat": 10.868232,
+    "lon": 106.814032,
+    "display_name": "Số 400, Đường Hoàng Hữu Nam, Long Thạnh Mỹ, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71216",
+    "source": "tomtom"
+  },
+  "5a8259035058170011f6eacf": {
+    "camera_name": "Nguyễn Văn Linh - Nguyễn Hữu Thọ (1)",
+    "lat": 10.729242,
+    "lon": 106.705723,
+    "display_name": "Đường Nguyễn Văn Linh, Tân Phong, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72915",
+    "source": "tomtom"
+  },
+  "5a825b7d5058170011f6ead4": {
+    "camera_name": "Nguyễn Văn Linh - Nguyễn Hữu Thọ (3)",
+    "lat": 10.729242,
+    "lon": 106.705723,
+    "display_name": "Đường Nguyễn Văn Linh, Tân Phong, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72915",
+    "source": "tomtom"
+  },
+  "5a825ded5058170011f6ead7": {
+    "camera_name": "Quốc lộ 50 - Cầu Ông Thìn (2)",
+    "lat": 10.646795,
+    "lon": 106.656459,
+    "display_name": "Đường Quốc Lộ 50, Quy Đức, Hồ Chí Minh, Hồ Chí Minh, 71810",
+    "source": "tomtom"
+  },
+  "5a82602c5058170011f6ead9": {
+    "camera_name": "Vĩnh Lộc - Nguyễn Thị Tú 1",
+    "lat": 10.814743,
+    "lon": 106.5834,
+    "display_name": "Số D1/1, Đường Nguyễn Thị Tú, Vĩnh Lộc B, Hồ Chí Minh, Hồ Chí Minh, 71819",
+    "source": "tomtom"
+  },
+  "5a82628e5058170011f6eadb": {
+    "camera_name": "Nguyễn Văn Linh - Quốc lộ 50 (1)",
+    "lat": 10.964858,
+    "lon": 106.495455,
+    "display_name": "Đường Quốc Lộ 22, Củ Chi, Hồ Chí Minh, Hồ Chí Minh, 71606",
+    "source": "tomtom"
+  },
+  "5a8266105058170011f6eadf": {
+    "camera_name": "Nguyễn Văn Linh - Quốc lộ 50 (2)",
+    "lat": 10.964858,
+    "lon": 106.495455,
+    "display_name": "Đường Quốc Lộ 22, Củ Chi, Hồ Chí Minh, Hồ Chí Minh, 71606",
+    "source": "tomtom"
+  },
+  "5a8267fe5058170011f6eae1": {
+    "camera_name": "Lê Văn Lương - Cầu Rạch Đĩa",
+    "lat": 10.726295,
+    "lon": 106.698521,
+    "display_name": "Đường Lê Văn Lương, Tân Phong, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72915",
+    "source": "tomtom"
+  },
+  "5a8269c45058170011f6eae4": {
+    "camera_name": "Nguyễn Văn Quỳ - Cầu Phú Mỹ",
+    "lat": 10.740005,
+    "lon": 106.735399,
+    "display_name": "Đường Nguyễn Văn Quỳ, Phú Thuận, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72907",
+    "source": "tomtom"
+  },
+  "5a8278f35058170011f6eaed": {
+    "camera_name": "Nguyễn Văn Linh - Phạm Hùng 1",
+    "lat": 10.730965,
+    "lon": 106.706644,
+    "display_name": "Số S50-1, Đường Nguyễn Văn Linh, Tân Phong, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72915",
+    "source": "tomtom"
+  },
+  "5a8279865058170011f6eaef": {
+    "camera_name": "Nguyễn Văn Linh - Phạm Hùng 2",
+    "lat": 10.848816,
+    "lon": 106.635883,
+    "display_name": "Số 98/4C, Đường Nguyễn Văn Quá, Đông Hưng Thuận, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71508",
+    "source": "tomtom"
+  },
+  "5abbb6d698d8fc001102dfc8": {
+    "camera_name": "Nguyễn Văn Linh - Nguyễn Lương Bằng (1)",
+    "lat": 10.731631,
+    "lon": 106.719906,
+    "display_name": "Đường Nguyễn Lương Bằng & Đường Nguyễn Văn Linh, Tân Phú, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72908",
+    "source": "tomtom"
+  },
+  "5abbb77298d8fc001102dfce": {
+    "camera_name": "Nguyễn Văn Linh - Nguyễn Lương Bằng (2)",
+    "lat": 10.731631,
+    "lon": 106.719906,
+    "display_name": "Đường Nguyễn Lương Bằng & Đường Nguyễn Văn Linh, Tân Phú, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72908",
+    "source": "tomtom"
+  },
+  "5ad0621c98d8fc001102e268": {
+    "camera_name": "Lý Tự Trọng - Hai Bà Trưng 2",
+    "lat": 10.779202,
+    "lon": 106.702166,
+    "display_name": "Đường Lý Tự Trọng & Đường Hai Bà Trưng, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "5ad0644698d8fc001102e26b": {
+    "camera_name": "Lã Xuân Oai - Cầu Tăng Long (1)",
+    "lat": 10.844273,
+    "lon": 106.787323,
+    "display_name": "Đường Lã Xuân Oai, Tăng Nhơn Phú A, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71207",
+    "source": "tomtom"
+  },
+  "5ad064b498d8fc001102e26f": {
+    "camera_name": "Lã Xuân Oai - Cầu Tăng Long (2)",
+    "lat": 10.844273,
+    "lon": 106.787323,
+    "display_name": "Đường Lã Xuân Oai, Tăng Nhơn Phú A, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71207",
+    "source": "tomtom"
+  },
+  "5ad0679598d8fc001102e274": {
+    "camera_name": "Lê Văn Việt - Man Thiện",
+    "lat": 10.8466,
+    "lon": 106.786899,
+    "display_name": "Đường Man Thiện, Tăng Nhơn Phú A, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71207",
+    "source": "tomtom"
+  },
+  "5ad068b198d8fc001102e278": {
+    "camera_name": "Quốc lộ 50 - Cầu Ông Thìn (1)",
+    "lat": 10.646795,
+    "lon": 106.656459,
+    "display_name": "Đường Quốc Lộ 50, Quy Đức, Hồ Chí Minh, Hồ Chí Minh, 71810",
+    "source": "tomtom"
+  },
+  "5ad06a0d98d8fc001102e27b": {
+    "camera_name": "Vĩnh Lộc - Nguyễn Thị Tú 2",
+    "lat": 10.813827,
+    "lon": 106.580967,
+    "display_name": "Số D7/2, Đường Nguyễn Thị Tú, Vĩnh Lộc B, Hồ Chí Minh, Hồ Chí Minh, 71819",
+    "source": "tomtom"
+  },
+  "5b0b7aba0e517b00119fd800": {
+    "camera_name": "Nguyễn Văn Cừ - Trần Hưng Đạo 1",
+    "lat": 10.762741,
+    "lon": 106.69049,
+    "display_name": "Số 200, Đường Trần Hưng Đạo, Nguyễn Cư Trinh, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 711561",
+    "source": "tomtom"
+  },
+  "5b0b7bbe0e517b00119fd806": {
+    "camera_name": "Nguyễn Văn Cừ - Trần Hưng Đạo 2",
+    "lat": 10.762741,
+    "lon": 106.69049,
+    "display_name": "Số 200, Đường Trần Hưng Đạo, Nguyễn Cư Trinh, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 711561",
+    "source": "tomtom"
+  },
+  "5b0b835b0e517b00119fd80d": {
+    "camera_name": "Tam Bình (Số 81)",
+    "lat": 10.868471,
+    "lon": 106.735098,
+    "display_name": "Tam Bình, Thủ Đức Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "5b0e1faacddcc80011ceb449": {
+    "camera_name": "Nút giao Hàng Xanh 8 (HX-VT)",
+    "lat": 10.839923,
+    "lon": 106.662626,
+    "display_name": "Số 91, Đường Số 8, Phường 11, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71421",
+    "source": "tomtom"
+  },
+  "5b19d34faf4ff60011d6ea52": {
+    "camera_name": "Nguyễn Tất Thành - Tôn Đản",
+    "lat": 10.766535,
+    "lon": 106.706417,
+    "display_name": "Số 20, Đường Nguyễn Tất Thành, Phường 13, Quận 4, Hồ Chí Minh, Hồ Chí Minh, 754004",
+    "source": "tomtom"
+  },
+  "5b5995a3fd4edb0019c7d9ab": {
+    "camera_name": "Võ Văn Kiệt - Cầu Chà Và 2 (trên cầu)",
+    "lat": 10.748844,
+    "lon": 106.66039,
+    "display_name": "Đường Võ Văn Kiệt & Đường Vạn Kiếp, Phường 13, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72717",
+    "source": "tomtom"
+  },
+  "5b6005b6fd4edb0019c7db25": {
+    "camera_name": "Trần Hưng Đạo - Nguyễn Biểu",
+    "lat": 10.755821,
+    "lon": 106.683837,
+    "display_name": "Số 683, Đường Nguyễn Biểu, Phường 1, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72708",
+    "source": "tomtom"
+  },
+  "5b6329fdfd4edb0019c7dc0b": {
+    "camera_name": "Nguyễn Trãi - Nguyễn Văn Cừ",
+    "lat": 10.770856,
+    "lon": 106.692449,
+    "display_name": "Số 22, Đường Nguyễn Trãi, Bến Thành, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71009",
+    "source": "tomtom"
+  },
+  "5b632a79fd4edb0019c7dc0f": {
+    "camera_name": "Nguyễn Tri Phương - Trần Hưng Đạo",
+    "lat": 10.759491,
+    "lon": 106.689124,
+    "display_name": "Số 391/TK42/45, Hẻm 391 Trần Hưng Đạo, Cầu Kho, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71015",
+    "source": "tomtom"
+  },
+  "5b632b60fd4edb0019c7dc12": {
+    "camera_name": "Hồng Bàng - Ngô Quyền 1",
+    "lat": 10.756264,
+    "lon": 106.666121,
+    "display_name": "Đường Hồng Bàng, Phường 12, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72713",
+    "source": "tomtom"
+  },
+  "5b728aafca0577001163ff7e": {
+    "camera_name": "Hồng Bàng - Châu Văn Liêm",
+    "lat": 10.75424,
+    "lon": 106.658617,
+    "display_name": "Số 144, Đường Châu Văn Liêm, Phường 11, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72714",
+    "source": "tomtom"
+  },
+  "5b87c386ca057700116404a6": {
+    "camera_name": "Đường hầm (Đầu hầm Tp Thủ Đức)",
+    "lat": 10.77106,
+    "lon": 106.702411,
+    "display_name": "Đường Hàm Nghi, Quận 1, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "5b8b2323ca057700116405d0": {
+    "camera_name": "Trường Sơn - Ga Quốc Nội 2",
+    "lat": 10.798177,
+    "lon": 106.631851,
+    "display_name": "Số 2/2C, Hẻm Số 2/2 Đường Nối Tân Sơn Nhì và Trương Vĩnh Ký, Tân Sơn Nhì, Hồ Chí Minh, Hồ Chí Minh, 72008",
+    "source": "tomtom"
+  },
+  "5bbc7163ca0577001164127f": {
+    "camera_name": "Lê Văn Lương - Cầu Long Kiểng (HCM)",
+    "lat": 10.675173,
+    "lon": 106.697861,
+    "display_name": "Đường Lê Văn Lương, Nhơn Đức, Hồ Chí Minh, Hồ Chí Minh, 73209",
+    "source": "tomtom"
+  },
+  "5d8cd2a3766c88001718893c": {
+    "camera_name": "Nút giao Cây Gõ 1 (trên cầu)",
+    "lat": 11.087603,
+    "lon": 106.517683,
+    "display_name": "Số 42/1/1, Hẻm 42/1 Cây Gõ, An Nhơn Tây, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "5d8cd326766c88001718893e": {
+    "camera_name": "Nút giao Cây Gõ 3 (dạ cầu)",
+    "lat": 10.756037,
+    "lon": 106.645476,
+    "display_name": "Đường 3 Tháng 2, Phường 2, Quận 11, Hồ Chí Minh, Hồ Chí Minh, 72611, 72612",
+    "source": "tomtom"
+  },
+  "5d8cd3b7766c880017188942": {
+    "camera_name": "Lê Hồng Phong - Nguyễn Trãi",
+    "lat": 10.757162,
+    "lon": 106.677907,
+    "display_name": "Số 160, Đường Nguyễn Trãi, Phường 3, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 748259",
+    "source": "tomtom"
+  },
+  "5d8cd49f766c880017188944": {
+    "camera_name": "Nguyễn Tri Phương - Nguyễn Trãi",
+    "lat": 10.754615,
+    "lon": 106.670052,
+    "display_name": "Số 493, Đường Nguyễn Tri Phương, Phường 7, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 749710",
+    "source": "tomtom"
+  },
+  "5d8cd4ee766c880017188946": {
+    "camera_name": "Lê Văn Sỹ - Huỳnh Văn Bánh",
+    "lat": 10.792103,
+    "lon": 106.66796,
+    "display_name": "Số 129, Hẻm 541 Huỳnh Văn Bánh, Phường 13, Phú Nhuận, Hồ Chí Minh, Hồ Chí Minh, 72219",
+    "source": "tomtom"
+  },
+  "5d8cd542766c880017188948": {
+    "camera_name": "Võ Văn Ngân - Đặng Văn Bi",
+    "lat": 10.850625,
+    "lon": 106.758692,
+    "display_name": "Đường Đặng Văn Bi & Đường Võ Văn Ngân, Linh Chiểu, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71306",
+    "source": "tomtom"
+  },
+  "5d8cd614766c88001718894a": {
+    "camera_name": "Lê Quang Định - Nơ Trang Long",
+    "lat": 10.808397,
+    "lon": 106.695045,
+    "display_name": "Đường Nơ Trang Long & Đường Lê Quang Định, Phường 14, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72306",
+    "source": "tomtom"
+  },
+  "5d8cd653766c88001718894c": {
+    "camera_name": "Kha Vạn Cân - Võ Văn Ngân",
+    "lat": 10.850701,
+    "lon": 106.764641,
+    "display_name": "Đường Võ Văn Ngân, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "5d8cd70e766c88001718894e": {
+    "camera_name": "Phạm Văn Đồng - Nguyễn Xí (hướng đi Thủ Đức)",
+    "lat": 10.823207,
+    "lon": 106.703114,
+    "display_name": "Đường Nguyễn Xí & Đường Phạm Văn Đồng, Phường 13, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72311",
+    "source": "tomtom"
+  },
+  "5d8cd767766c880017188950": {
+    "camera_name": "Phạm Văn Đồng - Nguyễn Xí (hướng đi Sân bay)",
+    "lat": 10.823207,
+    "lon": 106.703114,
+    "display_name": "Đường Nguyễn Xí & Đường Phạm Văn Đồng, Phường 13, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72311",
+    "source": "tomtom"
+  },
+  "5d8cd7fb766c880017188954": {
+    "camera_name": "Phạm Văn Đồng - Đường 20 (hướng đi Sân bay)",
+    "lat": 10.813917,
+    "lon": 106.679451,
+    "display_name": "Số 20, Đường Phạm Văn Đồng, Phường 3, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71409",
+    "source": "tomtom"
+  },
+  "5d8cd886766c880017188956": {
+    "camera_name": "Phạm Văn Đồng - Hiệp Bình (hướng đi Thủ Đức)",
+    "lat": 10.83065,
+    "lon": 106.724388,
+    "display_name": "Đường Phạm Văn Đồng, Hiệp Bình Chánh, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71315",
+    "source": "tomtom"
+  },
+  "5d8cd8e2766c880017188958": {
+    "camera_name": "Phạm Văn Đồng - Hiệp Bình (hướng đi Sân bay)",
+    "lat": 10.83065,
+    "lon": 106.724388,
+    "display_name": "Đường Phạm Văn Đồng, Hiệp Bình Chánh, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71315",
+    "source": "tomtom"
+  },
+  "5d8cd98d766c88001718895a": {
+    "camera_name": "Phạm Văn Đồng - Tô Ngọc Vân (hướng đi Bình Dương)",
+    "lat": 10.853816,
+    "lon": 106.751305,
+    "display_name": "Số 150, Đường Tô Ngọc Vân, Linh Tây, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71310",
+    "source": "tomtom"
+  },
+  "5d8cd9cb766c88001718895c": {
+    "camera_name": "Phạm Văn Đồng - Tô Ngọc Vân (hướng đi Sân bay)",
+    "lat": 10.853816,
+    "lon": 106.751305,
+    "display_name": "Số 150, Đường Tô Ngọc Vân, Linh Tây, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71310",
+    "source": "tomtom"
+  },
+  "5d8cda2e766c88001718895e": {
+    "camera_name": "Phạm Văn Đồng - Kha Vạn Cân (hướng đi Quốc lộ 1)",
+    "lat": 10.826353,
+    "lon": 106.71226,
+    "display_name": "Số 30, Đường Kha Vạn Cân, Hiệp Bình Chánh, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71315",
+    "source": "tomtom"
+  },
+  "5d8cda6a766c880017188960": {
+    "camera_name": "Phạm Văn Đồng - Kha Vạn Cân (hướng đi Sân bay)",
+    "lat": 10.826353,
+    "lon": 106.71226,
+    "display_name": "Số 30, Đường Kha Vạn Cân, Hiệp Bình Chánh, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71315",
+    "source": "tomtom"
+  },
+  "5d8cdac3766c880017188962": {
+    "camera_name": "Trường Chinh - Đồng Đen",
+    "lat": 10.837066,
+    "lon": 106.620121,
+    "display_name": "Số 110/10, Đường Đông Hưng Thuận 40, Tân Hưng Thuận, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71509",
+    "source": "tomtom"
+  },
+  "5d8cdb0a766c880017188964": {
+    "camera_name": "Trường Chinh - Xuân Hồng",
+    "lat": 10.794966,
+    "lon": 106.652912,
+    "display_name": "Số E30, Đường Xuân Hồng, Phường 12, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72111",
+    "source": "tomtom"
+  },
+  "5d8cdb9f766c880017188968": {
+    "camera_name": "Hoàng Văn Thụ - Trần Huy Liệu",
+    "lat": 10.799389,
+    "lon": 106.677557,
+    "display_name": "Đường Trần Huy Liệu & Đường Hoàng Văn Thụ, Phường 9, Phú Nhuận, Hồ Chí Minh, Hồ Chí Minh, 72216",
+    "source": "tomtom"
+  },
+  "5d8cdbdc766c88001718896a": {
+    "camera_name": "Hoàng Văn Thụ - Cộng Hòa",
+    "lat": 10.798475,
+    "lon": 106.658795,
+    "display_name": "Số 292, Đường Hoàng Văn Thụ, Phường 4, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72106",
+    "source": "tomtom"
+  },
+  "5d8cdc1d766c88001718896c": {
+    "camera_name": "Trường Sơn - Hậu Giang",
+    "lat": 10.746786,
+    "lon": 106.630334,
+    "display_name": "Đường Hậu Giang, Phường 11, Quận 6, Hồ Chí Minh, Hồ Chí Minh, 73116",
+    "source": "tomtom"
+  },
+  "5d8cdc57766c88001718896e": {
+    "camera_name": "Lý Thường Kiệt - Lạc Long Quân",
+    "lat": 10.770997,
+    "lon": 106.645171,
+    "display_name": "Số 353, Hẻm 351 Lạc Long Quân, Phường 5, Quận 11, Hồ Chí Minh, Hồ Chí Minh, 72608",
+    "source": "tomtom"
+  },
+  "5d8cdc9d766c880017188970": {
+    "camera_name": "Lạc Long Quân - Âu Cơ",
+    "lat": 10.770736,
+    "lon": 106.647582,
+    "display_name": "Hẻm 506 Lạc Long Quân-Hẻm 127/99 Âu Cơ, Phường 5, Quận 11, Hồ Chí Minh, Hồ Chí Minh, 72607",
+    "source": "tomtom"
+  },
+  "5d8cdcf0766c880017188972": {
+    "camera_name": "Nút giao Lê Đại Hành 1 (Bình Thới)",
+    "lat": 10.760246,
+    "lon": 106.658299,
+    "display_name": "Số 59, Đường Lê Đại Hành, Phường 6, Quận 11, Hồ Chí Minh, Hồ Chí Minh, 72616",
+    "source": "tomtom"
+  },
+  "5d9ddd49766c880017188c94": {
+    "camera_name": "Nút giao Hàng Xanh 1 (Viện Máy tính)",
+    "lat": 10.864129,
+    "lon": 106.793522,
+    "display_name": "Đường Xa Lộ Hà Nội, Linh Trung, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71308",
+    "source": "tomtom"
+  },
+  "5d9dddb9766c880017188c96": {
+    "camera_name": "Nút giao Hàng Xanh 2 (ĐH Hồng Bàng)",
+    "lat": 10.761516,
+    "lon": 106.675081,
+    "display_name": "Số 59, Đường Trần Nhân Tôn, Phường 2, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72519",
+    "source": "tomtom"
+  },
+  "5d9dde1f766c880017188c98": {
+    "camera_name": "Nút giao Hàng Xanh 3 (Cầu Thị Nghè - Hàng Xanh)",
+    "lat": 10.773316,
+    "lon": 106.685087,
+    "display_name": "Số 410, Đường Nguyễn Đình Chiểu, Phường 4, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72406",
+    "source": "tomtom"
+  },
+  "5d9ddec9766c880017188c9c": {
+    "camera_name": "Nút giao Hàng Xanh 5 (Hàng Xanh - Bạch Đằng)",
+    "lat": 10.805964,
+    "lon": 106.605155,
+    "display_name": "Số 184, Đường Số 5, Bình Hưng Hòa, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71913",
+    "source": "tomtom"
+  },
+  "5d9ddf0f766c880017188c9e": {
+    "camera_name": "Nút giao Hàng Xanh 6 (Cầu Điện Biên Phủ - Hàng Xanh)",
+    "lat": 10.760264,
+    "lon": 106.699609,
+    "display_name": "Số 299, Đường Hoàng Diệu, Phường 6, Quận 4, Hồ Chí Minh, Hồ Chí Minh, 72808",
+    "source": "tomtom"
+  },
+  "5d9ddf49766c880017188ca0": {
+    "camera_name": "Nút giao Hàng Xanh 7 (Hàng Xanh - Cầu Văn Thánh)",
+    "lat": 10.826849,
+    "lon": 106.68008,
+    "display_name": "Số 2, Đường Nguyễn Oanh, Phường 7, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71407",
+    "source": "tomtom"
+  },
+  "5d9de3c2766c880017188cb3": {
+    "camera_name": "Cao tốc LTDG - Cầu Bà Dạt 3",
+    "lat": 10.687608,
+    "lon": 106.567808,
+    "display_name": "Đường Cao Tốc Trung Lương, Tân Túc, Hồ Chí Minh, Hồ Chí Minh, 71806",
+    "source": "tomtom"
+  },
+  "5d9de43b766c880017188cb6": {
+    "camera_name": "Cao tốc LTDG - Đỗ Xuân Hợp 1",
+    "lat": 10.796421,
+    "lon": 106.781211,
+    "display_name": "Đường Cao Tốc Thành phố Hồ Chí Minh-Long Thành-Dầu Giây, Phước Long B, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71210",
+    "source": "tomtom"
+  },
+  "5d9de49d766c880017188cb9": {
+    "camera_name": "Cao tốc LTDG - Đỗ Xuân Hợp 2",
+    "lat": 10.786571,
+    "lon": 106.829292,
+    "display_name": "Số 2, Đường Cao Tốc Thành phố Hồ Chí Minh-Long Thành-Dầu Giây, Long Trường, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "5d9de4de766c880017188cbb": {
+    "camera_name": "Cao tốc LTDG - Võ Chí Công",
+    "lat": 10.796163,
+    "lon": 106.792616,
+    "display_name": "Đường Võ Chí Công & Đường Cao Tốc Thành phố Hồ Chí Minh-Long Thành-Dầu Giây, Phú Hữu, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71212",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515acf2": {
+    "camera_name": "Điện Biên Phủ - Cách Mạng Tháng Tám",
+    "lat": 10.788457,
+    "lon": 106.664828,
+    "display_name": "Số 686/65, Hẻm 686 Cách Mạng Tháng Tám, Phường 5, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72119",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515acf3": {
+    "camera_name": "Ba Tháng Hai - Lý Thái Tổ",
+    "lat": 10.769873,
+    "lon": 106.671932,
+    "display_name": "Hẻm 384/105 Lý Thái Tổ & Hẻm 297 Ba Tháng Hai, Phường 10, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72508",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515acf4": {
+    "camera_name": "Nút giao Ngã bảy Lý Thái Tổ",
+    "lat": 10.767242,
+    "lon": 106.676304,
+    "display_name": "Số 272, Đường Lý Thái Tổ, Phường 1, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72419",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515acf5": {
+    "camera_name": "Nút giao Ngã bảy Lý Thái Tổ",
+    "lat": 10.767242,
+    "lon": 106.676304,
+    "display_name": "Số 272, Đường Lý Thái Tổ, Phường 1, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72419",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515acf6": {
+    "camera_name": "Nút giao Ngã sáu Cộng Hòa",
+    "lat": 10.765688,
+    "lon": 106.681626,
+    "display_name": "Vòng Xoay Ngã Sáu Cộng Hòa, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515acf7": {
+    "camera_name": "Nút giao Ngã sáu Cộng Hòa",
+    "lat": 10.765688,
+    "lon": 106.681626,
+    "display_name": "Vòng Xoay Ngã Sáu Cộng Hòa, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515acf8": {
+    "camera_name": "Ba Tháng Hai - Cao Thắng",
+    "lat": 10.767283,
+    "lon": 106.662064,
+    "display_name": "Hẻm 666 Đường 3 Tháng 2, Phường 14, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72506",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515acf9": {
+    "camera_name": "Nút giao Công Trường Dân Chủ",
+    "lat": 10.777867,
+    "lon": 106.681375,
+    "display_name": "Công Trường Dân Chủ, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515acfa": {
+    "camera_name": "Nút giao Công Trường Dân Chủ",
+    "lat": 10.777867,
+    "lon": 106.681375,
+    "display_name": "Công Trường Dân Chủ, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515acfb": {
+    "camera_name": "Võ Thị Sáu - Bà Huyện Thanh Quan",
+    "lat": 10.779525,
+    "lon": 106.685173,
+    "display_name": "Đường Bà Huyện Thanh Quan, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72415",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515acfc": {
+    "camera_name": "Điện Biên Phủ - Trương Định",
+    "lat": 10.79859,
+    "lon": 106.704997,
+    "display_name": "Số 175, Đường Điện Biên Phủ, Phường 15, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72320",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515acfd": {
+    "camera_name": "Lý Chính Thắng - Nguyễn Thông",
+    "lat": 10.779529,
+    "lon": 106.68213,
+    "display_name": "Số 250B, Đường Nguyễn Thông, Phường 9, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72414",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515acfe": {
+    "camera_name": "Lý Chính Thắng - Trương Định",
+    "lat": 10.782496,
+    "lon": 106.683633,
+    "display_name": "Đường Trương Định & Đường Lý Chính Thắng, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72414",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515acff": {
+    "camera_name": "Hai Bà Trưng - Lý Chính Thắng",
+    "lat": 10.791414,
+    "lon": 106.687511,
+    "display_name": "Đường Lý Chính Thắng & Đường Hai Bà Trưng, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72408",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad01": {
+    "camera_name": "Võ Thị Sáu - Hai Bà Trưng",
+    "lat": 10.78787,
+    "lon": 106.691956,
+    "display_name": "Đường Hai Bà Trưng, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 71007, 71008, 72407, 72408",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad02": {
+    "camera_name": "Điện Biên Phủ - Pasteur",
+    "lat": 10.784337,
+    "lon": 106.691688,
+    "display_name": "Đường Pasteur & Đường Điện Biên Phủ, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72407",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad03": {
+    "camera_name": "Nam Kỳ Khởi Nghĩa - Nguyễn Đình Chiểu",
+    "lat": 10.781471,
+    "lon": 106.692932,
+    "display_name": "Đường Nguyễn Đình Chiểu & Đường Nam Kỳ Khởi Nghĩa, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72407",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad04": {
+    "camera_name": "Võ Thị Sáu - Pasteur",
+    "lat": 10.783027,
+    "lon": 106.69196,
+    "display_name": "Đường Pasteur, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72407",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad05": {
+    "camera_name": "Điện Biên Phủ - Đinh Tiên Hoàng",
+    "lat": 10.790535,
+    "lon": 106.697494,
+    "display_name": "Đường Đinh Tiên Hoàng, Đa Kao, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71007",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad06": {
+    "camera_name": "Đinh Tiên Hoàng - Nguyễn Đình Chiểu",
+    "lat": 10.792095,
+    "lon": 106.695768,
+    "display_name": "Số 207, Đường Đinh Tiên Hoàng, Tân Định, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71008",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad07": {
+    "camera_name": "Nguyễn Văn Trỗi - Trương Quốc Dung",
+    "lat": 10.796689,
+    "lon": 106.672708,
+    "display_name": "Số 51, Đường Trương Quốc Dung, Phường 10, Phú Nhuận, Hồ Chí Minh, Hồ Chí Minh, 72218",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad08": {
+    "camera_name": "Cộng Hòa - Tân Kỳ Tân Quý",
+    "lat": 10.791149,
+    "lon": 106.596978,
+    "display_name": "Số 15/37, Hẻm 1014 Tân Kỳ Tân Quý, Bình Hưng Hòa, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71913",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad0a": {
+    "camera_name": "Hoàng Văn Thụ - Xuân Diệu",
+    "lat": 10.795439,
+    "lon": 106.65574,
+    "display_name": "Đường Xuân Diệu & Đường Hoàng Văn Thụ, Phường 4, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72106",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad0b": {
+    "camera_name": "Nam Kỳ Khởi Nghĩa - Lý Tự Trọng",
+    "lat": 10.775831,
+    "lon": 106.699056,
+    "display_name": "Đường Nam Kỳ Khởi Nghĩa & Đường Lý Tự Trọng, Bến Thành, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71009",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad0c": {
+    "camera_name": "Nút giao Ngã sáu Phù Đổng 1",
+    "lat": 10.771224,
+    "lon": 106.693257,
+    "display_name": "Vòng Xoay Ngã Sáu Phù Đổng, Bến Thành, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71009",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad0e": {
+    "camera_name": "Cách Mạng Tháng Tám - Nguyễn Đình Chiểu",
+    "lat": 10.777164,
+    "lon": 106.677603,
+    "display_name": "Số 94G, Hẻm 285/94 Cách Mạng Tháng Tám, Phường 12, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72510",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad0f": {
+    "camera_name": "Nguyễn Thị Minh Khai - Trương Định",
+    "lat": 10.779194,
+    "lon": 106.688053,
+    "display_name": "Số 28, Đường Ngô Thời Nhiệm, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72407",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad10": {
+    "camera_name": "Cách Mạng Tháng Tám - Nguyễn Thị Minh Khai",
+    "lat": 10.780004,
+    "lon": 106.677354,
+    "display_name": "Số 357, Hẻm 457 Đường Cách Mạng Tháng 8, Phường 12, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72510",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad11": {
+    "camera_name": "Nguyễn Đình Chiểu - Trương Định",
+    "lat": 10.803754,
+    "lon": 106.698202,
+    "display_name": "Số 1, Đường Lê Quang Định, Phường 14, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72306",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad13": {
+    "camera_name": "Pasteur - Lê Thánh Tôn",
+    "lat": 10.775662,
+    "lon": 106.700444,
+    "display_name": "Đường Pasteur & Đường Lê Thánh Tôn, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad14": {
+    "camera_name": "Lý Tự Trọng - Đồng Khởi",
+    "lat": 10.777949,
+    "lon": 106.701013,
+    "display_name": "Đường Đồng Khởi & Đường Lý Tự Trọng, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad15": {
+    "camera_name": "Lý Tự Trọng - Chu Mạnh Trinh",
+    "lat": 10.781845,
+    "lon": 106.70459,
+    "display_name": "Đường Lý Tự Trọng & Đường Chu Mạnh Trinh, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad16": {
+    "camera_name": "Nguyễn Thị Minh Khai - Pasteur",
+    "lat": 10.780383,
+    "lon": 106.695871,
+    "display_name": "Số 111A, Đường Nguyễn Thị Minh Khai, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad17": {
+    "camera_name": "Nguyễn Thị Minh Khai - Hai Bà Trưng",
+    "lat": 10.782537,
+    "lon": 106.69788,
+    "display_name": "Số 33, Đường Hai Bà Trưng, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 710102",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad18": {
+    "camera_name": "Hai Bà Trưng - Lê Duẩn",
+    "lat": 10.781564,
+    "lon": 106.699557,
+    "display_name": "Đường Lê Duẩn & Đường Hai Bà Trưng, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad19": {
+    "camera_name": "Nguyễn Thị Minh Khai - Mạc Đĩnh Chi",
+    "lat": 10.784591,
+    "lon": 106.699668,
+    "display_name": "Đường Mạc Đĩnh Chi & Đường Nguyễn Thị Minh Khai, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad1a": {
+    "camera_name": "Pasteur - Lê Duẩn",
+    "lat": 10.779097,
+    "lon": 106.697404,
+    "display_name": "Đường Pasteur & Đường Lê Duẩn, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad1c": {
+    "camera_name": "Hoàng Diệu - Nguyễn Tất Thành",
+    "lat": 10.765137,
+    "lon": 106.707146,
+    "display_name": "Đường Nguyễn Tất Thành & Đường Hoàng Diệu, Phường 13, Quận 4, Hồ Chí Minh, Hồ Chí Minh, 72806",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad1e": {
+    "camera_name": "Pasteur - Hàm Nghi",
+    "lat": 10.770967,
+    "lon": 106.702451,
+    "display_name": "Đường Hàm Nghi & Đường Pasteur, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad1f": {
+    "camera_name": "Hùng Vương - Ngô Gia Tự",
+    "lat": 10.756194,
+    "lon": 106.666231,
+    "display_name": "Đường Ngô Gia Tự & Đường Hùng Vương, Phường 9, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72712",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad20": {
+    "camera_name": "Hồng Bàng - Ngô Quyền 2",
+    "lat": 10.756003,
+    "lon": 106.665321,
+    "display_name": "Đường Hồng Bàng & Đường Ngô Quyền, Phường 12, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72713",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad21": {
+    "camera_name": "Nút giao Ngã sáu Nguyễn Tri Phương",
+    "lat": 10.759878,
+    "lon": 106.668908,
+    "display_name": "Vòng Xoay Ngã Sáu, Phường 4, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72517",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad22": {
+    "camera_name": "Nút giao Ngã sáu Nguyễn Tri Phương",
+    "lat": 10.759878,
+    "lon": 106.668908,
+    "display_name": "Vòng Xoay Ngã Sáu, Phường 4, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72517",
+    "source": "tomtom"
+  },
+  "5deb576d1dc17d7c5515ad23": {
+    "camera_name": "Ba Tháng Hai - Lý Thường Kiệt",
+    "lat": 10.766558,
+    "lon": 106.659338,
+    "display_name": "Số 248, Hẻm 666 Ba Tháng Hai, Phường 14, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 740015",
+    "source": "tomtom"
+  },
+  "62da3e390637a10017d706ff": {
+    "camera_name": "Quốc Lộ 13 - Đinh Thị Thi 1",
+    "lat": 10.875316,
+    "lon": 106.748095,
+    "display_name": "Đường Lê Thị Hoa, Bình Chiểu, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71313",
+    "source": "tomtom"
+  },
+  "62da3e620637a10017d70720": {
+    "camera_name": "Quốc Lộ 13 - Đinh Thị Thi 2",
+    "lat": 10.828919,
+    "lon": 106.714372,
+    "display_name": "Số 146, Đường Quốc Lộ 13, Hiệp Bình Chánh, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71315",
+    "source": "tomtom"
+  },
+  "62da3e840637a10017d7073d": {
+    "camera_name": "Quốc Lộ 13 - Đinh Thị Thi 3",
+    "lat": 10.828919,
+    "lon": 106.714372,
+    "display_name": "Số 146, Đường Quốc Lộ 13, Hiệp Bình Chánh, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71315",
+    "source": "tomtom"
+  },
+  "631812e6c9eae60017a19567": {
+    "camera_name": "Cầu Sài Gòn 11 (Bình Thạnh)",
+    "lat": 10.854481,
+    "lon": 106.811272,
+    "display_name": "Hẻm 105/11 Đường Cầu Xây 2, Tân Phú, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71218",
+    "source": "tomtom"
+  },
+  "631813ebc9eae60017a196b0": {
+    "camera_name": "Cầu Sài Gòn 8 (Thủ Đức)",
+    "lat": 10.78618,
+    "lon": 106.675152,
+    "display_name": "Cầu Số 8, Quận 3, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "6318283cc9eae60017a19f0c": {
+    "camera_name": "Nguyễn Thị Minh Khai - Đinh Tiên Hoàng 1",
+    "lat": 10.786587,
+    "lon": 106.701597,
+    "display_name": "Đường Đinh Tiên Hoàng & Đường Nguyễn Thị Minh Khai, Đa Kao, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71007",
+    "source": "tomtom"
+  },
+  "6318287ec9eae60017a19f36": {
+    "camera_name": "Nguyễn Thị Minh Khai - Đinh Tiên Hoàng 2",
+    "lat": 10.786587,
+    "lon": 106.701597,
+    "display_name": "Đường Đinh Tiên Hoàng & Đường Nguyễn Thị Minh Khai, Đa Kao, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71007",
+    "source": "tomtom"
+  },
+  "631828cac9eae60017a19f50": {
+    "camera_name": "Nguyễn Thị Minh Khai - Nguyễn Bỉnh Khiêm 1",
+    "lat": 10.788247,
+    "lon": 106.704055,
+    "display_name": "Số 2Bis, Đường Nguyễn Bỉnh Khiêm, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "63195512c9eae60017a1c279": {
+    "camera_name": "Nguyễn Trãi - Cống Quỳnh 1",
+    "lat": 10.766237,
+    "lon": 106.688175,
+    "display_name": "Số 185, Đường Nguyễn Trãi, Nguyễn Cư Trinh, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71014",
+    "source": "tomtom"
+  },
+  "63195556c9eae60017a1c2ba": {
+    "camera_name": "Nguyễn Trãi - Cống Quỳnh 2",
+    "lat": 10.766237,
+    "lon": 106.688175,
+    "display_name": "Số 185, Đường Nguyễn Trãi, Nguyễn Cư Trinh, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71014",
+    "source": "tomtom"
+  },
+  "631955e7c9eae60017a1c30a": {
+    "camera_name": "Cách Mạng Tháng Tám – Hòa Hưng",
+    "lat": 10.783146,
+    "lon": 106.671508,
+    "display_name": "Số 539, Hẻm 539 Cách Mạng Tháng Tám, Phường 15, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72512",
+    "source": "tomtom"
+  },
+  "63ae73cebfd3d90017e8f00d": {
+    "camera_name": "Nguyễn Thị Minh Khai - Cống Quỳnh",
+    "lat": 10.766837,
+    "lon": 106.683215,
+    "display_name": "Số 239, Đường Nguyễn Thị Minh Khai, Nguyễn Cư Trinh, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71014",
+    "source": "tomtom"
+  },
+  "63ae75a3bfd3d90017e8f051": {
+    "camera_name": "Cống Quỳnh - Phạm Viết Chánh",
+    "lat": 10.767909,
+    "lon": 106.68546,
+    "display_name": "Số 225A, Hẻm 223 Cống Quỳnh, Nguyễn Cư Trinh, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 711641",
+    "source": "tomtom"
+  },
+  "63ae75debfd3d90017e8f082": {
+    "camera_name": "Cao Thắng – Võ Văn Tần 1",
+    "lat": 10.77209,
+    "lon": 106.686276,
+    "display_name": "Số 291B, Đường Võ Văn Tần, Phường 5, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72406",
+    "source": "tomtom"
+  },
+  "63ae75f9bfd3d90017e8f097": {
+    "camera_name": "Cao Thắng – Võ Văn Tần 2",
+    "lat": 10.77045,
+    "lon": 106.685164,
+    "display_name": "Hẻm 381 Võ Văn Tần & Hẻm Số 2 Cao Thắng, Phường 5, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72406",
+    "source": "tomtom"
+  },
+  "63ae763bbfd3d90017e8f0c4": {
+    "camera_name": "Lý Thái Tổ - Nguyễn Đình Chiểu",
+    "lat": 10.766331,
+    "lon": 106.678641,
+    "display_name": "Đường Nguyễn Đình Chiểu & Đường Lý Thái Tổ, Phường 1, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72520",
+    "source": "tomtom"
+  },
+  "63ae7669bfd3d90017e8f0d9": {
+    "camera_name": "Khánh Hội - Cầu Kênh Tẻ",
+    "lat": 10.75189,
+    "lon": 106.702236,
+    "display_name": "Đường Khánh Hội, Tân Hưng, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72912",
+    "source": "tomtom"
+  },
+  "63ae768dbfd3d90017e8f0f1": {
+    "camera_name": "Khánh Hội - Vĩnh Hội",
+    "lat": 10.755527,
+    "lon": 106.699708,
+    "display_name": "Đường Vĩnh Hội, Phường 3, Quận 4, Hồ Chí Minh, Hồ Chí Minh, 72812",
+    "source": "tomtom"
+  },
+  "63ae76afbfd3d90017e8f106": {
+    "camera_name": "Khánh Hội - Đường số 41",
+    "lat": 10.754796,
+    "lon": 106.704206,
+    "display_name": "Đường Số 16, Phường 4, Quận 4, Hồ Chí Minh, Hồ Chí Minh, 72813",
+    "source": "tomtom"
+  },
+  "63ae76ddbfd3d90017e8f11b": {
+    "camera_name": "Khánh Hội -  Hoàng Diệu",
+    "lat": 10.75961,
+    "lon": 106.698741,
+    "display_name": "Đường Hoàng Diệu, Phường 6, Quận 4, Hồ Chí Minh, Hồ Chí Minh, 72808",
+    "source": "tomtom"
+  },
+  "63ae7709bfd3d90017e8f135": {
+    "camera_name": "Hoàng Diệu - Đoàn Văn Bơ 1",
+    "lat": 10.762818,
+    "lon": 106.703241,
+    "display_name": "Số 171, Đường Hoàng Diệu, Phường 9, Quận 4, Hồ Chí Minh, Hồ Chí Minh, 72807",
+    "source": "tomtom"
+  },
+  "63ae7727bfd3d90017e8f14a": {
+    "camera_name": "Hoàng Diệu - Đoàn Văn Bơ 2",
+    "lat": 10.762818,
+    "lon": 106.703241,
+    "display_name": "Số 171, Đường Hoàng Diệu, Phường 9, Quận 4, Hồ Chí Minh, Hồ Chí Minh, 72807",
+    "source": "tomtom"
+  },
+  "63ae7759bfd3d90017e8f162": {
+    "camera_name": "Nguyễn Tất Thành - Cầu Khánh Hội",
+    "lat": 10.761726,
+    "lon": 106.70975,
+    "display_name": "Đường Nguyễn Tất Thành, Phường 13, Quận 4, Hồ Chí Minh, Hồ Chí Minh, 72820",
+    "source": "tomtom"
+  },
+  "63ae777cbfd3d90017e8f177": {
+    "camera_name": "Nguyễn Tất Thành - Đoàn Như Hài",
+    "lat": 10.766736,
+    "lon": 106.706428,
+    "display_name": "Đường Đoàn Như Hài & Đường Nguyễn Tất Thành, Phường 13, Quận 4, Hồ Chí Minh, Hồ Chí Minh, 72806",
+    "source": "tomtom"
+  },
+  "63ae77bfbfd3d90017e8f18f": {
+    "camera_name": "Nguyễn Tất Thành - Cầu Tân Thuận 2",
+    "lat": 10.755403,
+    "lon": 106.721216,
+    "display_name": "Số 65/2, Đường Nguyễn Tất Thành, Tân Thuận Tây, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72910",
+    "source": "tomtom"
+  },
+  "63ae7829bfd3d90017e8f1ac": {
+    "camera_name": "Nguyễn Tất Thành - Cầu Tân Thuận 1",
+    "lat": 10.755627,
+    "lon": 106.721399,
+    "display_name": "Số 65/1, Đường Nguyễn Tất Thành, Tân Thuận Tây, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72910",
+    "source": "tomtom"
+  },
+  "63ae7893bfd3d90017e8f1e1": {
+    "camera_name": "Nguyễn Tất Thành - Lê Văn Linh",
+    "lat": 10.764586,
+    "lon": 106.707392,
+    "display_name": "Đường Lê Văn Linh & Đường Nguyễn Tất Thành, Phường 13, Quận 4, Hồ Chí Minh, Hồ Chí Minh, 72806",
+    "source": "tomtom"
+  },
+  "63ae7903bfd3d90017e8f211": {
+    "camera_name": "Hậu Giang -  Hẻm 491",
+    "lat": 10.747944,
+    "lon": 106.63678,
+    "display_name": "Số 491B, Hẻm Hậu Giang, Phường 11, Quận 6, Hồ Chí Minh, Hồ Chí Minh, 73116",
+    "source": "tomtom"
+  },
+  "63ae7938bfd3d90017e8f226": {
+    "camera_name": "Quốc Lộ 1- Công ty Pouyen 3 (Cổng)",
+    "lat": 10.865578,
+    "lon": 106.79302,
+    "display_name": "Đường Xa Lộ Hà Nội, Linh Trung, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71308",
+    "source": "tomtom"
+  },
+  "63ae7966bfd3d90017e8f240": {
+    "camera_name": "Cách Mạng Tháng Tám - Tô Hiến Thành",
+    "lat": 10.780207,
+    "lon": 106.670086,
+    "display_name": "Hẻm 521 Cách Mạng Tháng Tám & Đường Tô Hiến Thành, Phường 13, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72511",
+    "source": "tomtom"
+  },
+  "63ae798abfd3d90017e8f255": {
+    "camera_name": "Cách Mạng Tháng Tám - Bắc Hải",
+    "lat": 10.786616,
+    "lon": 106.665449,
+    "display_name": "Số 622, Hẻm 616 Cách Mạng Tháng Tám, Phường 11, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72411",
+    "source": "tomtom"
+  },
+  "63ae79aabfd3d90017e8f26a": {
+    "camera_name": "Cách Mạng Tháng Tám - Trường Sơn",
+    "lat": 10.787523,
+    "lon": 106.662194,
+    "display_name": "Số 769/5, Hẻm 769 Cách Mạng Tháng Tám, Phường 6, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72117",
+    "source": "tomtom"
+  },
+  "63ae7a08bfd3d90017e8f285": {
+    "camera_name": "Ba Tháng Hai - Lê Hồng Phong 1",
+    "lat": 10.766633,
+    "lon": 106.67505,
+    "display_name": "Số 498/1, Đường Lê Hồng Phong, Phường 1, Quận 10, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "63ae7a26bfd3d90017e8f29a": {
+    "camera_name": "Ba Tháng Hai - Lê Hồng Phong 2",
+    "lat": 10.756865,
+    "lon": 106.678073,
+    "display_name": "Số 123/2, Đường Lê Hồng Phong, Phường 2, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72709",
+    "source": "tomtom"
+  },
+  "63ae7a50bfd3d90017e8f2b2": {
+    "camera_name": "Ba Tháng Hai – Sư Vạn Hạnh",
+    "lat": 10.772369,
+    "lon": 106.667423,
+    "display_name": "Hẻm 436B Ba Tháng Hai & Hẻm 449 Sư Vạn Hạnh, Phường 12, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72510",
+    "source": "tomtom"
+  },
+  "63ae7a74bfd3d90017e8f2c7": {
+    "camera_name": "Tô Hiến Thành – Sư Vạn Hạnh",
+    "lat": 10.777945,
+    "lon": 106.665519,
+    "display_name": "Đường Sư Vạn Hạnh & Đường Tô Hiến Thành, Phường 15, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72512",
+    "source": "tomtom"
+  },
+  "63ae7a9cbfd3d90017e8f303": {
+    "camera_name": "Điện Biên Phủ – Cao Thắng",
+    "lat": 10.772718,
+    "lon": 106.679174,
+    "display_name": "Số 134, Đường Điện Biên Phủ, Phường 4, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72416",
+    "source": "tomtom"
+  },
+  "63ae7af4bfd3d90017e8f32c": {
+    "camera_name": "Ba Tháng Hai - Lý Thường Kiệt 2",
+    "lat": 10.766558,
+    "lon": 106.659338,
+    "display_name": "Số 248, Hẻm 666 Ba Tháng Hai, Phường 14, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 740015",
+    "source": "tomtom"
+  },
+  "63ae7b3cbfd3d90017e8f34d": {
+    "camera_name": "Ba Tháng Hai - Lý Thường Kiệt 3",
+    "lat": 10.766558,
+    "lon": 106.659338,
+    "display_name": "Số 248, Hẻm 666 Ba Tháng Hai, Phường 14, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 740015",
+    "source": "tomtom"
+  },
+  "63ae7be0bfd3d90017e8f3a8": {
+    "camera_name": "Ba Tháng Hai - Lê Đại Hành 1",
+    "lat": 10.758515,
+    "lon": 106.650934,
+    "display_name": "Số 1287/1E, Hẻm 1287/1 Ba Tháng Hai, Phường 16, Quận 11, Hồ Chí Minh, Hồ Chí Minh, 72612",
+    "source": "tomtom"
+  },
+  "63ae7c12bfd3d90017e8f3c0": {
+    "camera_name": "Ba Tháng Hai - Lê Đại Hành 2",
+    "lat": 10.758269,
+    "lon": 106.649411,
+    "display_name": "Số 1244, Đường 3 Tháng 2, Phường 8, Quận 11, Hồ Chí Minh, Hồ Chí Minh, 72614",
+    "source": "tomtom"
+  },
+  "63ae7c53bfd3d90017e8f3d8": {
+    "camera_name": "Lý Thường Kiệt - Tô Hiến Thành 1",
+    "lat": 10.771989,
+    "lon": 106.65772,
+    "display_name": "Đường Tô Hiến Thành & Đường Lý Thường Kiệt, Phường 14, Quận 10, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "63ae7cd3bfd3d90017e8f408": {
+    "camera_name": "Lạc Long Quân - Ông Ích Khiêm",
+    "lat": 10.767534,
+    "lon": 106.643701,
+    "display_name": "Đường Lạc Long Quân & Hẻm 110 Ông Ích Khiêm, Phường 5, Quận 11, Hồ Chí Minh, Hồ Chí Minh, 72608",
+    "source": "tomtom"
+  },
+  "63ae7cfcbfd3d90017e8f422": {
+    "camera_name": "Cách Mạng Tháng Tám – Phạm Văn Hai",
+    "lat": 10.780436,
+    "lon": 106.677277,
+    "display_name": "Số 262/8, Hẻm 262 Cách Mạng Tháng Tám, Phường 10, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72413",
+    "source": "tomtom"
+  },
+  "63b3c274bfd3d90017e9ab93": {
+    "camera_name": "Hồng Bàng - Phù Đổng Thiên Vương",
+    "lat": 10.755226,
+    "lon": 106.662406,
+    "display_name": "Đường Hồng Bàng & Đường Phù Đổng Thiên Vương, Phường 11, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72714",
+    "source": "tomtom"
+  },
+  "63b3c2fbbfd3d90017e9abbf": {
+    "camera_name": "Cầu Sài Gòn 1 (dạ cầu Bình Thạnh)",
+    "lat": 10.798918,
+    "lon": 106.730237,
+    "display_name": "Số 1, Nút Giao Thông Cầu Sài Gòn, Bình An, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71108",
+    "source": "tomtom"
+  },
+  "63b3c59fbfd3d90017e9ace8": {
+    "camera_name": "Vĩnh Lộc - Quách Điêu",
+    "lat": 10.814168,
+    "lon": 106.579086,
+    "display_name": "Hẻm F7 Vĩnh Lộc, Vĩnh Lộc A, Hồ Chí Minh, Hồ Chí Minh, 71821",
+    "source": "tomtom"
+  },
+  "63b3c9bfbfd3d90017e9b039": {
+    "camera_name": "Kha Vạn Cân - Đường Số 2",
+    "lat": 10.831178,
+    "lon": 106.725434,
+    "display_name": "Số 304, Đường Kha Vạn Cân, Hiệp Bình Chánh, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 721115",
+    "source": "tomtom"
+  },
+  "63b54898bfd3d90017ea77ae": {
+    "camera_name": "Nguyễn Duy Trinh - Bưng Ông Thoàn",
+    "lat": 10.791228,
+    "lon": 106.796889,
+    "display_name": "Đường Nguyễn Duy Trinh & Đường Bưng Ông Thoàn, Phú Hữu, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71212",
+    "source": "tomtom"
+  },
+  "63b548c3bfd3d90017ea77c0": {
+    "camera_name": "Nguyễn Duy Trinh - Nguyễn Thị Tư",
+    "lat": 10.792738,
+    "lon": 106.806914,
+    "display_name": "Đường Nguyễn Thị Tư & Đường Nguyễn Duy Trinh, Phú Hữu, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71212",
+    "source": "tomtom"
+  },
+  "63b548ecbfd3d90017ea77d2": {
+    "camera_name": "Nguyễn Duy Trinh - Võ Chí Công 1",
+    "lat": 10.790779,
+    "lon": 106.790471,
+    "display_name": "Số 804C, Đường Nguyễn Duy Trinh, Phú Hữu, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71212",
+    "source": "tomtom"
+  },
+  "63b54909bfd3d90017ea77e4": {
+    "camera_name": "Nguyễn Duy Trinh - Võ Chí Công 2",
+    "lat": 10.790779,
+    "lon": 106.790471,
+    "display_name": "Số 804C, Đường Nguyễn Duy Trinh, Phú Hữu, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71212",
+    "source": "tomtom"
+  },
+  "63b54938bfd3d90017ea77f6": {
+    "camera_name": "Nguyễn Duy Trinh - Lã Xuân Oai",
+    "lat": 10.805529,
+    "lon": 106.817211,
+    "display_name": "Đường Lã Xuân Oai & Đường Nguyễn Duy Trinh, Long Trường, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71215",
+    "source": "tomtom"
+  },
+  "63b54968bfd3d90017ea7808": {
+    "camera_name": "Nguyễn Duy Trinh - Đỗ Xuân Hợp",
+    "lat": 10.790418,
+    "lon": 106.7816,
+    "display_name": "Đường Đỗ Xuân Hợp & Đường Nguyễn Duy Trinh, Bình Trưng Đông, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71116",
+    "source": "tomtom"
+  },
+  "63b54996bfd3d90017ea781a": {
+    "camera_name": "Đỗ Xuân Hợp - Dương Đình Hội",
+    "lat": 10.816715,
+    "lon": 106.774256,
+    "display_name": "Đường Dương Đình Hội & Đường Đỗ Xuân Hợp, Phước Long B, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71210",
+    "source": "tomtom"
+  },
+  "63b549b8bfd3d90017ea782c": {
+    "camera_name": "Đỗ Xuân Hợp - Tây Hòa",
+    "lat": 10.824496,
+    "lon": 106.769211,
+    "display_name": "Đường Tây Hòa & Đường Đỗ Xuân Hợp, Phước Long A, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71208",
+    "source": "tomtom"
+  },
+  "63b54a04bfd3d90017ea783e": {
+    "camera_name": "Lê Văn Việt - Hoàng Hữu Nam",
+    "lat": 10.794502,
+    "lon": 106.696183,
+    "display_name": "Số 22, Đường Đinh Tiên Hoàng, Phường 1, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 71007",
+    "source": "tomtom"
+  },
+  "63b54a48bfd3d90017ea7850": {
+    "camera_name": "Lã Xuân Oai - Lò Lu",
+    "lat": 10.825181,
+    "lon": 106.80759,
+    "display_name": "Số 4/18F, Đường Lã Xuân Oai, Long Trường, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71213",
+    "source": "tomtom"
+  },
+  "63b54a70bfd3d90017ea7862": {
+    "camera_name": "Lã Xuân Oai - Đường D2",
+    "lat": 10.824806,
+    "lon": 106.807425,
+    "display_name": "Số 2K, Đường Lã Xuân Oai, Long Trường, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71213",
+    "source": "tomtom"
+  },
+  "63b54a9ebfd3d90017ea7911": {
+    "camera_name": "Nguyễn Xiển - Nguyễn Văn Tăng",
+    "lat": 10.871271,
+    "lon": 106.840065,
+    "display_name": "Đường Nguyễn Xiển, Long Bình, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71217",
+    "source": "tomtom"
+  },
+  "63b54ad1bfd3d90017ea7974": {
+    "camera_name": "Võ Chí Công - Liên Phường 1",
+    "lat": 10.757279,
+    "lon": 106.69016,
+    "display_name": "Đường Võ Văn Kiệt, Cầu Kho, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71015",
+    "source": "tomtom"
+  },
+  "63b54aedbfd3d90017ea79c3": {
+    "camera_name": "Võ Chí Công - Liên Phường 2",
+    "lat": 10.747588,
+    "lon": 106.656186,
+    "display_name": "Số 127, Đường Võ Văn Kiệt, Phường 13, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72717",
+    "source": "tomtom"
+  },
+  "63b54bcdbfd3d90017ea7a82": {
+    "camera_name": "Tỉnh lộ 43 - KCX Linh Trung 2",
+    "lat": 10.939479,
+    "lon": 106.545665,
+    "display_name": "Số 43, Hẻm 41 Tỉnh Lộ 2, Tân Phú Trung, Hồ Chí Minh, Hồ Chí Minh, 71609",
+    "source": "tomtom"
+  },
+  "63b54c51bfd3d90017ea7aa0": {
+    "camera_name": "Đường số 1 - Nguyễn Văn Bá",
+    "lat": 10.882716,
+    "lon": 106.763742,
+    "display_name": "Hẻm 21 Đường Số 11, Linh Xuân, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71309",
+    "source": "tomtom"
+  },
+  "63b54c93bfd3d90017ea7ab8": {
+    "camera_name": "Lê Văn Chí - Linh Trung",
+    "lat": 10.861168,
+    "lon": 106.778433,
+    "display_name": "Đường Lê Văn Chí, Linh Trung, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71308",
+    "source": "tomtom"
+  },
+  "63b54cffbfd3d90017ea7ad0": {
+    "camera_name": "Tỉnh lộ 43 - Chân cầu Gò Dưa",
+    "lat": 10.885824,
+    "lon": 106.725781,
+    "display_name": "Số 1155/43, Hẻm 1155 Tỉnh Lộ 43, Bình Chiểu, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71313",
+    "source": "tomtom"
+  },
+  "63b54d27bfd3d90017ea7ae5": {
+    "camera_name": "Xa lộ Hà Nội - Đường D1",
+    "lat": 10.852229,
+    "lon": 106.779244,
+    "display_name": "Số 1, Đường Xa Lộ Hà Nội, Hiệp Phú, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71206",
+    "source": "tomtom"
+  },
+  "63b54d5abfd3d90017ea7afe": {
+    "camera_name": "Đường số 1 - Cảng Phước Long",
+    "lat": 10.828658,
+    "lon": 106.769262,
+    "display_name": "Số 1, Hẻm 1 Đường Số 145, Phước Long B, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71210",
+    "source": "tomtom"
+  },
+  "63b54dcbbfd3d90017ea7ba8": {
+    "camera_name": "Quốc Lộ 1 - Cổng ĐH Quốc gia TPHCM",
+    "lat": 10.769456,
+    "lon": 106.590455,
+    "display_name": "Số 1/14, Hẻm 1 Quốc Lộ 1A, Bình Trị Đông A, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71911",
+    "source": "tomtom"
+  },
+  "63b54f70bfd3d90017ea7c86": {
+    "camera_name": "Cầu Sài Gòn (10)",
+    "lat": 10.798261,
+    "lon": 106.731487,
+    "display_name": "Nút Giao Thông Cầu Sài Gòn, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "63b55020bfd3d90017ea7cb7": {
+    "camera_name": "Nút giao Mỹ Thủy (6)",
+    "lat": 10.798261,
+    "lon": 106.731487,
+    "display_name": "Nút Giao Thông Cầu Sài Gòn, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "63b5503bbfd3d90017ea7ccc": {
+    "camera_name": "Nút giao Mỹ Thủy (7)",
+    "lat": 10.798261,
+    "lon": 106.731487,
+    "display_name": "Nút Giao Thông Cầu Sài Gòn, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "63b65e6abfd3d90017eaa361": {
+    "camera_name": "Nguyễn Thị Định - Thân Văn Nhiếp",
+    "lat": 10.790468,
+    "lon": 106.754286,
+    "display_name": "Số 14B, Đường Thân Văn Nhiếp, An Phú, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71106",
+    "source": "tomtom"
+  },
+  "63b65ebebfd3d90017eaa3ae": {
+    "camera_name": "Nguyễn Hữu Cảnh - Ngô Tất Tố 2 (Dạ cầu Thủ Thiêm 1)",
+    "lat": 10.789524,
+    "lon": 106.716266,
+    "display_name": "Đường Nguyễn Hữu Cảnh & Đường Ngô Tất Tố, Phường 22, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72324",
+    "source": "tomtom"
+  },
+  "63b65f33bfd3d90017eaa405": {
+    "camera_name": "Nguyễn Hữu Cảnh - Ngô Tất Tố 3 (Nhánh chính cầu Thủ Thiêm 1)",
+    "lat": 10.789524,
+    "lon": 106.716266,
+    "display_name": "Đường Nguyễn Hữu Cảnh & Đường Ngô Tất Tố, Phường 22, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72324",
+    "source": "tomtom"
+  },
+  "63b65f64bfd3d90017eaa41f": {
+    "camera_name": "Xô Viết Nghệ Tĩnh - Đường D5",
+    "lat": 10.80653,
+    "lon": 106.712634,
+    "display_name": "Số 149, Đường D5, Phường 25, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72308",
+    "source": "tomtom"
+  },
+  "63b65f8dbfd3d90017eaa434": {
+    "camera_name": "Xô Viết Nghệ Tĩnh - Phan Văn Hân (Cầu Thị Nghè)",
+    "lat": 10.792779,
+    "lon": 106.707398,
+    "display_name": "Đường Phan Văn Hân & Đường Xô Viết Nghệ Tĩnh, Phường 17, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72321",
+    "source": "tomtom"
+  },
+  "63b65fd8bfd3d90017eaa461": {
+    "camera_name": "Lê Văn Duyệt - Vũ Huy Tấn",
+    "lat": 10.795678,
+    "lon": 106.696172,
+    "display_name": "Đường Vũ Huy Tấn & Đường Lê Văn Duyệt, Phường 1, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72318",
+    "source": "tomtom"
+  },
+  "63b66035bfd3d90017eaa48e": {
+    "camera_name": "Nơ Trang Long - Nguyễn Huy Lượng (Bệnh viện Ung Bướu)",
+    "lat": 10.80599,
+    "lon": 106.695118,
+    "display_name": "Đường Nơ Trang Long, Phường 14, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72316",
+    "source": "tomtom"
+  },
+  "63b66051bfd3d90017eaa4a3": {
+    "camera_name": "Nơ Trang Long - Phan Văn Trị",
+    "lat": 10.811191,
+    "lon": 106.695504,
+    "display_name": "Đường Phan Văn Trị & Đường Nơ Trang Long, Phường 14, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72306",
+    "source": "tomtom"
+  },
+  "63b66089bfd3d90017eaa4bd": {
+    "camera_name": "Nơ Trang Long - Chu Văn An",
+    "lat": 10.811191,
+    "lon": 106.695504,
+    "display_name": "Đường Chu Văn An & Đường Nơ Trang Long, Phường 12, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72312",
+    "source": "tomtom"
+  },
+  "63b660d8bfd3d90017eaa4d5": {
+    "camera_name": "Cầu Tân Thuận 2 - Q7 (Q4-Q7)",
+    "lat": 10.752433,
+    "lon": 106.724481,
+    "display_name": "Số 156/38/7, Đường Cầu Tân Thuận Hai, Tân Thuận Tây, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72910",
+    "source": "tomtom"
+  },
+  "63b660f8bfd3d90017eaa4ea": {
+    "camera_name": "Cầu Tân Thuận 2 - Q7 (Q7-Q4)",
+    "lat": 10.752433,
+    "lon": 106.724481,
+    "display_name": "Số 156/38/7, Đường Cầu Tân Thuận Hai, Tân Thuận Tây, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72910",
+    "source": "tomtom"
+  },
+  "63b6617ebfd3d90017eaa50b": {
+    "camera_name": "Nguyễn Tất Thành - Cảng SG (Q7-Q4)",
+    "lat": 10.77653,
+    "lon": 106.700977,
+    "display_name": "Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "63b661a3bfd3d90017eaa520": {
+    "camera_name": "Nguyễn Tất Thành - Cảng SG (Q4-Q7)",
+    "lat": 10.77653,
+    "lon": 106.700977,
+    "display_name": "Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "63b664d2bfd3d90017eaaa0f": {
+    "camera_name": "CT Trung Lương - Võ Trần Chí 1",
+    "lat": 10.681971,
+    "lon": 106.553586,
+    "display_name": "Số B8/1, Cao Tốc Thành Phố Hồ Chí Minh-Trung Lương, Tân Túc, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "63b664edbfd3d90017eaaa24": {
+    "camera_name": "CT Trung Lương - Võ Trần Chí 2",
+    "lat": 10.801735,
+    "lon": 106.700347,
+    "display_name": "Số 2, Đường Võ Trường Toản, Phường 2, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72319",
+    "source": "tomtom"
+  },
+  "63bd1e95bfd3d90017ec3cd5": {
+    "camera_name": "Nguyễn Lương Bằng - Hoàng Quốc Việt",
+    "lat": 10.754611,
+    "lon": 106.635271,
+    "display_name": "Số 838, Đường Hồng Bàng, Phường 14, Quận 6, Hồ Chí Minh, Hồ Chí Minh, 73119",
+    "source": "tomtom"
+  },
+  "63bd1f21bfd3d90017ec3d04": {
+    "camera_name": "Huỳnh Tấn Phát - Phạm Hữu Lầu",
+    "lat": 10.709035,
+    "lon": 106.739821,
+    "display_name": "Hẻm 77 Phạm Hữu Lầu & Huỳnh Tấn Phát, Phú Mỹ, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72906",
+    "source": "tomtom"
+  },
+  "63bd1f48bfd3d90017ec3d19": {
+    "camera_name": "Huỳnh Tấn Phát - Nguyễn Thị Thập",
+    "lat": 10.737652,
+    "lon": 106.730363,
+    "display_name": "Đường Huỳnh Tấn Phát & Đường Nguyễn Thị Thập, Bình Thuận, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72914",
+    "source": "tomtom"
+  },
+  "649da419a6068200171a6c90": {
+    "camera_name": "Nguyễn Chí Thanh - Ngô Quyền",
+    "lat": 10.762776,
+    "lon": 106.665724,
+    "display_name": "Hẻm 138/31 Ngô Quyền, Phường 5, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72516",
+    "source": "tomtom"
+  },
+  "649da495a6068200171a6cb6": {
+    "camera_name": "Mai Chí Thọ - Trần Quý Kiên (3)",
+    "lat": 10.943778,
+    "lon": 106.513876,
+    "display_name": "Đường Lê Minh Nhựt, Tân Thông Hội, Hồ Chí Minh, Hồ Chí Minh, 71608",
+    "source": "tomtom"
+  },
+  "649da72ca6068200171a6dbb": {
+    "camera_name": "Tôn Đức Thắng - Hàm Nghi",
+    "lat": 10.770739,
+    "lon": 106.706208,
+    "display_name": "Đường Tôn Đức Thắng & Đường Hàm Nghi, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "649da77ea6068200171a6dd4": {
+    "camera_name": "Tôn Đức Thắng - Công trường Mê Linh",
+    "lat": 10.775296,
+    "lon": 106.706788,
+    "display_name": "Đường Tôn Đức Thắng, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "65e054fb6b18080018db6632": {
+    "camera_name": "Lê Duẩn - Mạc Đĩnh Chi",
+    "lat": 10.783233,
+    "lon": 106.701113,
+    "display_name": "Đường Mạc Đĩnh Chi & Đường Lê Duẩn, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "65e0552f6b18080018db6647": {
+    "camera_name": "Lê Lai - Phan Chu Trinh",
+    "lat": 10.771736,
+    "lon": 106.697852,
+    "display_name": "Đường Phan Chu Trinh & Đường Lê Lai, Bến Thành, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71009",
+    "source": "tomtom"
+  },
+  "65e0556b6b18080018db665e": {
+    "camera_name": "Nguyễn Thái Học - Phạm Ngũ Lão",
+    "lat": 10.768245,
+    "lon": 106.695225,
+    "display_name": "Đường Nguyễn Thái Học, Phạm Ngũ Lão, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71012",
+    "source": "tomtom"
+  },
+  "6623df636f998a001b251e92": {
+    "camera_name": "Hai Bà Trưng - Trần Cao Vân",
+    "lat": 10.783803,
+    "lon": 106.697044,
+    "display_name": "Đường Trần Cao Vân & Đường Hai Bà Trưng, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 71007",
+    "source": "tomtom"
+  },
+  "6623e2e16f998a001b252233": {
+    "camera_name": "Hai Bà Trưng - Trần Quốc Toản",
+    "lat": 10.789805,
+    "lon": 106.689526,
+    "display_name": "Đường Trần Quốc Toản & Đường Hai Bà Trưng, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72408",
+    "source": "tomtom"
+  },
+  "6623e31e6f998a001b252250": {
+    "camera_name": "Kỳ Đồng - Bà Huyện Thanh Quan",
+    "lat": 10.781678,
+    "lon": 106.681685,
+    "display_name": "Đường Kỳ Đồng & Đường Bà Huyện Thanh Quan, Phường 9, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72414",
+    "source": "tomtom"
+  },
+  "6623e3566f998a001b25226d": {
+    "camera_name": "Lê Văn Sỹ - Trường Sa",
+    "lat": 10.78636,
+    "lon": 106.680869,
+    "display_name": "Số 222, Đường Hoàng Sa, Phường 14, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72414",
+    "source": "tomtom"
+  },
+  "6623e3a26f998a001b252291": {
+    "camera_name": "Lý Chính Thắng - Trần Quốc Thảo",
+    "lat": 10.784369,
+    "lon": 106.684503,
+    "display_name": "Đường Trần Quốc Thảo & Đường Lý Chính Thắng, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72415",
+    "source": "tomtom"
+  },
+  "6623e3ea6f998a001b2522ae": {
+    "camera_name": "Nguyễn Đình Chiểu - Cao Thắng",
+    "lat": 10.770044,
+    "lon": 106.682118,
+    "display_name": "Đường Nguyễn Đình Chiểu & Đường Cao Thắng, Phường 4, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72417",
+    "source": "tomtom"
+  },
+  "6623e43e6f998a001b2522cb": {
+    "camera_name": "Nguyễn Thị Minh Khai - Bà Huyện Thanh Quan",
+    "lat": 10.778508,
+    "lon": 106.686706,
+    "display_name": "Số 275, Đường Bà Huyện Thanh Quan, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72415",
+    "source": "tomtom"
+  },
+  "6623e4b06f998a001b2522f1": {
+    "camera_name": "Nguyễn Thị Minh Khai - Nguyễn Thượng Hiền",
+    "lat": 10.77057,
+    "lon": 106.686396,
+    "display_name": "Số 2, Đường Nguyễn Thị Minh Khai, Phường 5, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72406",
+    "source": "tomtom"
+  },
+  "6623e5066f998a001b252317": {
+    "camera_name": "Nguyễn Thị Minh Khai - Tôn Thất Tùng",
+    "lat": 10.771313,
+    "lon": 106.687189,
+    "display_name": "Đường Tôn Thất Tùng & Đường Nguyễn Thị Minh Khai, Phường 5, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72406",
+    "source": "tomtom"
+  },
+  "6623e5776f998a001b252337": {
+    "camera_name": "Trần Quang Diệu - Trường Sa",
+    "lat": 10.784495,
+    "lon": 106.678451,
+    "display_name": "Đường Trường Sa & Đường Trần Quang Diệu, Phường 13, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72412",
+    "source": "tomtom"
+  },
+  "6623e5d66f998a001b25235a": {
+    "camera_name": "Cách Mạng Tháng Tám - Đỗ Thị Lời",
+    "lat": 10.774037,
+    "lon": 106.689165,
+    "display_name": "Hẻm 26 Cách Mạng Tháng Tám, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72407",
+    "source": "tomtom"
+  },
+  "6623e61d6f998a001b252377": {
+    "camera_name": "Cách Mạng Tháng Tám - Rạch Bùng Binh",
+    "lat": 10.779637,
+    "lon": 106.678829,
+    "display_name": "Hẻm 192 Cách Mạng Tháng Tám & Đường Rạch Bùng Binh, Phường 10, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72413",
+    "source": "tomtom"
+  },
+  "6623e6706f998a001b25239b": {
+    "camera_name": "Hùng Vương - Trần Nhân Tôn",
+    "lat": 10.761516,
+    "lon": 106.675081,
+    "display_name": "Số 59, Đường Trần Nhân Tôn, Phường 2, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72519",
+    "source": "tomtom"
+  },
+  "6623e6b86f998a001b2523b8": {
+    "camera_name": "Lý Thái Tổ - Hồ Thị Kỷ",
+    "lat": 10.767036,
+    "lon": 106.676381,
+    "display_name": "Đường Hồ Thị Kỷ & Đường Lý Thái Tổ, Phường 1, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72520",
+    "source": "tomtom"
+  },
+  "6623e7076f998a001b2523ea": {
+    "camera_name": "Lý Thái Tổ - Sư Vạn Hạnh",
+    "lat": 10.767864,
+    "lon": 106.671538,
+    "display_name": "Đường Lý Thái Tổ & Đường Sư Vạn Hạnh, Phường 10, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72508",
+    "source": "tomtom"
+  },
+  "6623e7526f998a001b252407": {
+    "camera_name": "Thành Thái - cư xá Đồng Tiến",
+    "lat": 10.769275,
+    "lon": 106.666264,
+    "display_name": "Số 567K48, Đường Cư Xá Đồng Tiến, Phường 14, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72506",
+    "source": "tomtom"
+  },
+  "6623e7b76f998a001b25242d": {
+    "camera_name": "Đinh Bộ Lĩnh - Bùi Đình Túy",
+    "lat": 10.808377,
+    "lon": 106.70928,
+    "display_name": "Đường Bùi Đình Túy & Đường Đinh Bộ Lĩnh, Phường 26, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72310",
+    "source": "tomtom"
+  },
+  "6623e7f06f998a001b25244a": {
+    "camera_name": "Đinh Bộ Lĩnh - Chu Văn An",
+    "lat": 10.810574,
+    "lon": 106.709169,
+    "display_name": "Đường Chu Văn An & Đường Đinh Bộ Lĩnh, Phường 26, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72310",
+    "source": "tomtom"
+  },
+  "6623e8406f998a001b252465": {
+    "camera_name": "Phan Đăng Lưu - Hoàng Hoa Thám",
+    "lat": 10.803342,
+    "lon": 106.692261,
+    "display_name": "Số 14, Đường Hoàng Hoa Thám, Phường 6, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72315",
+    "source": "tomtom"
+  },
+  "6623e88c6f998a001b25248b": {
+    "camera_name": "Hoàng Minh Giám - Đăng Văn Sâm",
+    "lat": 10.808171,
+    "lon": 106.673584,
+    "display_name": "Số 183, Đường Hoàng Minh Giám, Phường 9, Phú Nhuận, Hồ Chí Minh, Hồ Chí Minh, 72216",
+    "source": "tomtom"
+  },
+  "6623e8da6f998a001b2524a6": {
+    "camera_name": "Phan Đăng Lưu - Thích Quảng Đức",
+    "lat": 10.803295,
+    "lon": 106.684346,
+    "display_name": "Số 98, Đường Thích Quảng Đức, Phường 3, Phú Nhuận, Hồ Chí Minh, Hồ Chí Minh, 72213",
+    "source": "tomtom"
+  },
+  "6623e9e96f998a001b2525ce": {
+    "camera_name": "Phan Đình Phùng - Huynh Văn Bánh",
+    "lat": 10.7944,
+    "lon": 106.682382,
+    "display_name": "Huỳnh Văn Bánh & Hẻm 185 Phan Đình Phùng, Phường 17, Phú Nhuận, Hồ Chí Minh, Hồ Chí Minh, 72208",
+    "source": "tomtom"
+  },
+  "6623ea416f998a001b25260a": {
+    "camera_name": "Phan Đình Phùng - Nguyễn Trọng Tuyển",
+    "lat": 10.797179,
+    "lon": 106.68114,
+    "display_name": "Đường Nguyễn Trọng Tuyển & Đường Phan Đình Phùng, Phường 15, Phú Nhuận, Hồ Chí Minh, Hồ Chí Minh, 72209",
+    "source": "tomtom"
+  },
+  "6623eb466f998a001b252632": {
+    "camera_name": "Hà Huy Giáp - An Lộc",
+    "lat": 10.868755,
+    "lon": 106.679154,
+    "display_name": "Đường Hà Huy Giáp, Thạnh Lộc, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71514, 71515",
+    "source": "tomtom"
+  },
+  "6623ebd76f998a001b25264d": {
+    "camera_name": "Quốc Lộ 1 - Tô Ký",
+    "lat": 10.850872,
+    "lon": 106.626467,
+    "display_name": "Số 10C, Đường Tô Ký, Trung Mỹ Tây, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71507",
+    "source": "tomtom"
+  },
+  "6623ec826f998a001b252686": {
+    "camera_name": "Nguyễn Oanh - Lê Đức Thọ",
+    "lat": 10.841947,
+    "lon": 106.676597,
+    "display_name": "Đường Nguyễn Oanh & Đường Lê Đức Thọ, Phường 17, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71413",
+    "source": "tomtom"
+  },
+  "6623ecc16f998a001b25269e": {
+    "camera_name": "Nguyễn Oanh - Nguyễn Văn Lượng",
+    "lat": 10.750947,
+    "lon": 106.635131,
+    "display_name": "Số 367, Đường Nguyễn Văn Luông, Phường 12, Quận 6, Hồ Chí Minh, Hồ Chí Minh, 73117",
+    "source": "tomtom"
+  },
+  "6623ed396f998a001b2526b8": {
+    "camera_name": "Nguyễn Thái Sơn - Phạm Ngũ Lão",
+    "lat": 10.821375,
+    "lon": 106.682826,
+    "display_name": "Số 78, Hẻm 1 Đường Nguyễn Thái Sơn, Phường 3, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71409",
+    "source": "tomtom"
+  },
+  "6623ed9b6f998a001b2526cd": {
+    "camera_name": "Vòng xoay Gò Vấp (1)",
+    "lat": 10.831908,
+    "lon": 106.661939,
+    "display_name": "Số 27/72A, Đường Số 17, Phường 11, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71421",
+    "source": "tomtom"
+  },
+  "6623edd26f998a001b2526f7": {
+    "camera_name": "Vòng xoay Gò Vấp (2)",
+    "lat": 10.831908,
+    "lon": 106.661939,
+    "display_name": "Số 27/72A, Đường Số 17, Phường 11, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71421",
+    "source": "tomtom"
+  },
+  "6623ee176f998a001b25270c": {
+    "camera_name": "Phan Văn Trị - Lê Đức Thọ",
+    "lat": 10.83017,
+    "lon": 106.680821,
+    "display_name": "Hẻm 29/11 Lê Đức Thọ & Hẻm 590/2 Phan Văn Trị, Phường 7, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71407",
+    "source": "tomtom"
+  },
+  "6623ee666f998a001b252726": {
+    "camera_name": "Quang Trung - Phan Huy Ích",
+    "lat": 10.836855,
+    "lon": 106.657289,
+    "display_name": "Đường Quang Trung, Phường 8, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71419",
+    "source": "tomtom"
+  },
+  "6623eec96f998a001b25273b": {
+    "camera_name": "Quang Trung - Thống Nhất",
+    "lat": 10.835023,
+    "lon": 106.663095,
+    "display_name": "Số 623, Đường Quang Trung, Phường 11, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71421",
+    "source": "tomtom"
+  },
+  "6623ef2b6f998a001b252753": {
+    "camera_name": "Phan Văn Hớn - Trần Văn Mười",
+    "lat": 10.852626,
+    "lon": 106.584395,
+    "display_name": "Đường Phan Văn Hớn & Đường Trần Văn Mười, Xuân Thới Thượng, Hồ Chí Minh, Hồ Chí Minh, 71713",
+    "source": "tomtom"
+  },
+  "6623ef776f998a001b252768": {
+    "camera_name": "Quốc Lộ 22 - Nguyễn Thị Sóc",
+    "lat": 10.859901,
+    "lon": 106.603953,
+    "display_name": "Đường Quốc Lộ 22 & Đường Nguyễn Thị Sóc, Xuân Thới Đông, Hồ Chí Minh, Hồ Chí Minh, 71715",
+    "source": "tomtom"
+  },
+  "6623efc26f998a001b25277f": {
+    "camera_name": "Tô Ký - Nguyễn Ảnh Thủ",
+    "lat": 10.876346,
+    "lon": 106.646739,
+    "display_name": "Số 77, Đường Nguyễn Ảnh Thủ, Hiệp Thành, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71512",
+    "source": "tomtom"
+  },
+  "6623f0246f998a001b252797": {
+    "camera_name": "Âu Cơ - Lũy Bán Bích",
+    "lat": 10.761754,
+    "lon": 106.630843,
+    "display_name": "Số 93/23/13A, Hẻm 93/23 Lũy Bán Bích, Tân Thới Hòa, Hồ Chí Minh, Hồ Chí Minh, 72015",
+    "source": "tomtom"
+  },
+  "6623f0576f998a001b2527ac": {
+    "camera_name": "Âu Cơ - Thoại Ngọc Hầu",
+    "lat": 10.785824,
+    "lon": 106.641599,
+    "display_name": "Số 1040A, Đường Thoại Ngọc Hầu, Hòa Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72006",
+    "source": "tomtom"
+  },
+  "6623f0b46f998a001b2527c3": {
+    "camera_name": "Hòa Bình - Lũy Bán Bích",
+    "lat": 10.788119,
+    "lon": 106.636879,
+    "display_name": "Số 835, Đường Lũy Bán Bích, Tân Thành, Hồ Chí Minh, Hồ Chí Minh, 72007",
+    "source": "tomtom"
+  },
+  "6623f1046f998a001b2527db": {
+    "camera_name": "Lũy Bán Bích - Thoại Ngọc Hầu",
+    "lat": 10.781666,
+    "lon": 106.635966,
+    "display_name": "Đường Lũy Bán Bích & Đường Thoại Ngọc Hầu, Hòa Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72006",
+    "source": "tomtom"
+  },
+  "6623f14b6f998a001b2527f0": {
+    "camera_name": "Tân Kỳ Tân Quý - Lê Trọng Tấn",
+    "lat": 10.807491,
+    "lon": 106.62121,
+    "display_name": "Số 295C, Đường Lê Trọng Tấn, Sơn Kỳ, Hồ Chí Minh, Hồ Chí Minh, 72010",
+    "source": "tomtom"
+  },
+  "6623f1996f998a001b252805": {
+    "camera_name": "Mai Chí Thọ - Xa Lộ Hà Nội (3)",
+    "lat": 10.817161,
+    "lon": 106.756928,
+    "display_name": "Đường Xa Lộ Hà Nội, Trường Thọ, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71317",
+    "source": "tomtom"
+  },
+  "6623f1f16f998a001b25281f": {
+    "camera_name": "Phạm Văn Đồng - Đào Trinh Nhất",
+    "lat": 10.865028,
+    "lon": 106.759045,
+    "display_name": "Đường Đào Trinh Nhất & Đường Phạm Văn Đồng, Linh Tây, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71310",
+    "source": "tomtom"
+  },
+  "6623f3436f998a001b252863": {
+    "camera_name": "Phạm Văn Đồng - Kha Vạn Cân 1",
+    "lat": 10.826353,
+    "lon": 106.71226,
+    "display_name": "Số 30, Đường Kha Vạn Cân, Hiệp Bình Chánh, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71315",
+    "source": "tomtom"
+  },
+  "6623f36e6f998a001b252878": {
+    "camera_name": "Phạm Văn Đồng - Kha Vạn Cân 2",
+    "lat": 10.826353,
+    "lon": 106.71226,
+    "display_name": "Số 30, Đường Kha Vạn Cân, Hiệp Bình Chánh, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71315",
+    "source": "tomtom"
+  },
+  "6623f3d66f998a001b252890": {
+    "camera_name": "Quốc Lộ 1K - đường số 8",
+    "lat": 10.883667,
+    "lon": 106.770719,
+    "display_name": "Số 57/8, Đường Quốc Lộ 1K, Linh Xuân, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71309",
+    "source": "tomtom"
+  },
+  "6623f44f6f998a001b2528aa": {
+    "camera_name": "Võ Nguyên Giáp - Đỗ Xuân Hợp (1)",
+    "lat": 10.796421,
+    "lon": 106.781211,
+    "display_name": "Đường Cao Tốc Thành phố Hồ Chí Minh-Long Thành-Dầu Giây, Phước Long B, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71210",
+    "source": "tomtom"
+  },
+  "6623f4836f998a001b2528bf": {
+    "camera_name": "Võ Nguyên Giáp - Đỗ Xuân Hợp (2)",
+    "lat": 10.796421,
+    "lon": 106.781211,
+    "display_name": "Đường Cao Tốc Thành phố Hồ Chí Minh-Long Thành-Dầu Giây, Phước Long B, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71210",
+    "source": "tomtom"
+  },
+  "6623f4df6f998a001b2528eb": {
+    "camera_name": "Quốc Lộ 13 - cầu Ông Dầu",
+    "lat": 10.834792,
+    "lon": 106.714063,
+    "display_name": "Số 260, Đường Quốc Lộ 13, Hiệp Bình Chánh, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71315",
+    "source": "tomtom"
+  },
+  "6623f51a6f998a001b252900": {
+    "camera_name": "Quốc Lộ 13 - Nguyễn Thị Nhung",
+    "lat": 10.811943,
+    "lon": 106.711845,
+    "display_name": "Đường Quốc Lộ 13, Phường 26, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72310",
+    "source": "tomtom"
+  },
+  "6623f5876f998a001b25291a": {
+    "camera_name": "Võ Nguyên Giáp - quay đầu An Phú (1)",
+    "lat": 10.853809,
+    "lon": 106.682227,
+    "display_name": "Đường Hà Huy Giáp, An Phú Đông, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71516",
+    "source": "tomtom"
+  },
+  "6623f5b56f998a001b25292f": {
+    "camera_name": "Võ Nguyên Giáp - quay đầu An Phú (2)",
+    "lat": 10.853809,
+    "lon": 106.682227,
+    "display_name": "Đường Hà Huy Giáp, An Phú Đông, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71516",
+    "source": "tomtom"
+  },
+  "662a861e1afb9c00172d23ad": {
+    "camera_name": "Nguyễn Hữu Thọ - Phạm Hữu Lầu",
+    "lat": 10.705062,
+    "lon": 106.7359,
+    "display_name": "Số 48, Đường Phạm Hữu Lầu, Phú Mỹ, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72906",
+    "source": "tomtom"
+  },
+  "662a86a11afb9c00172d2410": {
+    "camera_name": "Tùng Thiện Vương - Cao Xuân Dục",
+    "lat": 10.743986,
+    "lon": 106.657431,
+    "display_name": "Đường Cao Xuân Dục, Phường 12, Quận 8, Hồ Chí Minh, Hồ Chí Minh, 73011",
+    "source": "tomtom"
+  },
+  "662a873b1afb9c00172d2483": {
+    "camera_name": "Võ Trần Chí - Trần Văn Giàu 1",
+    "lat": 10.791278,
+    "lon": 106.510844,
+    "display_name": "Đường Trần Văn Giàu, Phạm Văn Hai, Hồ Chí Minh, Hồ Chí Minh, 71820",
+    "source": "tomtom"
+  },
+  "662a87641afb9c00172d24b0": {
+    "camera_name": "Võ Trần Chí - Trần Văn Giàu 2",
+    "lat": 10.791278,
+    "lon": 106.510844,
+    "display_name": "Đường Trần Văn Giàu, Phạm Văn Hai, Hồ Chí Minh, Hồ Chí Minh, 71820",
+    "source": "tomtom"
+  },
+  "662a87a41afb9c00172d24e9": {
+    "camera_name": "Trần Văn Giàu - Tỉnh Lộ 10",
+    "lat": 10.787315,
+    "lon": 106.519367,
+    "display_name": "Đường Trần Vản Giáu, Phạm Văn Hai, Hồ Chí Minh, Hồ Chí Minh, 71820",
+    "source": "tomtom"
+  },
+  "662a87df1afb9c00172d2522": {
+    "camera_name": "Trần Văn Giàu - Nguyễn Cửu Phú",
+    "lat": 10.747752,
+    "lon": 106.584985,
+    "display_name": "Đường Nguyễn Cửu Phú & Đường Trần Văn Giàu, Tân Tạo A, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71909",
+    "source": "tomtom"
+  },
+  "662a881a1afb9c00172d2559": {
+    "camera_name": "Kinh Dương Vương - Tên Lửa",
+    "lat": 10.743611,
+    "lon": 106.613615,
+    "display_name": "Đường Tên Lửa, Bình Trị Đông B, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71908",
+    "source": "tomtom"
+  },
+  "662a88521afb9c00172d2592": {
+    "camera_name": "Kinh Dương Vương - Hồ Học Lãm",
+    "lat": 10.72824,
+    "lon": 106.607224,
+    "display_name": "Đường Hồ Học Lãm & Đường Kinh Dương Vương, An Lạc, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71906",
+    "source": "tomtom"
+  },
+  "662a88a01afb9c00172d25d1": {
+    "camera_name": "Trần Văn Giàu - Đường Thanh Niên",
+    "lat": 10.789735,
+    "lon": 106.514672,
+    "display_name": "Đường Trần Văn Giàu & Đường Thanh Niên, Phạm Văn Hai, Hồ Chí Minh, Hồ Chí Minh, 71820",
+    "source": "tomtom"
+  },
+  "662a89211afb9c00172d2636": {
+    "camera_name": "Quốc Lộ 1 - Dương Đình Cúc",
+    "lat": 10.705859,
+    "lon": 106.597865,
+    "display_name": "Đường Quốc lộ 1A & Đường Dương Đình Cúc, Tân Kiên, Hồ Chí Minh, Hồ Chí Minh, 71815",
+    "source": "tomtom"
+  },
+  "662a896e1afb9c00172d2674": {
+    "camera_name": "Võ Trần Chí - Trần Đại Nghĩa",
+    "lat": 10.73481,
+    "lon": 106.557836,
+    "display_name": "Đường Trần Đại Nghĩa, Lê Minh Xuân, Hồ Chí Minh, Hồ Chí Minh, 71817",
+    "source": "tomtom"
+  },
+  "662a89ae1afb9c00172d26ad": {
+    "camera_name": "Nguyễn Văn Linh - Trịnh Quang Nghị",
+    "lat": 10.702681,
+    "lon": 106.633812,
+    "display_name": "Đường Trịnh Quang Nghị & Đường Nguyễn Văn Linh, Phong Phú, Hồ Chí Minh, Hồ Chí Minh, 71812",
+    "source": "tomtom"
+  },
+  "662a89f51afb9c00172d26ef": {
+    "camera_name": "Nguyễn Văn Linh - Trịnh Quang Nghị 2",
+    "lat": 10.702681,
+    "lon": 106.633812,
+    "display_name": "Đường Trịnh Quang Nghị & Đường Nguyễn Văn Linh, Phong Phú, Hồ Chí Minh, Hồ Chí Minh, 71812",
+    "source": "tomtom"
+  },
+  "662a8a661afb9c00172d2762": {
+    "camera_name": "Nguyễn Văn Linh - Quản Trọng Linh",
+    "lat": 10.791529,
+    "lon": 106.670385,
+    "display_name": "Số 489/10A, Hẻm 489 Huỳnh Văn Bánh, Phường 13, Phú Nhuận, Hồ Chí Minh, Hồ Chí Minh, 72220",
+    "source": "tomtom"
+  },
+  "662a8b061afb9c00172d27d7": {
+    "camera_name": "Nguyễn Văn Linh - đường số 1",
+    "lat": 10.840516,
+    "lon": 106.673836,
+    "display_name": "Số 25/277, Hẻm 46 Đường Số 1, Phường 17, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71413",
+    "source": "tomtom"
+  },
+  "662a8c381afb9c00172d28b6": {
+    "camera_name": "Dương Bá Trạc - đường 9A",
+    "lat": 10.750176,
+    "lon": 106.688163,
+    "display_name": "Số 9, Đường Dương Bá Trạc, Phường 1, Quận 8, Hồ Chí Minh, Hồ Chí Minh, 73021",
+    "source": "tomtom"
+  },
+  "662a8c931afb9c00172d2901": {
+    "camera_name": "Huỳnh Tấn Phát - Hoàng Quốc Việt",
+    "lat": 10.714339,
+    "lon": 106.736986,
+    "display_name": "Đường Huỳnh Tấn Phát & Đường Hoàng Quốc Việt, Phú Thuận, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72906",
+    "source": "tomtom"
+  },
+  "662a8cc51afb9c00172d2938": {
+    "camera_name": "Huỳnh Tấn Phát - Phú Thuận",
+    "lat": 10.724517,
+    "lon": 106.73811,
+    "display_name": "Hẻm 12 Huỳnh Tấn Phát, Phú Thuận, Quận 7, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "662a8cfe1afb9c00172d296e": {
+    "camera_name": "Huỳnh Tấn Phát - Trần Trọng Cung",
+    "lat": 10.743357,
+    "lon": 106.729465,
+    "display_name": "Đường Trần Trọng Cung & Đường Huỳnh Tấn Phát, Bình Thuận, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72914",
+    "source": "tomtom"
+  },
+  "662a8d821afb9c00172d29c8": {
+    "camera_name": "Nguyễn Thị Thập - Tân Mỹ",
+    "lat": 10.73859,
+    "lon": 106.713834,
+    "display_name": "Số 443, Đường Nguyễn Thị Thập, Tân Quy, Quận 7, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "662a8ddd1afb9c00172d2a0f": {
+    "camera_name": "Nguyễn Văn Linh - cầu Tân Thuận 2",
+    "lat": 10.739153,
+    "lon": 106.733173,
+    "display_name": "Chui Nguyễn Văn Linh, Tân Thuận Đông, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72909",
+    "source": "tomtom"
+  },
+  "662a8e121afb9c00172d2a3f": {
+    "camera_name": "Huỳnh Tấn Phát - cầu Tân Thuận 1",
+    "lat": 10.735338,
+    "lon": 106.732715,
+    "display_name": "Hẻm 749 Huỳnh Tấn Phát, Phú Thuận, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72907",
+    "source": "tomtom"
+  },
+  "662a8e641afb9c00172d2a7e": {
+    "camera_name": "Nguyễn Văn Linh - Nguyễn Thị Thập 1",
+    "lat": 10.738003,
+    "lon": 106.721526,
+    "display_name": "Đường Nguyễn Văn Linh & Đường Nguyễn Thị Thập, Tân Phú, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72908",
+    "source": "tomtom"
+  },
+  "662a8eb41afb9c00172d2aba": {
+    "camera_name": "Nguyễn Văn Linh - Nguyễn Thị Thập 2",
+    "lat": 10.738003,
+    "lon": 106.721526,
+    "display_name": "Đường Nguyễn Văn Linh & Đường Nguyễn Thị Thập, Tân Phú, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72908",
+    "source": "tomtom"
+  },
+  "662a8ef41afb9c00172d2af2": {
+    "camera_name": "Lê Văn Lương - Đường số 15",
+    "lat": 10.739749,
+    "lon": 106.703448,
+    "display_name": "Số 380, Đường Nguyễn Thị Thập, Tân Hưng, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 756638",
+    "source": "tomtom"
+  },
+  "662a8f3a1afb9c00172d2b31": {
+    "camera_name": "Nguyễn Hữu Thọ - Đường số 15",
+    "lat": 10.745079,
+    "lon": 106.701689,
+    "display_name": "Đường Số 15 & Đường Nguyễn Hữu Thọ, Tân Hưng, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72912",
+    "source": "tomtom"
+  },
+  "662a8f701afb9c00172d2b5e": {
+    "camera_name": "Nguyễn Thị Thập - Lê Văn Lương",
+    "lat": 10.739863,
+    "lon": 106.703564,
+    "display_name": "Đường Nguyễn Thị Thập & Đường Lê Văn Lương, Tân Hưng, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72912",
+    "source": "tomtom"
+  },
+  "662a8fd41afb9c00172d2bac": {
+    "camera_name": "Nguyễn Lương Bằng - Phạm Hữu Lầu",
+    "lat": 10.705075,
+    "lon": 106.7375,
+    "display_name": "Đường Phạm Hữu Lầu, Phú Mỹ, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72906",
+    "source": "tomtom"
+  },
+  "662a902a1afb9c00172d2bed": {
+    "camera_name": "Quốc Lộ 1 - Hưng Nhơn",
+    "lat": 10.711623,
+    "lon": 106.599162,
+    "display_name": "Đường Hưng Nhơn & Đường Quốc lộ 1A, Tân Kiên, Hồ Chí Minh, Hồ Chí Minh, 71815",
+    "source": "tomtom"
+  },
+  "662b4d781afb9c00172d8571": {
+    "camera_name": "An Dương Vương - Lê Hồng Phong",
+    "lat": 10.759568,
+    "lon": 106.677236,
+    "display_name": "Số 239, Đường Lê Hồng Phong, Phường 4, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72711",
+    "source": "tomtom"
+  },
+  "662b4de41afb9c00172d85c5": {
+    "camera_name": "Hải Thượng Lãn Ông - Châu Văn Liêm",
+    "lat": 10.750425,
+    "lon": 106.659501,
+    "display_name": "Số 67A, Đường Vạn Kiếp, Phường 13, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 749549",
+    "source": "tomtom"
+  },
+  "662b4e201afb9c00172d85f9": {
+    "camera_name": "Hồng Bàng - Tạ Uyên",
+    "lat": 10.753763,
+    "lon": 106.653783,
+    "display_name": "Đường Hồng Bàng & Đường Tạ Uyên, Phường 12, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72715",
+    "source": "tomtom"
+  },
+  "662b4e581afb9c00172d862f": {
+    "camera_name": "Lê Hồng Phong - Trần Phú",
+    "lat": 10.760495,
+    "lon": 106.677002,
+    "display_name": "Đường Trần Phú & Đường Lê Hồng Phong, Phường 4, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72711",
+    "source": "tomtom"
+  },
+  "662b4e8e1afb9c00172d865c": {
+    "camera_name": "Lý Thường Kiệt - Nguyễn Chí Thanh",
+    "lat": 10.824284,
+    "lon": 106.684005,
+    "display_name": "Số 76, Đường Lý Thường Kiệt, Phường 7, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 727106",
+    "source": "tomtom"
+  },
+  "662b4ecb1afb9c00172d8692": {
+    "camera_name": "Nguyễn Chí Thanh - Thuận Kiều",
+    "lat": 10.75767,
+    "lon": 106.658164,
+    "display_name": "Số 203, Đường Nguyễn Chí Thanh, Phường 12, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72713",
+    "source": "tomtom"
+  },
+  "662b4efc1afb9c00172d86bc": {
+    "camera_name": "Trần Hưng Đạo - Trần Phú",
+    "lat": 10.844902,
+    "lon": 106.774064,
+    "display_name": "Đường Trần Hưng Đạo, Hiệp Phú, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71206",
+    "source": "tomtom"
+  },
+  "662b4f411afb9c00172d86fc": {
+    "camera_name": "Hậu Giang - Minh Phụng",
+    "lat": 10.749769,
+    "lon": 106.641616,
+    "display_name": "Số 216A, Đường Hậu Giang, Phường 9, Quận 6, Hồ Chí Minh, Hồ Chí Minh, 73112",
+    "source": "tomtom"
+  },
+  "662b4f7e1afb9c00172d872e": {
+    "camera_name": "Hậu Giang - Nguyễn Văn Luông",
+    "lat": 10.746594,
+    "lon": 106.636925,
+    "display_name": "Hẻm 489 Hậu Giang, Phường 11, Quận 6, Hồ Chí Minh, Hồ Chí Minh, 73116",
+    "source": "tomtom"
+  },
+  "662b4faa1afb9c00172d875e": {
+    "camera_name": "Tháp Mười - Phạm Đình Hổ",
+    "lat": 10.749722,
+    "lon": 106.649465,
+    "display_name": "Đường Tháp Mười & Đường Phạm Đình Hổ, Phường 2, Quận 6, Hồ Chí Minh, Hồ Chí Minh, 73107",
+    "source": "tomtom"
+  },
+  "662b50261afb9c00172d87b2": {
+    "camera_name": "Dương Bá Trạc - Đường số 9",
+    "lat": 10.747977,
+    "lon": 106.688533,
+    "display_name": "Số 134, Đường Dương Bá Trạc, Phường 2, Quận 8, Hồ Chí Minh, Hồ Chí Minh, 73020",
+    "source": "tomtom"
+  },
+  "662b50571afb9c00172d87df": {
+    "camera_name": "Quốc Lộ 50 - Bùi Minh Trực",
+    "lat": 10.736461,
+    "lon": 106.656143,
+    "display_name": "Số 222, Đường Quốc Lộ 50, Phường 6, Quận 8, Hồ Chí Minh, Hồ Chí Minh, 73016",
+    "source": "tomtom"
+  },
+  "662b50841afb9c00172d880d": {
+    "camera_name": "Tùng Thiện Vương - Xóm Củi",
+    "lat": 10.74552,
+    "lon": 106.656908,
+    "display_name": "Hẻm 372 Tùng Thiện Vương, Phường 13, Quận 8, Hồ Chí Minh, Hồ Chí Minh, 73010",
+    "source": "tomtom"
+  },
+  "662b50c11afb9c00172d8843": {
+    "camera_name": "An Dương Vương - Đường số 7",
+    "lat": 10.734343,
+    "lon": 106.621556,
+    "display_name": "Hẻm Số 6 An Dương Vương, Phường 10, Quận 6, Hồ Chí Minh, Hồ Chí Minh, 73115",
+    "source": "tomtom"
+  },
+  "662b50e51afb9c00172d886a": {
+    "camera_name": "Bà Hom - An Dương Vương",
+    "lat": 10.755972,
+    "lon": 106.624498,
+    "display_name": "Đường An Dương Vương & Đường Bà Hom, An Lạc A, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 73118",
+    "source": "tomtom"
+  },
+  "662b51201afb9c00172d889a": {
+    "camera_name": "Hương Lộ 2 - Mã Lò",
+    "lat": 10.765592,
+    "lon": 106.604703,
+    "display_name": "Hương Lộ 2, Bình Trị Đông A, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71911",
+    "source": "tomtom"
+  },
+  "662b51761afb9c00172d88ef": {
+    "camera_name": "Hương Lộ 3 - Đường kênh 19/5",
+    "lat": null,
+    "lon": null,
+    "source": "failed",
+    "error": "geocoding_failed"
+  },
+  "662b51a41afb9c00172d8926": {
+    "camera_name": "Lê Văn Quới - Mã Lò",
+    "lat": 10.776399,
+    "lon": 106.60089,
+    "display_name": "Đường Mã Lò & Đường Lê Văn Quới, Bình Hưng Hòa A, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71911",
+    "source": "tomtom"
+  },
+  "662b51d21afb9c00172d89bf": {
+    "camera_name": "Tên Lửa - Đường số 7",
+    "lat": 10.751473,
+    "lon": 106.61834,
+    "display_name": "Số 105, Đường Số 7, Bình Trị Đông B, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71908",
+    "source": "tomtom"
+  },
+  "662b52131afb9c00172d8a23": {
+    "camera_name": "Tỉnh lộ 10 - Mã Lò",
+    "lat": 10.763449,
+    "lon": 106.574898,
+    "display_name": "Hẻm 1870/1/98 Tỉnh Lộ 10, Tân Tạo, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71915",
+    "source": "tomtom"
+  },
+  "662b52a31afb9c00172d8b01": {
+    "camera_name": "Lê Đức Thọ - Hẻm 688",
+    "lat": 10.846368,
+    "lon": 106.671006,
+    "display_name": "Số 688, Hẻm 688 Đường Lê Đức Thọ, Phường 15, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71414",
+    "source": "tomtom"
+  },
+  "662b54711afb9c00172d8d4f": {
+    "camera_name": "90 Nguyễn Thái Sơn",
+    "lat": 10.817199,
+    "lon": 106.681363,
+    "display_name": "Số 90, Đường Nguyễn Thái Sơn, Phường 3, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71409",
+    "source": "tomtom"
+  },
+  "662b54bb1afb9c00172d8dbb": {
+    "camera_name": "Phạm Văn Chiêu - Đường số 59",
+    "lat": 10.850577,
+    "lon": 106.643385,
+    "display_name": "Số 59/9, Hẻm 59 Đường Phạm Văn Chiêu, Phường 14, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 728551",
+    "source": "tomtom"
+  },
+  "662b55111afb9c00172d8e2e": {
+    "camera_name": "Quang Trung - Phạm Văn Chiêu",
+    "lat": 10.85132,
+    "lon": 106.655505,
+    "display_name": "Đường Phạm Văn Chiêu, Phường 14, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 728500",
+    "source": "tomtom"
+  },
+  "662b558c1afb9c00172d8ed2": {
+    "camera_name": "625 Quang Trung",
+    "lat": 10.835123,
+    "lon": 106.662955,
+    "display_name": "Số 625, Đường Quang Trung, Phường 11, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71421",
+    "source": "tomtom"
+  },
+  "662b56c51afb9c00172d9071": {
+    "camera_name": "Bạch Đằng - Đặng Văn Sâm",
+    "lat": 10.815319,
+    "lon": 106.677023,
+    "display_name": "Hẻm Ngã 3 Bạch Đằng Đường Nguyễn Văn Công, Phường 3, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71409",
+    "source": "tomtom"
+  },
+  "662b571d1afb9c00172d9083": {
+    "camera_name": "Cách Mạng Tháng Tám - Phạm Văn Hai (2)",
+    "lat": 10.780436,
+    "lon": 106.677277,
+    "display_name": "Số 262/8, Hẻm 262 Cách Mạng Tháng Tám, Phường 10, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72413",
+    "source": "tomtom"
+  },
+  "662b57471afb9c00172d9095": {
+    "camera_name": "Cộng Hòa - Ấp Bắc",
+    "lat": 10.802341,
+    "lon": 106.641628,
+    "display_name": "Đường Ấp Bắc & Đường Cộng Hòa, Phường 13, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72110",
+    "source": "tomtom"
+  },
+  "662b57711afb9c00172d90a7": {
+    "camera_name": "Cộng Hòa - Đường A4",
+    "lat": 10.801337,
+    "lon": 106.657796,
+    "display_name": "Số 126/A4, Đường Cộng Hòa, Phường 4, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72106",
+    "source": "tomtom"
+  },
+  "662b57ec1afb9c00172d90e3": {
+    "camera_name": "Cộng Hòa - Hoàng Hoa Thám",
+    "lat": 10.802452,
+    "lon": 106.64161,
+    "display_name": "Đường Cộng Hòa, Phường 13, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72110",
+    "source": "tomtom"
+  },
+  "662b58401afb9c00172d90f5": {
+    "camera_name": "Hoàng Văn Thụ - Bùi Thị Xuân",
+    "lat": 10.800663,
+    "lon": 106.661688,
+    "display_name": "Đường Bùi Thị Xuân & Đường Hoàng Văn Thụ, Phường 2, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72108",
+    "source": "tomtom"
+  },
+  "662b58791afb9c00172d9107": {
+    "camera_name": "255 Hoàng Văn Thụ",
+    "lat": 10.800231,
+    "lon": 106.667207,
+    "display_name": "Đường Hoàng Văn Thụ, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "662b58bd1afb9c00172d9119": {
+    "camera_name": "Lê Văn Sỹ - Đặng Văn Ngữ",
+    "lat": 10.793737,
+    "lon": 106.669024,
+    "display_name": "Đường Đặng Văn Ngữ & Đường Lê Văn Sỹ, Phường 10, Phú Nhuận, Hồ Chí Minh, Hồ Chí Minh, 72218",
+    "source": "tomtom"
+  },
+  "662b59291afb9c00172d912b": {
+    "camera_name": "Lê Văn Sỹ - Nguyễn Trọng Tuyển",
+    "lat": 10.798471,
+    "lon": 106.666906,
+    "display_name": "Số 322, Đường Nguyễn Trọng Tuyển, Phường 1, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72107",
+    "source": "tomtom"
+  },
+  "662b5a401afb9c00172d91fc": {
+    "camera_name": "Trường Chinh - Nguyễn Hồng Đào",
+    "lat": 10.798063,
+    "lon": 106.643757,
+    "display_name": "Đường Nguyễn Hồng Đào & Đường Trường Chinh, Phường 14, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72112",
+    "source": "tomtom"
+  },
+  "662b5a9c1afb9c00172d9240": {
+    "camera_name": "Trường Chinh - Nguyễn Thái Bình",
+    "lat": 10.799625,
+    "lon": 106.640563,
+    "display_name": "Số 417, Đường Trường Chinh, Phường 14, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72112",
+    "source": "tomtom"
+  },
+  "662b5adc1afb9c00172d925b": {
+    "camera_name": "Trường Chinh - Phan Huy Ích 1",
+    "lat": 10.823473,
+    "lon": 106.629778,
+    "display_name": "Đường Trường Chinh & Đường Phan Huy Ích, Phường 15, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72109",
+    "source": "tomtom"
+  },
+  "662b5afe1afb9c00172d9284": {
+    "camera_name": "Trường Chinh - Phan Huy Ích 2",
+    "lat": 10.823473,
+    "lon": 106.629778,
+    "display_name": "Đường Trường Chinh & Đường Phan Huy Ích, Phường 15, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72109",
+    "source": "tomtom"
+  },
+  "662b5b271afb9c00172d9296": {
+    "camera_name": "Trường Chinh - Tân Hải",
+    "lat": 10.826619,
+    "lon": 106.625501,
+    "display_name": "Hẻm 5 Phan Văn Hớn, Tân Thới Nhất, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71510",
+    "source": "tomtom"
+  },
+  "662b5b481afb9c00172d92a8": {
+    "camera_name": "Trường Chinh - Trương Công Định",
+    "lat": 10.798445,
+    "lon": 106.640382,
+    "display_name": "Số 28/2, Hẻm 28 Trương Công Định, Phường 14, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72112",
+    "source": "tomtom"
+  },
+  "662b5b8c1afb9c00172d92ca": {
+    "camera_name": "Bình Long - Lê Thúc Hoạch",
+    "lat": 10.788119,
+    "lon": 106.617394,
+    "display_name": "Đường Lê Thúc Hoạch & Đường Bình Long, Tân Quý, Hồ Chí Minh, Hồ Chí Minh, 72011",
+    "source": "tomtom"
+  },
+  "662b5bc31afb9c00172d92e2": {
+    "camera_name": "Lê Trọng Tấn - Đường Kênh 19/5",
+    "lat": null,
+    "lon": null,
+    "source": "failed",
+    "error": "geocoding_failed"
+  },
+  "662b5be91afb9c00172d939b": {
+    "camera_name": "Lê Trọng Tấn - Tây Thạnh",
+    "lat": 10.808893,
+    "lon": 106.628562,
+    "display_name": "Lê Trọng Tấn, Tây Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72009",
+    "source": "tomtom"
+  },
+  "662b5c141afb9c00172d93d7": {
+    "camera_name": "Tân Kỳ Tân Quý - Bình Long",
+    "lat": 10.795935,
+    "lon": 106.614151,
+    "display_name": "Số 660, Đường Bình Long, Tân Quý, Hồ Chí Minh, Hồ Chí Minh, 72011",
+    "source": "tomtom"
+  },
+  "662b5c981afb9c00172d94c0": {
+    "camera_name": "Tân Kỳ Tân Quý - Tân Quý",
+    "lat": 10.797786,
+    "lon": 106.61544,
+    "display_name": "Đường Tân Kỳ Tân Quý, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "662b7ce71afb9c00172dc676": {
+    "camera_name": "Cách Mạng Tháng Tám - Bùi Thị Xuân",
+    "lat": 10.774037,
+    "lon": 106.689165,
+    "display_name": "Hẻm 26 Cách Mạng Tháng Tám, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72407",
+    "source": "tomtom"
+  },
+  "662b7d0c1afb9c00172dc6a6": {
+    "camera_name": "Cống Quỳnh - Bùi Viện",
+    "lat": 10.908723,
+    "lon": 106.684878,
+    "display_name": "Số 80, Đường Bùi Công Trừng, Nhị Bình, Hồ Chí Minh, Hồ Chí Minh, 71709",
+    "source": "tomtom"
+  },
+  "662b7f251afb9c00172dc8bc": {
+    "camera_name": "Nam Kỳ Khởi Nghĩa - Nguyễn Du",
+    "lat": 10.790046,
+    "lon": 106.683856,
+    "display_name": "Số 292, Đường Nguyễn Văn Trỗi, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 722609",
+    "source": "tomtom"
+  },
+  "662b7f651afb9c00172dc992": {
+    "camera_name": "11B Nguyễn Bỉnh Khiêm",
+    "lat": 10.786571,
+    "lon": 106.705443,
+    "display_name": "Số 11B, Đường Nguyễn Bỉnh Khiêm, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "662b7f9f1afb9c00172dca50": {
+    "camera_name": "Nguyễn Đình Chiểu - Nguyễn Bỉnh Khiêm",
+    "lat": 10.791395,
+    "lon": 106.702193,
+    "display_name": "Số 10C, Đường Nguyễn Bỉnh Khiêm, Đa Kao, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 710360",
+    "source": "tomtom"
+  },
+  "662b80051afb9c00172dcaf6": {
+    "camera_name": "Nguyễn Trãi - Nguyễn Cư Trinh",
+    "lat": 10.762694,
+    "lon": 106.686664,
+    "display_name": "Đường Nguyễn Trãi, Nguyễn Cư Trinh, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71014",
+    "source": "tomtom"
+  },
+  "662b80721afb9c00172dcb28": {
+    "camera_name": "Nguyễn Văn Thủ - Trần Doãn Khanh",
+    "lat": 10.788571,
+    "lon": 106.697733,
+    "display_name": "Đường Trần Doãn Khanh & Đường Nguyễn Văn Thủ, Đa Kao, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71007",
+    "source": "tomtom"
+  },
+  "662b80b91afb9c00172dcb5b": {
+    "camera_name": "Nút giao Ngã sáu Phù Đổng 2",
+    "lat": 10.7716,
+    "lon": 106.693388,
+    "display_name": "Số 2, Vòng Xoay Ngã Sáu Phù Đổng, Bến Thành, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71009",
+    "source": "tomtom"
+  },
+  "662b80e81afb9c00172dcbec": {
+    "camera_name": "Cách Mạng Tháng Tám - Sương Nguyệt Anh",
+    "lat": 10.779671,
+    "lon": 106.680248,
+    "display_name": "Số 117, Đường Nguyễn Phúc Nguyên, Phường 10, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72413",
+    "source": "tomtom"
+  },
+  "662b811d1afb9c00172dcc1d": {
+    "camera_name": "Trần Hưng Đạo - Nguyễn Cư Trinh",
+    "lat": 10.760585,
+    "lon": 106.688819,
+    "display_name": "Đường Trần Hưng Đạo, Nguyễn Cư Trinh, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71014",
+    "source": "tomtom"
+  },
+  "662b81721afb9c00172dcc44": {
+    "camera_name": "Đinh Tiên Hoàng - Trần Quang Khải",
+    "lat": 10.792656,
+    "lon": 106.695897,
+    "display_name": "Đường Trần Quang Khải & Đường Đinh Tiên Hoàng, Tân Định, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71008",
+    "source": "tomtom"
+  },
+  "662b81a31afb9c00172dcc65": {
+    "camera_name": "Nam Kỳ Khởi Nghĩa - Võ Văn Tần",
+    "lat": 10.780513,
+    "lon": 106.693974,
+    "display_name": "Đường Võ Văn Tần & Đường Nam Kỳ Khởi Nghĩa, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72407",
+    "source": "tomtom"
+  },
+  "662b81eb1afb9c00172dcc85": {
+    "camera_name": "Nguyễn Thị Minh Khai - Nguyễn Bỉnh Khiêm 2",
+    "lat": 10.788247,
+    "lon": 106.704055,
+    "display_name": "Số 2Bis, Đường Nguyễn Bỉnh Khiêm, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "662b82761afb9c00172dcda3": {
+    "camera_name": "Trần Quang Khải - Trần Nguyên Đán",
+    "lat": 10.840199,
+    "lon": 106.672715,
+    "display_name": "Số 197/2, Hẻm 226/43 Đường Nguyễn Văn Lượng, Phường 17, Gò Vấp, Hồ Chí Minh, Hồ Chí Minh, 71413",
+    "source": "tomtom"
+  },
+  "662b82a61afb9c00172dcdfd": {
+    "camera_name": "Trần Quang Khải - Trần Nhật Duật",
+    "lat": 10.791637,
+    "lon": 106.689823,
+    "display_name": "Đường Trần Nhật Duật & Đường Trần Quang Khải, Tân Định, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71008",
+    "source": "tomtom"
+  },
+  "662b82da1afb9c00172dce94": {
+    "camera_name": "Hai Bà Trưng - Nguyễn Hữu Cầu",
+    "lat": 10.789379,
+    "lon": 106.690067,
+    "display_name": "Đường Nguyễn Hữu Cầu & Đường Hai Bà Trưng, Tân Định, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71008",
+    "source": "tomtom"
+  },
+  "662b830e1afb9c00172dcf50": {
+    "camera_name": "Cách Mạng Tháng Tám - Võ Văn Tần",
+    "lat": 10.774356,
+    "lon": 106.688384,
+    "display_name": "Số 60, Đường Võ Văn Tần, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72407",
+    "source": "tomtom"
+  },
+  "662b836d1afb9c00172dcfa0": {
+    "camera_name": "Lê Duẩn - Nguyễn Bỉnh Khiêm",
+    "lat": 10.787273,
+    "lon": 106.704967,
+    "display_name": "Đường Nguyễn Bỉnh Khiêm & Đường Lê Duẩn, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "662b83ff1afb9c00172dcffb": {
+    "camera_name": "Lê Duẩn - Phạm Ngọc Thạch",
+    "lat": 10.758243,
+    "lon": 106.665722,
+    "display_name": "Đường Ngô Quyền, Phường 12, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72713",
+    "source": "tomtom"
+  },
+  "662b843d1afb9c00172dd02d": {
+    "camera_name": "Lê Thánh Tôn - Đồng Khởi",
+    "lat": 10.777803,
+    "lon": 106.702179,
+    "display_name": "Số 72, Đường Lê Thánh Tôn, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "662b84771afb9c00172dd076": {
+    "camera_name": "Nguyễn Du - Công xã Paris",
+    "lat": 10.778209,
+    "lon": 106.69914,
+    "display_name": "Số 84, Công Trường Công Xã Paris, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "662b84c11afb9c00172dd0b5": {
+    "camera_name": "Nguyễn Thị Minh Khai - Phạm Ngọc Thạch",
+    "lat": 10.781674,
+    "lon": 106.696964,
+    "display_name": "Đường Phạm Ngọc Thạch & Đường Nguyễn Thị Minh Khai, Bến Nghé, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71006",
+    "source": "tomtom"
+  },
+  "662b85031afb9c00172dd0dc": {
+    "camera_name": "Lê Lợi - Phan Bội Châu",
+    "lat": 10.772306,
+    "lon": 106.698811,
+    "display_name": "Đường Lê Lợi & Đường Phan Bội Châu, Bến Thành, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71009",
+    "source": "tomtom"
+  },
+  "662b85481afb9c00172dd0f1": {
+    "camera_name": "Võ Văn Kiệt - Pasteur",
+    "lat": 10.744238,
+    "lon": 106.650965,
+    "display_name": "Đường Võ Văn Kiệt, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "662b857b1afb9c00172dd106": {
+    "camera_name": "Điện Biên Phủ - Nguyễn Bỉnh Khiêm",
+    "lat": 10.792666,
+    "lon": 106.699286,
+    "display_name": "Đường Điện Biên Phủ, Đa Kao, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71007",
+    "source": "tomtom"
+  },
+  "662b85bf1afb9c00172dd149": {
+    "camera_name": "Nam Kỳ Khởi Nghĩa - Hàm Nghi",
+    "lat": 10.771028,
+    "lon": 106.701127,
+    "display_name": "Đường Nam Kỳ Khởi Nghĩa & Đường Hàm Nghi, Bến Thành, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71009",
+    "source": "tomtom"
+  },
+  "662b85f51afb9c00172dd1c2": {
+    "camera_name": "Nguyễn Thị Nghĩa - Lê Lai",
+    "lat": 10.770146,
+    "lon": 106.694103,
+    "display_name": "Đường Lê Lai & Đường Nguyễn Thị Nghĩa, Phạm Ngũ Lão, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71009",
+    "source": "tomtom"
+  },
+  "662b862a1afb9c00172dd1ff": {
+    "camera_name": "Hàm Nghi - Phó Đức Chính",
+    "lat": 10.770815,
+    "lon": 106.699356,
+    "display_name": "Số 181, Đường Hàm Nghi, Nguyễn Thái Bình, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 712203",
+    "source": "tomtom"
+  },
+  "662b86551afb9c00172dd227": {
+    "camera_name": "Trần Hưng Đạo - Calmette",
+    "lat": 10.790777,
+    "lon": 106.694702,
+    "display_name": "Số 36, Đường Võ Thị Sáu, Tân Định, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 710851",
+    "source": "tomtom"
+  },
+  "662b867b1afb9c00172dd250": {
+    "camera_name": "Trần Hưng Đạo - Ký Con",
+    "lat": 10.755684,
+    "lon": 106.682991,
+    "display_name": "Số 699, Đường Trần Hưng Đạo, Phường 1, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72708",
+    "source": "tomtom"
+  },
+  "662b86c41afb9c00172dd31c": {
+    "camera_name": "Trần Quang Khải - Trần Khắc Chân",
+    "lat": 10.79266,
+    "lon": 106.695224,
+    "display_name": "Số 20A, Đường Trần Quang Khải, Tân Định, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71008",
+    "source": "tomtom"
+  },
+  "662b872d1afb9c00172dd36a": {
+    "camera_name": "Lê Văn Sỹ - Trần Quang Diệu",
+    "lat": 10.787496,
+    "lon": 106.678348,
+    "display_name": "Số 309, Đường Trần Quang Diệu, Phường 13, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72412",
+    "source": "tomtom"
+  },
+  "662b87551afb9c00172dd43a": {
+    "camera_name": "Trần Quốc Thảo - Kỳ Đồng",
+    "lat": 10.78491,
+    "lon": 106.683368,
+    "display_name": "Số 136, Đường Trần Quốc Thảo, Võ Thị Sáu, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72415",
+    "source": "tomtom"
+  },
+  "665861d864f11e00173c73a9": {
+    "camera_name": "Huỳnh Tấn Phát - Cầu Tân Thuận 1",
+    "lat": 10.735338,
+    "lon": 106.732715,
+    "display_name": "Hẻm 749 Huỳnh Tấn Phát, Phú Thuận, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72907",
+    "source": "tomtom"
+  },
+  "66b1c158779f740018673eb4": {
+    "camera_name": "Hùng Vương - Lê Hồng Phong",
+    "lat": 10.762397,
+    "lon": 106.676504,
+    "display_name": "Số 300, Đường Lê Hồng Phong, Phường 1, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72520",
+    "source": "tomtom"
+  },
+  "66b1c190779f740018673ed4": {
+    "camera_name": "Nguyễn Trãi - Trần Phú",
+    "lat": 10.755168,
+    "lon": 106.672149,
+    "display_name": "Đường Trần Phú, Phường 8, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 748006",
+    "source": "tomtom"
+  },
+  "66b1c1bf779f740018673ef2": {
+    "camera_name": "An Dương Vương - Trần Phú",
+    "lat": 10.757424,
+    "lon": 106.674034,
+    "display_name": "Số 3, Đường An Dương Vương, Phường 8, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 748021",
+    "source": "tomtom"
+  },
+  "66b1c1f2779f740018673f0d": {
+    "camera_name": "An Dương Vương - Nguyễn Văn Cừ",
+    "lat": 10.760206,
+    "lon": 106.681166,
+    "display_name": "Số 273A, Đường An Dương Vương, Phường 3, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72710",
+    "source": "tomtom"
+  },
+  "66b1c22f779f740018673f6e": {
+    "camera_name": "Vòng xoay Phú Lâm (2)",
+    "lat": 10.754236,
+    "lon": 106.634482,
+    "display_name": "Vòng Xoay Phú Lâm, Quận 6, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "66b1c311779f740018674083": {
+    "camera_name": "Vòng xoay Phú Lâm (1)",
+    "lat": 10.754236,
+    "lon": 106.634482,
+    "display_name": "Vòng Xoay Phú Lâm, Quận 6, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "66b1c34d779f74001867409e": {
+    "camera_name": "Ba Tháng Hai - Thành Thái",
+    "lat": 10.767855,
+    "lon": 106.661674,
+    "display_name": "Hẻm 666 Đường 3 Tháng 2, Phường 14, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72506",
+    "source": "tomtom"
+  },
+  "66b1c370779f7400186740b3": {
+    "camera_name": "Thành Thái - Tô Hiến Thành",
+    "lat": 10.77315,
+    "lon": 106.663929,
+    "display_name": "Số 451/29/37, Hẻm 451/29 Tô Hiến Thành, Phường 14, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 740118",
+    "source": "tomtom"
+  },
+  "66b1c398779f7400186740e3": {
+    "camera_name": "Ba Tháng Hai - Tạ Uyên",
+    "lat": 10.760134,
+    "lon": 106.653805,
+    "display_name": "Đường Tạ Uyên & Hẻm 1171 Ba Tháng Hai, Phường 6, Quận 11, Hồ Chí Minh, Hồ Chí Minh, 72616",
+    "source": "tomtom"
+  },
+  "66b1c3c2779f740018674125": {
+    "camera_name": "Vòng xoay Mũi Tàu Phú Lâm",
+    "lat": 10.745446,
+    "lon": 106.624077,
+    "display_name": "Vòng Xoay, Phường 12, Quận 6, Hồ Chí Minh, Hồ Chí Minh, 73117",
+    "source": "tomtom"
+  },
+  "66b1c3fa779f740018674146": {
+    "camera_name": "Nguyễn Hữu Cảnh - Ung Văn Khiêm",
+    "lat": 10.798997,
+    "lon": 106.723703,
+    "display_name": "Đường Ung Văn Khiêm & Đường Nguyễn Hữu Cảnh, Phường 25, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72308",
+    "source": "tomtom"
+  },
+  "66b1c426779f74001867415e": {
+    "camera_name": "Điện Biên Phủ - Nguyễn Gia Trí",
+    "lat": 10.80095,
+    "lon": 106.715151,
+    "display_name": "Đường Nguyễn Gia Trí & Đường Điện Biên Phủ, Phường 25, Bình Thạnh, Hồ Chí Minh, Hồ Chí Minh, 72308",
+    "source": "tomtom"
+  },
+  "66b1c4a2779f74001867418c": {
+    "camera_name": "Lê Văn Sỹ - Phạm Văn Hai",
+    "lat": 10.797036,
+    "lon": 106.66473,
+    "display_name": "Số 320, Đường Phạm Văn Hai, Phường 1, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72107",
+    "source": "tomtom"
+  },
+  "66b1c4e7779f7400186741e4": {
+    "camera_name": "Hoàng Văn Thụ - Phạm Văn Hai",
+    "lat": 10.800388,
+    "lon": 106.665495,
+    "display_name": "Đường Phạm Văn Hai & Đường Hoàng Văn Thụ, Phường 1, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72107",
+    "source": "tomtom"
+  },
+  "66f1266f538c780017c93579": {
+    "camera_name": "Hùng Vương - Nguyễn Chí Thanh",
+    "lat": 10.753123,
+    "lon": 106.660403,
+    "display_name": "Số 736, Đường Nguyễn Trãi, Phường 11, Quận 5, Hồ Chí Minh, Hồ Chí Minh, 72714",
+    "source": "tomtom"
+  },
+  "66f126e8538c780017c9362f": {
+    "camera_name": "Nguyễn Chí Thanh - Nguyễn Kim",
+    "lat": 10.760535,
+    "lon": 106.662406,
+    "display_name": "Đường Nguyễn Kim, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "6792ef4f8c5ed4001b27f2c0": {
+    "camera_name": "Quốc Lộ 1 - Ba Làng",
+    "lat": 10.658295,
+    "lon": 106.559095,
+    "display_name": "Đường Quốc lộ 1A, Bình Chánh, Hồ Chí Minh, Hồ Chí Minh, 71814",
+    "source": "tomtom"
+  },
+  "6792efe48c5ed4001b27f336": {
+    "camera_name": "Xa Lộ Hà Nội - Cổng ĐH An ninh",
+    "lat": 10.800489,
+    "lon": 106.739891,
+    "display_name": "Xa Lộ Hà Nội, An Phú, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71106",
+    "source": "tomtom"
+  },
+  "6792f03d8c5ed4001b27f378": {
+    "camera_name": "Quốc Lộ 50 - Cổng chào Long An",
+    "lat": 10.864706,
+    "lon": 106.695175,
+    "display_name": "Số 442/50/26, Hẻm 442/50 Quốc Lộ 1A, An Phú Đông, Quận 12, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "6792f1008c5ed4001b27f41f": {
+    "camera_name": "Quốc Lộ 22 - Võ Văn Điều",
+    "lat": 11.011878,
+    "lon": 106.414443,
+    "display_name": "Đường Võ Văn Điều & Đường Quốc Lộ 22, Phước Thạnh, Hồ Chí Minh, Hồ Chí Minh, 71624",
+    "source": "tomtom"
+  },
+  "6792f16e8c5ed4001b27f482": {
+    "camera_name": "Cao tốc LT-DG - Trạm thu phí Long Phước",
+    "lat": 10.785814,
+    "lon": 106.851866,
+    "display_name": "Đường Cao Tốc Thành phố Hồ Chí Minh-Long Thành-Dầu Giây, Long Phước, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71214",
+    "source": "tomtom"
+  },
+  "6792f1b78c5ed4001b27f4a9": {
+    "camera_name": "Quốc Lộ 13 - Cầu Vĩnh Bình",
+    "lat": 10.856947,
+    "lon": 106.722362,
+    "display_name": "Số 13, Đường Quốc Lộ 13, Hiệp Bình Phước, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71314",
+    "source": "tomtom"
+  },
+  "6792f2248c5ed4001b27f4dc": {
+    "camera_name": "Quốc Lộ 1 - Độc Lập (cổng KCN Sóng Thần)",
+    "lat": 10.876059,
+    "lon": 106.751053,
+    "display_name": "Đại Lộ Độc Lập & Quốc Lộ 1, Bình Chiểu, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71313",
+    "source": "tomtom"
+  },
+  "6792f3058c5ed4001b27f58e": {
+    "camera_name": "Trần Văn Giàu - Cầu Đôi",
+    "lat": 10.793507,
+    "lon": 106.50632,
+    "display_name": "Số 5D12, Đường Trần Văn Giàu, Bình Lợi, Hồ Chí Minh, Hồ Chí Minh, 71820",
+    "source": "tomtom"
+  },
+  "6792f3cf8c5ed4001b27f61e": {
+    "camera_name": "Tỉnh Lộ 8 - Cầu Phú Cường",
+    "lat": 10.974752,
+    "lon": 106.638903,
+    "display_name": "Đường Tỉnh Lộ 8, Bình Mỹ, Hồ Chí Minh, Hồ Chí Minh, 71611",
+    "source": "tomtom"
+  },
+  "6792f9c88c5ed4001b27fb3d": {
+    "camera_name": "Quốc Lộ 1K - Đường GS1",
+    "lat": 10.875712,
+    "lon": 106.765623,
+    "display_name": "Số 1, Đường Quốc Lộ 1K, Linh Xuân, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71309",
+    "source": "tomtom"
+  },
+  "67e217643215f90017863b73": {
+    "camera_name": "Nguyễn Thị Định - Cổng A (20)",
+    "lat": 10.743189,
+    "lon": 106.619871,
+    "display_name": "Số 23, Đường Nguyễn Thức, An Lạc A, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71907",
+    "source": "tomtom"
+  },
+  "67e217c43215f90017863bc8": {
+    "camera_name": "Nguyễn Thị Định - Đường C (20-1)",
+    "lat": 10.773973,
+    "lon": 106.770413,
+    "display_name": "Đường Nguyễn Thị Định, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "67e217ea3215f90017863bf1": {
+    "camera_name": "Nguyễn Thị Định - Đường C (20-2)",
+    "lat": 10.773973,
+    "lon": 106.770413,
+    "display_name": "Đường Nguyễn Thị Định, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "6818833d6dfb4b0018f8ee9d": {
+    "camera_name": "Mai Bá Hương - Kênh 4",
+    "lat": 10.782009,
+    "lon": 106.512736,
+    "display_name": "Đường Kênh 2 & Đường Mai Bá Hương, Lê Minh Xuân, Hồ Chí Minh, Hồ Chí Minh, 71817",
+    "source": "tomtom"
+  },
+  "681883866dfb4b0018f8eef6": {
+    "camera_name": "Mai Bá Hương - Lê Chính Đang",
+    "lat": 10.77159,
+    "lon": 106.507403,
+    "display_name": "Đường Mai Bá Hương, Lê Minh Xuân, Hồ Chí Minh, Hồ Chí Minh, 71817",
+    "source": "tomtom"
+  },
+  "681883b46dfb4b0018f8ef39": {
+    "camera_name": "Lê Chính Đang 1",
+    "lat": 10.767816,
+    "lon": 106.696516,
+    "display_name": "Số 129, Đường Lê Thị Hồng Gấm, Cầu Ông Lãnh, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 712117",
+    "source": "tomtom"
+  },
+  "681883f56dfb4b0018f8ef97": {
+    "camera_name": "Lê Chính Đang 2",
+    "lat": 10.786547,
+    "lon": 106.769631,
+    "display_name": "Số 23/2/3, Hẻm 23/2 Lê Văn Thịnh, Bình Trưng Đông, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71116",
+    "source": "tomtom"
+  },
+  "681884726dfb4b0018f8f035": {
+    "camera_name": "Lê Chính Đang - Lê Đình Chi",
+    "lat": 10.769758,
+    "lon": 106.665507,
+    "display_name": "Đường Cư Xá Đồng Tiến, Phường 14, Quận 10, Hồ Chí Minh, Hồ Chí Minh, 72506",
+    "source": "tomtom"
+  },
+  "681885376dfb4b0018f8f0f2": {
+    "camera_name": "Lê Đình Chi - Kênh 3",
+    "lat": 10.755087,
+    "lon": 106.518802,
+    "display_name": "Đường Lê Đình Chi, Lê Minh Xuân, Hồ Chí Minh, Hồ Chí Minh, 71817",
+    "source": "tomtom"
+  },
+  "681885a26dfb4b0018f8f176": {
+    "camera_name": "Lê Đình Chi - Kênh 4",
+    "lat": 10.755087,
+    "lon": 106.518802,
+    "display_name": "Đường Lê Đình Chi, Lê Minh Xuân, Hồ Chí Minh, Hồ Chí Minh, 71817",
+    "source": "tomtom"
+  },
+  "681885ff6dfb4b0018f8f1ee": {
+    "camera_name": "Trần Đại Nghĩa - Kênh A",
+    "lat": 10.732958,
+    "lon": 106.565675,
+    "display_name": "Đường Trần Đại Nghĩa & Đường Kênh 7, Tân Nhựt, Hồ Chí Minh, Hồ Chí Minh, 71816",
+    "source": "tomtom"
+  },
+  "6818863c6dfb4b0018f8f235": {
+    "camera_name": "Trần Đại Nghĩa - Mai Bá Hương",
+    "lat": 10.764956,
+    "lon": 106.498953,
+    "display_name": "Đường Mai Bá Hương & Đường Trần Đại Nghĩa, Lê Minh Xuân, Hồ Chí Minh, Hồ Chí Minh, 71817",
+    "source": "tomtom"
+  },
+  "6818868b6dfb4b0018f8f298": {
+    "camera_name": "Trần Văn Giàu - Mai Bá Hương",
+    "lat": 10.78896,
+    "lon": 106.514461,
+    "display_name": "Đường Trần Văn Giàu & Đường Mai Bá Hương, Lê Minh Xuân, Hồ Chí Minh, Hồ Chí Minh, 71817",
+    "source": "tomtom"
+  },
+  "681886f26dfb4b0018f8f31a": {
+    "camera_name": "Trần Văn Giàu - Thanh Niên",
+    "lat": 10.789735,
+    "lon": 106.514672,
+    "display_name": "Đường Trần Văn Giàu & Đường Thanh Niên, Phạm Văn Hai, Hồ Chí Minh, Hồ Chí Minh, 71820",
+    "source": "tomtom"
+  },
+  "681887346dfb4b0018f8f36a": {
+    "camera_name": "Trần Văn Giàu - Lê Đình Chi",
+    "lat": 10.786547,
+    "lon": 106.51951,
+    "display_name": "Số A3/16G, Đường Trần Văn Giàu, Lê Minh Xuân, Hồ Chí Minh, Hồ Chí Minh, 71817",
+    "source": "tomtom"
+  },
+  "681887836dfb4b0018f8f3d1": {
+    "camera_name": "Trần Đại Nghĩa - Kênh B",
+    "lat": 10.732958,
+    "lon": 106.565675,
+    "display_name": "Đường Trần Đại Nghĩa & Đường Kênh 7, Tân Nhựt, Hồ Chí Minh, Hồ Chí Minh, 71816",
+    "source": "tomtom"
+  },
+  "681888066dfb4b0018f8f4c2": {
+    "camera_name": "Trần Văn Giàu - Võ Hữu Lợi",
+    "lat": 10.759293,
+    "lon": 106.571068,
+    "display_name": "Đường Trần Văn Giàu, Lê Minh Xuân, Hồ Chí Minh, Hồ Chí Minh, 71817",
+    "source": "tomtom"
+  },
+  "6818884f6dfb4b0018f8f50f": {
+    "camera_name": "Trần Đại Nghĩa - Kênh C",
+    "lat": 10.732958,
+    "lon": 106.565675,
+    "display_name": "Đường Trần Đại Nghĩa & Đường Kênh 7, Tân Nhựt, Hồ Chí Minh, Hồ Chí Minh, 71816",
+    "source": "tomtom"
+  },
+  "6818887f6dfb4b0018f8f54c": {
+    "camera_name": "Trần Văn Giàu - Võ Văn Vân",
+    "lat": 10.791278,
+    "lon": 106.510844,
+    "display_name": "Đường Trần Văn Giàu, Phạm Văn Hai, Hồ Chí Minh, Hồ Chí Minh, 71820",
+    "source": "tomtom"
+  },
+  "681888b66dfb4b0018f8f58c": {
+    "camera_name": "VX Trần Văn Giàu - Tỉnh Lộ 10",
+    "lat": 10.787315,
+    "lon": 106.519367,
+    "display_name": "Đường Trần Vản Giáu, Phạm Văn Hai, Hồ Chí Minh, Hồ Chí Minh, 71820",
+    "source": "tomtom"
+  },
+  "681889a96dfb4b0018f8f67e": {
+    "camera_name": "Trần Văn Giàu - cầu Tân Tạo",
+    "lat": 10.750672,
+    "lon": 106.599288,
+    "display_name": "Đường Trần Văn Giàu, Tân Tạo, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71908, 71915",
+    "source": "tomtom"
+  },
+  "681889ec6dfb4b0018f8f6cb": {
+    "camera_name": "Nguyễn Cửu Phú - Trần Đại Nghĩa",
+    "lat": 10.729601,
+    "lon": 106.581354,
+    "display_name": "Đường Trần Đại Nghĩa & Đường Nguyễn Cửu Phú, Tân Kiên, Hồ Chí Minh, Hồ Chí Minh, 71815",
+    "source": "tomtom"
+  },
+  "68188a226dfb4b0018f8f70a": {
+    "camera_name": "Trần Đại Nghĩa - Võ Trần Chí",
+    "lat": 10.73481,
+    "lon": 106.557836,
+    "display_name": "Đường Trần Đại Nghĩa, Lê Minh Xuân, Hồ Chí Minh, Hồ Chí Minh, 71817",
+    "source": "tomtom"
+  },
+  "68188a816dfb4b0018f8f769": {
+    "camera_name": "Võ Trần Chí - Thế Lữ 1",
+    "lat": 10.792575,
+    "lon": 106.69608,
+    "display_name": "Số 43, Đường Nguyễn Huy Tự, Đa Kao, Quận 1, Hồ Chí Minh, Hồ Chí Minh, 71007",
+    "source": "tomtom"
+  },
+  "68188ab56dfb4b0018f8f7be": {
+    "camera_name": "Võ Trần Chí - Thế Lữ 2",
+    "lat": 10.716153,
+    "lon": 106.54464,
+    "display_name": "Số A2/48, Đường Thế Lữ, Tân Nhựt, Hồ Chí Minh, Hồ Chí Minh, 71816",
+    "source": "tomtom"
+  },
+  "68188af96dfb4b0018f8f8e4": {
+    "camera_name": "Võ Trần Chí - Kênh 10 (1)",
+    "lat": 10.708423,
+    "lon": 106.571553,
+    "display_name": "Số E10/227, Đường Kênh 10, Tân Nhựt, Hồ Chí Minh, Hồ Chí Minh, 71816",
+    "source": "tomtom"
+  },
+  "68188b296dfb4b0018f8f9a3": {
+    "camera_name": "Võ Trần Chí - Kênh 10 (2)",
+    "lat": 10.708423,
+    "lon": 106.571553,
+    "display_name": "Số E10/227, Đường Kênh 10, Tân Nhựt, Hồ Chí Minh, Hồ Chí Minh, 71816",
+    "source": "tomtom"
+  },
+  "68188b786dfb4b0018f8face": {
+    "camera_name": "Láng Le Bàu Cò - Thích Thiện Hòa",
+    "lat": 10.751791,
+    "lon": 106.484334,
+    "display_name": "Đường Thích Thiện Hòa, Lê Minh Xuân, Hồ Chí Minh, Hồ Chí Minh, 71817",
+    "source": "tomtom"
+  },
+  "68188bb96dfb4b0018f8fdbf": {
+    "camera_name": "Vĩnh Lộc - Trần Hải Phụng",
+    "lat": 10.779271,
+    "lon": 106.563902,
+    "display_name": "Đường Trần Hải Phụng, Vĩnh Lộc B, Hồ Chí Minh, Hồ Chí Minh, 71819, 71820, 71915",
+    "source": "tomtom"
+  },
+  "68188bf46dfb4b0018f8ff12": {
+    "camera_name": "Vĩnh Lộc - kênh Trung Ương",
+    "lat": 10.797312,
+    "lon": 106.552915,
+    "display_name": "Đường Kinh Trung Ương, Vĩnh Lộc B, Hồ Chí Minh, Hồ Chí Minh, 71819",
+    "source": "tomtom"
+  },
+  "68188c236dfb4b0018f8ff8f": {
+    "camera_name": "Vĩnh Lộc - Lại Hùng Cường",
+    "lat": 10.796705,
+    "lon": 106.56873,
+    "display_name": "Đường Lại Hùng Cường, Vĩnh Lộc B, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "68188c876dfb4b0018f9007b": {
+    "camera_name": "Võ Văn Văn - đường 1A",
+    "lat": 10.811257,
+    "lon": 106.578592,
+    "display_name": "Số D20/1/7, Hẻm D20/1A Đường Võ Văn Vân, Vĩnh Lộc B, Hồ Chí Minh, Hồ Chí Minh, 71819",
+    "source": "tomtom"
+  },
+  "68188cbf6dfb4b0018f900e9": {
+    "camera_name": "Võ Văn Vân - Liên Ấp 123",
+    "lat": 10.793908,
+    "lon": 106.576484,
+    "display_name": "Đường Liên Ấp & Đường Võ Văn Vân, Vĩnh Lộc B, Hồ Chí Minh, Hồ Chí Minh, 71819",
+    "source": "tomtom"
+  },
+  "68188cfa6dfb4b0018f9013c": {
+    "camera_name": "Thanh Niên - kênh 1",
+    "lat": 10.77653,
+    "lon": 106.700977,
+    "display_name": "Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "68188e8d6dfb4b0018f9038b": {
+    "camera_name": "Thanh Niên - gần trung tâm kiểm định giống cây",
+    "lat": 10.846984,
+    "lon": 106.529017,
+    "display_name": "Số 4A, Đường Thanh Niên, Phạm Văn Hai, Hồ Chí Minh, Hồ Chí Minh, 71820",
+    "source": "tomtom"
+  },
+  "6818901a6dfb4b0018f9058a": {
+    "camera_name": "Tỉnh Lộ 10 - cầu Tân Tạo",
+    "lat": 10.762094,
+    "lon": 106.576754,
+    "display_name": "Hẻm 1870/7 Tỉnh Lộ 10, Tân Tạo, Bình Tân, Hồ Chí Minh, Hồ Chí Minh, 71915",
+    "source": "tomtom"
+  },
+  "6878bab06145d3001ba517f7": {
+    "camera_name": "Mai Chí Thọ - Trần Quý Kiên (1)",
+    "lat": 10.943778,
+    "lon": 106.513876,
+    "display_name": "Đường Lê Minh Nhựt, Tân Thông Hội, Hồ Chí Minh, Hồ Chí Minh, 71608",
+    "source": "tomtom"
+  },
+  "68a5871d4e89b100173b5f37": {
+    "camera_name": "Tỉnh Lộ 8 - Hà Duy Phiên (1)",
+    "lat": 10.973335,
+    "lon": 106.639517,
+    "display_name": "Đường Tỉnh Lộ 8 & Đường Hà Duy Phiên, Bình Mỹ, Hồ Chí Minh, Hồ Chí Minh, 71611",
+    "source": "tomtom"
+  },
+  "68a5873d4e89b100173b5f60": {
+    "camera_name": "Tỉnh Lộ 8 - Hà Duy Phiên (2)",
+    "lat": 10.973335,
+    "lon": 106.639517,
+    "display_name": "Đường Tỉnh Lộ 8 & Đường Hà Duy Phiên, Bình Mỹ, Hồ Chí Minh, Hồ Chí Minh, 71611",
+    "source": "tomtom"
+  },
+  "68a587d54e89b100173b6021": {
+    "camera_name": "Tỉnh Lộ 8 - Tỉnh Lộ 15 (1)",
+    "lat": 10.865014,
+    "lon": 106.687468,
+    "display_name": "Số 98/8/8, Hẻm 98/8 Tỉnh Lộ 15, Thạnh Lộc, Quận 12, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "68a587fc4e89b100173b6054": {
+    "camera_name": "Tỉnh Lộ 8 - Tỉnh Lộ 15 (2)",
+    "lat": 10.865014,
+    "lon": 106.687468,
+    "display_name": "Số 98/8/8, Hẻm 98/8 Tỉnh Lộ 15, Thạnh Lộc, Quận 12, Hồ Chí Minh, Hồ Chí Minh",
+    "source": "tomtom"
+  },
+  "68a588984e89b100173b6138": {
+    "camera_name": "Tỉnh Lộ 8 - Bến Than (1)",
+    "lat": 10.979247,
+    "lon": 106.616608,
+    "display_name": "Đường Tỉnh Lộ 8 & Đường Bến Than, Hòa Phú, Hồ Chí Minh, Hồ Chí Minh, 71612",
+    "source": "tomtom"
+  },
+  "68a588c04e89b100173b616b": {
+    "camera_name": "Tỉnh Lộ 8 - Bến Than (2)",
+    "lat": 10.979247,
+    "lon": 106.616608,
+    "display_name": "Đường Tỉnh Lộ 8 & Đường Bến Than, Hòa Phú, Hồ Chí Minh, Hồ Chí Minh, 71612",
+    "source": "tomtom"
+  },
+  "68a589294e89b100173b61d9": {
+    "camera_name": "Tỉnh Lộ 8 - KCN Tân Quy (1)",
+    "lat": 10.942505,
+    "lon": 106.454363,
+    "display_name": "Số 8, Đường Tỉnh Lộ 8, Tân An Hội, Hồ Chí Minh, Hồ Chí Minh, 71607",
+    "source": "tomtom"
+  },
+  "68a5894a4e89b100173b6202": {
+    "camera_name": "Tỉnh Lộ 8 - KCN Tân Quy (2)",
+    "lat": 10.942505,
+    "lon": 106.454363,
+    "display_name": "Số 8, Đường Tỉnh Lộ 8, Tân An Hội, Hồ Chí Minh, Hồ Chí Minh, 71607",
+    "source": "tomtom"
+  },
+  "68a589a54e89b100173b6267": {
+    "camera_name": "Tỉnh Lộ 8 - Sông Lu (1)",
+    "lat": 10.980206,
+    "lon": 106.611367,
+    "display_name": "Đường Tỉnh Lộ 8 & Đường Sông Lu, Hòa Phú, Hồ Chí Minh, Hồ Chí Minh, 71612",
+    "source": "tomtom"
+  },
+  "68a589c84e89b100173b629d": {
+    "camera_name": "Tỉnh Lộ 8 - Sông Lu (2)",
+    "lat": 10.980206,
+    "lon": 106.611367,
+    "display_name": "Đường Tỉnh Lộ 8 & Đường Sông Lu, Hòa Phú, Hồ Chí Minh, Hồ Chí Minh, 71612",
+    "source": "tomtom"
+  },
+  "68ae7e997d735d00173c7445": {
+    "camera_name": "Cầu Bình Triệu (2) hướng đi lên cầu Bình Triệu 2",
+    "lat": 10.825929,
+    "lon": 106.714339,
+    "display_name": "Số 64, Đường Phạm Văn Đồng, Hiệp Bình Chánh, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 721124",
+    "source": "tomtom"
+  },
+  "68ae7ee47d735d00173c7492": {
+    "camera_name": "Cầu Bình Triệu (2) hướng vòng xoay",
+    "lat": 10.825929,
+    "lon": 106.714339,
+    "display_name": "Số 64, Đường Phạm Văn Đồng, Hiệp Bình Chánh, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 721124",
+    "source": "tomtom"
+  },
+  "68ae7f327d735d00173c74e4": {
+    "camera_name": "Cầu Bình Triệu (2) hướng đi xòng xoay",
+    "lat": 10.825929,
+    "lon": 106.714339,
+    "display_name": "Số 64, Đường Phạm Văn Đồng, Hiệp Bình Chánh, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 721124",
+    "source": "tomtom"
+  },
+  "68edd621230ee50017d031c5": {
+    "camera_name": "Mỹ Phước Tân Vạn - Phạm Ngọc Thạch (1)",
+    "lat": 10.827783,
+    "lon": 106.641,
+    "display_name": "Số 394, Đường Phạm Văn Bạch, Phường 15, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72109",
+    "source": "tomtom"
+  },
+  "68eddd0a230ee50017d040b2": {
+    "camera_name": "Mỹ Phước Tân Vạn - Phạm Ngọc Thạch (2)",
+    "lat": 10.827783,
+    "lon": 106.641,
+    "display_name": "Số 394, Đường Phạm Văn Bạch, Phường 15, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72109",
+    "source": "tomtom"
+  },
+  "68ede0cf230ee50017d04657": {
+    "camera_name": "Mỹ Phước Tân Vạn - Điện Biên Phủ (1)",
+    "lat": 10.731873,
+    "lon": 106.708432,
+    "display_name": "Đường Bùi Bằng Đoàn, Tân Phong, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72915",
+    "source": "tomtom"
+  },
+  "68ede112230ee50017d046a6": {
+    "camera_name": "Mỹ Phước Tân Vạn - Điện Biên Phủ (2)",
+    "lat": 10.731873,
+    "lon": 106.708432,
+    "display_name": "Đường Bùi Bằng Đoàn, Tân Phong, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72915",
+    "source": "tomtom"
+  },
+  "68ede227230ee50017d0480b": {
+    "camera_name": "Mỹ Phước Tân Vạn - Thủ Khoa Huân (1)",
+    "lat": 10.731451,
+    "lon": 106.709919,
+    "display_name": "Số R4, Đường Số 9, Tân Phong, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72915",
+    "source": "tomtom"
+  },
+  "68ede25b230ee50017d0484d": {
+    "camera_name": "Mỹ Phước Tân Vạn - Thủ Khoa Huân (2)",
+    "lat": 10.731451,
+    "lon": 106.709919,
+    "display_name": "Số R4, Đường Số 9, Tân Phong, Quận 7, Hồ Chí Minh, Hồ Chí Minh, 72915",
+    "source": "tomtom"
+  },
+  "68ede438230ee50017d04a79": {
+    "camera_name": "Mỹ Phước Tân Vạn - ĐT 743A (1)",
+    "lat": 10.755142,
+    "lon": 106.637623,
+    "display_name": "Số 2, Đường Tân Hóa, Phường 1, Quận 11, Hồ Chí Minh, Hồ Chí Minh, 744583",
+    "source": "tomtom"
+  },
+  "68ede490230ee50017d04ae5": {
+    "camera_name": "Mỹ Phước Tân Vạn - ĐT 743A (2)",
+    "lat": 10.755142,
+    "lon": 106.637623,
+    "display_name": "Số 2, Đường Tân Hóa, Phường 1, Quận 11, Hồ Chí Minh, Hồ Chí Minh, 744583",
+    "source": "tomtom"
+  },
+  "68ede5d4230ee50017d04c24": {
+    "camera_name": "Đại lộ Bình Dương - ngã 5 Phước Kiến (1)",
+    "lat": 10.867677,
+    "lon": 106.719663,
+    "display_name": "Số 865/5, Đường Đại Lộ Bình Dương, Hiệp Bình Phước, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71314",
+    "source": "tomtom"
+  },
+  "68ede60a230ee50017d04c69": {
+    "camera_name": "Đại lộ Bình Dương - ngã 5 Phước Kiến (2)",
+    "lat": 10.867677,
+    "lon": 106.719663,
+    "display_name": "Số 865/5, Đường Đại Lộ Bình Dương, Hiệp Bình Phước, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71314",
+    "source": "tomtom"
+  },
+  "68ede6d0230ee50017d04d4c": {
+    "camera_name": "Đại lộ Bình Dương - ngã tư chợ Đình (1)",
+    "lat": 10.856718,
+    "lon": 106.640024,
+    "display_name": "Số 1791A, Đường Quốc Lộ 1A, Tân Thới Hiệp, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71511",
+    "source": "tomtom"
+  },
+  "68ede746230ee50017d04dcc": {
+    "camera_name": "Đại lộ Bình Dương - ngã tư chợ Đình (2)",
+    "lat": 10.856718,
+    "lon": 106.640024,
+    "display_name": "Số 1791A, Đường Quốc Lộ 1A, Tân Thới Hiệp, Quận 12, Hồ Chí Minh, Hồ Chí Minh, 71511",
+    "source": "tomtom"
+  },
+  "68fae2966b936b00172186a6": {
+    "camera_name": "Võ Chí Công - đường số 5 (1)",
+    "lat": 10.773279,
+    "lon": 106.687394,
+    "display_name": "Số 211, Đường Võ Văn Tần, Phường 5, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72406",
+    "source": "tomtom"
+  },
+  "68fae2b66b936b00172186e5": {
+    "camera_name": "Võ Chí Công - đường số 5 (2)",
+    "lat": 10.773279,
+    "lon": 106.687394,
+    "display_name": "Số 211, Đường Võ Văn Tần, Phường 5, Quận 3, Hồ Chí Minh, Hồ Chí Minh, 72406",
+    "source": "tomtom"
+  },
+  "68fae32b6b936b001721878b": {
+    "camera_name": "Võ Chí Công - Cầu Ngọn Ngay (1)",
+    "lat": 10.820779,
+    "lon": 106.791947,
+    "display_name": "Đường Võ Chí Công, Tăng Nhơn Phú B, Thủ Đức, Hồ Chí Minh, Hồ Chí Minh, 71211",
+    "source": "tomtom"
+  },
+  "69047bfa10c1b90017c62ccc": {
+    "camera_name": "Mỹ Phước - Tân Vận - Huỳnh Văn Lũy (1)",
+    "lat": 10.801088,
+    "lon": 106.658739,
+    "display_name": "Số 88, Đường Cộng Hòa, Phường 4, Tân Bình, Hồ Chí Minh, Hồ Chí Minh, 72106",
+    "source": "tomtom"
+  }
+}
