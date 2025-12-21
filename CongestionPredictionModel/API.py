@@ -16,13 +16,12 @@ from werkzeug.utils import secure_filename
 import uuid
 import numpy as np
 from typing import Any
-from detector_batch import run_detection_for_cameras  
+from congestion.detector_batch import run_detection_for_cameras  
 from werkzeug.utils import secure_filename
 from threading import Thread
-from segment_aggregation import ( SegmentAggregator, CameraToSegmentMapper )
-from classified_congestion import (
-    PercentileThresholdCalculator,
-    CongestionClassifier,
+from congestion.segment_aggregation import ( SegmentAggregator, CameraToSegmentMapper )
+from congestion.classified_congestion import (
+    CongestionClassifier, PercentileThresholdCalculator, GoongRoadGeometryFetcher
 )
 from trip_data.PlanTrip_API import generate_trip_plan
 import base64
@@ -30,11 +29,13 @@ import sqlite3
 from dotenv import load_dotenv
 import os
 
+
 load_dotenv() # reads .env file
-
 MODAL_API_URL = os.getenv("MODAL_API_URL")
+GOONG_API_KEY = os.getenv("GOONG_API_KEY", "")
 USE_MODAL_DETECTION = True  # Set to False to use local detection
-
+GEOM_GEOJSON = Path("segment_geometries.geojson")
+GEOJSON_WITH_CONG = Path("segment_geometries_with_congestion.geojson")
 EARTH_RADIUS_M = 6371000.0
 CAMERA_LOCATIONS_FILE = "camera_locations.json"
 # Import bus routing modules
@@ -110,6 +111,24 @@ def to_python(obj: Any) -> Any:
         return to_python(obj.__dict__)
     else:
         return obj
+    
+
+def safe_segment_name(raw_name, seg_id, route_name=None):
+    # Handle pandas NaN (float), None, empty string
+    if raw_name is None:
+        raw_name = ""
+    if isinstance(raw_name, float) and math.isnan(raw_name):
+        raw_name = ""
+    if isinstance(raw_name, str):
+        raw_name = raw_name.strip()
+
+    if raw_name:
+        return raw_name
+    if isinstance(route_name, str) and route_name.strip() and route_name.strip().lower() != "unknown":
+        return route_name.strip()
+    return f"Segment {seg_id}"
+
+
 
 # ============================
 # 🔑 CONFIGURATION
@@ -244,7 +263,30 @@ def find_cameras_on_route(coords, max_distance_m=150.0):
 
     return selected
 
-def run_congestion_update_background():
+def ensure_geometries(force: bool = False, rate_limit_delay: float = 0.5) -> None:
+    """
+    Ensure segment_geometries.geojson exists (or rebuild it if forced).
+    """
+    if (not force) and GEOM_GEOJSON.exists():
+        print(f"[BG] Base geometries exist: {GEOM_GEOJSON}")
+        return
+
+    if not GOONG_API_KEY:
+        raise RuntimeError("GOONG_API_KEY is not set. Cannot fetch geometries.")
+
+    print(f"[BG] Building base geometries -> {GEOM_GEOJSON} (force={force})")
+
+    fetcher = GoongRoadGeometryFetcher(
+        segments_csv=str("segments.csv"),
+        output_geojson=str(GEOM_GEOJSON),
+        goong_api_key=GOONG_API_KEY
+    )
+    fetcher.fetch_all_geometries(rate_limit_delay=rate_limit_delay)
+
+    print(f"[BG] Done building base geometries: {GEOM_GEOJSON}")
+
+
+def run_congestion_update_background(force_rebuild_geometries: bool = True):
     def job():
         try:
             print("\n[BG] Starting congestion update...")
@@ -273,12 +315,14 @@ def run_congestion_update_background():
             agg_df = aggregator.aggregate_to_time_windows(window_minutes=15)
             aggregator.save_aggregated_data(agg_df, "segment_aggregated.csv")
 
-            # # 2) thresholds
-            # thresh_calc = PercentileThresholdCalculator(
-            #     aggregated_csv="segment_aggregated.csv",
-            #     output_file="segment_thresholds.json",
-            # )
-            # thresh_calc.calculate_thresholds(min_samples=20)
+            # 2) thresholds
+            thresh_calc = PercentileThresholdCalculator(
+                aggregated_csv="segment_aggregated.csv",
+                output_file="segment_thresholds.json",
+            )
+            thresh_calc.calculate_thresholds(min_samples=6)
+
+            ensure_geometries(force=force_rebuild_geometries, rate_limit_delay=0.5)
 
             # 3) classify + update geojson
             classifier = CongestionClassifier(
@@ -1288,7 +1332,7 @@ def detect_route_cameras():
             total_detections = 0
         
         # Update congestion data
-        run_congestion_update_background()
+        run_congestion_update_background(force_rebuild_geometries=True)
         
         return jsonify({
             "status": "ok",
@@ -1343,7 +1387,7 @@ def route_api():
 
 @app.route("/api/congestion/geojson", methods=["GET"])
 def get_congestion_geojson():
-    geojson_path = Path("segment_geometries_with_congestion.geojson")
+    geojson_path = GEOJSON_WITH_CONG
     if not geojson_path.exists():
         return jsonify({
             "error": "GeoJSON not found. Run classified_congestion.py to generate it."
@@ -1352,6 +1396,19 @@ def get_congestion_geojson():
     with geojson_path.open("r", encoding="utf-8") as f:
         data = json.load(f)
 
+    features = data.get("features", [])
+    for i, feat in enumerate(features):
+        props = feat.get("properties") or {}
+
+        # Try common keys you might have in properties
+        raw_name = props.get("segment_name", props.get("name"))
+        seg_id = props.get("segment_id", props.get("segmentId", i))
+        route_name = props.get("route_name", props.get("routeName"))
+
+        props["segment_name"] = safe_segment_name(raw_name, seg_id, route_name)
+        feat["properties"] = props
+
+    data["features"] = features
     return jsonify(data)
 
 # ============================
@@ -1578,7 +1635,6 @@ if __name__ == "__main__":
     print("=" * 60)
     print(f"\n📂 Camera frames directory: {os.path.abspath(CAMERA_FRAMES_DIR)}")
     print(f"📂 SOS images directory:    {os.path.abspath(SOS_UPLOAD_DIR)}")
-    print(f"🗺️  TomTom API Key:         {TOMTOM_API_KEY[:20]}...")
     print(f"🚌 Bus routing:             {'✅ Available' if BUS_ROUTING_AVAILABLE else '❌ Not available'}")
     if BUS_ROUTING_AVAILABLE:
         import os

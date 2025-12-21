@@ -1,0 +1,4572 @@
+{
+    "restaurants": [
+        {
+            "name": "Ikigai Sushi - Cao Thắng",
+            "norm": "ikigai sushi cao thang",
+            "image_local_path": "images/restaurant/Ikigai Sushi - Cao Thắng/cover.jpg",
+            "lat": "10.768922727107832",
+            "lng": "106.68401765725541"
+        },
+        {
+            "name": "Gyu Shige Ngưu Phồn - Nguyễn Thị Minh Khai",
+            "norm": "gyu shige nguu phon nguyen thi minh khai",
+            "image_local_path": "images/restaurant/Gyu Shige Ngưu Phồn - Nguyễn Thị Minh Khai/cover.jpg",
+            "lat": "10.770372044810097",
+            "lng": "106.68627358239243"
+        },
+        {
+            "name": "King BBQ Buffet - Lê Văn Sỹ",
+            "norm": "king bbq buffet le van sy",
+            "image_local_path": "images/restaurant/King BBQ Buffet - Lê Văn Sỹ/cover.jpg",
+            "lat": "10.796370195431422",
+            "lng": "106.66548919588583"
+        },
+        {
+            "name": "Madame Lam - Trần Ngọc Diện",
+            "norm": "madame lam tran ngoc dien",
+            "image_local_path": "images/restaurant/Madame Lam - Trần Ngọc Diện/cover.jpg",
+            "lat": "10.803210669687186",
+            "lng": "106.73896058054343"
+        },
+        {
+            "name": "Isshin Izakaya - Cobi",
+            "norm": "isshin izakaya cobi",
+            "image_local_path": "images/restaurant/Isshin Izakaya - Cobi/cover.jpg",
+            "lat": "10.731055683971597",
+            "lng": "106.72470526704967"
+        },
+        {
+            "name": "Reski Hotpot - Nguyễn Thị Thập",
+            "norm": "reski hotpot nguyen thi thap",
+            "image_local_path": "images/restaurant/Reski Hotpot - Nguyễn Thị Thập/cover.jpg",
+            "lat": "10.739610830482716",
+            "lng": "106.70819874191268"
+        },
+        {
+            "name": "Quán Gần Nhà - Thạnh Lộc",
+            "norm": "quan gan nha thanh loc",
+            "image_local_path": "images/restaurant/Quán Gần Nhà - Thạnh Lộc/cover.jpg",
+            "lat": "10.871370087679821",
+            "lng": "106.68041579588646"
+        },
+        {
+            "name": "Galbi House – Mega Market Hiệp Phú",
+            "norm": "galbi house – mega market hiep phu",
+            "image_local_path": "images/restaurant/Galbi House – Mega Market Hiệp Phú/cover.jpg",
+            "lat": "10.863825803230647",
+            "lng": "106.6476659247221"
+        },
+        {
+            "name": "Nhà hàng Pendolasco - Thảo Điền",
+            "norm": "nha hang pendolasco thao đien",
+            "image_local_path": "images/restaurant/Nhà hàng Pendolasco - Thảo Điền/cover.jpg",
+            "lat": "10.806412630974773",
+            "lng": "106.73428489403669"
+        },
+        {
+            "name": "Ẩm Thực Chay Tuệ - Trần Hưng Đạo",
+            "norm": "am thuc chay tue tran hung đao",
+            "image_local_path": "images/restaurant/Ẩm Thực Chay Tuệ - Trần Hưng Đạo/cover.jpg",
+            "lat": "10.764000430728304",
+            "lng": "106.6913231805432"
+        },
+        {
+            "name": "Miya Sushi & BBQ - Nguyễn Trãi",
+            "norm": "miya sushi & bbq nguyen trai",
+            "image_local_path": "images/restaurant/Miya Sushi & BBQ - Nguyễn Trãi/cover.jpg",
+            "lat": "10.770185247991956",
+            "lng": "106.6900714805432"
+        },
+        {
+            "name": "Tân Hải Vân - Nguyễn Trãi",
+            "norm": "tan hai van nguyen trai",
+            "image_local_path": "images/restaurant/Tân Hải Vân - Nguyễn Trãi/cover.jpg",
+            "lat": "10.769602727254584",
+            "lng": "106.6905025130773"
+        },
+        {
+            "name": "Kingscross - Tôn Dật Tiên",
+            "norm": "kingscross ton dat tien",
+            "image_local_path": "images/restaurant/Kingscross - Tôn Dật Tiên/cover.jpg",
+            "lat": "10.727914787850585",
+            "lng": "106.71943812287154"
+        },
+        {
+            "name": "Phố Bia - Lê Văn Lương",
+            "norm": "pho bia le van luong",
+            "image_local_path": "images/restaurant/Phố Bia - Lê Văn Lương/cover.jpg",
+            "lat": "10.732948309611384",
+            "lng": "106.70151951196884"
+        },
+        {
+            "name": "Nhà hàng Bắc Kim Thang - Crescent Mall",
+            "norm": "nha hang bac kim thang crescent mall",
+            "image_local_path": "images/restaurant/Nhà hàng Bắc Kim Thang - Crescent Mall/cover.jpg",
+            "lat": "10.729304956200908",
+            "lng": "106.71893746889874"
+        },
+        {
+            "name": "Chay Bồ Đề Tịnh Tâm - Trần Não",
+            "norm": "chay bo đe tinh tam tran nao",
+            "image_local_path": "images/restaurant/Chay Bồ Đề Tịnh Tâm - Trần Não/cover.jpg",
+            "lat": "10.792216583517881",
+            "lng": "106.73027408054332"
+        },
+        {
+            "name": "Lion City - Lê Anh Xuân",
+            "norm": "lion city le anh xuan",
+            "image_local_path": "images/restaurant/Lion City - Lê Anh Xuân/cover.jpg",
+            "lat": "10.772479584720026",
+            "lng": "106.69517722472126"
+        },
+        {
+            "name": "Ông Otis Lounge - Trần Quang Khải",
+            "norm": "ong otis lounge tran quang khai",
+            "image_local_path": "images/restaurant/Ông Otis Lounge - Trần Quang Khải/cover.jpg",
+            "lat": "10.792719404895683",
+            "lng": "106.69545508054335"
+        },
+        {
+            "name": "Gu - Nhậu Đúng Chất - Trường Sa",
+            "norm": "gu nhau đung chat truong sa",
+            "image_local_path": "images/restaurant/Gu - Nhậu Đúng Chất - Trường Sa/cover.jpg",
+            "lat": "10.78865999307364",
+            "lng": "106.681357486022"
+        },
+        {
+            "name": "Hoa Viên Đệ Nhất - Hoàng Việt",
+            "norm": "hoa vien đe nhat hoang viet",
+            "image_local_path": "images/restaurant/Hoa Viên Đệ Nhất - Hoàng Việt/cover.jpg",
+            "lat": "10.796286995469417",
+            "lng": "106.65997682472143"
+        },
+        {
+            "name": "Ẩm Thực Việt Phố - Đường 24",
+            "norm": "am thuc viet pho đuong 24",
+            "image_local_path": "images/restaurant/Ẩm Thực Việt Phố - Đường 24/cover.jpg",
+            "lat": "10.742598938316847",
+            "lng": "106.62980812657014"
+        },
+        {
+            "name": "Aqua Sky Bar - La Siesta Premium Saigon Central - Lê Anh Xuân",
+            "norm": "aqua sky bar la siesta premium saigon central le anh xuan",
+            "image_local_path": "images/restaurant/Aqua Sky Bar - La Siesta Premium Saigon Central - Lê Anh Xuân/cover.jpg",
+            "lat": "10.772042189730264",
+            "lng": "106.69492059891964"
+        },
+        {
+            "name": "Tám Riêu - Lý Chính Thắng",
+            "norm": "tam rieu ly chinh thang",
+            "image_local_path": "images/restaurant/Tám Riêu - Lý Chính Thắng/cover.jpg",
+            "lat": "10.787522031146715",
+            "lng": "106.6846653805434"
+        },
+        {
+            "name": "Khao Lao - Vạn Hạnh Mall",
+            "norm": "khao lao van hanh mall",
+            "image_local_path": "images/restaurant/Khao Lao - Vạn Hạnh Mall/cover.jpg",
+            "lat": "10.770788285905356",
+            "lng": "106.66966853821434"
+        },
+        {
+            "name": "Cơm Niêu Làng Tre - Đường 21",
+            "norm": "com nieu lang tre đuong 21",
+            "image_local_path": "images/restaurant/Cơm Niêu Làng Tre - Đường 21/cover.jpg",
+            "lat": "10.84307249946872",
+            "lng": "106.6519879958863"
+        },
+        {
+            "name": "Ngõ 8 - Võ Văn Tần",
+            "norm": "ngo 8 vo van tan",
+            "image_local_path": "images/restaurant/Ngõ 8 - Võ Văn Tần/cover.jpg",
+            "lat": "10.777700341472256",
+            "lng": "106.69137495170764"
+        },
+        {
+            "name": "King BBQ Buffet – Phan Văn Trị",
+            "norm": "king bbq buffet – phan van tri",
+            "image_local_path": "images/restaurant/King BBQ Buffet – Phan Văn Trị/cover.jpg",
+            "lat": "10.827229284098184",
+            "lng": "106.68891469588611"
+        },
+        {
+            "name": "Mrsimple Steakhouse - Trương Quyền",
+            "norm": "mrsimple steakhouse truong quyen",
+            "image_local_path": "images/restaurant/Mrsimple Steakhouse - Trương Quyền/cover.jpg",
+            "lat": "10.78732123505964",
+            "lng": "106.69214435170775"
+        },
+        {
+            "name": "Meiwei - Aeon Mall Tân Phú",
+            "norm": "meiwei aeon mall tan phu",
+            "image_local_path": "images/restaurant/Meiwei - Aeon Mall Tân Phú/cover.jpg",
+            "lat": "10.801867409134461",
+            "lng": "106.61754715355715"
+        },
+        {
+            "name": "Cơm Niêu Thiên Lý - Âu Cơ",
+            "norm": "com nieu thien ly au co",
+            "image_local_path": "images/restaurant/Cơm Niêu Thiên Lý - Âu Cơ/cover.jpg",
+            "lat": "10.790344224505498",
+            "lng": "106.64035795170776"
+        },
+        {
+            "name": "Pachi Pachi - Mạc Đĩnh Chi",
+            "norm": "pachi pachi mac đinh chi",
+            "image_local_path": "images/restaurant/Pachi Pachi - Mạc Đĩnh Chi/cover.jpg",
+            "lat": "10.787516538716693",
+            "lng": "106.69697964006384"
+        },
+        {
+            "name": "Zoody Quán - Đường số 10",
+            "norm": "zoody quan đuong so 10",
+            "image_local_path": "images/restaurant/Zoody Quán - Đường số 10/cover.jpg",
+            "lat": "10.82958420528517",
+            "lng": "106.73167982113893"
+        },
+        {
+            "name": "Lobster Bay - Nhà Hàng Hải Sản Kiểu Mỹ - Kỳ Đồng",
+            "norm": "lobster bay nha hang hai san kieu my ky đong",
+            "image_local_path": "images/restaurant/Lobster Bay - Nhà Hàng Hải Sản Kiểu Mỹ - Kỳ Đồng/cover.jpg",
+            "lat": "10.784687854844908",
+            "lng": "106.68285264006376"
+        },
+        {
+            "name": "Quán Đồng Quê 3 - Nguyễn Văn Khối",
+            "norm": "quan đong que 3 nguyen van khoi",
+            "image_local_path": "images/restaurant/Quán Đồng Quê 3 - Nguyễn Văn Khối/cover.jpg",
+            "lat": "10.84255676410585",
+            "lng": "106.6552436864068"
+        },
+        {
+            "name": "Ichihana Sushi – Cao Thắng",
+            "norm": "ichihana sushi – cao thang",
+            "image_local_path": "images/restaurant/Ichihana Sushi – Cao Thắng/cover.jpg",
+            "lat": "10.771526564996437",
+            "lng": "106.68032799403636"
+        },
+        {
+            "name": "Viet Village - Đinh Tiên Hoàng",
+            "norm": "viet village đinh tien hoang",
+            "image_local_path": "images/restaurant/Viet Village - Đinh Tiên Hoàng/cover.jpg",
+            "lat": "10.788825873253996",
+            "lng": "106.69912848054337"
+        },
+        {
+            "name": "Phương Mai Chay Quán - Võ Thị Sáu",
+            "norm": "phuong mai chay quan vo thi sau",
+            "image_local_path": "images/restaurant/Phương Mai Chay Quán - Võ Thị Sáu/cover.jpg",
+            "lat": "10.78926593376275",
+            "lng": "106.69221212657062"
+        },
+        {
+            "name": "DaBee Rooftop - Nguyễn Duy Dương",
+            "norm": "dabee rooftop nguyen duy duong",
+            "image_local_path": "images/restaurant/DaBee Rooftop - Nguyễn Duy Dương/cover.jpg",
+            "lat": "10.756221236446592",
+            "lng": "106.67211276704987"
+        },
+        {
+            "name": "Blue - Nướng & Lẩu Hàn Quốc - Hoàng Văn Thụ",
+            "norm": "blue nuong & lau han quoc hoang van thu",
+            "image_local_path": "images/restaurant/Blue - Nướng & Lẩu Hàn Quốc - Hoàng Văn Thụ/cover.jpg",
+            "lat": "10.800508732325872",
+            "lng": "106.67050624191327"
+        },
+        {
+            "name": "The LOG - GEM Center",
+            "norm": "the log gem center",
+            "image_local_path": "images/restaurant/The LOG - GEM Center/cover.jpg",
+            "lat": "10.79017938975695",
+            "lng": "106.70234399588573"
+        },
+        {
+            "name": "King BBQ Buffet – Aeon Mall Tân Phú",
+            "norm": "king bbq buffet – aeon mall tan phu",
+            "image_local_path": "images/restaurant/King BBQ Buffet – Aeon Mall Tân Phú/cover.jpg",
+            "lat": "10.801867057801358",
+            "lng": "106.61787306889954"
+        },
+        {
+            "name": "Hoàng Yến Cuisine - Tôn Dật Tiên",
+            "norm": "hoang yen cuisine ton dat tien",
+            "image_local_path": "images/restaurant/Hoàng Yến Cuisine - Tôn Dật Tiên/cover.jpg",
+            "lat": "10.727718092030116",
+            "lng": "106.71964851122767"
+        },
+        {
+            "name": "Happy Garden - Nguyễn Văn Luông",
+            "norm": "happy garden nguyen van luong",
+            "image_local_path": "images/restaurant/Happy Garden - Nguyễn Văn Luông/cover.jpg",
+            "lat": "10.743058446113098",
+            "lng": "106.63472070937854"
+        },
+        {
+            "name": "Hầm Rượu Lộc Vàng - Bông Sao",
+            "norm": "ham ruou loc vang bong sao",
+            "image_local_path": "images/restaurant/Hầm Rượu Lộc Vàng - Bông Sao/cover.jpg",
+            "lat": "10.736019651277477",
+            "lng": "106.66329228054279"
+        },
+        {
+            "name": "Toshiro BBQ - Đường số 39",
+            "norm": "toshiro bbq đuong so 39",
+            "image_local_path": "images/restaurant/Toshiro BBQ - Đường số 39/cover.jpg",
+            "lat": "10.744049667680892",
+            "lng": "106.71461993821414"
+        },
+        {
+            "name": "Ẩm Thực Quê Nhà – Phạm Ngọc Thạch",
+            "norm": "am thuc que nha – pham ngoc thach",
+            "image_local_path": "images/restaurant/Ẩm Thực Quê Nhà – Phạm Ngọc Thạch/cover.jpg",
+            "lat": "10.784820851441985",
+            "lng": "106.69401453821455"
+        },
+        {
+            "name": "Soul Bến Thành - Thủ Khoa Huân",
+            "norm": "soul ben thanh thu khoa huan",
+            "image_local_path": "images/restaurant/Soul Bến Thành - Thủ Khoa Huân/cover.jpg",
+            "lat": "10.773542441589436",
+            "lng": "106.6975368977349"
+        },
+        {
+            "name": "Lẩu Gà Ớt Hiểm 109 - Phạm Ngũ Lão",
+            "norm": "lau ga ot hiem 109 pham ngu lao",
+            "image_local_path": "images/restaurant/Lẩu Gà Ớt Hiểm 109 - Phạm Ngũ Lão/cover.jpg",
+            "lat": "10.821643578464498",
+            "lng": "106.68269375170802"
+        },
+        {
+            "name": "Nhà Hàng Chuyện Ba Bữa - Saigonese Cuisine House - Nguyễn Đình Chiểu",
+            "norm": "nha hang chuyen ba bua saigonese cuisine house nguyen đinh chieu",
+            "image_local_path": "images/restaurant/Nhà Hàng Chuyện Ba Bữa - Saigonese Cuisine House - Nguyễn Đình Chiểu/cover.jpg",
+            "lat": "10.788410216698635",
+            "lng": "106.69901608054337"
+        },
+        {
+            "name": "The Wann - Bùi Thị Xuân",
+            "norm": "the wann bui thi xuan",
+            "image_local_path": "images/restaurant/The Wann - Bùi Thị Xuân/cover.jpg",
+            "lat": "10.771271043896965",
+            "lng": "106.68966607869396"
+        },
+        {
+            "name": "El Barón Whiskey & Cigar Lounge - Hưng Phước 4",
+            "norm": "el baron whiskey & cigar lounge hung phuoc 4",
+            "image_local_path": "images/restaurant/El Barón Whiskey & Cigar Lounge - Hưng Phước 4/cover.jpg",
+            "lat": "10.729955690770238",
+            "lng": "106.70731383068487"
+        },
+        {
+            "name": "Downtown Steakhouse - Hoa Mai",
+            "norm": "downtown steakhouse hoa mai",
+            "image_local_path": "images/restaurant/Downtown Steakhouse - Hoa Mai/cover.jpg",
+            "lat": "10.797252606239015",
+            "lng": "106.68775905355719"
+        },
+        {
+            "name": "Ngọc Sương Sài Gòn - Sương Nguyệt Ánh",
+            "norm": "ngoc suong sai gon suong nguyet anh",
+            "image_local_path": "images/restaurant/Ngọc Sương Sài Gòn - Sương Nguyệt Ánh/cover.jpg",
+            "lat": "10.772034524818219",
+            "lng": "106.68854623821434"
+        },
+        {
+            "name": "Moon Go - Ẩm Thực Hàn Quốc - Phan Đăng Lưu",
+            "norm": "moon go am thuc han quoc phan đang luu",
+            "image_local_path": "images/restaurant/Moon Go - Ẩm Thực Hàn Quốc - Phan Đăng Lưu/cover.jpg",
+            "lat": "10.799709049163306",
+            "lng": "106.68086763821466"
+        },
+        {
+            "name": "Cơm Niêu Thiên Lý - Phan Đăng Lưu",
+            "norm": "com nieu thien ly phan đang luu",
+            "image_local_path": "images/restaurant/Cơm Niêu Thiên Lý - Phan Đăng Lưu/cover.jpg",
+            "lat": "10.80441365556449",
+            "lng": "106.68675706705025"
+        },
+        {
+            "name": "Soi Thai - Vinhomes Grand Park",
+            "norm": "soi thai vinhomes grand park",
+            "image_local_path": "images/restaurant/Soi Thai - Vinhomes Grand Park/cover.jpg",
+            "lat": "10.845434196205312",
+            "lng": "106.8365605958863"
+        },
+        {
+            "name": "Cơm Niêu Thiên Lý - Nguyễn Cơ Thạch",
+            "norm": "com nieu thien ly nguyen co thach",
+            "image_local_path": "images/restaurant/Cơm Niêu Thiên Lý - Nguyễn Cơ Thạch/cover.jpg",
+            "lat": "10.770465107254065",
+            "lng": "106.72469369588556"
+        },
+        {
+            "name": "Fashionista Café - Fashion & Cuisine - Phùng Khắc Khoan",
+            "norm": "fashionista cafe fashion & cuisine phung khac khoan",
+            "image_local_path": "images/restaurant/Fashionista Café - Fashion & Cuisine - Phùng Khắc Khoan/cover.jpg",
+            "lat": "10.785659821710997",
+            "lng": "106.69718532657069"
+        },
+        {
+            "name": "Hoàng Ty - Mạc Đĩnh Chi",
+            "norm": "hoang ty mac đinh chi",
+            "image_local_path": "images/restaurant/Hoàng Ty - Mạc Đĩnh Chi/cover.jpg",
+            "lat": "10.787160078146236",
+            "lng": "106.69734884006382"
+        },
+        {
+            "name": "Nhà hàng Đại Dương - Minh Phụng",
+            "norm": "nha hang đai duong minh phung",
+            "image_local_path": "images/restaurant/Nhà hàng Đại Dương - Minh Phụng/cover.jpg",
+            "lat": "10.756162597858603",
+            "lng": "106.6437778572552"
+        },
+        {
+            "name": "Cơm Niêu Thiên Lý - Hà Đô",
+            "norm": "com nieu thien ly ha đo",
+            "image_local_path": "images/restaurant/Cơm Niêu Thiên Lý - Hà Đô/cover.jpg",
+            "lat": "10.77729325857528",
+            "lng": "106.67919909029752"
+        },
+        {
+            "name": "DẠ Dining - Nguyễn Thị Minh Khai",
+            "norm": "da dining nguyen thi minh khai",
+            "image_local_path": "images/restaurant/DẠ Dining - Nguyễn Thị Minh Khai/cover.jpg",
+            "lat": "10.782925916799346",
+            "lng": "106.69741373821451"
+        },
+        {
+            "name": "Chill Thai - Hồng Hà",
+            "norm": "chill thai hong ha",
+            "image_local_path": "images/restaurant/Chill Thai - Hồng Hà/cover.jpg",
+            "lat": "10.813999347140063",
+            "lng": "106.66975930752999"
+        },
+        {
+            "name": "Nhà hàng Phi Phố Biển - Lê Hồng Phong",
+            "norm": "nha hang phi pho bien le hong phong",
+            "image_local_path": "images/restaurant/Nhà hàng Phi Phố Biển - Lê Hồng Phong/cover.jpg",
+            "lat": "10.775222244757146",
+            "lng": "106.67189305540604"
+        },
+        {
+            "name": "Nam Phương Lầu - Nguyễn Thị Diệu",
+            "norm": "nam phuong lau nguyen thi dieu",
+            "image_local_path": "images/restaurant/Nam Phương Lầu - Nguyễn Thị Diệu/cover.jpg",
+            "lat": "10.776664187468043",
+            "lng": "106.68948481122816"
+        },
+        {
+            "name": "Mala Panda - Sư Vạn Hạnh - Quận 10",
+            "norm": "mala panda su van hanh quan 10",
+            "image_local_path": "images/restaurant/Mala Panda - Sư Vạn Hạnh - Quận 10/cover.jpg",
+            "lat": "10.772839204952916",
+            "lng": "106.66931580937879"
+        },
+        {
+            "name": "Thai Market - Aeon Mall Bình Tân",
+            "norm": "thai market aeon mall binh tan",
+            "image_local_path": "images/restaurant/Thai Market - Aeon Mall Bình Tân/cover.jpg",
+            "lat": "10.742996064557024",
+            "lng": "106.61184526520054"
+        },
+        {
+            "name": "Bánh Tráng An Vũ - Thoại Ngọc Hầu",
+            "norm": "banh trang an vu thoai ngoc hau",
+            "image_local_path": "images/restaurant/Bánh Tráng An Vũ - Thoại Ngọc Hầu/cover.jpg",
+            "lat": "10.784479997604286",
+            "lng": "106.639605997735"
+        },
+        {
+            "name": "Phố 79 - Phạm Ngọc Thạch",
+            "norm": "pho 79 pham ngoc thach",
+            "image_local_path": "images/restaurant/Phố 79 - Phạm Ngọc Thạch/cover.jpg",
+            "lat": "10.781978659747088",
+            "lng": "106.69655526889937"
+        },
+        {
+            "name": "Chay Garden Vegetarian Restaurant & Coffee – Võ Văn Tần",
+            "norm": "chay garden vegetarian restaurant & coffee – vo van tan",
+            "image_local_path": "images/restaurant/Chay Garden Vegetarian Restaurant & Coffee – Võ Văn Tần/cover.jpg",
+            "lat": "10.778455359653602",
+            "lng": "106.69073664006372"
+        },
+        {
+            "name": "Kampong Chicken House - Cơm Gà Hải Nam - Hồ Tùng Mậu",
+            "norm": "kampong chicken house com ga hai nam ho tung mau",
+            "image_local_path": "images/restaurant/Kampong Chicken House - Cơm Gà Hải Nam - Hồ Tùng Mậu/cover.jpg",
+            "lat": "10.771814463751502",
+            "lng": "106.70375302472122"
+        },
+        {
+            "name": "Nhà hàng Chay An & Cafe - Phạm Thái Bường",
+            "norm": "nha hang chay an & cafe pham thai buong",
+            "image_local_path": "images/restaurant/Nhà hàng Chay An & Cafe - Phạm Thái Bường/cover.jpg",
+            "lat": "10.727800557303635",
+            "lng": "106.71242888054273"
+        },
+        {
+            "name": "Basta Hiro - Pizza & Pasta - Vincom Mega Mall Thảo Điền",
+            "norm": "basta hiro pizza & pasta vincom mega mall thao đien",
+            "image_local_path": "images/restaurant/Basta Hiro - Pizza & Pasta - Vincom Mega Mall Thảo Điền/cover.jpg",
+            "lat": "10.802559047460448",
+            "lng": "106.7409726112283"
+        },
+        {
+            "name": "Mr.Ox Steak House - Nguyễn Văn Đậu",
+            "norm": "mr ox steak house nguyen van đau",
+            "image_local_path": "images/restaurant/Mr.Ox Steak House - Nguyễn Văn Đậu/cover.jpg",
+            "lat": "10.806085422536365",
+            "lng": "106.68778762287229"
+        },
+        {
+            "name": "Nhà Hàng Ẩm Thực Ven Sông Hương Quê - Thủ Đức",
+            "norm": "nha hang am thuc ven song huong que thu đuc",
+            "image_local_path": "images/restaurant/Nhà Hàng Ẩm Thực Ven Sông Hương Quê - Thủ Đức/cover.jpg",
+            "lat": "10.853439346627063",
+            "lng": "106.71840669342816"
+        },
+        {
+            "name": "Kappou Nishiyama - Pasteur",
+            "norm": "kappou nishiyama pasteur",
+            "image_local_path": "images/restaurant/Kappou Nishiyama - Pasteur/cover.jpg",
+            "lat": "10.7753398637056",
+            "lng": "106.70100298239242"
+        },
+        {
+            "name": "BA GÁC - Nam Kỳ Khởi Nghĩa",
+            "norm": "ba gac nam ky khoi nghia",
+            "image_local_path": "images/restaurant/BA GÁC - Nam Kỳ Khởi Nghĩa/cover.jpg",
+            "lat": "10.772139744090628",
+            "lng": "106.70046509588565"
+        },
+        {
+            "name": "Yuhua - Taiwanese Hotpot Paradise - Lê Văn Sỹ",
+            "norm": "yuhua taiwanese hotpot paradise le van sy",
+            "image_local_path": "images/restaurant/Yuhua - Taiwanese Hotpot Paradise - Lê Văn Sỹ/cover.jpg",
+            "lat": "10.794936468963277",
+            "lng": "106.6675254958858"
+        },
+        {
+            "name": "Miya Sushi - Huỳnh Mẫn Đạt",
+            "norm": "miya sushi huynh man đat",
+            "image_local_path": "images/restaurant/Miya Sushi - Huỳnh Mẫn Đạt/cover.jpg",
+            "lat": "10.790889758812035",
+            "lng": "106.70863964006368"
+        },
+        {
+            "name": "Nhà hàng Bắc Kim Thang - Estella Place",
+            "norm": "nha hang bac kim thang estella place",
+            "image_local_path": "images/restaurant/Nhà hàng Bắc Kim Thang - Estella Place/cover.jpg",
+            "lat": "10.80198293793343",
+            "lng": "106.74831838239267"
+        },
+        {
+            "name": "Cơm Niêu Sài Gòn – Tú Xương",
+            "norm": "com nieu sai gon – tu xuong",
+            "image_local_path": "images/restaurant/Cơm Niêu Sài Gòn – Tú Xương/cover.jpg",
+            "lat": "10.782242175021983",
+            "lng": "106.68789949403644"
+        },
+        {
+            "name": "Ẩm Thực Chay Tuệ - Nguyễn Bính",
+            "norm": "am thuc chay tue nguyen binh",
+            "image_local_path": "images/restaurant/Ẩm Thực Chay Tuệ - Nguyễn Bính/cover.jpg",
+            "lat": "10.728292639572127",
+            "lng": "106.71033160937837"
+        },
+        {
+            "name": "Kậu Ba Quán - Hoàng Sa",
+            "norm": "kau ba quan hoang sa",
+            "image_local_path": "images/restaurant/Kậu Ba Quán - Hoàng Sa/cover.jpg",
+            "lat": "10.792787365772522",
+            "lng": "106.70180230937895"
+        },
+        {
+            "name": "Galbi House - Lê Trọng Tấn",
+            "norm": "galbi house le trong tan",
+            "image_local_path": "images/restaurant/Galbi House - Lê Trọng Tấn/cover.jpg",
+            "lat": "10.809066566946923",
+            "lng": "106.61624598054357"
+        },
+        {
+            "name": "Ẩm Thực Nhà Tôi - Vành Đai Trong",
+            "norm": "am thuc nha toi vanh đai trong",
+            "image_local_path": "images/restaurant/Ẩm Thực Nhà Tôi - Vành Đai Trong/cover.jpg",
+            "lat": "10.7434461129141",
+            "lng": "106.6153480670497"
+        },
+        {
+            "name": "Buffet Chay - Khách Sạn Viễn Đông",
+            "norm": "buffet chay khach san vien đong",
+            "image_local_path": "images/restaurant/Buffet Chay - Khách Sạn Viễn Đông/cover.jpg",
+            "lat": "10.751620013355504",
+            "lng": "106.66544198054304"
+        },
+        {
+            "name": "Ẩm Thực Quê Nhà - Nguyễn Thái Bình",
+            "norm": "am thuc que nha nguyen thai binh",
+            "image_local_path": "images/restaurant/Ẩm Thực Quê Nhà - Nguyễn Thái Bình/cover.jpg",
+            "lat": "10.799307804722952",
+            "lng": "106.65520703821456"
+        },
+        {
+            "name": "Cơm Niêu Thiên Lý - Dương Quang Đông",
+            "norm": "com nieu thien ly duong quang đong",
+            "image_local_path": "images/restaurant/Cơm Niêu Thiên Lý - Dương Quang Đông/cover.jpg",
+            "lat": "10.73902416024917",
+            "lng": "106.66741036693824"
+        },
+        {
+            "name": "GHIỀN BBQ Nướng & Lẩu - Lê Cơ",
+            "norm": "ghien bbq nuong & lau le co",
+            "image_local_path": "images/restaurant/GHIỀN BBQ Nướng & Lẩu - Lê Cơ/cover.jpg",
+            "lat": "10.7267401580808",
+            "lng": "106.61307964191255"
+        },
+        {
+            "name": "Buffet Chay Cỏ Nội - Khách Sạn Bông Sen",
+            "norm": "buffet chay co noi khach san bong sen",
+            "image_local_path": "images/restaurant/Buffet Chay Cỏ Nội - Khách Sạn Bông Sen/cover.jpg",
+            "lat": "10.775243146393882",
+            "lng": "106.70375578821448"
+        },
+        {
+            "name": "Chang - Lotte Mart Gò Vấp",
+            "norm": "chang lotte mart go vap",
+            "image_local_path": "images/restaurant/Chang - Lotte Mart Gò Vấp/cover.jpg",
+            "lat": "10.83792722607857",
+            "lng": "106.67094936705064"
+        },
+        {
+            "name": "East West Brewing Co. - Lý Tự Trọng",
+            "norm": "east west brewing co ly tu trong",
+            "image_local_path": "images/restaurant/East West Brewing Co. - Lý Tự Trọng/cover.jpg",
+            "lat": "10.77327762390338",
+            "lng": "106.69617594006368"
+        },
+        {
+            "name": "BA GÁC - Xuân Thuỷ",
+            "norm": "ba gac xuan thuy",
+            "image_local_path": "images/restaurant/BA GÁC - Xuân Thuỷ/cover.jpg",
+            "lat": "10.803564272360855",
+            "lng": "106.73099462287232"
+        },
+        {
+            "name": "Thai Market - Emart Phan Văn Trị",
+            "norm": "thai market emart phan van tri",
+            "image_local_path": "images/restaurant/Thai Market - Emart Phan Văn Trị/cover.jpg",
+            "lat": "10.823302880620929",
+            "lng": "106.69343018380638"
+        },
+        {
+            "name": "Quán Lão Trư – Street Food BBQ & Beer – Song Hành",
+            "norm": "quan lao tru – street food bbq & beer – song hanh",
+            "image_local_path": "images/restaurant/Quán Lão Trư – Street Food BBQ & Beer – Song Hành/cover.jpg",
+            "lat": "10.7995953821529",
+            "lng": "106.73457648239271"
+        },
+        {
+            "name": "Bò Tơ Tây Ninh Năm Sánh – Phạm Hùng",
+            "norm": "bo to tay ninh nam sanh – pham hung",
+            "image_local_path": "images/restaurant/Bò Tơ Tây Ninh Năm Sánh – Phạm Hùng/cover.jpg",
+            "lat": "10.733059118043656",
+            "lng": "106.67396582287168"
+        },
+        {
+            "name": "Unatoto - Nguyễn Hồng Đào",
+            "norm": "unatoto nguyen hong đao",
+            "image_local_path": "images/restaurant/Unatoto - Nguyễn Hồng Đào/cover.jpg",
+            "lat": "10.790564863421562",
+            "lng": "106.64051750937901"
+        },
+        {
+            "name": "Lạc Thái 7 - Xuân Thủy",
+            "norm": "lac thai 7 xuan thuy",
+            "image_local_path": "images/restaurant/Lạc Thái 7 - Xuân Thủy/cover.jpg",
+            "lat": "10.80316974709545",
+            "lng": "106.73073244985854"
+        },
+        {
+            "name": "Gyu Shige Ngưu Phồn - Trần Hưng Đạo",
+            "norm": "gyu shige nguu phon tran hung đao",
+            "image_local_path": "images/restaurant/Gyu Shige Ngưu Phồn - Trần Hưng Đạo/cover.jpg",
+            "lat": "10.769412808362356",
+            "lng": "106.69622670937869"
+        },
+        {
+            "name": "Cua Ngon - Hương Vị Đất Mũi - Nguyễn Thái Bình",
+            "norm": "cua ngon huong vi đat mui nguyen thai binh",
+            "image_local_path": "images/restaurant/Cua Ngon - Hương Vị Đất Mũi - Nguyễn Thái Bình/cover.jpg",
+            "lat": "10.796164745981798",
+            "lng": "106.6509792385217"
+        },
+        {
+            "name": "Le Monde Steak - Nguyễn Thị Minh Khai",
+            "norm": "le monde steak nguyen thi minh khai",
+            "image_local_path": "images/restaurant/Le Monde Steak - Nguyễn Thị Minh Khai/cover.jpg",
+            "lat": "10.786257575055862",
+            "lng": "106.7012731250276"
+        },
+        {
+            "name": "Dê Quay Phố Quen - Trương Công Định",
+            "norm": "de quay pho quen truong cong đinh",
+            "image_local_path": "images/restaurant/Dê Quay Phố Quen - Trương Công Định/cover.jpg",
+            "lat": "10.797779239162647",
+            "lng": "106.64152130968657"
+        },
+        {
+            "name": "Hai Lúa - Nguyễn Trãi",
+            "norm": "hai lua nguyen trai",
+            "image_local_path": "images/restaurant/Hai Lúa - Nguyễn Trãi/cover.jpg",
+            "lat": "10.753934578545454",
+            "lng": "106.66444774036856"
+        },
+        {
+            "name": "Cơm Tấm Thuận Kiều - Đặng Đức Thuật",
+            "norm": "com tam thuan kieu đang đuc thuat",
+            "image_local_path": "images/restaurant/Cơm Tấm Thuận Kiều - Đặng Đức Thuật/cover.jpg",
+            "lat": "10.725829307154411",
+            "lng": "106.70934545201534"
+        },
+        {
+            "name": "Karaku - Yên Hoả Japanese BBQ - Song Hành",
+            "norm": "karaku yen hoa japanese bbq song hanh",
+            "image_local_path": "images/restaurant/Karaku - Yên Hoả Japanese BBQ - Song Hành/cover.jpg",
+            "lat": "10.800599477152097",
+            "lng": "106.74074093852185"
+        },
+        {
+            "name": "Yakimono - Phan Xích Long",
+            "norm": "yakimono phan xich long",
+            "image_local_path": "images/restaurant/Yakimono - Phan Xích Long/cover.jpg",
+            "lat": "10.797817348450016",
+            "lng": "106.6893201101147"
+        },
+        {
+            "name": "Rakuen BBQ - Bàu Cát",
+            "norm": "rakuen bbq bau cat",
+            "image_local_path": "images/restaurant/Rakuen BBQ - Bàu Cát/cover.jpg",
+            "lat": "10.792687504923975",
+            "lng": "106.64210413852167"
+        },
+        {
+            "name": "Cơm Xưa – Trần Cao Vân",
+            "norm": "com xua – tran cao van",
+            "image_local_path": "images/restaurant/Cơm Xưa – Trần Cao Vân/cover.jpg",
+            "lat": "10.784568058201657",
+            "lng": "106.69732318085103"
+        },
+        {
+            "name": "Mabu-KKO Chi - Thái Văn Lung",
+            "norm": "mabu kko chi thai van lung",
+            "image_local_path": "images/restaurant/Mabu-KKO Chi - Thái Văn Lung/cover.jpg",
+            "lat": "10.779712819165086",
+            "lng": "106.70444123852164"
+        },
+        {
+            "name": "Buffet Gánh - Khách Sạn Bông Sen",
+            "norm": "buffet ganh khach san bong sen",
+            "image_local_path": "images/restaurant/Buffet Gánh - Khách Sạn Bông Sen/cover.jpg",
+            "lat": "10.775429422318805",
+            "lng": "106.70376618085105"
+        },
+        {
+            "name": "Ghiền Quán - Hoàng Sa",
+            "norm": "ghien quan hoang sa",
+            "image_local_path": "images/restaurant/Ghiền Quán - Hoàng Sa/cover.jpg",
+            "lat": "10.795489163400529",
+            "lng": "106.69003338085115"
+        },
+        {
+            "name": "Cơm Gà Thượng Hải – Võ Văn Tần",
+            "norm": "com ga thuong hai – vo van tan",
+            "image_local_path": "images/restaurant/Cơm Gà Thượng Hải – Võ Văn Tần/cover.jpg",
+            "lat": "10.77824703895287",
+            "lng": "106.6919573520158"
+        },
+        {
+            "name": "Mợ Mê Ốc - Trần Hưng Đạo",
+            "norm": "mo me oc tran hung đao",
+            "image_local_path": "images/restaurant/Mợ Mê Ốc - Trần Hưng Đạo/cover.jpg",
+            "lat": "10.762806711279191",
+            "lng": "106.69100636920396"
+        },
+        {
+            "name": "Le Monde Steak - Phan Xích Long",
+            "norm": "le monde steak phan xich long",
+            "image_local_path": "images/restaurant/Le Monde Steak - Phan Xích Long/cover.jpg",
+            "lat": "10.797943555836241",
+            "lng": "106.68901023852177"
+        },
+        {
+            "name": "Đông Dương - Trương Định",
+            "norm": "đong duong truong đinh",
+            "image_local_path": "images/restaurant/Đông Dương - Trương Định/cover.jpg",
+            "lat": "10.779144980045919",
+            "lng": "106.68884700968634"
+        },
+        {
+            "name": "Gu - Nhậu Đúng Chất - Hoa Lan",
+            "norm": "gu nhau đung chat hoa lan",
+            "image_local_path": "images/restaurant/Gu - Nhậu Đúng Chất - Hoa Lan/cover.jpg",
+            "lat": "10.797121628520713",
+            "lng": "106.6917024096866"
+        },
+        {
+            "name": "48 Bistro - Lê Thị Riêng",
+            "norm": "48 bistro le thi rieng",
+            "image_local_path": "images/restaurant/48 Bistro - Lê Thị Riêng/cover.jpg",
+            "lat": "10.771767244403115",
+            "lng": "106.69185133852156"
+        },
+        {
+            "name": "Quán Ăn Sân Vườn Hoàng Hiếu - Lâm Văn Bền",
+            "norm": "quan an san vuon hoang hieu lam van ben",
+            "image_local_path": "images/restaurant/Quán Ăn Sân Vườn Hoàng Hiếu - Lâm Văn Bền/cover.jpg",
+            "lat": "10.739839851683787",
+            "lng": "106.7154766725085"
+        },
+        {
+            "name": "Hương Dừa - Nguyễn Xiển",
+            "norm": "huong dua nguyen xien",
+            "image_local_path": "images/restaurant/Hương Dừa - Nguyễn Xiển/cover.jpg",
+            "lat": "10.828168272491716",
+            "lng": "106.83120428085138"
+        },
+        {
+            "name": "Hồ Lô Gia - Phạm Văn Chí",
+            "norm": "ho lo gia pham van chi",
+            "image_local_path": "images/restaurant/Hồ Lô Gia - Phạm Văn Chí/cover.jpg",
+            "lat": "10.74187154698337",
+            "lng": "106.64136313852129"
+        },
+        {
+            "name": "Hầm Rượu Luxury - 429 Bình Trị Đông",
+            "norm": "ham ruou luxury 429 binh tri đong",
+            "image_local_path": "images/restaurant/Hầm Rượu Luxury - 429 Bình Trị Đông/cover.jpg",
+            "lat": "10.774592281725475",
+            "lng": "106.60907476920393"
+        },
+        {
+            "name": "Ăn Được Phúc - Phan Xích Long",
+            "norm": "an đuoc phuc phan xich long",
+            "image_local_path": "images/restaurant/Ăn Được Phúc - Phan Xích Long/cover.jpg",
+            "lat": "10.798523877317221",
+            "lng": "106.68799633852177"
+        },
+        {
+            "name": "Nhà hàng Rạng Đông – Cách Mạng Tháng 8",
+            "norm": "nha hang rang đong – cach mang thang 8",
+            "image_local_path": "images/restaurant/Nhà hàng Rạng Đông – Cách Mạng Tháng 8/cover.jpg",
+            "lat": "10.772093640374926",
+            "lng": "106.69151829118752"
+        },
+        {
+            "name": "Moon Go - Ẩm Thực Hàn Quốc - Quang Trung",
+            "norm": "moon go am thuc han quoc quang trung",
+            "image_local_path": "images/restaurant/Moon Go - Ẩm Thực Hàn Quốc - Quang Trung/cover.jpg",
+            "lat": "10.830732681505868",
+            "lng": "106.66997182502791"
+        },
+        {
+            "name": "Chang - Hoàng Hoa Thám",
+            "norm": "chang hoang hoa tham",
+            "image_local_path": "images/restaurant/Chang - Hoàng Hoa Thám/cover.jpg",
+            "lat": "10.800036748966791",
+            "lng": "106.64732825201597"
+        },
+        {
+            "name": "Chang - Lê Văn Sỹ",
+            "norm": "chang le van sy",
+            "image_local_path": "images/restaurant/Chang - Lê Văn Sỹ/cover.jpg",
+            "lat": "10.79668062343045",
+            "lng": "106.66507570968653"
+        },
+        {
+            "name": "Tám Riêu - Nguyễn Tri Phương",
+            "norm": "tam rieu nguyen tri phuong",
+            "image_local_path": "images/restaurant/Tám Riêu - Nguyễn Tri Phương/cover.jpg",
+            "lat": "10.76644790898351",
+            "lng": "106.66763072502742"
+        },
+        {
+            "name": "Hoa Viên Pilsner Original – Phổ Quang",
+            "norm": "hoa vien pilsner original – pho quang",
+            "image_local_path": "images/restaurant/Hoa Viên Pilsner Original – Phổ Quang/cover.jpg",
+            "lat": "10.803654932960539",
+            "lng": "106.66651621288511"
+        },
+        {
+            "name": "Chay Xanh - Lê Văn Thịnh",
+            "norm": "chay xanh le van thinh",
+            "image_local_path": "images/restaurant/Chay Xanh - Lê Văn Thịnh/cover.jpg",
+            "lat": "10.786636996240993",
+            "lng": "106.76893173852176"
+        },
+        {
+            "name": "Hoàng Yến Cuisine – Ngô Đức Kế",
+            "norm": "hoang yen cuisine – ngo đuc ke",
+            "image_local_path": "images/restaurant/Hoàng Yến Cuisine – Ngô Đức Kế/cover.jpg",
+            "lat": "10.774307562851567",
+            "lng": "106.70618906920409"
+        },
+        {
+            "name": "Vườn Ẩm Thực Số 7 - Phạm Văn Hai",
+            "norm": "vuon am thuc so 7 pham van hai",
+            "image_local_path": "images/restaurant/Vườn Ẩm Thực Số 7 - Phạm Văn Hai/cover.jpg",
+            "lat": "10.798401427666496",
+            "lng": "106.66521334036895"
+        },
+        {
+            "name": "Bê Vàng – An Dương Vương",
+            "norm": "be vang – an duong vuong",
+            "image_local_path": "images/restaurant/Bê Vàng – An Dương Vương/cover.jpg",
+            "lat": "10.761021751725036",
+            "lng": "106.6830494538627"
+        },
+        {
+            "name": "Vườn Chay Garden - Lê Quang Định",
+            "norm": "vuon chay garden le quang đinh",
+            "image_local_path": "images/restaurant/Vườn Chay Garden - Lê Quang Định/cover.jpg",
+            "lat": "10.811978388293756",
+            "lng": "106.69081388085131"
+        },
+        {
+            "name": "Moo Beef Steak - Ngô Đức Kế",
+            "norm": "moo beef steak ngo đuc ke",
+            "image_local_path": "images/restaurant/Moo Beef Steak - Ngô Đức Kế/cover.jpg",
+            "lat": "10.77338468539549",
+            "lng": "106.70570914036877"
+        },
+        {
+            "name": "Lẩu Dê Tài Ký - Ung Văn Khiêm",
+            "norm": "lau de tai ky ung van khiem",
+            "image_local_path": "images/restaurant/Lẩu Dê Tài Ký - Ung Văn Khiêm/cover.jpg",
+            "lat": "10.80893237460534",
+            "lng": "106.71556416920427"
+        },
+        {
+            "name": "Chay Shanti Veggie - Lương Hữu Khánh",
+            "norm": "chay shanti veggie luong huu khanh",
+            "image_local_path": "images/restaurant/Chay Shanti Veggie - Lương Hữu Khánh/cover.jpg",
+            "lat": "10.769760946089944",
+            "lng": "106.68677095201564"
+        },
+        {
+            "name": "Chamie Steak - Sư Vạn Hạnh",
+            "norm": "chamie steak su van hanh",
+            "image_local_path": "images/restaurant/Chamie Steak - Sư Vạn Hạnh/cover.jpg",
+            "lat": "10.7733558430672",
+            "lng": "106.66905153852156"
+        },
+        {
+            "name": "Ngọc Sương Seafood & Bar - Nguyễn Siêu",
+            "norm": "ngoc suong seafood & bar nguyen sieu",
+            "image_local_path": "images/restaurant/Ngọc Sương Seafood & Bar - Nguyễn Siêu/cover.jpg",
+            "lat": "10.779268917162304",
+            "lng": "106.7055546692041"
+        },
+        {
+            "name": "Hoàng Ty - Trương Quốc Dung",
+            "norm": "hoang ty truong quoc dung",
+            "image_local_path": "images/restaurant/Hoàng Ty - Trương Quốc Dung/cover.jpg",
+            "lat": "10.795645124303212",
+            "lng": "106.67232833667478"
+        },
+        {
+            "name": "Lạc Thái 1 - Mạc Thị Bưởi",
+            "norm": "lac thai 1 mac thi buoi",
+            "image_local_path": "images/restaurant/Lạc Thái 1 - Mạc Thị Bưởi/cover.jpg",
+            "lat": "10.774759584672175",
+            "lng": "106.70415982318035"
+        },
+        {
+            "name": "Biển Việt - Nguyễn Văn Cừ",
+            "norm": "bien viet nguyen van cu",
+            "image_local_path": "images/restaurant/Biển Việt - Nguyễn Văn Cừ/cover.jpg",
+            "lat": "10.760300754039728",
+            "lng": "106.683492880851"
+        },
+        {
+            "name": "Eden - Lounge & Bespoke Cocktail - Ngô Đức Kế",
+            "norm": "eden lounge & bespoke cocktail ngo đuc ke",
+            "image_local_path": "images/restaurant/Eden - Lounge & Bespoke Cocktail - Ngô Đức Kế/cover.jpg",
+            "lat": "10.77265719272117",
+            "lng": "106.70433047830754"
+        },
+        {
+            "name": "King BBQ Buffet - Vạn Hạnh Mall",
+            "norm": "king bbq buffet van hanh mall",
+            "image_local_path": "images/restaurant/King BBQ Buffet - Vạn Hạnh Mall/cover.jpg",
+            "lat": "10.770829565532862",
+            "lng": "106.66957303852159"
+        },
+        {
+            "name": "L'eau Restaurant & Café – Kha Vạn Cân",
+            "norm": "l'eau restaurant & cafe – kha van can",
+            "image_local_path": "images/restaurant/L'eau Restaurant & Café – Kha Vạn Cân/cover.jpg",
+            "lat": "10.83624587742593",
+            "lng": "106.73007903852216"
+        },
+        {
+            "name": "Quán Canh Ngon - Đội Cung",
+            "norm": "quan canh ngon đoi cung",
+            "image_local_path": "images/restaurant/Quán Canh Ngon - Đội Cung/cover.jpg",
+            "lat": "10.764000460199336",
+            "lng": "106.64681572502744"
+        },
+        {
+            "name": "Khao Lao - Landmark 81",
+            "norm": "khao lao landmark 81",
+            "image_local_path": "images/restaurant/Khao Lao - Landmark 81/cover.jpg",
+            "lat": "10.794951806291401",
+            "lng": "106.72185298085122"
+        },
+        {
+            "name": "Quán Anh Ba - Vạn Kiếp",
+            "norm": "quan anh ba van kiep",
+            "image_local_path": "images/restaurant/Quán Anh Ba - Vạn Kiếp/cover.jpg",
+            "lat": "10.796799750900302",
+            "lng": "106.69370449988664"
+        },
+        {
+            "name": "Tràng An Quán - Đường 47",
+            "norm": "trang an quan đuong 47",
+            "image_local_path": "images/restaurant/Tràng An Quán - Đường 47/cover.jpg",
+            "lat": "10.741980101889615",
+            "lng": "106.71235160968602"
+        },
+        {
+            "name": "Bếp Thái Koh Yam - Hồ Tùng Mậu",
+            "norm": "bep thai koh yam ho tung mau",
+            "image_local_path": "images/restaurant/Bếp Thái Koh Yam - Hồ Tùng Mậu/cover.jpg",
+            "lat": "10.772815784483587",
+            "lng": "106.70327962318034"
+        },
+        {
+            "name": "Ốc Sữa 2 - Điện Biên Phủ",
+            "norm": "oc sua 2 đien bien phu",
+            "image_local_path": "images/restaurant/Ốc Sữa 2 - Điện Biên Phủ/cover.jpg",
+            "lat": "10.802014325254515",
+            "lng": "106.71213025386305"
+        },
+        {
+            "name": "Quán Chị Dậu - Nguyễn Trọng Tuyển",
+            "norm": "quan chi dau nguyen trong tuyen",
+            "image_local_path": "images/restaurant/Quán Chị Dậu - Nguyễn Trọng Tuyển/cover.jpg",
+            "lat": "10.798938327308136",
+            "lng": "106.66470065201597"
+        },
+        {
+            "name": "BA GÁC - Quang Trung",
+            "norm": "ba gac quang trung",
+            "image_local_path": "images/restaurant/BA GÁC - Quang Trung/cover.jpg",
+            "lat": "10.827308070499582",
+            "lng": "106.67948643852206"
+        },
+        {
+            "name": "Sushi Tokyo Town - Dương Đình Hội",
+            "norm": "sushi tokyo town duong đinh hoi",
+            "image_local_path": "images/restaurant/Sushi Tokyo Town - Dương Đình Hội/cover.jpg",
+            "lat": "10.817914952806309",
+            "lng": "106.7759570250279"
+        },
+        {
+            "name": "Bếp Thái Koh Yam - Bà Huyện Thanh Quan",
+            "norm": "bep thai koh yam ba huyen thanh quan",
+            "image_local_path": "images/restaurant/Bếp Thái Koh Yam - Bà Huyện Thanh Quan/cover.jpg",
+            "lat": "10.776829404351394",
+            "lng": "106.68868576735696"
+        },
+        {
+            "name": "Chang - Võ Văn Ngân",
+            "norm": "chang vo van ngan",
+            "image_local_path": "images/restaurant/Chang - Võ Văn Ngân/cover.jpg",
+            "lat": "10.8497368080412",
+            "lng": "106.76991432502814"
+        },
+        {
+            "name": "Sanité - Nhà hàng chay - Trương Quốc Dung",
+            "norm": "sanite nha hang chay truong quoc dung",
+            "image_local_path": "images/restaurant/Sanité - Nhà hàng chay - Trương Quốc Dung/cover.jpg",
+            "lat": "10.79713984522845",
+            "lng": "106.67242762318067"
+        },
+        {
+            "name": "Hoa Viên Karaoke – Phổ Quang",
+            "norm": "hoa vien karaoke – pho quang",
+            "image_local_path": "images/restaurant/Hoa Viên Karaoke – Phổ Quang/cover.jpg",
+            "lat": "10.803654288686824",
+            "lng": "106.66653261480381"
+        },
+        {
+            "name": "Cơm Tấm Thuận Kiều - Út Tịch",
+            "norm": "com tam thuan kieu ut tich",
+            "image_local_path": "images/restaurant/Cơm Tấm Thuận Kiều - Út Tịch/cover.jpg",
+            "lat": "10.79618486189802",
+            "lng": "106.65889962502777"
+        },
+        {
+            "name": "Hoàng Ty - Trần Văn Giàu",
+            "norm": "hoang ty tran van giau",
+            "image_local_path": "images/restaurant/Hoàng Ty - Trần Văn Giàu/cover.jpg",
+            "lat": "10.751993541992226",
+            "lng": "106.60736296550965"
+        },
+        {
+            "name": "Lẩu Nướng Mini Candy - Nguyễn Văn Đậu",
+            "norm": "lau nuong mini candy nguyen van đau",
+            "image_local_path": "images/restaurant/Lẩu Nướng Mini Candy - Nguyễn Văn Đậu/cover.jpg",
+            "lat": "10.814746181739633",
+            "lng": "106.69384021721713"
+        },
+        {
+            "name": "XieXìe Hotpot Dimsum - Cộng Hòa",
+            "norm": "xiexie hotpot dimsum cong hoa",
+            "image_local_path": "images/restaurant/XieXìe Hotpot Dimsum - Cộng Hòa/cover.jpg",
+            "lat": "10.802796069905083",
+            "lng": "106.64078519619251"
+        },
+        {
+            "name": "V-Senses Dining - Menas Mall Saigon Airport",
+            "norm": "v senses dining menas mall saigon airport",
+            "image_local_path": "images/restaurant/V-Senses Dining - Menas Mall Saigon Airport/cover.jpg",
+            "lat": "10.813163932838103",
+            "lng": "106.66569009619245"
+        },
+        {
+            "name": "Matsuri Japanese Restaurant - Nguyễn Huệ",
+            "norm": "matsuri japanese restaurant nguyen hue",
+            "image_local_path": "images/restaurant/Matsuri Japanese Restaurant - Nguyễn Huệ/cover.jpg",
+            "lat": "10.771764927075708",
+            "lng": "106.70591338269806"
+        },
+        {
+            "name": "Ngõ 8 - Cù Lao",
+            "norm": "ngo 8 cu lao",
+            "image_local_path": "images/restaurant/Ngõ 8 - Cù Lao/cover.jpg",
+            "lat": "10.796384823679764",
+            "lng": "106.68966339619242"
+        },
+        {
+            "name": "Cơm Niêu Thiên Lý - Tạ Hiện",
+            "norm": "com nieu thien ly ta hien",
+            "image_local_path": "images/restaurant/Cơm Niêu Thiên Lý - Tạ Hiện/cover.jpg",
+            "lat": "10.778024799562303",
+            "lng": "106.7525558385217"
+        },
+        {
+            "name": "Ốc Bắc - Lý Tự Trọng",
+            "norm": "oc bac ly tu trong",
+            "image_local_path": "images/restaurant/Ốc Bắc - Lý Tự Trọng/cover.jpg",
+            "lat": "10.77941449186655",
+            "lng": "106.70242479789135"
+        },
+        {
+            "name": "Hoàng Yến Buffet Premier - Nguyễn Đình Chiểu",
+            "norm": "hoang yen buffet premier nguyen đinh chieu",
+            "image_local_path": "images/restaurant/Hoàng Yến Buffet Premier - Nguyễn Đình Chiểu/cover.jpg",
+            "lat": "10.780464700139209",
+            "lng": "106.69154043852166"
+        },
+        {
+            "name": "Yaki Yaki Yo - Buffet nướng lẩu băng chuyền - Tây Thạnh",
+            "norm": "yaki yaki yo buffet nuong lau bang chuyen tay thanh",
+            "image_local_path": "images/restaurant/Yaki Yaki Yo - Buffet nướng lẩu băng chuyền - Tây Thạnh/cover.jpg",
+            "lat": "10.814524678600682",
+            "lng": "106.62388962318066"
+        },
+        {
+            "name": "Ốc Chị Em - Hồ Con Rùa",
+            "norm": "oc chi em ho con rua",
+            "image_local_path": "images/restaurant/Ốc Chị Em - Hồ Con Rùa/cover.jpg",
+            "lat": "10.783363080144703",
+            "lng": "106.69598279619225"
+        },
+        {
+            "name": "Omakase K - Nguyễn Siêu",
+            "norm": "omakase k nguyen sieu",
+            "image_local_path": "images/restaurant/Omakase K - Nguyễn Siêu/cover.jpg",
+            "lat": "10.777768198693966",
+            "lng": "106.70454226432213"
+        },
+        {
+            "name": "Nhà hàng Chay An & Cafe - Phố Tiểu Nam",
+            "norm": "nha hang chay an & cafe pho tieu nam",
+            "image_local_path": "images/restaurant/Nhà hàng Chay An & Cafe - Phố Tiểu Nam/cover.jpg",
+            "lat": "10.71995237182816",
+            "lng": "106.73113695201525"
+        },
+        {
+            "name": "Hoàng Yến Buffet – Vạn Hạnh Mall",
+            "norm": "hoang yen buffet – van hanh mall",
+            "image_local_path": "images/restaurant/Hoàng Yến Buffet – Vạn Hạnh Mall/cover.jpg",
+            "lat": "10.770237246442047",
+            "lng": "106.66921550968623"
+        },
+        {
+            "name": "Big Pig BBQ & Beer - Trường Sơn",
+            "norm": "big pig bbq & beer truong son",
+            "image_local_path": "images/restaurant/Big Pig BBQ & Beer - Trường Sơn/cover.jpg",
+            "lat": "10.8102019351298",
+            "lng": "106.66498335201602"
+        },
+        {
+            "name": "Sushi World - Hà Huy Tập",
+            "norm": "sushi world ha huy tap",
+            "image_local_path": "images/restaurant/Sushi World - Hà Huy Tập/cover.jpg",
+            "lat": "10.726876764802217",
+            "lng": "106.71020323852122"
+        },
+        {
+            "name": "4K - Quán 437 - Hoàng Văn Thụ",
+            "norm": "4k quan 437 hoang van thu",
+            "image_local_path": "images/restaurant/4K - Quán 437 - Hoàng Văn Thụ/cover.jpg",
+            "lat": "10.797420089425486",
+            "lng": "106.65783633852175"
+        },
+        {
+            "name": "Sushi World -Trần Quang Khải",
+            "norm": "sushi world tran quang khai",
+            "image_local_path": "images/restaurant/Sushi World -Trần Quang Khải/cover.jpg",
+            "lat": "10.792327462848535",
+            "lng": "106.6920623808511"
+        },
+        {
+            "name": "Hotpot Đồng Quê 3 Premium - Quang Trung",
+            "norm": "hotpot đong que 3 premium quang trung",
+            "image_local_path": "images/restaurant/Hotpot Đồng Quê 3 Premium - Quang Trung/cover.jpg",
+            "lat": "10.836190264609668",
+            "lng": "106.66034519619272"
+        },
+        {
+            "name": "Saigon Palm - Lê Thị Hồng Gấm",
+            "norm": "saigon palm le thi hong gam",
+            "image_local_path": "images/restaurant/Saigon Palm - Lê Thị Hồng Gấm/cover.jpg",
+            "lat": "10.768909267536813",
+            "lng": "106.69786425201562"
+        },
+        {
+            "name": "Nhà hàng Khoái – Lê Quý Đôn",
+            "norm": "nha hang khoai – le quy đon",
+            "image_local_path": "images/restaurant/Nhà hàng Khoái – Lê Quý Đôn/cover.jpg",
+            "lat": "10.781528338920712",
+            "lng": "106.69108292318045"
+        },
+        {
+            "name": "Sơn Thủy - Phạm Ngọc Thạch",
+            "norm": "son thuy pham ngoc thach",
+            "image_local_path": "images/restaurant/Sơn Thủy - Phạm Ngọc Thạch/cover.jpg",
+            "lat": "10.784767612149144",
+            "lng": "106.69375588269827"
+        },
+        {
+            "name": "Hibiki BBQ - Nguyễn Hữu Cảnh",
+            "norm": "hibiki bbq nguyen huu canh",
+            "image_local_path": "images/restaurant/Hibiki BBQ - Nguyễn Hữu Cảnh/cover.jpg",
+            "lat": "10.789910976696579",
+            "lng": "106.71232242318062"
+        },
+        {
+            "name": "Phố 79 - 120 Sương Nguyệt Ánh",
+            "norm": "pho 79 120 suong nguyet anh",
+            "image_local_path": "images/restaurant/Phố 79 - 120 Sương Nguyệt Ánh/cover.jpg",
+            "lat": "10.771677564879202",
+            "lng": "106.68853372687468"
+        },
+        {
+            "name": "Yuhua - Taiwanese Hotpot Paradise - Hoàng Hoa Thám",
+            "norm": "yuhua taiwanese hotpot paradise hoang hoa tham",
+            "image_local_path": "images/restaurant/Yuhua - Taiwanese Hotpot Paradise - Hoàng Hoa Thám/cover.jpg",
+            "lat": "10.800538193525778",
+            "lng": "106.64720156735714"
+        },
+        {
+            "name": "Dê Cười - Đường số 1",
+            "norm": "de cuoi đuong so 1",
+            "image_local_path": "images/restaurant/Dê Cười - Đường số 1/cover.jpg",
+            "lat": "10.827562354680069",
+            "lng": "106.71139756662734"
+        },
+        {
+            "name": "Basta Hiro - Pizza & Pasta - Vincom Đồng Khởi",
+            "norm": "basta hiro pizza & pasta vincom đong khoi",
+            "image_local_path": "images/restaurant/Basta Hiro - Pizza & Pasta - Vincom Đồng Khởi/cover.jpg",
+            "lat": "10.778131685048955",
+            "lng": "106.7019559655098"
+        },
+        {
+            "name": "Thai Village Restaurant - Lý Tự Trọng",
+            "norm": "thai village restaurant ly tu trong",
+            "image_local_path": "images/restaurant/Thai Village Restaurant - Lý Tự Trọng/cover.jpg",
+            "lat": "10.777518085264424",
+            "lng": "106.70028218269817"
+        },
+        {
+            "name": "Nhà hàng Cơm Niêu Sài Gòn - Hồ Xuân Hương",
+            "norm": "nha hang com nieu sai gon ho xuan huong",
+            "image_local_path": "images/restaurant/Nhà hàng Cơm Niêu Sài Gòn - Hồ Xuân Hương/cover.jpg",
+            "lat": "10.777150906926675",
+            "lng": "106.6871533066078"
+        },
+        {
+            "name": "Sáu Linh - Nguyễn Thái Sơn",
+            "norm": "sau linh nguyen thai son",
+            "image_local_path": "images/restaurant/Sáu Linh - Nguyễn Thái Sơn/cover.jpg",
+            "lat": "10.825681747337832",
+            "lng": "106.6886120403692"
+        },
+        {
+            "name": "Dê tươi PhoDong - Nguyễn Thị Định",
+            "norm": "de tuoi phodong nguyen thi đinh",
+            "image_local_path": "images/restaurant/Dê tươi PhoDong - Nguyễn Thị Định/cover.jpg",
+            "lat": "10.766834348707256",
+            "lng": "106.7800217096862"
+        },
+        {
+            "name": "Bò Ú Plus - Lâm Văn Bền",
+            "norm": "bo u plus lam van ben",
+            "image_local_path": "images/restaurant/Bò Ú Plus - Lâm Văn Bền/cover.jpg",
+            "lat": "10.739842003010782",
+            "lng": "106.71586746920379"
+        },
+        {
+            "name": "Anrakutei Premium - Nguyễn Trãi",
+            "norm": "anrakutei premium nguyen trai",
+            "image_local_path": "images/restaurant/Anrakutei Premium - Nguyễn Trãi/cover.jpg",
+            "lat": "10.76981086631805",
+            "lng": "106.69100959619225"
+        },
+        {
+            "name": "Kizuna Sushi - Huỳnh Mẫn Đạt",
+            "norm": "kizuna sushi huynh man đat",
+            "image_local_path": "images/restaurant/Kizuna Sushi - Huỳnh Mẫn Đạt/cover.jpg",
+            "lat": "10.789883007296712",
+            "lng": "106.7087016002798"
+        },
+        {
+            "name": "Kokugyu - The Ascentia Phú Mỹ Hưng",
+            "norm": "kokugyu the ascentia phu my hung",
+            "image_local_path": "images/restaurant/Kokugyu - The Ascentia Phú Mỹ Hưng/cover.jpg",
+            "lat": "10.721556454137831",
+            "lng": "106.72708522687427"
+        },
+        {
+            "name": "CoCo Grill Saigon - Nam Kỳ Khởi Nghĩa",
+            "norm": "coco grill saigon nam ky khoi nghia",
+            "image_local_path": "images/restaurant/CoCo Grill Saigon - Nam Kỳ Khởi Nghĩa/cover.jpg",
+            "lat": "10.780881428827943",
+            "lng": "106.69321417318038"
+        },
+        {
+            "name": "Phố Bia - Đường 9A",
+            "norm": "pho bia đuong 9a",
+            "image_local_path": "images/restaurant/Phố Bia - Đường 9A/cover.jpg",
+            "lat": "10.73517541619572",
+            "lng": "106.68973056735662"
+        },
+        {
+            "name": "Quán Cá Rô Đồng - Phạm Văn Đồng",
+            "norm": "quan ca ro đong pham van đong",
+            "image_local_path": "images/restaurant/Quán Cá Rô Đồng - Phạm Văn Đồng/cover.jpg",
+            "lat": "10.82101750289702",
+            "lng": "106.69608422318078"
+        },
+        {
+            "name": "Kobe Bistro By Chef David Thai - Tôn Đức Thắng",
+            "norm": "kobe bistro by chef david thai ton đuc thang",
+            "image_local_path": "images/restaurant/Kobe Bistro By Chef David Thai - Tôn Đức Thắng/cover.jpg",
+            "lat": "10.78282063510406",
+            "lng": "106.7055896980394"
+        },
+        {
+            "name": "Myung Ryun Jinsa Galbi - Thủ Đức",
+            "norm": "myung ryun jinsa galbi thu đuc",
+            "image_local_path": "images/restaurant/Myung Ryun Jinsa Galbi - Thủ Đức/cover.jpg",
+            "lat": "10.799641132752887",
+            "lng": "106.73660686705027"
+        },
+        {
+            "name": "Niêu Ta Lounge & Restaurant - Hoàng Văn Thụ",
+            "norm": "nieu ta lounge & restaurant hoang van thu",
+            "image_local_path": "images/restaurant/Niêu Ta Lounge & Restaurant - Hoàng Văn Thụ/cover.jpg",
+            "lat": "10.799815281974363",
+            "lng": "106.67360391153363"
+        },
+        {
+            "name": "Mo Mo Paradise - Nguyễn Thị Minh Khai",
+            "norm": "mo mo paradise nguyen thi minh khai",
+            "image_local_path": "images/restaurant/Mo Mo Paradise - Nguyễn Thị Minh Khai/cover.jpg",
+            "lat": "10.780561442133902",
+            "lng": "106.69538529619231"
+        },
+        {
+            "name": "Ẩm thực Lambo 585 - Lê Văn Lương",
+            "norm": "am thuc lambo 585 le van luong",
+            "image_local_path": "images/restaurant/Ẩm thực Lambo 585 - Lê Văn Lương/cover.jpg",
+            "lat": "10.732888373887652",
+            "lng": "106.7015157286884"
+        },
+        {
+            "name": "Hải Sản Hưng Phát - Tô Ký",
+            "norm": "hai san hung phat to ky",
+            "image_local_path": "images/restaurant/Hải Sản Hưng Phát - Tô Ký/cover.jpg",
+            "lat": "10.877859713579763",
+            "lng": "106.61061564467862"
+        },
+        {
+            "name": "Chảo Cá - Vincom Thảo Điền",
+            "norm": "chao ca vincom thao đien",
+            "image_local_path": "images/restaurant/Chảo Cá - Vincom Thảo Điền/cover.jpg",
+            "lat": "10.802373153966922",
+            "lng": "106.74100658269836"
+        },
+        {
+            "name": "King BBQ - Vincom Lê Thánh Tôn",
+            "norm": "king bbq vincom le thanh ton",
+            "image_local_path": "images/restaurant/King BBQ - Vincom Lê Thánh Tôn/cover.jpg",
+            "lat": "10.77765066646223",
+            "lng": "106.70160999619219"
+        },
+        {
+            "name": "Ẩm Thực 915 - Âu Cơ",
+            "norm": "am thuc 915 au co",
+            "image_local_path": "images/restaurant/Ẩm Thực 915 - Âu Cơ/cover.jpg",
+            "lat": "10.798726477117988",
+            "lng": "106.6373727520159"
+        },
+        {
+            "name": "Rakuen Hotpot - Lê Văn Sỹ",
+            "norm": "rakuen hotpot le van sy",
+            "image_local_path": "images/restaurant/Rakuen Hotpot - Lê Văn Sỹ/cover.jpg",
+            "lat": "10.790146650630025",
+            "lng": "106.6738648366746"
+        },
+        {
+            "name": "Tiệm Lẩu 8 Cá - Linh Đông",
+            "norm": "tiem lau 8 ca linh đong",
+            "image_local_path": "images/restaurant/Tiệm Lẩu 8 Cá - Linh Đông/cover.jpg",
+            "lat": "10.844917022099018",
+            "lng": "106.7456740826987"
+        },
+        {
+            "name": "Barrigón - Trần Hưng Đạo",
+            "norm": "barrigon tran hung đao",
+            "image_local_path": "images/restaurant/Barrigón - Trần Hưng Đạo/cover.jpg",
+            "lat": "10.767036908612162",
+            "lng": "106.69459905016855"
+        },
+        {
+            "name": "Cơm Niêu Thiên Lý - Mỹ Văn",
+            "norm": "com nieu thien ly my van",
+            "image_local_path": "images/restaurant/Cơm Niêu Thiên Lý - Mỹ Văn/cover.jpg",
+            "lat": "10.722878170844222",
+            "lng": "106.72710759580234"
+        },
+        {
+            "name": "Hoàng Ty - Nguyễn Hữu Cầu",
+            "norm": "hoang ty nguyen huu cau",
+            "image_local_path": "images/restaurant/Hoàng Ty - Nguyễn Hữu Cầu/cover.jpg",
+            "lat": "10.791698680338927",
+            "lng": "106.69165214358594"
+        },
+        {
+            "name": "Thai Market - Cao Thắng",
+            "norm": "thai market cao thang",
+            "image_local_path": "images/restaurant/Thai Market - Cao Thắng/cover.jpg",
+            "lat": "10.772397115930026",
+            "lng": "106.67915183045054"
+        },
+        {
+            "name": "Ốc Bắc - Nguyễn Thượng Hiền",
+            "norm": "oc bac nguyen thuong hien",
+            "image_local_path": "images/restaurant/Ốc Bắc - Nguyễn Thượng Hiền/cover.jpg",
+            "lat": "10.777013814551198",
+            "lng": "106.68198222493503"
+        },
+        {
+            "name": "Gyu Shige Ngưu Phồn - Đông Du",
+            "norm": "gyu shige nguu phon đong du",
+            "image_local_path": "images/restaurant/Gyu Shige Ngưu Phồn - Đông Du/cover.jpg",
+            "lat": "10.776524845988016",
+            "lng": "106.70472933852156"
+        },
+        {
+            "name": "Chay Phúc Tâm - Tân Vĩnh",
+            "norm": "chay phuc tam tan vinh",
+            "image_local_path": "images/restaurant/Chay Phúc Tâm - Tân Vĩnh/cover.jpg",
+            "lat": "10.759411293873615",
+            "lng": "106.69991276550971"
+        },
+        {
+            "name": "KHAP KHAP Thai Bistro - CN Võ Văn Tần",
+            "norm": "khap khap thai bistro cn vo van tan",
+            "image_local_path": "images/restaurant/KHAP KHAP Thai Bistro - CN Võ Văn Tần/cover.jpg",
+            "lat": "10.778613655113837",
+            "lng": "106.69071785201558"
+        },
+        {
+            "name": "King BBQ Buffet – Vincom Thủ Đức",
+            "norm": "king bbq buffet – vincom thu đuc",
+            "image_local_path": "images/restaurant/King BBQ Buffet – Vincom Thủ Đức/cover.jpg",
+            "lat": "10.850631622199344",
+            "lng": "106.76516050783981"
+        },
+        {
+            "name": "Cow Express - Cao Thắng",
+            "norm": "cow express cao thang",
+            "image_local_path": "images/restaurant/Cow Express - Cao Thắng/cover.jpg",
+            "lat": "10.76971160896767",
+            "lng": "106.68233212502744"
+        },
+        {
+            "name": "Hoa Viên Sơn Thủy – Long Thạnh Mỹ",
+            "norm": "hoa vien son thuy – long thanh my",
+            "image_local_path": "images/restaurant/Hoa Viên Sơn Thủy – Long Thạnh Mỹ/cover.jpg",
+            "lat": "10.967972139909879",
+            "lng": "106.61510179715275"
+        },
+        {
+            "name": "Eddie's - New York Deli and Diner - Thảo Điền",
+            "norm": "eddie's new york deli and diner thao đien",
+            "image_local_path": "images/restaurant/Eddie's - New York Deli and Diner - Thảo Điền/cover.jpg",
+            "lat": "10.806625483601904",
+            "lng": "106.73502955571024"
+        },
+        {
+            "name": "Kobe Teppanyaki - Lý Tự Trọng",
+            "norm": "kobe teppanyaki ly tu trong",
+            "image_local_path": "images/restaurant/Kobe Teppanyaki - Lý Tự Trọng/cover.jpg",
+            "lat": "10.782789016899434",
+            "lng": "106.7055682403688"
+        },
+        {
+            "name": "Chamie Steak - Phạm Ngọc Thạch",
+            "norm": "chamie steak pham ngoc thach",
+            "image_local_path": "images/restaurant/Chamie Steak - Phạm Ngọc Thạch/cover.jpg",
+            "lat": "10.786458235634324",
+            "lng": "106.69247838269831"
+        },
+        {
+            "name": "Quán Bún Mắm - Lẩu Mắm Dì Sáu - Tôn Thất Tùng",
+            "norm": "quan bun mam lau mam di sau ton that tung",
+            "image_local_path": "images/restaurant/Quán Bún Mắm - Lẩu Mắm Dì Sáu - Tôn Thất Tùng/cover.jpg",
+            "lat": "10.770463845499053",
+            "lng": "106.6874646673569"
+        },
+        {
+            "name": "Hoàng Ty – Hoa Mai",
+            "norm": "hoang ty – hoa mai",
+            "image_local_path": "images/restaurant/Hoàng Ty – Hoa Mai/cover.jpg",
+            "lat": "10.797726172578276",
+            "lng": "106.68687725201588"
+        },
+        {
+            "name": "Ngọc Sương Sài Gòn - Hoàng Việt",
+            "norm": "ngoc suong sai gon hoang viet",
+            "image_local_path": "images/restaurant/Ngọc Sương Sài Gòn - Hoàng Việt/cover.jpg",
+            "lat": "10.797266000744816",
+            "lng": "106.6592346403689"
+        },
+        {
+            "name": "Downtown Steakhouse - Nguyễn Huệ",
+            "norm": "downtown steakhouse nguyen hue",
+            "image_local_path": "images/restaurant/Downtown Steakhouse - Nguyễn Huệ/cover.jpg",
+            "lat": "10.774288904037403",
+            "lng": "106.70411375386279"
+        },
+        {
+            "name": "Chill Thái - Cô Giang",
+            "norm": "chill thai co giang",
+            "image_local_path": "images/restaurant/Chill Thái - Cô Giang/cover.jpg",
+            "lat": "10.762281711610095",
+            "lng": "106.69391345201565"
+        },
+        {
+            "name": "Isshin Izakaya - Vinhomes Central Park",
+            "norm": "isshin izakaya vinhomes central park",
+            "image_local_path": "images/restaurant/Isshin Izakaya - Vinhomes Central Park/cover.jpg",
+            "lat": "10.793391009086019",
+            "lng": "106.72259775386298"
+        },
+        {
+            "name": "Lẩu Gà Ớt Hiểm 109 - Lê Văn Duyệt",
+            "norm": "lau ga ot hiem 109 le van duyet",
+            "image_local_path": "images/restaurant/Lẩu Gà Ớt Hiểm 109 - Lê Văn Duyệt/cover.jpg",
+            "lat": "10.79484849105151",
+            "lng": "106.69572639619238"
+        },
+        {
+            "name": "Cơm Niêu Thiên Lý - Trung Sơn",
+            "norm": "com nieu thien ly trung son",
+            "image_local_path": "images/restaurant/Cơm Niêu Thiên Lý - Trung Sơn/cover.jpg",
+            "lat": "10.735365733892177",
+            "lng": "106.68933619619189"
+        },
+        {
+            "name": "Chef Thiện – French Bistro - Pasteur",
+            "norm": "chef thien – french bistro pasteur",
+            "image_local_path": "images/restaurant/Chef Thiện – French Bistro - Pasteur/cover.jpg",
+            "lat": "10.777451724880613",
+            "lng": "106.70004619803943"
+        },
+        {
+            "name": "Chang - Cảnh Viên",
+            "norm": "chang canh vien",
+            "image_local_path": "images/restaurant/Chang - Cảnh Viên/cover.jpg",
+            "lat": "10.72271528746687",
+            "lng": "106.72870373852115"
+        },
+        {
+            "name": "Cafe Saigon – Eastin Grand Hotel Saigon",
+            "norm": "cafe saigon – eastin grand hotel saigon",
+            "image_local_path": "images/restaurant/Cafe Saigon – Eastin Grand Hotel Saigon/cover.jpg",
+            "lat": "10.796643328839926",
+            "lng": "106.67360088269824"
+        },
+        {
+            "name": "Bia Hơi Quận 7 - Kiên Béo - Đường Số 9",
+            "norm": "bia hoi quan 7 kien beo đuong so 9",
+            "image_local_path": "images/restaurant/Bia Hơi Quận 7 - Kiên Béo - Đường Số 9/cover.jpg",
+            "lat": "10.747055346481092",
+            "lng": "106.70887788269798"
+        },
+        {
+            "name": "Tân Hải Vân – Phan Văn Trị",
+            "norm": "tan hai van – phan van tri",
+            "image_local_path": "images/restaurant/Tân Hải Vân – Phan Văn Trị/cover.jpg",
+            "lat": "10.829745627305874",
+            "lng": "106.6930491103139"
+        },
+        {
+            "name": "Aka House - Sense City Phạm Văn Đồng (Gigamall)",
+            "norm": "aka house sense city pham van đong gigamall",
+            "image_local_path": "images/restaurant/Aka House - Sense City Phạm Văn Đồng (Gigamall)/cover.jpg",
+            "lat": "10.827906656646917",
+            "lng": "106.72176698269857"
+        },
+        {
+            "name": "Station Sport Bar - Bùi Viện",
+            "norm": "station sport bar bui vien",
+            "image_local_path": "images/restaurant/Station Sport Bar - Bùi Viện/cover.jpg",
+            "lat": "10.766677428632587",
+            "lng": "106.69199872502755"
+        },
+        {
+            "name": "Cơm Niêu Thiên Lý - Thống Nhất",
+            "norm": "com nieu thien ly thong nhat",
+            "image_local_path": "images/restaurant/Cơm Niêu Thiên Lý - Thống Nhất/cover.jpg",
+            "lat": "10.842412877788101",
+            "lng": "106.76817945078079"
+        },
+        {
+            "name": "Anrakutei Japanese BBQ - Mạc Đĩnh Chi",
+            "norm": "anrakutei japanese bbq mac đinh chi",
+            "image_local_path": "images/restaurant/Anrakutei Japanese BBQ - Mạc Đĩnh Chi/cover.jpg",
+            "lat": "10.78717932794172",
+            "lng": "106.6967613223582"
+        },
+        {
+            "name": "Lẩu Hongkong Hotpot - Tân Sơn Nhất",
+            "norm": "lau hongkong hotpot tan son nhat",
+            "image_local_path": "images/restaurant/Lẩu Hongkong Hotpot - Tân Sơn Nhất/cover.jpg",
+            "lat": "10.810139424971204",
+            "lng": "106.66510760632394"
+        },
+        {
+            "name": "Cơm Niêu Thiên Lý - Thuận Kiều",
+            "norm": "com nieu thien ly thuan kieu",
+            "image_local_path": "images/restaurant/Cơm Niêu Thiên Lý - Thuận Kiều/cover.jpg",
+            "lat": "10.758116493420463",
+            "lng": "106.65815370968613"
+        },
+        {
+            "name": "Bắc Kim Thang Premium - SaiGon Marina IFC Tower",
+            "norm": "bac kim thang premium saigon marina ifc tower",
+            "image_local_path": "images/restaurant/Bắc Kim Thang Premium - SaiGon Marina IFC Tower/cover.jpg",
+            "lat": "10.782284280712616",
+            "lng": "106.70770635386283"
+        },
+        {
+            "name": "Chang - Giga Mall Phạm Văn Đồng",
+            "norm": "chang giga mall pham van đong",
+            "image_local_path": "images/restaurant/Chang - Giga Mall Phạm Văn Đồng/cover.jpg",
+            "lat": "10.827730316357655",
+            "lng": "106.72171565542219"
+        },
+        {
+            "name": "Cow Express - Phan Xích Long",
+            "norm": "cow express phan xich long",
+            "image_local_path": "images/restaurant/Cow Express - Phan Xích Long/cover.jpg",
+            "lat": "10.800055404170656",
+            "lng": "106.68537912687484"
+        },
+        {
+            "name": "Sông Giồng - Thân Văn Nhiếp",
+            "norm": "song giong than van nhiep",
+            "image_local_path": "images/restaurant/Sông Giồng - Thân Văn Nhiếp/cover.jpg",
+            "lat": "10.789169151130697",
+            "lng": "106.75320195887457"
+        },
+        {
+            "name": "Du Yên Vegetarian - Đường số 10",
+            "norm": "du yen vegetarian đuong so 10",
+            "image_local_path": "images/restaurant/Du Yên Vegetarian - Đường số 10/cover.jpg",
+            "lat": "10.80440796471264",
+            "lng": "106.74432667755981"
+        },
+        {
+            "name": "Saigon Xiao Mei - Trần Hưng Đạo",
+            "norm": "saigon xiao mei tran hung đao",
+            "image_local_path": "images/restaurant/Saigon Xiao Mei - Trần Hưng Đạo/cover.jpg",
+            "lat": "10.753431397247791",
+            "lng": "106.67317039918302"
+        },
+        {
+            "name": "Gyu Shige Ngưu Phồn - Phan Văn Trị",
+            "norm": "gyu shige nguu phon phan van tri",
+            "image_local_path": "images/restaurant/Gyu Shige Ngưu Phồn - Phan Văn Trị/cover.jpg",
+            "lat": "10.823068049178534",
+            "lng": "106.69279682502798"
+        },
+        {
+            "name": "Chang - Phan Xích Long",
+            "norm": "chang phan xich long",
+            "image_local_path": "images/restaurant/Chang - Phan Xích Long/cover.jpg",
+            "lat": "10.801459980603298",
+            "lng": "106.68327022216141"
+        },
+        {
+            "name": "Chảo Cá - Vạn Hạnh Mall",
+            "norm": "chao ca van hanh mall",
+            "image_local_path": "images/restaurant/Chảo Cá - Vạn Hạnh Mall/cover.jpg",
+            "lat": "10.770777206210981",
+            "lng": "106.66943467983252"
+        },
+        {
+            "name": "Spice Viet Saigon - 157 Pasteur",
+            "norm": "spice viet saigon 157 pasteur",
+            "image_local_path": "images/restaurant/Spice Viet Saigon - 157 Pasteur/cover.jpg",
+            "lat": "10.785084593825747",
+            "lng": "106.69067596633982"
+        },
+        {
+            "name": "Cơm Niêu Thiên Lý - Lạc Long Quân",
+            "norm": "com nieu thien ly lac long quan",
+            "image_local_path": "images/restaurant/Cơm Niêu Thiên Lý - Lạc Long Quân/cover.jpg",
+            "lat": "10.770122866771649",
+            "lng": "106.6449585816825"
+        },
+        {
+            "name": "Buffet Gánh Palace - Khách sạn Palace Saigon",
+            "norm": "buffet ganh palace khach san palace saigon",
+            "image_local_path": "images/restaurant/Buffet Gánh Palace - Khách sạn Palace Saigon/cover.jpg",
+            "lat": "10.774707981582102",
+            "lng": "106.70366616633973"
+        },
+        {
+            "name": "Nossa Steakhouse - Phạm Hồng Thái",
+            "norm": "nossa steakhouse pham hong thai",
+            "image_local_path": "images/restaurant/Nossa Steakhouse - Phạm Hồng Thái/cover.jpg",
+            "lat": "10.771631784276748",
+            "lng": "106.69571657983253"
+        },
+        {
+            "name": "Cơm Niêu Thiên Lý - Cộng Hòa",
+            "norm": "com nieu thien ly cong hoa",
+            "image_local_path": "images/restaurant/Cơm Niêu Thiên Lý - Cộng Hòa/cover.jpg",
+            "lat": "10.802429663655648",
+            "lng": "106.64181003750433"
+        },
+        {
+            "name": "Cơm Tấm Thuận Kiều - Yersin",
+            "norm": "com tam thuan kieu yersin",
+            "image_local_path": "images/restaurant/Cơm Tấm Thuận Kiều - Yersin/cover.jpg",
+            "lat": "10.76773454838994",
+            "lng": "106.69734207983238"
+        },
+        {
+            "name": "Buffet Gánh Quê Hương – Phạm Ngũ Lão",
+            "norm": "buffet ganh que huong – pham ngu lao",
+            "image_local_path": "images/restaurant/Buffet Gánh Quê Hương – Phạm Ngũ Lão/cover.jpg",
+            "lat": "10.768219828825067",
+            "lng": "106.69232142401106"
+        },
+        {
+            "name": "Ốc Ghe - Mạc Đĩnh Chi",
+            "norm": "oc ghe mac đinh chi",
+            "image_local_path": "images/restaurant/Ốc Ghe - Mạc Đĩnh Chi/cover.jpg",
+            "lat": "10.786951224872057",
+            "lng": "106.69742662216129"
+        },
+        {
+            "name": "Galbi House – Phan Xích Long",
+            "norm": "galbi house – phan xich long",
+            "image_local_path": "images/restaurant/Galbi House – Phan Xích Long/cover.jpg",
+            "lat": "10.798962488407916",
+            "lng": "106.6866815086686"
+        },
+        {
+            "name": "Quán Chay The Rice - Tân Thới Nhất",
+            "norm": "quan chay the rice tan thoi nhat",
+            "image_local_path": "images/restaurant/Quán Chay The Rice - Tân Thới Nhất/cover.jpg",
+            "lat": "10.821779183764907",
+            "lng": "106.62230502401172"
+        },
+        {
+            "name": "Phú Nhuận - Mường Thanh Luxury Sài Gòn",
+            "norm": "phu nhuan muong thanh luxury sai gon",
+            "image_local_path": "images/restaurant/Phú Nhuận - Mường Thanh Luxury Sài Gòn/cover.jpg",
+            "lat": "10.79760371154507",
+            "lng": "106.67205028168283"
+        },
+        {
+            "name": "Cơm Tấm Thuận Kiều - Thuận Kiều",
+            "norm": "com tam thuan kieu thuan kieu",
+            "image_local_path": "images/restaurant/Cơm Tấm Thuận Kiều - Thuận Kiều/cover.jpg",
+            "lat": "10.759566940946334",
+            "lng": "106.65898044992585"
+        },
+        {
+            "name": "La Table De Saigon – Phạm Ngũ Lão",
+            "norm": "la table de saigon – pham ngu lao",
+            "image_local_path": "images/restaurant/La Table De Saigon – Phạm Ngũ Lão/cover.jpg",
+            "lat": "10.768569566777435",
+            "lng": "106.69391680866813"
+        },
+        {
+            "name": "Trống Cơm - Vincom Thảo Điền",
+            "norm": "trong com vincom thao đien",
+            "image_local_path": "images/restaurant/Trống Cơm - Vincom Thảo Điền/cover.jpg",
+            "lat": "10.802416484832955",
+            "lng": "106.74097159966442"
+        },
+        {
+            "name": "Propeller Rooftop & Bar - Bay Hotel",
+            "norm": "propeller rooftop & bar bay hotel",
+            "image_local_path": "images/restaurant/Propeller Rooftop & Bar - Bay Hotel/cover.jpg",
+            "lat": "10.780935602436037",
+            "lng": "106.70699651051842"
+        },
+        {
+            "name": "Quán Nướng Yaki – Chế Lan Viên",
+            "norm": "quan nuong yaki – che lan vien",
+            "image_local_path": "images/restaurant/Quán Nướng Yaki – Chế Lan Viên/cover.jpg",
+            "lat": "10.812862126199228",
+            "lng": "106.63175646634014"
+        },
+        {
+            "name": "Cơm Niêu Thiên Lý - Cửu Long",
+            "norm": "com nieu thien ly cuu long",
+            "image_local_path": "images/restaurant/Cơm Niêu Thiên Lý - Cửu Long/cover.jpg",
+            "lat": "10.783716223566586",
+            "lng": "106.6612396915681"
+        },
+        {
+            "name": "Asanoha - Modern Japanese Hotpot - Saigon Centre",
+            "norm": "asanoha modern japanese hotpot saigon centre",
+            "image_local_path": "images/restaurant/Asanoha - Modern Japanese Hotpot - Saigon Centre/cover.jpg",
+            "lat": "10.77338060456847",
+            "lng": "106.70091046633961"
+        },
+        {
+            "name": "Black Vinegar - Khách sạn New World Saigon - Lê Lai",
+            "norm": "black vinegar khach san new world saigon le lai",
+            "image_local_path": "images/restaurant/Black Vinegar - Khách sạn New World Saigon - Lê Lai/cover.jpg",
+            "lat": "10.771157866155024",
+            "lng": "106.69511902401113"
+        },
+        {
+            "name": "Lux 68 Restaurant - Nguyễn Đình Chiểu",
+            "norm": "lux 68 restaurant nguyen đinh chieu",
+            "image_local_path": "images/restaurant/Lux 68 Restaurant - Nguyễn Đình Chiểu/cover.jpg",
+            "lat": "10.775527523888321",
+            "lng": "106.68751087983249"
+        },
+        {
+            "name": "Thai Market - Phan Xích Long",
+            "norm": "thai market phan xich long",
+            "image_local_path": "images/restaurant/Thai Market - Phan Xích Long/cover.jpg",
+            "lat": "10.79899291070808",
+            "lng": "106.68647729332568"
+        },
+        {
+            "name": "Ikigai Sushi - Nguyễn Trọng Tuyển",
+            "norm": "ikigai sushi nguyen trong tuyen",
+            "image_local_path": "images/restaurant/Ikigai Sushi - Nguyễn Trọng Tuyển/cover.jpg",
+            "lat": "10.798077411222803",
+            "lng": "106.67333580866848"
+        },
+        {
+            "name": "Anrakutei - Parc Mall",
+            "norm": "anrakutei parc mall",
+            "image_local_path": "images/restaurant/Anrakutei - Parc Mall/cover.jpg",
+            "lat": "10.740711011320402",
+            "lng": "106.6787776105179"
+        },
+        {
+            "name": "Miiro Japanese Bistro - Nguyễn Thị Minh Khai",
+            "norm": "miiro japanese bistro nguyen thi minh khai",
+            "image_local_path": "images/restaurant/Miiro Japanese Bistro - Nguyễn Thị Minh Khai/cover.jpg",
+            "lat": "110.786202661007286",
+            "lng": "106.69902428799766"
+        },
+        {
+            "name": "Barrio Wine & Dine - Mê Linh",
+            "norm": "barrio wine & dine me linh",
+            "image_local_path": "images/restaurant/Barrio Wine & Dine - Mê Linh/cover.jpg",
+            "lat": "10.789282394527467",
+            "lng": "106.7095061086684"
+        },
+        {
+            "name": "Bonjour Resto’ - Nguyễn Huy Tưởng",
+            "norm": "bonjour resto’ nguyen huy tuong",
+            "image_local_path": "images/restaurant/Bonjour Resto’ - Nguyễn Huy Tưởng/cover.jpg",
+            "lat": "10.804323298498959",
+            "lng": "106.68967258168297"
+        },
+        {
+            "name": "Sushi Tokyo Town - Đường số 3",
+            "norm": "sushi tokyo town đuong so 3",
+            "image_local_path": "images/restaurant/Sushi Tokyo Town - Đường số 3/cover.jpg",
+            "lat": "10.82913571594477",
+            "lng": "106.73022570866885"
+        },
+        {
+            "name": "Yakimono - Aeon Mall Bình Tân",
+            "norm": "yakimono aeon mall binh tan",
+            "image_local_path": "images/restaurant/Yakimono - Aeon Mall Bình Tân/cover.jpg",
+            "lat": "10.742938823749867",
+            "lng": "106.611491093325"
+        },
+        {
+            "name": "Tiệm Thân Nướng - Liên Phường",
+            "norm": "tiem than nuong lien phuong",
+            "image_local_path": "images/restaurant/Tiệm Thân Nướng - Liên Phường/cover.jpg",
+            "lat": "10.807304744581021",
+            "lng": "106.78381572401153"
+        },
+        {
+            "name": "Nhà hàng Sandaime Kamura - Thái Văn Lung",
+            "norm": "nha hang sandaime kamura thai van lung",
+            "image_local_path": "images/restaurant/Nhà hàng Sandaime Kamura - Thái Văn Lung/cover.jpg",
+            "lat": "10.779845500488067",
+            "lng": "106.70519829702552"
+        },
+        {
+            "name": "Cơm Niêu Thiên Lý - Nguyễn Thị Thập",
+            "norm": "com nieu thien ly nguyen thi thap",
+            "image_local_path": "images/restaurant/Cơm Niêu Thiên Lý - Nguyễn Thị Thập/cover.jpg",
+            "lat": "10.744080095426087",
+            "lng": "106.69721482907069"
+        },
+        {
+            "name": "Basta Hiro - Pizza & Pasta - Estella Place",
+            "norm": "basta hiro pizza & pasta estella place",
+            "image_local_path": "images/restaurant/Basta Hiro - Pizza & Pasta - Estella Place/cover.jpg",
+            "lat": "10.802163625112636",
+            "lng": "106.74813170866855"
+        },
+        {
+            "name": "Le Monde Steak - Aeon Mall Bình Tân",
+            "norm": "le monde steak aeon mall binh tan",
+            "image_local_path": "images/restaurant/Le Monde Steak - Aeon Mall Bình Tân/cover.jpg",
+            "lat": "10.742799942223847",
+            "lng": "106.611829993325"
+        },
+        {
+            "name": "Chang - Nguyễn Đức Cảnh",
+            "norm": "chang nguyen đuc canh",
+            "image_local_path": "images/restaurant/Chang - Nguyễn Đức Cảnh/cover.jpg",
+            "lat": "10.730904169808296",
+            "lng": "106.70844973790872"
+        },
+        {
+            "name": "Tasaki BBQ - Aeon Mall Bình Tân",
+            "norm": "tasaki bbq aeon mall binh tan",
+            "image_local_path": "images/restaurant/Tasaki BBQ - Aeon Mall Bình Tân/cover.jpg",
+            "lat": "10.74301320930953",
+            "lng": "106.61189870866787"
+        },
+        {
+            "name": "Blue Bay - Buffet Hải Sản - Aeon Mall Bình Tân",
+            "norm": "blue bay buffet hai san aeon mall binh tan",
+            "image_local_path": "images/restaurant/Blue Bay - Buffet Hải Sản - Aeon Mall Bình Tân/cover.jpg",
+            "lat": "10.742974982926352",
+            "lng": "106.61195255284653"
+        },
+        {
+            "name": "Unatoto - Nguyễn Thị Thập",
+            "norm": "unatoto nguyen thi thap",
+            "image_local_path": "images/restaurant/Unatoto - Nguyễn Thị Thập/cover.jpg",
+            "lat": "10.738134990654283",
+            "lng": "106.72526547798202"
+        },
+        {
+            "name": "King BBQ Buffet – Crescent Mall",
+            "norm": "king bbq buffet – crescent mall",
+            "image_local_path": "images/restaurant/King BBQ Buffet – Crescent Mall/cover.jpg",
+            "lat": "10.72850010891305",
+            "lng": "106.71823591051776"
+        },
+        {
+            "name": "Cơm Niêu Thiên Lý - Hoàng Hoa Thám",
+            "norm": "com nieu thien ly hoang hoa tham",
+            "image_local_path": "images/restaurant/Cơm Niêu Thiên Lý - Hoàng Hoa Thám/cover.jpg",
+            "lat": "10.802426163658051",
+            "lng": "106.64184162401143"
+        },
+        {
+            "name": "Lẩu Dê 404 - Dương Đức Hiền",
+            "norm": "lau de 404 duong đuc hien",
+            "image_local_path": "images/restaurant/Lẩu Dê 404 - Dương Đức Hiền/cover.jpg",
+            "lat": "10.809575350986053",
+            "lng": "106.62693040866873"
+        },
+        {
+            "name": "Hồ Câu Tôm - Ẩm Thực Hương Quê - Đường số 24",
+            "norm": "ho cau tom am thuc huong que đuong so 24",
+            "image_local_path": "images/restaurant/Hồ Câu Tôm - Ẩm Thực Hương Quê - Đường số 24/cover.jpg",
+            "lat": "10.742846664613502",
+            "lng": "106.62935140866789"
+        },
+        {
+            "name": "Downtown Steakhouse - Nguyễn Thị Minh Khai",
+            "norm": "downtown steakhouse nguyen thi minh khai",
+            "image_local_path": "images/restaurant/Downtown Steakhouse - Nguyễn Thị Minh Khai/cover.jpg",
+            "lat": "10.785095836500574",
+            "lng": "106.70048352586126"
+        },
+        {
+            "name": "Heal & Celeb Vegan - Nguyễn Văn Nguyễn",
+            "norm": "heal & celeb vegan nguyen van nguyen",
+            "image_local_path": "images/restaurant/Heal & Celeb Vegan - Nguyễn Văn Nguyễn/cover.jpg",
+            "lat": "10.793586735688784",
+            "lng": "106.68682860866848"
+        },
+        {
+            "name": "Unatoto - Trương Định",
+            "norm": "unatoto truong đinh",
+            "image_local_path": "images/restaurant/Unatoto - Trương Định/cover.jpg",
+            "lat": "10.772768524235252",
+            "lng": "106.69583346818969"
+        },
+        {
+            "name": "Chay Garden Vegetarian Buffet & Tea House - Thảo Điền",
+            "norm": "chay garden vegetarian buffet & tea house thao đien",
+            "image_local_path": "images/restaurant/Chay Garden Vegetarian Buffet & Tea House - Thảo Điền/cover.jpg",
+            "lat": "10.803175401826305",
+            "lng": "106.73118367983287"
+        },
+        {
+            "name": "Basta Hiro – Pizza & Pasta – Saigon Centre",
+            "norm": "basta hiro – pizza & pasta – saigon centre",
+            "image_local_path": "images/restaurant/Basta Hiro – Pizza & Pasta – Saigon Centre/cover.jpg",
+            "lat": "10.773183934529388",
+            "lng": "106.70099660344597"
+        },
+        {
+            "name": "Chiyoda Sushi - Saigon Court",
+            "norm": "chiyoda sushi saigon court",
+            "image_local_path": "images/restaurant/Chiyoda Sushi - Saigon Court/cover.jpg",
+            "lat": "10.776241842401063",
+            "lng": "106.68812562216121"
+        },
+        {
+            "name": "Lẩu Gà Ớt Hiểm 109 - Nguyễn Thiện Thuật",
+            "norm": "lau ga ot hiem 109 nguyen thien thuat",
+            "image_local_path": "images/restaurant/Lẩu Gà Ớt Hiểm 109 - Nguyễn Thiện Thuật/cover.jpg",
+            "lat": "10.767461908867384",
+            "lng": "106.68028706633957"
+        },
+        {
+            "name": "Trống Cơm - Crescent Mall",
+            "norm": "trong com crescent mall",
+            "image_local_path": "images/restaurant/Trống Cơm - Crescent Mall/cover.jpg",
+            "lat": "10.729294414886937",
+            "lng": "106.71883017983207"
+        },
+        {
+            "name": "Ốc Q - Trần Não",
+            "norm": "oc q tran nao",
+            "image_local_path": "images/restaurant/Ốc Q - Trần Não/cover.jpg",
+            "lat": "10.788899055575245",
+            "lng": "106.72951732216127"
+        },
+        {
+            "name": "Buffet Sao Bắc Đẩu - Tân Sơn Nhất Hotel",
+            "norm": "buffet sao bac đau tan son nhat hotel",
+            "image_local_path": "images/restaurant/Buffet Sao Bắc Đẩu - Tân Sơn Nhất Hotel/cover.jpg",
+            "lat": "10.800960264688312",
+            "lng": "106.6689017951757"
+        },
+        {
+            "name": "Sushi World - Tân Sơn Nhất",
+            "norm": "sushi world tan son nhat",
+            "image_local_path": "images/restaurant/Sushi World - Tân Sơn Nhất/cover.jpg",
+            "lat": "10.80032039247478",
+            "lng": "106.67062061998953"
+        },
+        {
+            "name": "P'ti Saigon - Ngô Quang Huy",
+            "norm": "p'ti saigon ngo quang huy",
+            "image_local_path": "images/restaurant/P'ti Saigon - Ngô Quang Huy/cover.jpg",
+            "lat": "10.804735837018292",
+            "lng": "106.73578007983284"
+        },
+        {
+            "name": "Giao Khẩu Quán - Thạnh Lộc",
+            "norm": "giao khau quan thanh loc",
+            "image_local_path": "images/restaurant/Giao Khẩu Quán - Thạnh Lộc/cover.jpg",
+            "lat": "10.873315460106383",
+            "lng": "106.69255349517653"
+        },
+        {
+            "name": "Eddie's - New York Deli and Diner - Pasteur",
+            "norm": "eddie's new york deli and diner pasteur",
+            "image_local_path": "images/restaurant/Eddie's - New York Deli and Diner - Pasteur/cover.jpg",
+            "lat": "10.780055684090804",
+            "lng": "106.70728362211409"
+        },
+        {
+            "name": "Appeal Gastro Bar - Quốc Hương",
+            "norm": "appeal gastro bar quoc huong",
+            "image_local_path": "images/restaurant/Appeal Gastro Bar - Quốc Hương/cover.jpg",
+            "lat": "10.803606108113568",
+            "lng": "106.73182166634008"
+        },
+        {
+            "name": "NORI Modern Izakaya - Lý Tự Trọng",
+            "norm": "nori modern izakaya ly tu trong",
+            "image_local_path": "images/restaurant/NORI Modern Izakaya - Lý Tự Trọng/cover.jpg",
+            "lat": "10.774259681974815",
+            "lng": "106.69692302401114"
+        },
+        {
+            "name": "High Tide - Nguyễn Văn Hưởng",
+            "norm": "high tide nguyen van huong",
+            "image_local_path": "images/restaurant/High Tide - Nguyễn Văn Hưởng/cover.jpg",
+            "lat": "10.814637699714655",
+            "lng": "106.7265718798329"
+        },
+        {
+            "name": "Yakimono - Lê Quý Đôn",
+            "norm": "yakimono le quy đon",
+            "image_local_path": "images/restaurant/Yakimono - Lê Quý Đôn/cover.jpg",
+            "lat": "10.78133926008554",
+            "lng": "106.6912211375041"
+        },
+        {
+            "name": "Lẩu Dê 404 – Trung Sơn",
+            "norm": "lau de 404 – trung son",
+            "image_local_path": "images/restaurant/Lẩu Dê 404 – Trung Sơn/cover.jpg",
+            "lat": "10.735795810346616",
+            "lng": "106.68929383750358"
+        },
+        {
+            "name": "Sài Gòn Xưa Và Nay – Nguyễn Trung Trực",
+            "norm": "sai gon xua va nay – nguyen trung truc",
+            "image_local_path": "images/restaurant/Sài Gòn Xưa Và Nay – Nguyễn Trung Trực/cover.jpg",
+            "lat": "10.775676477356138",
+            "lng": "106.69739553935408"
+        },
+        {
+            "name": "Cơm Niêu Làng Tre - Phan Văn Trị",
+            "norm": "com nieu lang tre phan van tri",
+            "image_local_path": "images/restaurant/Cơm Niêu Làng Tre - Phan Văn Trị/cover.jpg",
+            "lat": "10.829533582350757",
+            "lng": "106.68179062401177"
+        },
+        {
+            "name": "Hội Ngộ 420 - Trường Sa",
+            "norm": "hoi ngo 420 truong sa",
+            "image_local_path": "images/restaurant/Hội Ngộ 420 - Trường Sa/cover.jpg",
+            "lat": "10.797531589312811",
+            "lng": "106.68567565284708"
+        },
+        {
+            "name": "Quán Lúa - Đường 182",
+            "norm": "quan lua đuong 182",
+            "image_local_path": "images/restaurant/Quán Lúa - Đường 182/cover.jpg",
+            "lat": "10.835813040156433",
+            "lng": "106.79219482401191"
+        },
+        {
+            "name": "Quán Lão Trư - Phạm Ngọc Thạch",
+            "norm": "quan lao tru pham ngoc thach",
+            "image_local_path": "images/restaurant/Quán Lão Trư - Phạm Ngọc Thạch/cover.jpg",
+            "lat": "10.786747513940872",
+            "lng": "106.69197537983273"
+        },
+        {
+            "name": "Lá Phong Sushi House – Trần Cao Vân",
+            "norm": "la phong sushi house – tran cao van",
+            "image_local_path": "images/restaurant/Lá Phong Sushi House – Trần Cao Vân/cover.jpg",
+            "lat": "10.784975257916667",
+            "lng": "106.69819422401119"
+        },
+        {
+            "name": "Funny Beef - Lê Đức Thọ",
+            "norm": "funny beef le đuc tho",
+            "image_local_path": "images/restaurant/Funny Beef - Lê Đức Thọ/cover.jpg",
+            "lat": "10.835058853411738",
+            "lng": "106.68172004120476"
+        },
+        {
+            "name": "Reski Hotpot - Tên Lửa",
+            "norm": "reski hotpot ten lua",
+            "image_local_path": "images/restaurant/Reski Hotpot - Tên Lửa/cover.jpg",
+            "lat": "10.7484819014793",
+            "lng": "106.61192893565368"
+        },
+        {
+            "name": "Cloud Nine Sai Gon Restaurant - Lý Tự Trọng",
+            "norm": "cloud nine sai gon restaurant ly tu trong",
+            "image_local_path": "images/restaurant/Cloud Nine Sai Gon Restaurant - Lý Tự Trọng/cover.jpg",
+            "lat": "10.77344170321485",
+            "lng": "106.69569975284685"
+        },
+        {
+            "name": "Chamie Steak -Trần Quang Diệu",
+            "norm": "chamie steak tran quang dieu",
+            "image_local_path": "images/restaurant/Chamie Steak -Trần Quang Diệu/cover.jpg",
+            "lat": "10.790531193738301",
+            "lng": "106.67990198750411"
+        },
+        {
+            "name": "Bò 5S - Đinh Tiên Hoàng",
+            "norm": "bo 5s đinh tien hoang",
+            "image_local_path": "images/restaurant/Bò 5S - Đinh Tiên Hoàng/cover.jpg",
+            "lat": "10.788058699184829",
+            "lng": "106.70036272216127"
+        },
+        {
+            "name": "Le Monde Steak - Aeon Mall Tân Phú",
+            "norm": "le monde steak aeon mall tan phu",
+            "image_local_path": "images/restaurant/Le Monde Steak - Aeon Mall Tân Phú/cover.jpg",
+            "lat": "10.801867409091535",
+            "lng": "106.61750423750424"
+        },
+        {
+            "name": "Hoshi Sushi - Bàu Cát",
+            "norm": "hoshi sushi bau cat",
+            "image_local_path": "images/restaurant/Hoshi Sushi - Bàu Cát/cover.jpg",
+            "lat": "10.793507887026767",
+            "lng": "106.64084832401133"
+        },
+        {
+            "name": "Vị Quê Kitchen - Sương Nguyệt Ánh",
+            "norm": "vi que kitchen suong nguyet anh",
+            "image_local_path": "images/restaurant/Vị Quê Kitchen - Sương Nguyệt Ánh/cover.jpg",
+            "lat": "10.771841004504932",
+            "lng": "106.68851727983247"
+        },
+        {
+            "name": "Kokugyu - Trần Quang Khải",
+            "norm": "kokugyu tran quang khai",
+            "image_local_path": "images/restaurant/Kokugyu - Trần Quang Khải/cover.jpg",
+            "lat": "10.792404670698419",
+            "lng": "106.69206869517562"
+        },
+        {
+            "name": "Saiko Sushi - Hai Bà Trưng",
+            "norm": "saiko sushi hai ba trung",
+            "image_local_path": "images/restaurant/Saiko Sushi - Hai Bà Trưng/cover.jpg",
+            "lat": "10.78339847396531",
+            "lng": "106.69810272401129"
+        },
+        {
+            "name": "Mộc – Riêu & Nướng – Lam Sơn",
+            "norm": "moc – rieu & nuong – lam son",
+            "image_local_path": "images/restaurant/Mộc – Riêu & Nướng – Lam Sơn/cover.jpg",
+            "lat": "10.808194652199477",
+            "lng": "106.66634300866866"
+        },
+        {
+            "name": "Chang - Lê Đại Hành",
+            "norm": "chang le đai hanh",
+            "image_local_path": "images/restaurant/Chang - Lê Đại Hành/cover.jpg",
+            "lat": "10.766663868972564",
+            "lng": "106.653818324011"
+        },
+        {
+            "name": "Eddie's - New York Deli and Diner - Phạm Thái Bường",
+            "norm": "eddie's new york deli and diner pham thai buong",
+            "image_local_path": "images/restaurant/Eddie's - New York Deli and Diner - Phạm Thái Bường/cover.jpg",
+            "lat": "10.72762383880491",
+            "lng": "106.70850656385863"
+        },
+        {
+            "name": "Quán Bánh Canh Ghẹ Muối Ớt Xanh - Nguyễn Tri Phương",
+            "norm": "quan banh canh ghe muoi ot xanh nguyen tri phuong",
+            "image_local_path": "images/restaurant/Quán Bánh Canh Ghẹ Muối Ớt Xanh - Nguyễn Tri Phương/cover.jpg",
+            "lat": "10.767329428237112",
+            "lng": "106.66738588168255"
+        },
+        {
+            "name": "Tasaki BBQ - Vạn Hạnh Mall",
+            "norm": "tasaki bbq van hanh mall",
+            "image_local_path": "images/restaurant/Tasaki BBQ - Vạn Hạnh Mall/cover.jpg",
+            "lat": "10.770693427447156",
+            "lng": "106.66971145284687"
+        },
+        {
+            "name": "Nhà hàng Chay Phạm Nghiêm Trai Bongensai - Nguyễn Trãi",
+            "norm": "nha hang chay pham nghiem trai bongensai nguyen trai",
+            "image_local_path": "images/restaurant/Nhà hàng Chay Phạm Nghiêm Trai Bongensai - Nguyễn Trãi/cover.jpg",
+            "lat": "10.766215935595921",
+            "lng": "106.6881580156608"
+        },
+        {
+            "name": "Ẩm thực Hải sản RIVIA – Nguyễn Cư Trinh",
+            "norm": "am thuc hai san rivia – nguyen cu trinh",
+            "image_local_path": "images/restaurant/Ẩm thực Hải sản RIVIA – Nguyễn Cư Trinh/cover.jpg",
+            "lat": "10.765198669830056",
+            "lng": "106.69192506448954"
+        },
+        {
+            "name": "Happy Lamb Hotpot Restaurant - Trần Hưng Đạo",
+            "norm": "happy lamb hotpot restaurant tran hung đao",
+            "image_local_path": "images/restaurant/Happy Lamb Hotpot Restaurant - Trần Hưng Đạo/cover.jpg",
+            "lat": "10.762003571607417",
+            "lng": "106.69035818353247"
+        },
+        {
+            "name": "Shang Garden - Nguyễn Khắc Viện",
+            "norm": "shang garden nguyen khac vien",
+            "image_local_path": "images/restaurant/Shang Garden - Nguyễn Khắc Viện/cover.jpg",
+            "lat": "10.729420697348527",
+            "lng": "106.72013023750338"
+        },
+        {
+            "name": "Tám Riêu – Phan Xích Long",
+            "norm": "tam rieu – phan xich long",
+            "image_local_path": "images/restaurant/Tám Riêu – Phan Xích Long/cover.jpg",
+            "lat": "10.79921819408699",
+            "lng": "106.68610570866842"
+        },
+        {
+            "name": "Nhà Hàng Sâm Ngọc Linh - Phố đi bộ Nguyễn Huệ",
+            "norm": "nha hang sam ngoc linh pho đi bo nguyen hue",
+            "image_local_path": "images/restaurant/Nhà Hàng Sâm Ngọc Linh - Phố đi bộ Nguyễn Huệ/cover.jpg",
+            "lat": "10.77467318886178",
+            "lng": "106.70374492455353"
+        },
+        {
+            "name": "Gyu-Kaku - Lê Thánh Tôn",
+            "norm": "gyu kaku le thanh ton",
+            "image_local_path": "images/restaurant/Gyu-Kaku - Lê Thánh Tôn/cover.jpg",
+            "lat": "10.780712647236042",
+            "lng": "106.70484507983258"
+        },
+        {
+            "name": "Quán Út Cà Mau - Điện Biên Phủ",
+            "norm": "quan ut ca mau đien bien phu",
+            "image_local_path": "images/restaurant/Quán Út Cà Mau - Điện Biên Phủ/cover.jpg",
+            "lat": "10.784550618823468",
+            "lng": "106.69191735284696"
+        },
+        {
+            "name": "Bonjour Resto' - Nguyễn Trãi",
+            "norm": "bonjour resto' nguyen trai",
+            "image_local_path": "images/restaurant/Bonjour Resto' - Nguyễn Trãi/cover.jpg",
+            "lat": "10.770317427592229",
+            "lng": "106.68977765099672"
+        },
+        {
+            "name": "Funny Beef - Nguyễn Sơn",
+            "norm": "funny beef nguyen son",
+            "image_local_path": "images/restaurant/Funny Beef - Nguyễn Sơn/cover.jpg",
+            "lat": "10.781735080959601",
+            "lng": "106.63177480866831"
+        },
+        {
+            "name": "Moo Beef Steak - Lý Tự Trọng",
+            "norm": "moo beef steak ly tu trong",
+            "image_local_path": "images/restaurant/Moo Beef Steak - Lý Tự Trọng/cover.jpg",
+            "lat": "10.77428176576655",
+            "lng": "106.69751805099679"
+        },
+        {
+            "name": "Đại Phú - Nguyễn Văn Quá, Q12",
+            "norm": "đai phu nguyen van qua q12",
+            "image_local_path": "images/restaurant/Đại Phú - Nguyễn Văn Quá, Q12/cover.jpg",
+            "lat": "10.82911240709582",
+            "lng": "106.62700863750462"
+        },
+        {
+            "name": "Reski Hotpot - Lê Trọng Tấn",
+            "norm": "reski hotpot le trong tan",
+            "image_local_path": "images/restaurant/Reski Hotpot - Lê Trọng Tấn/cover.jpg",
+            "lat": "10.80898774357477",
+            "lng": "106.61616146634003"
+        },
+        {
+            "name": "Shang Garden - Tôn Thất Tùng",
+            "norm": "shang garden ton that tung",
+            "image_local_path": "images/restaurant/Shang Garden - Tôn Thất Tùng/cover.jpg",
+            "lat": "10.769450007673997",
+            "lng": "106.68889526633966"
+        },
+        {
+            "name": "Ghiền Quán - Nguyễn Thiện Thuật",
+            "norm": "ghien quan nguyen thien thuat",
+            "image_local_path": "images/restaurant/Ghiền Quán - Nguyễn Thiện Thuật/cover.jpg",
+            "lat": "10.770379566618782",
+            "lng": "106.67733395284674"
+        },
+        {
+            "name": "Hoàng Ty - Trần Não",
+            "norm": "hoang ty tran nao",
+            "image_local_path": "images/restaurant/Hoàng Ty - Trần Não/cover.jpg",
+            "lat": "10.795073746782457",
+            "lng": "106.73125933935427"
+        },
+        {
+            "name": "Tá Lả Quán - Phạm Văn Đồng",
+            "norm": "ta la quan pham van đong",
+            "image_local_path": "images/restaurant/Tá Lả Quán - Phạm Văn Đồng/cover.jpg",
+            "lat": "10.820863860326293",
+            "lng": "106.69329879517596"
+        },
+        {
+            "name": "Sosaku Sushi Dan - Bùi Viện",
+            "norm": "sosaku sushi dan bui vien",
+            "image_local_path": "images/restaurant/Sosaku Sushi Dan - Bùi Viện/cover.jpg",
+            "lat": "10.765619589484015",
+            "lng": "106.69025543750378"
+        },
+        {
+            "name": "Thai Market - Sư Vạn Hạnh",
+            "norm": "thai market su van hanh",
+            "image_local_path": "images/restaurant/Thai Market - Sư Vạn Hạnh/cover.jpg",
+            "lat": "10.773633719468712",
+            "lng": "106.66848742128576"
+        },
+        {
+            "name": "Saigon 2 - Trần Hưng Đạo",
+            "norm": "saigon 2 tran hung đao",
+            "image_local_path": "images/restaurant/Saigon 2 - Trần Hưng Đạo/cover.jpg",
+            "lat": "10.754840020840973",
+            "lng": "106.67966265281308"
+        },
+        {
+            "name": "RIKYU Restaurant - Lê Thánh Tôn",
+            "norm": "rikyu restaurant le thanh ton",
+            "image_local_path": "images/restaurant/RIKYU Restaurant - Lê Thánh Tôn/cover.jpg",
+            "lat": "10.781373296819707",
+            "lng": "106.70527837798254"
+        },
+        {
+            "name": "Somtam ZAAP - Pasteur",
+            "norm": "somtam zaap pasteur",
+            "image_local_path": "images/restaurant/Somtam ZAAP - Pasteur/cover.jpg",
+            "lat": "10.775205163743008",
+            "lng": "106.70089026633974"
+        },
+        {
+            "name": "Sushi House – Trương Quốc Dung",
+            "norm": "sushi house – truong quoc dung",
+            "image_local_path": "images/restaurant/Sushi House – Trương Quốc Dung/cover.jpg",
+            "lat": "10.79671710659106",
+            "lng": "106.67271849517563"
+        },
+        {
+            "name": "Funny Beef - Nguyễn Văn Luông",
+            "norm": "funny beef nguyen van luong",
+            "image_local_path": "images/restaurant/Funny Beef - Nguyễn Văn Luông/cover.jpg",
+            "lat": "10.743419686592027",
+            "lng": "106.6345574375036"
+        },
+        {
+            "name": "Sushi World - Củ Chi",
+            "norm": "sushi world cu chi",
+            "image_local_path": "images/restaurant/Sushi World - Củ Chi/cover.jpg",
+            "lat": "10.969690278005071",
+            "lng": "106.48388266819202"
+        },
+        {
+            "name": "Cơm Tấm Thuận Kiều - Nguyễn Huy Lượng",
+            "norm": "com tam thuan kieu nguyen huy luong",
+            "image_local_path": "images/restaurant/Cơm Tấm Thuận Kiều - Nguyễn Huy Lượng/cover.jpg",
+            "lat": "10.805681845551161",
+            "lng": "106.6960025086686"
+        },
+        {
+            "name": "Dìn Ký Cù Lao Xanh - Trần Văn Trà Quận 7",
+            "norm": "din ky cu lao xanh tran van tra quan 7",
+            "image_local_path": "images/restaurant/Dìn Ký Cù Lao Xanh - Trần Văn Trà Quận 7/cover.jpg",
+            "lat": "10.720337180485542",
+            "lng": "106.71627988195314"
+        },
+        {
+            "name": "Mabu-KKO Chi - KĐT Phú Mỹ Hưng",
+            "norm": "mabu kko chi kđt phu my hung",
+            "image_local_path": "images/restaurant/Mabu-KKO Chi - KĐT Phú Mỹ Hưng/cover.jpg",
+            "lat": "10.72408010144848",
+            "lng": "106.72842865284636"
+        },
+        {
+            "name": "Thế Giới Bò - Vĩnh Khánh",
+            "norm": "the gioi bo vinh khanh",
+            "image_local_path": "images/restaurant/Thế Giới Bò - Vĩnh Khánh/cover.jpg",
+            "lat": "10.76417251007895",
+            "lng": "106.70121402216095"
+        },
+        {
+            "name": "Quán Tới Bến - Bến Vân Đồn",
+            "norm": "quan toi ben ben van đon",
+            "image_local_path": "images/restaurant/Quán Tới Bến - Bến Vân Đồn/cover.jpg",
+            "lat": "10.762079952503134",
+            "lng": "106.6979322663396"
+        },
+        {
+            "name": "Chic Restaurant - Bay Hotel",
+            "norm": "chic restaurant bay hotel",
+            "image_local_path": "images/restaurant/Chic Restaurant - Bay Hotel/cover.jpg",
+            "lat": "10.781263760130596",
+            "lng": "106.70619785284694"
+        },
+        {
+            "name": "Cozy Eatery & Bar - Nguyễn Thị Minh Khai",
+            "norm": "cozy eatery & bar nguyen thi minh khai",
+            "image_local_path": "images/restaurant/Cozy Eatery & Bar - Nguyễn Thị Minh Khai/cover.jpg",
+            "lat": "10.772685025482996",
+            "lng": "106.68702526633975"
+        },
+        {
+            "name": "Ẩm Thực Chay Tuệ - Mai Thị Lựu",
+            "norm": "am thuc chay tue mai thi luu",
+            "image_local_path": "images/restaurant/Ẩm Thực Chay Tuệ - Mai Thị Lựu/cover.jpg",
+            "lat": "10.79217523177921",
+            "lng": "106.69836170866841"
+        },
+        {
+            "name": "Chang - Bình Tân",
+            "norm": "chang binh tan",
+            "image_local_path": "images/restaurant/Chang - Bình Tân/cover.jpg",
+            "lat": "10.751617815795369",
+            "lng": "106.61174573935381"
+        },
+        {
+            "name": "Hoa Viên Craft Brewery - Nguyễn Thị Minh Khai",
+            "norm": "hoa vien craft brewery nguyen thi minh khai",
+            "image_local_path": "images/restaurant/Hoa Viên Craft Brewery - Nguyễn Thị Minh Khai/cover.jpg",
+            "lat": "10.786116792992955",
+            "lng": "106.6992285240113"
+        },
+        {
+            "name": "King BBQ Buffet – SC Vivo City",
+            "norm": "king bbq buffet – sc vivo city",
+            "image_local_path": "images/restaurant/King BBQ Buffet – SC Vivo City/cover.jpg",
+            "lat": "10.730057973101763",
+            "lng": "106.70322122216061"
+        },
+        {
+            "name": "Quán Lẩu Bò Sài Gòn D2 - Nguyễn Gia Trí",
+            "norm": "quan lau bo sai gon d2 nguyen gia tri",
+            "image_local_path": "images/restaurant/Quán Lẩu Bò Sài Gòn D2 - Nguyễn Gia Trí/cover.jpg",
+            "lat": "10.809037135988648",
+            "lng": "106.71720712216155"
+        },
+        {
+            "name": "Chang – Cao Thắng",
+            "norm": "chang – cao thang",
+            "image_local_path": "images/restaurant/Chang – Cao Thắng/cover.jpg",
+            "lat": "10.768976066919393",
+            "lng": "106.68375043750389"
+        },
+        {
+            "name": "Soi Thai - Nguyễn Tri Phương",
+            "norm": "soi thai nguyen tri phuong",
+            "image_local_path": "images/restaurant/Soi Thai - Nguyễn Tri Phương/cover.jpg",
+            "lat": "10.761059011497228",
+            "lng": "106.66879830866813"
+        },
+        {
+            "name": "The Chill - Trần Hưng Đạo",
+            "norm": "the chill tran hung đao",
+            "image_local_path": "images/restaurant/The Chill - Trần Hưng Đạo/cover.jpg",
+            "lat": "10.766775028797277",
+            "lng": "106.69376005099666"
+        },
+        {
+            "name": "Lẩu Gà Ớt Hiểm 109 - Hoàng Diệu 2",
+            "norm": "lau ga ot hiem 109 hoang dieu 2",
+            "image_local_path": "images/restaurant/Lẩu Gà Ớt Hiểm 109 - Hoàng Diệu 2/cover.jpg",
+            "lat": "10.854970547487255",
+            "lng": "106.76782738339934"
+        },
+        {
+            "name": "Cơm Niêu Thiên Lý - Cityland",
+            "norm": "com nieu thien ly cityland",
+            "image_local_path": "images/restaurant/Cơm Niêu Thiên Lý - Cityland/cover.jpg",
+            "lat": "10.834267516450279",
+            "lng": "106.67058489517602"
+        },
+        {
+            "name": "Reski Hotpot - Parc Mall",
+            "norm": "reski hotpot parc mall",
+            "image_local_path": "images/restaurant/Reski Hotpot - Parc Mall/cover.jpg",
+            "lat": "10.740730996447748",
+            "lng": "106.67859866662276"
+        },
+        {
+            "name": "Cháo Sườn Chú Chen - Nguyễn Trãi",
+            "norm": "chao suon chu chen nguyen trai",
+            "image_local_path": "images/restaurant/Cháo Sườn Chú Chen - Nguyễn Trãi/cover.jpg",
+            "lat": "10.763063190779713",
+            "lng": "106.68689537983241"
+        },
+        {
+            "name": "Chay Araham - Cao Thắng",
+            "norm": "chay araham cao thang",
+            "image_local_path": "images/restaurant/Chay Araham - Cao Thắng/cover.jpg",
+            "lat": "10.775357720684624",
+            "lng": "106.67454246633973"
+        },
+        {
+            "name": "Aka House – Vạn Hạnh Mall",
+            "norm": "aka house – van hanh mall",
+            "image_local_path": "images/restaurant/Aka House – Vạn Hạnh Mall/cover.jpg",
+            "lat": "10.7707355867466",
+            "lng": "106.66968999517543"
+        },
+        {
+            "name": "Nhà hàng Tàu Bến Nghé - Nguyễn Tất Thành",
+            "norm": "nha hang tau ben nghe nguyen tat thanh",
+            "image_local_path": "images/restaurant/Nhà hàng Tàu Bến Nghé - Nguyễn Tất Thành/cover.jpg",
+            "lat": "10.767164988401436",
+            "lng": "106.70824939517533"
+        },
+        {
+            "name": "Nhà hàng Chay Phạm Nghiêm Trai Bongensai - Nguyễn Đăng Giai",
+            "norm": "nha hang chay pham nghiem trai bongensai nguyen đang giai",
+            "image_local_path": "images/restaurant/Nhà hàng Chay Phạm Nghiêm Trai Bongensai - Nguyễn Đăng Giai/cover.jpg",
+            "lat": "10.802612457103761",
+            "lng": "106.73717042401148"
+        },
+        {
+            "name": "Nhà hàng Steakhouse The Fan - Khu Biệt Thự Kim Long",
+            "norm": "nha hang steakhouse the fan khu biet thu kim long",
+            "image_local_path": "images/restaurant/Nhà hàng Steakhouse The Fan - Khu Biệt Thự Kim Long/cover.jpg",
+            "lat": "10.721773270896641",
+            "lng": "106.70220556818926"
+        },
+        {
+            "name": "Nhà hàng OLiu Đỏ - Hoàng Diệu",
+            "norm": "nha hang oliu đo hoang dieu",
+            "image_local_path": "images/restaurant/Nhà hàng OLiu Đỏ - Hoàng Diệu/cover.jpg",
+            "lat": "10.764013230345471",
+            "lng": "106.70404936818962"
+        },
+        {
+            "name": "Nhà hàng Cow Express – Bít tết bò Mỹ – Sư Vạn Hạnh",
+            "norm": "nha hang cow express – bit tet bo my – su van hanh",
+            "image_local_path": "images/restaurant/Nhà hàng Cow Express – Bít tết bò Mỹ – Sư Vạn Hạnh/cover.jpg",
+            "lat": "10.773463882671958",
+            "lng": "106.66867137983246"
+        },
+        {
+            "name": "Ẩm Thực Quê Nhà - Thành Thái",
+            "norm": "am thuc que nha thanh thai",
+            "image_local_path": "images/restaurant/Ẩm Thực Quê Nhà - Thành Thái/cover.jpg",
+            "lat": "10.769356667228175",
+            "lng": "106.66624643750386"
+        },
+        {
+            "name": "Quán Nướng Yaki - Tân Sơn Nhì",
+            "norm": "quan nuong yaki tan son nhi",
+            "image_local_path": "images/restaurant/Quán Nướng Yaki - Tân Sơn Nhì/cover.jpg",
+            "lat": "10.794025457446855",
+            "lng": "106.62894521051854"
+        },
+        {
+            "name": "Somtam Zaap - Nguyễn Thị Minh Khai",
+            "norm": "somtam zaap nguyen thi minh khai",
+            "image_local_path": "images/restaurant/Somtam Zaap - Nguyễn Thị Minh Khai/cover.jpg",
+            "lat": "10.78304527726784",
+            "lng": "106.69783433935412"
+        },
+        {
+            "name": "Buffet Lẩu Nướng Macao - Hàn Quốc - Trần Hưng Đạo B",
+            "norm": "buffet lau nuong macao han quoc tran hung đao b",
+            "image_local_path": "images/restaurant/Buffet Lẩu Nướng Macao - Hàn Quốc - Trần Hưng Đạo B/cover.jpg",
+            "lat": "10.751894921554474",
+            "lng": "106.65876552459822"
+        },
+        {
+            "name": "Kingscross - Global City",
+            "norm": "kingscross global city",
+            "image_local_path": "images/restaurant/Kingscross - Global City/cover.jpg",
+            "lat": "10.80046563230414",
+            "lng": "106.77907246819017"
+        },
+        {
+            "name": "Thai Market - Giga Mall",
+            "norm": "thai market giga mall",
+            "image_local_path": "images/restaurant/Thai Market - Giga Mall/cover.jpg",
+            "lat": "10.827789970151679",
+            "lng": "106.72112736449034"
+        },
+        {
+            "name": "Livannah - Sips & Bites - Nguyễn Ư Dĩ",
+            "norm": "livannah sips & bites nguyen u di",
+            "image_local_path": "images/restaurant/Livannah - Sips & Bites - Nguyễn Ư Dĩ/cover.jpg",
+            "lat": "10.805924745405944",
+            "lng": "106.74218940866854"
+        },
+        {
+            "name": "MATSURI - Japanese Restaurant - Vincom Mega Mall Thảo Điền",
+            "norm": "matsuri japanese restaurant vincom mega mall thao đien",
+            "image_local_path": "images/restaurant/MATSURI - Japanese Restaurant - Vincom Mega Mall Thảo Điền/cover.jpg",
+            "lat": "10.802569708696506",
+            "lng": "106.74058745284708"
+        },
+        {
+            "name": "Chill Thái - Quận 7",
+            "norm": "chill thai quan 7",
+            "image_local_path": "images/restaurant/Chill Thái - Quận 7/cover.jpg",
+            "lat": "10.7293829801812",
+            "lng": "106.72555346765279"
+        },
+        {
+            "name": "Kobe Teppanyaki - Tú Xương",
+            "norm": "kobe teppanyaki tu xuong",
+            "image_local_path": "images/restaurant/Kobe Teppanyaki - Tú Xương/cover.jpg",
+            "lat": "10.783640455610293",
+            "lng": "106.68936480866837"
+        },
+        {
+            "name": "O2 Seafood - Song Hành",
+            "norm": "o2 seafood song hanh",
+            "image_local_path": "images/restaurant/O2 Seafood - Song Hành/cover.jpg",
+            "lat": "10.801529780546915",
+            "lng": "106.74565330866852"
+        },
+        {
+            "name": "Le Monde Steak - Cao Thắng",
+            "norm": "le monde steak cao thang",
+            "image_local_path": "images/restaurant/Le Monde Steak - Cao Thắng/cover.jpg",
+            "lat": "10.770603469001461",
+            "lng": "106.6817523298325"
+        },
+        {
+            "name": "Hoàng Yến Cuisine - Hai Bà Trưng",
+            "norm": "hoang yen cuisine hai ba trung",
+            "image_local_path": "images/restaurant/Hoàng Yến Cuisine - Hai Bà Trưng/cover.jpg",
+            "lat": "10.785063415181783",
+            "lng": "106.695996752847"
+        },
+        {
+            "name": "Cơm Niêu Thiên Lý - Đường Số 7",
+            "norm": "com nieu thien ly đuong so 7",
+            "image_local_path": "images/restaurant/Cơm Niêu Thiên Lý - Đường Số 7/cover.jpg",
+            "lat": "10.75225587979537",
+            "lng": "106.61267386633945"
+        },
+        {
+            "name": "Higuchi Sushi & Grill - Empire City",
+            "norm": "higuchi sushi & grill empire city",
+            "image_local_path": "images/restaurant/Higuchi Sushi & Grill - Empire City/cover.jpg",
+            "lat": "10.767988307970057",
+            "lng": "106.71276959517537"
+        },
+        {
+            "name": "Thẩm Quán - Điện Biên Phủ",
+            "norm": "tham quan đien bien phu",
+            "image_local_path": "images/restaurant/Thẩm Quán - Điện Biên Phủ/cover.jpg",
+            "lat": "10.802036702666562",
+            "lng": "106.71196969517572"
+        },
+        {
+            "name": "Chảo Cá - Crescent Mall",
+            "norm": "chao ca crescent mall",
+            "image_local_path": "images/restaurant/Chảo Cá - Crescent Mall/cover.jpg",
+            "lat": "10.729178460877653",
+            "lng": "106.71891601051784"
+        },
+        {
+            "name": "Cheer House Restaurant - Lê Ngô Cát",
+            "norm": "cheer house restaurant le ngo cat",
+            "image_local_path": "images/restaurant/Cheer House Restaurant - Lê Ngô Cát/cover.jpg",
+            "lat": "10.776877481594001",
+            "lng": "106.68526706633975"
+        },
+        {
+            "name": "Link Bistro Café - La Siesta Premium Saigon Central - Lê Anh Xuân",
+            "norm": "link bistro cafe la siesta premium saigon central le anh xuan",
+            "image_local_path": "images/restaurant/Link Bistro Café - La Siesta Premium Saigon Central - Lê Anh Xuân/cover.jpg",
+            "lat": "10.77197350031117",
+            "lng": "106.69495445422655"
+        },
+        {
+            "name": "Hoàng Ty Premium - Đường số 41",
+            "norm": "hoang ty premium đuong so 41",
+            "image_local_path": "images/restaurant/Hoàng Ty Premium - Đường số 41/cover.jpg",
+            "lat": "10.73757036317164",
+            "lng": "106.71127609517495"
+        },
+        {
+            "name": "Việt Phố - Lê Quý Đôn",
+            "norm": "viet pho le quy đon",
+            "image_local_path": "images/restaurant/Việt Phố - Lê Quý Đôn/cover.jpg",
+            "lat": "10.783550440623138",
+            "lng": "106.68833190866836"
+        },
+        {
+            "name": "The V Fusion - An Phú",
+            "norm": "the v fusion an phu",
+            "image_local_path": "images/restaurant/The V Fusion - An Phú/cover.jpg",
+            "lat": "10.808872882137178",
+            "lng": "106.75061235284724"
+        },
+        {
+            "name": "Twilight Sky Bar Sai Gon - Lý Tự Trọng",
+            "norm": "twilight sky bar sai gon ly tu trong",
+            "image_local_path": "images/restaurant/Twilight Sky Bar Sai Gon - Lý Tự Trọng/cover.jpg",
+            "lat": "10.77328360723217",
+            "lng": "106.69573193935403"
+        },
+        {
+            "name": "Canalis Club - Nam Kỳ Khởi Nghĩa",
+            "norm": "canalis club nam ky khoi nghia",
+            "image_local_path": "images/restaurant/Canalis Club - Nam Kỳ Khởi Nghĩa/cover.jpg",
+            "lat": "10.787513777917015",
+            "lng": "106.68680043750408"
+        },
+        {
+            "name": "BRUX Belgian Capital Beer - Trần Quốc Hoàn",
+            "norm": "brux belgian capital beer tran quoc hoan",
+            "image_local_path": "images/restaurant/BRUX Belgian Capital Beer - Trần Quốc Hoàn/cover.jpg",
+            "lat": "10.806043822521241",
+            "lng": "106.66421063750434"
+        },
+        {
+            "name": "Cơm Niêu Làng Tre - Lê Quang Định",
+            "norm": "com nieu lang tre le quang đinh",
+            "image_local_path": "images/restaurant/Cơm Niêu Làng Tre - Lê Quang Định/cover.jpg",
+            "lat": "10.811715357126396",
+            "lng": "106.6909229798329"
+        },
+        {
+            "name": "Cow Express - Lê Văn Sỹ",
+            "norm": "cow express le van sy",
+            "image_local_path": "images/restaurant/Cow Express - Lê Văn Sỹ/cover.jpg",
+            "lat": "10.794196374396506",
+            "lng": "106.66883830866843"
+        },
+        {
+            "name": "Chiba - Yakiniku Nướng Nhật Bản - Hoàng Hoa Thám",
+            "norm": "chiba yakiniku nuong nhat ban hoang hoa tham",
+            "image_local_path": "images/restaurant/Chiba - Yakiniku Nướng Nhật Bản - Hoàng Hoa Thám/cover.jpg",
+            "lat": "10.800770026043114",
+            "lng": "106.64709353750426"
+        },
+        {
+            "name": "Ẩm Thực Sân Vườn Mái Lá – Đường Số 36",
+            "norm": "am thuc san vuon mai la – đuong so 36",
+            "image_local_path": "images/restaurant/Ẩm Thực Sân Vườn Mái Lá – Đường Số 36/cover.jpg",
+            "lat": "10.741457061269317",
+            "lng": "106.70892059517507"
+        },
+        {
+            "name": "Saigon 3 - Tú Xương",
+            "norm": "saigon 3 tu xuong",
+            "image_local_path": "images/restaurant/Saigon 3 - Tú Xương/cover.jpg",
+            "lat": "10.783997855334439",
+            "lng": "106.68962917983261"
+        },
+        {
+            "name": "Làng Vũ Đại - Song Hành",
+            "norm": "lang vu đai song hanh",
+            "image_local_path": "images/restaurant/Làng Vũ Đại - Song Hành/cover.jpg",
+            "lat": "10.800951609606583",
+            "lng": "106.74198389517576"
+        },
+        {
+            "name": "Mợ Mê Ốc - Cách Mạng Tháng 8",
+            "norm": "mo me oc cach mang thang 8",
+            "image_local_path": "images/restaurant/Mợ Mê Ốc - Cách Mạng Tháng 8/cover.jpg",
+            "lat": "10.77845972409414",
+            "lng": "106.6811202889732"
+        },
+        {
+            "name": "Cơm Tấm Thuận Kiều - Tôn Thất Tùng",
+            "norm": "com tam thuan kieu ton that tung",
+            "image_local_path": "images/restaurant/Cơm Tấm Thuận Kiều - Tôn Thất Tùng/cover.jpg",
+            "lat": "10.769400307079488",
+            "lng": "106.68944275284683"
+        },
+        {
+            "name": "Steersman Brewery Taproom - Phan Kế Bính",
+            "norm": "steersman brewery taproom phan ke binh",
+            "image_local_path": "images/restaurant/Steersman Brewery Taproom - Phan Kế Bính/cover.jpg",
+            "lat": "10.791079788987231",
+            "lng": "106.69848242401143"
+        },
+        {
+            "name": "Maison Mận-Đỏ Restaurant - Trần Nhật Duật",
+            "norm": "maison man đo restaurant tran nhat duat",
+            "image_local_path": "images/restaurant/Maison Mận-Đỏ Restaurant - Trần Nhật Duật/cover.jpg",
+            "lat": "10.793384587126347",
+            "lng": "106.69011989332557"
+        },
+        {
+            "name": "Chanh Bistro Rooftop Saigon - Lý Tự Trọng",
+            "norm": "chanh bistro rooftop saigon ly tu trong",
+            "image_local_path": "images/restaurant/Chanh Bistro Rooftop Saigon - Lý Tự Trọng/cover.jpg",
+            "lat": "10.772909925356819",
+            "lng": "106.69565096633967"
+        },
+        {
+            "name": "Ẩm Thực Việt Phố - Đường Số 24B",
+            "norm": "am thuc viet pho đuong so 24b",
+            "image_local_path": "images/restaurant/Ẩm Thực Việt Phố - Đường Số 24B/cover.jpg",
+            "lat": "10.752393236854905",
+            "lng": "106.6110963240109"
+        },
+        {
+            "name": "Mr Craft - Craft Beer & Wine - Cao Triều Phát",
+            "norm": "mr craft craft beer & wine cao trieu phat",
+            "image_local_path": "images/restaurant/Mr Craft - Craft Beer & Wine - Cao Triều Phát/cover.jpg",
+            "lat": "10.73225950694353",
+            "lng": "106.70958485284648"
+        },
+        {
+            "name": "Boomerang Bistro Saigon - Tôn Dật Tiên",
+            "norm": "boomerang bistro saigon ton dat tien",
+            "image_local_path": "images/restaurant/Boomerang Bistro Saigon - Tôn Dật Tiên/cover.jpg",
+            "lat": "10.726462292732732",
+            "lng": "106.72042505284622"
+        },
+        {
+            "name": "Chay Xanh - Nguyễn Trọng Tuyển",
+            "norm": "chay xanh nguyen trong tuyen",
+            "image_local_path": "images/restaurant/Chay Xanh - Nguyễn Trọng Tuyển/cover.jpg",
+            "lat": "10.797917850190341",
+            "lng": "106.66780930866857"
+        },
+        {
+            "name": "Phở 2000",
+            "norm": "pho 2000",
+            "image_local_path": "images/restaurant/Phở 2000/cover.jpg",
+            "lat": "10.772904604903422",
+            "lng": "106.69677362402761"
+        },
+        {
+            "name": "Bánh mì 37",
+            "norm": "banh mi 37",
+            "image_local_path": "images/restaurant/Bánh mì 37/cover.jpg",
+            "lat": "10.77088902565285",
+            "lng": "106.69254341053417"
+        },
+        {
+            "name": "Nhậu 33",
+            "norm": "nhau 33",
+            "image_local_path": "images/restaurant/Nhậu 33/cover.jpg",
+            "lat": "10.771530021248546",
+            "lng": "106.69186748562872"
+        }
+    ],
+    "landmarks": [
+        {
+            "name": "cho Bến Thành",
+            "norm": "cho ben thanh",
+            "image_local_path": "images/landmarks/Ben Thanh Market/image.jpg",
+            "lat": "10.772643266499157",
+            "lng": "106.69794569403628"
+        },
+        {
+            "name": "Nhà thờ Đức Bà Sài Gòn",
+            "norm": "nha tho đuc ba sai gon",
+            "image_local_path": "images/landmarks/Saigon Notre Dame Cathedral/image.jpg",
+            "lat": "10.780070055939966",
+            "lng": "106.69895452287193"
+        },
+        {
+            "name": "Bưu điện trung tâm Sài Gòn",
+            "norm": "buu đien trung tam sai gon",
+            "image_local_path": "images/landmarks/Saigon Central Post Office/image.jpg",
+            "lat": "10.780144758350415",
+            "lng": "106.6998912670501"
+        },
+        {
+            "name": "Phố đi bộ Nguyễn Huệ",
+            "norm": "pho đi bo nguyen hue",
+            "image_local_path": "images/landmarks/Nguyen Hue Walking Street/image.jpg",
+            "lat": "10.774127106297039",
+            "lng": "106.70365291345567"
+        },
+        {
+            "name": "Bitexco Financial Tower",
+            "norm": "bitexco financial tower",
+            "image_local_path": "images/landmarks/Bitexco Financial Tower/image.jpg",
+            "lat": "10.771990963584521",
+            "lng": "106.70434370937879"
+        },
+        {
+            "name": "Saigon Skydeck",
+            "norm": "saigon skydeck",
+            "image_local_path": "images/landmarks/Saigon Skydeck/image.jpg",
+            "lat": "10.771746465847116",
+            "lng": "106.70420358054317"
+        },
+        {
+            "name": "Đường hoa Nguyễn Huệ",
+            "norm": "đuong hoa nguyen hue",
+            "image_local_path": "images/landmarks/Nguyen Hue Flower Street (seasonal)/image.jpg",
+            "lat": "10.295688648173398",
+            "lng": "105.7676969958815"
+        },
+        {
+            "name": "Nhà hát Sài Gòn",
+            "norm": "nha hat sai gon",
+            "image_local_path": "images/landmarks/Ho Chi Minh City Opera House/image.jpg",
+            "lat": "10.776749804388421",
+            "lng": "106.70322514006374"
+        },
+        {
+            "name": "Trụ sở Ủy ban Nhân dân Thành phố Hồ Chí Minh",
+            "norm": "tru so uy ban nhan dan thanh pho ho chi minh",
+            "image_local_path": "images/landmarks/City Hall (People's Committee Building)/image.jpg",
+            "lat": "10.77699220336111",
+            "lng": "106.70087413371729"
+        },
+        {
+            "name": "Hồ Con Rùa",
+            "norm": "ho con rua",
+            "image_local_path": "images/landmarks/Turtle Lake/image.jpg",
+            "lat": "10.782701032784747",
+            "lng": "106.69591155246678"
+        },
+        {
+            "name": "Bảo tàng Chứng tích Chiến tranh",
+            "norm": "bao tang chung tich chien tranh",
+            "image_local_path": "images/landmarks/War Remnants Museum/image.jpg",
+            "lat": "10.779774077185536",
+            "lng": "106.6921774265706"
+        },
+        {
+            "name": "Dinh Độc Lập",
+            "norm": "dinh đoc lap",
+            "image_local_path": "images/landmarks/Reunification Palace/image.jpg",
+            "lat": "10.777173362612555",
+            "lng": "106.69529136704999"
+        },
+        {
+            "name": "Đường sách Thành phố Hồ Chí Minh",
+            "norm": "đuong sach thanh pho ho chi minh",
+            "image_local_path": "images/landmarks/Book Street Nguyen Van Binh/image.jpg",
+            "lat": "10.781206346918495",
+            "lng": "106.70007774191303"
+        },
+        {
+            "name": "Diamond Plaza",
+            "norm": "diamond plaza",
+            "image_local_path": "images/landmarks/Diamond Plaza/image.jpg",
+            "lat": "10.780738236750867",
+            "lng": "106.69834547499555"
+        },
+        {
+            "name": "Phố đi bộ Bùi Viện",
+            "norm": "pho đi bo bui vien",
+            "image_local_path": "images/landmarks/Bui Vien Walking Street/image.jpg",
+            "lat": "10.767519628422585",
+            "lng": "106.69386213821444"
+        },
+        {
+            "name": "Bảo tàng Thành phố Hồ Chí Minh",
+            "norm": "bao tang thanh pho ho chi minh",
+            "image_local_path": "images/landmarks/Ho Chi Minh City Museum/image.jpg",
+            "lat": "10.776345016220008",
+            "lng": "106.69946520568027"
+        },
+        {
+            "name": "Bảo tàng Mỹ thuật Thành phố Hồ Chí Minh",
+            "norm": "bao tang my thuat thanh pho ho chi minh",
+            "image_local_path": "images/landmarks/Fine Arts Museum/image.jpg",
+            "lat": "10.77027442619703",
+            "lng": "106.69927153048484"
+        },
+        {
+            "name": "Thảo Cầm Viên Sài Gòn",
+            "norm": "thao cam vien sai gon",
+            "image_local_path": "images/landmarks/Saigon Zoo and Botanical Gardens/image.jpg",
+            "lat": "10.78761894879194",
+            "lng": "106.70505659588581"
+        },
+        {
+            "name": "Jade Emperor Pagoda",
+            "norm": "jade emperor pagoda",
+            "image_local_path": "images/landmarks/Jade Emperor Pagoda/image.jpg",
+            "lat": "10.792175453662377",
+            "lng": "106.69822201122822"
+        },
+        {
+            "name": "Nhà Thờ Giáo Xứ Tân Định",
+            "norm": "nha tho giao xu tan đinh",
+            "image_local_path": "images/landmarks/Tan Dinh Church (Pink Church)/image.jpg",
+            "lat": "10.788578291049307",
+            "lng": "106.69068962472139"
+        },
+        {
+            "name": "Chùa Vĩnh Nghiêm",
+            "norm": "chua vinh nghiem",
+            "image_local_path": "images/landmarks/Vinh Nghiem Pagoda/image.jpg",
+            "lat": "10.790505646057195",
+            "lng": "106.68210558054338"
+        },
+        {
+            "name": "Bảo tàng Phụ nữ Nam bộ",
+            "norm": "bao tang phu nu nam bo",
+            "image_local_path": "images/landmarks/Southern Women’s Museum/image.jpg",
+            "lat": "10.783902616079855",
+            "lng": "106.68765415355699"
+        },
+        {
+            "name": "Công Viên Lê Văn Tám",
+            "norm": "cong vien le van tam",
+            "image_local_path": "images/landmarks/War Memorial Park Le Van Tam/image.jpg",
+            "lat": "10.78829789911851",
+            "lng": "106.69373008054342"
+        },
+        {
+            "name": "Chợ Bình Tây",
+            "norm": "cho binh tay",
+            "image_local_path": "images/landmarks/Binh Tay Market/image.jpg",
+            "lat": "10.74944901396419",
+            "lng": "106.65114382657019"
+        },
+        {
+            "name": "Tượng Đức Thánh Trần Hưng Đạo",
+            "norm": "tuong đuc thanh tran hung đao",
+            "image_local_path": "images/landmarks/Tran Hung Dao Statue/image.jpg",
+            "lat": "10.775557141216506",
+            "lng": "106.7063755363651"
+        },
+        {
+            "name": "Miếu Bà Thiên Hậu",
+            "norm": "mieu ba thien hau",
+            "image_local_path": "images/landmarks/Thien Hau Temple/image.jpg",
+            "lat": "10.755294894953405",
+            "lng": "106.66117619839946"
+        },
+        {
+            "name": "Hà Chương Hội Quán",
+            "norm": "ha chuong hoi quan",
+            "image_local_path": "images/landmarks/Chinese Assembly Halls/image.jpg",
+            "lat": "10.753493297294856",
+            "lng": "106.65792316587793"
+        },
+        {
+            "name": "Hội Quán Nghĩa An",
+            "norm": "hoi quan nghia an",
+            "image_local_path": "images/landmarks/Nghia An Hoi Quan Pagoda/image.jpg",
+            "lat": "10.753803753162401",
+            "lng": "106.66211599588543"
+        },
+        {
+            "name": "Việt Nam Quốc Tự",
+            "norm": "viet nam quoc tu",
+            "image_local_path": "images/landmarks/Vietnam Quoc Tu Pagoda/image.jpg",
+            "lat": "10.772433442716082",
+            "lng": "106.67330758054325"
+        },
+        {
+            "name": "Crescent Mall",
+            "norm": "crescent mall",
+            "image_local_path": "images/landmarks/Crescent Mall/image.jpg",
+            "lat": "10.728630061092815",
+            "lng": "106.71874679588518"
+        },
+        {
+            "name": "Công viên Hồ bán nguyệt",
+            "norm": "cong vien ho ban nguyet",
+            "image_local_path": "images/landmarks/Crescent Lake & Starlight Bridge/image.jpg",
+            "lat": "10.725679427627645",
+            "lng": "106.71703663821391"
+        },
+        {
+            "name": "Công viên văn hóa Suối Tiên",
+            "norm": "cong vien van hoa suoi tien",
+            "image_local_path": "images/landmarks/Suoi Tien Theme Park/image.jpg",
+            "lat": "10.866375740407598",
+            "lng": "106.8031615572562"
+        },
+        {
+            "name": "Bảo tàng Áo Dài",
+            "norm": "bao tang ao dai",
+            "image_local_path": "images/landmarks/Ao Dai Museum/image.jpg",
+            "lat": "10.80905575148569",
+            "lng": "106.85324959773529"
+        },
+        {
+            "name": "Cầu Thủ Thiêm",
+            "norm": "cau thu thiem",
+            "image_local_path": "images/landmarks/Thu Thiem Bridge Viewpoint/image.jpg",
+            "lat": "10.786754110037224",
+            "lng": "106.71829155727109"
+        },
+        {
+            "name": "Hầm Sông Sài Gòn",
+            "norm": "ham song sai gon",
+            "image_local_path": "images/landmarks/Saigon River Tunnel Park/image.jpg",
+            "lat": "10.774063846800523",
+            "lng": "106.70985845050647"
+        },
+        {
+            "name": "Công viên Khánh Hội",
+            "norm": "cong vien khanh hoi",
+            "image_local_path": "images/landmarks/Khanh Hoi Riverside Park/image.jpg",
+            "lat": "10.757968132049873",
+            "lng": "106.69898318425896"
+        },
+        {
+            "name": "Công viên Đầm Sen",
+            "norm": "cong vien đam sen",
+            "image_local_path": "images/landmarks/Dam Sen Cultural Park/image.jpg",
+            "lat": "10.769021166393212",
+            "lng": "106.63609756704997"
+        },
+        {
+            "name": "Công viên nước Đầm Sen",
+            "norm": "cong vien nuoc đam sen",
+            "image_local_path": "images/landmarks/Dam Sen Water Park/image.jpg",
+            "lat": "10.7691002163185",
+            "lng": "106.6358901633514"
+        },
+        {
+            "name": "Công Viên Phần Mềm Quang Trung",
+            "norm": "cong vien phan mem quang trung",
+            "image_local_path": "images/landmarks/Quang Trung Software City Park/image.jpg",
+            "lat": "10.854752395656153",
+            "lng": "106.62729670753039"
+        },
+        {
+            "name": "Chùa Giác Lâm",
+            "norm": "chua giac lam",
+            "image_local_path": "images/landmarks/Giac Lam Pagoda/image.jpg",
+            "lat": "10.7789600383537",
+            "lng": "106.64918066705017"
+        },
+        {
+            "name": "Chùa Giác Viên",
+            "norm": "chua giac vien",
+            "image_local_path": "images/landmarks/Giac Vien Pagoda/image.jpg",
+            "lat": "10.764143766772614",
+            "lng": "106.63951039180267"
+        },
+        {
+            "name": "Chùa Xá Lợi",
+            "norm": "chua xa loi",
+            "image_local_path": "images/landmarks/Xa Loi Pagoda/image.jpg",
+            "lat": "10.778036622523237",
+            "lng": "106.68643565540614"
+        },
+        {
+            "name": "Đền thờ Bà Mariamman",
+            "norm": "đen tho ba mariamman",
+            "image_local_path": "images/landmarks/Mariamman Hindu Temple/image.jpg",
+            "lat": "10.772651143660545",
+            "lng": "106.6955169498584"
+        },
+        {
+            "name": "Landmark 81",
+            "norm": "landmark 81",
+            "image_local_path": "images/landmarks/Landmark 81/image.jpg",
+            "lat": "10.795139357920851",
+            "lng": "106.72207984471257"
+        },
+        {
+            "name": "Landmark 81 SkyView Deck",
+            "norm": "landmark 81 skyview deck",
+            "image_local_path": "images/landmarks/Landmark 81 SkyView Deck/image.jpg",
+            "lat": "10.795139357920851",
+            "lng": "106.72207984471257"
+        },
+        {
+            "name": "Vinhomes Tân Cảng",
+            "norm": "vinhomes tan cang",
+            "image_local_path": "images/landmarks/Vinhomes Central Park/image.jpg",
+            "lat": "10.794609198624007",
+            "lng": "106.72202826122833"
+        },
+        {
+            "name": "Bảo tàng Lịch sử Thành phố Hồ Chí Minh",
+            "norm": "bao tang lich su thanh pho ho chi minh",
+            "image_local_path": "images/landmarks/Ho Chi Minh City Museum of History/image.jpg",
+            "lat": "10.788960292913439",
+            "lng": "106.70429994497506"
+        },
+        {
+            "name": "Bảo tàng Y học Cổ truyền Việt Nam",
+            "norm": "bao tang y hoc co truyen viet nam",
+            "image_local_path": "images/landmarks/Museum of Traditional Vietnamese Medicine/image.jpg",
+            "lat": "10.776382542350255",
+            "lng": "106.67184458054327"
+        },
+        {
+            "name": "Bảo tàng Phụ nữ Nam bộ",
+            "norm": "bao tang phu nu nam bo",
+            "image_local_path": "images/landmarks/Southern Women Museum/image.jpg",
+            "lat": "10.783986930972656",
+            "lng": "106.68760050937895"
+        },
+        {
+            "name": "Hội chợ Ẩm thực Bến Nghé",
+            "norm": "hoi cho am thuc ben nghe",
+            "image_local_path": "images/landmarks/Ben Nghe FoodStreet/image.jpg",
+            "lat": "10.777621104424046",
+            "lng": "106.69772973783"
+        },
+        {
+            "name": "Bến Du Thuyền Sông Sài Gòn",
+            "norm": "ben du thuyen song sai gon",
+            "image_local_path": "images/landmarks/Saigon River Cruise Port/image.jpg",
+            "lat": "10.768514427053683",
+            "lng": "106.70772900956739"
+        },
+        {
+            "name": "Phố Tàu Sài Gòn",
+            "norm": "pho tau sai gon",
+            "image_local_path": "images/landmarks/Saigon Chinatown (Cho Lon)/image.jpg",
+            "lat": "10.751018183213572",
+            "lng": "106.6585544844575"
+        }
+    ],
+    "hotels": [
+        {
+            "name": "Lá Hotel Q10",
+            "norm": "la hotel q10",
+            "image_local_path": "images/hotels/Lá Hotel Q10.jpg",
+            "lat": "10.76075889",
+            "lng": "106.6653594"
+        },
+        {
+            "name": "Saigon Central Hotel - Walking Street",
+            "norm": "saigon central hotel walking street",
+            "image_local_path": "images/hotels/Saigon Central Hotel - Walking Street.jpg",
+            "lat": "10.76514625",
+            "lng": "106.6950851"
+        },
+        {
+            "name": "New Star Inn Boutique Hotel-Near Bến Thành Market",
+            "norm": "new star inn boutique hotel near ben thanh market",
+            "image_local_path": "images/hotels/New Star Inn Boutique Hotel-Near Bến Thành Market.jpg",
+            "lat": "10.77076385",
+            "lng": "106.6928105"
+        },
+        {
+            "name": "KAS Luxury Hotel",
+            "norm": "kas luxury hotel",
+            "image_local_path": "images/hotels/KAS Luxury Hotel.jpg",
+            "lat": "10.77209549",
+            "lng": "106.6907059"
+        },
+        {
+            "name": "Ruby Star Hotel- Near Bến Thành Market",
+            "norm": "ruby star hotel near ben thanh market",
+            "image_local_path": "images/hotels/Ruby Star Hotel- Near Bến Thành Market.jpg",
+            "lat": "10.776545",
+            "lng": "106.6907769"
+        },
+        {
+            "name": "Asian Ruby Hotel & Spa - 122F Bui Thi Xuân Street",
+            "norm": "asian ruby hotel & spa 122f bui thi xuan street",
+            "image_local_path": "images/hotels/Asian Ruby Hotel & Spa - 122F Bui Thi Xuân Street.jpg",
+            "lat": "10.76976122",
+            "lng": "106.6882799"
+        },
+        {
+            "name": "Vintage Boutique Hotel & Spa",
+            "norm": "vintage boutique hotel & spa",
+            "image_local_path": "images/hotels/Vintage Boutique Hotel & Spa.jpg",
+            "lat": "10.77146451",
+            "lng": "106.6899909"
+        },
+        {
+            "name": "Boboo Hotel",
+            "norm": "boboo hotel",
+            "image_local_path": "images/hotels/Boboo Hotel.jpg",
+            "lat": "10.79865935",
+            "lng": "106.6878896"
+        },
+        {
+            "name": "Nhà khách Tổng Liên Đoàn - CN TPHCM",
+            "norm": "nha khach tong lien đoan cn tphcm",
+            "image_local_path": "images/hotels/Nhà khách Tổng Liên Đoàn - CN TPHCM.jpg",
+            "lat": "10.77248623",
+            "lng": "106.6913105"
+        },
+        {
+            "name": "Luxury Eliana Hotel",
+            "norm": "luxury eliana hotel",
+            "image_local_path": "images/hotels/Luxury Eliana Hotel.jpg",
+            "lat": "10.77201053",
+            "lng": "106.6907491"
+        },
+        {
+            "name": "LeParc Hotel",
+            "norm": "leparc hotel",
+            "image_local_path": "images/hotels/LeParc Hotel - Ben Thanh Market.jpg",
+            "lat": "10.77195379",
+            "lng": "106.6953869"
+        },
+        {
+            "name": "KAS HOTEL",
+            "norm": "kas hotel",
+            "image_local_path": "images/hotels/Bến Thành Market - KAS HOTEL.jpg",
+            "lat": "10.77609729",
+            "lng": "106.6914095"
+        },
+        {
+            "name": "Apartment Celadon City Tân Phú",
+            "norm": "apartment celadon city tan phu",
+            "image_local_path": "images/hotels/Apartment Celadon City Tân Phú - 2 PHÒNG NGỦ.jpg",
+            "lat": "10.80390395",
+            "lng": "106.6143545"
+        },
+        {
+            "name": "Căn hộ sân bay Sky Center",
+            "norm": "can ho san bay sky center",
+            "image_local_path": "images/hotels/Căn hộ sân bay Sky Center.jpg",
+            "lat": "10.80594225",
+            "lng": "106.6665515"
+        },
+        {
+            "name": "Cubicity Hidden House",
+            "norm": "cubicity hidden house",
+            "image_local_path": "images/hotels/Cubicity Hidden House.jpg",
+            "lat": "10.79110485",
+            "lng": "106.6921872"
+        },
+        {
+            "name": "Jomo",
+            "norm": "jomo",
+            "image_local_path": "images/hotels/Jomo.jpg",
+            "lat": "10.78999216",
+            "lng": "106.6865172"
+        },
+        {
+            "name": "Sunrise Riveside Aparment by El House",
+            "norm": "sunrise riveside aparment by el house",
+            "image_local_path": "images/hotels/Sunrise Riveside Aparment by El House.jpg",
+            "lat": "10.72183935",
+            "lng": "106.7029358"
+        },
+        {
+            "name": "Khách Sạn Bình Dung",
+            "norm": "khach san binh dung",
+            "image_local_path": "images/hotels/Khách Sạn Bình Dung.jpg",
+            "lat": "10.79826355",
+            "lng": "106.6897324"
+        },
+        {
+            "name": "Prague Saigon Airport Hotel",
+            "norm": "prague saigon airport hotel",
+            "image_local_path": "images/hotels/Prague Saigon Airport Hotel.jpg",
+            "lat": "10.81565271",
+            "lng": "106.6745687"
+        },
+        {
+            "name": "Tago Airport Hotel",
+            "norm": "tago airport hotel",
+            "image_local_path": "images/hotels/Tago Airport Hotel.jpg",
+            "lat": "10.81531337",
+            "lng": "106.6727301"
+        },
+        {
+            "name": "K&T Hotel",
+            "norm": "k&t hotel",
+            "image_local_path": "images/hotels/K&T Hotel Sân Bay TSN-150m từ Nhà Ga T3.jpg",
+            "lat": "10.80710329",
+            "lng": "106.6480121"
+        },
+        {
+            "name": "Emerald Central",
+            "norm": "emerald central",
+            "image_local_path": "images/hotels/Emerald Central.jpg",
+            "lat": "10.78954776",
+            "lng": "106.686899"
+        },
+        {
+            "name": "APARTMENT AIRPORT TAN SON NHAT",
+            "norm": "apartment airport tan son nhat",
+            "image_local_path": "images/hotels/APARTMENT AIRPORT TAN SON NHAT - free Pool & Gym.jpg",
+            "lat": "10.80269478",
+            "lng": "106.6549197"
+        },
+        {
+            "name": "The Suite Landmark City View",
+            "norm": "the suite landmark city view",
+            "image_local_path": "images/hotels/The Suite Landmark City View.jpg",
+            "lat": "10.79462307",
+            "lng": "106.7207517"
+        },
+        {
+            "name": "The Peak Suite at Landmark Plus",
+            "norm": "the peak suite at landmark plus",
+            "image_local_path": "images/hotels/The Peak Suite at Landmark Plus.jpg",
+            "lat": "10.79524844",
+            "lng": "106.7218971"
+        },
+        {
+            "name": "CityHouse - Kim Nguyên",
+            "norm": "cityhouse kim nguyen",
+            "image_local_path": "images/hotels/CityHouse - Kim Nguyên.jpg",
+            "lat": "10.79911786",
+            "lng": "106.6730016"
+        },
+        {
+            "name": "Urban Elite Landmark Suites",
+            "norm": "urban elite landmark suites",
+            "image_local_path": "images/hotels/Urban Elite Landmark Suites.jpg",
+            "lat": "10.79462307",
+            "lng": "106.7207517"
+        },
+        {
+            "name": "Thu's House Landmark Vinhome Binh Thanh",
+            "norm": "thu's house landmark vinhome binh thanh",
+            "image_local_path": "images/hotels/Thu's House Landmark Vinhome Binh Thanh.jpg",
+            "lat": "10.79538079",
+            "lng": "106.7223722"
+        },
+        {
+            "name": "Nexus House Lang Bao Chi",
+            "norm": "nexus house lang bao chi",
+            "image_local_path": "images/hotels/Nexus House Lang Bao Chi.jpg",
+            "lat": "10.8091813",
+            "lng": "106.7340853"
+        },
+        {
+            "name": "The Landmark Plus Véra Suite",
+            "norm": "the landmark plus vera suite",
+            "image_local_path": "images/hotels/The Landmark Plus Véra Suite.jpg",
+            "lat": "10.79524844",
+            "lng": "106.7218971"
+        },
+        {
+            "name": "Landmark 81 Vinhomes Central Park Luxury Apartment",
+            "norm": "landmark 81 vinhomes central park luxury apartment",
+            "image_local_path": "images/hotels/Landmark 81 Vinhomes Central Park Luxury Apartment.jpg",
+            "lat": "10.793796",
+            "lng": "106.7219849"
+        },
+        {
+            "name": "Landmark 81 Premier Cloud Residence",
+            "norm": "landmark 81 premier cloud residence",
+            "image_local_path": "images/hotels/Landmark 81 Premier Cloud Residence.jpg",
+            "lat": "10.793796",
+            "lng": "106.7219849"
+        },
+        {
+            "name": "The Luxe Nest Riverside - Vinhome Landmark 81",
+            "norm": "the luxe nest riverside vinhome landmark 81",
+            "image_local_path": "images/hotels/The Luxe Nest Riverside - Vinhome Landmark 81.jpg",
+            "lat": "10.793796",
+            "lng": "106.7219849"
+        },
+        {
+            "name": "Vinhomes Central Park - PHAN DANG Residences",
+            "norm": "vinhomes central park phan dang residences",
+            "image_local_path": "images/hotels/Vinhomes Central Park - PHAN DANG Residences.jpg",
+            "lat": "10.79527235",
+            "lng": "106.72208"
+        },
+        {
+            "name": "The Luxury Lumiere Riverside Suite",
+            "norm": "the luxury lumiere riverside suite",
+            "image_local_path": "images/hotels/The Luxury Lumiere Riverside Suite.jpg",
+            "lat": "10.80381954",
+            "lng": "106.7487743"
+        },
+        {
+            "name": "LANDMARK 81 Condotel Garden Bay",
+            "norm": "landmark 81 condotel garden bay",
+            "image_local_path": "images/hotels/LANDMARK 81 Condotel Garden Bay.jpg",
+            "lat": "10.793796",
+            "lng": "106.7219849"
+        },
+        {
+            "name": "Lè Métropole Saigon",
+            "norm": "le metropole saigon",
+            "image_local_path": "images/hotels/Lè Métropole Saigon.jpg",
+            "lat": "10.77767168",
+            "lng": "106.7130124"
+        },
+        {
+            "name": "Metropole The Crest Thủ Thiêm Apartment",
+            "norm": "metropole the crest thu thiem apartment",
+            "image_local_path": "images/hotels/Metropole The Crest Thủ Thiêm Apartment.jpg",
+            "lat": "10.77767168",
+            "lng": "106.7130124"
+        },
+        {
+            "name": "Lá Hotel Bình Tân",
+            "norm": "la hotel binh tan",
+            "image_local_path": "images/hotels/Lá Hotel Bình Tân.jpg",
+            "lat": "10.74823054",
+            "lng": "106.6147615"
+        },
+        {
+            "name": "Rosa Boutique Hotel",
+            "norm": "rosa boutique hotel",
+            "image_local_path": "images/hotels/Rosa Boutique Hotel.jpg",
+            "lat": "10.76649983",
+            "lng": "106.6918054"
+        },
+        {
+            "name": "Linh Ngọc Châu Hotel",
+            "norm": "linh ngoc chau hotel",
+            "image_local_path": "images/hotels/Linh Ngọc Châu Hotel.jpg",
+            "lat": "10.7493749",
+            "lng": "106.5875095"
+        },
+        {
+            "name": "Hoàng Lê Hotel",
+            "norm": "hoang le hotel",
+            "image_local_path": "images/hotels/Hoàng Lê Hotel.jpg",
+            "lat": "10.73465181",
+            "lng": "106.673979"
+        },
+        {
+            "name": "Khách Sạn An Chi",
+            "norm": "khach san an chi",
+            "image_local_path": "images/hotels/Khách Sạn An Chi.jpg",
+            "lat": "10.81417635",
+            "lng": "106.6696457"
+        },
+        {
+            "name": "Thao Trang Laluxe Hotel Phu My Hung",
+            "norm": "thao trang laluxe hotel phu my hung",
+            "image_local_path": "images/hotels/Thao Trang Laluxe Hotel Phu My Hung.jpg",
+            "lat": "10.7322833",
+            "lng": "106.708024"
+        },
+        {
+            "name": "JapanRoom-1km 2 Bui Vien",
+            "norm": "japanroom 1km 2 bui vien",
+            "image_local_path": "images/hotels/JapanRoom-1km 2 Bui Vien.jpg",
+            "lat": "10.75484239",
+            "lng": "106.6842558"
+        },
+        {
+            "name": "Khách sạn Bằng Lăng Tím",
+            "norm": "khach san bang lang tim",
+            "image_local_path": "images/hotels/Khách sạn Bằng Lăng Tím.jpg",
+            "lat": "10.76198583",
+            "lng": "106.6692962"
+        },
+        {
+            "name": "Sunrise City - SP Home Quận 7",
+            "norm": "sunrise city sp home quan 7",
+            "image_local_path": "images/hotels/Sunrise City - SP Home Quận 7.jpg",
+            "lat": "10.74069378",
+            "lng": "106.7006683"
+        },
+        {
+            "name": "Khách sạn Thy Thảo 3",
+            "norm": "khach san thy thao 3",
+            "image_local_path": "images/hotels/Khách sạn Thy Thảo 3.jpg",
+            "lat": "10.76467061",
+            "lng": "106.6660591"
+        },
+        {
+            "name": "Ailen Garden 2 Hotel",
+            "norm": "ailen garden 2 hotel",
+            "image_local_path": "images/hotels/Ailen Garden 2 Hotel.jpg",
+            "lat": "10.76751762",
+            "lng": "106.6909059"
+        },
+        {
+            "name": "Signature by M Village Lê Thánh Tôn",
+            "norm": "signature by m village le thanh ton",
+            "image_local_path": "images/hotels/Signature by M Village Lê Thánh Tôn.jpg",
+            "lat": "10.78047738",
+            "lng": "106.7043209"
+        },
+        {
+            "name": "Mia Hotel",
+            "norm": "mia hotel",
+            "image_local_path": "images/hotels/Mia Hotel.jpg",
+            "lat": "10.76934059",
+            "lng": "106.6981395"
+        },
+        {
+            "name": "Anna Boutique Apartment and Guest House",
+            "norm": "anna boutique apartment and guest house",
+            "image_local_path": "images/hotels/Anna Boutique Apartment and Guest House at Dist 7.jpg",
+            "lat": "10.7316552",
+            "lng": "106.7070232"
+        },
+        {
+            "name": "Thái An Hotel Hồ Chí Minh",
+            "norm": "thai an hotel ho chi minh",
+            "image_local_path": "images/hotels/Thái An Hotel Hồ Chí Minh.jpg",
+            "lat": "10.77295167",
+            "lng": "106.6709623"
+        },
+        {
+            "name": "KELLY Thao Dien Hotel & Apartment",
+            "norm": "kelly thao dien hotel & apartment",
+            "image_local_path": "images/hotels/KELLY Thao Dien Hotel & Apartment.jpg",
+            "lat": "10.80658838",
+            "lng": "106.7300676"
+        },
+        {
+            "name": "Kiba Primestay Duplex Studio",
+            "norm": "kiba primestay duplex studio",
+            "image_local_path": "images/hotels/Kiba Primestay Duplex Studio.jpg",
+            "lat": "10.76579903",
+            "lng": "106.6871598"
+        },
+        {
+            "name": "Oakwood Hotel & Apartments Saigon",
+            "norm": "oakwood hotel & apartments saigon",
+            "image_local_path": "images/hotels/Oakwood Hotel & Apartments Saigon.jpg",
+            "lat": "10.8034877",
+            "lng": "106.7224823"
+        },
+        {
+            "name": "Best Studio Room",
+            "norm": "best studio room",
+            "image_local_path": "images/hotels/Best Studio Room Near Ben Thanh Market.jpg",
+            "lat": "10.77282695",
+            "lng": "106.6963947"
+        },
+        {
+            "name": "Otis Soho Saigon Balcony Apartment",
+            "norm": "otis soho saigon balcony apartment",
+            "image_local_path": "images/hotels/Otis Soho Saigon Balcony Apartment.jpg",
+            "lat": "10.76388101",
+            "lng": "106.6946134"
+        },
+        {
+            "name": "Venus Secret Hotel Aeon Bình Tân",
+            "norm": "venus secret hotel aeon binh tan",
+            "image_local_path": "images/hotels/Venus Secret Hotel Aeon Bình Tân.jpg",
+            "lat": "10.75826735",
+            "lng": "106.6055732"
+        },
+        {
+            "name": "GRAND HOTEL du LAC Boutique Saigon",
+            "norm": "grand hotel du lac boutique saigon",
+            "image_local_path": "images/hotels/GRAND HOTEL du LAC Boutique Saigon.jpg",
+            "lat": "10.77343149",
+            "lng": "106.6985952"
+        },
+        {
+            "name": "Cherry Central Hotel- Near Opera House",
+            "norm": "cherry central hotel near opera house",
+            "image_local_path": "images/hotels/Cherry Central Hotel- Near Opera House.jpg",
+            "lat": "10.77913042",
+            "lng": "106.7050114"
+        },
+        {
+            "name": "Jade house Nguyễn Thị Minh Khai",
+            "norm": "jade house nguyen thi minh khai",
+            "image_local_path": "images/hotels/Jade house Nguyễn Thị Minh Khai.jpg",
+            "lat": "10.77480046",
+            "lng": "106.6900612"
+        },
+        {
+            "name": "Smile Home - SOHO Apartment balcony - Modern comfortable",
+            "norm": "smile home soho apartment balcony modern comfortable",
+            "image_local_path": "images/hotels/Smile Home - SOHO Apartment balcony - Modern comfo.jpg",
+            "lat": "10.76298939",
+            "lng": "106.6946568"
+        },
+        {
+            "name": "ACE Hotel - Bến Thành",
+            "norm": "ace hotel ben thanh",
+            "image_local_path": "images/hotels/ACE Hotel - Bến Thành.jpg",
+            "lat": "10.7693051",
+            "lng": "106.6903649"
+        },
+        {
+            "name": "Remarkable rivergate",
+            "norm": "remarkable rivergate",
+            "image_local_path": "images/hotels/Remarkable rivergate.jpg",
+            "lat": "10.76281052",
+            "lng": "106.6986394"
+        },
+        {
+            "name": "Vuon Tao Dan Hotel",
+            "norm": "vuon tao dan hotel",
+            "image_local_path": "images/hotels/TAO DAN hotel.jpg",
+            "lat": "10.77456817",
+            "lng": "106.6900235"
+        },
+        {
+            "name": "Sunrise Riveside Aparment by El House",
+            "norm": "sunrise riveside aparment by el house",
+            "image_local_path": "images/hotels/Sunrise Riveside Aparment by El House.jpg",
+            "lat": "10.7217782",
+            "lng": "106.7029836"
+        },
+        {
+            "name": "May'S hotel",
+            "norm": "may's hotel",
+            "image_local_path": "images/hotels/MAYS Grand Hotel & Spa - Ben Thanh.jpg",
+            "lat": "10.7723594",
+            "lng": "106.6968712"
+        },
+        {
+            "name": "Ancient Luxury Hotel",
+            "norm": "ancient luxury hotel",
+            "image_local_path": "images/hotels/Ancient Luxury Hotel.jpg",
+            "lat": "10.77070715",
+            "lng": "106.6924935"
+        },
+        {
+            "name": "Rosa Hotel",
+            "norm": "rosa hotel",
+            "image_local_path": "images/hotels/Rosa Hotel - Bùi Viện walking street.jpg",
+            "lat": "10.76649983",
+            "lng": "106.6918054"
+        },
+        {
+            "name": "Lan Rung Hotel",
+            "norm": "lan rung hotel",
+            "image_local_path": "images/hotels/Collection O District 10 Near Van Hanh Hospital Fo.jpg",
+            "lat": "10.77062095",
+            "lng": "106.6711792"
+        },
+        {
+            "name": "Collection O Sunrise Hotel Trung Sơn",
+            "norm": "collection o sunrise hotel trung son",
+            "image_local_path": "images/hotels/Collection O Sunrise Hotel Trung Son Near Lotte Ma.jpg",
+            "lat": "10.73262017",
+            "lng": "106.6902469"
+        },
+        {
+            "name": "Collection O VyVy Airport Hotel",
+            "norm": "collection o vyvy airport hotel",
+            "image_local_path": "images/hotels/Collection O VyVy Airport Hotel.jpg",
+            "lat": "10.80049246",
+            "lng": "106.6625192"
+        },
+        {
+            "name": "Collection O Nam Phuong Hoang Hau",
+            "norm": "collection o nam phuong hoang hau",
+            "image_local_path": "images/hotels/Collection O Nam Phuong Hoang Hau Near Lotte Mart.jpg",
+            "lat": "10.73902023",
+            "lng": "106.6915178"
+        },
+        {
+            "name": "Townhouse Oak Southern Star Hotel",
+            "norm": "townhouse oak southern star hotel",
+            "image_local_path": "images/hotels/Townhouse Oak Southern Star Hotel Quang Trung Indu.jpg",
+            "lat": "10.83196305",
+            "lng": "106.6154985"
+        },
+        {
+            "name": "The Passion Lux Airport Hotel Apartment",
+            "norm": "the passion lux airport hotel apartment",
+            "image_local_path": "images/hotels/The Passion Lux Airport Hotel Apartment.jpg",
+            "lat": "10.80072905",
+            "lng": "106.6602897"
+        },
+        {
+            "name": "Trung Mai Hotel - Nguyễn Thái Bình",
+            "norm": "trung mai hotel nguyen thai binh",
+            "image_local_path": "images/hotels/Trung Mai Hotel - Nguyễn Thái Bình.jpg",
+            "lat": "10.79663513",
+            "lng": "106.6514623"
+        },
+        {
+            "name": "Grand Lee Hotel",
+            "norm": "grand lee hotel",
+            "image_local_path": "images/hotels/Grand Lee Hotel.jpg",
+            "lat": "10.81937626",
+            "lng": "106.7235886"
+        },
+        {
+            "name": "Hotel Trung Mai-Tân Bình",
+            "norm": "hotel trung mai tan binh",
+            "image_local_path": "images/hotels/Hotel Trung Mai-Tân Bình.jpg",
+            "lat": "10.79643325",
+            "lng": "106.6512847"
+        },
+        {
+            "name": "Kadupul Hotel",
+            "norm": "kadupul hotel",
+            "image_local_path": "images/hotels/Kadupul Hotel.jpg",
+            "lat": "10.82048433",
+            "lng": "106.6835697"
+        },
+        {
+            "name": "Cao Gia Hải",
+            "norm": "cao gia hai",
+            "image_local_path": "images/hotels/Cao Gia Hải.jpg",
+            "lat": "10.83296452",
+            "lng": "106.6825794"
+        },
+        {
+            "name": "Van Ha Boutique Hotel Etown - Nhà Ga T3",
+            "norm": "van ha boutique hotel etown nha ga t3",
+            "image_local_path": "images/hotels/Van Ha Boutique Hotel Etown - Nhà Ga T3.jpg",
+            "lat": "10.80272238",
+            "lng": "106.6427099"
+        },
+        {
+            "name": "Cactusland Hotel Tan Binh",
+            "norm": "cactusland hotel tan binh",
+            "image_local_path": "images/hotels/Cactusland Hotel Tan Binh Near T3 Station.jpg",
+            "lat": "10.80086472",
+            "lng": "106.6447244"
+        },
+        {
+            "name": "Ari Boutique Hotel",
+            "norm": "ari boutique hotel",
+            "image_local_path": "images/hotels/Ari Boutique Hotel.jpg",
+            "lat": "10.82867092",
+            "lng": "106.681848"
+        },
+        {
+            "name": "Trang An Hotel",
+            "norm": "trang an hotel",
+            "image_local_path": "images/hotels/Trang An Hotel - 10 minutes Landmark 81.jpg",
+            "lat": "10.81138388",
+            "lng": "106.7137474"
+        },
+        {
+            "name": "Lumia Hotel",
+            "norm": "lumia hotel",
+            "image_local_path": "images/hotels/Lumia Hotel.jpg",
+            "lat": "10.78009926",
+            "lng": "106.7541469"
+        },
+        {
+            "name": "Love Luxury Hotel Vườn Lài",
+            "norm": "love luxury hotel vuon lai",
+            "image_local_path": "images/hotels/Love Luxury Hotel Vườn Lài.jpg",
+            "lat": "10.83521856",
+            "lng": "106.6961748"
+        },
+        {
+            "name": "Rù Rì Homestay",
+            "norm": "ru ri homestay",
+            "image_local_path": "images/hotels/Rù Rì Homestay.jpg",
+            "lat": "10.81133738",
+            "lng": "106.6643821"
+        },
+        {
+            "name": "Soul Station - Studio Hotel",
+            "norm": "soul station studio hotel",
+            "image_local_path": "images/hotels/Soul Station - Studio Hotel.jpg",
+            "lat": "10.82102577",
+            "lng": "106.6914858"
+        },
+        {
+            "name": "Milan 1 Hotel",
+            "norm": "milan 1 hotel",
+            "image_local_path": "images/hotels/Milan 1 Hotel.jpg",
+            "lat": "10.73921562",
+            "lng": "106.6909148"
+        },
+        {
+            "name": "Nouveau Happy Inn - Bến Thành",
+            "norm": "nouveau happy inn ben thanh",
+            "image_local_path": "images/hotels/Nouveau Happy Inn - Bến Thành.jpg",
+            "lat": "10.77147813",
+            "lng": "106.6898895"
+        },
+        {
+            "name": "Tra My Hotel - SaiGon Center",
+            "norm": "tra my hotel saigon center",
+            "image_local_path": "images/hotels/Tra My Hotel - SaiGon Center.jpg",
+            "lat": "10.79051644",
+            "lng": "106.6866511"
+        },
+        {
+            "name": "Townhouse",
+            "norm": "townhouse",
+            "image_local_path": "images/hotels/Townhouse District 10 Near Children Hospital 1 For.jpg",
+            "lat": "10.77524804",
+            "lng": "106.6760534"
+        },
+        {
+            "name": "Collection O District 10 - Bonita Grand Hotel",
+            "norm": "collection o district 10 bonita grand hotel",
+            "image_local_path": "images/hotels/Collection O District 10 - Bonita Grand Hotel.jpg",
+            "lat": "10.78011976",
+            "lng": "106.6683529"
+        },
+        {
+            "name": "Lucky Star Hotel",
+            "norm": "lucky star hotel",
+            "image_local_path": "images/hotels/Lucky Star Hotel Nguyen Trai Q5.jpg",
+            "lat": "10.75851351",
+            "lng": "106.6800788"
+        },
+        {
+            "name": "Fortune 1127 - Central Hotel",
+            "norm": "fortune 1127 central hotel",
+            "image_local_path": "images/hotels/Fortune 1127 - Central Hotel.jpg",
+            "lat": "10.75314012",
+            "lng": "106.6731963"
+        },
+        {
+            "name": "K&T Hotel- Apartment SaiGon Center",
+            "norm": "k&t hotel apartment saigon center",
+            "image_local_path": "images/hotels/K&T Hotel- Apartment SaiGon Center.jpg",
+            "lat": "10.75746794",
+            "lng": "106.6857841"
+        },
+        {
+            "name": "Lucky Star Hotel Q5",
+            "norm": "lucky star hotel q5",
+            "image_local_path": "images/hotels/Lucky Star Hotel Q5.jpg",
+            "lat": "10.75853459",
+            "lng": "106.680111"
+        },
+        {
+            "name": "AHA Residence Hotel",
+            "norm": "aha residence hotel",
+            "image_local_path": "images/hotels/AHA Residence Hotel.jpg",
+            "lat": "10.79942622",
+            "lng": "106.7067962"
+        },
+        {
+            "name": "Kim Dung Hotel Tran Quang Khai",
+            "norm": "kim dung hotel tran quang khai",
+            "image_local_path": "images/hotels/Kim Dung Hotel Tran Quang Khai.jpg",
+            "lat": "10.79174889",
+            "lng": "106.6896934"
+        },
+        {
+            "name": "S79 My My Hotel 2",
+            "norm": "s79 my my hotel 2",
+            "image_local_path": "images/hotels/S79 My My Hotel 2.jpg",
+            "lat": "10.7727696",
+            "lng": "106.6682162"
+        },
+        {
+            "name": "S79 Vuon Saigon Hotel & SPA",
+            "norm": "s79 vuon saigon hotel & spa",
+            "image_local_path": "images/hotels/S79 Vuon Saigon Hotel & SPA.jpg",
+            "lat": "10.77292624",
+            "lng": "106.671502"
+        },
+        {
+            "name": "S79 My My Hotel",
+            "norm": "s79 my my hotel",
+            "image_local_path": "images/hotels/S79 My My Hotel.jpg",
+            "lat": "10.77215011",
+            "lng": "106.669599"
+        },
+        {
+            "name": "Belvilla",
+            "norm": "belvilla",
+            "image_local_path": "images/hotels/Belvilla Near Van Hanh Mall Formerly Cuong Thanh 3.jpg",
+            "lat": "10.77547392",
+            "lng": "106.6762098"
+        },
+        {
+            "name": "Lynn by La Doma Express",
+            "norm": "lynn by la doma express",
+            "image_local_path": "images/hotels/Lynn by La Doma Express.jpg",
+            "lat": "10.78087566",
+            "lng": "106.6815124"
+        },
+        {
+            "name": "Haven Hut Hotel",
+            "norm": "haven hut hotel",
+            "image_local_path": "images/hotels/Haven Hut Hotel.jpg",
+            "lat": "10.76200565",
+            "lng": "106.6934155"
+        },
+        {
+            "name": "La Rose Sai Gon Hotel",
+            "norm": "la rose sai gon hotel",
+            "image_local_path": "images/hotels/La Rose Sai Gon Hotel.jpg",
+            "lat": "10.76544563",
+            "lng": "106.6947249"
+        },
+        {
+            "name": "S79 Happy Hotel 1 Saigon",
+            "norm": "s79 happy hotel 1 saigon",
+            "image_local_path": "images/hotels/S79 Happy Hotel 1 Saigon.jpg",
+            "lat": "10.7665995",
+            "lng": "106.6774052"
+        },
+        {
+            "name": "Northern Charm Hotel",
+            "norm": "northern charm hotel",
+            "image_local_path": "images/hotels/Northern Charm Hotel.jpg",
+            "lat": "10.78222408",
+            "lng": "106.7046754"
+        },
+        {
+            "name": "Nicecy Hotel - Trương Quyền",
+            "norm": "nicecy hotel truong quyen",
+            "image_local_path": "images/hotels/Nicecy Hotel - Trương Quyền.jpg",
+            "lat": "10.7872809",
+            "lng": "106.6920751"
+        },
+        {
+            "name": "MQ Apartment",
+            "norm": "mq apartment",
+            "image_local_path": "images/hotels/MQ Apartment District 1.jpg",
+            "lat": "10.7610513",
+            "lng": "106.6870343"
+        },
+        {
+            "name": "Four P Apartment Binh Thanh",
+            "norm": "four p apartment binh thanh",
+            "image_local_path": "images/hotels/Four P Apartment Binh Thanh.jpg",
+            "lat": "10.78900701",
+            "lng": "106.7091347"
+        },
+        {
+            "name": "Cherry Hotel and Apartment",
+            "norm": "cherry hotel and apartment",
+            "image_local_path": "images/hotels/Cherry Hotel and Apartment.jpg",
+            "lat": "10.80280884",
+            "lng": "106.6439075"
+        },
+        {
+            "name": "The Passion Hotel Airport",
+            "norm": "the passion hotel airport",
+            "image_local_path": "images/hotels/The Passion Hotel Airport - 5 minutes to Tan Son N.jpg",
+            "lat": "10.81180379",
+            "lng": "106.6691757"
+        },
+        {
+            "name": "The Blue Airport Hotel",
+            "norm": "the blue airport hotel",
+            "image_local_path": "images/hotels/The Blue Airport Hotel.jpg",
+            "lat": "10.804739",
+            "lng": "106.6632832"
+        },
+        {
+            "name": "Hoa De Nhat Hotel - Sân Bay Tân Sơn Nhất",
+            "norm": "hoa de nhat hotel san bay tan son nhat",
+            "image_local_path": "images/hotels/Hoa De Nhat Hotel- Sân Bay Tân Sơn Nhất.jpg",
+            "lat": "10.79671514",
+            "lng": "106.6591661"
+        },
+        {
+            "name": "Ngọ house",
+            "norm": "ngo house",
+            "image_local_path": "images/hotels/Ngọ house.jpg",
+            "lat": "10.79827479",
+            "lng": "106.6624327"
+        },
+        {
+            "name": "Austin Home Apartment CBD - Near Tan Son Nhat Airport",
+            "norm": "austin home apartment cbd near tan son nhat airport",
+            "image_local_path": "images/hotels/Austin Home Apartment CBD - Near Tan Son Nhat Airp.jpg",
+            "lat": "10.8062049",
+            "lng": "106.6664726"
+        },
+        {
+            "name": "Căn Hộ Sky Center",
+            "norm": "can ho sky center",
+            "image_local_path": "images/hotels/Căn Hộ Sky Center Cách Sân Bay 5p.jpg",
+            "lat": "10.8062049",
+            "lng": "106.6664726"
+        },
+        {
+            "name": "Skyhomes Near Tan Son Nhat Airport-Cherry Le",
+            "norm": "skyhomes near tan son nhat airport cherry le",
+            "image_local_path": "images/hotels/Skyhomes Near Tan Son Nhat Airport-Cherry Le.jpg",
+            "lat": "10.8062049",
+            "lng": "106.6664726"
+        },
+        {
+            "name": "Hmaison By Velaluxe",
+            "norm": "hmaison by velaluxe",
+            "image_local_path": "images/hotels/Hmaison By Velaluxe.jpg",
+            "lat": "10.80728509",
+            "lng": "106.6652829"
+        },
+        {
+            "name": "Nicecy Daily - Bui Vien Walking Street",
+            "norm": "nicecy daily bui vien walking street",
+            "image_local_path": "images/hotels/Nicecy Daily - Bui Vien Walking Street.jpg",
+            "lat": "10.76844687",
+            "lng": "106.6939367"
+        },
+        {
+            "name": "HT Hotel",
+            "norm": "ht hotel",
+            "image_local_path": "images/hotels/HT Hotel.jpg",
+            "lat": "10.79563159",
+            "lng": "106.6535013"
+        },
+        {
+            "name": "Căn hộ tại Phú Nhuận",
+            "norm": "can ho tai phu nhuan",
+            "image_local_path": "images/hotels/Căn hộ tại Phú Nhuận.jpg",
+            "lat": "10.81239238",
+            "lng": "106.6695232"
+        },
+        {
+            "name": "Dancentre Luxury Apartment Near SECC formerly Emerald Hotel & Apartment",
+            "norm": "dancentre luxury apartment near secc formerly emerald hotel & apartment",
+            "image_local_path": "images/hotels/Dancentre Luxury Apartment Near SECC formerly Emer.jpg",
+            "lat": "10.72730885",
+            "lng": "106.7060713"
+        },
+        {
+            "name": "Orchard Park View Apartment",
+            "norm": "orchard park view apartment",
+            "image_local_path": "images/hotels/Orchard Park View Apartment-5 minutes from Airport.jpg",
+            "lat": "10.80911789",
+            "lng": "106.6728878"
+        },
+        {
+            "name": "B786 Airport Homestay",
+            "norm": "b786 airport homestay",
+            "image_local_path": "images/hotels/B786 Airport Homestay.jpg",
+            "lat": "10.80901644",
+            "lng": "106.6668634"
+        },
+        {
+            "name": "Park Hill Hotel - Phu My Hung",
+            "norm": "park hill hotel phu my hung",
+            "image_local_path": "images/hotels/Park Hill Hotel - Phu My Hung.jpg",
+            "lat": "10.73088679",
+            "lng": "106.7075293"
+        },
+        {
+            "name": "N&H House",
+            "norm": "n&h house",
+            "image_local_path": "images/hotels/N&H House.jpg",
+            "lat": "10.81575336",
+            "lng": "106.7192123"
+        },
+        {
+            "name": "Lovera Hotel Airport",
+            "norm": "lovera hotel airport",
+            "image_local_path": "images/hotels/Lovera Hotel Airport.jpg",
+            "lat": "10.81227854",
+            "lng": "106.66792"
+        },
+        {
+            "name": "HOD Apartment Tan Dinh",
+            "norm": "hod apartment tan dinh",
+            "image_local_path": "images/hotels/HOD Apartment Tan Dinh.jpg",
+            "lat": "10.78996667",
+            "lng": "106.6916725"
+        },
+        {
+            "name": "Suzu Saigon - A Boutique Hotel",
+            "norm": "suzu saigon a boutique hotel",
+            "image_local_path": "images/hotels/Suzu Saigon - A Boutique Hotel.jpg",
+            "lat": "10.78122448",
+            "lng": "106.7064058"
+        },
+        {
+            "name": "The Dilly Hotel Saigon",
+            "norm": "the dilly hotel saigon",
+            "image_local_path": "images/hotels/The Dilly Hotel Saigon.jpg",
+            "lat": "10.76752948",
+            "lng": "106.6977513"
+        },
+        {
+            "name": "Wink Hotel Saigon Centre - 24hrs Stay",
+            "norm": "wink hotel saigon centre 24hrs stay",
+            "image_local_path": "images/hotels/Wink Hotel Saigon Centre - 24hrs Stay.jpg",
+            "lat": "10.79142108",
+            "lng": "106.7004109"
+        },
+        {
+            "name": "Metropole Deluxe Panorama Apartment",
+            "norm": "metropole deluxe panorama apartment",
+            "image_local_path": "images/hotels/Metropole Deluxe Panorama Apartment.jpg",
+            "lat": "10.77710182",
+            "lng": "106.7126044"
+        },
+        {
+            "name": "The Royal Metropole Saigon Suite",
+            "norm": "the royal metropole saigon suite",
+            "image_local_path": "images/hotels/The Royal Metropole Saigon Suite.jpg",
+            "lat": "10.77710182",
+            "lng": "106.7126044"
+        },
+        {
+            "name": "Great View Vinh Hoi Apartment",
+            "norm": "great view vinh hoi apartment",
+            "image_local_path": "images/hotels/Great View Vinh Hoi Apartment.jpg",
+            "lat": "10.7558004",
+            "lng": "106.7018204"
+        },
+        {
+            "name": "The Landmark 81 Grand Horizon",
+            "norm": "the landmark 81 grand horizon",
+            "image_local_path": "images/hotels/The Landmark 81 Grand Horizon.jpg",
+            "lat": "10.79517386",
+            "lng": "106.7221006"
+        },
+        {
+            "name": "Ha Đo Centrosa Building",
+            "norm": "ha đo centrosa building",
+            "image_local_path": "images/hotels/Ha Đo Centrosa Building , Ba Thang Hai street, dis.jpg",
+            "lat": "10.77455414",
+            "lng": "106.6783863"
+        },
+        {
+            "name": "REDFLOWER HOTEL",
+            "norm": "redflower hotel",
+            "image_local_path": "images/hotels/REDFLOWER HOTEL.jpg",
+            "lat": "10.79245734",
+            "lng": "106.6927077"
+        },
+        {
+            "name": "Your home",
+            "norm": "your home",
+            "image_local_path": "images/hotels/Your home.jpg",
+            "lat": "10.77455414",
+            "lng": "106.6783863"
+        },
+        {
+            "name": "Rio House Parkview House Saigon",
+            "norm": "rio house parkview house saigon",
+            "image_local_path": "images/hotels/Rio House Parkview House Saigon.jpg",
+            "lat": "10.77455414",
+            "lng": "106.6783863"
+        },
+        {
+            "name": "Hà Đô Q10 2PN-3PN 2WC- Khoa Home",
+            "norm": "ha đo q10 2pn 3pn 2wc khoa home",
+            "image_local_path": "images/hotels/Hà Đô Q10 2PN-3PN 2WC- Khoa Home.jpg",
+            "lat": "10.77455414",
+            "lng": "106.6783863"
+        },
+        {
+            "name": "Lumiere City Central Parkview",
+            "norm": "lumiere city central parkview",
+            "image_local_path": "images/hotels/Lumiere City Central Parkview.jpg",
+            "lat": "10.77457555",
+            "lng": "106.6783814"
+        },
+        {
+            "name": "Four P Home",
+            "norm": "four p home",
+            "image_local_path": "images/hotels/Four P Home.jpg",
+            "lat": "10.80222057",
+            "lng": "106.6864493"
+        },
+        {
+            "name": "Thuỳ Trang Hotel",
+            "norm": "thuy trang hotel",
+            "image_local_path": "images/hotels/Thuỳ Trang Hotel.jpg",
+            "lat": "10.75308574",
+            "lng": "106.6049796"
+        },
+        {
+            "name": "Home by CR Concept in Center City",
+            "norm": "home by cr concept in center city",
+            "image_local_path": "images/hotels/Home by CR Concept in Center City.jpg",
+            "lat": "10.77231522",
+            "lng": "106.6875105"
+        },
+        {
+            "name": "DKA - Võ Thị Sáu",
+            "norm": "dka vo thi sau",
+            "image_local_path": "images/hotels/DKA - Võ Thị Sáu.jpg",
+            "lat": "10.7908058",
+            "lng": "106.695512"
+        },
+        {
+            "name": "Four P Home - Phan Dinh Phung",
+            "norm": "four p home phan dinh phung",
+            "image_local_path": "images/hotels/Four P Home - Phan Dinh Phung.jpg",
+            "lat": "10.80607641",
+            "lng": "106.682785"
+        },
+        {
+            "name": "Nola Hotel",
+            "norm": "nola hotel",
+            "image_local_path": "images/hotels/Nola Hotel.jpg",
+            "lat": "10.80443099",
+            "lng": "106.7116307"
+        },
+        {
+            "name": "Happy house studio",
+            "norm": "happy house studio",
+            "image_local_path": "images/hotels/Happy house studio.jpg",
+            "lat": "10.79267954",
+            "lng": "106.6739617"
+        },
+        {
+            "name": "Cactusland Hotel & Apartment",
+            "norm": "cactusland hotel & apartment",
+            "image_local_path": "images/hotels/Cactusland Hotel & Apartment.jpg",
+            "lat": "10.79605831",
+            "lng": "106.6737443"
+        },
+        {
+            "name": "Golden Sun 3 Apartment",
+            "norm": "golden sun 3 apartment",
+            "image_local_path": "images/hotels/Golden Sun 3 Apartment.jpg",
+            "lat": "10.73259455",
+            "lng": "106.7098379"
+        },
+        {
+            "name": "GALAXY Hotel & Apartment Near SECC",
+            "norm": "galaxy hotel & apartment near secc",
+            "image_local_path": "images/hotels/GALAXY Hotel & Apartment Near SECC.jpg",
+            "lat": "10.73259219",
+            "lng": "106.709853"
+        },
+        {
+            "name": "Cali Homestay",
+            "norm": "cali homestay",
+            "image_local_path": "images/hotels/Cali Homestay.jpg",
+            "lat": "10.80680712",
+            "lng": "106.7085627"
+        },
+        {
+            "name": "AGK House - HomeStay",
+            "norm": "agk house homestay",
+            "image_local_path": "images/hotels/AGK House - HomeStay - 406 Xô Viết Nghệ Tĩnh, P25,.jpg",
+            "lat": "10.80543003",
+            "lng": "106.7115887"
+        },
+        {
+            "name": "Dorms SG",
+            "norm": "dorms sg",
+            "image_local_path": "images/hotels/Dorms SG.jpg",
+            "lat": "10.76414609",
+            "lng": "106.6859536"
+        },
+        {
+            "name": "Ekomo Home 102 - Central Saigon",
+            "norm": "ekomo home 102 central saigon",
+            "image_local_path": "images/hotels/Ekomo Home 102 - Central Saigon.jpg",
+            "lat": "10.76515929",
+            "lng": "106.6917522"
+        },
+        {
+            "name": "G9 Homestay - Nguyễn Trãi",
+            "norm": "g9 homestay nguyen trai",
+            "image_local_path": "images/hotels/G9 Homestay - Nguyễn Trãi.jpg",
+            "lat": "10.76624063",
+            "lng": "106.6860558"
+        },
+        {
+            "name": "WIN hotel & Apartment",
+            "norm": "win hotel & apartment",
+            "image_local_path": "images/hotels/WIN hotel & Apartment.jpg",
+            "lat": "10.73410375",
+            "lng": "106.7100572"
+        },
+        {
+            "name": "Wabi Sabi - Saigon Hideout Ben Thanh",
+            "norm": "wabi sabi saigon hideout ben thanh",
+            "image_local_path": "images/hotels/Wabi Sabi - Saigon Hideout Ben Thanh.jpg",
+            "lat": "10.76191959",
+            "lng": "106.6935264"
+        },
+        {
+            "name": "Bear's House Sư Vạn Hạnh",
+            "norm": "bear's house su van hanh",
+            "image_local_path": "images/hotels/Bear's House Sư Vạn Hạnh.jpg",
+            "lat": "10.77415817",
+            "lng": "106.6676045"
+        },
+        {
+            "name": "Macy Homestay",
+            "norm": "macy homestay",
+            "image_local_path": "images/hotels/Macy Homestay District 4 next to Center Saigon.jpg",
+            "lat": "10.76503817",
+            "lng": "106.7064046"
+        },
+        {
+            "name": "Ramana Saigon Hotel",
+            "norm": "ramana saigon hotel",
+            "image_local_path": "images/hotels/Ramana Saigon Hotel.jpg",
+            "lat": "10.78751323",
+            "lng": "106.6775705"
+        },
+        {
+            "name": "Diamond crown 2 Hotel",
+            "norm": "diamond crown 2 hotel",
+            "image_local_path": "images/hotels/Diamond crown 2 Hotel.jpg",
+            "lat": "10.78717097",
+            "lng": "106.6719429"
+        },
+        {
+            "name": "Rosa May Hotel",
+            "norm": "rosa may hotel",
+            "image_local_path": "images/hotels/Rosa May Hotel.jpg",
+            "lat": "10.77445468",
+            "lng": "106.6970257"
+        },
+        {
+            "name": "Lotus Saigon Hotel",
+            "norm": "lotus saigon hotel",
+            "image_local_path": "images/hotels/Lotus Saigon Hotel.jpg",
+            "lat": "10.7772463",
+            "lng": "106.6834233"
+        },
+        {
+            "name": "Serenity Center Saigon",
+            "norm": "serenity center saigon",
+            "image_local_path": "images/hotels/Serenity Center Saigon.jpg",
+            "lat": "10.77804131",
+            "lng": "106.6917924"
+        },
+        {
+            "name": "Bros Hotel",
+            "norm": "bros hotel",
+            "image_local_path": "images/hotels/Bros Hotel.jpg",
+            "lat": "10.76297",
+            "lng": "106.6868759"
+        },
+        {
+            "name": "Nicecy Hotel",
+            "norm": "nicecy hotel",
+            "image_local_path": "images/hotels/Nicecy Hotel - Lê Lai Street.jpg",
+            "lat": "10.77036469",
+            "lng": "106.6938016"
+        },
+        {
+            "name": "The One Premium Hotel Spa",
+            "norm": "the one premium hotel spa",
+            "image_local_path": "images/hotels/The One Premium Hotel Spa.jpg",
+            "lat": "10.77370159",
+            "lng": "106.6971702"
+        },
+        {
+            "name": "Rang Dong Hotel",
+            "norm": "rang dong hotel",
+            "image_local_path": "images/hotels/Rang Dong Hotel.jpg",
+            "lat": "10.77237254",
+            "lng": "106.6916606"
+        },
+        {
+            "name": "Edoya Hotel Ben Thanh",
+            "norm": "edoya hotel ben thanh",
+            "image_local_path": "images/hotels/Edoya Hotel Ben Thanh.jpg",
+            "lat": "10.77360906",
+            "lng": "106.6992648"
+        },
+        {
+            "name": "California Saigon Hotel & Rooftop Pool",
+            "norm": "california saigon hotel & rooftop pool",
+            "image_local_path": "images/hotels/California Saigon Hotel & Rooftop Pool.jpg",
+            "lat": "10.77469898",
+            "lng": "106.6965657"
+        },
+        {
+            "name": "Rosa Hotel & Spa",
+            "norm": "rosa hotel & spa",
+            "image_local_path": "images/hotels/Rosa Hotel & Spa.jpg",
+            "lat": "10.77433949",
+            "lng": "106.6965185"
+        },
+        {
+            "name": "Anpha Boutique Hotel",
+            "norm": "anpha boutique hotel",
+            "image_local_path": "images/hotels/Anpha Boutique Hotel.jpg",
+            "lat": "10.77288565",
+            "lng": "106.6969164"
+        }
+    ]
+}
