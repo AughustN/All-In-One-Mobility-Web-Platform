@@ -1,0 +1,308 @@
+{
+  "SEG_0001": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 8,
+    "method": "fallback"
+  },
+  "SEG_0002": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0003": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 3,
+    "method": "fallback"
+  },
+  "SEG_0004": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0005": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0006": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 3,
+    "method": "fallback"
+  },
+  "SEG_0007": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0008": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 3,
+    "method": "fallback"
+  },
+  "SEG_0009": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 3,
+    "method": "fallback"
+  },
+  "SEG_0010": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 3,
+    "method": "fallback"
+  },
+  "SEG_0011": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0012": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 3,
+    "method": "fallback"
+  },
+  "SEG_0013": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0014": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0015": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 6,
+    "method": "fallback"
+  },
+  "SEG_0016": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0017": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0018": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0019": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 3,
+    "method": "fallback"
+  },
+  "SEG_0020": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 4,
+    "method": "fallback"
+  },
+  "SEG_0021": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 4,
+    "method": "fallback"
+  },
+  "SEG_0022": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0023": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0024": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0025": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 3,
+    "method": "fallback"
+  },
+  "SEG_0026": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 5,
+    "method": "fallback"
+  },
+  "SEG_0027": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0028": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0029": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0030": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0031": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0032": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0033": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 4,
+    "method": "fallback"
+  },
+  "SEG_0034": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 3,
+    "method": "fallback"
+  },
+  "SEG_0035": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 4,
+    "method": "fallback"
+  },
+  "SEG_0036": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 4,
+    "method": "fallback"
+  },
+  "SEG_0037": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 8,
+    "method": "fallback"
+  },
+  "SEG_0038": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 6,
+    "method": "fallback"
+  },
+  "SEG_0039": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 5,
+    "method": "fallback"
+  },
+  "SEG_0040": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 4,
+    "method": "fallback"
+  },
+  "SEG_0041": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 4,
+    "method": "fallback"
+  },
+  "SEG_0042": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 4,
+    "method": "fallback"
+  },
+  "SEG_0043": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0044": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 4,
+    "method": "fallback"
+  },
+  "SEG_0045": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 4,
+    "method": "fallback"
+  },
+  "SEG_0046": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 3,
+    "method": "fallback"
+  },
+  "SEG_0047": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0048": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 3,
+    "method": "fallback"
+  },
+  "SEG_0049": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 3,
+    "method": "fallback"
+  },
+  "SEG_0050": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 1,
+    "method": "fallback"
+  },
+  "SEG_0051": {
+    "p50": 15.0,
+    "p80": 24.0,
+    "sample_count": 3,
+    "method": "fallback"
+  }
+}

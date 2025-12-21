@@ -1,0 +1,128 @@
+routeId,busNumber,routename,fee,activeStartTime,activeStopTime,busStopSpacing(time of trip)
+4,04,Bến Thành - Cộng Hòa - Bến Xe An Sương,6000,05:30,20:30,52.5
+1,01,Bến Thành - Bến Xe buýt Chợ Lớn,5000,05:00,20:30,35
+5,05,Bến Xe buýt Chợ Lớn - Bến xe Biên Hòa,10000,05:00,17:50,100
+3,03,Bến Thành - Thạnh Lộc,6000,04:55,20:45,60
+6,06,Bến Xe Buýt Chợ Lớn - Đại học Nông Lâm,7000,04:55,20:30,70
+7,07,Bến Xe Buýt Chợ Lớn - Gò vấp,6000,05:00,19:30,62.5
+8,08,Bến Xe Buýt Quận 8 - Đại học Quốc Gia,7000,04:40,20:30,85
+9,09,Bến Xe Buýt Chợ Lớn - Bình Chánh - Hưng Long,7000,05:25,19:10,70
+12,101,Bến Xe Buýt Chợ Lớn - Chợ Tân Nhựt,6000,05:30,18:30,55
+10,10,Đại học Quốc Gia - Bến xe Miền Tây,7000,05:00,18:45,80
+11,100,Bến Xe Củ Chi - Cầu Tân Thái,6000,05:15,19:10,35
+14,103,Bến Xe Buýt Chợ Lớn - Bến xe Ngã 4 Ga,6000,05:00,19:00,67.5
+16,107,Bến xe Củ Chi - Bố Heo,6000,06:00,19:00,30
+13,102,Bến Xe Buýt Sài Gòn - Nguyễn Văn Linh - Bến xe Miền Tây,7000,05:00,19:00,80
+15,104,Bến xe An Sương - Đại học Nông Lâm,7000,04:40,20:00,75
+21,123,Phú Mỹ Hưng (khi H) - Quận 1,15000,07:00,19:30,30
+18,110,Hiệp Phước - Phước Lộc,7000,04:50,19:45,65
+20,122,Bến xe An Sương - Tân Quy,6000,05:00,19:30,50
+24,13,Bến Xe Buýt Sài Gòn - Bến xe Củ Chi,15000,04:30,20:00,80
+23,126,Bến xe Củ Chi - Bình Mỹ,6000,05:00,18:50,40
+22,124,Phú Mỹ Hưng (khu S) - Quận 1,15000,07:00,20:30,45
+25,139,Bến xe Miền Tây - Khu Tái Định Cư Phú Mỹ,6000,04:45,19:00,65
+27,140,Bến Xe Buýt Sài Gòn - Phạm Thế Hiển - Khu Dân Cư Phú Lợi,6000,05:00,19:00,60
+28,141,Khu du lịch BCR - Long Trường - Khu chế xuất Linh Trung II,6000,05:00,19:15,65
+26,14,Bến xe Miền Đông - 3/2 - Bến xe Miền Tây,6000,04:00,20:00,60
+30,145,Bến Xe Buýt Chợ Lớn - Chợ Hiệp Thành,6000,05:00,19:30,70
+32,148,Bến xe Miền Tây - Gò Vấp,6000,04:45,19:30,57.5
+31,146,Bến Xe Miền Đông - Chợ Hiệp Thành,6000,05:00,19:00,65
+37,152,Khu dân cư Trung Sơn - Bến Thành - Sân bay Tân Sơn Nhất,5000,05:15,18:45,52.5
+34,15,Chợ Phú Định - Đầm Sen,6000,05:00,19:00,50
+35,150,Bến xe buýt Chợ Lớn - Ngã 3 Tân Vạn,7000,04:30,21:00,80
+36,151,Bến xe Miền Tây - Bến xe An Sương,6000,04:00,20:00,50
+40,18,Bến Thành - Chợ Hiệp Thành,6000,05:00,20:30,75
+38,16,Bến xe buýt Chợ Lớn - Bến xe buýt Tân Phú,6000,05:30,18:40,55
+42,20,Bến Thành - Nhà Bè,6000,04:20,21:00,50
+41,19,Bến Xe Buýt Sài Gòn - Khu Chế Xuất Linh Trung - Đại Học Quốc Gia,7000,05:00,20:15,80
+43,22,Bến Xe buýt Quận 8 - Khu công nghiệp Lê Minh Xuân,6000,05:00,19:00,65
+44,23,Bến xe buýt Chợ Lớn - Ngã 3 Giồng - Cầu Lớn,6000,05:00,19:30,75
+50,29,Phà Cát Lái - Chợ nông sản Thủ Đức,6000,05:00,19:15,70
+46,25,Bến Xe buýt Quận 8 - Khu dân cư Vĩnh Lộc A,6000,05:00,19:00,60
+45,24,Bến Xe Miền Đông - Hóc Môn,7000,04:00,20:30,75
+49,28,Bến xe buýt Sài Gòn - Chợ Xuân Thới Thượng,7000,05:00,19:00,77.5
+48,27,Bến xe buýt Sài Gòn - Âu Cơ - Bến xe An Sương,6000,05:00,20:00,55
+51,30,Chợ Tân Hương - Đại học Quốc tế,7000,05:00,19:00,85
+54,33,Bến Xe An Sương - Suối Tiên - Đại học Quốc Gia,7000,04:30,21:00,55
+52,31,Đại Học Tôn Đức Thắng - Bến Thành - Đại Học Văn Lang,6000,05:00,19:00,75
+53,32,Bến Xe Miền Tây - Bến Xe Ngã Tư Ga,7000,04:00,19:30,80
+55,34,Bến xe buýt Sài Gòn - Bến xe buýt Quận 8,6000,05:30,19:00,60
+57,36,Bến Thành - Thới An,6000,05:00,20:00,67.5
+60,39,Bến Xe Buýt Sài Gòn - Võ Văn Kiệt - Bến Xe Miền Tây,6000,05:30,19:30,55
+59,38,Khu dân cư Tân Quy - Bến Thành - Đầm Sen,6000,05:15,19:00,62.5
+64,43,Bến xe Miền Đông - Phà Cát Lái,6000,05:00,19:00,50
+62,41,Bến xe Miền Tây - Ngã tư Bốn xã - Bến xe An Sương,6000,05:00,19:00,60
+68,47,Bến xe buýt Chợ Lớn - Quốc lộ 50 - Hưng Long,6000,05:10,18:50,50
+67,46,Công viên Tôn Thất Thuyết - Bến Mễ Cốc,6000,05:00,18:45,65
+69,48,Bến xe buýt Tân Phú - Chợ Hiệp Thành,6000,05:00,19:45,55
+65,44,Cảng Quận 4 - Bình Quới,6000,05:15,19:30,60
+66,45,Bến xe buýt Quận 8 - Bến Thành - Bến xe Miền Đông,6000,04:45,20:00,75
+70,50,Đại học Bách khoa - Đại học Quốc gia,7000,05:30,18:30,65
+75,55,Công viên phần mềm Quang Trung - Bến xe Miền Đông mới,7000,05:00,19:00,82.5
+73,53,Lê Hồng Phong - Đại học Quốc gia,7000,05:00,19:30,75
+72,52,Bến Thành - Đại học Quốc tế,6000,06:30,16:10,62.5
+79,59,Bến xe buýt Quận 8 - Bến xe Ngã 4 Ga,6000,04:50,19:00,87
+76,56,Bến xe buýt Chợ Lớn - Đại học Giao thông Vận tải,7000,05:00,20:30,80
+78,58,Bến xe Ngã tư Ga - Khu công nghiệp Đông Nam,6000,05:00,18:25,60
+81,60-1,BX Miền Tây - BX Biên Hòa,23000,04:45,18:30,120
+82,60-3,Bến xe Miền Đông - Khu Công nghiệp Nhơn Trạch,23000,05:00,17:30,90
+83,60-4,Bến xe Miền Đông - Khu công nghiệp Sông Mây,15000,05:00,17:00,90
+87,61-4,Bến Dược - Dầu Tiếng,10000,05:50,18:00,40
+85,61-1,Thủ Đức - Dĩ An,8000,05:00,18:30,83
+86,61-3,Bến xe An Sương - Bến xe Thủ Dầu Một,10000,05:30,18:00,75
+89,61-7,Bến đò Bình Mỹ - Bến xe Bình Dương,5000,05:40,19:30,15
+90,61-8,Bến xe Miền Tây - Khu Du lịch Đại Nam,25000,04:00,18:00,130
+91,62,Bến xe buýt Quận 8 - Thới An,6000,05:00,19:00,80
+92,62-10,Bến xe Chợ Lớn - Thanh Vĩnh Đông,8000,06:23,18:23,140
+97,62-5,Bến xe An Sương - Bến xe Hậu Nghĩa,5000,05:00,19:00,70
+94,62-2,Bến xe buýt Chợ Lớn - Ngã 3 Tân Lân,5000,05:00,18:55,80
+93,62-11,Bến Xe Quận 8 - Bến Xe Tân Tập,10000,05:55,18:00,90
+95,62-3,Bến Củ Chi - Bến xe Hậu Nghĩa,8000,05:30,18:50,35
+98,62-7,Bến xe Chợ Lớn - Bến xe Đức Huệ,9000,05:00,17:00,115
+99,62-8,Bến xe Chợ Lớn - Bến xe Tân An,12000,05:00,17:30,80
+100,62-9,Bến xe buýt Quận 8 - Thị xã Gò Công,12000,05:30,19:00,100
+101,64,Bến xe Miền Đông - Đầm Sen,6000,05:30,19:00,60
+102,65,Bến Thành - Cách Mạng Tháng 8 - Bến xe An Sương,6000,04:50,20:25,52.5
+104,68,Bến xe buýt Chợ Lớn - Đại học Tài Chính - Marketing,6000,05:00,19:00,62.5
+106,70,Tân Quy - Bến Súc,7000,05:30,20:20,60
+107,70-1,Bến xe Củ Chi - Bến Xe Tây Ninh,15000,05:07,19:07,110
+105,69,Bến xe buýt Sài Gòn - Khu dân cư Vĩnh Lộc,6000,05:30,19:30,85
+110,70-5,Bố Heo - Lộc Hưng,10000,06:30,19:30,15
+108,70-2,BX Củ Chi - Hòa Thành,14000,05:00,19:00,100
+111,71,Bến xe An Sương - Phật Cô Đơn,7000,05:20,19:00,65
+112,72,Bến xe buýt Sài Gòn - Hiệp Phước,6000,04:40,19:08,55
+109,70-3,Bến Xe Buýt Sài Gòn - Mộc Bài,15000,05:40,15:00,150
+113,73,Chợ Bình Chánh - Khu công nghiệp Lê Minh Xuân,6000,04:55,18:20,60
+116,76,Long Phước - Suối Tiên - Bến xe Miền Đông mới,6000,05:00,19:00,58
+114,74,Bến xe An Sương - Bến xe Củ Chi,6000,04:40,21:00,45
+118,78,Bến xe buýt Thới An - Ngã Ba Giồng - Cầu Lớn,6000,05:30,19:00,57.5
+117,77,Đồng Hòa - Cần Thạnh,6000,05:30,19:45,35
+115,75,Bến Xe Buýt Sài Gòn - Cần Giờ,30000,07:30,16:30,140
+124,84,Bến xe buýt Chợ Lớn - Tân Túc,6000,05:00,19:45,47
+119,79,Bến xe Củ Chi - Đền Bến Dược,7000,06:00,18:00,45
+121,81,Bến xe buýt Chợ Lớn - Lê Minh Xuân,6000,04:40,19:50,65
+125,85,Bến xe An Sương - Khu công nghiệp Nhị Xuân,5000,05:00,19:00,35
+127,87,Bến xe Củ Chi - An Nhơn Tây,6000,05:50,18:30,40
+128,88,Bến Thành - Chợ Long Phước,6000,05:00,19:00,65
+133,93,Bến Thành - Bến xe Miền Đông mới,7000,05:00,19:15,75
+130,90,Phà Bình Khánh - Cần Thạnh,7000,05:00,21:30,75
+129,89,Đại học Nông Lâm - Bến Tàu Hiệp Bình Chánh,6000,05:00,19:00,55
+131,91,Bến xe Miền Tây - Chợ nông sản Thủ Đức,7000,04:45,19:00,82.5
+134,94,Bến xe Chợ Lớn - Bến xe Củ Chi,15000,04:45,20:30,75
+179,128,Tân Điền - An Nghĩa,6000,05:00,20:00,50
+178,127,An Thới Đông - Ngã ba Bà Xán,6000,05:30,20:00,40
+137,99,Chợ Thạnh Mỹ Lợi - Đại học Quốc gia,6000,04:50,19:50,65
+199,109,Bến Xe Buýt Sài Gòn - Sân bay Tân Sơn Nhất,12000,00:05,23:40,45
+204,62-1,Bến Xe Chợ Lớn - Bến xe Tân Trụ,25000,04:55,18:45,75
+212,D2,Sky Garden – Cresent Mall,10000,08:00,21:30,15
+214,62-6,BX Chợ Lớn - BX Hậu Nghĩa,15000,05:20,16:30,90
+211,D3,Riverside Resident - Cresent Mall,10000,08:00,21:30,20
+215,60-2,Đại Học Nông Lâm - Bến Xe Phú Túc,10000,07:05,18:30,124
+335,72-1,Sân bay Tân Sơn Nhất – Đường cao tốc – Bến xe Vũng Tàu,160000,07:15,23:30,165
+336,DL01,Tuyến xe  du lịch vòng khu vực trung tâm thành phố,330000,09:00,20:00,60
+10951,Water Bus 01,Bạch Đằng - Linh Đông,15000,07:10,18:20,
+10973,Tuyến Phà 01,Cần Giờ - Vũng Tàu,70000,4:00,22:00,30
+340,D4,Vinhomes Grand Park - Bến xe buýt Sài Gòn,7000,05:00,20:15,82.5
+380,63-1,Bến xe buýt Tân Phú - Bến xe Tiền Giang,12000,05:00,18:00,150
+381,60-5,Bến xe An Sương - Bến xe Biên Hòa,20000,05:00,18:00,70
+382,60-7,Bến xe buýt Tân Phú - Bến xe Biên Hòa,20000,05:00,18:00,90
