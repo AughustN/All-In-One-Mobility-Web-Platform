@@ -2,9 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import goongjs from '@goongmaps/goong-js';
 import '@goongmaps/goong-js/dist/goong-js.css';
 
-const GOONG_MAPTILES_KEY = 'nwJPo6l2E909Xn7fEIoJrSilkGxVJQSjrKxfD2UQ';
+const GOONG_MAPTILES_KEY = process.env.REACT_APP_GOONG_MAPTILES_KEY;
 
 goongjs.accessToken = GOONG_MAPTILES_KEY;
+// goongjs.accessToken = 'nwJPo6l2E909Xn7fEIoJrSilkGxVJQSjrKxfD2UQ';
 
 function GoongMap({ origin, destination, coords, style = 'goong_map_web', userLocation, coloredRouteGeoJSON, routeCameras = [], onRouteCameraClick, selectedCamera, }) {
   const mapContainer = useRef(null);

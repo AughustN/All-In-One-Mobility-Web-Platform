@@ -67,7 +67,7 @@ def geocode_nominatim(address: str):
     }
 
     headers = {
-        "User-Agent": "TripPlanner/1.0 (hoanghieuhthlt@example.com)"
+        "User-Agent": "TripPlanner/1.0 (hoanghieuhthlt@gmail.com)"
     }
 
     try:
@@ -113,6 +113,7 @@ def geocode(address: str):
         CACHE[key] = osm
         return osm
 
+    print(f"❌ Geocoding failed for address: {address}")
     return None
 
 
